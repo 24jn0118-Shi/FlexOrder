@@ -43,5 +43,18 @@ namespace FlexOrder_Prototype
             }
             cnt++;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string str = "です";
+            if (radioButton1.Checked) 
+            {
+                textBox1.Text = radioButton1.Text+str;
+            }
+            else 
+            { 
+                textBox1.Text = radioButton2.Text+str;
+            }
+        }
     }
 }
