@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder_Prototype
 {
-    partial class Form1
+    partial class FrmSystemSelect
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -71,7 +71,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Meiryo", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Font = new System.Drawing.Font("メイリオ", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(96, 296);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 36);
@@ -121,7 +121,7 @@
             this.btn12.Text = "Test";
             this.btn12.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // FrmSystemSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,8 +134,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FrmSystemSelect";
+            this.Text = "FlexOrderシステム選択";
             this.ResumeLayout(false);
             this.PerformLayout();
 
