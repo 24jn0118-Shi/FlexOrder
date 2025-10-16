@@ -1,2 +1,2 @@
-# FlexOrder_Prototype
+# FlexOrder
 Graduation Project of Group_I
