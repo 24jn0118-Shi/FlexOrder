@@ -53,5 +53,13 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
-# Ignore Visual Studio folder
+# Visual Studio files
 .vs/
+*.user
+*.suo
+*.VC.db
+*.ncb
+
+# Build output
+bin/
+obj/

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 namespace FlexOrder_Prototype
 {
     
-    public partial class Form1 : Form
+    public partial class FrmSystemSelect : Form
     {
         int cnt = 0;
-        public Form1()
+        public FrmSystemSelect()
         {
             InitializeComponent();
         }
