@@ -14,9 +14,11 @@ Z:\卒業制作\Prototype\bin\Debug\FlexOrder_Prototype.exe
 Z:\卒業制作\Prototype\bin\Debug\FlexOrder_Prototype.pdb
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.csproj.AssemblyReference.cache
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.exe.config
-Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.Form1.resources
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.Properties.Resources.resources
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.csproj.GenerateResource.cache
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.csproj.CoreCompileInputs.cache
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.exe
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.pdb
+Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.FrmSLogin.resources
+Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.FrmSMainmenu.resources
+Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.FrmTSystemSelect.resources
