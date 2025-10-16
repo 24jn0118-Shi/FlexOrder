@@ -16,7 +16,7 @@ namespace FlexOrder_Prototype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSystemSelect());
+            Application.Run(new FrmTSystemSelect());
         }
     }
 }

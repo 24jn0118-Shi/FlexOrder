@@ -46,16 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmSystemSelect.cs">
+    <Compile Include="FrmCIndex.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSystemSelect.Designer.cs">
-      <DependentUpon>FrmSystemSelect.cs</DependentUpon>
+    <Compile Include="FrmCIndex.Designer.cs">
+      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSLogin.Designer.cs">
+      <DependentUpon>FrmSLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSMainmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSMainmenu.Designer.cs">
+      <DependentUpon>FrmSMainmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTSystemSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTSystemSelect.Designer.cs">
+      <DependentUpon>FrmTSystemSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmSystemSelect.resx">
-      <DependentUpon>FrmSystemSelect.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSLogin.resx">
+      <DependentUpon>FrmSLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSMainmenu.resx">
+      <DependentUpon>FrmSMainmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTSystemSelect.resx">
+      <DependentUpon>FrmTSystemSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
