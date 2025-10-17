@@ -22,3 +22,16 @@ Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.pdb
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.FrmSLogin.resources
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.FrmSMainmenu.resources
 Z:\卒業制作\Prototype\obj\Debug\FlexOrder_Prototype.FrmTSystemSelect.resources
+C:\Sky\JEC Folder\FlexOrder\bin\Debug\FlexOrder_Prototype.exe.config
+C:\Sky\JEC Folder\FlexOrder\bin\Debug\FlexOrder_Prototype.exe
+C:\Sky\JEC Folder\FlexOrder\bin\Debug\FlexOrder_Prototype.pdb
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.csproj.AssemblyReference.cache
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.exe.config
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.FrmSLogin.resources
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.FrmSMainmenu.resources
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.FrmTSystemSelect.resources
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.Properties.Resources.resources
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.csproj.GenerateResource.cache
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.csproj.CoreCompileInputs.cache
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.exe
+C:\Sky\JEC Folder\FlexOrder\obj\Debug\FlexOrder_Prototype.pdb

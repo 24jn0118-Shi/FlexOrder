@@ -1,4 +1,4 @@
-﻿namespace FlexOrder_Prototype
+﻿namespace FlexOrder
 {
     partial class FrmSMainmenu
     {

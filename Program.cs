@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlexOrder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace FlexOrder_Prototype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTSystemSelect());
+            Application.Run(new FrmTempStart());
         }
     }
 }

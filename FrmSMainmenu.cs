@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FlexOrder_Prototype
+namespace FlexOrder
 {
     public partial class FrmSMainmenu : Form
     {
