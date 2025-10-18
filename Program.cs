@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FlexOrder_Prototype
+namespace FlexOrder
 {
     internal static class Program
     {
