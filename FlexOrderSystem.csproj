@@ -50,11 +50,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCCart.Designer.cs">
+      <DependentUpon>FrmCCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCEnd.Designer.cs">
+      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCIndex.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmCIndex.Designer.cs">
       <DependentUpon>FrmCIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCMenu.Designer.cs">
+      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCPayment.Designer.cs">
+      <DependentUpon>FrmCPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSLogin.cs">
       <SubType>Form</SubType>
@@ -76,6 +100,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCCart.resx">
+      <DependentUpon>FrmCCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCEnd.resx">
+      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCIndex.resx">
+      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCMenu.resx">
+      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCPayment.resx">
+      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSLogin.resx">
       <DependentUpon>FrmSLogin.cs</DependentUpon>
     </EmbeddedResource>

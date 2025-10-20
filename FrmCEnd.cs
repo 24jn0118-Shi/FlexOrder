@@ -10,17 +10,19 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmCIndex : Form
+    public partial class FrmCEnd : Form
     {
-        public FrmCIndex()
+        internal Form previousForm;
+        public FrmCEnd(Form previousForm)
         {
             InitializeComponent();
+            this.previousForm = previousForm;
         }
 
-        private void btnDinein_Click(object sender, EventArgs e)
+        private void btnEnd_Click(object sender, EventArgs e)
         {
-            FrmCMenu form = new FrmCMenu(this);
-            form.ShowDialog();
+            Application.Restart();
+            Environment.Exit(0);
         }
     }
 }
