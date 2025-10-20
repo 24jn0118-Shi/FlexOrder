@@ -17,7 +17,35 @@ namespace FlexOrder
         {
             InitializeComponent();
             this.previousForm = previousForm;
+            SetupCustomTabs();
         }
+
+        private void SetupCustomTabs()
+        {
+            tabControl1.Alignment = TabAlignment.Left;
+            tabControl1.Multiline = true;
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+            tabControl1.ItemSize = new Size(60, 160);
+            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            tabControl1.DrawItem += TabControl1_DrawItem;
+        }
+
+        private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            TabControl tabControl = (TabControl)sender;
+            TabPage tabPage = tabControl.TabPages[e.Index];
+            e.Graphics.FillRectangle(new SolidBrush(SystemColors.Control), e.Bounds);
+
+            StringFormat sf = new StringFormat();
+            sf.Alignment = StringAlignment.Center;
+            sf.LineAlignment = StringAlignment.Center;
+
+            Brush textBrush = e.State == DrawItemState.Selected ?
+                Brushes.Blue : Brushes.Black;
+
+            e.Graphics.DrawString(tabPage.Text, e.Font, textBrush, e.Bounds, sf);
+        }
+  
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
