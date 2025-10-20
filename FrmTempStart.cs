@@ -19,12 +19,12 @@ namespace FlexOrder
             lblWelcome.Text = "FlexOrderアプリケーションの実装時に、\n" +
                 "店舗側と顧客側の二つに分かれるため、\n" +
                 "本画面は削除されます。\n" +
-                "あらかじめご了承ください。\n\n" +
-                "Group I Presents\n" +
+                "あらかじめご了承ください";
+            lblPresent.Text = "Group I Presents\n" +
                 "Leader:          Shi Kaiyuan\n" +
                 "Design Leader:   Kudriavtsev Sergei\n" +
                 "Test Leader:     Tanaka Takahiro\n" +
-                "Database Leader: Minami Yuki\n";
+                "Database Leader: Minami Yuki";
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
