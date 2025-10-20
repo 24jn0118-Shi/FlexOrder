@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FlexOrderLibrary;
 
 namespace FlexOrder
 {
@@ -34,7 +35,6 @@ namespace FlexOrder
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            bool check = false;
             int useridInt;
             if (txbUserId.Text=="" || txbPassword.Text=="")
             {
@@ -44,34 +44,20 @@ namespace FlexOrder
             {
                 MessageBox.Show("ユーザーIDは数字で入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else { 
-                string connectionString = Properties.Settings.Default.DBConnectionString;
-                using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string sql = "SELECT member_password FROM [User] WHERE member_id=@id";
-                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-
-                adapter.SelectCommand.Parameters.AddWithValue("@id", useridInt);
-
-                DataTable table = new DataTable();
-                int cnt = adapter.Fill(table);
-                    if (cnt == 1)
-                    {
-                        string correctpw = table.Rows[0]["member_password"].ToString();
-                        check = correctpw == ComputeSha256Hex(txbPassword.Text);
-                    }
-            }
-            //Login成功なら
-            if (check)
-            {
+            else {
+                StaffTable stafftable = new StaffTable();
+                
+                //Login成功なら
+                if (stafftable.Login(useridInt, txbPassword.Text))
+                {
                 FrmSMainmenu form = new FrmSMainmenu();
                 form.ShowDialog();
-            }
-            else 
-            {
+                }
+                else 
+                {
                 MessageBox.Show("Id、パスワードはどちらかが違います", "ログイン失敗",
                                  MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                }
             }
         }
 

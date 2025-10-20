@@ -104,5 +104,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FlexOrderLibrary\FlexOrderLibrary.csproj">
+      <Project>{494ca18d-8b2a-4b4e-9f23-232f182d49c5}</Project>
+      <Name>FlexOrderLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
