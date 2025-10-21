@@ -12,11 +12,9 @@ namespace FlexOrder
 {
     public partial class FrmCPayment : Form
     {
-        internal Form previousForm;
-        public FrmCPayment(Form previousForm)
+        public FrmCPayment()
         {
             InitializeComponent();
-            this.previousForm = previousForm;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -26,7 +24,7 @@ namespace FlexOrder
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            FrmCEnd form = new FrmCEnd(this);
+            FrmCEnd form = new FrmCEnd();
             form.ShowDialog();
         }
     }

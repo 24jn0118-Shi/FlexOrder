@@ -12,16 +12,14 @@ namespace FlexOrder
 {
     public partial class FrmCCart : Form
     {
-        internal Form previousForm;
-        public FrmCCart(Form previousForm)
+        public FrmCCart()
         {
             InitializeComponent();
-            this.previousForm = previousForm;
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            FrmCPayment form = new FrmCPayment(this);
+            FrmCPayment form = new FrmCPayment();
             form.ShowDialog();
         }
 

@@ -12,11 +12,9 @@ namespace FlexOrder
 {
     public partial class FrmCEnd : Form
     {
-        internal Form previousForm;
-        public FrmCEnd(Form previousForm)
+        public FrmCEnd()
         {
             InitializeComponent();
-            this.previousForm = previousForm;
         }
 
         private void btnEnd_Click(object sender, EventArgs e)

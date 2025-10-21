@@ -19,7 +19,7 @@ namespace FlexOrder
 
         private void btnDinein_Click(object sender, EventArgs e)
         {
-            FrmCMenu form = new FrmCMenu(this);
+            FrmCMenu form = new FrmCMenu();
             form.ShowDialog();
         }
     }
