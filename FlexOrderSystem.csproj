@@ -106,7 +106,20 @@
     <EmbeddedResource Include="FrmCEnd.resx">
       <DependentUpon>FrmCEnd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCIndex.en.resx">
+      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCIndex.ja.resx">
+      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCIndex.resx">
+      <DependentUpon>FrmCIndex.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCIndex.ru.resx">
+      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCIndex.zh.resx">
       <DependentUpon>FrmCIndex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCMenu.resx">

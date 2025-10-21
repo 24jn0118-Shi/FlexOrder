@@ -37,9 +37,9 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.resetBtn = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.btnVeget = new System.Windows.Forms.Button();
-            this.lblPrice = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.txtKaikei = new System.Windows.Forms.TextBox();
             this.lblCart = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -117,7 +117,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(112, 50);
             this.btnConfirm.TabIndex = 1;
-            this.btnConfirm.Text = "ご注文を確認";
+            this.btnConfirm.Text = "btnConfirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -127,7 +127,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(112, 50);
             this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "戻る";
+            this.btnBack.Text = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -140,14 +140,14 @@
             this.listBox1.Size = new System.Drawing.Size(134, 256);
             this.listBox1.TabIndex = 2;
             // 
-            // resetBtn
+            // btnReset
             // 
-            this.resetBtn.Location = new System.Drawing.Point(12, 12);
-            this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(48, 38);
-            this.resetBtn.TabIndex = 3;
-            this.resetBtn.Text = "Reset";
-            this.resetBtn.UseVisualStyleBackColor = true;
+            this.btnReset.Location = new System.Drawing.Point(12, 12);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(48, 38);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
             // 
             // btnVeget
             // 
@@ -155,18 +155,18 @@
             this.btnVeget.Name = "btnVeget";
             this.btnVeget.Size = new System.Drawing.Size(112, 50);
             this.btnVeget.TabIndex = 4;
-            this.btnVeget.Text = "ベジタリアンメニュー";
+            this.btnVeget.Text = "btnVeget";
             this.btnVeget.UseVisualStyleBackColor = true;
             // 
-            // lblPrice
+            // lblTotal
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("MS UI Gothic", 13F);
-            this.lblPrice.Location = new System.Drawing.Point(640, 322);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(89, 18);
-            this.lblPrice.TabIndex = 5;
-            this.lblPrice.Text = "会計金額：";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("MS UI Gothic", 13F);
+            this.lblTotal.Location = new System.Drawing.Point(640, 322);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(68, 18);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "lblTotal:";
             // 
             // txtKaikei
             // 
@@ -182,9 +182,9 @@
             this.lblCart.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblCart.Location = new System.Drawing.Point(666, 30);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(110, 20);
+            this.lblCart.Size = new System.Drawing.Size(71, 20);
             this.lblCart.TabIndex = 7;
-            this.lblCart.Text = "現在の注文";
+            this.lblCart.Text = "lblCart";
             // 
             // FrmCMenu
             // 
@@ -193,9 +193,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblCart);
             this.Controls.Add(this.txtKaikei);
-            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnVeget);
-            this.Controls.Add(this.resetBtn);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnConfirm);
@@ -216,12 +216,12 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button resetBtn;
+        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnVeget;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtKaikei;
         private System.Windows.Forms.Label lblCart;
     }
