@@ -12,11 +12,9 @@ namespace FlexOrder
 {
     public partial class FrmCMenu : Form
     {
-        internal Form previousForm;
-        public FrmCMenu(Form previousForm)
+        public FrmCMenu()
         {
             InitializeComponent();
-            this.previousForm = previousForm;
             SetupCustomTabs();
         }
 
@@ -49,7 +47,7 @@ namespace FlexOrder
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            FrmCCart form = new FrmCCart(this);
+            FrmCCart form = new FrmCCart();
             form.ShowDialog();
         }
 
