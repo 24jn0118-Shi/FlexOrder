@@ -107,7 +107,7 @@
             this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.lblPassword);
             this.Name = "FrmSLogin";
-            this.Text = "FrmSLogin";
+            this.Text = "ログイン画面";
             this.ResumeLayout(false);
             this.PerformLayout();
 

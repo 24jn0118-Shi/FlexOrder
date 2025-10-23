@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="FlexOrderLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>FlexOrderLibrary\bin\Debug\FlexOrderLibrary.dll</HintPath>
+      <HintPath>FlexOrderLibrary\obj\Debug\FlexOrderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -92,6 +92,12 @@
     <Compile Include="FrmSMainmenu.Designer.cs">
       <DependentUpon>FrmSMainmenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSOrderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSOrderManagement.Designer.cs">
+      <DependentUpon>FrmSOrderManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTempStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSMainmenu.resx">
       <DependentUpon>FrmSMainmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSOrderManagement.resx">
+      <DependentUpon>FrmSOrderManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTempStart.resx">
       <DependentUpon>FrmTempStart.cs</DependentUpon>

@@ -39,7 +39,7 @@
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(151, 68);
             this.btnEnd.TabIndex = 0;
-            this.btnEnd.Text = "btnEnd";
+            this.btnEnd.Text = "トップに戻る";
             this.btnEnd.UseVisualStyleBackColor = true;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
@@ -70,7 +70,7 @@
             this.Controls.Add(this.lblEnd1);
             this.Controls.Add(this.btnEnd);
             this.Name = "FrmCEnd";
-            this.Text = "FrmCEnd";
+            this.Text = "会計完了";
             this.ResumeLayout(false);
             this.PerformLayout();
 
