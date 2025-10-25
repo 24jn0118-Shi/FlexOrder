@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCMenu));
             this.tbcntMenu = new System.Windows.Forms.TabControl();
             this.tbpagePop = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.tbpageClass1 = new System.Windows.Forms.TabPage();
             this.tbpageClass2 = new System.Windows.Forms.TabPage();
             this.tbpageClass3 = new System.Windows.Forms.TabPage();
@@ -45,6 +46,7 @@
             this.lblCart = new System.Windows.Forms.Label();
             this.lblen = new System.Windows.Forms.Label();
             this.tbcntMenu.SuspendLayout();
+            this.tbpagePop.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcntMenu
@@ -63,9 +65,15 @@
             // 
             // tbpagePop
             // 
+            this.tbpagePop.Controls.Add(this.flowLayoutPanelMenu);
             resources.ApplyResources(this.tbpagePop, "tbpagePop");
             this.tbpagePop.Name = "tbpagePop";
             this.tbpagePop.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelMenu
+            // 
+            resources.ApplyResources(this.flowLayoutPanelMenu, "flowLayoutPanelMenu");
+            this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
             // 
             // tbpageClass1
             // 
@@ -108,8 +116,8 @@
             // 
             // orderlist
             // 
-            resources.ApplyResources(this.orderlist, "orderlist");
             this.orderlist.FormattingEnabled = true;
+            resources.ApplyResources(this.orderlist, "orderlist");
             this.orderlist.Name = "orderlist";
             // 
             // btnReset
@@ -160,7 +168,9 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.tbcntMenu);
             this.Name = "FrmCMenu";
+            this.Load += new System.EventHandler(this.FrmCMenu_Load);
             this.tbcntMenu.ResumeLayout(false);
+            this.tbpagePop.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,5 +193,6 @@
         private System.Windows.Forms.TextBox txtKaikei;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Label lblen;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
     }
 }

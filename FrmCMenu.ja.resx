@@ -117,17 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>ご注文を確認</value>
+  </data>
   <data name="btnBack.Text" xml:space="preserve">
     <value>戻る</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>メニュー一覧</value>
-  </data>
   <data name="btnVeget.Text" xml:space="preserve">
     <value>ベジタリアンメニュー</value>
-  </data>
-  <data name="btnConfirm.Text" xml:space="preserve">
-    <value>ご注文を確認</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
     <value>合計金額:</value>
@@ -135,7 +132,11 @@
   <data name="lblCart.Text" xml:space="preserve">
     <value>現在の注文</value>
   </data>
-  <data name=".Text" xml:space="preserve">
-    <value>円</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>メニュー一覧</value>
   </data>
 </root>

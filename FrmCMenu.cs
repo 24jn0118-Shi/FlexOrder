@@ -60,5 +60,20 @@ namespace FlexOrder
         {
 
         }
+
+        private void FrmCMenu_Load(object sender, EventArgs e)
+        {
+            ProductItem product1 = new ProductItem();
+            product1.ProductTitle = "Pizza";
+            product1.ProductPrice = "¥ 500";
+            product1.ProductImage = Image.FromFile(@"C:\Sky\JEC Folder\FlexOrder\pizza.jpg");
+            flowLayoutPanelMenu.Controls.Add(product1);
+
+            ProductItem product2 = new ProductItem();
+            product2.ProductTitle = "Icecream";
+            product2.ProductPrice = "¥ 250";
+            product2.ProductImage = Image.FromFile(@"C:\Sky\JEC Folder\FlexOrder\ice_cream.jpg");
+            flowLayoutPanelMenu.Controls.Add(product2);
+        }
     }
 }
