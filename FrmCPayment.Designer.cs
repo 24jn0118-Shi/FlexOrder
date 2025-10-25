@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCPayment));
             this.btnEMoney = new System.Windows.Forms.Button();
             this.btnCreditCard = new System.Windows.Forms.Button();
             this.btnCash = new System.Windows.Forms.Button();
@@ -36,53 +37,39 @@
             // 
             // btnEMoney
             // 
-            this.btnEMoney.Location = new System.Drawing.Point(152, 250);
+            resources.ApplyResources(this.btnEMoney, "btnEMoney");
             this.btnEMoney.Name = "btnEMoney";
-            this.btnEMoney.Size = new System.Drawing.Size(123, 65);
-            this.btnEMoney.TabIndex = 0;
-            this.btnEMoney.Text = "電子マネー";
             this.btnEMoney.UseVisualStyleBackColor = true;
             // 
             // btnCreditCard
             // 
-            this.btnCreditCard.Location = new System.Drawing.Point(402, 140);
+            resources.ApplyResources(this.btnCreditCard, "btnCreditCard");
             this.btnCreditCard.Name = "btnCreditCard";
-            this.btnCreditCard.Size = new System.Drawing.Size(123, 65);
-            this.btnCreditCard.TabIndex = 0;
-            this.btnCreditCard.Text = "クレジット";
             this.btnCreditCard.UseVisualStyleBackColor = true;
             // 
             // btnCash
             // 
-            this.btnCash.Location = new System.Drawing.Point(152, 140);
+            resources.ApplyResources(this.btnCash, "btnCash");
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(123, 65);
-            this.btnCash.TabIndex = 0;
-            this.btnCash.Text = "現金";
             this.btnCash.UseVisualStyleBackColor = true;
             this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(621, 36);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(123, 65);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FrmCPayment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCash);
             this.Controls.Add(this.btnCreditCard);
             this.Controls.Add(this.btnEMoney);
             this.Name = "FrmCPayment";
-            this.Text = "支払方法選択";
             this.ResumeLayout(false);
 
         }

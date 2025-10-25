@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCMenu));
             this.tbcntMenu = new System.Windows.Forms.TabControl();
             this.tbpagePop = new System.Windows.Forms.TabPage();
             this.tbpageClass1 = new System.Windows.Forms.TabPage();
@@ -48,163 +49,106 @@
             // 
             // tbcntMenu
             // 
-            this.tbcntMenu.Alignment = System.Windows.Forms.TabAlignment.Left;
+            resources.ApplyResources(this.tbcntMenu, "tbcntMenu");
             this.tbcntMenu.AllowDrop = true;
             this.tbcntMenu.Controls.Add(this.tbpagePop);
             this.tbcntMenu.Controls.Add(this.tbpageClass1);
             this.tbcntMenu.Controls.Add(this.tbpageClass2);
             this.tbcntMenu.Controls.Add(this.tbpageClass3);
             this.tbcntMenu.Controls.Add(this.tbpageClass4);
-            this.tbcntMenu.Location = new System.Drawing.Point(66, 22);
             this.tbcntMenu.Multiline = true;
             this.tbcntMenu.Name = "tbcntMenu";
             this.tbcntMenu.SelectedIndex = 0;
-            this.tbcntMenu.Size = new System.Drawing.Size(572, 325);
-            this.tbcntMenu.TabIndex = 0;
             this.tbcntMenu.Tag = "";
             // 
             // tbpagePop
             // 
-            this.tbpagePop.Location = new System.Drawing.Point(22, 4);
+            resources.ApplyResources(this.tbpagePop, "tbpagePop");
             this.tbpagePop.Name = "tbpagePop";
-            this.tbpagePop.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpagePop.Size = new System.Drawing.Size(546, 317);
-            this.tbpagePop.TabIndex = 0;
-            this.tbpagePop.Text = "おすすめ";
             this.tbpagePop.UseVisualStyleBackColor = true;
             // 
             // tbpageClass1
             // 
-            this.tbpageClass1.Location = new System.Drawing.Point(22, 4);
+            resources.ApplyResources(this.tbpageClass1, "tbpageClass1");
             this.tbpageClass1.Name = "tbpageClass1";
-            this.tbpageClass1.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpageClass1.Size = new System.Drawing.Size(546, 317);
-            this.tbpageClass1.TabIndex = 1;
-            this.tbpageClass1.Text = "商品分類1";
             this.tbpageClass1.UseVisualStyleBackColor = true;
             this.tbpageClass1.Click += new System.EventHandler(this.tbpclass1_Click);
             // 
             // tbpageClass2
             // 
-            this.tbpageClass2.Location = new System.Drawing.Point(22, 4);
+            resources.ApplyResources(this.tbpageClass2, "tbpageClass2");
             this.tbpageClass2.Name = "tbpageClass2";
-            this.tbpageClass2.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpageClass2.Size = new System.Drawing.Size(546, 317);
-            this.tbpageClass2.TabIndex = 2;
-            this.tbpageClass2.Text = "商品分類2";
             this.tbpageClass2.UseVisualStyleBackColor = true;
             // 
             // tbpageClass3
             // 
-            this.tbpageClass3.Location = new System.Drawing.Point(22, 4);
+            resources.ApplyResources(this.tbpageClass3, "tbpageClass3");
             this.tbpageClass3.Name = "tbpageClass3";
-            this.tbpageClass3.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpageClass3.Size = new System.Drawing.Size(546, 317);
-            this.tbpageClass3.TabIndex = 3;
-            this.tbpageClass3.Text = "商品分類3";
             this.tbpageClass3.UseVisualStyleBackColor = true;
             // 
             // tbpageClass4
             // 
-            this.tbpageClass4.Location = new System.Drawing.Point(22, 4);
+            resources.ApplyResources(this.tbpageClass4, "tbpageClass4");
             this.tbpageClass4.Name = "tbpageClass4";
-            this.tbpageClass4.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpageClass4.Size = new System.Drawing.Size(546, 317);
-            this.tbpageClass4.TabIndex = 4;
-            this.tbpageClass4.Text = "商品分類4";
             this.tbpageClass4.UseVisualStyleBackColor = true;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(643, 388);
+            resources.ApplyResources(this.btnConfirm, "btnConfirm");
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(112, 50);
-            this.btnConfirm.TabIndex = 1;
-            this.btnConfirm.Text = "ご注文を確認";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(48, 388);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(112, 50);
-            this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // orderlist
             // 
+            resources.ApplyResources(this.orderlist, "orderlist");
             this.orderlist.FormattingEnabled = true;
-            this.orderlist.ItemHeight = 12;
-            this.orderlist.Location = new System.Drawing.Point(654, 59);
             this.orderlist.Name = "orderlist";
-            this.orderlist.Size = new System.Drawing.Size(134, 256);
-            this.orderlist.TabIndex = 2;
             // 
             // btnReset
             // 
-            this.btnReset.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.btnReset.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(29, 30);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "↺";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
             // btnVeget
             // 
-            this.btnVeget.Location = new System.Drawing.Point(323, 388);
+            resources.ApplyResources(this.btnVeget, "btnVeget");
             this.btnVeget.Name = "btnVeget";
-            this.btnVeget.Size = new System.Drawing.Size(112, 50);
-            this.btnVeget.TabIndex = 4;
-            this.btnVeget.Text = "ベジタリアンメニュー";
             this.btnVeget.UseVisualStyleBackColor = true;
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("MS UI Gothic", 13F);
-            this.lblTotal.Location = new System.Drawing.Point(640, 329);
+            resources.ApplyResources(this.lblTotal, "lblTotal");
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(84, 18);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "合計金額:";
             // 
             // txtKaikei
             // 
-            this.txtKaikei.Location = new System.Drawing.Point(725, 328);
+            resources.ApplyResources(this.txtKaikei, "txtKaikei");
             this.txtKaikei.Name = "txtKaikei";
             this.txtKaikei.ReadOnly = true;
-            this.txtKaikei.Size = new System.Drawing.Size(51, 19);
-            this.txtKaikei.TabIndex = 6;
             // 
             // lblCart
             // 
-            this.lblCart.AutoSize = true;
-            this.lblCart.Font = new System.Drawing.Font("MS UI Gothic", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblCart.Location = new System.Drawing.Point(666, 30);
+            resources.ApplyResources(this.lblCart, "lblCart");
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(110, 20);
-            this.lblCart.TabIndex = 7;
-            this.lblCart.Text = "現在の注文";
             // 
             // lblen
             // 
-            this.lblen.AutoSize = true;
-            this.lblen.Font = new System.Drawing.Font("MS UI Gothic", 9F);
-            this.lblen.Location = new System.Drawing.Point(782, 335);
+            resources.ApplyResources(this.lblen, "lblen");
             this.lblen.Name = "lblen";
-            this.lblen.Size = new System.Drawing.Size(17, 12);
-            this.lblen.TabIndex = 8;
-            this.lblen.Text = "円";
             // 
             // FrmCMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblen);
             this.Controls.Add(this.lblCart);
             this.Controls.Add(this.txtKaikei);
@@ -216,7 +160,6 @@
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.tbcntMenu);
             this.Name = "FrmCMenu";
-            this.Text = "メニュー一覧";
             this.tbcntMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

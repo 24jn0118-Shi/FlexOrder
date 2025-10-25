@@ -43,24 +43,28 @@
             resources.ApplyResources(this.btnRussian, "btnRussian");
             this.btnRussian.Name = "btnRussian";
             this.btnRussian.UseVisualStyleBackColor = true;
+            this.btnRussian.Click += new System.EventHandler(this.btnRussian_Click);
             // 
             // btnChinese
             // 
             resources.ApplyResources(this.btnChinese, "btnChinese");
             this.btnChinese.Name = "btnChinese";
             this.btnChinese.UseVisualStyleBackColor = true;
+            this.btnChinese.Click += new System.EventHandler(this.btnChinese_Click);
             // 
             // btnEnglish
             // 
             resources.ApplyResources(this.btnEnglish, "btnEnglish");
             this.btnEnglish.Name = "btnEnglish";
             this.btnEnglish.UseVisualStyleBackColor = true;
+            this.btnEnglish.Click += new System.EventHandler(this.btnEnglish_Click);
             // 
             // btnJapanese
             // 
             resources.ApplyResources(this.btnJapanese, "btnJapanese");
             this.btnJapanese.Name = "btnJapanese";
             this.btnJapanese.UseVisualStyleBackColor = true;
+            this.btnJapanese.Click += new System.EventHandler(this.btnJapanese_Click);
             // 
             // btnTakeout
             // 
@@ -92,6 +96,7 @@
             this.Controls.Add(this.btnChinese);
             this.Controls.Add(this.btnRussian);
             this.Name = "FrmCIndex";
+            this.Load += new System.EventHandler(this.FrmCIndex_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,7 +17,7 @@ namespace FlexOrder
             InitializeComponent();
         }
 
-        private void btnEnd_Click(object sender, EventArgs e)
+        private void btnRestart_Click(object sender, EventArgs e)
         {
             Application.Restart();
             Environment.Exit(0);

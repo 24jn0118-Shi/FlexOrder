@@ -117,23 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnTakeout.Text" xml:space="preserve">
-    <value>お持ち帰り</value>
-  </data>
-  <data name="btnDinein.Text" xml:space="preserve">
-    <value>店内でのご利用</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblWelcome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>405, 126</value>
+  <data name="tbpageClass1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
   </data>
-  <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 35</value>
+  <data name="tbpageClass1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
   </data>
-  <data name="lblWelcome.Text" xml:space="preserve">
-    <value>いらっしゃいませ</value>
+  <data name="tbpageClass2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>トップページ</value>
+  <data name="tbpageClass2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="tbpageClass3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="tbpageClass3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="tbpageClass4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="tbpageClass4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name=".Text" xml:space="preserve">
+    <value>Yen</value>
   </data>
 </root>

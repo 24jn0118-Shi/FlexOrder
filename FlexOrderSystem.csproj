@@ -104,12 +104,42 @@
     <Compile Include="FrmTempStart.Designer.cs">
       <DependentUpon>FrmTempStart.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductItem.Designer.cs">
+      <DependentUpon>ProductItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCCart.en.resx">
+      <DependentUpon>FrmCCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCCart.ja.resx">
+      <DependentUpon>FrmCCart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCCart.resx">
       <DependentUpon>FrmCCart.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCCart.ru.resx">
+      <DependentUpon>FrmCCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCCart.zh.resx">
+      <DependentUpon>FrmCCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCEnd.en.resx">
+      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCEnd.ja.resx">
+      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCEnd.resx">
+      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCEnd.ru.resx">
+      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCEnd.zh.resx">
       <DependentUpon>FrmCEnd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCIndex.en.resx">
@@ -128,10 +158,34 @@
     <EmbeddedResource Include="FrmCIndex.zh.resx">
       <DependentUpon>FrmCIndex.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCMenu.en.resx">
+      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCMenu.ja.resx">
+      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCMenu.resx">
       <DependentUpon>FrmCMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCMenu.ru.resx">
+      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCMenu.zh.resx">
+      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCPayment.en.resx">
+      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCPayment.ja.resx">
+      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCPayment.resx">
+      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCPayment.ru.resx">
+      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCPayment.zh.resx">
       <DependentUpon>FrmCPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSLogin.resx">
@@ -145,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTempStart.resx">
       <DependentUpon>FrmTempStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductItem.resx">
+      <DependentUpon>ProductItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testimage1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

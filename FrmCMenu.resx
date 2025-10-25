@@ -117,4 +117,478 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1067, 562</value>
+  </data>
+  <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 15</value>
+  </data>
+  <data name="tbcntMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 28</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
+    <value>btnBack</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass2.Name" xml:space="preserve">
+    <value>tbpageClass2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tbcntMenu.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;txtKaikei.Name" xml:space="preserve">
+    <value>txtKaikei</value>
+  </data>
+  <data name="tbpageClass4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblen.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 9pt</value>
+  </data>
+  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="tbpageClass2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>btnBack</value>
+  </data>
+  <data name="lblTotal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="btnVeget.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 62</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 62</value>
+  </data>
+  <data name="tbpageClass4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="&gt;&gt;lblen.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;txtKaikei.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblTotal.Text" xml:space="preserve">
+    <value>lblTotal</value>
+  </data>
+  <data name="&gt;&gt;lblCart.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblCart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>888, 38</value>
+  </data>
+  <data name="tbpageClass1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tbpagePop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tbpageClass1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass1.Parent" xml:space="preserve">
+    <value>tbcntMenu</value>
+  </data>
+  <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 22</value>
+  </data>
+  <data name="&gt;&gt;orderlist.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbpageClass4.Text" xml:space="preserve">
+    <value>商品分類4</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnVeget.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnReset.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 16pt</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.Name" xml:space="preserve">
+    <value>btnConfirm</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblen.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbpageClass2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtKaikei.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 62</value>
+  </data>
+  <data name="lblCart.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>btnConfirm</value>
+  </data>
+  <data name="&gt;&gt;txtKaikei.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbpagePop.Parent" xml:space="preserve">
+    <value>tbcntMenu</value>
+  </data>
+  <data name="lblTotal.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbcntMenu.Name" xml:space="preserve">
+    <value>tbcntMenu</value>
+  </data>
+  <data name="tbpageClass4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass4.Parent" xml:space="preserve">
+    <value>tbcntMenu</value>
+  </data>
+  <data name="btnVeget.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 485</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FrmCMenu</value>
+  </data>
+  <data name="lblen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value>↺</value>
+  </data>
+  <data name="btnVeget.Text" xml:space="preserve">
+    <value>btnVeget</value>
+  </data>
+  <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 38</value>
+  </data>
+  <data name="&gt;&gt;lblen.Name" xml:space="preserve">
+    <value>lblen</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tbpageClass3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FrmCMenu</value>
+  </data>
+  <data name="&gt;&gt;lblTotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblCart.Text" xml:space="preserve">
+    <value>lblCart</value>
+  </data>
+  <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="lblCart.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblCart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="lblen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>22, 15</value>
+  </data>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnReset.Name" xml:space="preserve">
+    <value>btnReset</value>
+  </data>
+  <data name="tbpageClass4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="tbpageClass3.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnVeget.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>857, 485</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass3.Parent" xml:space="preserve">
+    <value>tbcntMenu</value>
+  </data>
+  <data name="tbcntMenu.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="orderlist.Location" type="System.Drawing.Point, System.Drawing">
+    <value>872, 74</value>
+  </data>
+  <data name="&gt;&gt;tbpagePop.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbcntMenu.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass4.Name" xml:space="preserve">
+    <value>tbpageClass4</value>
+  </data>
+  <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnConfirm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 15</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbpageClass4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblCart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 27</value>
+  </data>
+  <data name="&gt;&gt;lblCart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tbpageClass2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tbcntMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 25</value>
+  </data>
+  <data name="lblCart.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="orderlist.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass1.Name" xml:space="preserve">
+    <value>tbpageClass1</value>
+  </data>
+  <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 13pt</value>
+  </data>
+  <data name="&gt;&gt;txtKaikei.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnVeget.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtKaikei.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tbpageClass2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="&gt;&gt;lblen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbpageClass3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>733, 398</value>
+  </data>
+  <data name="&gt;&gt;orderlist.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbpageClass1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 485</value>
+  </data>
+  <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="tbpageClass3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;orderlist.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass3.Name" xml:space="preserve">
+    <value>tbpageClass3</value>
+  </data>
+  <data name="btnVeget.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;orderlist.Name" xml:space="preserve">
+    <value>orderlist</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="lblen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1043, 419</value>
+  </data>
+  <data name="tbpagePop.Text" xml:space="preserve">
+    <value>おすすめ</value>
+  </data>
+  <data name="&gt;&gt;tbpagePop.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name=".Text" xml:space="preserve">
+    <value>lblen</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbpageClass3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="btnBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="orderlist.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="tbpagePop.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tbpageClass2.Text" xml:space="preserve">
+    <value>商品分類2</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass2.Parent" xml:space="preserve">
+    <value>tbcntMenu</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tbpagePop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="tbcntMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>763, 406</value>
+  </data>
+  <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>853, 411</value>
+  </data>
+  <data name="orderlist.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="&gt;&gt;lblCart.Name" xml:space="preserve">
+    <value>lblCart</value>
+  </data>
+  <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
+    <value>967, 410</value>
+  </data>
+  <data name="&gt;&gt;btnVeget.Name" xml:space="preserve">
+    <value>btnVeget</value>
+  </data>
+  <data name="&gt;&gt;lblTotal.Name" xml:space="preserve">
+    <value>lblTotal</value>
+  </data>
+  <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblTotal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbpagePop.Name" xml:space="preserve">
+    <value>tbpagePop</value>
+  </data>
+  <data name="&gt;&gt;tbcntMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tbpageClass2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="lblen.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="tbpageClass1.Text" xml:space="preserve">
+    <value>商品分類1</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnVeget.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbcntMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbpageClass4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbpageClass3.Text" xml:space="preserve">
+    <value>商品分類3</value>
+  </data>
+  <data name="orderlist.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 319</value>
+  </data>
+  <data name="&gt;&gt;lblen.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tbpageClass1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tbpageClass1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 4</value>
+  </data>
+  <data name="&gt;&gt;btnVeget.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblCart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
 </root>
