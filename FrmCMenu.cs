@@ -66,13 +66,13 @@ namespace FlexOrder
             ProductItem product1 = new ProductItem();
             product1.ProductTitle = "Pizza";
             product1.ProductPrice = "¥ 500";
-            product1.ProductImage = Image.FromFile(@"C:\Sky\JEC Folder\FlexOrder\pizza.jpg");
+            product1.ProductImage = global::FlexOrder.Properties.Resources.pizza;
             flowLayoutPanelMenu.Controls.Add(product1);
 
             ProductItem product2 = new ProductItem();
             product2.ProductTitle = "Icecream";
             product2.ProductPrice = "¥ 250";
-            product2.ProductImage = Image.FromFile(@"C:\Sky\JEC Folder\FlexOrder\ice_cream.jpg");
+            product2.ProductImage = global::FlexOrder.Properties.Resources.ice_cream;
             flowLayoutPanelMenu.Controls.Add(product2);
         }
     }
