@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmSStaffManager
+    partial class Frm_S_StaffManagement
     {
         /// <summary>
         /// Required designer variable.

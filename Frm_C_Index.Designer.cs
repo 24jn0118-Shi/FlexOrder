@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmCIndex
+    partial class Frm_C_Index
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCIndex));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Index));
             this.btnRussian = new System.Windows.Forms.Button();
             this.btnChinese = new System.Windows.Forms.Button();
             this.btnEnglish = new System.Windows.Forms.Button();

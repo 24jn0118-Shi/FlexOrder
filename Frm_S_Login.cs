@@ -13,9 +13,9 @@ using FlexOrderLibrary;
 
 namespace FlexOrder
 {
-    public partial class FrmSLogin : Form
+    public partial class Frm_S_Login : Form
     {
-        public FrmSLogin()
+        public Frm_S_Login()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace FlexOrder
                 //Login成功なら
                 if (stafftable.Login(useridInt, txbPassword.Text))
                 {
-                FrmSMainmenu form = new FrmSMainmenu();
+                Frm_S_Mainmenu form = new Frm_S_Mainmenu();
                 form.ShowDialog();
                 }
                 else 

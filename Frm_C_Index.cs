@@ -12,16 +12,16 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmCIndex : Form
+    public partial class Frm_C_Index : Form
     {
-        public FrmCIndex()
+        public Frm_C_Index()
         {
             InitializeComponent();
         }
 
         private void btnDinein_Click(object sender, EventArgs e)
         {
-            FrmCMenu form = new FrmCMenu();
+            Frm_C_Menu form = new Frm_C_Menu();
             form.ShowDialog();
         }
 
@@ -33,7 +33,7 @@ namespace FlexOrder
 
         private void ApplyResources(Control control, string cultureName)
         {
-            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(typeof(FrmCIndex));
+            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(typeof(Frm_C_Index));
 
             foreach (System.ComponentModel.PropertyDescriptor pd in System.ComponentModel.TypeDescriptor.GetProperties(control))
             {

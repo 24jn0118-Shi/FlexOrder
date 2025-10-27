@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmCEnd : Form
+    public partial class Frm_S_SalesEdit : Form
     {
-        public FrmCEnd()
+        public Frm_S_SalesEdit()
         {
             InitializeComponent();
-        }
-
-        private void btnRestart_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-            Environment.Exit(0);
         }
     }
 }

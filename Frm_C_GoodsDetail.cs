@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmSStaffEdit : Form
+    public partial class Frm_C_GoodsDetail : Form
     {
-        public FrmSStaffEdit()
+        public Frm_C_GoodsDetail()
         {
             InitializeComponent();
         }

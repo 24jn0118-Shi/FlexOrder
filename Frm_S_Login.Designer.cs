@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmSLogin
+    partial class Frm_S_Login
     {
         /// <summary>
         /// Required designer variable.

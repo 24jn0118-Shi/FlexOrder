@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmCPayment
+    partial class Frm_C_Payment
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCPayment));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Payment));
             this.btnEMoney = new System.Windows.Forms.Button();
             this.btnCreditCard = new System.Windows.Forms.Button();
             this.btnCash = new System.Windows.Forms.Button();

@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmSMainmenu
+    partial class Frm_S_Mainmenu
     {
         /// <summary>
         /// Required designer variable.

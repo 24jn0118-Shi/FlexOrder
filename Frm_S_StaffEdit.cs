@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmSMainmenu : Form
+    public partial class Frm_S_StaffEdit : Form
     {
-        public FrmSMainmenu()
+        public Frm_S_StaffEdit()
         {
             InitializeComponent();
-        }
-
-        private void btnEmployeeManagement_Click(object sender, EventArgs e)
-        {
-            FrmSStaffManager frmSStaffManager = new FrmSStaffManager();
-            frmSStaffManager.ShowDialog(this);
         }
     }
 }

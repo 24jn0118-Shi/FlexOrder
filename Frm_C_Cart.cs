@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmCCart : Form
+    public partial class Frm_C_Cart : Form
     {
-        public FrmCCart()
+        public Frm_C_Cart()
         {
             InitializeComponent();
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            FrmCPayment form = new FrmCPayment();
+            Frm_C_Payment form = new Frm_C_Payment();
             form.ShowDialog();
         }
 

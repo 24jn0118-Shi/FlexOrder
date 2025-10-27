@@ -10,22 +10,17 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmCPayment : Form
+    public partial class Frm_S_StaffManagement : Form
     {
-        public FrmCPayment()
+        public Frm_S_StaffManagement()
         {
             InitializeComponent();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnCash_Click(object sender, EventArgs e)
-        {
-            FrmCEnd form = new FrmCEnd();
-            form.ShowDialog();
+            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit();
+            frmSStaffEdit.ShowDialog();
         }
     }
 }

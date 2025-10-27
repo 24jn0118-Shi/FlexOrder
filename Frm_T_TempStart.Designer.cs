@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmTempStart
+    partial class Frm_T_TempStart
     {
         /// <summary>
         /// 必要なデザイナー変数です。

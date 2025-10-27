@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FlexOrder
 {
-    public partial class FrmCMenu : Form
+    public partial class Frm_C_Menu : Form
     {
-        public FrmCMenu()
+        public Frm_C_Menu()
         {
             InitializeComponent();
             SetupCustomTabs();
@@ -47,7 +47,7 @@ namespace FlexOrder
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            FrmCCart form = new FrmCCart();
+            Frm_C_Cart form = new Frm_C_Cart();
             form.ShowDialog();
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace FlexOrder
 {
-    partial class FrmCEnd
+    partial class Frm_C_End
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCEnd));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_End));
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblEnd1 = new System.Windows.Forms.Label();
             this.lblEnd2 = new System.Windows.Forms.Label();

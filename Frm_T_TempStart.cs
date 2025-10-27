@@ -11,9 +11,9 @@ using System.Windows.Forms;
 namespace FlexOrder
 {
     
-    public partial class FrmTempStart : Form
+    public partial class Frm_T_TempStart : Form
     {
-        public FrmTempStart()
+        public Frm_T_TempStart()
         {
             InitializeComponent();
             lblWelcome.Text = "FlexOrderアプリケーションの実装時に、\n" +
@@ -29,13 +29,13 @@ namespace FlexOrder
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            FrmCIndex form = new FrmCIndex();
+            Frm_C_Index form = new Frm_C_Index();
             form.ShowDialog();
         }
 
         private void btnShop_Click(object sender, EventArgs e)
         {
-            FrmSLogin form = new FrmSLogin();
+            Frm_S_Login form = new Frm_S_Login();
             form.ShowDialog();
         }
     }
