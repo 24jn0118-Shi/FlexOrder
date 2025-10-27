@@ -32,19 +32,20 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnGoPay = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tboxTotalPrice = new System.Windows.Forms.TextBox();
             this.lblYen = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
+            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.goods_image,
@@ -70,26 +71,6 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // goods_image
-            // 
-            resources.ApplyResources(this.goods_image, "goods_image");
-            this.goods_image.Name = "goods_image";
-            // 
-            // goods_name
-            // 
-            resources.ApplyResources(this.goods_name, "goods_name");
-            this.goods_name.Name = "goods_name";
-            // 
-            // sale_num
-            // 
-            resources.ApplyResources(this.sale_num, "sale_num");
-            this.sale_num.Name = "sale_num";
-            // 
-            // goods_price
-            // 
-            resources.ApplyResources(this.goods_price, "goods_price");
-            this.goods_price.Name = "goods_price";
-            // 
             // lblTotalPrice
             // 
             resources.ApplyResources(this.lblTotalPrice, "lblTotalPrice");
@@ -111,6 +92,26 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
+            // goods_image
+            // 
+            resources.ApplyResources(this.goods_image, "goods_image");
+            this.goods_image.Name = "goods_image";
+            // 
+            // goods_name
+            // 
+            resources.ApplyResources(this.goods_name, "goods_name");
+            this.goods_name.Name = "goods_name";
+            // 
+            // sale_num
+            // 
+            resources.ApplyResources(this.sale_num, "sale_num");
+            this.sale_num.Name = "sale_num";
+            // 
+            // goods_price
+            // 
+            resources.ApplyResources(this.goods_price, "goods_price");
+            this.goods_price.Name = "goods_price";
+            // 
             // FrmCCart
             // 
             resources.ApplyResources(this, "$this");
@@ -123,6 +124,7 @@
             this.Controls.Add(this.btnGoPay);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmCCart";
+            this.Load += new System.EventHandler(this.FrmCCart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -134,13 +136,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnGoPay;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridViewImageColumn goods_image;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sale_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TextBox tboxTotalPrice;
         private System.Windows.Forms.Label lblYen;
         private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DataGridViewImageColumn goods_image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sale_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
     }
 }
