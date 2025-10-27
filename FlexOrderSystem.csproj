@@ -56,6 +56,11 @@
     <Compile Include="FrmCCart.Designer.cs">
       <DependentUpon>FrmCCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCCart1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FrmCCart.resx</DependentUpon>
+    </Compile>
     <Compile Include="FrmCEnd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,11 +97,23 @@
     <Compile Include="FrmSMainmenu.Designer.cs">
       <DependentUpon>FrmSMainmenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSOrderManagement.cs">
+    <Compile Include="FrmSOrderManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSOrderManagement.Designer.cs">
-      <DependentUpon>FrmSOrderManagement.cs</DependentUpon>
+    <Compile Include="FrmSOrderManager.Designer.cs">
+      <DependentUpon>FrmSOrderManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSStaffEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSStaffEdit.Designer.cs">
+      <DependentUpon>FrmSStaffEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSStaffManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSStaffManager.Designer.cs">
+      <DependentUpon>FrmSStaffManager.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTempStart.cs">
       <SubType>Form</SubType>
@@ -120,6 +137,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCCart.resx">
       <DependentUpon>FrmCCart.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FrmCCart1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCCart.ru.resx">
       <DependentUpon>FrmCCart.cs</DependentUpon>
@@ -194,8 +213,14 @@
     <EmbeddedResource Include="FrmSMainmenu.resx">
       <DependentUpon>FrmSMainmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSOrderManagement.resx">
-      <DependentUpon>FrmSOrderManagement.cs</DependentUpon>
+    <EmbeddedResource Include="FrmSOrderManager.resx">
+      <DependentUpon>FrmSOrderManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSStaffEdit.resx">
+      <DependentUpon>FrmSStaffEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSStaffManager.resx">
+      <DependentUpon>FrmSStaffManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTempStart.resx">
       <DependentUpon>FrmTempStart.cs</DependentUpon>

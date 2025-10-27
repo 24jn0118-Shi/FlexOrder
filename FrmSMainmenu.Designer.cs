@@ -43,6 +43,7 @@
             this.btnEmployeeManagement.TabIndex = 0;
             this.btnEmployeeManagement.Text = "店員管理";
             this.btnEmployeeManagement.UseVisualStyleBackColor = true;
+            this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
             // 
             // btnOrderManagement
             // 
