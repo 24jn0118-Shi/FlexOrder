@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace FlexOrder
 {
     public partial class Frm_S_Mainmenu : Form
     {
-        public Frm_S_Mainmenu()
+        Staff staff;
+        public Frm_S_Mainmenu(Staff staff)
         {
             InitializeComponent();
+            this.staff = staff;
+            if (staff.is_manager) 
+            {
+                btnEmployeeManagement.Enabled = true;
+                btnSalesStatistics.Enabled = true;
+            }
         }
 
         private void btnEmployeeManagement_Click(object sender, EventArgs e)

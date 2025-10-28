@@ -23,9 +23,9 @@ namespace FlexOrderLibrary
                 return sb.ToString();
             }
         }
-        public bool Login(int staff_id,string pass)
+        public Staff Login(int staff_id,string pass)
         {
-            bool check = false;
+            Staff staff = null;
 
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -40,11 +40,19 @@ namespace FlexOrderLibrary
                 if (cnt == 1)
                 {
                     string correctpw = table.Rows[0]["staff_password"].ToString();
-                    check = correctpw == ComputeSha256Hex(pass);
+                    if(correctpw == ComputeSha256Hex(pass)) 
+                    {
+                        staff = new Staff();
+                        staff.staff_id = int.Parse(table.Rows[0]["staff_id"].ToString());
+                        staff.staff_lastname = table.Rows[0]["staff_lastname"].ToString();
+                        staff.staff_firstname = table.Rows[0]["staff_firstname"].ToString();
+                        staff.is_manager = bool.Parse(table.Rows[0]["is_manager"].ToString());
+                    }
+                    
                 }
             }
 
-            return check;
+            return staff;
         }
         public Staff GetStaffByStaffid(int staff_id)
         {

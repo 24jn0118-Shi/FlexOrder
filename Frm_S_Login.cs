@@ -46,11 +46,11 @@ namespace FlexOrder
             }
             else {
                 StaffTable stafftable = new StaffTable();
-                
+                Staff staff = stafftable.Login(useridInt, txbPassword.Text);
                 //Login成功なら
-                if (stafftable.Login(useridInt, txbPassword.Text))
+                if (staff!=null)
                 {
-                Frm_S_Mainmenu form = new Frm_S_Mainmenu();
+                Frm_S_Mainmenu form = new Frm_S_Mainmenu(staff);
                 form.ShowDialog();
                 }
                 else 
