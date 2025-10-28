@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Cart));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGoPay = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tboxTotalPrice = new System.Windows.Forms.TextBox();
             this.lblYen = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
+            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,31 +56,7 @@
             resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 21;
-            // 
-            // goods_image
-            // 
-            resources.ApplyResources(this.goods_image, "goods_image");
-            this.goods_image.Name = "goods_image";
-            this.goods_image.ReadOnly = true;
-            // 
-            // goods_name
-            // 
-            resources.ApplyResources(this.goods_name, "goods_name");
-            this.goods_name.Name = "goods_name";
-            this.goods_name.ReadOnly = true;
-            // 
-            // sale_num
-            // 
-            resources.ApplyResources(this.sale_num, "sale_num");
-            this.sale_num.Name = "sale_num";
-            this.sale_num.ReadOnly = true;
-            // 
-            // goods_price
-            // 
-            resources.ApplyResources(this.goods_price, "goods_price");
-            this.goods_price.Name = "goods_price";
-            this.goods_price.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 50;
             // 
             // btnGoPay
             // 
@@ -116,6 +92,31 @@
             resources.ApplyResources(this.btnReset, "btnReset");
             this.btnReset.Name = "btnReset";
             this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // goods_image
+            // 
+            this.goods_image.FillWeight = 140F;
+            resources.ApplyResources(this.goods_image, "goods_image");
+            this.goods_image.Name = "goods_image";
+            this.goods_image.ReadOnly = true;
+            // 
+            // goods_name
+            // 
+            resources.ApplyResources(this.goods_name, "goods_name");
+            this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
+            // 
+            // sale_num
+            // 
+            resources.ApplyResources(this.sale_num, "sale_num");
+            this.sale_num.Name = "sale_num";
+            this.sale_num.ReadOnly = true;
+            // 
+            // goods_price
+            // 
+            resources.ApplyResources(this.goods_price, "goods_price");
+            this.goods_price.Name = "goods_price";
+            this.goods_price.ReadOnly = true;
             // 
             // Frm_C_Cart
             // 

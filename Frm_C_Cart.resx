@@ -128,7 +128,7 @@
     <value>6</value>
   </data>
   <data name="goods_image.Width" type="System.Int32, mscorlib">
-    <value>140</value>
+    <value>150</value>
   </data>
   <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -151,9 +151,6 @@
   <data name="sale_num.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="sale_num.Width" type="System.Int32, mscorlib">
-    <value>140</value>
-  </data>
   <metadata name="goods_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -168,17 +165,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 15</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dataGridView1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>113, 12</value>
   </data>
   <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>819, 371</value>
+    <value>614, 297</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -199,13 +192,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>861, 452</value>
-  </data>
-  <data name="btnGoPay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>646, 362</value>
   </data>
   <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 75</value>
+    <value>114, 60</value>
   </data>
   <data name="btnGoPay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -229,13 +219,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 452</value>
-  </data>
-  <data name="btnBack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>32, 362</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 75</value>
+    <value>114, 60</value>
   </data>
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -262,13 +249,10 @@
     <value>MS UI Gothic, 16pt</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>653, 408</value>
-  </data>
-  <data name="lblTotalPrice.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>490, 326</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 27</value>
+    <value>98, 22</value>
   </data>
   <data name="lblTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -292,13 +276,10 @@
     <value>False</value>
   </data>
   <data name="tboxTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>836, 415</value>
-  </data>
-  <data name="tboxTotalPrice.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>627, 332</value>
   </data>
   <data name="tboxTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 25</value>
+    <value>100, 19</value>
   </data>
   <data name="tboxTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -322,13 +303,10 @@
     <value>MS UI Gothic, 12pt</value>
   </data>
   <data name="lblYen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>808, 415</value>
-  </data>
-  <data name="lblYen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>606, 332</value>
   </data>
   <data name="lblYen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 20</value>
+    <value>15, 16</value>
   </data>
   <data name="lblYen.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -352,13 +330,10 @@
     <value>MS UI Gothic, 16pt</value>
   </data>
   <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 15</value>
-  </data>
-  <data name="btnReset.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>32, 12</value>
   </data>
   <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 49</value>
+    <value>41, 39</value>
   </data>
   <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -382,16 +357,13 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 15</value>
+    <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1067, 562</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>800, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>FrmCMenu</value>
+    <value>Frm_C_Cart</value>
   </data>
   <data name="&gt;&gt;goods_image.Name" xml:space="preserve">
     <value>goods_image</value>
