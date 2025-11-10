@@ -30,10 +30,10 @@ namespace FlexOrder
 
         private void FrmCCart_Load(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            dgvCart.Rows.Clear();
 
-            dataGridView1.Rows.Add(Properties.Resources.pizza, "Pizza", 2, "1000");
-            dataGridView1.Rows.Add(Properties.Resources.ice_cream, "Ice-Cream", 1, "250");
+            dgvCart.Rows.Add(Properties.Resources.pizza, "Pizza", 2, "1000");
+            dgvCart.Rows.Add(Properties.Resources.ice_cream, "Ice-Cream", 1, "250");
             
             tboxTotalPrice.Text = "1250";
         }

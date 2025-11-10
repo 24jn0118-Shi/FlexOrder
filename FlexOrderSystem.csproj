@@ -56,6 +56,11 @@
     <Compile Include="Frm_C_Cart.Designer.cs">
       <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_C_Cart1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Frm_C_Cart.resx</DependentUpon>
+    </Compile>
     <Compile Include="Frm_C_GoodsDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +248,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_Mainmenu.resx">
       <DependentUpon>Frm_S_Mainmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_MenuEdit.resx">
+      <DependentUpon>Frm_S_MenuEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_MenuManagement.resx">
+      <DependentUpon>Frm_S_MenuManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_OrderEdit.resx">
+      <DependentUpon>Frm_S_OrderEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_OrderManagement.resx">
       <DependentUpon>Frm_S_OrderManagement.cs</DependentUpon>

@@ -29,34 +29,59 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Cart));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGoPay = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tboxTotalPrice = new System.Windows.Forms.TextBox();
             this.lblYen = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
-            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvCart
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCart.AllowUserToAddRows = false;
+            this.dgvCart.AllowUserToDeleteRows = false;
+            this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.goods_image,
             this.goods_name,
             this.sale_num,
             this.goods_price});
-            resources.ApplyResources(this.dataGridView1, "dataGridView1");
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 50;
+            resources.ApplyResources(this.dgvCart, "dgvCart");
+            this.dgvCart.Name = "dgvCart";
+            this.dgvCart.ReadOnly = true;
+            this.dgvCart.RowTemplate.Height = 50;
+            // 
+            // goods_image
+            // 
+            this.goods_image.FillWeight = 140F;
+            resources.ApplyResources(this.goods_image, "goods_image");
+            this.goods_image.Name = "goods_image";
+            this.goods_image.ReadOnly = true;
+            // 
+            // goods_name
+            // 
+            resources.ApplyResources(this.goods_name, "goods_name");
+            this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
+            // 
+            // sale_num
+            // 
+            resources.ApplyResources(this.sale_num, "sale_num");
+            this.sale_num.Name = "sale_num";
+            this.sale_num.ReadOnly = true;
+            // 
+            // goods_price
+            // 
+            resources.ApplyResources(this.goods_price, "goods_price");
+            this.goods_price.Name = "goods_price";
+            this.goods_price.ReadOnly = true;
             // 
             // btnGoPay
             // 
@@ -93,31 +118,6 @@
             this.btnReset.Name = "btnReset";
             this.btnReset.UseVisualStyleBackColor = true;
             // 
-            // goods_image
-            // 
-            this.goods_image.FillWeight = 140F;
-            resources.ApplyResources(this.goods_image, "goods_image");
-            this.goods_image.Name = "goods_image";
-            this.goods_image.ReadOnly = true;
-            // 
-            // goods_name
-            // 
-            resources.ApplyResources(this.goods_name, "goods_name");
-            this.goods_name.Name = "goods_name";
-            this.goods_name.ReadOnly = true;
-            // 
-            // sale_num
-            // 
-            resources.ApplyResources(this.sale_num, "sale_num");
-            this.sale_num.Name = "sale_num";
-            this.sale_num.ReadOnly = true;
-            // 
-            // goods_price
-            // 
-            resources.ApplyResources(this.goods_price, "goods_price");
-            this.goods_price.Name = "goods_price";
-            this.goods_price.ReadOnly = true;
-            // 
             // Frm_C_Cart
             // 
             resources.ApplyResources(this, "$this");
@@ -128,10 +128,10 @@
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnGoPay);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCart);
             this.Name = "Frm_C_Cart";
             this.Load += new System.EventHandler(this.FrmCCart_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,7 +139,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCart;
         private System.Windows.Forms.Button btnGoPay;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTotalPrice;
