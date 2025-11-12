@@ -56,11 +56,6 @@
     <Compile Include="Frm_C_Cart.Designer.cs">
       <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_C_Cart1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Frm_C_Cart.resx</DependentUpon>
-    </Compile>
     <Compile Include="Frm_C_GoodsDetail.cs">
       <SubType>Form</SubType>
     </Compile>
