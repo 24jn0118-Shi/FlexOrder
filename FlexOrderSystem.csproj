@@ -116,6 +116,12 @@
     <Compile Include="Frm_S_MenuManagement.Designer.cs">
       <DependentUpon>Frm_S_MenuManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_S_MenuMultilingual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_MenuMultilingual.Designer.cs">
+      <DependentUpon>Frm_S_MenuMultilingual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_S_OrderEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     <EmbeddedResource Include="Frm_C_End.zh.resx">
       <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Index.en.resx">
       <DependentUpon>Frm_C_Index.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +247,9 @@
     <EmbeddedResource Include="Frm_C_Payment.zh.resx">
       <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_GoodsGroupManagement.resx">
+      <DependentUpon>Frm_S_GoodsGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_Login.resx">
       <DependentUpon>Frm_S_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_MenuManagement.resx">
       <DependentUpon>Frm_S_MenuManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_MenuMultilingual.resx">
+      <DependentUpon>Frm_S_MenuMultilingual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_OrderEdit.resx">
       <DependentUpon>Frm_S_OrderEdit.cs</DependentUpon>
