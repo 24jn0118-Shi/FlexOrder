@@ -246,13 +246,13 @@
     <value>True</value>
   </data>
   <data name="lblTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 16pt</value>
+    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
     <value>490, 326</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
+    <value>82, 21</value>
   </data>
   <data name="lblTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -275,11 +275,14 @@
   <data name="tboxTotalPrice.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="tboxTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
   <data name="tboxTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>627, 332</value>
+    <value>627, 323</value>
   </data>
   <data name="tboxTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 19</value>
+    <value>100, 28</value>
   </data>
   <data name="tboxTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -300,19 +303,19 @@
     <value>True</value>
   </data>
   <data name="lblYen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 12pt</value>
+    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblYen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>606, 332</value>
+    <value>595, 326</value>
   </data>
   <data name="lblYen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 16</value>
+    <value>26, 21</value>
   </data>
   <data name="lblYen.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lblYen.Text" xml:space="preserve">
-    <value>\</value>
+    <value>￥</value>
   </data>
   <data name="&gt;&gt;lblYen.Name" xml:space="preserve">
     <value>lblYen</value>

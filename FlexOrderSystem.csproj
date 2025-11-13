@@ -198,7 +198,19 @@
     <EmbeddedResource Include="Frm_C_End.zh.resx">
       <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.en.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.ja.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_GoodsDetail.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.ru.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.zh.resx">
       <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Index.en.resx">
@@ -270,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_OrderManagement.resx">
       <DependentUpon>Frm_S_OrderManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_SalesStatistics.resx">
+      <DependentUpon>Frm_S_SalesStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_StaffEdit.resx">
       <DependentUpon>Frm_S_StaffEdit.cs</DependentUpon>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_GoodsDetail));
             this.picGoods = new System.Windows.Forms.PictureBox();
             this.txtDetail = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -41,83 +42,53 @@
             // 
             // picGoods
             // 
-            this.picGoods.Location = new System.Drawing.Point(32, 23);
+            resources.ApplyResources(this.picGoods, "picGoods");
             this.picGoods.Name = "picGoods";
-            this.picGoods.Size = new System.Drawing.Size(478, 279);
-            this.picGoods.TabIndex = 0;
             this.picGoods.TabStop = false;
             // 
             // txtDetail
             // 
-            this.txtDetail.Location = new System.Drawing.Point(582, 23);
-            this.txtDetail.Multiline = true;
+            resources.ApplyResources(this.txtDetail, "txtDetail");
             this.txtDetail.Name = "txtDetail";
-            this.txtDetail.Size = new System.Drawing.Size(179, 216);
-            this.txtDetail.TabIndex = 1;
             // 
             // txtPrice
             // 
-            this.txtPrice.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.txtPrice.Location = new System.Drawing.Point(582, 273);
+            resources.ApplyResources(this.txtPrice, "txtPrice");
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(179, 29);
-            this.txtPrice.TabIndex = 2;
             // 
             // btnMin
             // 
-            this.btnMin.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.btnMin.Location = new System.Drawing.Point(229, 327);
+            resources.ApplyResources(this.btnMin, "btnMin");
             this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(46, 43);
-            this.btnMin.TabIndex = 3;
-            this.btnMin.Text = "-";
             this.btnMin.UseVisualStyleBackColor = true;
             // 
             // btnPuls
             // 
-            this.btnPuls.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.btnPuls.Location = new System.Drawing.Point(509, 327);
+            resources.ApplyResources(this.btnPuls, "btnPuls");
             this.btnPuls.Name = "btnPuls";
-            this.btnPuls.Size = new System.Drawing.Size(46, 43);
-            this.btnPuls.TabIndex = 4;
-            this.btnPuls.Text = "+";
             this.btnPuls.UseVisualStyleBackColor = true;
             // 
             // lblNum
             // 
-            this.lblNum.AutoSize = true;
-            this.lblNum.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.lblNum.Location = new System.Drawing.Point(368, 342);
+            resources.ApplyResources(this.lblNum, "lblNum");
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(51, 16);
-            this.lblNum.TabIndex = 5;
-            this.lblNum.Text = "lblNum";
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.btnBack.Location = new System.Drawing.Point(83, 376);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(182, 66);
-            this.btnBack.TabIndex = 6;
-            this.btnBack.Text = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
             // btnCart
             // 
-            this.btnCart.Font = new System.Drawing.Font("MS UI Gothic", 16F);
-            this.btnCart.Location = new System.Drawing.Point(538, 372);
+            resources.ApplyResources(this.btnCart, "btnCart");
             this.btnCart.Name = "btnCart";
-            this.btnCart.Size = new System.Drawing.Size(182, 66);
-            this.btnCart.TabIndex = 7;
-            this.btnCart.Text = "btnCart";
             this.btnCart.UseVisualStyleBackColor = true;
             // 
             // Frm_C_GoodsDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCart);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblNum);
@@ -127,7 +98,6 @@
             this.Controls.Add(this.txtDetail);
             this.Controls.Add(this.picGoods);
             this.Name = "Frm_C_GoodsDetail";
-            this.Text = "Frm_C_Detail";
             ((System.ComponentModel.ISupportInitialize)(this.picGoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

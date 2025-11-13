@@ -30,20 +30,21 @@
         {
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnHistory = new System.Windows.Forms.Button();
             this.sale_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sale_seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.is_provided = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
             // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(732, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 27);
@@ -65,42 +66,6 @@
             this.dgvOrder.RowTemplate.Height = 21;
             this.dgvOrder.Size = new System.Drawing.Size(543, 252);
             this.dgvOrder.TabIndex = 1;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(64, 333);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(103, 38);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "新規注文";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(257, 333);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(103, 38);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "注文の変更";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(469, 333);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(103, 38);
-            this.btnDel.TabIndex = 4;
-            this.btnDel.Text = "注文の削除";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.Location = new System.Drawing.Point(64, 400);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(103, 38);
-            this.btnHistory.TabIndex = 5;
-            this.btnHistory.Text = "過去注文ON";
-            this.btnHistory.UseVisualStyleBackColor = true;
             // 
             // sale_id
             // 
@@ -127,6 +92,46 @@
             this.is_provided.HeaderText = "注文状態";
             this.is_provided.Name = "is_provided";
             this.is_provided.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(64, 333);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(103, 38);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "新規注文";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(257, 333);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(103, 38);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "注文の変更";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(469, 333);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(103, 38);
+            this.btnDel.TabIndex = 4;
+            this.btnDel.Text = "注文の削除";
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistory.Location = new System.Drawing.Point(64, 400);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(103, 38);
+            this.btnHistory.TabIndex = 5;
+            this.btnHistory.Text = "過去注文ON";
+            this.btnHistory.UseVisualStyleBackColor = true;
             // 
             // Frm_S_OrderManagement
             // 

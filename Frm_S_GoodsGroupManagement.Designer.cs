@@ -47,6 +47,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.btnBack.Location = new System.Drawing.Point(696, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(92, 45);
@@ -57,9 +58,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 45);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.label1.Location = new System.Drawing.Point(38, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.Size = new System.Drawing.Size(106, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "現在分類一覧";
             // 
@@ -111,38 +113,43 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 353);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.label2.Location = new System.Drawing.Point(51, 353);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 12);
+            this.label2.Size = new System.Drawing.Size(158, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "追加する分類コード:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(90, 392);
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.label3.Location = new System.Drawing.Point(67, 392);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 12);
+            this.label3.Size = new System.Drawing.Size(142, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "分類名(日本語):";
+            this.label3.Text = "分類名（日本語）:";
             // 
             // txtGroupID
             // 
-            this.txtGroupID.Location = new System.Drawing.Point(199, 350);
+            this.txtGroupID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.txtGroupID.Location = new System.Drawing.Point(215, 350);
             this.txtGroupID.Name = "txtGroupID";
-            this.txtGroupID.Size = new System.Drawing.Size(100, 19);
+            this.txtGroupID.Size = new System.Drawing.Size(100, 28);
             this.txtGroupID.TabIndex = 5;
             // 
             // txtGroupName
             // 
-            this.txtGroupName.Location = new System.Drawing.Point(199, 389);
+            this.txtGroupName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.txtGroupName.Location = new System.Drawing.Point(215, 389);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(100, 19);
+            this.txtGroupName.Size = new System.Drawing.Size(100, 28);
             this.txtGroupName.TabIndex = 6;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(332, 361);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(348, 361);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(85, 43);
             this.btnAdd.TabIndex = 7;
@@ -151,12 +158,12 @@
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("MS UI Gothic", 12F);
-            this.btnSave.Location = new System.Drawing.Point(676, 374);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnSave.Location = new System.Drawing.Point(660, 374);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 64);
+            this.btnSave.Size = new System.Drawing.Size(128, 64);
             this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "上書き保存";
+            this.btnSave.Text = "多言語情報を上書き保存";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
             // Frm_S_GoodsGroupManagement

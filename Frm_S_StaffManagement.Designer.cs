@@ -41,9 +41,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(713, 12);
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(710, 12);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.Size = new System.Drawing.Size(78, 31);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -81,6 +82,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(57, 351);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 53);
@@ -91,6 +93,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(351, 351);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 53);
@@ -100,6 +103,7 @@
             // 
             // btnDel
             // 
+            this.btnDel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Location = new System.Drawing.Point(653, 351);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(90, 53);
@@ -107,7 +111,7 @@
             this.btnDel.Text = "削除";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // FrmSStaffManager
+            // Frm_S_StaffManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +121,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBack);
-            this.Name = "FrmSStaffManager";
+            this.Name = "Frm_S_StaffManagement";
             this.Text = "店員管理";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

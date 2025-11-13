@@ -44,6 +44,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(721, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 38);
@@ -93,6 +94,7 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(58, 313);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 50);
@@ -102,6 +104,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Location = new System.Drawing.Point(246, 313);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(100, 50);
@@ -111,15 +114,17 @@
             // 
             // btnGroupAdd
             // 
-            this.btnGroupAdd.Location = new System.Drawing.Point(440, 313);
+            this.btnGroupAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupAdd.Location = new System.Drawing.Point(428, 313);
             this.btnGroupAdd.Name = "btnGroupAdd";
-            this.btnGroupAdd.Size = new System.Drawing.Size(100, 50);
+            this.btnGroupAdd.Size = new System.Drawing.Size(123, 50);
             this.btnGroupAdd.TabIndex = 4;
             this.btnGroupAdd.Text = "商品分類追加";
             this.btnGroupAdd.UseVisualStyleBackColor = true;
             // 
             // btn
             // 
+            this.btn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn.Location = new System.Drawing.Point(626, 313);
             this.btn.Name = "btn";
             this.btn.Size = new System.Drawing.Size(100, 50);

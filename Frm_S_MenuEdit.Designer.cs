@@ -49,69 +49,76 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS UI Gothic", 14F);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 19);
+            this.label1.Size = new System.Drawing.Size(134, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "商品追加/編集";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 92);
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(55, 92);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 12);
+            this.label2.Size = new System.Drawing.Size(78, 21);
             this.label2.TabIndex = 1;
             this.label2.Text = "商品分類:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(46, 171);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 12);
+            this.label3.Size = new System.Drawing.Size(94, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "分類コード:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 259);
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(55, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 12);
+            this.label4.Size = new System.Drawing.Size(78, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "商品単価:";
             // 
             // cmbGroup
             // 
+            this.cmbGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGroup.FormattingEnabled = true;
-            this.cmbGroup.Location = new System.Drawing.Point(123, 89);
+            this.cmbGroup.Location = new System.Drawing.Point(139, 89);
             this.cmbGroup.Name = "cmbGroup";
-            this.cmbGroup.Size = new System.Drawing.Size(121, 20);
+            this.cmbGroup.Size = new System.Drawing.Size(121, 29);
             this.cmbGroup.TabIndex = 4;
             // 
             // txtCode
             // 
-            this.txtCode.Location = new System.Drawing.Point(123, 168);
+            this.txtCode.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Location = new System.Drawing.Point(139, 168);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(100, 19);
+            this.txtCode.Size = new System.Drawing.Size(100, 28);
             this.txtCode.TabIndex = 5;
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(123, 256);
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(139, 256);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 19);
+            this.txtPrice.Size = new System.Drawing.Size(100, 28);
             this.txtPrice.TabIndex = 6;
             // 
             // cboxRec
             // 
             this.cboxRec.AutoSize = true;
             this.cboxRec.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cboxRec.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxRec.Location = new System.Drawing.Point(51, 337);
             this.cboxRec.Name = "cboxRec";
-            this.cboxRec.Size = new System.Drawing.Size(64, 16);
+            this.cboxRec.Size = new System.Drawing.Size(93, 25);
             this.cboxRec.TabIndex = 7;
             this.cboxRec.Text = "おすすめ";
             this.cboxRec.UseVisualStyleBackColor = true;
@@ -120,9 +127,10 @@
             // 
             this.cboxVage.AutoSize = true;
             this.cboxVage.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cboxVage.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxVage.Location = new System.Drawing.Point(159, 337);
             this.cboxVage.Name = "cboxVage";
-            this.cboxVage.Size = new System.Drawing.Size(77, 16);
+            this.cboxVage.Size = new System.Drawing.Size(125, 25);
             this.cboxVage.TabIndex = 8;
             this.cboxVage.Text = "ベジタリアン";
             this.cboxVage.UseVisualStyleBackColor = true;
@@ -131,9 +139,10 @@
             // 
             this.cboxAva.AutoSize = true;
             this.cboxAva.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cboxAva.Location = new System.Drawing.Point(164, 393);
+            this.cboxAva.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxAva.Location = new System.Drawing.Point(191, 388);
             this.cboxAva.Name = "cboxAva";
-            this.cboxAva.Size = new System.Drawing.Size(72, 16);
+            this.cboxAva.Size = new System.Drawing.Size(93, 25);
             this.cboxAva.TabIndex = 9;
             this.cboxAva.Text = "商品在庫";
             this.cboxAva.UseVisualStyleBackColor = true;
@@ -149,15 +158,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(505, 212);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 11;
             this.label5.Text = "商品画像";
             // 
             // btnInputImage
             // 
-            this.btnInputImage.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.btnInputImage.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInputImage.Location = new System.Drawing.Point(491, 293);
             this.btnInputImage.Name = "btnInputImage";
             this.btnInputImage.Size = new System.Drawing.Size(85, 37);
@@ -167,6 +177,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Location = new System.Drawing.Point(713, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 38);
@@ -176,7 +187,7 @@
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(569, 370);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 58);

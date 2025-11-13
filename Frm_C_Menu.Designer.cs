@@ -153,7 +153,7 @@
             resources.ApplyResources(this.lblen, "lblen");
             this.lblen.Name = "lblen";
             // 
-            // FrmCMenu
+            // Frm_C_Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,7 +167,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.tbcntMenu);
-            this.Name = "FrmCMenu";
+            this.Name = "Frm_C_Menu";
             this.Load += new System.EventHandler(this.FrmCMenu_Load);
             this.tbcntMenu.ResumeLayout(false);
             this.tbpagePop.ResumeLayout(false);
