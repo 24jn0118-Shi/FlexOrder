@@ -120,4 +120,12 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value></value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="lblYen.Text" xml:space="preserve">
+    <value></value>
+    <comment>@Invariant</comment>
+  </data>
 </root>

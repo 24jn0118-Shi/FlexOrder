@@ -12,9 +12,36 @@ namespace FlexOrder
 {
     public partial class Frm_S_MenuMultilingual : Form
     {
-        public Frm_S_MenuMultilingual()
+        Form parent;
+        public Frm_S_MenuMultilingual(string type, Form parent)
         {
             InitializeComponent();
+            if (type == "Add")
+            {
+                lblTitle.Text = "商品追加";
+            }
+            else
+            if (type == "Edit")
+            {
+                lblTitle.Text = "商品編集";
+            }
+            this.parent = parent;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            parent.Close();
+            this.Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

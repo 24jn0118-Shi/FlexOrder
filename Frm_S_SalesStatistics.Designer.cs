@@ -28,33 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnExport = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_SalesStatistics));
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnExport
+            // label1
             // 
-            this.btnExport.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(586, 285);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(115, 67);
-            this.btnExport.TabIndex = 0;
-            this.btnExport.Text = "xlsxファイルエクスポート";
-            this.btnExport.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // Frm_S_SalesStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.label1);
             this.Name = "Frm_S_SalesStatistics";
-            this.Text = "Frm_S_SalesStatistics";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.Label label1;
     }
 }

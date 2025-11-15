@@ -28,169 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_StaffEdit));
             this.btnBack = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tboxID = new System.Windows.Forms.TextBox();
-            this.tboxLastname = new System.Windows.Forms.TextBox();
-            this.tboxFirstname = new System.Windows.Forms.TextBox();
-            this.tboxPass = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblLastname = new System.Windows.Forms.Label();
+            this.lblFirstname = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.txbID = new System.Windows.Forms.TextBox();
+            this.txbLastname = new System.Windows.Forms.TextBox();
+            this.txbFirstname = new System.Windows.Forms.TextBox();
+            this.txbPassword = new System.Windows.Forms.TextBox();
             this.rbtnStaff = new System.Windows.Forms.RadioButton();
             this.rbtnAdmin = new System.Windows.Forms.RadioButton();
-            this.btnConfirmed = new System.Windows.Forms.Button();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(695, 12);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(93, 36);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 28);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "店員追加/編集";
+            resources.ApplyResources(this.lblTitle, "lblTitle");
+            this.lblTitle.Name = "lblTitle";
             // 
-            // label2
+            // lblID
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(179, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "店員ID :";
+            resources.ApplyResources(this.lblID, "lblID");
+            this.lblID.Name = "lblID";
             // 
-            // label3
+            // lblLastname
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(205, 158);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 21);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "姓 :";
+            resources.ApplyResources(this.lblLastname, "lblLastname");
+            this.lblLastname.Name = "lblLastname";
             // 
-            // label4
+            // lblFirstname
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(205, 225);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 21);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "名 :";
+            resources.ApplyResources(this.lblFirstname, "lblFirstname");
+            this.lblFirstname.Name = "lblFirstname";
             // 
-            // label5
+            // lblPassword
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(164, 287);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 21);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "パスワード :";
+            resources.ApplyResources(this.lblPassword, "lblPassword");
+            this.lblPassword.Name = "lblPassword";
             // 
-            // tboxID
+            // txbID
             // 
-            this.tboxID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxID.Location = new System.Drawing.Point(349, 99);
-            this.tboxID.Name = "tboxID";
-            this.tboxID.Size = new System.Drawing.Size(208, 28);
-            this.tboxID.TabIndex = 6;
+            resources.ApplyResources(this.txbID, "txbID");
+            this.txbID.Name = "txbID";
             // 
-            // tboxLastname
+            // txbLastname
             // 
-            this.tboxLastname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxLastname.Location = new System.Drawing.Point(349, 156);
-            this.tboxLastname.Name = "tboxLastname";
-            this.tboxLastname.Size = new System.Drawing.Size(208, 28);
-            this.tboxLastname.TabIndex = 7;
+            resources.ApplyResources(this.txbLastname, "txbLastname");
+            this.txbLastname.Name = "txbLastname";
             // 
-            // tboxFirstname
+            // txbFirstname
             // 
-            this.tboxFirstname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxFirstname.Location = new System.Drawing.Point(349, 223);
-            this.tboxFirstname.Name = "tboxFirstname";
-            this.tboxFirstname.Size = new System.Drawing.Size(208, 28);
-            this.tboxFirstname.TabIndex = 8;
+            resources.ApplyResources(this.txbFirstname, "txbFirstname");
+            this.txbFirstname.Name = "txbFirstname";
             // 
-            // tboxPass
+            // txbPassword
             // 
-            this.tboxPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tboxPass.Location = new System.Drawing.Point(349, 285);
-            this.tboxPass.Name = "tboxPass";
-            this.tboxPass.Size = new System.Drawing.Size(208, 28);
-            this.tboxPass.TabIndex = 9;
+            resources.ApplyResources(this.txbPassword, "txbPassword");
+            this.txbPassword.Name = "txbPassword";
             // 
             // rbtnStaff
             // 
-            this.rbtnStaff.AutoSize = true;
-            this.rbtnStaff.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbtnStaff.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnStaff.Location = new System.Drawing.Point(182, 375);
+            resources.ApplyResources(this.rbtnStaff, "rbtnStaff");
             this.rbtnStaff.Name = "rbtnStaff";
-            this.rbtnStaff.Size = new System.Drawing.Size(92, 25);
-            this.rbtnStaff.TabIndex = 10;
             this.rbtnStaff.TabStop = true;
-            this.rbtnStaff.Text = "一般店員";
             this.rbtnStaff.UseVisualStyleBackColor = true;
             // 
             // rbtnAdmin
             // 
-            this.rbtnAdmin.AutoSize = true;
-            this.rbtnAdmin.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbtnAdmin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnAdmin.Location = new System.Drawing.Point(324, 375);
+            resources.ApplyResources(this.rbtnAdmin, "rbtnAdmin");
             this.rbtnAdmin.Name = "rbtnAdmin";
-            this.rbtnAdmin.Size = new System.Drawing.Size(76, 25);
-            this.rbtnAdmin.TabIndex = 11;
             this.rbtnAdmin.TabStop = true;
-            this.rbtnAdmin.Text = "管理者";
             this.rbtnAdmin.UseVisualStyleBackColor = true;
             // 
-            // btnConfirmed
+            // btnConfirm
             // 
-            this.btnConfirmed.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmed.Location = new System.Drawing.Point(585, 359);
-            this.btnConfirmed.Name = "btnConfirmed";
-            this.btnConfirmed.Size = new System.Drawing.Size(132, 48);
-            this.btnConfirmed.TabIndex = 12;
-            this.btnConfirmed.Text = "確定";
-            this.btnConfirmed.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnConfirm, "btnConfirm");
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
             // 
             // Frm_S_StaffEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnConfirmed);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.rbtnAdmin);
             this.Controls.Add(this.rbtnStaff);
-            this.Controls.Add(this.tboxPass);
-            this.Controls.Add(this.tboxFirstname);
-            this.Controls.Add(this.tboxLastname);
-            this.Controls.Add(this.tboxID);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txbPassword);
+            this.Controls.Add(this.txbFirstname);
+            this.Controls.Add(this.txbLastname);
+            this.Controls.Add(this.txbID);
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblFirstname);
+            this.Controls.Add(this.lblLastname);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffEdit";
-            this.Text = "店員詳細";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,17 +142,17 @@
         #endregion
 
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tboxID;
-        private System.Windows.Forms.TextBox tboxLastname;
-        private System.Windows.Forms.TextBox tboxFirstname;
-        private System.Windows.Forms.TextBox tboxPass;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblLastname;
+        private System.Windows.Forms.Label lblFirstname;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.TextBox txbID;
+        private System.Windows.Forms.TextBox txbLastname;
+        private System.Windows.Forms.TextBox txbFirstname;
+        private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.RadioButton rbtnStaff;
         private System.Windows.Forms.RadioButton rbtnAdmin;
-        private System.Windows.Forms.Button btnConfirmed;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }

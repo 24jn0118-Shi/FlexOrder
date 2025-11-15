@@ -28,73 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnEmployeeManagement = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_Mainmenu));
+            this.btnStaffManagement = new System.Windows.Forms.Button();
             this.btnOrderManagement = new System.Windows.Forms.Button();
             this.btnMenuManagement = new System.Windows.Forms.Button();
             this.btnSalesStatistics = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnEmployeeManagement
+            // btnStaffManagement
             // 
-            this.btnEmployeeManagement.Enabled = false;
-            this.btnEmployeeManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployeeManagement.Location = new System.Drawing.Point(152, 248);
-            this.btnEmployeeManagement.Name = "btnEmployeeManagement";
-            this.btnEmployeeManagement.Size = new System.Drawing.Size(139, 66);
-            this.btnEmployeeManagement.TabIndex = 0;
-            this.btnEmployeeManagement.Text = "店員管理";
-            this.btnEmployeeManagement.UseVisualStyleBackColor = true;
-            this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
+            resources.ApplyResources(this.btnStaffManagement, "btnStaffManagement");
+            this.btnStaffManagement.Name = "btnStaffManagement";
+            this.btnStaffManagement.UseVisualStyleBackColor = true;
+            this.btnStaffManagement.Click += new System.EventHandler(this.btnStaffManagement_Click);
             // 
             // btnOrderManagement
             // 
-            this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderManagement.Location = new System.Drawing.Point(152, 95);
+            resources.ApplyResources(this.btnOrderManagement, "btnOrderManagement");
             this.btnOrderManagement.Name = "btnOrderManagement";
-            this.btnOrderManagement.Size = new System.Drawing.Size(139, 66);
-            this.btnOrderManagement.TabIndex = 1;
-            this.btnOrderManagement.Text = "注文管理";
             this.btnOrderManagement.UseVisualStyleBackColor = true;
+            this.btnOrderManagement.Click += new System.EventHandler(this.btnOrderManagement_Click);
             // 
             // btnMenuManagement
             // 
-            this.btnMenuManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuManagement.Location = new System.Drawing.Point(461, 95);
+            resources.ApplyResources(this.btnMenuManagement, "btnMenuManagement");
             this.btnMenuManagement.Name = "btnMenuManagement";
-            this.btnMenuManagement.Size = new System.Drawing.Size(139, 66);
-            this.btnMenuManagement.TabIndex = 2;
-            this.btnMenuManagement.Text = "メニュー管理";
             this.btnMenuManagement.UseVisualStyleBackColor = true;
+            this.btnMenuManagement.Click += new System.EventHandler(this.btnMenuManagement_Click);
             // 
             // btnSalesStatistics
             // 
-            this.btnSalesStatistics.Enabled = false;
-            this.btnSalesStatistics.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalesStatistics.Location = new System.Drawing.Point(461, 248);
+            resources.ApplyResources(this.btnSalesStatistics, "btnSalesStatistics");
             this.btnSalesStatistics.Name = "btnSalesStatistics";
-            this.btnSalesStatistics.Size = new System.Drawing.Size(139, 66);
-            this.btnSalesStatistics.TabIndex = 3;
-            this.btnSalesStatistics.Text = "売上統計";
             this.btnSalesStatistics.UseVisualStyleBackColor = true;
+            this.btnSalesStatistics.Click += new System.EventHandler(this.btnSalesStatistics_Click);
             // 
             // Frm_S_Mainmenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSalesStatistics);
             this.Controls.Add(this.btnMenuManagement);
             this.Controls.Add(this.btnOrderManagement);
-            this.Controls.Add(this.btnEmployeeManagement);
+            this.Controls.Add(this.btnStaffManagement);
             this.Name = "Frm_S_Mainmenu";
-            this.Text = "メインメニュー";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnEmployeeManagement;
+        private System.Windows.Forms.Button btnStaffManagement;
         private System.Windows.Forms.Button btnOrderManagement;
         private System.Windows.Forms.Button btnMenuManagement;
         private System.Windows.Forms.Button btnSalesStatistics;

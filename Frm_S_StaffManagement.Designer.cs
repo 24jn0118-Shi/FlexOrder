@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_StaffManagement));
             this.btnBack = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,12 +42,8 @@
             // 
             // btnBack
             // 
-            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(710, 12);
+            resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(78, 31);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -56,73 +53,54 @@
             this.staff_id,
             this.staff_name,
             this.id_manager});
-            this.dataGridView1.Location = new System.Drawing.Point(122, 46);
+            resources.ApplyResources(this.dataGridView1, "dataGridView1");
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
-            this.dataGridView1.Size = new System.Drawing.Size(570, 273);
-            this.dataGridView1.TabIndex = 1;
             // 
             // staff_id
             // 
-            this.staff_id.HeaderText = "店員ID";
+            resources.ApplyResources(this.staff_id, "staff_id");
             this.staff_id.Name = "staff_id";
-            this.staff_id.Width = 175;
             // 
             // staff_name
             // 
-            this.staff_name.HeaderText = "名前";
+            resources.ApplyResources(this.staff_name, "staff_name");
             this.staff_name.Name = "staff_name";
-            this.staff_name.Width = 175;
             // 
             // id_manager
             // 
-            this.id_manager.HeaderText = "店員識別";
+            resources.ApplyResources(this.id_manager, "id_manager");
             this.id_manager.Name = "id_manager";
-            this.id_manager.Width = 175;
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(57, 351);
+            resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 53);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(351, 351);
+            resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(90, 53);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "編集";
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // btnDel
             // 
-            this.btnDel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(653, 351);
+            resources.ApplyResources(this.btnDel, "btnDel");
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(90, 53);
-            this.btnDel.TabIndex = 4;
-            this.btnDel.Text = "削除";
             this.btnDel.UseVisualStyleBackColor = true;
             // 
             // Frm_S_StaffManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffManagement";
-            this.Text = "店員管理";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

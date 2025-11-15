@@ -20,15 +20,30 @@ namespace FlexOrder
             this.staff = staff;
             if (staff.is_manager) 
             {
-                btnEmployeeManagement.Enabled = true;
+                btnStaffManagement.Enabled = true;
                 btnSalesStatistics.Enabled = true;
             }
         }
 
-        private void btnEmployeeManagement_Click(object sender, EventArgs e)
+        private void btnOrderManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffManagement frmSStaffManager = new Frm_S_StaffManagement();
-            frmSStaffManager.ShowDialog(this);
+            Frm_S_OrderManagement frm_S_OrderManagement = new Frm_S_OrderManagement();
+            frm_S_OrderManagement.ShowDialog();
+        }
+        private void btnMenuManagement_Click(object sender, EventArgs e)
+        {
+            Frm_S_MenuManagement frm_S_MenuManagement = new Frm_S_MenuManagement();
+            frm_S_MenuManagement.ShowDialog();
+        }
+        private void btnStaffManagement_Click(object sender, EventArgs e)
+        {
+            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement();
+            frm_S_StaffManagement.ShowDialog();
+        }
+        private void btnSalesStatistics_Click(object sender, EventArgs e)
+        {
+            Frm_S_SalesStatistics frm_S_SalesStatistics = new Frm_S_SalesStatistics();
+            frm_S_SalesStatistics.ShowDialog();
         }
     }
 }

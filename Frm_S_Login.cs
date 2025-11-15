@@ -18,6 +18,11 @@ namespace FlexOrder
         public Frm_S_Login()
         {
             InitializeComponent();
+
+            //テスト用アカウント
+            txbUserId.Text = "100002";
+            txbPassword.Text = "100002";
+            //テスト用アカウント
         }
 
         public static string ComputeSha256Hex(string input)
@@ -63,7 +68,7 @@ namespace FlexOrder
 
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
     }
 }

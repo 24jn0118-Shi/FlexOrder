@@ -141,4 +141,12 @@
   <data name="$this.Text" xml:space="preserve">
     <value>カート</value>
   </data>
+  <data name="btnReset.Text" xml:space="preserve">
+    <value></value>
+    <comment>@Invariant</comment>
+  </data>
+  <data name="lblYen.Text" xml:space="preserve">
+    <value></value>
+    <comment>@Invariant</comment>
+  </data>
 </root>

@@ -117,4 +117,138 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnStaffManagement.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnStaffManagement.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnStaffManagement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 248</value>
+  </data>
+  <data name="btnStaffManagement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 66</value>
+  </data>
+  <data name="btnStaffManagement.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnStaffManagement.Text" xml:space="preserve">
+    <value>店員管理</value>
+  </data>
+  <data name="&gt;&gt;btnStaffManagement.Name" xml:space="preserve">
+    <value>btnStaffManagement</value>
+  </data>
+  <data name="&gt;&gt;btnStaffManagement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnStaffManagement.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnStaffManagement.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnOrderManagement.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnOrderManagement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 95</value>
+  </data>
+  <data name="btnOrderManagement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 66</value>
+  </data>
+  <data name="btnOrderManagement.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnOrderManagement.Text" xml:space="preserve">
+    <value>注文管理</value>
+  </data>
+  <data name="&gt;&gt;btnOrderManagement.Name" xml:space="preserve">
+    <value>btnOrderManagement</value>
+  </data>
+  <data name="&gt;&gt;btnOrderManagement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOrderManagement.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOrderManagement.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnMenuManagement.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnMenuManagement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>461, 95</value>
+  </data>
+  <data name="btnMenuManagement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 66</value>
+  </data>
+  <data name="btnMenuManagement.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnMenuManagement.Text" xml:space="preserve">
+    <value>メニュー管理</value>
+  </data>
+  <data name="&gt;&gt;btnMenuManagement.Name" xml:space="preserve">
+    <value>btnMenuManagement</value>
+  </data>
+  <data name="&gt;&gt;btnMenuManagement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMenuManagement.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnMenuManagement.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnSalesStatistics.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnSalesStatistics.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnSalesStatistics.Location" type="System.Drawing.Point, System.Drawing">
+    <value>461, 248</value>
+  </data>
+  <data name="btnSalesStatistics.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 66</value>
+  </data>
+  <data name="btnSalesStatistics.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnSalesStatistics.Text" xml:space="preserve">
+    <value>売上統計</value>
+  </data>
+  <data name="&gt;&gt;btnSalesStatistics.Name" xml:space="preserve">
+    <value>btnSalesStatistics</value>
+  </data>
+  <data name="&gt;&gt;btnSalesStatistics.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSalesStatistics.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSalesStatistics.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>メインメニュー</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Frm_S_Mainmenu</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

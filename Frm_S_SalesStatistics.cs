@@ -15,6 +15,7 @@ namespace FlexOrder
         public Frm_S_SalesStatistics()
         {
             InitializeComponent();
+            label1.Text = "In Development\n開発中";
         }
     }
 }
