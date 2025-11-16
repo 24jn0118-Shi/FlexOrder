@@ -82,6 +82,7 @@
             this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.lblPassword);
             this.Name = "Frm_S_Login";
+            this.Load += new System.EventHandler(this.Frm_S_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

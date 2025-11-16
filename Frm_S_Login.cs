@@ -1,15 +1,17 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using FlexOrderLibrary;
 
 namespace FlexOrder
 {
@@ -70,5 +72,37 @@ namespace FlexOrder
         {
             this.Close();
         }
+
+        private void Frm_S_Login_Load(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
+            ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
+        }
+
+        private void ApplyResources(Control control, string cultureName)
+        {
+            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(typeof(Frm_C_Index));
+
+            foreach (System.ComponentModel.PropertyDescriptor pd in System.ComponentModel.TypeDescriptor.GetProperties(control))
+            {
+                if (pd.IsBrowsable && pd.CanResetValue(control) && pd.PropertyType == typeof(string))
+                {
+                    string resourceName = control.Name + "." + pd.Name;
+                    string resourceValue = rm.GetString(resourceName, new CultureInfo(cultureName));
+
+                    if (!string.IsNullOrEmpty(resourceValue))
+                    {
+                        pd.SetValue(control, resourceValue);
+                    }
+                }
+            }
+
+            foreach (Control childControl in control.Controls)
+            {
+                ApplyResources(childControl, cultureName);
+            }
+        }
+
+
     }
 }

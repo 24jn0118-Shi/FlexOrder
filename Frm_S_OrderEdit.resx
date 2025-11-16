@@ -152,27 +152,12 @@
   <metadata name="sale_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="sale_name.HeaderText" xml:space="preserve">
-    <value>注文商品</value>
-  </data>
-  <data name="sale_name.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
   <metadata name="num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="num.HeaderText" xml:space="preserve">
-    <value>個数</value>
-  </data>
-  <data name="num.Width" type="System.Int32, mscorlib">
-    <value>125</value>
-  </data>
   <metadata name="price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="price.HeaderText" xml:space="preserve">
-    <value>価格</value>
-  </data>
   <data name="dgvOrderDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 59</value>
   </data>
@@ -193,6 +178,30 @@
   </data>
   <data name="&gt;&gt;dgvOrderDetail.ZOrder" xml:space="preserve">
     <value>15</value>
+  </data>
+  <metadata name="sale_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="sale_name.HeaderText" xml:space="preserve">
+    <value>注文商品</value>
+  </data>
+  <data name="sale_name.Width" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <metadata name="num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="num.HeaderText" xml:space="preserve">
+    <value>個数</value>
+  </data>
+  <data name="num.Width" type="System.Int32, mscorlib">
+    <value>125</value>
+  </data>
+  <metadata name="price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="price.HeaderText" xml:space="preserve">
+    <value>価格</value>
   </data>
   <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -644,6 +653,9 @@
   <data name="&gt;&gt;lblResult.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -127,7 +127,7 @@
     <value>ベジタリアンメニュー</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>合計金額:</value>
+    <value>合計金額：</value>
   </data>
   <data name="lblCart.Text" xml:space="preserve">
     <value>現在の注文</value>
@@ -138,5 +138,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>メニュー一覧</value>
+  </data>
+  <data name=".Text" xml:space="preserve">
+    <value>円</value>
   </data>
 </root>

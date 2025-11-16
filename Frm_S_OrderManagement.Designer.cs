@@ -38,7 +38,7 @@
             this.is_provided = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
@@ -48,6 +48,7 @@
             resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvOrder
             // 
@@ -93,31 +94,35 @@
             resources.ApplyResources(this.btnAdd, "btnAdd");
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
             resources.ApplyResources(this.btnEdit, "btnEdit");
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnDel
+            // btnDelete
             // 
-            resources.ApplyResources(this.btnDel, "btnDel");
-            this.btnDel.Name = "btnDel";
-            this.btnDel.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnHistory
             // 
             resources.ApplyResources(this.btnHistory, "btnHistory");
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // Frm_S_OrderManagement
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnHistory);
-            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvOrder);
@@ -134,7 +139,7 @@
         private System.Windows.Forms.DataGridView dgvOrder;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn sale_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn sale_seat;

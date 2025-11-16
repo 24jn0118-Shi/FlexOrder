@@ -88,12 +88,14 @@
             resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAddOrder
             // 
             resources.ApplyResources(this.btnAddOrder, "btnAddOrder");
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // lblBef
             // 

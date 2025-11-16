@@ -316,7 +316,7 @@
     <value>1</value>
   </data>
   <data name="btnConfirm.Text" xml:space="preserve">
-    <value>btnConfirm</value>
+    <value>ご注文を確認</value>
   </data>
   <data name="&gt;&gt;btnConfirm.Name" xml:space="preserve">
     <value>btnConfirm</value>
@@ -343,7 +343,7 @@
     <value>1</value>
   </data>
   <data name="btnBack.Text" xml:space="preserve">
-    <value>btnBack</value>
+    <value>戻る</value>
   </data>
   <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
     <value>btnBack</value>
@@ -421,7 +421,7 @@
     <value>4</value>
   </data>
   <data name="btnVeget.Text" xml:space="preserve">
-    <value>btnVeget</value>
+    <value>ベジタリアンメニュー</value>
   </data>
   <data name="&gt;&gt;btnVeget.Name" xml:space="preserve">
     <value>btnVeget</value>
@@ -451,7 +451,7 @@
     <value>5</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>lblTotal</value>
+    <value>合計金額：</value>
   </data>
   <data name="&gt;&gt;lblTotal.Name" xml:space="preserve">
     <value>lblTotal</value>
@@ -505,7 +505,7 @@
     <value>7</value>
   </data>
   <data name="lblCart.Text" xml:space="preserve">
-    <value>lblCart</value>
+    <value>現在の注文</value>
   </data>
   <data name="&gt;&gt;lblCart.Name" xml:space="preserve">
     <value>lblCart</value>
@@ -556,12 +556,15 @@
     <value>800, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_C_Menu</value>
+    <value>メニュー一覧</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_Menu</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name=".Text" xml:space="preserve">
+    <value>円</value>
   </data>
 </root>

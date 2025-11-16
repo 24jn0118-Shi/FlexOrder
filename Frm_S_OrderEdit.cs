@@ -16,5 +16,16 @@ namespace FlexOrder
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            Frm_C_Menu frm_C_Menu = new Frm_C_Menu();
+            frm_C_Menu.ShowDialog();
+        }
     }
 }

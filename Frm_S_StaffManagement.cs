@@ -19,8 +19,24 @@ namespace FlexOrder
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit();
+            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add");
             frmSStaffEdit.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Edit");
+            frmSStaffEdit.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

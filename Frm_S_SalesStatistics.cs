@@ -17,5 +17,10 @@ namespace FlexOrder
             InitializeComponent();
             label1.Text = "In Development\n開発中";
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
