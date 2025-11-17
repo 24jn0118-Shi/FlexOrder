@@ -50,59 +50,113 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmCCart.cs">
+    <Compile Include="Frm_C_Cart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCCart.Designer.cs">
-      <DependentUpon>FrmCCart.cs</DependentUpon>
+    <Compile Include="Frm_C_Cart.Designer.cs">
+      <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCEnd.cs">
+    <Compile Include="Frm_C_GoodsDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCEnd.Designer.cs">
-      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    <Compile Include="Frm_C_GoodsDetail.Designer.cs">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCIndex.cs">
+    <Compile Include="Frm_C_End.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCIndex.Designer.cs">
-      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    <Compile Include="Frm_C_End.Designer.cs">
+      <DependentUpon>Frm_C_End.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCMenu.cs">
+    <Compile Include="Frm_C_Index.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCMenu.Designer.cs">
-      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    <Compile Include="Frm_C_Index.Designer.cs">
+      <DependentUpon>Frm_C_Index.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCPayment.cs">
+    <Compile Include="Frm_C_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCPayment.Designer.cs">
-      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    <Compile Include="Frm_C_Menu.Designer.cs">
+      <DependentUpon>Frm_C_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSLogin.cs">
+    <Compile Include="Frm_C_Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSLogin.Designer.cs">
-      <DependentUpon>FrmSLogin.cs</DependentUpon>
+    <Compile Include="Frm_C_Payment.Designer.cs">
+      <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSMainmenu.cs">
+    <Compile Include="Frm_S_GoodsGroupManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSMainmenu.Designer.cs">
-      <DependentUpon>FrmSMainmenu.cs</DependentUpon>
+    <Compile Include="Frm_S_GoodsGroupManagement.Designer.cs">
+      <DependentUpon>Frm_S_GoodsGroupManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSOrderManagement.cs">
+    <Compile Include="Frm_S_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSOrderManagement.Designer.cs">
-      <DependentUpon>FrmSOrderManagement.cs</DependentUpon>
+    <Compile Include="Frm_S_Login.Designer.cs">
+      <DependentUpon>Frm_S_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTempStart.cs">
+    <Compile Include="Frm_S_Mainmenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTempStart.Designer.cs">
-      <DependentUpon>FrmTempStart.cs</DependentUpon>
+    <Compile Include="Frm_S_Mainmenu.Designer.cs">
+      <DependentUpon>Frm_S_Mainmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_MenuEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_MenuEdit.Designer.cs">
+      <DependentUpon>Frm_S_MenuEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_MenuManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_MenuManagement.Designer.cs">
+      <DependentUpon>Frm_S_MenuManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_MenuMultilingual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_MenuMultilingual.Designer.cs">
+      <DependentUpon>Frm_S_MenuMultilingual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_OrderEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_OrderEdit.Designer.cs">
+      <DependentUpon>Frm_S_OrderEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_OrderManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_OrderManagement.Designer.cs">
+      <DependentUpon>Frm_S_OrderManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_StaffEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_StaffEdit.Designer.cs">
+      <DependentUpon>Frm_S_StaffEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_StaffManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_StaffManagement.Designer.cs">
+      <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_T_TempStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_T_TempStart.Designer.cs">
+      <DependentUpon>Frm_T_TempStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_S_SalesStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_SalesStatistics.Designer.cs">
+      <DependentUpon>Frm_S_SalesStatistics.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductItem.cs">
       <SubType>UserControl</SubType>
@@ -112,111 +166,155 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmCCart.en.resx">
-      <DependentUpon>FrmCCart.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Cart.en.resx">
+      <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCCart.ja.resx">
-      <DependentUpon>FrmCCart.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Cart.ja.resx">
+      <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCCart.resx">
-      <DependentUpon>FrmCCart.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Cart.resx">
+      <DependentUpon>Frm_C_Cart.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Frm_C_Cart1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCCart.ru.resx">
-      <DependentUpon>FrmCCart.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Cart.ru.resx">
+      <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCCart.zh.resx">
-      <DependentUpon>FrmCCart.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Cart.zh.resx">
+      <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCEnd.en.resx">
-      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_End.en.resx">
+      <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCEnd.ja.resx">
-      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_End.ja.resx">
+      <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCEnd.resx">
-      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_End.resx">
+      <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCEnd.ru.resx">
-      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_End.ru.resx">
+      <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCEnd.zh.resx">
-      <DependentUpon>FrmCEnd.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_End.zh.resx">
+      <DependentUpon>Frm_C_End.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCIndex.en.resx">
-      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.en.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCIndex.ja.resx">
-      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.ja.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCIndex.resx">
-      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.ru.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_GoodsDetail.zh.resx">
+      <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_Index.en.resx">
+      <DependentUpon>Frm_C_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_Index.ja.resx">
+      <DependentUpon>Frm_C_Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_C_Index.resx">
+      <DependentUpon>Frm_C_Index.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCIndex.ru.resx">
-      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Index.ru.resx">
+      <DependentUpon>Frm_C_Index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCIndex.zh.resx">
-      <DependentUpon>FrmCIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Index.zh.resx">
+      <DependentUpon>Frm_C_Index.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCMenu.en.resx">
-      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Menu.en.resx">
+      <DependentUpon>Frm_C_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCMenu.ja.resx">
-      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Menu.ja.resx">
+      <DependentUpon>Frm_C_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCMenu.resx">
-      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Menu.resx">
+      <DependentUpon>Frm_C_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCMenu.ru.resx">
-      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Menu.ru.resx">
+      <DependentUpon>Frm_C_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCMenu.zh.resx">
-      <DependentUpon>FrmCMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Menu.zh.resx">
+      <DependentUpon>Frm_C_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCPayment.en.resx">
-      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Payment.en.resx">
+      <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCPayment.ja.resx">
-      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Payment.ja.resx">
+      <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCPayment.resx">
-      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Payment.resx">
+      <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCPayment.ru.resx">
-      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Payment.ru.resx">
+      <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCPayment.zh.resx">
-      <DependentUpon>FrmCPayment.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_C_Payment.zh.resx">
+      <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSLogin.resx">
-      <DependentUpon>FrmSLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_S_GoodsGroupManagement.resx">
+      <DependentUpon>Frm_S_GoodsGroupManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSMainmenu.resx">
-      <DependentUpon>FrmSMainmenu.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_S_Login.resx">
+      <DependentUpon>Frm_S_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSOrderManagement.resx">
-      <DependentUpon>FrmSOrderManagement.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_S_Mainmenu.resx">
+      <DependentUpon>Frm_S_Mainmenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTempStart.resx">
-      <DependentUpon>FrmTempStart.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_S_MenuEdit.resx">
+      <DependentUpon>Frm_S_MenuEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_MenuManagement.resx">
+      <DependentUpon>Frm_S_MenuManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_MenuMultilingual.resx">
+      <DependentUpon>Frm_S_MenuMultilingual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_OrderEdit.resx">
+      <DependentUpon>Frm_S_OrderEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_OrderManagement.resx">
+      <DependentUpon>Frm_S_OrderManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_SalesStatistics.resx">
+      <DependentUpon>Frm_S_SalesStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_StaffEdit.resx">
+      <DependentUpon>Frm_S_StaffEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_StaffManagement.ja.resx">
+      <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_StaffManagement.resx">
+      <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_T_TempStart.resx">
+      <DependentUpon>Frm_T_TempStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductItem.resx">
       <DependentUpon>ProductItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -230,10 +328,73 @@
     <None Include="Resources\testimage1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ice_cream.jpg" />
+    <None Include="Resources\ice_cream.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="pizza.jpg" />
+    <None Include="Resources\pizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image002.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image004.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image005.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image006.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image007.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image008.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image010.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image017.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image021.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

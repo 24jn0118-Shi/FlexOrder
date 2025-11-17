@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Goods.cs" />
+    <Compile Include="GoodsGroup.cs" />
+    <Compile Include="GoodsGroupTable.cs" />
+    <Compile Include="GoodsTable.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Sale.cs" />
+    <Compile Include="SaleTable.cs" />
     <Compile Include="StaffTable.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
