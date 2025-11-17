@@ -37,7 +37,7 @@
             this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.str_is_manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             this.staff_id,
             this.staff_lastname,
             this.staff_firstname,
-            this.id_manager});
+            this.str_is_manager});
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowTemplate.Height = 21;
@@ -86,27 +86,31 @@
             // 
             // staff_id
             // 
+            this.staff_id.DataPropertyName = "staff_id";
             resources.ApplyResources(this.staff_id, "staff_id");
             this.staff_id.Name = "staff_id";
             this.staff_id.ReadOnly = true;
             // 
             // staff_lastname
             // 
+            this.staff_lastname.DataPropertyName = "staff_lastname";
             resources.ApplyResources(this.staff_lastname, "staff_lastname");
             this.staff_lastname.Name = "staff_lastname";
             this.staff_lastname.ReadOnly = true;
             // 
             // staff_firstname
             // 
+            this.staff_firstname.DataPropertyName = "staff_firstname";
             resources.ApplyResources(this.staff_firstname, "staff_firstname");
             this.staff_firstname.Name = "staff_firstname";
             this.staff_firstname.ReadOnly = true;
             // 
-            // id_manager
+            // str_is_manager
             // 
-            resources.ApplyResources(this.id_manager, "id_manager");
-            this.id_manager.Name = "id_manager";
-            this.id_manager.ReadOnly = true;
+            this.str_is_manager.DataPropertyName = "str_is_manager";
+            resources.ApplyResources(this.str_is_manager, "str_is_manager");
+            this.str_is_manager.Name = "str_is_manager";
+            this.str_is_manager.ReadOnly = true;
             // 
             // Frm_S_StaffManagement
             // 
@@ -118,6 +122,7 @@
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffManagement";
+            this.Load += new System.EventHandler(this.Frm_S_StaffManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
 
@@ -133,6 +138,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_lastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_firstname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_manager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn str_is_manager;
     }
 }

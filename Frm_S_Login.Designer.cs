@@ -51,11 +51,13 @@
             // 
             resources.ApplyResources(this.txbPassword, "txbPassword");
             this.txbPassword.Name = "txbPassword";
+            this.txbPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPassword_KeyPress);
             // 
             // txbUserId
             // 
             resources.ApplyResources(this.txbUserId, "txbUserId");
             this.txbUserId.Name = "txbUserId";
+            this.txbUserId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbUserId_KeyPress);
             // 
             // btnLogin
             // 

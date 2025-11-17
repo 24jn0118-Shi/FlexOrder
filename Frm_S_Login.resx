@@ -124,18 +124,23 @@
   <data name="&gt;&gt;txbPassword.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblPassword.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btnLogin.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
   </data>
   <data name="btnLogin.Size" type="System.Drawing.Size, System.Drawing">
     <value>105, 41</value>
   </data>
-  <data name="&gt;&gt;btnLogin.Name" xml:space="preserve">
-    <value>btnLogin</value>
+  <data name="&gt;&gt;btnQuit.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="lblUserId.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 21</value>
+  </data>
+  <data name="&gt;&gt;lblPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblUserId.Name" xml:space="preserve">
     <value>lblUserId</value>
@@ -146,14 +151,8 @@
   <data name="&gt;&gt;btnQuit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;btnQuit.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="lblPassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
   </data>
   <data name="btnLogin.Location" type="System.Drawing.Point, System.Drawing">
     <value>124, 311</value>
@@ -161,17 +160,14 @@
   <data name="&gt;&gt;txbPassword.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnQuit.Name" xml:space="preserve">
-    <value>btnQuit</value>
+  <data name="&gt;&gt;lblUserId.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="btnQuit.Location" type="System.Drawing.Point, System.Drawing">
     <value>375, 311</value>
   </data>
-  <data name="txbPassword.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 28</value>
-  </data>
-  <data name="&gt;&gt;btnLogin.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ログイン画面</value>
   </data>
   <data name="&gt;&gt;lblUserId.Parent" xml:space="preserve">
     <value>$this</value>
@@ -182,41 +178,36 @@
   <data name="lblPassword.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 238</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>ログイン画面</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Frm_S_Login</value>
   </data>
-  <data name="txbPassword.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnQuit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txbUserId.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="&gt;&gt;lblPassword.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;lblPassword.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnLogin.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLogin.Name" xml:space="preserve">
+    <value>btnLogin</value>
   </data>
   <data name="&gt;&gt;lblPassword.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
-  </data>
   <data name="&gt;&gt;txbUserId.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;lblUserId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txbPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lblPassword.Name" xml:space="preserve">
     <value>lblPassword</value>
   </data>
-  <data name="txbPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
   </data>
   <data name="&gt;&gt;txbPassword.Name" xml:space="preserve">
     <value>txbPassword</value>
@@ -230,8 +221,11 @@
   <data name="&gt;&gt;txbUserId.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnQuit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 41</value>
+  <data name="&gt;&gt;btnQuit.Name" xml:space="preserve">
+    <value>btnQuit</value>
+  </data>
+  <data name="txbPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="&gt;&gt;btnLogin.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -239,11 +233,14 @@
   <data name="btnLogin.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="txbUserId.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnQuit.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnQuit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="lblUserId.Text" xml:space="preserve">
-    <value>ユーザーID</value>
+  <data name="btnQuit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 41</value>
   </data>
   <data name="lblUserId.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -260,20 +257,20 @@
   <data name="lblUserId.Location" type="System.Drawing.Point, System.Drawing">
     <value>135, 148</value>
   </data>
-  <data name="&gt;&gt;btnLogin.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnQuit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnQuit.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="lblUserId.Text" xml:space="preserve">
+    <value>ユーザーID</value>
   </data>
   <data name="btnLogin.Text" xml:space="preserve">
     <value>ログイン</value>
   </data>
-  <data name="btnLogin.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Frm_S_Login</value>
+  <data name="&gt;&gt;lblUserId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txbPassword.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -284,11 +281,14 @@
   <data name="lblPassword.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;lblUserId.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="lblPassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="btnQuit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+  <data name="&gt;&gt;btnLogin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txbPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 28</value>
   </data>
   <data name="txbPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value>*</value>

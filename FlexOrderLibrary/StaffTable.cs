@@ -54,6 +54,19 @@ namespace FlexOrderLibrary
 
             return staff;
         }
+        public DataTable GetAllStaff()
+        {
+            DataTable table = new DataTable();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = "SELECT * FROM Staff";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            return table;
+        }
         public Staff GetStaffByStaffid(int staff_id)
         {
             Staff staff = null;

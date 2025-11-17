@@ -20,8 +20,9 @@ namespace FlexOrderLibrary
             {
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
 				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
+                INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
 				WHERE is_recommend = 1 AND language_no = @language_no 
-				AND goods_available = 1";
+				AND goods_available = 1 ORDER BY group_sort";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.Fill(table);
