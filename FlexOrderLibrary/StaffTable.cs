@@ -67,10 +67,32 @@ namespace FlexOrderLibrary
             }
             return table;
         }
-        public Staff GetStaffByStaffid(int staff_id)
+        public Staff GetStaffById(int staff_id)
         {
             Staff staff = null;
-            
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = "SELECT * FROM Staff WHERE staff_id=@staff_id";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.SelectCommand.Parameters.AddWithValue("@staff_id", staff_id);
+
+                DataTable table = new DataTable();
+                int cnt = adapter.Fill(table);
+
+                if (cnt != 0)
+                {
+                    staff = new Staff();
+
+                    staff.staff_id = int.Parse(table.Rows[0]["staff_id"].ToString());
+                    staff.staff_lastname = table.Rows[0]["staff_lastname"].ToString();
+                    staff.staff_firstname = table.Rows[0]["staff_firstname"].ToString();
+                    staff.is_manager = (bool)table.Rows[0]["is_manager"];
+                    staff.staff_password = table.Rows[0]["staff_password"].ToString();
+                }
+            }
             return staff;
         }
         public int Insert(Staff staff)

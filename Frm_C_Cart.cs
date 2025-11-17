@@ -37,5 +37,11 @@ namespace FlexOrder
             
             tboxTotalPrice.Text = "1250";
         }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
     }
 }

@@ -167,14 +167,14 @@
   <data name="id_manager.Width" type="System.Int32, mscorlib">
     <value>175</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>店員管理</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 53</value>
+  </data>
   <data name="str_is_manager.Width" type="System.Int32, mscorlib">
     <value>120</value>
-  </data>
-  <data name="dgvStaff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>570, 273</value>
-  </data>
-  <data name="&gt;&gt;staff_id.Name" xml:space="preserve">
-    <value>staff_id</value>
   </data>
   <data name="dgvStaff.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -203,8 +203,8 @@
   <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;dgvStaff.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="str_is_manager.HeaderText" xml:space="preserve">
+    <value>店員識別</value>
   </data>
   <data name="&gt;&gt;str_is_manager.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -215,11 +215,14 @@
   <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
     <value>btnBack</value>
   </data>
+  <data name="dgvStaff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>570, 273</value>
+  </data>
   <data name="&gt;&gt;staff_firstname.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>店員管理</value>
+  <data name="&gt;&gt;staff_id.Name" xml:space="preserve">
+    <value>staff_id</value>
   </data>
   <data name="&gt;&gt;staff_id.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -236,14 +239,14 @@
   <data name="&gt;&gt;dgvStaff.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="staff_name.HeaderText" xml:space="preserve">
+    <value>名前</value>
+  </data>
   <data name="id_manager.HeaderText" xml:space="preserve">
     <value>店員識別</value>
   </data>
   <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 351</value>
-  </data>
-  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 53</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 31</value>
@@ -257,11 +260,11 @@
   <data name="btnEdit.Text" xml:space="preserve">
     <value>編集</value>
   </data>
-  <data name="&gt;&gt;staff_name.Name" xml:space="preserve">
-    <value>staff_name</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
   </data>
-  <data name="&gt;&gt;id_manager.Name" xml:space="preserve">
-    <value>id_manager</value>
+  <data name="staff_name.Width" type="System.Int32, mscorlib">
+    <value>175</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 12</value>
@@ -272,14 +275,17 @@
   <data name="staff_firstname.Width" type="System.Int32, mscorlib">
     <value>120</value>
   </data>
+  <data name="&gt;&gt;id_manager.Name" xml:space="preserve">
+    <value>id_manager</value>
+  </data>
   <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
     <value>653, 351</value>
   </data>
   <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="staff_name.Width" type="System.Int32, mscorlib">
-    <value>175</value>
+  <data name="&gt;&gt;staff_name.Name" xml:space="preserve">
+    <value>staff_name</value>
   </data>
   <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
     <value>btnDelete</value>
@@ -296,14 +302,8 @@
   <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="str_is_manager.HeaderText" xml:space="preserve">
-    <value>店員識別</value>
-  </data>
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
   </data>
   <data name="btnDelete.Text" xml:space="preserve">
     <value>削除</value>
@@ -326,8 +326,8 @@
   <data name="staff_firstname.HeaderText" xml:space="preserve">
     <value>名</value>
   </data>
-  <data name="staff_name.HeaderText" xml:space="preserve">
-    <value>名前</value>
+  <data name="&gt;&gt;dgvStaff.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -356,7 +356,7 @@
   <metadata name="staff_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="id_manager.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="staff_lastname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -371,7 +371,7 @@
   <metadata name="staff_firstname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="staff_lastname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="id_manager.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

@@ -39,7 +39,7 @@
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tboxTotalPrice = new System.Windows.Forms.TextBox();
             this.lblYen = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,17 +112,18 @@
             resources.ApplyResources(this.lblYen, "lblYen");
             this.lblYen.Name = "lblYen";
             // 
-            // btnReset
+            // btnRestart
             // 
-            resources.ApplyResources(this.btnReset, "btnReset");
-            this.btnReset.Name = "btnReset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnRestart, "btnRestart");
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // Frm_C_Cart
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblYen);
             this.Controls.Add(this.tboxTotalPrice);
             this.Controls.Add(this.lblTotalPrice);
@@ -145,7 +146,7 @@
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TextBox tboxTotalPrice;
         private System.Windows.Forms.Label lblYen;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.DataGridViewImageColumn goods_image;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn sale_num;

@@ -39,7 +39,7 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.orderlist = new System.Windows.Forms.ListBox();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.btnRestart = new System.Windows.Forms.Button();
             this.btnVeget = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtKaikei = new System.Windows.Forms.TextBox();
@@ -120,11 +120,12 @@
             resources.ApplyResources(this.orderlist, "orderlist");
             this.orderlist.Name = "orderlist";
             // 
-            // btnReset
+            // btnRestart
             // 
-            resources.ApplyResources(this.btnReset, "btnReset");
-            this.btnReset.Name = "btnReset";
-            this.btnReset.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnRestart, "btnRestart");
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // btnVeget
             // 
@@ -162,7 +163,7 @@
             this.Controls.Add(this.txtKaikei);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnVeget);
-            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.orderlist);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnConfirm);
@@ -184,7 +185,7 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ListBox orderlist;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Button btnVeget;
         private System.Windows.Forms.TabPage tbpageClass2;
         private System.Windows.Forms.TabPage tbpageClass3;

@@ -120,10 +120,47 @@
   <metadata name="goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="sale_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="goods_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 12</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dgvCart.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 297</value>
+  </data>
+  <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.Name" xml:space="preserve">
+    <value>dgvCart</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <metadata name="goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="goods_image.HeaderText" xml:space="preserve">
     <value>goods_image</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="goods_image.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -162,31 +199,6 @@
   </data>
   <data name="goods_price.Width" type="System.Int32, mscorlib">
     <value>140</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 12</value>
-  </data>
-  <data name="dgvCart.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>614, 297</value>
-  </data>
-  <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.Name" xml:space="preserve">
-    <value>dgvCart</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="btnGoPay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -329,31 +341,31 @@
   <data name="&gt;&gt;lblYen.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnReset.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 16pt</value>
   </data>
-  <data name="btnReset.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnRestart.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 12</value>
   </data>
-  <data name="btnReset.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnRestart.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 39</value>
   </data>
-  <data name="btnReset.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnRestart.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
+  <data name="btnRestart.Text" xml:space="preserve">
     <value>↺</value>
   </data>
-  <data name="&gt;&gt;btnReset.Name" xml:space="preserve">
-    <value>btnReset</value>
+  <data name="&gt;&gt;btnRestart.Name" xml:space="preserve">
+    <value>btnRestart</value>
   </data>
-  <data name="&gt;&gt;btnReset.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnRestart.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnReset.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnRestart.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnReset.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

@@ -4,15 +4,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace FlexOrder
 {
     public partial class Frm_S_StaffManagement : Form
     {
+        String selected_id = null;
         public Frm_S_StaffManagement()
         {
             InitializeComponent();
@@ -26,13 +30,39 @@ namespace FlexOrder
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Edit");
-            frmSStaffEdit.ShowDialog();
+            if (selected_id is null)
+            {
+                MessageBox.Show("スタッフを選択してください", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(selected_id);
+                frmSStaffEdit.ShowDialog();
+            }
+            //Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Edit");
+            //frmSStaffEdit.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (selected_id is null)
+            {
+                MessageBox.Show("スタッフを選択してください", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                DialogResult dret = MessageBox.Show("スタッフを削除しますか", "確認",
+                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dret == DialogResult.Yes)
+                {
 
+                }
+
+
+            }
+                
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -42,23 +72,12 @@ namespace FlexOrder
 
         private void Frm_S_StaffManagement_Load(object sender, EventArgs e)
         {
+            dgvStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvStaff.MultiSelect = false;
             dgvStaff.AutoGenerateColumns = false;
             StaffTable staffTable = new StaffTable();
             DataTable table = staffTable.GetAllStaff();
-            /*foreach (DataRow row in table.Rows)
-            {
-                if (bool.Parse(row["is_manager"].ToString()))
-                {
-                    row["is_manager"] = "管理者";
-                }
-                else 
-                {
-                    row["is_manager"] = "店員";
-                }
-
-            }*/
             table.Columns.Add("str_is_manager", typeof(string));
-
             foreach (DataRow row in table.Rows)
             {
                 bool isManager = Convert.ToBoolean(row["is_manager"]);
@@ -66,6 +85,11 @@ namespace FlexOrder
             }
             dgvStaff.DataSource = table;
             dgvStaff.ClearSelection();
+        }
+
+        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selected_id = dgvStaff.CurrentRow.Cells["staff_id"].Value.ToString();
         }
     }
 }

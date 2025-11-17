@@ -113,5 +113,11 @@ namespace FlexOrder
                 flowLayoutPanelMenu.Controls.Add(product);
             }
         }
+
+        private void btnRestart_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
     }
 }
