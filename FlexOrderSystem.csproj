@@ -289,6 +289,9 @@
     <EmbeddedResource Include="Frm_S_StaffEdit.resx">
       <DependentUpon>Frm_S_StaffEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_StaffManagement.ja.resx">
+      <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_StaffManagement.resx">
       <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,18 +303,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -329,6 +332,69 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pizza.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image002.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image003.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image004.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image005.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image006.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image007.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image008.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image009.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image010.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image011.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image012.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image017.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image018.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image019.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image020.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image021.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -121,17 +121,23 @@
   <data name="tbcntMenu.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Left</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanelMenu.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="flowLayoutPanelMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 6</value>
+    <value>3, 3</value>
   </data>
   <data name="flowLayoutPanelMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="flowLayoutPanelMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>539, 307</value>
+    <value>602, 792</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flowLayoutPanelMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -154,7 +160,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 317</value>
+    <value>608, 798</value>
   </data>
   <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -181,7 +187,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tbpageClass1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 317</value>
+    <value>608, 798</value>
   </data>
   <data name="tbpageClass1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -208,7 +214,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tbpageClass2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>546, 317</value>
+    <value>608, 798</value>
   </data>
   <data name="tbpageClass2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -286,7 +292,7 @@
     <value>66, 22</value>
   </data>
   <data name="tbcntMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 325</value>
+    <value>634, 806</value>
   </data>
   <data name="tbcntMenu.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -307,7 +313,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>643, 388</value>
+    <value>690, 861</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 50</value>
@@ -334,7 +340,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 388</value>
+    <value>62, 861</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 50</value>
@@ -361,7 +367,7 @@
     <value>12</value>
   </data>
   <data name="orderlist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>654, 59</value>
+    <value>720, 76</value>
   </data>
   <data name="orderlist.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 256</value>
@@ -412,7 +418,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 388</value>
+    <value>374, 861</value>
   </data>
   <data name="btnVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 50</value>
@@ -442,10 +448,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>640, 329</value>
+    <value>706, 346</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 21</value>
+    <value>90, 21</value>
   </data>
   <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -469,7 +475,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>725, 328</value>
+    <value>791, 345</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 28</value>
@@ -496,10 +502,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 30</value>
+    <value>732, 47</value>
   </data>
   <data name="lblCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 21</value>
+    <value>90, 21</value>
   </data>
   <data name="lblCart.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -553,7 +559,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>884, 1060</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>メニュー一覧</value>
@@ -563,8 +569,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name=".Text" xml:space="preserve">
-    <value>円</value>
   </data>
 </root>

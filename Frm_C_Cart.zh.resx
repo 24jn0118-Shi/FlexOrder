@@ -120,12 +120,25 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>返回</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value></value>
-    <comment>@Invariant</comment>
+  <data name="goods_image.HeaderText" xml:space="preserve">
+    <value>图片</value>
   </data>
-  <data name="lblYen.Text" xml:space="preserve">
-    <value></value>
-    <comment>@Invariant</comment>
+  <data name="goods_name.HeaderText" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+  <data name="sale_num.HeaderText" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="goods_price.HeaderText" xml:space="preserve">
+    <value>价格</value>
+  </data>
+  <data name="btnGoPay.Text" xml:space="preserve">
+    <value>前往结算</value>
+  </data>
+  <data name="lblTotalPrice.Text" xml:space="preserve">
+    <value>总计金额</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>购物车</value>
   </data>
 </root>

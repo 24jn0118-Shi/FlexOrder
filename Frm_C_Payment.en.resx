@@ -120,4 +120,16 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Select Payment Method</value>
+  </data>
+  <data name="btnEMoney.Text" xml:space="preserve">
+    <value>E-Money</value>
+  </data>
+  <data name="btnCash.Text" xml:space="preserve">
+    <value>Cash</value>
+  </data>
+  <data name="btnCreditCard.Text" xml:space="preserve">
+    <value>Credit Card</value>
+  </data>
 </root>

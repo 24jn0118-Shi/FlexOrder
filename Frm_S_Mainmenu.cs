@@ -45,5 +45,10 @@ namespace FlexOrder
             Frm_S_SalesStatistics frm_S_SalesStatistics = new Frm_S_SalesStatistics();
             frm_S_SalesStatistics.ShowDialog();
         }
+
+        private void Frm_S_Mainmenu_Load(object sender, EventArgs e)
+        {
+            lblWelcome.Text = "ようこそ、"+staff.staff_lastname+" "+staff.staff_firstname;
+        }
     }
 }

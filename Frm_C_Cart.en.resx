@@ -120,12 +120,25 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="btnReset.Text" xml:space="preserve">
-    <value></value>
-    <comment>@Invariant</comment>
+  <data name="goods_image.HeaderText" xml:space="preserve">
+    <value>Image</value>
   </data>
-  <data name="lblYen.Text" xml:space="preserve">
-    <value></value>
-    <comment>@Invariant</comment>
+  <data name="goods_name.HeaderText" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="sale_num.HeaderText" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="goods_price.HeaderText" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="btnGoPay.Text" xml:space="preserve">
+    <value>Proceed to Checkout</value>
+  </data>
+  <data name="lblTotalPrice.Text" xml:space="preserve">
+    <value>Total Amount</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Cart</value>
   </data>
 </root>

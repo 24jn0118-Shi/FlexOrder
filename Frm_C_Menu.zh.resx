@@ -145,4 +145,25 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>返回</value>
   </data>
+  <data name="tbpagePop.Text" xml:space="preserve">
+    <value>推荐</value>
+  </data>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>确认订单</value>
+  </data>
+  <data name="btnVeget.Text" xml:space="preserve">
+    <value>素食菜单</value>
+  </data>
+  <data name="lblTotal.Text" xml:space="preserve">
+    <value>总计金额：</value>
+  </data>
+  <data name="lblCart.Text" xml:space="preserve">
+    <value>当前订单</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>菜单列表</value>
+  </data>
+  <data name=".Text" xml:space="preserve">
+    <value>日元</value>
+  </data>
 </root>

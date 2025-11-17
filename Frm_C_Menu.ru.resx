@@ -143,6 +143,27 @@
     <value>733, 398</value>
   </data>
   <data name="btnBack.Text" xml:space="preserve">
-    <value>ロシア語の戻る</value>
+    <value>Назад</value>
+  </data>
+  <data name="tbpagePop.Text" xml:space="preserve">
+    <value>Рекомендуем</value>
+  </data>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>Подтвердить заказ</value>
+  </data>
+  <data name="btnVeget.Text" xml:space="preserve">
+    <value>Вегетарианское меню</value>
+  </data>
+  <data name="lblTotal.Text" xml:space="preserve">
+    <value>Общая сумма:</value>
+  </data>
+  <data name="lblCart.Text" xml:space="preserve">
+    <value>Текущий заказ</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Список меню</value>
+  </data>
+  <data name=".Text" xml:space="preserve">
+    <value>Рубль</value>
   </data>
 </root>

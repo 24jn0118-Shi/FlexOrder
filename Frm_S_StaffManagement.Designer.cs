@@ -31,12 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_StaffManagement));
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staff_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff_lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff_firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,29 +50,18 @@
             // 
             // dgvStaff
             // 
+            resources.ApplyResources(this.dgvStaff, "dgvStaff");
+            this.dgvStaff.AllowUserToAddRows = false;
+            this.dgvStaff.AllowUserToDeleteRows = false;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.staff_id,
-            this.staff_name,
+            this.staff_lastname,
+            this.staff_firstname,
             this.id_manager});
-            resources.ApplyResources(this.dgvStaff, "dgvStaff");
             this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowTemplate.Height = 21;
-            // 
-            // staff_id
-            // 
-            resources.ApplyResources(this.staff_id, "staff_id");
-            this.staff_id.Name = "staff_id";
-            // 
-            // staff_name
-            // 
-            resources.ApplyResources(this.staff_name, "staff_name");
-            this.staff_name.Name = "staff_name";
-            // 
-            // id_manager
-            // 
-            resources.ApplyResources(this.id_manager, "id_manager");
-            this.id_manager.Name = "id_manager";
             // 
             // btnAdd
             // 
@@ -94,6 +84,30 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // staff_id
+            // 
+            resources.ApplyResources(this.staff_id, "staff_id");
+            this.staff_id.Name = "staff_id";
+            this.staff_id.ReadOnly = true;
+            // 
+            // staff_lastname
+            // 
+            resources.ApplyResources(this.staff_lastname, "staff_lastname");
+            this.staff_lastname.Name = "staff_lastname";
+            this.staff_lastname.ReadOnly = true;
+            // 
+            // staff_firstname
+            // 
+            resources.ApplyResources(this.staff_firstname, "staff_firstname");
+            this.staff_firstname.Name = "staff_firstname";
+            this.staff_firstname.ReadOnly = true;
+            // 
+            // id_manager
+            // 
+            resources.ApplyResources(this.id_manager, "id_manager");
+            this.id_manager.Name = "id_manager";
+            this.id_manager.ReadOnly = true;
+            // 
             // Frm_S_StaffManagement
             // 
             resources.ApplyResources(this, "$this");
@@ -113,11 +127,12 @@
 
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView dgvStaff;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staff_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staff_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_manager;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_lastname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_manager;
     }
 }

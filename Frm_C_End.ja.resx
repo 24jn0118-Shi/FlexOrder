@@ -123,4 +123,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>会計完了</value>
   </data>
+  <data name="lblEnd1.Text" xml:space="preserve">
+    <value>お会計が完了しました</value>
+  </data>
+  <data name="lblEnd2.Text" xml:space="preserve">
+    <value>席を確保してから、
+食券を店員にお渡しください</value>
+  </data>
 </root>

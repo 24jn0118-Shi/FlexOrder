@@ -118,6 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnBack.Text" xml:space="preserve">
-    <value>ロシア語の戻る</value>
+    <value>Назад</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Выбор способа оплаты</value>
+  </data>
+  <data name="btnEMoney.Text" xml:space="preserve">
+    <value>Электронные деньги</value>
+  </data>
+  <data name="btnCash.Text" xml:space="preserve">
+    <value>Наличные</value>
+  </data>
+  <data name="btnCreditCard.Text" xml:space="preserve">
+    <value>Кредитная карта</value>
   </data>
 </root>

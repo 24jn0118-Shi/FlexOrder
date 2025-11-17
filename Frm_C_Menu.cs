@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +10,14 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace FlexOrder
 {
     public partial class Frm_C_Menu : Form
     {
+        string currentLang;
+        int currentLangNo = 1;
         public Frm_C_Menu()
         {
             InitializeComponent();
@@ -65,17 +69,49 @@ namespace FlexOrder
 
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
+            currentLang = Thread.CurrentThread.CurrentUICulture.Name;
+            switch (currentLang){ 
+                case "ja":
+                    currentLangNo = 1;
+                    break;
+                case "en":
+                    currentLangNo = 2;
+                    break;
+                case "zh":
+                    currentLangNo = 3;
+                    break;
+                case "ru":
+                    currentLangNo = 4;
+                    break;
+            }
+
             ProductItem product1 = new ProductItem();
             product1.ProductTitle = "Pizza";
             product1.ProductPrice = "¥ 500";
-            product1.ProductImage = global::FlexOrder.Properties.Resources.pizza;
-            flowLayoutPanelMenu.Controls.Add(product1);
+            //product1.ProductImage = global::FlexOrder.Properties.Resources.pizza;
+            var img1 = (Image)Properties.Resources.ResourceManager.GetObject("pizza");
+            product1.ProductImage = img1;
+            //flowLayoutPanelMenu.Controls.Add(product1);
 
             ProductItem product2 = new ProductItem();
             product2.ProductTitle = "Icecream";
             product2.ProductPrice = "¥ 250";
-            product2.ProductImage = global::FlexOrder.Properties.Resources.ice_cream;
-            flowLayoutPanelMenu.Controls.Add(product2);
+            //product2.ProductImage = global::FlexOrder.Properties.Resources.ice_cream;
+            var img2 = (Image)Properties.Resources.ResourceManager.GetObject("ice_cream");
+            product2.ProductImage = img2;
+            //flowLayoutPanelMenu.Controls.Add(product2);
+
+            GoodsTable goodsTable = new GoodsTable();
+            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
+            foreach (Goods good in goodslist) 
+            {
+                ProductItem product = new ProductItem();
+                product.ProductTitle = good.goods_name;
+                product.ProductPrice = "¥ " + good.goods_price.ToString();
+                var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);
+                product.ProductImage = img;
+                flowLayoutPanelMenu.Controls.Add(product);
+            }
         }
     }
 }

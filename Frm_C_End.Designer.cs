@@ -51,16 +51,15 @@
             resources.ApplyResources(this.lblEnd2, "lblEnd2");
             this.lblEnd2.Name = "lblEnd2";
             // 
-            // FrmCEnd
+            // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblEnd2);
             this.Controls.Add(this.lblEnd1);
             this.Controls.Add(this.btnRestart);
-            this.Name = "FrmCEnd";
+            this.Name = "Frm_C_End";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

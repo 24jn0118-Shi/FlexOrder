@@ -120,4 +120,16 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>返回</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>选择支付方式</value>
+  </data>
+  <data name="btnEMoney.Text" xml:space="preserve">
+    <value>电子货币</value>
+  </data>
+  <data name="btnCash.Text" xml:space="preserve">
+    <value>现金</value>
+  </data>
+  <data name="btnCreditCard.Text" xml:space="preserve">
+    <value>信用卡</value>
+  </data>
 </root>

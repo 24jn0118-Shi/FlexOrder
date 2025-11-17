@@ -118,150 +118,150 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>710, 12</value>
-  </data>
-  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 31</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnBack.Text" xml:space="preserve">
-    <value>戻る</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
-    <value>btnBack</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="staff_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="staff_id.HeaderText" xml:space="preserve">
-    <value>店員ID</value>
-  </data>
-  <data name="staff_id.Width" type="System.Int32, mscorlib">
-    <value>175</value>
-  </data>
-  <metadata name="staff_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="staff_name.HeaderText" xml:space="preserve">
-    <value>名前</value>
-  </data>
-  <data name="staff_name.Width" type="System.Int32, mscorlib">
-    <value>175</value>
-  </data>
-  <metadata name="id_manager.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="id_manager.HeaderText" xml:space="preserve">
-    <value>店員識別</value>
-  </data>
-  <data name="id_manager.Width" type="System.Int32, mscorlib">
-    <value>175</value>
-  </data>
-  <data name="dgvStaff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>122, 46</value>
-  </data>
-  <data name="dgvStaff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>570, 273</value>
-  </data>
-  <data name="dgvStaff.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;dgvStaff.Name" xml:space="preserve">
-    <value>dgvStaff</value>
-  </data>
-  <data name="&gt;&gt;dgvStaff.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvStaff.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvStaff.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 351</value>
-  </data>
-  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 53</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnAdd.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>追加</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
-    <value>btnAdd</value>
+  <data name="&gt;&gt;staff_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;staff_lastname.Name" xml:space="preserve">
+    <value>staff_lastname</value>
   </data>
-  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="staff_lastname.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>351, 351</value>
   </data>
-  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 53</value>
-  </data>
-  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;dgvStaff.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>編集</value>
-  </data>
-  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
-    <value>btnEdit</value>
-  </data>
-  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnAdd.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvStaff.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 46</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="id_manager.Width" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="dgvStaff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>570, 273</value>
+  </data>
+  <data name="&gt;&gt;staff_id.Name" xml:space="preserve">
+    <value>staff_id</value>
+  </data>
+  <data name="dgvStaff.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>戻る</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
+    <value>btnAdd</value>
+  </data>
+  <data name="staff_lastname.HeaderText" xml:space="preserve">
+    <value>姓</value>
+  </data>
+  <data name="btnAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 53</value>
+  </data>
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
   <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
+    <value>btnBack</value>
   </data>
-  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>653, 351</value>
+  <data name="&gt;&gt;staff_firstname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>店員管理</value>
+  </data>
+  <data name="&gt;&gt;staff_id.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;staff_lastname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAdd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvStaff.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="staff_name.HeaderText" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="id_manager.HeaderText" xml:space="preserve">
+    <value>店員識別</value>
+  </data>
+  <data name="btnAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 351</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 53</value>
   </data>
-  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 31</value>
   </data>
-  <data name="btnDelete.Text" xml:space="preserve">
-    <value>削除</value>
+  <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="&gt;&gt;staff_name.Name" xml:space="preserve">
+    <value>staff_name</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
+  </data>
+  <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="staff_firstname.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="&gt;&gt;id_manager.Name" xml:space="preserve">
+    <value>id_manager</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>653, 351</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="staff_name.Width" type="System.Int32, mscorlib">
+    <value>175</value>
   </data>
   <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
     <value>btnDelete</value>
@@ -269,49 +269,79 @@
   <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>店員管理</value>
-  </data>
-  <data name="&gt;&gt;staff_id.Name" xml:space="preserve">
-    <value>staff_id</value>
-  </data>
-  <data name="&gt;&gt;staff_id.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;staff_name.Name" xml:space="preserve">
-    <value>staff_name</value>
-  </data>
-  <data name="&gt;&gt;staff_name.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;id_manager.Name" xml:space="preserve">
-    <value>id_manager</value>
-  </data>
-  <data name="&gt;&gt;id_manager.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnAdd.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_S_StaffManagement</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
+  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
+    <value>btnEdit</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>710, 12</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="staff_id.Width" type="System.Int32, mscorlib">
+    <value>175</value>
+  </data>
+  <data name="staff_firstname.HeaderText" xml:space="preserve">
+    <value>名</value>
+  </data>
+  <data name="&gt;&gt;dgvStaff.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;id_manager.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;staff_firstname.Name" xml:space="preserve">
+    <value>staff_firstname</value>
+  </data>
+  <data name="&gt;&gt;dgvStaff.Name" xml:space="preserve">
+    <value>dgvStaff</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="staff_id.HeaderText" xml:space="preserve">
+    <value>店員ID</value>
+  </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
+  <metadata name="staff_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="id_manager.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="staff_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="staff_firstname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="staff_lastname.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -142,4 +142,7 @@
   <data name=".Text" xml:space="preserve">
     <value>円</value>
   </data>
+  <data name="tbpagePop.Text" xml:space="preserve">
+    <value>おすすめ</value>
+  </data>
 </root>

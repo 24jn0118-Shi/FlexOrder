@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDinein.Text" xml:space="preserve">
-    <value>ロシア語の店内でのご利用</value>
+    <value>Для еды в заведении</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Главная страница</value>
+  </data>
+  <data name="lblWelcome.Text" xml:space="preserve">
+    <value>Добро пожаловать</value>
+  </data>
+  <data name="btnTakeout.Text" xml:space="preserve">
+    <value>С собой</value>
   </data>
 </root>

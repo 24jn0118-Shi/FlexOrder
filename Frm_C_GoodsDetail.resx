@@ -258,7 +258,7 @@
     <value>5</value>
   </data>
   <data name="lblNum.Text" xml:space="preserve">
-    <value>lblNum</value>
+    <value>sale_num</value>
   </data>
   <data name="&gt;&gt;lblNum.Name" xml:space="preserve">
     <value>lblNum</value>

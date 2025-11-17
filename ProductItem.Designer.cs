@@ -36,23 +36,23 @@
             // 
             // labeltitle1
             // 
-            this.labeltitle1.AutoSize = true;
             this.labeltitle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitle1.Location = new System.Drawing.Point(40, 85);
+            this.labeltitle1.Location = new System.Drawing.Point(3, 77);
             this.labeltitle1.Name = "labeltitle1";
-            this.labeltitle1.Size = new System.Drawing.Size(68, 22);
+            this.labeltitle1.Size = new System.Drawing.Size(136, 49);
             this.labeltitle1.TabIndex = 1;
             this.labeltitle1.Text = "フード1";
+            this.labeltitle1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelprice1
             // 
-            this.labelprice1.AutoSize = true;
             this.labelprice1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelprice1.Location = new System.Drawing.Point(34, 112);
+            this.labelprice1.Location = new System.Drawing.Point(3, 128);
             this.labelprice1.Name = "labelprice1";
-            this.labelprice1.Size = new System.Drawing.Size(76, 22);
+            this.labelprice1.Size = new System.Drawing.Size(136, 22);
             this.labelprice1.TabIndex = 2;
             this.labelprice1.Text = "￥99999";
+            this.labelprice1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -72,13 +72,12 @@
             this.Controls.Add(this.labelprice1);
             this.Controls.Add(this.labeltitle1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProductItem";
-            this.Size = new System.Drawing.Size(142, 134);
+            this.Size = new System.Drawing.Size(142, 151);
             this.Click += new System.EventHandler(this.ProductItem_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
