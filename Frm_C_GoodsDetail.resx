@@ -117,12 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="picGoods.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picGoods.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 23</value>
+    <value>55, 71</value>
   </data>
   <data name="picGoods.Size" type="System.Drawing.Size, System.Drawing">
-    <value>478, 279</value>
+    <value>398, 240</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="picGoods.TabIndex" type="System.Int32, mscorlib">
@@ -138,55 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;picGoods.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="txtDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 23</value>
-  </data>
-  <data name="txtDetail.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 216</value>
-  </data>
-  <data name="txtDetail.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txtDetail.Name" xml:space="preserve">
-    <value>txtDetail</value>
-  </data>
-  <data name="&gt;&gt;txtDetail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtDetail.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtDetail.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="txtPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>MS UI Gothic, 16pt</value>
-  </data>
-  <data name="txtPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 273</value>
-  </data>
-  <data name="txtPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 29</value>
-  </data>
-  <data name="txtPrice.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtPrice.Name" xml:space="preserve">
-    <value>txtPrice</value>
-  </data>
-  <data name="&gt;&gt;txtPrice.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtPrice.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtPrice.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="btnMin.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -213,34 +169,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnMin.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
-  <data name="btnPuls.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnPlus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="btnPuls.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnPlus.Location" type="System.Drawing.Point, System.Drawing">
     <value>509, 327</value>
   </data>
-  <data name="btnPuls.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnPlus.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 43</value>
   </data>
-  <data name="btnPuls.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnPlus.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnPuls.Text" xml:space="preserve">
+  <data name="btnPlus.Text" xml:space="preserve">
     <value>+</value>
   </data>
-  <data name="&gt;&gt;btnPuls.Name" xml:space="preserve">
-    <value>btnPuls</value>
+  <data name="&gt;&gt;btnPlus.Name" xml:space="preserve">
+    <value>btnPlus</value>
   </data>
-  <data name="&gt;&gt;btnPuls.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPlus.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnPuls.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPlus.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnPuls.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;btnPlus.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="lblNum.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -249,16 +205,19 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 342</value>
+    <value>354, 338</value>
   </data>
   <data name="lblNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 21</value>
+    <value>81, 21</value>
   </data>
   <data name="lblNum.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="lblNum.Text" xml:space="preserve">
     <value>sale_num</value>
+  </data>
+  <data name="lblNum.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;lblNum.Name" xml:space="preserve">
     <value>lblNum</value>
@@ -270,7 +229,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblNum.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -297,7 +256,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="btnCart.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -324,6 +283,99 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCart.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblGoodsName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGoodsName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="lblGoodsName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>51, 41</value>
+  </data>
+  <data name="lblGoodsName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 21</value>
+  </data>
+  <data name="lblGoodsName.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lblGoodsName.Text" xml:space="preserve">
+    <value>lblGoodsName</value>
+  </data>
+  <data name="&gt;&gt;lblGoodsName.Name" xml:space="preserve">
+    <value>lblGoodsName</value>
+  </data>
+  <data name="&gt;&gt;lblGoodsName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGoodsName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblGoodsName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblDetail.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDetail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="lblDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>505, 71</value>
+  </data>
+  <data name="lblDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 21</value>
+  </data>
+  <data name="lblDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblDetail.Text" xml:space="preserve">
+    <value>lblDetail</value>
+  </data>
+  <data name="&gt;&gt;lblDetail.Name" xml:space="preserve">
+    <value>lblDetail</value>
+  </data>
+  <data name="&gt;&gt;lblDetail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDetail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblDetail.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblPrice.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPrice.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="lblPrice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPrice.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 290</value>
+  </data>
+  <data name="lblPrice.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 21</value>
+  </data>
+  <data name="lblPrice.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblPrice.Text" xml:space="preserve">
+    <value>¥</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.Name" xml:space="preserve">
+    <value>lblPrice</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPrice.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -336,7 +388,7 @@
     <value>800, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_C_Detail</value>
+    <value>Frm_C_GoodsDetail</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_GoodsDetail</value>

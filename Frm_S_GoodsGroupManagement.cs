@@ -21,5 +21,11 @@ namespace FlexOrder
         {
             this.Close();
         }
+
+        private void Frm_S_GoodsGroupManagement_Load(object sender, EventArgs e)
+        {
+            dgvGroupList.MultiSelect = false;
+            dgvGroupList.AutoGenerateColumns = false;
+        }
     }
 }

@@ -12,35 +12,43 @@ namespace FlexOrder
 {
     public partial class ProductItem : UserControl
     {
+        String code;
         public ProductItem()
         {
             InitializeComponent();
-            this.pictureBox1.Click += ProductItem_Click;
-            this.labeltitle1.Click += ProductItem_Click;
-            this.labelprice1.Click += ProductItem_Click;
+            this.ptbImage.Click += ProductItem_Click;
+            this.lblTitle.Click += ProductItem_Click;
+            this.lblPrice.Click += ProductItem_Click;
         }
-
+        public string Code
+        {
+            get { return code; }
+            set { code = value; }
+        }
         public string ProductTitle
         {
-            get { return labeltitle1.Text; }
-            set { labeltitle1.Text = value; }
+            get { return lblTitle.Text; }
+            set { lblTitle.Text = value; }
         }
 
         public string ProductPrice
         {
-            get { return labelprice1.Text; }
-            set { labelprice1.Text = value; }
+            get { return lblPrice.Text; }
+            set { lblPrice.Text = value; }
         }
 
         public Image ProductImage
         {
-            get { return pictureBox1.Image; }
-            set { pictureBox1.Image = value; }
+            get { return ptbImage.Image; }
+            set { ptbImage.Image = value; }
         }
 
         private void ProductItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(ProductTitle + " " + ProductPrice, "Hi Test Title");
+            //MessageBox.Show(ProductTitle + " " + ProductPrice, Code);
+            Frm_C_GoodsDetail frm_C_GoodsDetail = new Frm_C_GoodsDetail(Code);
+            frm_C_GoodsDetail.ShowDialog();
+            
         }
     }
 }

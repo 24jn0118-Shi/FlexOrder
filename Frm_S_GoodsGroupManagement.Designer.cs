@@ -32,11 +32,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvGroupList = new System.Windows.Forms.DataGridView();
-            this.group_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.japanese = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.english = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chinese = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.russian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txtGroupID = new System.Windows.Forms.TextBox();
@@ -48,6 +43,12 @@
             this.txbSortCode = new System.Windows.Forms.TextBox();
             this.txbSortIndex = new System.Windows.Forms.TextBox();
             this.btnGoSort = new System.Windows.Forms.Button();
+            this.group_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group_sort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.en = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,38 +71,14 @@
             this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroupList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.group_id,
-            this.japanese,
-            this.english,
-            this.chinese,
-            this.russian});
+            this.group_sort,
+            this.ja,
+            this.en,
+            this.zh,
+            this.ru});
             resources.ApplyResources(this.dgvGroupList, "dgvGroupList");
             this.dgvGroupList.Name = "dgvGroupList";
             this.dgvGroupList.RowTemplate.Height = 21;
-            // 
-            // group_id
-            // 
-            resources.ApplyResources(this.group_id, "group_id");
-            this.group_id.Name = "group_id";
-            // 
-            // japanese
-            // 
-            resources.ApplyResources(this.japanese, "japanese");
-            this.japanese.Name = "japanese";
-            // 
-            // english
-            // 
-            resources.ApplyResources(this.english, "english");
-            this.english.Name = "english";
-            // 
-            // chinese
-            // 
-            resources.ApplyResources(this.chinese, "chinese");
-            this.chinese.Name = "chinese";
-            // 
-            // russian
-            // 
-            resources.ApplyResources(this.russian, "russian");
-            this.russian.Name = "russian";
             // 
             // lblCode
             // 
@@ -149,6 +126,7 @@
             // 
             resources.ApplyResources(this.txbSortCode, "txbSortCode");
             this.txbSortCode.Name = "txbSortCode";
+            this.txbSortCode.ReadOnly = true;
             // 
             // txbSortIndex
             // 
@@ -160,6 +138,42 @@
             resources.ApplyResources(this.btnGoSort, "btnGoSort");
             this.btnGoSort.Name = "btnGoSort";
             this.btnGoSort.UseVisualStyleBackColor = true;
+            // 
+            // group_id
+            // 
+            this.group_id.DataPropertyName = "group_id";
+            resources.ApplyResources(this.group_id, "group_id");
+            this.group_id.Name = "group_id";
+            // 
+            // group_sort
+            // 
+            this.group_sort.DataPropertyName = "group_sort";
+            resources.ApplyResources(this.group_sort, "group_sort");
+            this.group_sort.Name = "group_sort";
+            // 
+            // ja
+            // 
+            this.ja.DataPropertyName = "ja";
+            resources.ApplyResources(this.ja, "ja");
+            this.ja.Name = "ja";
+            // 
+            // en
+            // 
+            this.en.DataPropertyName = "en";
+            resources.ApplyResources(this.en, "en");
+            this.en.Name = "en";
+            // 
+            // zh
+            // 
+            this.zh.DataPropertyName = "zh";
+            resources.ApplyResources(this.zh, "zh");
+            this.zh.Name = "zh";
+            // 
+            // ru
+            // 
+            this.ru.DataPropertyName = "ru";
+            resources.ApplyResources(this.ru, "ru");
+            this.ru.Name = "ru";
             // 
             // Frm_S_GoodsGroupManagement
             // 
@@ -180,6 +194,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_GoodsGroupManagement";
+            this.Load += new System.EventHandler(this.Frm_S_GoodsGroupManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,11 +206,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridView dgvGroupList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn group_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn japanese;
-        private System.Windows.Forms.DataGridViewTextBoxColumn english;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chinese;
-        private System.Windows.Forms.DataGridViewTextBoxColumn russian;
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtGroupID;
@@ -207,5 +217,11 @@
         private System.Windows.Forms.TextBox txbSortCode;
         private System.Windows.Forms.TextBox txbSortIndex;
         private System.Windows.Forms.Button btnGoSort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn group_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn group_sort;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn en;
+        private System.Windows.Forms.DataGridViewTextBoxColumn zh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ru;
     }
 }

@@ -183,49 +183,58 @@
     <value>分類コード</value>
   </data>
   <data name="group_id.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>90</value>
   </data>
-  <metadata name="japanese.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="group_sort.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="japanese.HeaderText" xml:space="preserve">
+  <data name="group_sort.HeaderText" xml:space="preserve">
+    <value>優先順位</value>
+  </data>
+  <data name="group_sort.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <metadata name="ja.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ja.HeaderText" xml:space="preserve">
     <value>日本語</value>
   </data>
-  <data name="japanese.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="ja.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <metadata name="english.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="en.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="english.HeaderText" xml:space="preserve">
+  <data name="en.HeaderText" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="english.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="en.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <metadata name="chinese.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="zh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="chinese.HeaderText" xml:space="preserve">
+  <data name="zh.HeaderText" xml:space="preserve">
     <value>中文</value>
   </data>
-  <data name="chinese.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="zh.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <metadata name="russian.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ru.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="russian.HeaderText" xml:space="preserve">
+  <data name="ru.HeaderText" xml:space="preserve">
     <value>Русский</value>
   </data>
-  <data name="russian.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="ru.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
   <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 60</value>
+    <value>42, 67</value>
   </data>
   <data name="dgvGroupList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 265</value>
+    <value>692, 265</value>
   </data>
   <data name="dgvGroupList.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -567,28 +576,34 @@
   <data name="&gt;&gt;group_id.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;japanese.Name" xml:space="preserve">
-    <value>japanese</value>
+  <data name="&gt;&gt;group_sort.Name" xml:space="preserve">
+    <value>group_sort</value>
   </data>
-  <data name="&gt;&gt;japanese.Type" xml:space="preserve">
+  <data name="&gt;&gt;group_sort.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;english.Name" xml:space="preserve">
-    <value>english</value>
+  <data name="&gt;&gt;ja.Name" xml:space="preserve">
+    <value>ja</value>
   </data>
-  <data name="&gt;&gt;english.Type" xml:space="preserve">
+  <data name="&gt;&gt;ja.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chinese.Name" xml:space="preserve">
-    <value>chinese</value>
+  <data name="&gt;&gt;en.Name" xml:space="preserve">
+    <value>en</value>
   </data>
-  <data name="&gt;&gt;chinese.Type" xml:space="preserve">
+  <data name="&gt;&gt;en.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;russian.Name" xml:space="preserve">
-    <value>russian</value>
+  <data name="&gt;&gt;zh.Name" xml:space="preserve">
+    <value>zh</value>
   </data>
-  <data name="&gt;&gt;russian.Type" xml:space="preserve">
+  <data name="&gt;&gt;zh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ru.Name" xml:space="preserve">
+    <value>ru</value>
+  </data>
+  <data name="&gt;&gt;ru.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

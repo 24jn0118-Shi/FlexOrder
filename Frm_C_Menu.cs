@@ -16,7 +16,13 @@ namespace FlexOrder
 {
     public partial class Frm_C_Menu : Form
     {
-        string currentLang;
+        Dictionary<string, int> langMap = new Dictionary<string, int>()
+        {
+            { "ja", 1 },
+            { "en", 2 },
+            { "zh", 3 },
+            { "ru", 4 }
+        };
         int currentLangNo = 1;
         public Frm_C_Menu()
         {
@@ -69,20 +75,10 @@ namespace FlexOrder
 
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
-            currentLang = Thread.CurrentThread.CurrentUICulture.Name;
-            switch (currentLang){ 
-                case "ja":
-                    currentLangNo = 1;
-                    break;
-                case "en":
-                    currentLangNo = 2;
-                    break;
-                case "zh":
-                    currentLangNo = 3;
-                    break;
-                case "ru":
-                    currentLangNo = 4;
-                    break;
+            string currentLang = Thread.CurrentThread.CurrentUICulture.Name;
+            if (langMap.TryGetValue(currentLang, out int result))
+            {
+                currentLangNo = result;
             }
 
             ProductItem product1 = new ProductItem();
@@ -106,6 +102,7 @@ namespace FlexOrder
             foreach (Goods good in goodslist) 
             {
                 ProductItem product = new ProductItem();
+                product.Code = good.goods_code;
                 product.ProductTitle = good.goods_name;
                 product.ProductPrice = "¥ " + good.goods_price.ToString();
                 var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);

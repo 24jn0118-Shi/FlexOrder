@@ -45,7 +45,7 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = "SELECT * FROM ";
+                string sql = "SELECT * FROM GoodsGroup";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 adapter.Fill(table);

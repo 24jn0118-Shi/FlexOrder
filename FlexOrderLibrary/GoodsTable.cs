@@ -48,6 +48,11 @@ namespace FlexOrderLibrary
             return goodsList;
         }
 
+        public Goods GetGoodsByCode(String code, int language_no) 
+        {
+            return null;
+        }
+
         public int Insert(Goods goods)
         {
             return -1;
