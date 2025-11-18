@@ -43,6 +43,11 @@
             this.txtGroupName = new System.Windows.Forms.TextBox();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblSortCode = new System.Windows.Forms.Label();
+            this.lblSortIndex = new System.Windows.Forms.Label();
+            this.txbSortCode = new System.Windows.Forms.TextBox();
+            this.txbSortIndex = new System.Windows.Forms.TextBox();
+            this.btnGoSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,14 +135,45 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
+            // lblSortCode
+            // 
+            resources.ApplyResources(this.lblSortCode, "lblSortCode");
+            this.lblSortCode.Name = "lblSortCode";
+            // 
+            // lblSortIndex
+            // 
+            resources.ApplyResources(this.lblSortIndex, "lblSortIndex");
+            this.lblSortIndex.Name = "lblSortIndex";
+            // 
+            // txbSortCode
+            // 
+            resources.ApplyResources(this.txbSortCode, "txbSortCode");
+            this.txbSortCode.Name = "txbSortCode";
+            // 
+            // txbSortIndex
+            // 
+            resources.ApplyResources(this.txbSortIndex, "txbSortIndex");
+            this.txbSortIndex.Name = "txbSortIndex";
+            // 
+            // btnGoSort
+            // 
+            resources.ApplyResources(this.btnGoSort, "btnGoSort");
+            this.btnGoSort.Name = "btnGoSort";
+            this.btnGoSort.UseVisualStyleBackColor = true;
+            // 
             // Frm_S_GoodsGroupManagement
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnGoSort);
             this.Controls.Add(this.btnAddGroup);
+            this.Controls.Add(this.txbSortIndex);
             this.Controls.Add(this.txtGroupName);
+            this.Controls.Add(this.txbSortCode);
+            this.Controls.Add(this.lblSortIndex);
             this.Controls.Add(this.txtGroupID);
+            this.Controls.Add(this.lblSortCode);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblCode);
             this.Controls.Add(this.dgvGroupList);
@@ -166,5 +202,10 @@
         private System.Windows.Forms.TextBox txtGroupName;
         private System.Windows.Forms.Button btnAddGroup;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblSortCode;
+        private System.Windows.Forms.Label lblSortIndex;
+        private System.Windows.Forms.TextBox txbSortCode;
+        private System.Windows.Forms.TextBox txbSortIndex;
+        private System.Windows.Forms.Button btnGoSort;
     }
 }

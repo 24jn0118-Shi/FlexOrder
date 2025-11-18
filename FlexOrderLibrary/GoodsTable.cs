@@ -11,7 +11,7 @@ namespace FlexOrderLibrary
 {
     public class GoodsTable
     {
-        public List<Goods> GetRecommendGoods(int language_no)
+        public List<Goods> GetRecommendGoodsByLanguage(int language_no)
         {
             DataTable table = new DataTable();
             List<Goods> goodsList = new List<Goods>();
@@ -46,6 +46,19 @@ namespace FlexOrderLibrary
                 }
             }
             return goodsList;
+        }
+
+        public int Insert(Goods goods)
+        {
+            return -1;
+        }
+        public int Update(Goods goods)
+        {
+            return -1;
+        }
+        public int Delete(Goods goods)
+        {
+            return -1;
         }
     }
 }

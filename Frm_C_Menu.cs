@@ -102,7 +102,7 @@ namespace FlexOrder
             //flowLayoutPanelMenu.Controls.Add(product2);
 
             GoodsTable goodsTable = new GoodsTable();
-            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
+            List<Goods> goodslist = goodsTable.GetRecommendGoodsByLanguage(currentLangNo);
             foreach (Goods good in goodslist) 
             {
                 ProductItem product = new ProductItem();

@@ -97,7 +97,6 @@ namespace FlexOrderLibrary
         }
         public int Insert(Staff staff)
         {
-
             return -1;
         }
         public int Update(Staff staff)
@@ -105,12 +104,9 @@ namespace FlexOrderLibrary
             return -1;
         }
 
-        public int delete(Staff staff)
+        public int Delete(Staff staff)
         {
             return -1;
-
-
-
         }
     }
 }

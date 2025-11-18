@@ -286,14 +286,8 @@
     <EmbeddedResource Include="Frm_S_SalesStatistics.resx">
       <DependentUpon>Frm_S_SalesStatistics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_S_StaffEdit.ja.resx">
-      <DependentUpon>Frm_S_StaffEdit.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_StaffEdit.resx">
       <DependentUpon>Frm_S_StaffEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_S_StaffManagement.ja.resx">
-      <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_StaffManagement.resx">
       <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
