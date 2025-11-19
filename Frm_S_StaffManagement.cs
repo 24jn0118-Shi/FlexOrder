@@ -56,14 +56,24 @@ namespace FlexOrder
                 MessageBox.Show("スタッフを選択してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else 
+            else
             {
-                DialogResult dret = MessageBox.Show("スタッフを削除しますか", "確認",
-                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dret == DialogResult.Yes)
+                if (staff != null && staff.is_manager) 
                 {
-
+                    MessageBox.Show("管理者のアカウントが削除できません", "エラー",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else 
+                {
+                    DialogResult dret = MessageBox.Show("スタッフを削除しますか", "確認",
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dret == DialogResult.Yes)
+                    {
+
+                    }
+                }
+
+                    
 
 
             }
