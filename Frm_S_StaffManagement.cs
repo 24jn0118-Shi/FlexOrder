@@ -26,11 +26,25 @@ namespace FlexOrder
             this.parent = parent;
             this.staff = staff;
         }
-
+        private void refresh_page() 
+        {
+            StaffTable staffTable = new StaffTable();
+            DataTable table = staffTable.GetAllStaff();
+            table.Columns.Add("str_is_manager", typeof(string));
+            foreach (DataRow row in table.Rows)
+            {
+                bool isManager = Convert.ToBoolean(row["is_manager"]);
+                row["str_is_manager"] = isManager ? "管理者" : "店員";
+            }
+            dgvStaff.DataSource = table;
+            dgvStaff.ClearSelection();
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add",this);
             frmSStaffEdit.ShowDialog();
+            refresh_page();
+            Console.WriteLine("Refreshed");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -90,16 +104,7 @@ namespace FlexOrder
             dgvStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStaff.MultiSelect = false;
             dgvStaff.AutoGenerateColumns = false;
-            StaffTable staffTable = new StaffTable();
-            DataTable table = staffTable.GetAllStaff();
-            table.Columns.Add("str_is_manager", typeof(string));
-            foreach (DataRow row in table.Rows)
-            {
-                bool isManager = Convert.ToBoolean(row["is_manager"]);
-                row["str_is_manager"] = isManager ? "管理者" : "店員";
-            }
-            dgvStaff.DataSource = table;
-            dgvStaff.ClearSelection();
+            refresh_page();
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
