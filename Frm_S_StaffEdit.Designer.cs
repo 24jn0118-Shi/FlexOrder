@@ -116,6 +116,7 @@
             resources.ApplyResources(this.btnConfirm, "btnConfirm");
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnChangePassword
             // 
@@ -155,6 +156,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffEdit";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_StaffEdit_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_StaffEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

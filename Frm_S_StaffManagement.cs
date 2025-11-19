@@ -16,15 +16,20 @@ namespace FlexOrder
 {
     public partial class Frm_S_StaffManagement : Form
     {
+        Form parent;
         String selected_id = null;
-        public Frm_S_StaffManagement()
+        Boolean closeparent = false;
+        Staff staff;
+        public Frm_S_StaffManagement(Staff staff, Form parent)
         {
             InitializeComponent();
+            this.parent = parent;
+            this.staff = staff;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add");
+            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add",this);
             frmSStaffEdit.ShowDialog();
         }
 
@@ -37,7 +42,7 @@ namespace FlexOrder
             }
             else 
             {
-                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(selected_id);
+                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(staff, selected_id,this);
                 frmSStaffEdit.ShowDialog();
             }
             //Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Edit");
@@ -54,7 +59,7 @@ namespace FlexOrder
             else 
             {
                 DialogResult dret = MessageBox.Show("スタッフを削除しますか", "確認",
-                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes)
                 {
 
@@ -90,6 +95,15 @@ namespace FlexOrder
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected_id = dgvStaff.CurrentRow.Cells["staff_id"].Value.ToString();
+        }
+
+        private void Frm_S_StaffManagement_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            if (closeparent)
+            {
+                parent.Close();
+            }
         }
     }
 }

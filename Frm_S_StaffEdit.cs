@@ -14,12 +14,23 @@ namespace FlexOrder
     public partial class Frm_S_StaffEdit : Form
     {
         String message;
-        int id;
+        int id = 0;
         Boolean change_password = false;
-        public Frm_S_StaffEdit(String message)
+        Form parent;
+        Boolean closeparent = false;
+        Staff staff;
+        public Frm_S_StaffEdit(String message, Form parent)
         {
             InitializeComponent();
             this.message = message;
+            this.parent = parent;
+        }
+        public Frm_S_StaffEdit(Staff staff, String message, Form parent)
+        {
+            InitializeComponent();
+            this.message = message;
+            this.parent = parent;
+            this.staff = staff;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -79,5 +90,23 @@ namespace FlexOrder
             }
         }
 
+        private void Frm_S_StaffEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+            if (closeparent) 
+            {
+                parent.Close();
+            }
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            StaffTable staffTable = new StaffTable();
+
+            if(staff != null && staff.staff_id == id)
+            {
+                closeparent = true;
+            }
+        }
     }
 }

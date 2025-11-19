@@ -37,7 +37,7 @@ namespace FlexOrder
         }
         private void btnStaffManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement();
+            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement(staff,this);
             frm_S_StaffManagement.ShowDialog();
         }
         private void btnSalesStatistics_Click(object sender, EventArgs e)
