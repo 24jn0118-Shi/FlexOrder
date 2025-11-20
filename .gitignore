@@ -64,3 +64,6 @@ nunit-*.xml
 # Build output
 bin/
 obj/
+/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/obj/Debug/.NETFramework,Version=v4.8.AssemblyAttributes.cs
