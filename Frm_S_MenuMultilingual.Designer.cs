@@ -53,11 +53,10 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblTitle.Location = new System.Drawing.Point(62, 61);
+            this.lblTitle.Location = new System.Drawing.Point(35, 61);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(54, 28);
+            this.lblTitle.Size = new System.Drawing.Size(106, 28);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "？？";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,11 +65,12 @@
             // 
             this.lblGoodsName.AutoSize = true;
             this.lblGoodsName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGoodsName.Location = new System.Drawing.Point(75, 126);
+            this.lblGoodsName.Location = new System.Drawing.Point(79, 126);
             this.lblGoodsName.Name = "lblGoodsName";
-            this.lblGoodsName.Size = new System.Drawing.Size(62, 21);
+            this.lblGoodsName.Size = new System.Drawing.Size(74, 21);
             this.lblGoodsName.TabIndex = 2;
-            this.lblGoodsName.Text = "商品名:";
+            this.lblGoodsName.Text = "商品名：";
+            this.lblGoodsName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblGoodsDetail
             // 
@@ -78,9 +78,10 @@
             this.lblGoodsDetail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lblGoodsDetail.Location = new System.Drawing.Point(63, 193);
             this.lblGoodsDetail.Name = "lblGoodsDetail";
-            this.lblGoodsDetail.Size = new System.Drawing.Size(78, 21);
+            this.lblGoodsDetail.Size = new System.Drawing.Size(90, 21);
             this.lblGoodsDetail.TabIndex = 3;
-            this.lblGoodsDetail.Text = "商品詳細:";
+            this.lblGoodsDetail.Text = "商品詳細：";
+            this.lblGoodsDetail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbLanguage
             // 

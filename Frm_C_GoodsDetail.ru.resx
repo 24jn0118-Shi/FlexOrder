@@ -123,7 +123,7 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>Назад</value>
   </data>
-  <data name="btnCart.Text" xml:space="preserve">
+  <data name="btnAddtoCart.Text" xml:space="preserve">
     <value>Добавить в корзину</value>
   </data>
 </root>

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace FlexOrder
             { "ru", 4 }
         };
         String code;
+        int num = 1;
         public Frm_C_GoodsDetail(String code)
         {
             InitializeComponent();
@@ -37,16 +39,33 @@ namespace FlexOrder
                 currentLangNo = result;
             }
             GoodsTable goodsTable = new GoodsTable();
-            Goods goods = goodsTable.GetGoodsByCode(code, currentLangNo);
+            Goods goods = goodsTable.GetGoodsByCode(currentLangNo, code);
             lblGoodsName.Text = goods.goods_name;
-            lblDetail.Text = goods.goods_detail;
+            rtbDetail.Text = goods.goods_detail;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
             lblNum.Text = "1";
+            var img = (Image)Properties.Resources.ResourceManager.GetObject(goods.goods_image);
+            picGoods.Image = img;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            num = int.Parse(lblNum.Text);
+            if(num > 1) 
+            {
+                lblNum.Text = (num - 1).ToString();
+            }
+        }
+
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            num = int.Parse(lblNum.Text);
+            lblNum.Text = (num + 1).ToString();
         }
     }
 }

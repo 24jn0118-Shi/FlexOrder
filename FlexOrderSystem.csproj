@@ -92,6 +92,12 @@
     <Compile Include="Frm_S_GoodsGroupManagement.Designer.cs">
       <DependentUpon>Frm_S_GoodsGroupManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_S_GoodsGroupMultilingual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_S_GoodsGroupMultilingual.Designer.cs">
+      <DependentUpon>Frm_S_GoodsGroupMultilingual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_S_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_GoodsGroupManagement.resx">
       <DependentUpon>Frm_S_GoodsGroupManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_S_GoodsGroupMultilingual.resx">
+      <DependentUpon>Frm_S_GoodsGroupMultilingual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_Login.resx">
       <DependentUpon>Frm_S_Login.cs</DependentUpon>
