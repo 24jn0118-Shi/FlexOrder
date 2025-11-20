@@ -141,4 +141,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Cart</value>
   </data>
+  <data name="lblYen.Text" xml:space="preserve">
+    <value>¥</value>
+  </data>
+  <data name="btnRestart.Text" xml:space="preserve">
+    <value>↺</value>
+  </data>
 </root>

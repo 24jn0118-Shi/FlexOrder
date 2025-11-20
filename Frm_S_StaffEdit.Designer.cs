@@ -117,6 +117,7 @@
             // txbID
             // 
             this.txbID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.txbID.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.txbID.Location = new System.Drawing.Point(287, 99);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(271, 28);

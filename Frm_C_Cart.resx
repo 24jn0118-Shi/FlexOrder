@@ -120,47 +120,10 @@
   <metadata name="goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="sale_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="goods_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 12</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="dgvCart.RowHeadersWidth" type="System.Int32, mscorlib">
-    <value>51</value>
-  </data>
-  <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>614, 297</value>
-  </data>
-  <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.Name" xml:space="preserve">
-    <value>dgvCart</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <metadata name="goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="goods_image.HeaderText" xml:space="preserve">
     <value>goods_image</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="goods_image.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -199,6 +162,31 @@
   </data>
   <data name="goods_price.Width" type="System.Int32, mscorlib">
     <value>140</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 12</value>
+  </data>
+  <data name="dgvCart.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>614, 297</value>
+  </data>
+  <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.Name" xml:space="preserve">
+    <value>dgvCart</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="btnGoPay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -318,16 +306,16 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblYen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>595, 326</value>
+    <value>602, 326</value>
   </data>
   <data name="lblYen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 21</value>
+    <value>19, 21</value>
   </data>
   <data name="lblYen.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lblYen.Text" xml:space="preserve">
-    <value>￥</value>
+    <value>¥</value>
   </data>
   <data name="&gt;&gt;lblYen.Name" xml:space="preserve">
     <value>lblYen</value>

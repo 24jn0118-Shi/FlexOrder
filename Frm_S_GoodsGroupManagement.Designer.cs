@@ -34,16 +34,16 @@
             this.dgvGroupList = new System.Windows.Forms.DataGridView();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtGroupID = new System.Windows.Forms.TextBox();
-            this.txtGroupName = new System.Windows.Forms.TextBox();
+            this.txbGroupID = new System.Windows.Forms.TextBox();
+            this.txbGroupName = new System.Windows.Forms.TextBox();
             this.btnAddGroup = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.lblSortCode = new System.Windows.Forms.Label();
             this.lblSortIndex = new System.Windows.Forms.Label();
             this.txbSortCode = new System.Windows.Forms.TextBox();
             this.txbSortIndex = new System.Windows.Forms.TextBox();
             this.btnGoSort = new System.Windows.Forms.Button();
-            this.group_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.group_sort = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.en = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +70,7 @@
             this.dgvGroupList.AllowUserToDeleteRows = false;
             this.dgvGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroupList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.group_id,
+            this.group_code,
             this.group_sort,
             this.ja,
             this.en,
@@ -78,7 +78,9 @@
             this.ru});
             resources.ApplyResources(this.dgvGroupList, "dgvGroupList");
             this.dgvGroupList.Name = "dgvGroupList";
+            this.dgvGroupList.ReadOnly = true;
             this.dgvGroupList.RowTemplate.Height = 21;
+            this.dgvGroupList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellClick);
             // 
             // lblCode
             // 
@@ -90,15 +92,15 @@
             resources.ApplyResources(this.lblName, "lblName");
             this.lblName.Name = "lblName";
             // 
-            // txtGroupID
+            // txbGroupID
             // 
-            resources.ApplyResources(this.txtGroupID, "txtGroupID");
-            this.txtGroupID.Name = "txtGroupID";
+            resources.ApplyResources(this.txbGroupID, "txbGroupID");
+            this.txbGroupID.Name = "txbGroupID";
             // 
-            // txtGroupName
+            // txbGroupName
             // 
-            resources.ApplyResources(this.txtGroupName, "txtGroupName");
-            this.txtGroupName.Name = "txtGroupName";
+            resources.ApplyResources(this.txbGroupName, "txbGroupName");
+            this.txbGroupName.Name = "txbGroupName";
             // 
             // btnAddGroup
             // 
@@ -106,11 +108,12 @@
             this.btnAddGroup.Name = "btnAddGroup";
             this.btnAddGroup.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // btnEdit
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
-            this.btnSave.Name = "btnSave";
-            this.btnSave.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblSortCode
             // 
@@ -139,54 +142,60 @@
             this.btnGoSort.Name = "btnGoSort";
             this.btnGoSort.UseVisualStyleBackColor = true;
             // 
-            // group_id
+            // group_code
             // 
-            this.group_id.DataPropertyName = "group_id";
-            resources.ApplyResources(this.group_id, "group_id");
-            this.group_id.Name = "group_id";
+            this.group_code.DataPropertyName = "group_code";
+            resources.ApplyResources(this.group_code, "group_code");
+            this.group_code.Name = "group_code";
+            this.group_code.ReadOnly = true;
             // 
             // group_sort
             // 
             this.group_sort.DataPropertyName = "group_sort";
             resources.ApplyResources(this.group_sort, "group_sort");
             this.group_sort.Name = "group_sort";
+            this.group_sort.ReadOnly = true;
             // 
             // ja
             // 
             this.ja.DataPropertyName = "ja";
             resources.ApplyResources(this.ja, "ja");
             this.ja.Name = "ja";
+            this.ja.ReadOnly = true;
             // 
             // en
             // 
             this.en.DataPropertyName = "en";
             resources.ApplyResources(this.en, "en");
             this.en.Name = "en";
+            this.en.ReadOnly = true;
             // 
             // zh
             // 
             this.zh.DataPropertyName = "zh";
             resources.ApplyResources(this.zh, "zh");
             this.zh.Name = "zh";
+            this.zh.ReadOnly = true;
             // 
             // ru
             // 
             this.ru.DataPropertyName = "ru";
             resources.ApplyResources(this.ru, "ru");
             this.ru.Name = "ru";
+            this.ru.ReadOnly = true;
             // 
             // Frm_S_GoodsGroupManagement
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnGoSort);
             this.Controls.Add(this.btnAddGroup);
             this.Controls.Add(this.txbSortIndex);
-            this.Controls.Add(this.txtGroupName);
+            this.Controls.Add(this.txbGroupName);
             this.Controls.Add(this.txbSortCode);
             this.Controls.Add(this.lblSortIndex);
-            this.Controls.Add(this.txtGroupID);
+            this.Controls.Add(this.txbGroupID);
             this.Controls.Add(this.lblSortCode);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblCode);
@@ -208,16 +217,16 @@
         private System.Windows.Forms.DataGridView dgvGroupList;
         private System.Windows.Forms.Label lblCode;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.TextBox txtGroupID;
-        private System.Windows.Forms.TextBox txtGroupName;
+        private System.Windows.Forms.TextBox txbGroupID;
+        private System.Windows.Forms.TextBox txbGroupName;
         private System.Windows.Forms.Button btnAddGroup;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label lblSortCode;
         private System.Windows.Forms.Label lblSortIndex;
         private System.Windows.Forms.TextBox txbSortCode;
         private System.Windows.Forms.TextBox txbSortIndex;
         private System.Windows.Forms.Button btnGoSort;
-        private System.Windows.Forms.DataGridViewTextBoxColumn group_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn group_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn group_sort;
         private System.Windows.Forms.DataGridViewTextBoxColumn ja;
         private System.Windows.Forms.DataGridViewTextBoxColumn en;

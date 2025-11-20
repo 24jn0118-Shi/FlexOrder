@@ -100,13 +100,13 @@ namespace FlexOrder
 
             GoodsTable goodsTable = new GoodsTable();
             List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
-            foreach (Goods good in goodslist) 
+            foreach (Goods goods1 in goodslist) 
             {
                 ProductItem product = new ProductItem();
-                product.Code = good.goods_code;
-                product.ProductTitle = good.goods_name;
-                product.ProductPrice = "¥ " + good.goods_price.ToString();
-                var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);
+                product.Code = goods1.goods_code;
+                product.ProductTitle = goods1.goods_name;
+                product.ProductPrice = "¥ " + goods1.goods_price.ToString();
+                var img = (Image)Properties.Resources.ResourceManager.GetObject(goods1.goods_image);
                 product.ProductImage = img;
                 flowLayoutPanelMenu.Controls.Add(product);
             }

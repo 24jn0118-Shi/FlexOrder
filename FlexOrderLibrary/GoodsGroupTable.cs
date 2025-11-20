@@ -38,6 +38,16 @@ namespace FlexOrderLibrary
             }
             return grouplist;
         }
+        public GoodsGroup GetGroupByCode(int language_no, String code) 
+        {
+            GoodsGroup goodsGroup = null;
+
+
+
+
+
+            return goodsGroup;
+        }
 
         public DataTable GetAllGroup()
         {
@@ -45,12 +55,12 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = "SELECT G.*, L1.group_name AS 日本語, L2.group_name AS 英語, L3.group_name AS 中国語, L4.group_name AS ロシア語" +
-                    "FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L1 ON G.group_code = L1.group_code" +
-                    "INNER JOIN LocalizationGoodsGroup AS L2 ON L1.group_code = L2.group_code" +
-                    "INNER JOIN LocalizationGoodsGroup AS L3 ON L1.group_code = L3.group_code" +
-                    "INNER JOIN LocalizationGoodsGroup AS L4 ON L1.group_code = L4.group_code" +
-                    "WHERE L1.language_no = 1 AND L2.language_no = 2 AND L3.language_no = 3 AND L4.language_no = 4" +
+                string sql = "SELECT G.*, L1.group_name AS ja, L2.group_name AS en, L3.group_name AS zh, L4.group_name AS ru " +
+                    "FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L1 ON G.group_code = L1.group_code " +
+                    "INNER JOIN LocalizationGoodsGroup AS L2 ON L1.group_code = L2.group_code " +
+                    "INNER JOIN LocalizationGoodsGroup AS L3 ON L1.group_code = L3.group_code " +
+                    "INNER JOIN LocalizationGoodsGroup AS L4 ON L1.group_code = L4.group_code " +
+                    "WHERE L1.language_no = 1 AND L2.language_no = 2 AND L3.language_no = 3 AND L4.language_no = 4 " +
                     "ORDER BY group_sort ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 

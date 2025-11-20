@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_GoodsDetail));
             this.picGoods = new System.Windows.Forms.PictureBox();
-            this.btnMin = new System.Windows.Forms.Button();
+            this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.lblNum = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnCart = new System.Windows.Forms.Button();
+            this.btnAddtoCart = new System.Windows.Forms.Button();
             this.lblGoodsName = new System.Windows.Forms.Label();
-            this.lblDetail = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
+            this.rtbDetail = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picGoods)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,17 +47,19 @@
             this.picGoods.Name = "picGoods";
             this.picGoods.TabStop = false;
             // 
-            // btnMin
+            // btnMinus
             // 
-            resources.ApplyResources(this.btnMin, "btnMin");
-            this.btnMin.Name = "btnMin";
-            this.btnMin.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnMinus, "btnMinus");
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.UseVisualStyleBackColor = true;
+            this.btnMinus.Click += new System.EventHandler(this.btnMinus_Click);
             // 
             // btnPlus
             // 
             resources.ApplyResources(this.btnPlus, "btnPlus");
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
             // lblNum
             // 
@@ -71,39 +73,42 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnCart
+            // btnAddtoCart
             // 
-            resources.ApplyResources(this.btnCart, "btnCart");
-            this.btnCart.Name = "btnCart";
-            this.btnCart.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnAddtoCart, "btnAddtoCart");
+            this.btnAddtoCart.Name = "btnAddtoCart";
+            this.btnAddtoCart.UseVisualStyleBackColor = true;
             // 
             // lblGoodsName
             // 
             resources.ApplyResources(this.lblGoodsName, "lblGoodsName");
             this.lblGoodsName.Name = "lblGoodsName";
             // 
-            // lblDetail
-            // 
-            resources.ApplyResources(this.lblDetail, "lblDetail");
-            this.lblDetail.Name = "lblDetail";
-            // 
             // lblPrice
             // 
             resources.ApplyResources(this.lblPrice, "lblPrice");
             this.lblPrice.Name = "lblPrice";
             // 
+            // rtbDetail
+            // 
+            this.rtbDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.rtbDetail, "rtbDetail");
+            this.rtbDetail.Name = "rtbDetail";
+            this.rtbDetail.ReadOnly = true;
+            this.rtbDetail.TabStop = false;
+            // 
             // Frm_C_GoodsDetail
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rtbDetail);
             this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.lblDetail);
             this.Controls.Add(this.lblGoodsName);
-            this.Controls.Add(this.btnCart);
+            this.Controls.Add(this.btnAddtoCart);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblNum);
             this.Controls.Add(this.btnPlus);
-            this.Controls.Add(this.btnMin);
+            this.Controls.Add(this.btnMinus);
             this.Controls.Add(this.picGoods);
             this.Name = "Frm_C_GoodsDetail";
             this.Load += new System.EventHandler(this.Frm_C_GoodsDetail_Load);
@@ -116,13 +121,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox picGoods;
-        private System.Windows.Forms.Button btnMin;
+        private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnCart;
+        private System.Windows.Forms.Button btnAddtoCart;
         private System.Windows.Forms.Label lblGoodsName;
-        private System.Windows.Forms.Label lblDetail;
         private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.RichTextBox rtbDetail;
     }
 }

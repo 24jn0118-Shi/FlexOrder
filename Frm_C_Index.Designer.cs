@@ -84,7 +84,7 @@
             resources.ApplyResources(this.lblWelcome, "lblWelcome");
             this.lblWelcome.Name = "lblWelcome";
             // 
-            // FrmCIndex
+            // Frm_C_Index
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -95,10 +95,9 @@
             this.Controls.Add(this.btnEnglish);
             this.Controls.Add(this.btnChinese);
             this.Controls.Add(this.btnRussian);
-            this.Name = "FrmCIndex";
+            this.Name = "Frm_C_Index";
             this.Load += new System.EventHandler(this.FrmCIndex_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -176,13 +176,13 @@
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <metadata name="group_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="group_code.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="group_id.HeaderText" xml:space="preserve">
+  <data name="group_code.HeaderText" xml:space="preserve">
     <value>分類コード</value>
   </data>
-  <data name="group_id.Width" type="System.Int32, mscorlib">
+  <data name="group_code.Width" type="System.Int32, mscorlib">
     <value>90</value>
   </data>
   <metadata name="group_sort.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -210,7 +210,7 @@
     <value>English</value>
   </data>
   <data name="en.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>90</value>
   </data>
   <metadata name="zh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -219,7 +219,7 @@
     <value>中文</value>
   </data>
   <data name="zh.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>80</value>
   </data>
   <metadata name="ru.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -228,7 +228,7 @@
     <value>Русский</value>
   </data>
   <data name="ru.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>180</value>
   </data>
   <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 67</value>
@@ -267,7 +267,7 @@
     <value>3</value>
   </data>
   <data name="lblCode.Text" xml:space="preserve">
-    <value>追加する分類コード：</value>
+    <value>登録する分類コード：</value>
   </data>
   <data name="&gt;&gt;lblCode.Name" xml:space="preserve">
     <value>lblCode</value>
@@ -311,52 +311,52 @@
   <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="txtGroupID.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txbGroupID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="txtGroupID.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txbGroupID.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 350</value>
   </data>
-  <data name="txtGroupID.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txbGroupID.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
   </data>
-  <data name="txtGroupID.TabIndex" type="System.Int32, mscorlib">
+  <data name="txbGroupID.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;txtGroupID.Name" xml:space="preserve">
-    <value>txtGroupID</value>
+  <data name="&gt;&gt;txbGroupID.Name" xml:space="preserve">
+    <value>txbGroupID</value>
   </data>
-  <data name="&gt;&gt;txtGroupID.Type" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupID.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtGroupID.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupID.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtGroupID.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupID.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="txtGroupName.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txbGroupName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="txtGroupName.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txbGroupName.Location" type="System.Drawing.Point, System.Drawing">
     <value>215, 389</value>
   </data>
-  <data name="txtGroupName.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txbGroupName.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
   </data>
-  <data name="txtGroupName.TabIndex" type="System.Int32, mscorlib">
+  <data name="txbGroupName.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;txtGroupName.Name" xml:space="preserve">
-    <value>txtGroupName</value>
+  <data name="&gt;&gt;txbGroupName.Name" xml:space="preserve">
+    <value>txbGroupName</value>
   </data>
-  <data name="&gt;&gt;txtGroupName.Type" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtGroupName.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txtGroupName.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupName.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="btnAddGroup.Font" type="System.Drawing.Font, System.Drawing">
@@ -386,31 +386,31 @@
   <data name="&gt;&gt;btnAddGroup.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>660, 374</value>
   </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 64</value>
   </data>
-  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>多言語情報を上書き保存</value>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>多言語情報を編集</value>
   </data>
-  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
-    <value>btnSave</value>
+  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
+    <value>btnEdit</value>
   </data>
-  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblSortCode.AutoSize" type="System.Boolean, mscorlib">
@@ -570,10 +570,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_S_GoodsGroupManagement</value>
   </data>
-  <data name="&gt;&gt;group_id.Name" xml:space="preserve">
-    <value>group_id</value>
+  <data name="&gt;&gt;group_code.Name" xml:space="preserve">
+    <value>group_code</value>
   </data>
-  <data name="&gt;&gt;group_id.Type" xml:space="preserve">
+  <data name="&gt;&gt;group_code.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;group_sort.Name" xml:space="preserve">
