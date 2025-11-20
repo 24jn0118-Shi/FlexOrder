@@ -53,6 +53,7 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(93, 36);
             this.btnBack.TabIndex = 0;
+            this.btnBack.TabStop = false;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -152,7 +153,7 @@
             this.rbtnStaff.Location = new System.Drawing.Point(170, 399);
             this.rbtnStaff.Name = "rbtnStaff";
             this.rbtnStaff.Size = new System.Drawing.Size(92, 25);
-            this.rbtnStaff.TabIndex = 10;
+            this.rbtnStaff.TabIndex = 11;
             this.rbtnStaff.Text = "一般店員";
             this.rbtnStaff.UseVisualStyleBackColor = true;
             // 
@@ -164,7 +165,7 @@
             this.rbtnAdmin.Location = new System.Drawing.Point(312, 399);
             this.rbtnAdmin.Name = "rbtnAdmin";
             this.rbtnAdmin.Size = new System.Drawing.Size(76, 25);
-            this.rbtnAdmin.TabIndex = 11;
+            this.rbtnAdmin.TabIndex = 12;
             this.rbtnAdmin.Text = "管理者";
             this.rbtnAdmin.UseVisualStyleBackColor = true;
             // 
@@ -175,6 +176,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(132, 58);
             this.btnConfirm.TabIndex = 12;
+            this.btnConfirm.TabStop = false;
             this.btnConfirm.Text = "確定";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -187,6 +189,7 @@
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(132, 58);
             this.btnChangePassword.TabIndex = 12;
+            this.btnChangePassword.TabStop = false;
             this.btnChangePassword.Text = "パスワード変更をONにする";
             this.btnChangePassword.UseVisualStyleBackColor = true;
             this.btnChangePassword.Visible = false;
@@ -199,7 +202,7 @@
             this.txbPassword2.Name = "txbPassword2";
             this.txbPassword2.PasswordChar = '*';
             this.txbPassword2.Size = new System.Drawing.Size(271, 28);
-            this.txbPassword2.TabIndex = 9;
+            this.txbPassword2.TabIndex = 10;
             // 
             // lblPassword2
             // 
