@@ -28,30 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_SalesStatistics));
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F);
+            this.label1.Location = new System.Drawing.Point(253, 173);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 41);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "In Development";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBack
             // 
-            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(646, 23);
             this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(113, 48);
+            this.btnBack.TabIndex = 2;
+            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Frm_S_SalesStatistics
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Name = "Frm_S_SalesStatistics";
+            this.Text = "Frm_S_SalesStatistics";
             this.ResumeLayout(false);
             this.PerformLayout();
 

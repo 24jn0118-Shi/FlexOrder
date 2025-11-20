@@ -188,6 +188,9 @@
   <data name="&gt;&gt;txbLastname.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
   <data name="&gt;&gt;rbtnStaff.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -214,9 +217,6 @@
   </data>
   <data name="&gt;&gt;txbPassword2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblLastname.Text" xml:space="preserve">
-    <value>姓 :</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 28</value>
@@ -251,6 +251,9 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_S_StaffEdit</value>
   </data>
+  <data name="lblPassword2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
   <data name="txbLastname.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 28</value>
   </data>
@@ -266,8 +269,8 @@
   <data name="lblFirstname.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
-  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>54, 47</value>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 36</value>
   </data>
   <data name="btnConfirm.Text" xml:space="preserve">
     <value>確定</value>
@@ -286,6 +289,9 @@
   </data>
   <data name="rbtnStaff.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;txbFirstname.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -307,9 +313,6 @@
   </data>
   <data name="lblPassword2.Location" type="System.Drawing.Point, System.Drawing">
     <value>119, 349</value>
-  </data>
-  <data name="lblLastname.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnChangePassword.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -338,8 +341,8 @@
   <data name="&gt;&gt;btnChangePassword.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 36</value>
+  <data name="txbPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
   </data>
   <data name="&gt;&gt;rbtnAdmin.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -369,9 +372,6 @@
   <data name="&gt;&gt;rbtnStaff.Name" xml:space="preserve">
     <value>rbtnStaff</value>
   </data>
-  <data name="txbID.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;btnConfirm.Name" xml:space="preserve">
     <value>btnConfirm</value>
   </data>
@@ -387,11 +387,11 @@
   <data name="&gt;&gt;txbPassword2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="lblLastname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 21</value>
   </data>
-  <data name="lblPassword2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 47</value>
   </data>
   <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
     <value>$this</value>
@@ -438,9 +438,6 @@
   <data name="rbtnStaff.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="txbPassword.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
-    <value>*</value>
-  </data>
   <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -480,11 +477,14 @@
   <data name="&gt;&gt;rbtnStaff.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;lblLastname.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
   <data name="lblID.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;lblLastname.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="lblLastname.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="&gt;&gt;lblPassword2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -498,14 +498,14 @@
   <data name="rbtnStaff.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="rbtnAdmin.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="txbID.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;txbPassword.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lblPassword.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+  <data name="&gt;&gt;txbLastname.Name" xml:space="preserve">
+    <value>txbLastname</value>
   </data>
   <data name="lblFirstname.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -515,9 +515,6 @@
   </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>14</value>
-  </data>
-  <data name="lblLastname.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 21</value>
   </data>
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -537,14 +534,17 @@
   <data name="&gt;&gt;txbPassword.Name" xml:space="preserve">
     <value>txbPassword</value>
   </data>
-  <data name="&gt;&gt;txbFirstname.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblPassword.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txbLastname.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="&gt;&gt;txbLastname.Name" xml:space="preserve">
-    <value>txbLastname</value>
+  <data name="rbtnAdmin.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblLastname.Text" xml:space="preserve">
+    <value>姓 :</value>
   </data>
   <data name="&gt;&gt;lblID.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -609,10 +609,4 @@
   <data name="lblPassword2.Text" xml:space="preserve">
     <value>パスワード確認：</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja</value>
-  </metadata>
 </root>
