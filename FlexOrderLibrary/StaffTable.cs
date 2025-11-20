@@ -51,7 +51,6 @@ namespace FlexOrderLibrary
                     
                 }
             }
-
             return staff;
         }
         public DataTable GetAllStaff()
@@ -97,7 +96,6 @@ namespace FlexOrderLibrary
         }
         public int Insert(Staff staff)
         {
-
             return -1;
         }
         public int Update(Staff staff)
@@ -105,12 +103,20 @@ namespace FlexOrderLibrary
             return -1;
         }
 
-        public int delete(Staff staff)
+        public int Delete(Staff staff)
         {
-            return -1;
-
-
-
+            int ret = 0;
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"DELETE FROM Yoyaku WHERE Isbn=@isbn AND GakuNo=@gakuNo";
+                SqlCommand command = new SqlCommand(sql, connection);
+                //command.Parameters.AddWithValue("@isbn", isbn);
+                //command.Parameters.AddWithValue("@gakuNo", gakuNo);
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+            }
+            return ret;
         }
     }
 }

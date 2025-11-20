@@ -52,18 +52,20 @@ namespace FlexOrder
                 MessageBox.Show("ユーザーIDは数字で入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else {
-                StaffTable stafftable = new StaffTable();
-                Staff staff = stafftable.Login(useridInt, txbPassword.Text);
+                    StaffTable stafftable = new StaffTable();
+                    Staff staff = stafftable.Login(useridInt, txbPassword.Text);
                 //Login成功なら
                 if (staff!=null)
                 {
-                Frm_S_Mainmenu form = new Frm_S_Mainmenu(staff);
-                form.ShowDialog();
+                    txbUserId.Text = "";
+                    txbPassword.Text = "";
+                    Frm_S_Mainmenu form = new Frm_S_Mainmenu(staff);
+                    form.ShowDialog();
                 }
                 else 
                 {
-                MessageBox.Show("Id、パスワードはどちらかが違います", "ログイン失敗",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Id、パスワードはどちらかが違います", "ログイン失敗",
+                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

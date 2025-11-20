@@ -28,63 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labeltitle1 = new System.Windows.Forms.Label();
-            this.labelprice1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.ptbImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // labeltitle1
+            // lblTitle
             // 
-            this.labeltitle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitle1.Location = new System.Drawing.Point(3, 77);
-            this.labeltitle1.Name = "labeltitle1";
-            this.labeltitle1.Size = new System.Drawing.Size(136, 49);
-            this.labeltitle1.TabIndex = 1;
-            this.labeltitle1.Text = "フード1";
-            this.labeltitle1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(3, 77);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(136, 49);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "フード1";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelprice1
+            // lblPrice
             // 
-            this.labelprice1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelprice1.Location = new System.Drawing.Point(3, 128);
-            this.labelprice1.Name = "labelprice1";
-            this.labelprice1.Size = new System.Drawing.Size(136, 22);
-            this.labelprice1.TabIndex = 2;
-            this.labelprice1.Text = "￥99999";
-            this.labelprice1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Location = new System.Drawing.Point(3, 128);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(136, 22);
+            this.lblPrice.TabIndex = 2;
+            this.lblPrice.Text = "￥99999";
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // ptbImage
             // 
-            this.pictureBox1.Image = global::FlexOrder.Properties.Resources.testimage1;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.ptbImage.Image = global::FlexOrder.Properties.Resources.testimage1;
+            this.ptbImage.Location = new System.Drawing.Point(27, 3);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(94, 71);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbImage.TabIndex = 0;
+            this.ptbImage.TabStop = false;
             // 
             // ProductItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Controls.Add(this.labelprice1);
-            this.Controls.Add(this.labeltitle1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.ptbImage);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ProductItem";
             this.Size = new System.Drawing.Size(142, 151);
             this.Click += new System.EventHandler(this.ProductItem_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labeltitle1;
-        private System.Windows.Forms.Label labelprice1;
+        private System.Windows.Forms.PictureBox ptbImage;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblPrice;
     }
 }

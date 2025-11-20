@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -174,7 +174,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <metadata name="group_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -183,49 +183,58 @@
     <value>分類コード</value>
   </data>
   <data name="group_id.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>90</value>
   </data>
-  <metadata name="japanese.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="group_sort.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="japanese.HeaderText" xml:space="preserve">
+  <data name="group_sort.HeaderText" xml:space="preserve">
+    <value>優先順位</value>
+  </data>
+  <data name="group_sort.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <metadata name="ja.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="ja.HeaderText" xml:space="preserve">
     <value>日本語</value>
   </data>
-  <data name="japanese.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="ja.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <metadata name="english.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="en.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="english.HeaderText" xml:space="preserve">
+  <data name="en.HeaderText" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="english.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="en.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <metadata name="chinese.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="zh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="chinese.HeaderText" xml:space="preserve">
+  <data name="zh.HeaderText" xml:space="preserve">
     <value>中文</value>
   </data>
-  <data name="chinese.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="zh.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
-  <metadata name="russian.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ru.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="russian.HeaderText" xml:space="preserve">
+  <data name="ru.HeaderText" xml:space="preserve">
     <value>Русский</value>
   </data>
-  <data name="russian.Width" type="System.Int32, mscorlib">
-    <value>125</value>
+  <data name="ru.Width" type="System.Int32, mscorlib">
+    <value>120</value>
   </data>
   <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 60</value>
+    <value>42, 67</value>
   </data>
   <data name="dgvGroupList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>668, 265</value>
+    <value>692, 265</value>
   </data>
   <data name="dgvGroupList.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -240,7 +249,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvGroupList.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="lblCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -252,13 +261,13 @@
     <value>51, 353</value>
   </data>
   <data name="lblCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 21</value>
+    <value>170, 21</value>
   </data>
   <data name="lblCode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lblCode.Text" xml:space="preserve">
-    <value>追加する分類コード:</value>
+    <value>追加する分類コード：</value>
   </data>
   <data name="&gt;&gt;lblCode.Name" xml:space="preserve">
     <value>lblCode</value>
@@ -270,7 +279,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCode.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="lblName.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -282,13 +291,13 @@
     <value>67, 392</value>
   </data>
   <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 21</value>
+    <value>154, 21</value>
   </data>
   <data name="lblName.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lblName.Text" xml:space="preserve">
-    <value>分類名（日本語）:</value>
+    <value>分類名（日本語）：</value>
   </data>
   <data name="&gt;&gt;lblName.Name" xml:space="preserve">
     <value>lblName</value>
@@ -300,7 +309,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="txtGroupID.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -324,7 +333,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtGroupID.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="txtGroupName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -348,13 +357,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtGroupName.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="btnAddGroup.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnAddGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 361</value>
+    <value>230, 424</value>
   </data>
   <data name="btnAddGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 43</value>
@@ -375,7 +384,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnAddGroup.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnSave.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -404,9 +413,151 @@
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ja</value>
-  </metadata>
+  <data name="lblSortCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSortCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblSortCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSortCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>344, 353</value>
+  </data>
+  <data name="lblSortCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 21</value>
+  </data>
+  <data name="lblSortCode.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lblSortCode.Text" xml:space="preserve">
+    <value>並び替える分類コード：</value>
+  </data>
+  <data name="&gt;&gt;lblSortCode.Name" xml:space="preserve">
+    <value>lblSortCode</value>
+  </data>
+  <data name="&gt;&gt;lblSortCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSortCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSortCode.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblSortIndex.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSortIndex.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="lblSortIndex.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblSortIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 392</value>
+  </data>
+  <data name="lblSortIndex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 21</value>
+  </data>
+  <data name="lblSortIndex.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lblSortIndex.Text" xml:space="preserve">
+    <value>目標順番：</value>
+  </data>
+  <data name="&gt;&gt;lblSortIndex.Name" xml:space="preserve">
+    <value>lblSortIndex</value>
+  </data>
+  <data name="&gt;&gt;lblSortIndex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSortIndex.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblSortIndex.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txbSortCode.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="txbSortCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 350</value>
+  </data>
+  <data name="txbSortCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 28</value>
+  </data>
+  <data name="txbSortCode.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txbSortCode.Name" xml:space="preserve">
+    <value>txbSortCode</value>
+  </data>
+  <data name="&gt;&gt;txbSortCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txbSortCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txbSortCode.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txbSortIndex.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="txbSortIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 389</value>
+  </data>
+  <data name="txbSortIndex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 28</value>
+  </data>
+  <data name="txbSortIndex.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txbSortIndex.Name" xml:space="preserve">
+    <value>txbSortIndex</value>
+  </data>
+  <data name="&gt;&gt;txbSortIndex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txbSortIndex.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txbSortIndex.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnGoSort.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="btnGoSort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGoSort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>520, 424</value>
+  </data>
+  <data name="btnGoSort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 43</value>
+  </data>
+  <data name="btnGoSort.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnGoSort.Text" xml:space="preserve">
+    <value>並び替える</value>
+  </data>
+  <data name="&gt;&gt;btnGoSort.Name" xml:space="preserve">
+    <value>btnGoSort</value>
+  </data>
+  <data name="&gt;&gt;btnGoSort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnGoSort.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnGoSort.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -414,7 +565,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>800, 479</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_S_GoodsGroupManagement</value>
@@ -425,28 +576,34 @@
   <data name="&gt;&gt;group_id.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;japanese.Name" xml:space="preserve">
-    <value>japanese</value>
+  <data name="&gt;&gt;group_sort.Name" xml:space="preserve">
+    <value>group_sort</value>
   </data>
-  <data name="&gt;&gt;japanese.Type" xml:space="preserve">
+  <data name="&gt;&gt;group_sort.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;english.Name" xml:space="preserve">
-    <value>english</value>
+  <data name="&gt;&gt;ja.Name" xml:space="preserve">
+    <value>ja</value>
   </data>
-  <data name="&gt;&gt;english.Type" xml:space="preserve">
+  <data name="&gt;&gt;ja.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;chinese.Name" xml:space="preserve">
-    <value>chinese</value>
+  <data name="&gt;&gt;en.Name" xml:space="preserve">
+    <value>en</value>
   </data>
-  <data name="&gt;&gt;chinese.Type" xml:space="preserve">
+  <data name="&gt;&gt;en.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;russian.Name" xml:space="preserve">
-    <value>russian</value>
+  <data name="&gt;&gt;zh.Name" xml:space="preserve">
+    <value>zh</value>
   </data>
-  <data name="&gt;&gt;russian.Type" xml:space="preserve">
+  <data name="&gt;&gt;zh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ru.Name" xml:space="preserve">
+    <value>ru</value>
+  </data>
+  <data name="&gt;&gt;ru.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
