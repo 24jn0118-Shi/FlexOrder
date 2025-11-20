@@ -28,6 +28,7 @@ namespace FlexOrder
         }
         private void refresh_page() 
         {
+            selected_id = null;
             StaffTable staffTable = new StaffTable();
             DataTable table = staffTable.GetAllStaff();
             table.Columns.Add("str_is_manager", typeof(string));
