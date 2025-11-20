@@ -48,7 +48,7 @@ namespace FlexOrderLibrary
             return goodsList;
         }
 
-        public Goods GetGoodsByCode(String code, int language_no) 
+        public Goods GetGoodsByCode(int language_no, String code) 
         {
             return null;
         }

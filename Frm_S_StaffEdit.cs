@@ -67,6 +67,7 @@ namespace FlexOrder
             else
             {
                 lblTitle.Text = "店員編集";
+                lblIdHint.Visible = false;
                 id = int.Parse(type);
                 StaffTable staffTable = new StaffTable();
                 Staff staff = staffTable.GetStaffById(id);
@@ -124,7 +125,7 @@ namespace FlexOrder
                     }
                     else 
                     {
-                        errs += "スタッフIDは6~8桁の整数を入力してください\n";
+                        errs += "スタッフIDは6~8桁の有効数字を入力してください\n";
                     }
                     
                 }
@@ -150,7 +151,7 @@ namespace FlexOrder
                 if (errs == "") 
                 {
                     String access = rbtnAdmin.Checked ? "管理者" : "店員";
-                    DialogResult dret = MessageBox.Show("ID："+txbID.Text+"\n"+ "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか", "確認",
+                    DialogResult dret = MessageBox.Show("ID："+newid+"\n"+ "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
                     {

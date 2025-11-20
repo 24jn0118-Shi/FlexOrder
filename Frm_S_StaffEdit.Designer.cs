@@ -44,6 +44,8 @@
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.txbPassword2 = new System.Windows.Forms.TextBox();
             this.lblPassword2 = new System.Windows.Forms.Label();
+            this.lblIdHint = new System.Windows.Forms.Label();
+            this.lblPassHint = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBack
@@ -210,10 +212,32 @@
             this.lblPassword2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lblPassword2.Location = new System.Drawing.Point(119, 349);
             this.lblPassword2.Name = "lblPassword2";
-            this.lblPassword2.Size = new System.Drawing.Size(138, 21);
+            this.lblPassword2.Size = new System.Drawing.Size(170, 21);
             this.lblPassword2.TabIndex = 5;
-            this.lblPassword2.Text = "パスワード確認：";
+            this.lblPassword2.Text = "パスワード（確認）：";
             this.lblPassword2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblIdHint
+            // 
+            this.lblIdHint.AutoSize = true;
+            this.lblIdHint.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblIdHint.Location = new System.Drawing.Point(90, 127);
+            this.lblIdHint.Name = "lblIdHint";
+            this.lblIdHint.Size = new System.Drawing.Size(308, 21);
+            this.lblIdHint.TabIndex = 2;
+            this.lblIdHint.Text = "（0 以外の数字で始まる 6〜8 桁の整数）";
+            this.lblIdHint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPassHint
+            // 
+            this.lblPassHint.AutoSize = true;
+            this.lblPassHint.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblPassHint.Location = new System.Drawing.Point(115, 308);
+            this.lblPassHint.Name = "lblPassHint";
+            this.lblPassHint.Size = new System.Drawing.Size(99, 21);
+            this.lblPassHint.TabIndex = 5;
+            this.lblPassHint.Text = "（6桁以上）";
+            this.lblPassHint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Frm_S_StaffEdit
             // 
@@ -230,9 +254,11 @@
             this.Controls.Add(this.txbLastname);
             this.Controls.Add(this.txbID);
             this.Controls.Add(this.lblPassword2);
+            this.Controls.Add(this.lblPassHint);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblFirstname);
             this.Controls.Add(this.lblLastname);
+            this.Controls.Add(this.lblIdHint);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
@@ -263,5 +289,7 @@
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.TextBox txbPassword2;
         private System.Windows.Forms.Label lblPassword2;
+        private System.Windows.Forms.Label lblIdHint;
+        private System.Windows.Forms.Label lblPassHint;
     }
 }
