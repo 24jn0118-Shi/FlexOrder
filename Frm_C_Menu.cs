@@ -24,6 +24,7 @@ namespace FlexOrder
             { "ru", 4 }
         };
         int currentLangNo = 1;
+        bool vege = false;
         public Frm_C_Menu()
         {
             InitializeComponent();
@@ -98,7 +99,7 @@ namespace FlexOrder
             //flowLayoutPanelMenu.Controls.Add(product2);
 
             GoodsTable goodsTable = new GoodsTable();
-            List<Goods> goodslist = goodsTable.GetRecommendGoodsByLanguage(currentLangNo);
+            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
             foreach (Goods good in goodslist) 
             {
                 ProductItem product = new ProductItem();
@@ -115,6 +116,34 @@ namespace FlexOrder
         {
             Application.Restart();
             Environment.Exit(0);
+        }
+
+
+        private void ckbVeget_CheckedChanged(object sender, EventArgs e)
+        {
+            vege = ckbVeget.Checked;
+            flowLayoutPanelMenu.Controls.Clear();
+            GoodsTable goodsTable = new GoodsTable();
+            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
+            foreach (Goods good in goodslist)
+            {
+                if (vege && !good.is_vegetarian)
+                {
+                    continue;
+                }
+                ProductItem product = new ProductItem();
+                product.Code = good.goods_code;
+                product.ProductTitle = good.goods_name;
+                product.ProductPrice = "¥ " + good.goods_price.ToString();
+                var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);
+                product.ProductImage = img;
+                flowLayoutPanelMenu.Controls.Add(product);
+            }
+        }
+
+        private void lblVeget_Click(object sender, EventArgs e)
+        {
+            ckbVeget.Checked = !ckbVeget.Checked;
         }
     }
 }

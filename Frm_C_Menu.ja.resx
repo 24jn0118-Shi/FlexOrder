@@ -123,9 +123,6 @@
   <data name="btnBack.Text" xml:space="preserve">
     <value>戻る</value>
   </data>
-  <data name="btnVeget.Text" xml:space="preserve">
-    <value>ベジタリアンメニュー</value>
-  </data>
   <data name="lblTotal.Text" xml:space="preserve">
     <value>合計金額：</value>
   </data>
@@ -144,5 +141,11 @@
   </data>
   <data name="tbpagePop.Text" xml:space="preserve">
     <value>おすすめ</value>
+  </data>
+  <data name="btnRestart.Text" xml:space="preserve">
+    <value>↺</value>
+  </data>
+  <data name="lblVeget.Text" xml:space="preserve">
+    <value>ベジタリアンメニュー</value>
   </data>
 </root>

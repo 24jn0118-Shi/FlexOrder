@@ -96,24 +96,68 @@ namespace FlexOrderLibrary
         }
         public int Insert(Staff staff)
         {
-            return -1;
-        }
-        public int Update(Staff staff)
-        {
-            return -1;
-        }
-
-        public int Delete(Staff staff)
-        {
             int ret = 0;
+
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"DELETE FROM Yoyaku WHERE Isbn=@isbn AND GakuNo=@gakuNo";
+                string sql = @"INSERT INTO Staff VALUES(@staff_id,@staff_lastname,@staff_firstname,@is_manager,@staff_password)";
                 SqlCommand command = new SqlCommand(sql, connection);
-                //command.Parameters.AddWithValue("@isbn", isbn);
-                //command.Parameters.AddWithValue("@gakuNo", gakuNo);
+                command.Parameters.AddWithValue("@staff_id", staff.staff_id);
+                command.Parameters.AddWithValue("@staff_lastname", staff.staff_lastname);
+                command.Parameters.AddWithValue("@staff_firstname", staff.staff_firstname);
+                command.Parameters.AddWithValue("@is_manager", staff.is_manager);
+                command.Parameters.AddWithValue("@staff_password", staff.staff_password);
+
                 connection.Open();
+                try
+                {
+                    ret = command.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    Console.WriteLine("エラーメッセージ："+ex);
+                }
+            }
+            return ret;
+        }
+        public int Update(Staff staff)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"UPDATE Staff SET staff_lastname=@staff_lastname, staff_firstname=@staff_firstname,
+			is_manager=@is_manager, staff_password=@staff_password WHERE staff_id = @staff_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@staff_id", staff.staff_id);
+                command.Parameters.AddWithValue("@staff_lastname", staff.staff_lastname);
+                command.Parameters.AddWithValue("@staff_firstname", staff.staff_firstname);
+                command.Parameters.AddWithValue("@is_manager", staff.is_manager);
+                command.Parameters.AddWithValue("@staff_password", staff.staff_password);
+
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+
+            }
+            return ret;
+        }
+
+        public int Delete(int staffid)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"DELETE FROM Staff WHERE staff_id=@staff_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@staff_id", staffid);
+                connection.Open();
+
                 ret = command.ExecuteNonQuery();
             }
             return ret;

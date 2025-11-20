@@ -40,11 +40,12 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.orderlist = new System.Windows.Forms.ListBox();
             this.btnRestart = new System.Windows.Forms.Button();
-            this.btnVeget = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtKaikei = new System.Windows.Forms.TextBox();
             this.lblCart = new System.Windows.Forms.Label();
             this.lblen = new System.Windows.Forms.Label();
+            this.ckbVeget = new System.Windows.Forms.CheckBox();
+            this.lblVeget = new System.Windows.Forms.Label();
             this.tbcntMenu.SuspendLayout();
             this.tbpagePop.SuspendLayout();
             this.SuspendLayout();
@@ -127,12 +128,6 @@
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
-            // btnVeget
-            // 
-            resources.ApplyResources(this.btnVeget, "btnVeget");
-            this.btnVeget.Name = "btnVeget";
-            this.btnVeget.UseVisualStyleBackColor = true;
-            // 
             // lblTotal
             // 
             resources.ApplyResources(this.lblTotal, "lblTotal");
@@ -154,15 +149,29 @@
             resources.ApplyResources(this.lblen, "lblen");
             this.lblen.Name = "lblen";
             // 
+            // ckbVeget
+            // 
+            resources.ApplyResources(this.ckbVeget, "ckbVeget");
+            this.ckbVeget.Name = "ckbVeget";
+            this.ckbVeget.UseVisualStyleBackColor = true;
+            this.ckbVeget.CheckedChanged += new System.EventHandler(this.ckbVeget_CheckedChanged);
+            // 
+            // lblVeget
+            // 
+            resources.ApplyResources(this.lblVeget, "lblVeget");
+            this.lblVeget.Name = "lblVeget";
+            this.lblVeget.Click += new System.EventHandler(this.lblVeget_Click);
+            // 
             // Frm_C_Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblVeget);
+            this.Controls.Add(this.ckbVeget);
             this.Controls.Add(this.lblen);
             this.Controls.Add(this.lblCart);
             this.Controls.Add(this.txtKaikei);
             this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.btnVeget);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.orderlist);
             this.Controls.Add(this.btnBack);
@@ -186,7 +195,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ListBox orderlist;
         private System.Windows.Forms.Button btnRestart;
-        private System.Windows.Forms.Button btnVeget;
         private System.Windows.Forms.TabPage tbpageClass2;
         private System.Windows.Forms.TabPage tbpageClass3;
         private System.Windows.Forms.TabPage tbpageClass4;
@@ -195,5 +203,7 @@
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Label lblen;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
+        private System.Windows.Forms.CheckBox ckbVeget;
+        private System.Windows.Forms.Label lblVeget;
     }
 }

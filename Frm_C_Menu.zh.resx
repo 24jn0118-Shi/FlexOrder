@@ -151,9 +151,6 @@
   <data name="btnConfirm.Text" xml:space="preserve">
     <value>确认订单</value>
   </data>
-  <data name="btnVeget.Text" xml:space="preserve">
-    <value>素食菜单</value>
-  </data>
   <data name="lblTotal.Text" xml:space="preserve">
     <value>总计金额：</value>
   </data>
@@ -165,5 +162,11 @@
   </data>
   <data name=".Text" xml:space="preserve">
     <value>日元</value>
+  </data>
+  <data name="btnRestart.Text" xml:space="preserve">
+    <value>↺</value>
+  </data>
+  <data name="lblVeget.Text" xml:space="preserve">
+    <value>素食菜单</value>
   </data>
 </root>

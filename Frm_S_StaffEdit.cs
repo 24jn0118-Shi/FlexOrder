@@ -61,13 +61,11 @@ namespace FlexOrder
         {
             if (type == "Add")
             {
-                //this.type = "Add";
-                lblTitle.Text = "店員追加";
+                lblTitle.Text = "店員登録";
                 rbtnStaff.Checked = true;
             }
             else
             {
-                //this.type = "Edit";
                 lblTitle.Text = "店員編集";
                 id = int.Parse(type);
                 StaffTable staffTable = new StaffTable();
@@ -102,9 +100,11 @@ namespace FlexOrder
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             StaffTable staffTable = new StaffTable();
-            
             if (type == "Add") 
             {
+                Staff newstaff = null;
+                int newid;
+                bool parseresult = int.TryParse(txbID.Text, out newid);
                 String errs = "";
                 if(txbID.Text == "") 
                 {
@@ -112,11 +112,10 @@ namespace FlexOrder
                 }
                 else 
                 {
-                    int newid;
-                    bool parseresult = int.TryParse(txbID.Text, out newid);
+                    
                     if (parseresult && newid > 99999 && newid < 100000000) 
                     {
-                        Staff newstaff = staffTable.GetStaffById(newid);
+                        newstaff = staffTable.GetStaffById(newid);
                         if (newstaff != null) 
                         {
                             errs += "このスタッフIDは既に登録されています。\n";
@@ -151,11 +150,22 @@ namespace FlexOrder
                 if (errs == "") 
                 {
                     String access = rbtnAdmin.Checked ? "管理者" : "店員";
-                    DialogResult dret = MessageBox.Show("ID："+txbID.Text+"\n"+ "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n\n以上の内容で登録しますか", "確認",
+                    DialogResult dret = MessageBox.Show("ID："+txbID.Text+"\n"+ "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
-                    { 
-                        Console.WriteLine("Inserted");
+                    {
+                        newstaff = new Staff();
+                        newstaff.staff_id = newid;
+                        newstaff.staff_lastname = txbLastname.Text;
+                        newstaff.staff_firstname = txbFirstname.Text;
+                        newstaff.is_manager = rbtnAdmin.Checked;
+                        newstaff.staff_password = StaffTable.ComputeSha256Hex(txbPassword2.Text);
+                        int cnt = staffTable.Insert(newstaff);
+                        if (cnt > 0) 
+                        {
+                            MessageBox.Show(cnt + "件の店員アカウントを追加しました", "追加完了",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                         this.Close();
                     }
                 }
@@ -167,20 +177,72 @@ namespace FlexOrder
             } 
             else 
             {
-
                 String errs = "";
-
-
-
-
-                //Update処理成功なら
-                if (staff != null && staff.staff_id == id)
+                Staff editstaff = new Staff();
+                if (txbFirstname.Text == "" && txbLastname.Text == "")
                 {
-                    closeparent = true;
+                    errs += "姓と名はどちらかを入力してください\n";
+                }
+                else if (txbFirstname.Text.Length > 50 || txbLastname.Text.Length > 50)
+                {
+                    errs += "姓と名は50文字以下で入力してください\n";
+                }
+                if (change_password) 
+                {
+                    if (txbPassword.Text == "" || txbPassword2.Text == "")
+                    {
+                        errs += "パスワードを入力してください\n";
+                    }
+                    else if (txbPassword.Text.Length < 6 || txbPassword2.Text.Length < 6)
+                    {
+                        errs += "パスワードは6桁以上で入力してください\n";
+                    }
+                    else if (txbPassword.Text != txbPassword2.Text)
+                    {
+                        errs += "パスワードは一致していません\n";
+                    }
+                }
+                if (errs == "")
+                {
+                    String access = rbtnAdmin.Checked ? "管理者" : "店員";
+                    String changepass = change_password ? "あり" : "なし";
+                    DialogResult dret = MessageBox.Show("ID：" + txbID.Text + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "パスワード変更：" + changepass + "\n" + "権限：" + access + "\n" + "\n以上の内容に変更しますか", "確認",
+                                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dret == DialogResult.Yes)
+                    {
+                        editstaff.staff_id = id;
+                        editstaff.staff_lastname = txbLastname.Text;
+                        editstaff.staff_firstname = txbFirstname.Text;
+                        editstaff.is_manager = rbtnAdmin.Checked;
+                        if (change_password) 
+                        {
+                            editstaff.staff_password = StaffTable.ComputeSha256Hex(txbPassword2.Text);
+                        }
+                        else 
+                        {
+                            editstaff.staff_password = staffTable.GetStaffById(id).staff_password;
+                        }
+                        int cnt = staffTable.Update(editstaff);
+                        if (cnt > 0)
+                        {
+                            MessageBox.Show(cnt + "件の店員アカウントを編集しました", "編集完了",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //Update処理成功なら
+                            if (staff != null && staff.staff_id == id)
+                            {
+                                closeparent = true;
+                            }
+                            this.Close();
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(errs, "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
-            
         }
     }
 }

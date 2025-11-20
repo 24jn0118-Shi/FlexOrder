@@ -19,12 +19,12 @@ namespace FlexOrder
         Form parent;
         String selected_id = null;
         Boolean closeparent = false;
-        Staff staff;
-        public Frm_S_StaffManagement(Staff staff, Form parent)
+        Staff loginstaff;
+        public Frm_S_StaffManagement(Staff loginstaff, Form parent)
         {
             InitializeComponent();
             this.parent = parent;
-            this.staff = staff;
+            this.loginstaff = loginstaff;
         }
         private void refresh_page() 
         {
@@ -38,13 +38,13 @@ namespace FlexOrder
             }
             dgvStaff.DataSource = table;
             dgvStaff.ClearSelection();
+            Console.WriteLine("Page Refreshed");
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add",this);
             frmSStaffEdit.ShowDialog();
             refresh_page();
-            Console.WriteLine("Refreshed");
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -56,11 +56,10 @@ namespace FlexOrder
             }
             else 
             {
-                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(staff, selected_id,this);
+                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(loginstaff, selected_id,this);
                 frmSStaffEdit.ShowDialog();
+                refresh_page();
             }
-            //Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Edit");
-            //frmSStaffEdit.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -72,7 +71,9 @@ namespace FlexOrder
             }
             else
             {
-                if (staff != null && staff.is_manager) 
+                StaffTable staffTable = new StaffTable();
+                Staff st = staffTable.GetStaffById(int.Parse(selected_id));
+                if (st != null && st.is_manager) 
                 {
                     MessageBox.Show("管理者のアカウントが削除できません", "エラー",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -83,15 +84,16 @@ namespace FlexOrder
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dret == DialogResult.Yes)
                     {
-
+                        int cnt = staffTable.Delete(st.staff_id);
+                        if (cnt > 0) 
+                        {
+                            MessageBox.Show(cnt+"件の店員アカウントを削除しました", "削除完了",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        refresh_page();
                     }
                 }
-
-                    
-
-
             }
-                
         }
 
         private void btnBack_Click(object sender, EventArgs e)
