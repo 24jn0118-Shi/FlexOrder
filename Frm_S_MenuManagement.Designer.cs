@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_MenuManagement));
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +44,12 @@
             // 
             // btnBack
             // 
-            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(721, 12);
             this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(67, 38);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -61,67 +64,86 @@
             this.goods_price,
             this.group_name,
             this.is_available});
-            resources.ApplyResources(this.dgvMenu, "dgvMenu");
+            this.dgvMenu.Location = new System.Drawing.Point(121, 83);
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.RowTemplate.Height = 21;
+            this.dgvMenu.Size = new System.Drawing.Size(543, 195);
+            this.dgvMenu.TabIndex = 1;
             // 
             // goods_id
             // 
-            resources.ApplyResources(this.goods_id, "goods_id");
+            this.goods_id.HeaderText = "商品番号";
             this.goods_id.Name = "goods_id";
             // 
             // goods_name
             // 
-            resources.ApplyResources(this.goods_name, "goods_name");
+            this.goods_name.HeaderText = "商品名";
             this.goods_name.Name = "goods_name";
             // 
             // goods_price
             // 
-            resources.ApplyResources(this.goods_price, "goods_price");
+            this.goods_price.HeaderText = "商品単価";
             this.goods_price.Name = "goods_price";
             // 
             // group_name
             // 
-            resources.ApplyResources(this.group_name, "group_name");
+            this.group_name.HeaderText = "商品分類名";
             this.group_name.Name = "group_name";
             // 
             // is_available
             // 
-            resources.ApplyResources(this.is_available, "is_available");
+            this.is_available.HeaderText = "在庫状況";
             this.is_available.Name = "is_available";
             // 
             // btnAddGoods
             // 
-            resources.ApplyResources(this.btnAddGoods, "btnAddGoods");
+            this.btnAddGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAddGoods.Location = new System.Drawing.Point(121, 313);
             this.btnAddGoods.Name = "btnAddGoods";
+            this.btnAddGoods.Size = new System.Drawing.Size(100, 50);
+            this.btnAddGoods.TabIndex = 2;
+            this.btnAddGoods.Text = "追加";
             this.btnAddGoods.UseVisualStyleBackColor = true;
             this.btnAddGoods.Click += new System.EventHandler(this.btnAddGoods_Click);
             // 
             // btnEditGoods
             // 
-            resources.ApplyResources(this.btnEditGoods, "btnEditGoods");
+            this.btnEditGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnEditGoods.Location = new System.Drawing.Point(352, 313);
             this.btnEditGoods.Name = "btnEditGoods";
+            this.btnEditGoods.Size = new System.Drawing.Size(100, 50);
+            this.btnEditGoods.TabIndex = 3;
+            this.btnEditGoods.Text = "編集";
             this.btnEditGoods.UseVisualStyleBackColor = true;
             this.btnEditGoods.Click += new System.EventHandler(this.btnEditGoods_Click);
             // 
             // btnAddGroup
             // 
-            resources.ApplyResources(this.btnAddGroup, "btnAddGroup");
+            this.btnAddGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAddGroup.Location = new System.Drawing.Point(341, 369);
             this.btnAddGroup.Name = "btnAddGroup";
+            this.btnAddGroup.Size = new System.Drawing.Size(123, 50);
+            this.btnAddGroup.TabIndex = 4;
+            this.btnAddGroup.Text = "商品分類追加";
             this.btnAddGroup.UseVisualStyleBackColor = true;
             this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
             // 
             // btnDeleteGoods
             // 
-            resources.ApplyResources(this.btnDeleteGoods, "btnDeleteGoods");
+            this.btnDeleteGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnDeleteGoods.Location = new System.Drawing.Point(564, 313);
             this.btnDeleteGoods.Name = "btnDeleteGoods";
+            this.btnDeleteGoods.Size = new System.Drawing.Size(100, 50);
+            this.btnDeleteGoods.TabIndex = 5;
+            this.btnDeleteGoods.Text = "削除";
             this.btnDeleteGoods.UseVisualStyleBackColor = true;
             this.btnDeleteGoods.Click += new System.EventHandler(this.btnDeleteGoods_Click);
             // 
             // Frm_S_MenuManagement
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDeleteGoods);
             this.Controls.Add(this.btnAddGroup);
             this.Controls.Add(this.btnEditGoods);
@@ -129,6 +151,7 @@
             this.Controls.Add(this.dgvMenu);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_MenuManagement";
+            this.Text = "メニュー管理";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.ResumeLayout(false);
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_OrderEdit));
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.sale_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +53,13 @@
             // 
             // lblTitle
             // 
-            resources.ApplyResources(this.lblTitle, "lblTitle");
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblTitle.Location = new System.Drawing.Point(22, 28);
             this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(101, 28);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "注文番号:";
             // 
             // dgvOrderDetail
             // 
@@ -64,109 +68,189 @@
             this.sale_name,
             this.num,
             this.price});
-            resources.ApplyResources(this.dgvOrderDetail, "dgvOrderDetail");
+            this.dgvOrderDetail.Location = new System.Drawing.Point(69, 59);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
             this.dgvOrderDetail.RowTemplate.Height = 21;
+            this.dgvOrderDetail.Size = new System.Drawing.Size(604, 221);
+            this.dgvOrderDetail.TabIndex = 2;
             // 
             // sale_name
             // 
-            resources.ApplyResources(this.sale_name, "sale_name");
+            this.sale_name.HeaderText = "注文商品";
             this.sale_name.Name = "sale_name";
+            this.sale_name.Width = 150;
             // 
             // num
             // 
-            resources.ApplyResources(this.num, "num");
+            this.num.HeaderText = "個数";
             this.num.Name = "num";
+            this.num.Width = 125;
             // 
             // price
             // 
-            resources.ApplyResources(this.price, "price");
+            this.price.HeaderText = "価格";
             this.price.Name = "price";
             // 
             // btnBack
             // 
-            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(720, 12);
             this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 53);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnAddOrder
             // 
-            resources.ApplyResources(this.btnAddOrder, "btnAddOrder");
+            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAddOrder.Location = new System.Drawing.Point(69, 286);
             this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(101, 40);
+            this.btnAddOrder.TabIndex = 4;
+            this.btnAddOrder.Text = "商品追加";
             this.btnAddOrder.UseVisualStyleBackColor = true;
             this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // lblBef
             // 
-            resources.ApplyResources(this.lblBef, "lblBef");
+            this.lblBef.AutoSize = true;
+            this.lblBef.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblBef.Location = new System.Drawing.Point(65, 332);
             this.lblBef.Name = "lblBef";
+            this.lblBef.Size = new System.Drawing.Size(106, 21);
+            this.lblBef.TabIndex = 5;
+            this.lblBef.Text = "変更前価格：";
+            this.lblBef.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblYen1
             // 
-            resources.ApplyResources(this.lblYen1, "lblYen1");
+            this.lblYen1.AutoSize = true;
+            this.lblYen1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblYen1.Location = new System.Drawing.Point(249, 332);
             this.lblYen1.Name = "lblYen1";
+            this.lblYen1.Size = new System.Drawing.Size(26, 21);
+            this.lblYen1.TabIndex = 6;
+            this.lblYen1.Text = "円";
             // 
             // lblYen2
             // 
-            resources.ApplyResources(this.lblYen2, "lblYen2");
+            this.lblYen2.AutoSize = true;
+            this.lblYen2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblYen2.Location = new System.Drawing.Point(249, 369);
             this.lblYen2.Name = "lblYen2";
+            this.lblYen2.Size = new System.Drawing.Size(26, 21);
+            this.lblYen2.TabIndex = 9;
+            this.lblYen2.Text = "円";
             // 
             // lblAft
             // 
-            resources.ApplyResources(this.lblAft, "lblAft");
+            this.lblAft.AutoSize = true;
+            this.lblAft.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblAft.Location = new System.Drawing.Point(65, 369);
             this.lblAft.Name = "lblAft";
+            this.lblAft.Size = new System.Drawing.Size(106, 21);
+            this.lblAft.TabIndex = 8;
+            this.lblAft.Text = "変更後価格：";
+            this.lblAft.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTyp
             // 
-            resources.ApplyResources(this.lblTyp, "lblTyp");
+            this.lblTyp.AutoSize = true;
+            this.lblTyp.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblTyp.Location = new System.Drawing.Point(81, 410);
             this.lblTyp.Name = "lblTyp";
+            this.lblTyp.Size = new System.Drawing.Size(90, 21);
+            this.lblTyp.TabIndex = 11;
+            this.lblTyp.Text = "決済種類：";
+            this.lblTyp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblYen3
             // 
-            resources.ApplyResources(this.lblYen3, "lblYen3");
+            this.lblYen3.AutoSize = true;
+            this.lblYen3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblYen3.Location = new System.Drawing.Point(640, 332);
             this.lblYen3.Name = "lblYen3";
+            this.lblYen3.Size = new System.Drawing.Size(26, 21);
+            this.lblYen3.TabIndex = 14;
+            this.lblYen3.Text = "円";
             // 
             // lblRes
             // 
-            resources.ApplyResources(this.lblRes, "lblRes");
+            this.lblRes.AutoSize = true;
+            this.lblRes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblRes.Location = new System.Drawing.Point(502, 332);
             this.lblRes.Name = "lblRes";
+            this.lblRes.Size = new System.Drawing.Size(46, 21);
+            this.lblRes.TabIndex = 13;
+            this.lblRes.Text = "会計:";
             // 
             // btnGoPay
             // 
-            resources.ApplyResources(this.btnGoPay, "btnGoPay");
+            this.btnGoPay.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnGoPay.Location = new System.Drawing.Point(524, 360);
             this.btnGoPay.Name = "btnGoPay";
+            this.btnGoPay.Size = new System.Drawing.Size(139, 71);
+            this.btnGoPay.TabIndex = 16;
+            this.btnGoPay.Text = "決済へ";
             this.btnGoPay.UseVisualStyleBackColor = true;
             // 
             // lblOrderNo
             // 
-            resources.ApplyResources(this.lblOrderNo, "lblOrderNo");
+            this.lblOrderNo.AutoSize = true;
+            this.lblOrderNo.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblOrderNo.Location = new System.Drawing.Point(129, 28);
             this.lblOrderNo.Name = "lblOrderNo";
+            this.lblOrderNo.Size = new System.Drawing.Size(125, 28);
+            this.lblOrderNo.TabIndex = 17;
+            this.lblOrderNo.Text = "lblOrderNo";
             // 
             // lblBefore
             // 
-            resources.ApplyResources(this.lblBefore, "lblBefore");
+            this.lblBefore.AutoSize = true;
+            this.lblBefore.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblBefore.Location = new System.Drawing.Point(165, 332);
             this.lblBefore.Name = "lblBefore";
+            this.lblBefore.Size = new System.Drawing.Size(78, 21);
+            this.lblBefore.TabIndex = 18;
+            this.lblBefore.Text = "lblBefore";
             // 
             // lblAfter
             // 
-            resources.ApplyResources(this.lblAfter, "lblAfter");
+            this.lblAfter.AutoSize = true;
+            this.lblAfter.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblAfter.Location = new System.Drawing.Point(165, 369);
             this.lblAfter.Name = "lblAfter";
+            this.lblAfter.Size = new System.Drawing.Size(66, 21);
+            this.lblAfter.TabIndex = 18;
+            this.lblAfter.Text = "lblAfter";
             // 
             // lblType
             // 
-            resources.ApplyResources(this.lblType, "lblType");
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblType.Location = new System.Drawing.Point(165, 410);
             this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(64, 21);
+            this.lblType.TabIndex = 18;
+            this.lblType.Text = "lblType";
             // 
             // lblResult
             // 
-            resources.ApplyResources(this.lblResult, "lblResult");
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblResult.Location = new System.Drawing.Point(560, 332);
             this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(74, 21);
+            this.lblResult.TabIndex = 18;
+            this.lblResult.Text = "lblResult";
             // 
             // Frm_S_OrderEdit
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.lblAfter);
@@ -185,6 +269,7 @@
             this.Controls.Add(this.dgvOrderDetail);
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_OrderEdit";
+            this.Text = "注文詳細";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

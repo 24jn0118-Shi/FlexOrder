@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_MenuMultilingual));
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblGoodsName = new System.Windows.Forms.Label();
@@ -43,65 +42,109 @@
             // 
             // btnBack
             // 
-            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(703, 12);
             this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(85, 47);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblTitle
             // 
-            resources.ApplyResources(this.lblTitle, "lblTitle");
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblTitle.Location = new System.Drawing.Point(62, 61);
             this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(54, 28);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "？？";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblGoodsName
             // 
-            resources.ApplyResources(this.lblGoodsName, "lblGoodsName");
+            this.lblGoodsName.AutoSize = true;
+            this.lblGoodsName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblGoodsName.Location = new System.Drawing.Point(75, 126);
             this.lblGoodsName.Name = "lblGoodsName";
+            this.lblGoodsName.Size = new System.Drawing.Size(62, 21);
+            this.lblGoodsName.TabIndex = 2;
+            this.lblGoodsName.Text = "商品名:";
             // 
             // lblGoodsDetail
             // 
-            resources.ApplyResources(this.lblGoodsDetail, "lblGoodsDetail");
+            this.lblGoodsDetail.AutoSize = true;
+            this.lblGoodsDetail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblGoodsDetail.Location = new System.Drawing.Point(63, 193);
             this.lblGoodsDetail.Name = "lblGoodsDetail";
+            this.lblGoodsDetail.Size = new System.Drawing.Size(78, 21);
+            this.lblGoodsDetail.TabIndex = 3;
+            this.lblGoodsDetail.Text = "商品詳細:";
             // 
             // cmbLanguage
             // 
-            resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
+            this.cmbLanguage.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
             this.cmbLanguage.FormattingEnabled = true;
+            this.cmbLanguage.Location = new System.Drawing.Point(153, 44);
             this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.Size = new System.Drawing.Size(182, 36);
+            this.cmbLanguage.TabIndex = 4;
             // 
             // txbGoodsName
             // 
-            resources.ApplyResources(this.txbGoodsName, "txbGoodsName");
+            this.txbGoodsName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.txbGoodsName.Location = new System.Drawing.Point(153, 123);
             this.txbGoodsName.Name = "txbGoodsName";
+            this.txbGoodsName.Size = new System.Drawing.Size(182, 28);
+            this.txbGoodsName.TabIndex = 5;
             // 
             // txbGoodsDetail
             // 
-            resources.ApplyResources(this.txbGoodsDetail, "txbGoodsDetail");
+            this.txbGoodsDetail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.txbGoodsDetail.Location = new System.Drawing.Point(153, 190);
+            this.txbGoodsDetail.Multiline = true;
             this.txbGoodsDetail.Name = "txbGoodsDetail";
+            this.txbGoodsDetail.Size = new System.Drawing.Size(303, 178);
+            this.txbGoodsDetail.TabIndex = 6;
             // 
             // btnSave
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnSave.Location = new System.Drawing.Point(610, 249);
             this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(165, 49);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "上書き保存";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEnd
             // 
-            resources.ApplyResources(this.btnEnd, "btnEnd");
+            this.btnEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnEnd.Location = new System.Drawing.Point(610, 336);
             this.btnEnd.Name = "btnEnd";
+            this.btnEnd.Size = new System.Drawing.Size(165, 49);
+            this.btnEnd.TabIndex = 8;
+            this.btnEnd.Text = "操作完了";
             this.btnEnd.UseVisualStyleBackColor = true;
             this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // lblMul
             // 
-            resources.ApplyResources(this.lblMul, "lblMul");
+            this.lblMul.AutoSize = true;
+            this.lblMul.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblMul.Location = new System.Drawing.Point(30, 33);
             this.lblMul.Name = "lblMul";
+            this.lblMul.Size = new System.Drawing.Size(117, 28);
+            this.lblMul.TabIndex = 9;
+            this.lblMul.Text = "多言語情報";
             // 
             // Frm_S_MenuMultilingual
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblMul);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnSave);
@@ -113,6 +156,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_MenuMultilingual";
+            this.Text = "Frm_S_MenuMultilingual";
             this.ResumeLayout(false);
             this.PerformLayout();
 

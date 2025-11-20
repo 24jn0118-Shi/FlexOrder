@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_StaffManagement));
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,14 +42,17 @@
             // 
             // btnBack
             // 
-            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(710, 12);
             this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(78, 31);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvStaff
             // 
-            resources.ApplyResources(this.dgvStaff, "dgvStaff");
             this.dgvStaff.AllowUserToAddRows = false;
             this.dgvStaff.AllowUserToDeleteRows = false;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -59,70 +61,91 @@
             this.staff_lastname,
             this.staff_firstname,
             this.str_is_manager});
+            this.dgvStaff.Location = new System.Drawing.Point(122, 46);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowTemplate.Height = 21;
+            this.dgvStaff.Size = new System.Drawing.Size(570, 273);
+            this.dgvStaff.TabIndex = 1;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
             // staff_id
             // 
             this.staff_id.DataPropertyName = "staff_id";
-            resources.ApplyResources(this.staff_id, "staff_id");
+            this.staff_id.HeaderText = "店員ID";
             this.staff_id.Name = "staff_id";
             this.staff_id.ReadOnly = true;
+            this.staff_id.Width = 175;
             // 
             // staff_lastname
             // 
             this.staff_lastname.DataPropertyName = "staff_lastname";
-            resources.ApplyResources(this.staff_lastname, "staff_lastname");
+            this.staff_lastname.HeaderText = "姓";
             this.staff_lastname.Name = "staff_lastname";
             this.staff_lastname.ReadOnly = true;
+            this.staff_lastname.Width = 120;
             // 
             // staff_firstname
             // 
             this.staff_firstname.DataPropertyName = "staff_firstname";
-            resources.ApplyResources(this.staff_firstname, "staff_firstname");
+            this.staff_firstname.HeaderText = "名";
             this.staff_firstname.Name = "staff_firstname";
             this.staff_firstname.ReadOnly = true;
+            this.staff_firstname.Width = 120;
             // 
             // str_is_manager
             // 
             this.str_is_manager.DataPropertyName = "str_is_manager";
-            resources.ApplyResources(this.str_is_manager, "str_is_manager");
+            this.str_is_manager.HeaderText = "店員識別";
             this.str_is_manager.Name = "str_is_manager";
             this.str_is_manager.ReadOnly = true;
+            this.str_is_manager.Width = 120;
             // 
             // btnAdd
             // 
-            resources.ApplyResources(this.btnAdd, "btnAdd");
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(57, 351);
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 53);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "登録";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
-            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnEdit.Location = new System.Drawing.Point(351, 351);
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(90, 53);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "編集";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
-            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(653, 351);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(90, 53);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "削除";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // Frm_S_StaffManagement
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffManagement";
+            this.Text = "店員管理";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_StaffManagement_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_StaffManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
