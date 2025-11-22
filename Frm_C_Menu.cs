@@ -69,11 +69,6 @@ namespace FlexOrder
             this.Close();
         }
 
-        private void tbpclass1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
             string currentLang = Thread.CurrentThread.CurrentUICulture.Name;

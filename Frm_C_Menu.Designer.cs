@@ -81,7 +81,6 @@
             resources.ApplyResources(this.tbpageClass1, "tbpageClass1");
             this.tbpageClass1.Name = "tbpageClass1";
             this.tbpageClass1.UseVisualStyleBackColor = true;
-            this.tbpageClass1.Click += new System.EventHandler(this.tbpclass1_Click);
             // 
             // tbpageClass2
             // 

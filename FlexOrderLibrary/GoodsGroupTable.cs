@@ -42,9 +42,28 @@ namespace FlexOrderLibrary
         {
             GoodsGroup goodsGroup = null;
 
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT G.group_code, L.group_name 
+                    FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L ON G.group_code = L.group_code 
+                    WHERE G.group_code = @goodscode AND L.language_no = @language_no";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
+                adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
+                adapter.SelectCommand.Parameters.AddWithValue("@goodscode", code);
 
+                DataTable table = new DataTable();
+                int cnt = adapter.Fill(table);
 
+                if (cnt != 0)
+                {
+                    goodsGroup = new GoodsGroup();
+
+                    goodsGroup.group_code = table.Rows[0]["group_code"].ToString();
+                    goodsGroup.group_name = table.Rows[0]["group_name"].ToString();
+                }
+            }
 
             return goodsGroup;
         }
@@ -55,13 +74,13 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = "SELECT G.*, L1.group_name AS ja, L2.group_name AS en, L3.group_name AS zh, L4.group_name AS ru " +
-                    "FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L1 ON G.group_code = L1.group_code " +
-                    "INNER JOIN LocalizationGoodsGroup AS L2 ON L1.group_code = L2.group_code " +
-                    "INNER JOIN LocalizationGoodsGroup AS L3 ON L1.group_code = L3.group_code " +
-                    "INNER JOIN LocalizationGoodsGroup AS L4 ON L1.group_code = L4.group_code " +
-                    "WHERE L1.language_no = 1 AND L2.language_no = 2 AND L3.language_no = 3 AND L4.language_no = 4 " +
-                    "ORDER BY group_sort ASC";
+                string sql = @"SELECT G.*, L1.group_name AS ja, L2.group_name AS en, L3.group_name AS zh, L4.group_name AS ru 
+                    FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L1 ON G.group_code = L1.group_code 
+                    INNER JOIN LocalizationGoodsGroup AS L2 ON L1.group_code = L2.group_code 
+                    INNER JOIN LocalizationGoodsGroup AS L3 ON L1.group_code = L3.group_code 
+                    INNER JOIN LocalizationGoodsGroup AS L4 ON L1.group_code = L4.group_code 
+                    WHERE L1.language_no = 1 AND L2.language_no = 2 AND L3.language_no = 3 AND L4.language_no = 4 
+                    ORDER BY group_sort ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 adapter.Fill(table);

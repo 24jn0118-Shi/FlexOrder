@@ -35,6 +35,7 @@ namespace FlexOrder
 
         private void btnEnd_Click(object sender, EventArgs e)
         {
+            //Frm_S_MenuEditも一緒に閉じる
             parent.Close();
             this.Close();
         }

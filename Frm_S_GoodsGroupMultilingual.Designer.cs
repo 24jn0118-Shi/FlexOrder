@@ -58,6 +58,7 @@
             resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txbGroupName
             // 
@@ -79,6 +80,7 @@
             resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbLanguage_SelectedIndexChanged);
             // 
             // lblTitle
             // 
@@ -110,6 +112,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_GoodsGroupMultilingual";
+            this.Load += new System.EventHandler(this.Frm_S_GoodsGroupMultilingual_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

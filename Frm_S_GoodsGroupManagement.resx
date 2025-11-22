@@ -390,7 +390,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>660, 374</value>
+    <value>648, 374</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 64</value>

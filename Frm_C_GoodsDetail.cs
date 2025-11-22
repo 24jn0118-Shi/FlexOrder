@@ -41,7 +41,7 @@ namespace FlexOrder
             GoodsTable goodsTable = new GoodsTable();
             Goods goods = goodsTable.GetGoodsByCode(currentLangNo, code);
             lblGoodsName.Text = goods.goods_name;
-            rtbDetail.Text = goods.goods_detail;
+            lblDetail.Text = goods.goods_detail;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
             lblNum.Text = "1";
             var img = (Image)Properties.Resources.ResourceManager.GetObject(goods.goods_image);

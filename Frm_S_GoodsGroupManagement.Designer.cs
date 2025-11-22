@@ -32,6 +32,12 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvGroupList = new System.Windows.Forms.DataGridView();
+            this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group_sort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.en = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txbGroupID = new System.Windows.Forms.TextBox();
@@ -43,12 +49,6 @@
             this.txbSortCode = new System.Windows.Forms.TextBox();
             this.txbSortIndex = new System.Windows.Forms.TextBox();
             this.btnGoSort = new System.Windows.Forms.Button();
-            this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.group_sort = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.en = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,6 +81,48 @@
             this.dgvGroupList.ReadOnly = true;
             this.dgvGroupList.RowTemplate.Height = 21;
             this.dgvGroupList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellClick);
+            // 
+            // group_code
+            // 
+            this.group_code.DataPropertyName = "group_code";
+            resources.ApplyResources(this.group_code, "group_code");
+            this.group_code.Name = "group_code";
+            this.group_code.ReadOnly = true;
+            // 
+            // group_sort
+            // 
+            this.group_sort.DataPropertyName = "group_sort";
+            resources.ApplyResources(this.group_sort, "group_sort");
+            this.group_sort.Name = "group_sort";
+            this.group_sort.ReadOnly = true;
+            // 
+            // ja
+            // 
+            this.ja.DataPropertyName = "ja";
+            resources.ApplyResources(this.ja, "ja");
+            this.ja.Name = "ja";
+            this.ja.ReadOnly = true;
+            // 
+            // en
+            // 
+            this.en.DataPropertyName = "en";
+            resources.ApplyResources(this.en, "en");
+            this.en.Name = "en";
+            this.en.ReadOnly = true;
+            // 
+            // zh
+            // 
+            this.zh.DataPropertyName = "zh";
+            resources.ApplyResources(this.zh, "zh");
+            this.zh.Name = "zh";
+            this.zh.ReadOnly = true;
+            // 
+            // ru
+            // 
+            this.ru.DataPropertyName = "ru";
+            resources.ApplyResources(this.ru, "ru");
+            this.ru.Name = "ru";
+            this.ru.ReadOnly = true;
             // 
             // lblCode
             // 
@@ -141,48 +183,6 @@
             resources.ApplyResources(this.btnGoSort, "btnGoSort");
             this.btnGoSort.Name = "btnGoSort";
             this.btnGoSort.UseVisualStyleBackColor = true;
-            // 
-            // group_code
-            // 
-            this.group_code.DataPropertyName = "group_code";
-            resources.ApplyResources(this.group_code, "group_code");
-            this.group_code.Name = "group_code";
-            this.group_code.ReadOnly = true;
-            // 
-            // group_sort
-            // 
-            this.group_sort.DataPropertyName = "group_sort";
-            resources.ApplyResources(this.group_sort, "group_sort");
-            this.group_sort.Name = "group_sort";
-            this.group_sort.ReadOnly = true;
-            // 
-            // ja
-            // 
-            this.ja.DataPropertyName = "ja";
-            resources.ApplyResources(this.ja, "ja");
-            this.ja.Name = "ja";
-            this.ja.ReadOnly = true;
-            // 
-            // en
-            // 
-            this.en.DataPropertyName = "en";
-            resources.ApplyResources(this.en, "en");
-            this.en.Name = "en";
-            this.en.ReadOnly = true;
-            // 
-            // zh
-            // 
-            this.zh.DataPropertyName = "zh";
-            resources.ApplyResources(this.zh, "zh");
-            this.zh.Name = "zh";
-            this.zh.ReadOnly = true;
-            // 
-            // ru
-            // 
-            this.ru.DataPropertyName = "ru";
-            resources.ApplyResources(this.ru, "ru");
-            this.ru.Name = "ru";
-            this.ru.ReadOnly = true;
             // 
             // Frm_S_GoodsGroupManagement
             // 
