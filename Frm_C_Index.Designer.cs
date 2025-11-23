@@ -71,6 +71,7 @@
             resources.ApplyResources(this.btnTakeout, "btnTakeout");
             this.btnTakeout.Name = "btnTakeout";
             this.btnTakeout.UseVisualStyleBackColor = true;
+            this.btnTakeout.Click += new System.EventHandler(this.btnTakeout_Click);
             // 
             // btnDinein
             // 

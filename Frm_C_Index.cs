@@ -21,7 +21,12 @@ namespace FlexOrder
 
         private void btnDinein_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu form = new Frm_C_Menu();
+            Frm_C_Menu form = new Frm_C_Menu("in");
+            form.ShowDialog();
+        }
+        private void btnTakeout_Click(object sender, EventArgs e)
+        {
+            Frm_C_Menu form = new Frm_C_Menu("out");
             form.ShowDialog();
         }
 
@@ -88,5 +93,7 @@ namespace FlexOrder
         {
             SwitchLanguage("ru");
         }
+
+        
     }
 }

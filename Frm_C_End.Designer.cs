@@ -32,6 +32,7 @@
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblEnd1 = new System.Windows.Forms.Label();
             this.lblEnd2 = new System.Windows.Forms.Label();
+            this.lblOrderType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRestart
@@ -51,14 +52,21 @@
             resources.ApplyResources(this.lblEnd2, "lblEnd2");
             this.lblEnd2.Name = "lblEnd2";
             // 
+            // lblOrderType
+            // 
+            resources.ApplyResources(this.lblOrderType, "lblOrderType");
+            this.lblOrderType.Name = "lblOrderType";
+            // 
             // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblEnd2);
+            this.Controls.Add(this.lblOrderType);
             this.Controls.Add(this.lblEnd1);
             this.Controls.Add(this.btnRestart);
             this.Name = "Frm_C_End";
+            this.Load += new System.EventHandler(this.Frm_C_End_Load);
             this.ResumeLayout(false);
 
         }
@@ -68,5 +76,6 @@
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblEnd1;
         private System.Windows.Forms.Label lblEnd2;
+        private System.Windows.Forms.Label lblOrderType;
     }
 }

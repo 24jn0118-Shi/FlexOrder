@@ -201,7 +201,7 @@
     <value>日本語</value>
   </data>
   <data name="ja.Width" type="System.Int32, mscorlib">
-    <value>120</value>
+    <value>140</value>
   </data>
   <metadata name="en.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -228,7 +228,7 @@
     <value>Русский</value>
   </data>
   <data name="ru.Width" type="System.Int32, mscorlib">
-    <value>180</value>
+    <value>160</value>
   </data>
   <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 67</value>
@@ -258,7 +258,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 353</value>
+    <value>38, 353</value>
   </data>
   <data name="lblCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 21</value>
@@ -288,7 +288,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 392</value>
+    <value>54, 392</value>
   </data>
   <data name="lblName.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 21</value>
@@ -311,35 +311,35 @@
   <data name="&gt;&gt;lblName.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="txbGroupID.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="txbGroupCode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
-  <data name="txbGroupID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 350</value>
+  <data name="txbGroupCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>202, 350</value>
   </data>
-  <data name="txbGroupID.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txbGroupCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
   </data>
-  <data name="txbGroupID.TabIndex" type="System.Int32, mscorlib">
+  <data name="txbGroupCode.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;txbGroupID.Name" xml:space="preserve">
-    <value>txbGroupID</value>
+  <data name="&gt;&gt;txbGroupCode.Name" xml:space="preserve">
+    <value>txbGroupCode</value>
   </data>
-  <data name="&gt;&gt;txbGroupID.Type" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupCode.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txbGroupID.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupCode.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txbGroupID.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txbGroupCode.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="txbGroupName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txbGroupName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 389</value>
+    <value>202, 389</value>
   </data>
   <data name="txbGroupName.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
@@ -363,7 +363,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnAddGroup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 424</value>
+    <value>217, 424</value>
   </data>
   <data name="btnAddGroup.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 43</value>
@@ -424,16 +424,16 @@
     <value>NoControl</value>
   </data>
   <data name="lblSortCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 353</value>
+    <value>312, 353</value>
   </data>
   <data name="lblSortCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 21</value>
+    <value>218, 21</value>
   </data>
   <data name="lblSortCode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lblSortCode.Text" xml:space="preserve">
-    <value>並び替える分類コード：</value>
+    <value>順番交換対象の分類コード：</value>
   </data>
   <data name="&gt;&gt;lblSortCode.Name" xml:space="preserve">
     <value>lblSortCode</value>
@@ -457,16 +457,16 @@
     <value>NoControl</value>
   </data>
   <data name="lblSortIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 392</value>
+    <value>408, 392</value>
   </data>
   <data name="lblSortIndex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 21</value>
+    <value>122, 21</value>
   </data>
   <data name="lblSortIndex.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lblSortIndex.Text" xml:space="preserve">
-    <value>目標順番：</value>
+    <value>交換先の順番：</value>
   </data>
   <data name="&gt;&gt;lblSortIndex.Name" xml:space="preserve">
     <value>lblSortIndex</value>
@@ -535,16 +535,16 @@
     <value>NoControl</value>
   </data>
   <data name="btnGoSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 424</value>
+    <value>500, 424</value>
   </data>
   <data name="btnGoSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 43</value>
+    <value>120, 43</value>
   </data>
   <data name="btnGoSort.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="btnGoSort.Text" xml:space="preserve">
-    <value>並び替える</value>
+    <value>分類順番交換</value>
   </data>
   <data name="&gt;&gt;btnGoSort.Name" xml:space="preserve">
     <value>btnGoSort</value>

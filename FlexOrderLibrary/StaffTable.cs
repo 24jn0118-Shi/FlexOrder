@@ -129,8 +129,7 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"UPDATE Staff SET staff_lastname=@staff_lastname, staff_firstname=@staff_firstname,
-			is_manager=@is_manager, staff_password=@staff_password WHERE staff_id = @staff_id";
-
+                                is_manager=@is_manager, staff_password=@staff_password WHERE staff_id = @staff_id";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@staff_id", staff.staff_id);
                 command.Parameters.AddWithValue("@staff_lastname", staff.staff_lastname);

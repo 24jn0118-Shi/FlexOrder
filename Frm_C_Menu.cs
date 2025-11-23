@@ -25,9 +25,11 @@ namespace FlexOrder
         };
         int currentLangNo = 1;
         bool vege = false;
-        public Frm_C_Menu()
+        String ordertype;
+        public Frm_C_Menu(String ordertype)
         {
             InitializeComponent();
+            this.ordertype = ordertype;
             SetupCustomTabs();
         }
 
@@ -60,8 +62,19 @@ namespace FlexOrder
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Frm_C_Cart form = new Frm_C_Cart();
+            Frm_C_Cart form = new Frm_C_Cart(ordertype);
             form.ShowDialog();
+        }
+        private void ProductItem_ProductClicked(ProductItem productItem)
+        {
+            //MessageBox.Show(ProductTitle + " " + ProductPrice, Code);
+            Frm_C_GoodsDetail frm_C_GoodsDetail = new Frm_C_GoodsDetail(productItem.Code);
+            frm_C_GoodsDetail.ShowDialog();
+            Refresh_page();
+        }
+        private void Refresh_page() 
+        {
+            Console.WriteLine(this.Text + ": Page Refreshed");
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -77,12 +90,13 @@ namespace FlexOrder
                 currentLangNo = result;
             }
 
-            ProductItem product1 = new ProductItem();
+            /*ProductItem product1 = new ProductItem();
             product1.ProductTitle = "Pizza";
             product1.ProductPrice = "¥ 500";
             //product1.ProductImage = global::FlexOrder.Properties.Resources.pizza;
             var img1 = (Image)Properties.Resources.ResourceManager.GetObject("pizza");
             product1.ProductImage = img1;
+            product1.ProductClicked += ProductItem_ProductClicked;
             //flowLayoutPanelMenu.Controls.Add(product1);
 
             ProductItem product2 = new ProductItem();
@@ -91,7 +105,9 @@ namespace FlexOrder
             //product2.ProductImage = global::FlexOrder.Properties.Resources.ice_cream;
             var img2 = (Image)Properties.Resources.ResourceManager.GetObject("ice_cream");
             product2.ProductImage = img2;
+            product2.ProductClicked += ProductItem_ProductClicked;
             //flowLayoutPanelMenu.Controls.Add(product2);
+            */
 
             GoodsTable goodsTable = new GoodsTable();
             List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
@@ -103,6 +119,7 @@ namespace FlexOrder
                 product.ProductPrice = "¥ " + goods1.goods_price.ToString();
                 var img = (Image)Properties.Resources.ResourceManager.GetObject(goods1.goods_image);
                 product.ProductImage = img;
+                product.ProductClicked += ProductItem_ProductClicked;
                 flowLayoutPanelMenu.Controls.Add(product);
             }
         }

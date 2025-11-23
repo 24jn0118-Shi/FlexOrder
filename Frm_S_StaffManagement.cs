@@ -26,7 +26,7 @@ namespace FlexOrder
             this.parent = parent;
             this.loginstaff = loginstaff;
         }
-        private void refresh_page() 
+        private void Refresh_page() 
         {
             selected_id = null;
             StaffTable staffTable = new StaffTable();
@@ -39,13 +39,13 @@ namespace FlexOrder
             }
             dgvStaff.DataSource = table;
             dgvStaff.ClearSelection();
-            Console.WriteLine("Page Refreshed");
+            Console.WriteLine(this.Text+": Page Refreshed");
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add",this);
             frmSStaffEdit.ShowDialog();
-            refresh_page();
+            Refresh_page();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace FlexOrder
             {
                 Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(loginstaff, selected_id,this);
                 frmSStaffEdit.ShowDialog();
-                refresh_page();
+                Refresh_page();
             }
         }
 
@@ -91,7 +91,7 @@ namespace FlexOrder
                             MessageBox.Show(cnt+"件の店員アカウントを削除しました", "削除完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        refresh_page();
+                        Refresh_page();
                     }
                 }
             }
@@ -107,7 +107,7 @@ namespace FlexOrder
             dgvStaff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvStaff.MultiSelect = false;
             dgvStaff.AutoGenerateColumns = false;
-            refresh_page();
+            Refresh_page();
         }
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)

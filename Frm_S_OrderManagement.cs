@@ -19,7 +19,7 @@ namespace FlexOrder
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu frm_C_Menu = new Frm_C_Menu();
+            Frm_C_Menu frm_C_Menu = new Frm_C_Menu("add");
             frm_C_Menu.ShowDialog();
         }
 

@@ -34,6 +34,27 @@ namespace FlexOrderLibrary
             }
             return languagelist;
         }
+        public int GetLanguageCount() 
+        {
+            int count = -1;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT MAX(language_no) AS m 
+                    FROM GoodsGroup";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                DataTable table = new DataTable();
+                int cnt = adapter.Fill(table);
+
+                if (cnt != 0)
+                {
+                    count = int.Parse(table.Rows[0]["m"].ToString());
+                }
+            }
+            return count;
+        }
 
 
     }

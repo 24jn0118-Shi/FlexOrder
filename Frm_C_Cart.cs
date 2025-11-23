@@ -12,14 +12,16 @@ namespace FlexOrder
 {
     public partial class Frm_C_Cart : Form
     {
-        public Frm_C_Cart()
+        String ordertype;
+        public Frm_C_Cart(String ordertype)
         {
             InitializeComponent();
+            this.ordertype = ordertype;
         }
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Frm_C_Payment form = new Frm_C_Payment();
+            Frm_C_Payment form = new Frm_C_Payment(ordertype);
             form.ShowDialog();
         }
 
