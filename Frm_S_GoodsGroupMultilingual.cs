@@ -14,6 +14,8 @@ namespace FlexOrder
     public partial class Frm_S_GoodsGroupMultilingual : Form
     {
         String code;
+        int languageno;
+        String languagename;
         public Frm_S_GoodsGroupMultilingual(String code)
         {
             InitializeComponent();
@@ -37,7 +39,8 @@ namespace FlexOrder
             if (cmbLanguage.SelectedIndex > -1) 
             {
                 String[] sp = cmbLanguage.Text.Split(':');
-                int languageno = int.Parse(sp[0]);
+                languageno = int.Parse(sp[0]);
+                languagename = sp[1];
                 GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
                 GoodsGroup goodsGroup = goodsGroupTable.GetGroupByCode(languageno, code);
                 lblGroupCode.Text = goodsGroup.group_code;
@@ -52,7 +55,20 @@ namespace FlexOrder
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //Update
+            DialogResult dret = MessageBox.Show("分類コード：" + lblGroupCode.Text + "\n" + "内容言語名：" + languagename + "\n" + "分類名：" + txbGroupName.Text + "\n" + "\n以上の内容に変更しますか", "確認",
+                                                       MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dret == DialogResult.Yes)
+            {
+                GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
+                GoodsGroup goodsgroup = new GoodsGroup();
+                goodsgroup.group_code = lblGroupCode.Text;
+                goodsgroup.group_name = txbGroupName.Text;
+                goodsgroup.language_no = languageno;
+                
+                int cnt = goodsGroupTable.UpdateGroupName(goodsgroup);
+                MessageBox.Show(cnt + "件の分類情報を変更しました", "変更完了",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

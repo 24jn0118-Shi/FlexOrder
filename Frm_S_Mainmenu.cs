@@ -32,7 +32,7 @@ namespace FlexOrder
         }
         private void btnMenuManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_MenuManagement frm_S_MenuManagement = new Frm_S_MenuManagement();
+            Frm_S_MenuManagement frm_S_MenuManagement = new Frm_S_MenuManagement(staff);
             frm_S_MenuManagement.ShowDialog();
         }
         private void btnStaffManagement_Click(object sender, EventArgs e)

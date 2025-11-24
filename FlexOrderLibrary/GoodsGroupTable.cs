@@ -111,8 +111,7 @@ namespace FlexOrderLibrary
 
             return maxsort;
         }
-
-        public int InsertGroup(GoodsGroup goodsGroup)
+        public int InsertNewGroup(GoodsGroup goodsGroup)
         {
             int ret = 0;
             String groupcode = goodsGroup.group_code;
@@ -123,31 +122,33 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"INSERT INTO GoodsGroup VALUES(@group_code, @group_sort)";
-                SqlCommand command1 = new SqlCommand(sql, connection);
-                command1.Parameters.AddWithValue("@group_code", groupcode);
-                command1.Parameters.AddWithValue("@group_sort", goodsGroup.group_sort);
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@group_code", groupcode);
+                command.Parameters.AddWithValue("@group_sort", goodsGroup.group_sort);
 
                 connection.Open();
 
-                ret = command1.ExecuteNonQuery();
+                ret = command.ExecuteNonQuery();
                 Console.WriteLine("GoodsGroupにGroup" + ret + "件を追加しました");
             }
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            
+            ret = 0;
+            for (int i = 0; i < languagecount; i++)
             {
-                ret = 0;
-                for (int i = 0; i < languagecount; i++)
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql2 = @"INSERT INTO LocalizationGoodsGroup VALUES(@group_code, @language_no, @group_name)";
-                    SqlCommand command2 = new SqlCommand(sql2, connection);
-                    command2.Parameters.AddWithValue("@group_code", groupcode);
-                    command2.Parameters.AddWithValue("@language_no", i + 1);
-                    command2.Parameters.AddWithValue("@group_name", goodsGroup.group_name);
+                    string sql = @"INSERT INTO LocalizationGoodsGroup VALUES(@group_code, @language_no, @group_name)";
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@group_code", groupcode);
+                    command.Parameters.AddWithValue("@language_no", i + 1);
+                    command.Parameters.AddWithValue("@group_name", goodsGroup.group_name);
                     connection.Open();
-                    ret += command2.ExecuteNonQuery();
+                    ret += command.ExecuteNonQuery();
                     goodsGroup.group_name = "";
                 }
-                Console.WriteLine("LocalizationGoodsGroupにGroup名" + ret + "つの言語情報を追加しました");
             }
+            Console.WriteLine("LocalizationGoodsGroupにGroup名" + ret + "つの言語情報を追加しました");
+            
             return ret;
         }
         public int UpdateGroupName(GoodsGroup goodsGroup)
@@ -158,7 +159,7 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"UPDATE LocalizationGoodsGroup SET group_name = @group_name 
-                            WHERE group_code = @group_code AND language_code = @language_code";
+                            WHERE group_code = @group_code AND language_no = @language_no";
 
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@group_code", goodsGroup.group_code);

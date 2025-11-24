@@ -94,7 +94,12 @@ namespace FlexOrder
                         newgroup.group_name = txbGroupName.Text;
                         newgroup.language_no = 1;
 
-                        //Insert
+                        int cnt = goodsGroupTable.InsertNewGroup(newgroup);
+                        if(cnt == 4) 
+                        {
+                            MessageBox.Show("分類を登録しました", "登録完了",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace FlexOrder
 {
     public partial class Frm_S_MenuManagement : Form
     {
-        public Frm_S_MenuManagement()
+        String selected_goodscode;
+        public Frm_S_MenuManagement(Staff staff)
         {
             InitializeComponent();
+            if (!staff.is_manager) 
+            {
+                btnAddGoods.Visible = false;
+                btnAddGroup.Visible = false;
+                btnEditGoods.Visible = false;
+                btnDeleteGoods.Visible = false;
+            }
         }
 
         private void btnAddGoods_Click(object sender, EventArgs e)
@@ -36,10 +45,50 @@ namespace FlexOrder
             Frm_S_GoodsGroupManagement frm_S_GoodsGroupManagement = new Frm_S_GoodsGroupManagement();
             frm_S_GoodsGroupManagement.ShowDialog();
         }
+        private void btnChangeAvailable_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Frm_S_MenuManagement_Load(object sender, EventArgs e)
+        {
+            dgvMenu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvMenu.MultiSelect = false;
+            dgvMenu.AutoGenerateColumns = false;
+            Refresh_page();
+        
+        }
+        private void Refresh_page()
+        {
+            selected_goodscode = null;
+            GoodsTable goodsTable = new GoodsTable();
+            DataTable table = goodsTable.GetAllGoods();
+            table.Columns.Add("str_is_recommend", typeof(string));
+            table.Columns.Add("str_goods_available", typeof(string));
+            table.Columns.Add("img_goods_image", typeof(Image));
+            foreach (DataRow row in table.Rows)
+            {
+                bool flag = Convert.ToBoolean(row["is_recommend"]);
+                row["str_is_recommend"] = flag ? "〇" : "";
+                flag = Convert.ToBoolean(row["goods_available"]);
+                row["str_goods_available"] = flag ? "〇" : "";
+                var img = (Image)Properties.Resources.ResourceManager.GetObject(row["goods_image"].ToString());
+                row["img_goods_image"] = img;
+            }
+            dgvMenu.RowTemplate.Height = 50;
+            dgvMenu.DataSource = table;
+            
+            dgvMenu.ClearSelection();
+            Console.WriteLine(this.Text + ": Page Refreshed");
+        }
+
+        private void dgvMenu_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selected_goodscode = dgvMenu.CurrentRow.Cells["goods_code"].Value.ToString();
         }
     }
 }

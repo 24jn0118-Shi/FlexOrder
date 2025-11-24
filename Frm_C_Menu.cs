@@ -116,7 +116,7 @@ namespace FlexOrder
                 ProductItem product = new ProductItem();
                 product.Code = goods1.goods_code;
                 product.ProductTitle = goods1.goods_name;
-                product.ProductPrice = "¥ " + goods1.goods_price.ToString();
+                product.ProductPrice = "¥ " + goods1.goods_price.ToString("N0");
                 var img = (Image)Properties.Resources.ResourceManager.GetObject(goods1.goods_image);
                 product.ProductImage = img;
                 product.ProductClicked += ProductItem_ProductClicked;
@@ -146,7 +146,7 @@ namespace FlexOrder
                 ProductItem product = new ProductItem();
                 product.Code = good.goods_code;
                 product.ProductTitle = good.goods_name;
-                product.ProductPrice = "¥ " + good.goods_price.ToString();
+                product.ProductPrice = "¥ " + good.goods_price.ToString("N0");
                 var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);
                 product.ProductImage = img;
                 flowLayoutPanelMenu.Controls.Add(product);
