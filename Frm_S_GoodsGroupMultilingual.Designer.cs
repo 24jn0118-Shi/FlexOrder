@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_GoodsGroupMultilingual));
-            this.btnEnd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.txbGroupName = new System.Windows.Forms.TextBox();
@@ -41,23 +40,19 @@
             this.lblGroupCode = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnEnd
-            // 
-            resources.ApplyResources(this.btnEnd, "btnEnd");
-            this.btnEnd.Name = "btnEnd";
-            this.btnEnd.UseVisualStyleBackColor = true;
-            // 
             // btnSave
             // 
             resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnBack
             // 
             resources.ApplyResources(this.btnBack, "btnBack");
             this.btnBack.Name = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txbGroupName
             // 
@@ -79,6 +74,7 @@
             resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbLanguage_SelectedIndexChanged);
             // 
             // lblTitle
             // 
@@ -101,7 +97,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblGroupCode);
             this.Controls.Add(this.lblMul);
-            this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txbGroupName);
             this.Controls.Add(this.cmbLanguage);
@@ -110,14 +105,13 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_GoodsGroupMultilingual";
+            this.Load += new System.EventHandler(this.Frm_S_GoodsGroupMultilingual_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txbGroupName;

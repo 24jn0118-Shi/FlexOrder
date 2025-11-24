@@ -55,6 +55,7 @@
             // 
             // dgvOrder
             // 
+            this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sale_id,
@@ -64,6 +65,7 @@
             this.is_provided});
             this.dgvOrder.Location = new System.Drawing.Point(133, 62);
             this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowTemplate.Height = 21;
             this.dgvOrder.Size = new System.Drawing.Size(543, 252);
             this.dgvOrder.TabIndex = 1;
@@ -72,26 +74,31 @@
             // 
             this.sale_id.HeaderText = "注文番号";
             this.sale_id.Name = "sale_id";
+            this.sale_id.ReadOnly = true;
             // 
             // sale_seat
             // 
             this.sale_seat.HeaderText = "座席番号";
             this.sale_seat.Name = "sale_seat";
+            this.sale_seat.ReadOnly = true;
             // 
             // goods_name
             // 
             this.goods_name.HeaderText = "注文商品";
             this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
             // 
             // sale_date
             // 
             this.sale_date.HeaderText = "注文時間";
             this.sale_date.Name = "sale_date";
+            this.sale_date.ReadOnly = true;
             // 
             // is_provided
             // 
             this.is_provided.HeaderText = "注文状態";
             this.is_provided.Name = "is_provided";
+            this.is_provided.ReadOnly = true;
             this.is_provided.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // btnAdd

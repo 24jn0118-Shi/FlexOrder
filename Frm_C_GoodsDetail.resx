@@ -285,23 +285,23 @@
   <data name="&gt;&gt;btnAddtoCart.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="lblGoodsName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="lblGoodsName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt, style=Bold</value>
   </data>
   <data name="lblGoodsName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 40</value>
+    <value>55, 40</value>
   </data>
   <data name="lblGoodsName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 28</value>
+    <value>452, 28</value>
   </data>
   <data name="lblGoodsName.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="lblGoodsName.Text" xml:space="preserve">
     <value>lblGoodsName</value>
+  </data>
+  <data name="lblGoodsName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;lblGoodsName.Name" xml:space="preserve">
     <value>lblGoodsName</value>
@@ -348,31 +348,31 @@
   <data name="&gt;&gt;lblPrice.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="rtbDetail.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblDetail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
-  <data name="rtbDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 71</value>
+  <data name="lblDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>528, 71</value>
   </data>
-  <data name="rtbDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 193</value>
+  <data name="lblDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 187</value>
   </data>
-  <data name="rtbDetail.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="lblDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="rtbDetail.Text" xml:space="preserve">
-    <value>rtbDetail</value>
+  <data name="lblDetail.Text" xml:space="preserve">
+    <value>lblDetail</value>
   </data>
-  <data name="&gt;&gt;rtbDetail.Name" xml:space="preserve">
-    <value>rtbDetail</value>
+  <data name="&gt;&gt;lblDetail.Name" xml:space="preserve">
+    <value>lblDetail</value>
   </data>
-  <data name="&gt;&gt;rtbDetail.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblDetail.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rtbDetail.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblDetail.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;rtbDetail.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblDetail.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

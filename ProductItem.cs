@@ -12,6 +12,8 @@ namespace FlexOrder
 {
     public partial class ProductItem : UserControl
     {
+        public event Action<ProductItem> ProductClicked;
+
         String code;
         public ProductItem()
         {
@@ -45,10 +47,7 @@ namespace FlexOrder
 
         private void ProductItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(ProductTitle + " " + ProductPrice, Code);
-            Frm_C_GoodsDetail frm_C_GoodsDetail = new Frm_C_GoodsDetail(Code);
-            frm_C_GoodsDetail.ShowDialog();
-            
+            ProductClicked?.Invoke(this);
         }
     }
 }

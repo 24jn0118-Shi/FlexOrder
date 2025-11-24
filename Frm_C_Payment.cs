@@ -12,9 +12,11 @@ namespace FlexOrder
 {
     public partial class Frm_C_Payment : Form
     {
-        public Frm_C_Payment()
+        String ordertype;
+        public Frm_C_Payment(String ordertype)
         {
             InitializeComponent();
+            this.ordertype = ordertype;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace FlexOrder
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            Frm_C_End form = new Frm_C_End();
+            Frm_C_End form = new Frm_C_End(ordertype);
             form.ShowDialog();
         }
     }

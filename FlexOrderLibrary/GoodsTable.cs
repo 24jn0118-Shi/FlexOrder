@@ -84,7 +84,6 @@ namespace FlexOrderLibrary
             }
             return goods;
         }
-
         public List<Goods> GetGoodsByGroup(int language_no, String groupcode)
         {
             DataTable table = new DataTable();
@@ -121,6 +120,23 @@ namespace FlexOrderLibrary
                 }
             }
             return goodsList;
+        }
+        public DataTable GetAllGoods()
+        {
+            DataTable table = new DataTable();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT G.*, goods_name 
+                    FROM Goods AS G 
+                    INNER JOIN LocalizationGoods AS L ON G.goods_code = L.goods_code 
+                    WHERE language_no = 1 
+                    ORDER BY RIGHT(G.goods_code, 4) ASC";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            return table;
         }
 
         public int Insert(Goods goods)

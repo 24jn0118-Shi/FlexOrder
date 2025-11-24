@@ -43,7 +43,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(703, 12);
+            this.btnBack.Location = new System.Drawing.Point(648, 14);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(85, 47);
             this.btnBack.TabIndex = 0;
@@ -112,7 +112,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnSave.Location = new System.Drawing.Point(610, 249);
+            this.btnSave.Location = new System.Drawing.Point(153, 389);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(165, 49);
             this.btnSave.TabIndex = 7;
@@ -123,7 +123,7 @@
             // btnEnd
             // 
             this.btnEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEnd.Location = new System.Drawing.Point(610, 336);
+            this.btnEnd.Location = new System.Drawing.Point(568, 389);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(165, 49);
             this.btnEnd.TabIndex = 8;
@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(765, 468);
             this.Controls.Add(this.lblMul);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnSave);

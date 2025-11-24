@@ -37,7 +37,7 @@
             this.btnAddtoCart = new System.Windows.Forms.Button();
             this.lblGoodsName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.rtbDetail = new System.Windows.Forms.RichTextBox();
+            this.lblDetail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGoods)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,19 +89,16 @@
             resources.ApplyResources(this.lblPrice, "lblPrice");
             this.lblPrice.Name = "lblPrice";
             // 
-            // rtbDetail
+            // lblDetail
             // 
-            this.rtbDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.rtbDetail, "rtbDetail");
-            this.rtbDetail.Name = "rtbDetail";
-            this.rtbDetail.ReadOnly = true;
-            this.rtbDetail.TabStop = false;
+            resources.ApplyResources(this.lblDetail, "lblDetail");
+            this.lblDetail.Name = "lblDetail";
             // 
             // Frm_C_GoodsDetail
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.rtbDetail);
+            this.Controls.Add(this.lblDetail);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblGoodsName);
             this.Controls.Add(this.btnAddtoCart);
@@ -128,6 +125,6 @@
         private System.Windows.Forms.Button btnAddtoCart;
         private System.Windows.Forms.Label lblGoodsName;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.RichTextBox rtbDetail;
+        private System.Windows.Forms.Label lblDetail;
     }
 }
