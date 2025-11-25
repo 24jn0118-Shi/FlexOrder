@@ -169,7 +169,7 @@
             this.goods_name.HeaderText = "商品名";
             this.goods_name.Name = "goods_name";
             this.goods_name.ReadOnly = true;
-            this.goods_name.Width = 200;
+            this.goods_name.Width = 280;
             // 
             // goods_price
             // 
