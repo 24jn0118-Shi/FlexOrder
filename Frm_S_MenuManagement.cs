@@ -62,7 +62,7 @@ namespace FlexOrder
                     GoodsTable goodsTable = new GoodsTable();
                     Goods goods = goodsTable.GetGoodsByCode(1, selected_goodscode);
                     int cnt = goodsTable.Delete(goods);
-                    if (cnt > 0)
+                    if (cnt > -999)
                     {
                         MessageBox.Show(cnt + "件の商品を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -100,15 +100,19 @@ namespace FlexOrder
             DataTable table = goodsTable.GetAllGoods();
             table.Columns.Add("str_is_recommend", typeof(string));
             table.Columns.Add("str_goods_available", typeof(string));
-            table.Columns.Add("img_goods_image", typeof(Image));
+            table.Columns.Add("index", typeof(int));
+            //table.Columns.Add("img_goods_image", typeof(Image));
+            int index = 1;
             foreach (DataRow row in table.Rows)
             {
+                row["index"] = index;
+                index++;
                 bool flag = Convert.ToBoolean(row["is_recommend"]);
                 row["str_is_recommend"] = flag ? "〇" : "";
                 flag = Convert.ToBoolean(row["goods_available"]);
                 row["str_goods_available"] = flag ? "〇" : "";
-                var img = (Image)Properties.Resources.ResourceManager.GetObject(row["goods_image"].ToString());
-                row["img_goods_image"] = img;
+                //var img = (Image)Properties.Resources.ResourceManager.GetObject(row["goods_image"].ToString());
+                //row["img_goods_image"] = img;
             }
             dgvMenu.DataSource = table;
             
