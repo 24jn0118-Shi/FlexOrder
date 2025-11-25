@@ -48,14 +48,44 @@ namespace FlexOrderLibrary
             return goodsList;
         }
 
-        public Goods GetGoodsByCode(String code, int language_no) 
+        public Goods GetGoodsByCode(int language_no, String code) 
         {
-            return null;
-        }
+            Goods goods = null;
 
-        public List<Goods> GetGoodsByGroup(int language_no, String groupname)
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
+				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
+				WHERE language_no = @language_no AND G.goods_code = @goodscode";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
+                adapter.SelectCommand.Parameters.AddWithValue("@goodscode", code);
+
+                DataTable table = new DataTable();
+                int cnt = adapter.Fill(table);
+
+                if (cnt != 0)
+                {
+                    goods = new Goods();
+
+                    goods.goods_code = code;
+                    goods.language_no = language_no;
+                    goods.group_code = table.Rows[0]["group_code"].ToString();
+                    goods.goods_name = table.Rows[0]["goods_name"].ToString();
+                    goods.goods_detail = table.Rows[0]["goods_detail"].ToString();
+                    goods.goods_price = int.Parse(table.Rows[0]["goods_price"].ToString());
+                    goods.goods_image = table.Rows[0]["goods_image"].ToString();
+                    goods.is_recommend = bool.Parse(table.Rows[0]["is_recommend"].ToString());
+                    goods.is_vegetarian = bool.Parse(table.Rows[0]["is_vegetarian"].ToString());
+                    goods.goods_available = bool.Parse(table.Rows[0]["goods_available"].ToString());
+                }
+            }
+            return goods;
+        }
+        public List<Goods> GetGoodsByGroup(int language_no, String groupcode)
         {
-            //GetRecommendGoodsと似ている
             DataTable table = new DataTable();
             List<Goods> goodsList = new List<Goods>();
             string connectionString = Properties.Settings.Default.DBConnectionString;
@@ -64,11 +94,11 @@ namespace FlexOrderLibrary
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
 				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
-				WHERE is_recommend = 1 AND language_no = @language_no 
-				AND goods_available = 1 ORDER BY group_sort";
+				WHERE language_no = @language_no 
+				AND goods_available = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
-                adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
+                adapter.SelectCommand.Parameters.AddWithValue("@groupcode", groupcode);
                 adapter.Fill(table);
 
                 foreach (DataRow row in table.Rows)
@@ -90,6 +120,23 @@ namespace FlexOrderLibrary
                 }
             }
             return goodsList;
+        }
+        public DataTable GetAllGoods()
+        {
+            DataTable table = new DataTable();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT G.*, goods_name 
+                    FROM Goods AS G 
+                    INNER JOIN LocalizationGoods AS L ON G.goods_code = L.goods_code 
+                    WHERE language_no = 1 
+                    ORDER BY RIGHT(G.goods_code, 4) ASC";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            return table;
         }
 
         public int Insert(Goods goods)
