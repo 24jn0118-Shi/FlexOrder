@@ -34,9 +34,12 @@ namespace FlexOrder
         {
             dgvCart.Rows.Clear();
 
-            dgvCart.Rows.Add(Properties.Resources.pizza, "Pizza", 2, "1000");
-            dgvCart.Rows.Add(Properties.Resources.ice_cream, "Ice-Cream", 1, "250");
-            
+            //dgvCart.Rows.Add(Properties.Resources.pizza, "Pizza", 2, "1000");
+            //dgvCart.Rows.Add(Properties.Resources.ice_cream, "Ice-Cream", 1, "250");
+
+            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "1000");
+            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250");
+
             tboxTotalPrice.Text = "1250";
         }
 

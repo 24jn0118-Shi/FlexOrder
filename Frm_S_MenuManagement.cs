@@ -13,7 +13,7 @@ namespace FlexOrder
 {
     public partial class Frm_S_MenuManagement : Form
     {
-        String selected_goodscode;
+        String selected_goodscode = null;
         public Frm_S_MenuManagement(Staff staff)
         {
             InitializeComponent();
@@ -33,12 +33,43 @@ namespace FlexOrder
         }
         private void btnEditGoods_Click(object sender, EventArgs e)
         {
-            Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit("Edit");
-            frm_S_MenuEdit.ShowDialog();
+            if(selected_goodscode == null) 
+            {
+                MessageBox.Show("商品を選択してください", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit("Edit");
+                frm_S_MenuEdit.ShowDialog();
+                Refresh_page();
+            }
         }
         private void btnDeleteGoods_Click(object sender, EventArgs e)
         {
-
+            if (selected_goodscode == null)
+            {
+                MessageBox.Show("商品を選択してください", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //！！！未完成
+                DialogResult dret = MessageBox.Show("商品を削除しますか", "確認",
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dret == DialogResult.Yes)
+                {
+                    GoodsTable goodsTable = new GoodsTable();
+                    Goods goods = goodsTable.GetGoodsByCode(1, selected_goodscode);
+                    int cnt = goodsTable.Delete(goods);
+                    if (cnt > 0)
+                    {
+                        MessageBox.Show(cnt + "件の商品を削除しました", "削除完了",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    Refresh_page();
+                }
+            }
         }
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
@@ -79,7 +110,6 @@ namespace FlexOrder
                 var img = (Image)Properties.Resources.ResourceManager.GetObject(row["goods_image"].ToString());
                 row["img_goods_image"] = img;
             }
-            dgvMenu.RowTemplate.Height = 50;
             dgvMenu.DataSource = table;
             
             dgvMenu.ClearSelection();
