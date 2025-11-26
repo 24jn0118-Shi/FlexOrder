@@ -43,6 +43,7 @@
             this.btnSelectImageFile = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
+            this.lblGroupName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,12 +98,14 @@
             this.cmbGroup.Name = "cmbGroup";
             this.cmbGroup.Size = new System.Drawing.Size(121, 29);
             this.cmbGroup.TabIndex = 4;
+            this.cmbGroup.SelectedIndexChanged += new System.EventHandler(this.cmbGroup_SelectedIndexChanged);
             // 
             // txtCode
             // 
             this.txtCode.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.txtCode.Location = new System.Drawing.Point(143, 168);
             this.txtCode.Name = "txtCode";
+            this.txtCode.ReadOnly = true;
             this.txtCode.Size = new System.Drawing.Size(100, 28);
             this.txtCode.TabIndex = 5;
             // 
@@ -202,6 +205,16 @@
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
+            // lblGroupName
+            // 
+            this.lblGroupName.AutoSize = true;
+            this.lblGroupName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblGroupName.Location = new System.Drawing.Point(270, 92);
+            this.lblGroupName.Name = "lblGroupName";
+            this.lblGroupName.Size = new System.Drawing.Size(0, 21);
+            this.lblGroupName.TabIndex = 1;
+            this.lblGroupName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Frm_S_MenuEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -220,10 +233,12 @@
             this.Controls.Add(this.cmbGroup);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblGoodsCode);
+            this.Controls.Add(this.lblGroupName);
             this.Controls.Add(this.lblGroup);
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuEdit";
             this.Text = "メニュー設定";
+            this.Load += new System.EventHandler(this.Frm_S_MenuEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,5 +262,6 @@
         private System.Windows.Forms.Button btnSelectImageFile;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblGroupName;
     }
 }

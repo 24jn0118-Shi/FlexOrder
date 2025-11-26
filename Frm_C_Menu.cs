@@ -81,7 +81,26 @@ namespace FlexOrder
         {
             this.Close();
         }
-
+        private void LoadGoods() 
+        {
+            GoodsTable goodsTable = new GoodsTable();
+            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
+            foreach (Goods good in goodslist)
+            {
+                if (vege && !good.is_vegetarian)
+                {
+                    continue;
+                }
+                ProductItem product = new ProductItem();
+                product.Code = good.goods_code;
+                product.ProductTitle = good.goods_name;
+                product.ProductPrice = "¥ " + good.goods_price.ToString("N0");
+                var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);
+                product.ProductImage = img;
+                product.ProductClicked += ProductItem_ProductClicked;
+                flowLayoutPanelMenu.Controls.Add(product);
+            }
+        }
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
             string currentLang = Thread.CurrentThread.CurrentUICulture.Name;
@@ -108,20 +127,8 @@ namespace FlexOrder
             product2.ProductClicked += ProductItem_ProductClicked;
             //flowLayoutPanelMenu.Controls.Add(product2);
             */
-
-            GoodsTable goodsTable = new GoodsTable();
-            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
-            foreach (Goods goods1 in goodslist) 
-            {
-                ProductItem product = new ProductItem();
-                product.Code = goods1.goods_code;
-                product.ProductTitle = goods1.goods_name;
-                product.ProductPrice = "¥ " + goods1.goods_price.ToString("N0");
-                var img = (Image)Properties.Resources.ResourceManager.GetObject(goods1.goods_image);
-                product.ProductImage = img;
-                product.ProductClicked += ProductItem_ProductClicked;
-                flowLayoutPanelMenu.Controls.Add(product);
-            }
+            LoadGoods();
+            
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
@@ -135,22 +142,7 @@ namespace FlexOrder
         {
             vege = ckbVeget.Checked;
             flowLayoutPanelMenu.Controls.Clear();
-            GoodsTable goodsTable = new GoodsTable();
-            List<Goods> goodslist = goodsTable.GetRecommendGoods(currentLangNo);
-            foreach (Goods good in goodslist)
-            {
-                if (vege && !good.is_vegetarian)
-                {
-                    continue;
-                }
-                ProductItem product = new ProductItem();
-                product.Code = good.goods_code;
-                product.ProductTitle = good.goods_name;
-                product.ProductPrice = "¥ " + good.goods_price.ToString("N0");
-                var img = (Image)Properties.Resources.ResourceManager.GetObject(good.goods_image);
-                product.ProductImage = img;
-                flowLayoutPanelMenu.Controls.Add(product);
-            }
+            LoadGoods();
         }
 
         private void lblVeget_Click(object sender, EventArgs e)

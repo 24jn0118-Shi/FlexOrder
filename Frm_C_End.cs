@@ -30,10 +30,10 @@ namespace FlexOrder
             switch (ordertype) 
             {
                 case "in":
-                    lblOrderType.Text = "店内でご利用のお客様です";
+                    lblOrderType.Text = lblIn.Text;
                     break;
                 case "out":
-                    lblOrderType.Text = "お持ち帰りのお客様です";
+                    lblOrderType.Text = lblOut.Text;
                     break;
                 default:
                     break;

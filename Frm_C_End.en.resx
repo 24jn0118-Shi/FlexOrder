@@ -130,4 +130,10 @@ please give your meal ticket to the staff</value>
   <data name="$this.Text" xml:space="preserve">
     <value>Payment Complete</value>
   </data>
+  <data name="lblIn.Text" xml:space="preserve">
+    <value>Dine-In</value>
+  </data>
+  <data name="lblOut.Text" xml:space="preserve">
+    <value>Take-Out</value>
+  </data>
 </root>

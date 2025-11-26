@@ -206,24 +206,8 @@ namespace FlexOrderLibrary
             }
             return ret;
         }
-        public int Test()
-        {
-            int ret = 0;
 
-            string connectionString = Properties.Settings.Default.DBConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string sql = @"UPDATE GoodsGroup SET group_sort = @group_sort WHERE group_code = @group_code";
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@group_code", "DE");
-                command.Parameters.AddWithValue("@group_sort", 6);
-                connection.Open();
-                ret = command.ExecuteNonQuery();
-            }
-
-            return ret;
-        }
-
+        /*削除できないようにしています
         public int Delete(string group_code)
         {
             int ret = 0;
@@ -253,7 +237,7 @@ namespace FlexOrderLibrary
                 }
             }
             return ret;
-        }
+        }*/
 
     }
 }
