@@ -17,6 +17,6 @@ namespace FlexOrderLibrary
         public string goods_image { get; set; }
         public bool is_recommend { get; set; }
         public bool is_vegetarian { get; set; }
-        public bool goods_available { get; set; }
+        public bool is_available { get; set; }
     }
 }
