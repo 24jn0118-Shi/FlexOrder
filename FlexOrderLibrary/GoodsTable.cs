@@ -22,7 +22,7 @@ namespace FlexOrderLibrary
 				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
 				WHERE is_recommend = 1 AND language_no = @language_no 
-				AND goods_available = 1 ORDER BY group_sort";
+				AND is_available = 1 ORDER BY group_sort";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.Fill(table);
@@ -40,7 +40,7 @@ namespace FlexOrderLibrary
                     goods.goods_image = row["goods_image"].ToString();
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
-                    goods.goods_available = bool.Parse(row["goods_available"].ToString());
+                    goods.is_available = bool.Parse(row["is_available"].ToString());
 
                     goodsList.Add(goods);
                 }
@@ -79,7 +79,7 @@ namespace FlexOrderLibrary
                     goods.goods_image = table.Rows[0]["goods_image"].ToString();
                     goods.is_recommend = bool.Parse(table.Rows[0]["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(table.Rows[0]["is_vegetarian"].ToString());
-                    goods.goods_available = bool.Parse(table.Rows[0]["goods_available"].ToString());
+                    goods.is_available = bool.Parse(table.Rows[0]["is_available"].ToString());
                 }
             }
             return goods;
@@ -95,7 +95,7 @@ namespace FlexOrderLibrary
 				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
 				WHERE language_no = @language_no 
-				AND goods_available = 1";
+				AND is_available = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.SelectCommand.Parameters.AddWithValue("@groupcode", groupcode);
@@ -114,7 +114,7 @@ namespace FlexOrderLibrary
                     goods.goods_image = row["goods_image"].ToString();
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
-                    goods.goods_available = bool.Parse(row["goods_available"].ToString());
+                    goods.is_available = bool.Parse(row["is_available"].ToString());
 
                     goodsList.Add(goods);
                 }
