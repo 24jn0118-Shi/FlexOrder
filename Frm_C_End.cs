@@ -12,8 +12,8 @@ namespace FlexOrder
 {
     public partial class Frm_C_End : Form
     {
-        String ordertype;
-        public Frm_C_End(String ordertype)
+        string ordertype;
+        public Frm_C_End(string ordertype)
         {
             InitializeComponent();
             this.ordertype = ordertype;

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +14,8 @@ namespace FlexOrder
 {
     public partial class Frm_C_Cart : Form
     {
-        String ordertype;
-        public Frm_C_Cart(String ordertype)
+        string ordertype;
+        public Frm_C_Cart(string ordertype)
         {
             InitializeComponent();
             this.ordertype = ordertype;
@@ -36,6 +38,14 @@ namespace FlexOrder
 
             //dgvCart.Rows.Add(Properties.Resources.pizza, "Pizza", 2, "1000");
             //dgvCart.Rows.Add(Properties.Resources.ice_cream, "Ice-Cream", 1, "250");
+
+            /*ImagePro imagePro = new ImagePro();
+            String image = imagePro.GetImagePath(good.goods_image);
+            using (FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read))
+            {
+                Image img = Image.FromStream(fs);
+                product.ProductImage = img;
+            }*/
 
             dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "1000");
             dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250");
