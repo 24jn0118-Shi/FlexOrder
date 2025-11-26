@@ -18,28 +18,32 @@ namespace FlexOrder
             return path;
         }
 
-        public bool DeleteImageFile(string filename)
+        public bool DeleteImageFile(List<string> namelist)
         {
-            string filepath = GetImagePath(filename);
-
-            if (File.Exists(filepath))
+            bool allSucceeded = true;
+            foreach (string filename in namelist)
             {
-                try
+                string filepath = GetImagePath(filename);
+                if (File.Exists(filepath))
                 {
-                    File.Delete(filepath);
+                    try
+                    {
+                        File.Delete(filepath);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"ファイル削除失败: {ex.Message}", "削除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        allSucceeded = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"ファイル {filename}が存在しません", "Message");
                     return true;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"ファイル削除失败: {ex.Message}", "削除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
             }
-            else
-            {
-                MessageBox.Show($"ファイル {filename}が存在しません", "Message");
-                return true;
-            }
+            return allSucceeded;
+            
         }
         public string CopyImageFile(string sourceFilePath) 
         {

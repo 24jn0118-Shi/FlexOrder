@@ -19,6 +19,7 @@ namespace FlexOrder
         string oldimagepath;
         bool newimageuploaded = false;
         bool replaceimg = false;
+        List<string> filelist = new List<string>();
         public Frm_S_MenuEdit(String type)
         {
             InitializeComponent();
@@ -119,7 +120,10 @@ namespace FlexOrder
 
                 ImagePro imagePro = new ImagePro();
                 lblImageName.Text = Path.GetFileName(newfileName);
-                newimageuploaded = imagePro.CopyImageFile(newfileName);
+                if(imagePro.CopyImageFile(newfileName) != null) 
+                { 
+                    newimageuploaded = true; 
+                }
                 Console.WriteLine(newimageuploaded);
             }
         }
