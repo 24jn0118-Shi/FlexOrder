@@ -40,6 +40,8 @@
             this.tboxTotalPrice = new System.Windows.Forms.TextBox();
             this.lblYen = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
+            this.lblConfirm2 = new System.Windows.Forms.Label();
+            this.lblConfirm1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,10 +121,22 @@
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
+            // lblConfirm2
+            // 
+            resources.ApplyResources(this.lblConfirm2, "lblConfirm2");
+            this.lblConfirm2.Name = "lblConfirm2";
+            // 
+            // lblConfirm1
+            // 
+            resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
+            this.lblConfirm1.Name = "lblConfirm1";
+            // 
             // Frm_C_Cart
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblConfirm2);
+            this.Controls.Add(this.lblConfirm1);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblYen);
             this.Controls.Add(this.tboxTotalPrice);
@@ -151,5 +165,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn sale_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
+        private System.Windows.Forms.Label lblConfirm2;
+        private System.Windows.Forms.Label lblConfirm1;
     }
 }

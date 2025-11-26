@@ -183,7 +183,7 @@
             this.btnAddGoods.Name = "btnAddGoods";
             this.btnAddGoods.Size = new System.Drawing.Size(100, 50);
             this.btnAddGoods.TabIndex = 2;
-            this.btnAddGoods.Text = "追加";
+            this.btnAddGoods.Text = "商品登録";
             this.btnAddGoods.UseVisualStyleBackColor = true;
             this.btnAddGoods.Click += new System.EventHandler(this.btnAddGoods_Click);
             // 
@@ -194,7 +194,7 @@
             this.btnEditGoods.Name = "btnEditGoods";
             this.btnEditGoods.Size = new System.Drawing.Size(100, 50);
             this.btnEditGoods.TabIndex = 3;
-            this.btnEditGoods.Text = "編集";
+            this.btnEditGoods.Text = "商品編集";
             this.btnEditGoods.UseVisualStyleBackColor = true;
             this.btnEditGoods.Click += new System.EventHandler(this.btnEditGoods_Click);
             // 
@@ -216,7 +216,7 @@
             this.btnDeleteGoods.Name = "btnDeleteGoods";
             this.btnDeleteGoods.Size = new System.Drawing.Size(100, 50);
             this.btnDeleteGoods.TabIndex = 5;
-            this.btnDeleteGoods.Text = "削除";
+            this.btnDeleteGoods.Text = "商品削除";
             this.btnDeleteGoods.UseVisualStyleBackColor = true;
             this.btnDeleteGoods.Click += new System.EventHandler(this.btnDeleteGoods_Click);
             // 

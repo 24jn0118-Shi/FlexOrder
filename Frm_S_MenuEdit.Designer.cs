@@ -45,6 +45,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.lblGroupName = new System.Windows.Forms.Label();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
+            this.lblImageName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,7 +179,7 @@
             // btnSelectImageFile
             // 
             this.btnSelectImageFile.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnSelectImageFile.Location = new System.Drawing.Point(500, 47);
+            this.btnSelectImageFile.Location = new System.Drawing.Point(415, 358);
             this.btnSelectImageFile.Name = "btnSelectImageFile";
             this.btnSelectImageFile.Size = new System.Drawing.Size(85, 37);
             this.btnSelectImageFile.TabIndex = 12;
@@ -224,6 +225,14 @@
             this.ofdImage.Filter = "Image Files(*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All Files (*.*)|*.*";
             this.ofdImage.Title = "使用する画像ファイルを選択してください";
             // 
+            // lblImageName
+            // 
+            this.lblImageName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImageName.Location = new System.Drawing.Point(489, 44);
+            this.lblImageName.Name = "lblImageName";
+            this.lblImageName.Size = new System.Drawing.Size(259, 42);
+            this.lblImageName.TabIndex = 11;
+            // 
             // Frm_S_MenuEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -232,6 +241,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSelectImageFile);
+            this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.lblImg);
             this.Controls.Add(this.picboxImage);
             this.Controls.Add(this.cboxAvailable);
@@ -247,6 +257,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuEdit";
             this.Text = "メニュー設定";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_MenuEdit_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_MenuEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);
@@ -273,5 +284,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblGroupName;
         private System.Windows.Forms.OpenFileDialog ofdImage;
+        private System.Windows.Forms.Label lblImageName;
     }
 }
