@@ -124,7 +124,7 @@ namespace FlexOrderLibrary
                 string sql = @"INSERT INTO GoodsGroup VALUES(@group_code, @group_sort)";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@group_code", groupcode);
-                command.Parameters.AddWithValue("@group_sort", goodsGroup.group_sort);
+                command.Parameters.AddWithValue("@group_sort", GetMaxSort()+1);
 
                 connection.Open();
 

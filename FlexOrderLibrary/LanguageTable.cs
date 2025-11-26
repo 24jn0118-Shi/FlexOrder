@@ -42,7 +42,7 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"SELECT MAX(language_no) AS m 
-                    FROM GoodsGroup";
+                    FROM Language";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 DataTable table = new DataTable();
