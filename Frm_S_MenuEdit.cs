@@ -119,12 +119,15 @@ namespace FlexOrder
                 newfileName = ofdImage.FileName;
 
                 ImagePro imagePro = new ImagePro();
+                Console.WriteLine("From " + newfileName);
                 lblImageName.Text = Path.GetFileName(newfileName);
-                if(imagePro.CopyImageFile(newfileName) != null) 
-                { 
+                newfileName = imagePro.CopyImageFile(newfileName);
+                Console.WriteLine("To " + newfileName);
+                if (newfileName != null) 
+                {
                     newimageuploaded = true; 
                 }
-                Console.WriteLine(newimageuploaded);
+                
             }
         }
 

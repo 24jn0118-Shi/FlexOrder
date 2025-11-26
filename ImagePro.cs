@@ -10,10 +10,14 @@ namespace FlexOrder
 {
     public class ImagePro
     {
-        string imageDirectory = Path.Combine(Application.StartupPath, "Images");
+        
+        string relativePath = Path.Combine(Application.StartupPath, "Images");
+        string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
+
+        string imagepath = @"\\192.168.3.3\SharedFolder\Images";
         public string GetImagePath(string filename)
         {
-            string path = Path.Combine(imageDirectory, filename);
+            string path = Path.Combine(imagepath, filename);
 
             return path;
         }
@@ -57,9 +61,9 @@ namespace FlexOrder
             newDestinationFilePath = GetImagePath(newResourceName);
             try
             {
-                if (!Directory.Exists(imageDirectory))
+                if (!Directory.Exists(imagepath))
                 {
-                    Directory.CreateDirectory(imageDirectory);
+                    Directory.CreateDirectory(imagepath);
                 }
 
                 File.Copy(sourceFilePath, newDestinationFilePath, true);
