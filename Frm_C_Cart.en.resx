@@ -147,4 +147,10 @@
   <data name="btnRestart.Text" xml:space="preserve">
     <value>↺</value>
   </data>
+  <data name="lblConfirm1.Text" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="lblConfirm2.Text" xml:space="preserve">
+    <value>Do you want to start over from the beginning?</value>
+  </data>
 </root>

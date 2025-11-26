@@ -169,4 +169,10 @@
   <data name="lblVeget.Text" xml:space="preserve">
     <value>Вегетарианское меню</value>
   </data>
+  <data name="lblConfirm1.Text" xml:space="preserve">
+    <value>Подтверждение</value>
+  </data>
+  <data name="lblConfirm2.Text" xml:space="preserve">
+    <value>Хотите начать с самого начала?</value>
+  </data>
 </root>

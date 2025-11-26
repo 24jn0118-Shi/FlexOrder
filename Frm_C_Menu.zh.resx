@@ -169,4 +169,10 @@
   <data name="lblVeget.Text" xml:space="preserve">
     <value>素食菜单</value>
   </data>
+  <data name="lblConfirm1.Text" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="lblConfirm2.Text" xml:space="preserve">
+    <value>您要从头开始重新开始吗？</value>
+  </data>
 </root>

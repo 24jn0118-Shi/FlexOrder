@@ -46,6 +46,8 @@
             this.lblen = new System.Windows.Forms.Label();
             this.ckbVeget = new System.Windows.Forms.CheckBox();
             this.lblVeget = new System.Windows.Forms.Label();
+            this.lblConfirm1 = new System.Windows.Forms.Label();
+            this.lblConfirm2 = new System.Windows.Forms.Label();
             this.tbcntMenu.SuspendLayout();
             this.tbpagePop.SuspendLayout();
             this.SuspendLayout();
@@ -161,10 +163,22 @@
             this.lblVeget.Name = "lblVeget";
             this.lblVeget.Click += new System.EventHandler(this.lblVeget_Click);
             // 
+            // lblConfirm1
+            // 
+            resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
+            this.lblConfirm1.Name = "lblConfirm1";
+            // 
+            // lblConfirm2
+            // 
+            resources.ApplyResources(this.lblConfirm2, "lblConfirm2");
+            this.lblConfirm2.Name = "lblConfirm2";
+            // 
             // Frm_C_Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblConfirm2);
+            this.Controls.Add(this.lblConfirm1);
             this.Controls.Add(this.lblVeget);
             this.Controls.Add(this.ckbVeget);
             this.Controls.Add(this.lblen);
@@ -204,5 +218,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
         private System.Windows.Forms.CheckBox ckbVeget;
         private System.Windows.Forms.Label lblVeget;
+        private System.Windows.Forms.Label lblConfirm1;
+        private System.Windows.Forms.Label lblConfirm2;
     }
 }
