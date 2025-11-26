@@ -70,11 +70,6 @@ namespace FlexOrder
         {
             Frm_C_GoodsDetail frm_C_GoodsDetail = new Frm_C_GoodsDetail(productItem.Code);
             frm_C_GoodsDetail.ShowDialog();
-            Refresh_page();
-        }
-        private void Refresh_page() 
-        {
-            Console.WriteLine(this.Text + ": Page Refreshed");
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -121,8 +116,13 @@ namespace FlexOrder
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
-            Application.Restart();
-            Environment.Exit(0);
+            DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dret == DialogResult.Yes)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
         }
 
 

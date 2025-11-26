@@ -148,4 +148,10 @@
   <data name="lblVeget.Text" xml:space="preserve">
     <value>ベジタリアンメニュー</value>
   </data>
+  <data name="lblConfirm2.Text" xml:space="preserve">
+    <value>最初からやり直しますか?</value>
+  </data>
+  <data name="lblConfirm1.Text" xml:space="preserve">
+    <value>確認</value>
+  </data>
 </root>

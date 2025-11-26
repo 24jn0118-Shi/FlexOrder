@@ -99,6 +99,7 @@ namespace FlexOrder
                             MessageBox.Show("分類を登録しました", "登録完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                        Refresh_page();
                     }
                 }
 

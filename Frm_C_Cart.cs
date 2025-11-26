@@ -55,8 +55,13 @@ namespace FlexOrder
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
-            Application.Restart();
-            Environment.Exit(0);
+            DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dret == DialogResult.Yes)
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
         }
     }
 }
