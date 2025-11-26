@@ -50,7 +50,7 @@
             this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_image = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.img_goods_image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.str_goods_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.str_is_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +79,7 @@
             this.group_code,
             this.goods_image,
             this.img_goods_image,
-            this.str_goods_available});
+            this.str_is_available});
             this.dgvMenu.Location = new System.Drawing.Point(55, 89);
             this.dgvMenu.Name = "dgvMenu";
             this.dgvMenu.ReadOnly = true;
@@ -221,15 +221,15 @@
             this.img_goods_image.Visible = false;
             this.img_goods_image.Width = 150;
             // 
-            // str_goods_available
+            // str_is_available
             // 
-            this.str_goods_available.DataPropertyName = "str_goods_available";
+            this.str_is_available.DataPropertyName = "str_is_available";
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.str_goods_available.DefaultCellStyle = dataGridViewCellStyle7;
-            this.str_goods_available.HeaderText = "在庫状況";
-            this.str_goods_available.Name = "str_goods_available";
-            this.str_goods_available.ReadOnly = true;
-            this.str_goods_available.Width = 80;
+            this.str_is_available.DefaultCellStyle = dataGridViewCellStyle7;
+            this.str_is_available.HeaderText = "在庫状況";
+            this.str_is_available.Name = "str_is_available";
+            this.str_is_available.ReadOnly = true;
+            this.str_is_available.Width = 80;
             // 
             // Frm_S_MenuManagement
             // 
@@ -268,6 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn group_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_image;
         private System.Windows.Forms.DataGridViewImageColumn img_goods_image;
-        private System.Windows.Forms.DataGridViewTextBoxColumn str_goods_available;
+        private System.Windows.Forms.DataGridViewTextBoxColumn str_is_available;
     }
 }
