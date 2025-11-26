@@ -99,7 +99,7 @@ namespace FlexOrder
             GoodsTable goodsTable = new GoodsTable();
             DataTable table = goodsTable.GetAllGoods();
             table.Columns.Add("str_is_recommend", typeof(string));
-            table.Columns.Add("str_goods_available", typeof(string));
+            table.Columns.Add("str_is_available", typeof(string));
             table.Columns.Add("index", typeof(int));
             //table.Columns.Add("img_goods_image", typeof(Image));
             int index = 1;
@@ -109,8 +109,8 @@ namespace FlexOrder
                 index++;
                 bool flag = Convert.ToBoolean(row["is_recommend"]);
                 row["str_is_recommend"] = flag ? "〇" : "";
-                flag = Convert.ToBoolean(row["goods_available"]);
-                row["str_goods_available"] = flag ? "〇" : "";
+                flag = Convert.ToBoolean(row["is_available"]);
+                row["str_is_available"] = flag ? "〇" : "";
                 //var img = (Image)Properties.Resources.ResourceManager.GetObject(row["goods_image"].ToString());
                 //row["img_goods_image"] = img;
             }
