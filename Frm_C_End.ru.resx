@@ -130,4 +130,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Завершение оплаты</value>
   </data>
+  <data name="lblIn.Text" xml:space="preserve">
+    <value>Для еды в заведении</value>
+  </data>
+  <data name="lblOut.Text" xml:space="preserve">
+    <value>С собой</value>
+  </data>
 </root>

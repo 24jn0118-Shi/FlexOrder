@@ -130,4 +130,10 @@
     <value>席を確保してから、
 食券を店員にお渡しください</value>
   </data>
+  <data name="lblIn.Text" xml:space="preserve">
+    <value>店内でのご利用</value>
+  </data>
+  <data name="lblOut.Text" xml:space="preserve">
+    <value>お持ち帰り</value>
+  </data>
 </root>

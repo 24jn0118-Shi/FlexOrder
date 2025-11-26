@@ -33,6 +33,8 @@
             this.lblEnd1 = new System.Windows.Forms.Label();
             this.lblEnd2 = new System.Windows.Forms.Label();
             this.lblOrderType = new System.Windows.Forms.Label();
+            this.lblOut = new System.Windows.Forms.Label();
+            this.lblIn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRestart
@@ -57,10 +59,22 @@
             resources.ApplyResources(this.lblOrderType, "lblOrderType");
             this.lblOrderType.Name = "lblOrderType";
             // 
+            // lblOut
+            // 
+            resources.ApplyResources(this.lblOut, "lblOut");
+            this.lblOut.Name = "lblOut";
+            // 
+            // lblIn
+            // 
+            resources.ApplyResources(this.lblIn, "lblIn");
+            this.lblIn.Name = "lblIn";
+            // 
             // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblIn);
+            this.Controls.Add(this.lblOut);
             this.Controls.Add(this.lblEnd2);
             this.Controls.Add(this.lblOrderType);
             this.Controls.Add(this.lblEnd1);
@@ -68,6 +82,7 @@
             this.Name = "Frm_C_End";
             this.Load += new System.EventHandler(this.Frm_C_End_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -77,5 +92,7 @@
         private System.Windows.Forms.Label lblEnd1;
         private System.Windows.Forms.Label lblEnd2;
         private System.Windows.Forms.Label lblOrderType;
+        private System.Windows.Forms.Label lblOut;
+        private System.Windows.Forms.Label lblIn;
     }
 }

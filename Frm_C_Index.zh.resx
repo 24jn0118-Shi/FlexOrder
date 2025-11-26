@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnTakeout.Text" xml:space="preserve">
-    <value>外卖</value>
+    <value>外带</value>
   </data>
   <data name="btnDinein.Text" xml:space="preserve">
     <value>堂食</value>

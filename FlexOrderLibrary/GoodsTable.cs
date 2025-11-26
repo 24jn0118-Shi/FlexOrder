@@ -138,7 +138,21 @@ namespace FlexOrderLibrary
             }
             return table;
         }
+        public String GetLastGoodsNo() 
+        {
+            DataTable table = new DataTable();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT TOP 1 RIGHT(goods_code, 4) AS res 
+                    FROM Goods 
+                    ORDER BY res DESC";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
+                adapter.Fill(table);
+                return table.Rows[0]["res"].ToString();
+            }
+        }
         public int Insert(Goods goods)
         {
             return -1;
