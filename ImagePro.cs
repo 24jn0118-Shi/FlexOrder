@@ -41,16 +41,16 @@ namespace FlexOrder
                 return true;
             }
         }
-        public bool CopyImageFile(string newResourceName, string sourceFilePath) 
+        public string CopyImageFile(string sourceFilePath) 
         {
+            string newDestinationFilePath;
             if (string.IsNullOrEmpty(sourceFilePath) || !File.Exists(sourceFilePath))
             {
                 MessageBox.Show("ファイルパスが存在しません", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                return null;
             }
-
-            string newDestinationFilePath = GetImagePath(newResourceName);
-
+            string newResourceName = Path.GetFileName(sourceFilePath);
+            newDestinationFilePath = GetImagePath(newResourceName);
             try
             {
                 if (!Directory.Exists(imageDirectory))
@@ -60,12 +60,12 @@ namespace FlexOrder
 
                 File.Copy(sourceFilePath, newDestinationFilePath, true);
 
-                return true;
+                return newDestinationFilePath;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"ファイル保存失敗: {ex.Message}", "保存失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                return null;
             }
         }
     }

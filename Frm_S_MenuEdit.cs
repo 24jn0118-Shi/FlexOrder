@@ -16,7 +16,8 @@ namespace FlexOrder
     {
         string type;
         string nextno;
-        string oldimg;
+        string oldimagepath;
+        bool newimageuploaded = false;
         bool replaceimg = false;
         public Frm_S_MenuEdit(String type)
         {
@@ -80,8 +81,8 @@ namespace FlexOrder
                 cboxVege.Checked = goods.is_vegetarian;
 
                 ImagePro imagePro = new ImagePro();
-                oldimg = goods.goods_image;
-                String oldimagepath = imagePro.GetImagePath(oldimg);
+                lblImageName.Text = goods.goods_image;
+                oldimagepath = imagePro.GetImagePath(goods.goods_image);
                 if (picboxImage.Image != null)
                 {
                     picboxImage.Image.Dispose();
@@ -110,14 +111,22 @@ namespace FlexOrder
 
         private void btnSelectImageFile_Click(object sender, EventArgs e)
         {
-            string fileName;
+            string newfileName;
             DialogResult ret = ofdImage.ShowDialog();
             if (ret == DialogResult.OK)
             {
-                fileName = ofdImage.FileName;
+                newfileName = ofdImage.FileName;
 
+                ImagePro imagePro = new ImagePro();
+                lblImageName.Text = Path.GetFileName(newfileName);
+                newimageuploaded = imagePro.CopyImageFile(newfileName);
+                Console.WriteLine(newimageuploaded);
             }
         }
 
+        private void Frm_S_MenuEdit_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
