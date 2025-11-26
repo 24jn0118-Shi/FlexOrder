@@ -255,6 +255,9 @@
   <data name="lblOut.Text" xml:space="preserve">
     <value>lblOut</value>
   </data>
+  <data name="lblOut.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;lblOut.Name" xml:space="preserve">
     <value>lblOut</value>
   </data>
@@ -284,6 +287,9 @@
   </data>
   <data name="lblIn.Text" xml:space="preserve">
     <value>lblIn</value>
+  </data>
+  <data name="lblIn.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblIn.Name" xml:space="preserve">
     <value>lblIn</value>
