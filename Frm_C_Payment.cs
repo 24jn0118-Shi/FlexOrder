@@ -12,8 +12,8 @@ namespace FlexOrder
 {
     public partial class Frm_C_Payment : Form
     {
-        String ordertype;
-        public Frm_C_Payment(String ordertype)
+        string ordertype;
+        public Frm_C_Payment(string ordertype)
         {
             InitializeComponent();
             this.ordertype = ordertype;

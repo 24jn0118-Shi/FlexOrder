@@ -13,19 +13,19 @@ namespace FlexOrder
 {
     public partial class Frm_S_StaffEdit : Form
     {
-        String type;
+        string type;
         int id = 0;
         Boolean change_password = false;
         Form parent;
         Boolean closeparent = false;
         Staff staff;
-        public Frm_S_StaffEdit(String type, Form parent)
+        public Frm_S_StaffEdit(string type, Form parent)
         {
             InitializeComponent();
             this.type = type;
             this.parent = parent;
         }
-        public Frm_S_StaffEdit(Staff staff, String type, Form parent)
+        public Frm_S_StaffEdit(Staff staff, string type, Form parent)
         {
             InitializeComponent();
             this.type = type;
@@ -106,7 +106,7 @@ namespace FlexOrder
                 Staff newstaff = null;
                 int newid;
                 bool parseresult = int.TryParse(txbID.Text, out newid);
-                String errs = "";
+                string errs = "";
                 if(txbID.Text == "") 
                 {
                     errs += "スタッフIDを入力してください\n";
@@ -150,7 +150,7 @@ namespace FlexOrder
                 //ここからはInsert処理
                 if (errs == "") 
                 {
-                    String access = rbtnAdmin.Checked ? "管理者" : "店員";
+                    string access = rbtnAdmin.Checked ? "管理者" : "店員";
                     DialogResult dret = MessageBox.Show("ID："+newid+"\n"+ "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
@@ -178,7 +178,7 @@ namespace FlexOrder
             } 
             else 
             {
-                String errs = "";
+                string errs = "";
                 Staff editstaff = new Staff();
                 if (txbFirstname.Text == "" && txbLastname.Text == "")
                 {
@@ -205,8 +205,8 @@ namespace FlexOrder
                 }
                 if (errs == "")
                 {
-                    String access = rbtnAdmin.Checked ? "管理者" : "店員";
-                    String changepass = change_password ? "あり" : "なし";
+                    string access = rbtnAdmin.Checked ? "管理者" : "店員";
+                    string changepass = change_password ? "あり" : "なし";
                     DialogResult dret = MessageBox.Show("ID：" + txbID.Text + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "パスワード変更：" + changepass + "\n" + "権限：" + access + "\n" + "\n以上の内容に変更しますか", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes)

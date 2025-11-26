@@ -179,6 +179,45 @@
   <metadata name="group_code.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="group_sort.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ja.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="en.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="zh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ru.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 67</value>
+  </data>
+  <data name="dgvGroupList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 265</value>
+  </data>
+  <data name="dgvGroupList.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.Name" xml:space="preserve">
+    <value>dgvGroupList</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <metadata name="group_code.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="group_code.HeaderText" xml:space="preserve">
     <value>分類コード</value>
   </data>
@@ -229,27 +268,6 @@
   </data>
   <data name="ru.Width" type="System.Int32, mscorlib">
     <value>160</value>
-  </data>
-  <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 67</value>
-  </data>
-  <data name="dgvGroupList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>692, 265</value>
-  </data>
-  <data name="dgvGroupList.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.Name" xml:space="preserve">
-    <value>dgvGroupList</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="lblCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -318,7 +336,7 @@
     <value>202, 350</value>
   </data>
   <data name="txbGroupCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>128, 28</value>
   </data>
   <data name="txbGroupCode.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -342,7 +360,7 @@
     <value>202, 389</value>
   </data>
   <data name="txbGroupName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>128, 28</value>
   </data>
   <data name="txbGroupName.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -390,7 +408,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>648, 374</value>
+    <value>659, 374</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 64</value>
@@ -424,7 +442,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSortCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>312, 353</value>
+    <value>336, 353</value>
   </data>
   <data name="lblSortCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 21</value>
@@ -457,7 +475,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblSortIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>408, 392</value>
+    <value>432, 392</value>
   </data>
   <data name="lblSortIndex.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 21</value>
@@ -484,7 +502,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txbSortCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 350</value>
+    <value>544, 350</value>
   </data>
   <data name="txbSortCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
@@ -508,7 +526,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txbSortIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 389</value>
+    <value>544, 389</value>
   </data>
   <data name="txbSortIndex.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 28</value>
@@ -535,7 +553,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGoSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 424</value>
+    <value>524, 424</value>
   </data>
   <data name="btnGoSort.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 43</value>

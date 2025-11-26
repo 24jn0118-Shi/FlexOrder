@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
@@ -22,9 +23,9 @@ namespace FlexOrder
             { "zh", 3 },
             { "ru", 4 }
         };
-        String code;
+        string code;
         int num = 1;
-        public Frm_C_GoodsDetail(String code)
+        public Frm_C_GoodsDetail(string code)
         {
             InitializeComponent();
             this.code = code;
@@ -44,8 +45,13 @@ namespace FlexOrder
             lblDetail.Text = goods.goods_detail;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
             lblNum.Text = "1";
-            var img = (Image)Properties.Resources.ResourceManager.GetObject(goods.goods_image);
-            picGoods.Image = img;
+            ImagePro imagePro = new ImagePro();
+            String image = imagePro.GetImagePath(goods.goods_image);
+            using (FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read))
+            {
+                Image img = Image.FromStream(fs);
+                picGoods.Image = img;
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace FlexOrder
         {
             InitializeComponent();
             this.staff = staff;
-            if (staff.is_manager) 
+            if (staff.is_manager)
             {
                 btnStaffManagement.Enabled = true;
                 btnSalesStatistics.Enabled = true;
@@ -37,7 +38,7 @@ namespace FlexOrder
         }
         private void btnStaffManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement(staff,this);
+            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement(staff, this);
             frm_S_StaffManagement.ShowDialog();
         }
         private void btnSalesStatistics_Click(object sender, EventArgs e)
@@ -48,7 +49,10 @@ namespace FlexOrder
 
         private void Frm_S_Mainmenu_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "ようこそ、"+staff.staff_lastname+" "+staff.staff_firstname;
+            lblWelcome.Text = "ようこそ、" + staff.staff_lastname + " " + staff.staff_firstname;
+
         }
+
+        
     }
 }

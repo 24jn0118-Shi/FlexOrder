@@ -13,10 +13,10 @@ namespace FlexOrder
 {
     public partial class Frm_S_GoodsGroupMultilingual : Form
     {
-        String code;
+        string code;
         int languageno;
-        String languagename;
-        public Frm_S_GoodsGroupMultilingual(String code)
+        string languagename;
+        public Frm_S_GoodsGroupMultilingual(string code)
         {
             InitializeComponent();
             this.code = code;
@@ -38,7 +38,7 @@ namespace FlexOrder
         {
             if (cmbLanguage.SelectedIndex > -1) 
             {
-                String[] sp = cmbLanguage.Text.Split(':');
+                string[] sp = cmbLanguage.Text.Split(':');
                 languageno = int.Parse(sp[0]);
                 languagename = sp[1];
                 GoodsGroupTable goodsGroupTable = new GoodsGroupTable();

@@ -13,7 +13,7 @@ namespace FlexOrder
 {
     public partial class Frm_S_MenuManagement : Form
     {
-        String selected_goodscode = null;
+        string selected_goodscode = null;
         public Frm_S_MenuManagement(Staff staff)
         {
             InitializeComponent();
@@ -40,7 +40,7 @@ namespace FlexOrder
             }
             else 
             {
-                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit("Edit");
+                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit(selected_goodscode);
                 frm_S_MenuEdit.ShowDialog();
                 Refresh_page();
             }
@@ -101,7 +101,6 @@ namespace FlexOrder
             table.Columns.Add("str_is_recommend", typeof(string));
             table.Columns.Add("str_is_available", typeof(string));
             table.Columns.Add("index", typeof(int));
-            //table.Columns.Add("img_goods_image", typeof(Image));
             int index = 1;
             foreach (DataRow row in table.Rows)
             {
@@ -111,8 +110,6 @@ namespace FlexOrder
                 row["str_is_recommend"] = flag ? "〇" : "";
                 flag = Convert.ToBoolean(row["is_available"]);
                 row["str_is_available"] = flag ? "〇" : "";
-                //var img = (Image)Properties.Resources.ResourceManager.GetObject(row["goods_image"].ToString());
-                //row["img_goods_image"] = img;
             }
             dgvMenu.DataSource = table;
             

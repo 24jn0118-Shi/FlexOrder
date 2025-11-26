@@ -32,7 +32,6 @@ namespace FlexOrder
         }
         private void Refresh_page()
         {
-            //selected_id = null;
             txbSortCode.Text = "";
             GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
             DataTable dataTable = goodsGroupTable.GetAllGroup();
@@ -154,5 +153,6 @@ namespace FlexOrder
             
 
         }
+
     }
 }

@@ -13,6 +13,7 @@ namespace FlexOrder
     public partial class Frm_S_MenuMultilingual : Form
     {
         Form parent;
+        string type;
         public Frm_S_MenuMultilingual(string type, Form parent)
         {
             InitializeComponent();
@@ -21,10 +22,10 @@ namespace FlexOrder
                 lblTitle.Text = "商品追加";
             }
             else
-            if (type == "Edit")
             {
                 lblTitle.Text = "商品編集";
             }
+            this.type = type;
             this.parent = parent;
         }
 

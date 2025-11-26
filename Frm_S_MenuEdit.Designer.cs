@@ -44,6 +44,7 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.lblGroupName = new System.Windows.Forms.Label();
+            this.ofdImage = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,9 +86,9 @@
             this.lblPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lblPrice.Location = new System.Drawing.Point(47, 259);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(90, 21);
+            this.lblPrice.Size = new System.Drawing.Size(109, 21);
             this.lblPrice.TabIndex = 3;
-            this.lblPrice.Text = "商品単価：";
+            this.lblPrice.Text = "商品単価(¥)：";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cmbGroup
@@ -106,7 +107,7 @@
             this.txtCode.Location = new System.Drawing.Point(143, 168);
             this.txtCode.Name = "txtCode";
             this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(100, 28);
+            this.txtCode.Size = new System.Drawing.Size(121, 28);
             this.txtCode.TabIndex = 5;
             // 
             // txtPrice
@@ -114,7 +115,7 @@
             this.txtPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.txtPrice.Location = new System.Drawing.Point(143, 256);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(100, 28);
+            this.txtPrice.Size = new System.Drawing.Size(121, 28);
             this.txtPrice.TabIndex = 6;
             // 
             // cboxRecommend
@@ -156,9 +157,10 @@
             // picboxImage
             // 
             this.picboxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picboxImage.Location = new System.Drawing.Point(569, 212);
+            this.picboxImage.Location = new System.Drawing.Point(415, 89);
             this.picboxImage.Name = "picboxImage";
-            this.picboxImage.Size = new System.Drawing.Size(144, 118);
+            this.picboxImage.Size = new System.Drawing.Size(333, 263);
+            this.picboxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxImage.TabIndex = 10;
             this.picboxImage.TabStop = false;
             // 
@@ -166,7 +168,7 @@
             // 
             this.lblImg.AutoSize = true;
             this.lblImg.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblImg.Location = new System.Drawing.Point(469, 212);
+            this.lblImg.Location = new System.Drawing.Point(411, 55);
             this.lblImg.Name = "lblImg";
             this.lblImg.Size = new System.Drawing.Size(74, 21);
             this.lblImg.TabIndex = 11;
@@ -176,12 +178,13 @@
             // btnSelectImageFile
             // 
             this.btnSelectImageFile.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnSelectImageFile.Location = new System.Drawing.Point(462, 299);
+            this.btnSelectImageFile.Location = new System.Drawing.Point(500, 47);
             this.btnSelectImageFile.Name = "btnSelectImageFile";
             this.btnSelectImageFile.Size = new System.Drawing.Size(85, 37);
             this.btnSelectImageFile.TabIndex = 12;
             this.btnSelectImageFile.Text = "画像選択";
             this.btnSelectImageFile.UseVisualStyleBackColor = true;
+            this.btnSelectImageFile.Click += new System.EventHandler(this.btnSelectImageFile_Click);
             // 
             // btnBack
             // 
@@ -197,7 +200,7 @@
             // btnNext
             // 
             this.btnNext.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnNext.Location = new System.Drawing.Point(553, 370);
+            this.btnNext.Location = new System.Drawing.Point(576, 370);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(174, 58);
             this.btnNext.TabIndex = 14;
@@ -209,11 +212,17 @@
             // 
             this.lblGroupName.AutoSize = true;
             this.lblGroupName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGroupName.Location = new System.Drawing.Point(270, 92);
+            this.lblGroupName.Location = new System.Drawing.Point(143, 132);
             this.lblGroupName.Name = "lblGroupName";
-            this.lblGroupName.Size = new System.Drawing.Size(0, 21);
+            this.lblGroupName.Size = new System.Drawing.Size(122, 21);
             this.lblGroupName.TabIndex = 1;
+            this.lblGroupName.Text = "lblGroupName";
             this.lblGroupName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ofdImage
+            // 
+            this.ofdImage.Filter = "Image Files(*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All Files (*.*)|*.*";
+            this.ofdImage.Title = "使用する画像ファイルを選択してください";
             // 
             // Frm_S_MenuEdit
             // 
@@ -263,5 +272,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblGroupName;
+        private System.Windows.Forms.OpenFileDialog ofdImage;
     }
 }

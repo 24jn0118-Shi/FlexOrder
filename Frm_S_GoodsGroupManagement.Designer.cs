@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_S_GoodsGroupManagement));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvGroupList = new System.Windows.Forms.DataGridView();
@@ -91,8 +91,8 @@
             // group_code
             // 
             this.group_code.DataPropertyName = "group_code";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.group_code.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.group_code.DefaultCellStyle = dataGridViewCellStyle19;
             resources.ApplyResources(this.group_code, "group_code");
             this.group_code.Name = "group_code";
             this.group_code.ReadOnly = true;
@@ -100,8 +100,8 @@
             // group_sort
             // 
             this.group_sort.DataPropertyName = "group_sort";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.group_sort.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.group_sort.DefaultCellStyle = dataGridViewCellStyle20;
             resources.ApplyResources(this.group_sort, "group_sort");
             this.group_sort.Name = "group_sort";
             this.group_sort.ReadOnly = true;
@@ -109,8 +109,8 @@
             // ja
             // 
             this.ja.DataPropertyName = "ja";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ja.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ja.DefaultCellStyle = dataGridViewCellStyle21;
             resources.ApplyResources(this.ja, "ja");
             this.ja.Name = "ja";
             this.ja.ReadOnly = true;
@@ -118,8 +118,8 @@
             // en
             // 
             this.en.DataPropertyName = "en";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.en.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.en.DefaultCellStyle = dataGridViewCellStyle22;
             resources.ApplyResources(this.en, "en");
             this.en.Name = "en";
             this.en.ReadOnly = true;
@@ -127,8 +127,8 @@
             // zh
             // 
             this.zh.DataPropertyName = "zh";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.zh.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.zh.DefaultCellStyle = dataGridViewCellStyle23;
             resources.ApplyResources(this.zh, "zh");
             this.zh.Name = "zh";
             this.zh.ReadOnly = true;
@@ -136,8 +136,8 @@
             // ru
             // 
             this.ru.DataPropertyName = "ru";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ru.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ru.DefaultCellStyle = dataGridViewCellStyle24;
             resources.ApplyResources(this.ru, "ru");
             this.ru.Name = "ru";
             this.ru.ReadOnly = true;

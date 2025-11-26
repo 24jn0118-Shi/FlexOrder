@@ -17,7 +17,7 @@ namespace FlexOrder
     public partial class Frm_S_StaffManagement : Form
     {
         Form parent;
-        String selected_id = null;
+        string selected_id = null;
         Boolean closeparent = false;
         Staff loginstaff;
         public Frm_S_StaffManagement(Staff loginstaff, Form parent)
