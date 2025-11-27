@@ -260,6 +260,27 @@ namespace FlexOrderLibrary
             }
             return ret;
         }
+
+        public int UpdateAvailable(string goods_code)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"UPDATE Goods SET is_available=(CASE WHEN is_available = 0 THEN 1 ELSE 0 END)
+                                WHERE goods_code = @goods_code";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@goods_code", goods_code);
+
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+
+            }
+            return ret;
+        }
+
         public int Delete(string goods_code)
         {
             int ret = 0;
