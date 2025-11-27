@@ -36,8 +36,25 @@ namespace FlexOrder
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
-            frm_S_MenuMultilingual.ShowDialog();
+            DialogResult dret = MessageBox.Show("よろしいですか", "確認",
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dret == DialogResult.Yes)
+            {
+                if (type == "Add")
+                {
+                    //INSERT
+
+                }
+                else
+                {
+                    //UPDATE
+                }
+
+
+                Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
+                frm_S_MenuMultilingual.ShowDialog();
+            }
+                
         }
 
         private void btnBack_Click(object sender, EventArgs e)

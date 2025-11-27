@@ -448,10 +448,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>791, 345</value>
+    <value>720, 383</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 28</value>
+    <value>122, 28</value>
   </data>
   <data name="txtKaikei.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>

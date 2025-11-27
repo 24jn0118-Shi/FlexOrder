@@ -1,9 +1,11 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -94,6 +96,26 @@ namespace FlexOrder
             SwitchLanguage("ru");
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            const string WRITEFILE = @"Z:\Binary.txt";
+            using (StreamWriter sw = new StreamWriter(WRITEFILE, true))
+            {
+                GoodsTable goodsTable = new GoodsTable();
+                List<Goods> goodslist = goodsTable.GetAllGoodsList(1);
+                foreach (Goods good in goodslist)
+                {
+                    ImagePro imagePro = new ImagePro();
+                    String image = imagePro.GetImagePath(good.goods_image);
+
+                    byte[] imageBytes = File.ReadAllBytes(image);
+                    string base64String = Convert.ToBase64String(imageBytes);
+                    //string line = good.goods_code + "," + base64String;
+                    sw.WriteLine(base64String);
+                    Console.WriteLine(good.goods_code + "done");
+                }
+                
+            }
+        }
     }
 }

@@ -93,9 +93,18 @@ namespace FlexOrder
 
                 ImagePro imagePro = new ImagePro();
                 String image = imagePro.GetImagePath(good.goods_image);
+
+                /*byte[] imageBytes = File.ReadAllBytes(image);
+                for (int i = 0; i < imageBytes.Length; i++) 
+                {
+                    Console.Write(imageBytes[i]);
+                }
+                Console.WriteLine();*/
+
                 using (FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read))
                 {
                     Image img = Image.FromStream(fs);
+
                     product.ProductImage = img;
                 }
                 product.ProductClicked += ProductItem_ProductClicked;

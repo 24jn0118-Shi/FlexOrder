@@ -155,7 +155,7 @@
     <value>Confirm Order</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>Total Amount:</value>
+    <value>Total:</value>
   </data>
   <data name="lblCart.Text" xml:space="preserve">
     <value>Current Order</value>
