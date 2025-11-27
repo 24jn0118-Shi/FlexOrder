@@ -46,7 +46,7 @@ namespace FlexOrder
                     errs += "分類を選択してください\n";
                     
                 }
-                if(lblPrice.Text == "")
+                if (lblPrice.Text == "")
                 {
                     errs += "価格を入力してください\n";
                 }
@@ -73,7 +73,8 @@ namespace FlexOrder
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dret == DialogResult.Yes)
                     {
-
+                        //Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
+                        //frm_S_MenuMultilingual.ShowDialog();
                     }
                 }
                     
@@ -84,8 +85,7 @@ namespace FlexOrder
             }
 
 
-            Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
-            frm_S_MenuMultilingual.ShowDialog();
+            
             
                 
         }

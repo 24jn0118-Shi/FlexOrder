@@ -11,7 +11,7 @@ namespace FlexOrderLibrary
 {
     public class GoodsGroupTable
     {
-        public List<GoodsGroup> GetAll(int language_no)
+        public List<GoodsGroup> GetAllAvailableGroup(int language_no)
         {
             DataTable table = new DataTable();
             List<GoodsGroup> grouplist = new List<GoodsGroup>();
