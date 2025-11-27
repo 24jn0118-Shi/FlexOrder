@@ -10,62 +10,70 @@ namespace FlexOrder
 {
     public class ImagePro
     {
-        string imageDirectory = Path.Combine(Application.StartupPath, "Images");
+        
+        string relativePath = Path.Combine(Application.StartupPath, "Images");
+        string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
+
+        string imagepath = @"\\192.168.3.3\SharedFolder\Images";
         public string GetImagePath(string filename)
         {
-            string path = Path.Combine(imageDirectory, filename);
+            string path = Path.Combine(imagepath, filename);
 
             return path;
         }
 
-        public bool DeleteImageFile(string filename)
+        public bool DeleteImageFile(List<string> namelist)
         {
-            string filepath = GetImagePath(filename);
-
-            if (File.Exists(filepath))
+            bool allSucceeded = true;
+            foreach (string filename in namelist)
             {
-                try
+                string filepath = GetImagePath(filename);
+                if (File.Exists(filepath))
                 {
-                    File.Delete(filepath);
+                    try
+                    {
+                        File.Delete(filepath);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"ファイル削除失败: {ex.Message}", "削除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        allSucceeded = false;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"ファイル {filename}が存在しません", "Message");
                     return true;
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"ファイル削除失败: {ex.Message}", "削除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
             }
-            else
-            {
-                MessageBox.Show($"ファイル {filename}が存在しません", "Message");
-                return true;
-            }
+            return allSucceeded;
+            
         }
-        public bool CopyImageFile(string newResourceName, string sourceFilePath) 
+        public string CopyImageFile(string sourceFilePath) 
         {
+            string newDestinationFilePath;
             if (string.IsNullOrEmpty(sourceFilePath) || !File.Exists(sourceFilePath))
             {
                 MessageBox.Show("ファイルパスが存在しません", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                return null;
             }
-
-            string newDestinationFilePath = GetImagePath(newResourceName);
-
+            string newResourceName = Path.GetFileName(sourceFilePath);
+            newDestinationFilePath = GetImagePath(newResourceName);
             try
             {
-                if (!Directory.Exists(imageDirectory))
+                if (!Directory.Exists(imagepath))
                 {
-                    Directory.CreateDirectory(imageDirectory);
+                    Directory.CreateDirectory(imagepath);
                 }
 
                 File.Copy(sourceFilePath, newDestinationFilePath, true);
 
-                return true;
+                return newDestinationFilePath;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"ファイル保存失敗: {ex.Message}", "保存失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                return null;
             }
         }
     }
