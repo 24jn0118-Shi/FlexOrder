@@ -14,7 +14,7 @@ namespace FlexOrder
         string relativePath = Path.Combine(Application.StartupPath, "Images");
         string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
-        string imagepath = @"\\192.168.3.3\SharedFolder\Images";
+        string imagepath = Path.Combine(Application.StartupPath, "Images");
         public string GetImagePath(string filename)
         {
             string path = Path.Combine(imagepath, filename);
