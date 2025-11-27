@@ -11,6 +11,36 @@ namespace FlexOrderLibrary
 {
     public class GoodsGroupTable
     {
+        public List<GoodsGroup> GetAll(int language_no)
+        {
+            DataTable table = new DataTable();
+            List<GoodsGroup> grouplist = new List<GoodsGroup>();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT L.*, group_sort FROM GoodsGroup AS G INNER JOIN
+                                LocalizationGoodsGroup AS L on G.group_code = L.group_code WHERE language_no = @language_no AND 
+                                L.group_code IN (SELECT group_code FROM Goods WHERE is_available = 1)";
+
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
+                adapter.Fill(table);
+
+                foreach (DataRow row in table.Rows)
+                {
+                    GoodsGroup goodsGroup = new GoodsGroup();
+
+                    goodsGroup.group_code = row["group_code"].ToString();
+                    goodsGroup.group_sort = int.Parse(row["group_sort"].ToString());
+                    goodsGroup.language_no = language_no;
+                    goodsGroup.group_name = row["group_name"].ToString();
+
+                    grouplist.Add(goodsGroup);
+                }
+            }
+            return grouplist;
+        }
+
         public List<GoodsGroup> GetGroupByLanguage(int language_no)
         {
             DataTable table = new DataTable();
