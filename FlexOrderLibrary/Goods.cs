@@ -14,7 +14,7 @@ namespace FlexOrderLibrary
         public string goods_name { get; set; }
         public string goods_detail { get; set; }
         public int goods_price { get; set; }
-        public string goods_image { get; set; }
+        public byte[] goods_image { get; set; }
         public bool is_recommend { get; set; }
         public bool is_vegetarian { get; set; }
         public bool is_available { get; set; }

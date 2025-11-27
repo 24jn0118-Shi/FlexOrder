@@ -18,9 +18,11 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT L.*, group_sort FROM GoodsGroup AS G INNER JOIN
-                                LocalizationGoodsGroup AS L on G.group_code = L.group_code WHERE language_no = @language_no AND 
-                                L.group_code IN (SELECT group_code FROM Goods WHERE is_available = 1)";
+                string sql = @"SELECT L.*, group_sort FROM GoodsGroup AS G 
+                                INNER JOIN LocalizationGoodsGroup AS L on G.group_code = L.group_code 
+                                WHERE language_no = @language_no AND 
+                                L.group_code IN (SELECT group_code FROM Goods WHERE is_available = 1) 
+                                ORDER BY group_sort";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);

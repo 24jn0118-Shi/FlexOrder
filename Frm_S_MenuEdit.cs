@@ -16,10 +16,9 @@ namespace FlexOrder
     {
         string type;
         string nextno;
-        string oldimagepath;
-        bool newimageuploaded = false;
         bool replaceimg = false;
-        List<string> filelist = new List<string>();
+        byte[] oldimageBytes = null;
+        byte[] newimageBytes = null;
         public Frm_S_MenuEdit(String type)
         {
             InitializeComponent();
@@ -130,20 +129,8 @@ namespace FlexOrder
                 cboxRecommend.Checked = goods.is_recommend;
                 cboxAvailable.Checked = goods.is_available;
                 cboxVege.Checked = goods.is_vegetarian;
-
-                ImagePro imagePro = new ImagePro();
-                lblImageName.Text = goods.goods_image;
-                oldimagepath = imagePro.GetImagePath(goods.goods_image);
-                if (picboxImage.Image != null)
-                {
-                    picboxImage.Image.Dispose();
-                    picboxImage.Image = null;
-                }
-                using (FileStream fs = new FileStream(oldimagepath, FileMode.Open, FileAccess.Read))
-                {
-                    Image img = Image.FromStream(fs);
-                    picboxImage.Image = img;
-                }
+                picboxImage.Image = ImagePro.ConvertByteArrayToImage(goods.goods_image);
+                
 
             }
         }
@@ -168,14 +155,12 @@ namespace FlexOrder
             {
                 newfileName = ofdImage.FileName;
 
-                ImagePro imagePro = new ImagePro();
-                Console.WriteLine("From " + newfileName);
-                lblImageName.Text = Path.GetFileName(newfileName);
-                newfileName = imagePro.CopyImageFile(newfileName);
-                Console.WriteLine("To " + newfileName);
-                if (newfileName != null) 
+                newimageBytes = File.ReadAllBytes(newfileName);
+                Console.WriteLine("Loaded Bytes From " + newfileName);
+                picboxImage.Image = ImagePro.ConvertByteArrayToImage(newimageBytes);
+                if (newimageBytes != null) 
                 {
-                    newimageuploaded = true; 
+                    replaceimg = true;
                 }
                 
             }

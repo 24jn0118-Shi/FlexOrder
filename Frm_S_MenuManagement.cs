@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,7 +92,9 @@ namespace FlexOrder
             dgvMenu.MultiSelect = false;
             dgvMenu.AutoGenerateColumns = false;
             Refresh_page();
-        
+
+
+            lblBinaryPath.Text = "Export to: " + ImagePro.WRITEBINARYFILE;
         }
         private void Refresh_page()
         {
@@ -120,6 +123,38 @@ namespace FlexOrder
         private void dgvMenu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected_goodscode = dgvMenu.CurrentRow.Cells["goods_code"].Value.ToString();
+        }
+
+        private void btnExportBinary_Click(object sender, EventArgs e)
+        {
+            ImagePro.ExportInitialBinary(true);
+        }
+
+        private void btnInsertImages_Click(object sender, EventArgs e)
+        {
+            string filepath;
+            DialogResult ret = ofdInsertImages.ShowDialog();
+            if (ret == DialogResult.OK)
+            {
+                filepath = ofdInsertImages.FileName;
+                Console.WriteLine("From: " + filepath);
+                ImagePro imagePro = new ImagePro();
+                
+                
+                if (filepath != null)
+                {
+                    DialogResult dret = MessageBox.Show(filepath+"\nをInsertしますか", "確認",
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dret == DialogResult.Yes) 
+                    {
+                        GoodsTable goodsTable = new GoodsTable();
+                        int cnt = goodsTable.InsertInitialImagesFromBinaryFile(filepath);
+                        MessageBox.Show(cnt +"件Insertしました", "Insert完了",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+            }
         }
     }
 }

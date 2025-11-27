@@ -36,7 +36,6 @@
             this.btnTakeout = new System.Windows.Forms.Button();
             this.btnDinein = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRussian
@@ -86,18 +85,10 @@
             resources.ApplyResources(this.lblWelcome, "lblWelcome");
             this.lblWelcome.Name = "lblWelcome";
             // 
-            // button1
-            // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Frm_C_Index
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnDinein);
             this.Controls.Add(this.btnTakeout);
@@ -120,6 +111,5 @@
         private System.Windows.Forms.Button btnTakeout;
         private System.Windows.Forms.Button btnDinein;
         private System.Windows.Forms.Label lblWelcome;
-        private System.Windows.Forms.Button button1;
     }
 }

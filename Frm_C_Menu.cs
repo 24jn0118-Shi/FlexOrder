@@ -38,7 +38,7 @@ namespace FlexOrder
             tbcntMenu.ItemSize = new Size(60, 160);
             tbcntMenu.DrawMode = TabDrawMode.OwnerDrawFixed;
             tbcntMenu.DrawItem += TabControl1_DrawItem;
-            tbcntMenu.SelectedIndexChanged += TbcntMenu_SelectedIndexChanged;
+            //tbcntMenu.SelectedIndexChanged += TbcntMenu_SelectedIndexChanged;
         }
 
         private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -54,7 +54,6 @@ namespace FlexOrder
             };
 
             Brush textBrush = e.State == DrawItemState.Selected ? Brushes.Blue : Brushes.Black;
-
             e.Graphics.DrawString(tabPage.Text, e.Font, textBrush, e.Bounds, sf);
         }
 
@@ -65,7 +64,7 @@ namespace FlexOrder
                 currentLangNo = result;
 
             LoadGroupsTabs();
-            LoadProductsForTab(tbcntMenu.SelectedTab);
+            LoadProductsForTabs();
         }
 
         private void LoadGroupsTabs()
@@ -76,7 +75,6 @@ namespace FlexOrder
             foreach (GoodsGroup group in groups)
             {
                 string groupCode = group.group_code;
-                if (groupCode == "flowLayoutPanelMenuRecommend") continue;
 
                 TabPage tab = new TabPage(group.group_name);
                 FlowLayoutPanel panel = new FlowLayoutPanel
@@ -86,15 +84,63 @@ namespace FlexOrder
                 };
                 tab.Controls.Add(panel);
                 tab.Tag = groupCode;
+                Console.WriteLine(tab.Tag + " Added");
                 tbcntMenu.TabPages.Add(tab);
             }
         }
 
         private void TbcntMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadProductsForTab(tbcntMenu.SelectedTab);
+            //LoadProductsForTab(tbcntMenu.SelectedTab);
+            Console.WriteLine(tbcntMenu.SelectedTab.Tag + " Selected");
         }
+        private void LoadProductsForTabs() 
+        {
+            if (tbcntMenu.TabPages.Count == 0)
+            {
+                return;
+            }
+            GoodsTable goodsTable = new GoodsTable();
+            
+            foreach (TabPage tab in tbcntMenu.TabPages)
+            {
+                Console.WriteLine(tab.Tag + " Start");
+                List<Goods> goodsList;
+                FlowLayoutPanel panel;
+                if (tab == tbcntMenu.TabPages[0])
+                {
+                    goodsList = goodsTable.GetRecommendGoods(currentLangNo);
+                    panel = flowLayoutPanelMenuRecommend;
+                }
+                else
+                {
+                    string groupCode = tab.Tag as string;
+                    if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) continue;
+                    panel = (FlowLayoutPanel)tab.Controls[0];
+                    if (string.IsNullOrEmpty(groupCode)) continue;
+                    goodsList = goodsTable.GetGoodsByGroup(currentLangNo, groupCode);
+                }
+                panel.Controls.Clear();
+                if (goodsList != null)
+                {
+                    foreach (Goods good in goodsList)
+                    {
+                        if (vege && !good.is_vegetarian) continue;
 
+                        ProductItem product = new ProductItem
+                        {
+                            Code = good.goods_code,
+                            ProductTitle = good.goods_name,
+                            ProductPrice = "¥ " + good.goods_price.ToString("N0")
+                        };
+                        product.ProductImage = ImagePro.ConvertByteArrayToImage(good.goods_image);
+                        product.ProductClicked += ProductItem_ProductClicked;
+                        panel.Controls.Add(product);
+                    }
+                }
+                Console.WriteLine(tab.Tag + " End");
+            }
+        }
         private void LoadProductsForTab(TabPage tab)
         {
             if (tab == null) return;
@@ -126,18 +172,7 @@ namespace FlexOrder
                     ProductTitle = good.goods_name,
                     ProductPrice = "¥ " + good.goods_price.ToString("N0")
                 };
-
-                ImagePro imagePro = new ImagePro();
-                string imagePath = imagePro.GetImagePath(good.goods_image);
-
-                if (File.Exists(imagePath))
-                {
-                    using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
-                    {
-                        product.ProductImage = Image.FromStream(fs);
-                    }
-                }
-
+                product.ProductImage = ImagePro.ConvertByteArrayToImage(good.goods_image);
                 product.ProductClicked += ProductItem_ProductClicked;
                 panel.Controls.Add(product);
             }
@@ -163,7 +198,7 @@ namespace FlexOrder
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-            LoadProductsForTab(tbcntMenu.SelectedTab);
+            LoadProductsForTabs();
         }
 
         private void lblVeget_Click(object sender, EventArgs e)
@@ -174,7 +209,7 @@ namespace FlexOrder
         private void btnRestart_Click(object sender, EventArgs e)
         {
             DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dret == DialogResult.Yes)
             {

@@ -45,7 +45,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.lblGroupName = new System.Windows.Forms.Label();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
-            this.lblImageName = new System.Windows.Forms.Label();
             this.btnClearImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
@@ -226,14 +225,6 @@
             this.ofdImage.Filter = "Image Files(*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All Files (*.*)|*.*";
             this.ofdImage.Title = "使用する画像ファイルを選択してください";
             // 
-            // lblImageName
-            // 
-            this.lblImageName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImageName.Location = new System.Drawing.Point(489, 44);
-            this.lblImageName.Name = "lblImageName";
-            this.lblImageName.Size = new System.Drawing.Size(259, 42);
-            this.lblImageName.TabIndex = 11;
-            // 
             // btnClearImage
             // 
             this.btnClearImage.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
@@ -253,7 +244,6 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnClearImage);
             this.Controls.Add(this.btnSelectImageFile);
-            this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.lblImg);
             this.Controls.Add(this.picboxImage);
             this.Controls.Add(this.cboxAvailable);
@@ -296,7 +286,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblGroupName;
         private System.Windows.Forms.OpenFileDialog ofdImage;
-        private System.Windows.Forms.Label lblImageName;
         private System.Windows.Forms.Button btnClearImage;
     }
 }

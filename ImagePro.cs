@@ -1,16 +1,18 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace FlexOrder
 {
     public class ImagePro
     {
-        
+        public static string WRITEBINARYFILE = @"C:\Users\brown\Downloads\Binary.txt";
         string relativePath = Path.Combine(Application.StartupPath, "Images");
         string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
@@ -49,8 +51,9 @@ namespace FlexOrder
             return allSucceeded;
             
         }
-        public string CopyImageFile(string sourceFilePath) 
+        /*public string CopyImageFile(string sourceFilePath) 
         {
+
             string newDestinationFilePath;
             if (string.IsNullOrEmpty(sourceFilePath) || !File.Exists(sourceFilePath))
             {
@@ -75,6 +78,48 @@ namespace FlexOrder
                 MessageBox.Show($"ファイル保存失敗: {ex.Message}", "保存失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
+        }*/
+        public static Image ConvertByteArrayToImage(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0)
+            {
+                return null;
+            }
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"失敗: {ex.Message}");
+                return null;
+            }
+        }
+        public static void ExportInitialBinary(bool withgoodscode) 
+        {
+            /*using (StreamWriter sw = new StreamWriter(WRITEBINARYFILE, false))
+            {
+                GoodsTable goodsTable = new GoodsTable();
+                List<Goods> goodslist = goodsTable.GetAllGoodsList(1);
+                foreach (Goods good in goodslist)
+                {
+                    ImagePro imagePro = new ImagePro();
+                    String image = imagePro.GetImagePath(good.goods_image);
+
+                    byte[] imageBytes = File.ReadAllBytes(image);
+                    string base64String = Convert.ToBase64String(imageBytes);
+                    if (withgoodscode) 
+                    {
+                        base64String = good.goods_code + "," + base64String;
+                    }
+                    sw.WriteLine(base64String);
+                    Console.WriteLine(good.goods_code + "done");
+                }
+
+            }*/
         }
     }
 }

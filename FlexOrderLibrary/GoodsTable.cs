@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +37,15 @@ namespace FlexOrderLibrary
                     goods.group_code = row["group_code"].ToString();
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
-                    goods.goods_price = int.Parse(row["goods_price"].ToString()); 
-                    goods.goods_image = row["goods_image"].ToString();
+                    goods.goods_price = int.Parse(row["goods_price"].ToString());
+                    if (row["goods_image"] != DBNull.Value)
+                    {
+                        goods.goods_image = (byte[])row["goods_image"];
+                    }
+                    else
+                    {
+                        goods.goods_image = null;
+                    }
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -57,7 +65,7 @@ namespace FlexOrderLibrary
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 
 				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code 
 				WHERE language_no = @language_no 
-				ORDER BY goods_image ASC";
+				ORDER BY RIGHT(G.goods_code, 4) ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.Fill(table);
@@ -72,7 +80,14 @@ namespace FlexOrderLibrary
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    goods.goods_image = row["goods_image"].ToString();
+                    if (row["goods_image"] != DBNull.Value)
+                    {
+                        goods.goods_image = (byte[])row["goods_image"];
+                    }
+                    else
+                    {
+                        goods.goods_image = null;
+                    }
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -111,7 +126,14 @@ namespace FlexOrderLibrary
                     goods.goods_name = table.Rows[0]["goods_name"].ToString();
                     goods.goods_detail = table.Rows[0]["goods_detail"].ToString();
                     goods.goods_price = int.Parse(table.Rows[0]["goods_price"].ToString());
-                    goods.goods_image = table.Rows[0]["goods_image"].ToString();
+                    if (table.Rows[0]["goods_image"] != DBNull.Value)
+                    {
+                        goods.goods_image = (byte[])table.Rows[0]["goods_image"];
+                    }
+                    else
+                    {
+                        goods.goods_image = null;
+                    }
                     goods.is_recommend = bool.Parse(table.Rows[0]["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(table.Rows[0]["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(table.Rows[0]["is_available"].ToString());
@@ -129,11 +151,11 @@ namespace FlexOrderLibrary
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
 				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
-				WHERE language_no = @language_no 
+				WHERE language_no = @language_no AND G.group_code = @group_code
 				AND is_available = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
-                adapter.SelectCommand.Parameters.AddWithValue("@groupcode", groupcode);
+                adapter.SelectCommand.Parameters.AddWithValue("@group_code", groupcode);
                 adapter.Fill(table);
 
                 foreach (DataRow row in table.Rows)
@@ -146,7 +168,14 @@ namespace FlexOrderLibrary
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    goods.goods_image = row["goods_image"].ToString();
+                    if (row["goods_image"] != DBNull.Value)
+                    {
+                        goods.goods_image = (byte[])row["goods_image"];
+                    }
+                    else
+                    {
+                        goods.goods_image = null;
+                    }
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -232,6 +261,52 @@ namespace FlexOrderLibrary
             }
             Console.WriteLine("LocalizationGoodsに" + ret + "つの言語情報を追加しました");
 
+            return ret;
+        }
+        public int InsertInitialImagesFromBinaryFile(string binaryfilepath) 
+        {
+            int ret = 0;
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (StreamReader sr = new StreamReader(binaryfilepath))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    try
+                    {
+                        string[] parts = line.Split(new[] { ',' }, 2, StringSplitOptions.None);
+                        if (parts.Length != 2) continue;
+
+                        string goodscode = parts[0];
+                        string base64Data = parts[1];
+                        byte[] imageBytes = Convert.FromBase64String(base64Data);
+
+                        using (SqlConnection connection = new SqlConnection(connectionString))
+                        {
+                            string sql = @"UPDATE Goods 
+                                        SET goods_image = @imageBytes 
+                                        WHERE goods_code = @goods_code";
+
+                            SqlCommand command = new SqlCommand(sql, connection);
+
+                            command.Parameters.AddWithValue("@goods_code", goodscode);
+                            command.Parameters.Add("@imageBytes", SqlDbType.VarBinary, imageBytes.Length).Value = imageBytes;
+
+                            connection.Open();
+                            int cnt = command.ExecuteNonQuery();
+                            if(cnt < 1) 
+                            {
+                                Console.WriteLine(goodscode + ": 失敗した");
+                            }
+                            ret += cnt;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"失敗メッセージ: {ex.Message}");
+                    }
+                }
+            }
             return ret;
         }
         public int Update(Goods goods)

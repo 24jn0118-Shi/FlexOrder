@@ -484,7 +484,7 @@
     <value>12, 367</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 12</value>
+    <value>71, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -517,7 +517,7 @@
     <value>12, 392</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 12</value>
+    <value>71, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
