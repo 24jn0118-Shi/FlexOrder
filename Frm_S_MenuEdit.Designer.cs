@@ -46,6 +46,7 @@
             this.lblGroupName = new System.Windows.Forms.Label();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
             this.lblImageName = new System.Windows.Forms.Label();
+            this.btnClearImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,6 +234,16 @@
             this.lblImageName.Size = new System.Drawing.Size(259, 42);
             this.lblImageName.TabIndex = 11;
             // 
+            // btnClearImage
+            // 
+            this.btnClearImage.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnClearImage.Location = new System.Drawing.Point(415, 401);
+            this.btnClearImage.Name = "btnClearImage";
+            this.btnClearImage.Size = new System.Drawing.Size(101, 37);
+            this.btnClearImage.TabIndex = 12;
+            this.btnClearImage.Text = "画像クリア";
+            this.btnClearImage.UseVisualStyleBackColor = true;
+            // 
             // Frm_S_MenuEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -240,6 +251,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnClearImage);
             this.Controls.Add(this.btnSelectImageFile);
             this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.lblImg);
@@ -285,5 +297,6 @@
         private System.Windows.Forms.Label lblGroupName;
         private System.Windows.Forms.OpenFileDialog ofdImage;
         private System.Windows.Forms.Label lblImageName;
+        private System.Windows.Forms.Button btnClearImage;
     }
 }

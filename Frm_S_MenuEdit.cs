@@ -36,24 +36,57 @@ namespace FlexOrder
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            DialogResult dret = MessageBox.Show("よろしいですか", "確認",
-                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dret == DialogResult.Yes)
+            string errs = "";
+            if (type == "Add")
             {
-                if (type == "Add")
+                //INSERT
+                bool parseresult = int.TryParse(lblPrice.Text, out int newprice);
+                if (cmbGroup.SelectedIndex < 0) 
                 {
-                    //INSERT
-
+                    errs += "分類を選択してください\n";
+                    
                 }
-                else
+                if(lblPrice.Text == "")
                 {
-                    //UPDATE
+                    errs += "価格を入力してください\n";
                 }
+                else if (!parseresult)
+                {
+                    errs += "価格は整数を入力してください\n";
+                }
+                if(picboxImage.Image == null) 
+                {
+                    Console.WriteLine("Imageなし");
+                }
+                else 
+                {
+                    Console.WriteLine("Imageあり");
+                }
+                if (errs != "") 
+                {
+                    MessageBox.Show(errs, "エラー",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else 
+                {
+                    DialogResult dret = MessageBox.Show("以上の内容で登録してよろしいですか", "確認", 
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dret == DialogResult.Yes)
+                    {
 
-
-                Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
-                frm_S_MenuMultilingual.ShowDialog();
+                    }
+                }
+                    
             }
+            else
+            {
+                //UPDATE
+            }
+
+
+            Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
+            frm_S_MenuMultilingual.ShowDialog();
+            
                 
         }
 

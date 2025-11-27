@@ -61,7 +61,7 @@ namespace FlexOrder
                 {
                     GoodsTable goodsTable = new GoodsTable();
                     Goods goods = goodsTable.GetGoodsByCode(1, selected_goodscode);
-                    int cnt = goodsTable.Delete(goods);
+                    int cnt = goodsTable.Delete(goods.goods_code);
                     if (cnt > -999)
                     {
                         MessageBox.Show(cnt + "件の商品を削除しました", "削除完了",
