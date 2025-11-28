@@ -136,7 +136,7 @@
     <value>2, 2, 2, 2</value>
   </data>
   <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>602, 792</value>
+    <value>593, 792</value>
   </data>
   <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -154,13 +154,13 @@
     <value>0</value>
   </data>
   <data name="tbpagePop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 4</value>
+    <value>31, 4</value>
   </data>
   <data name="tbpagePop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 798</value>
+    <value>599, 798</value>
   </data>
   <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -179,6 +179,9 @@
   </data>
   <data name="&gt;&gt;tbpagePop.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tbcntMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt, style=Bold</value>
   </data>
   <data name="tbcntMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 22</value>

@@ -101,9 +101,11 @@
             this.Controls.Add(this.btnMenuManagement);
             this.Controls.Add(this.btnOrderManagement);
             this.Controls.Add(this.btnStaffManagement);
+            this.KeyPreview = true;
             this.Name = "Frm_S_Mainmenu";
             this.Text = "メインメニュー";
             this.Load += new System.EventHandler(this.Frm_S_Mainmenu_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_S_Mainmenu_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

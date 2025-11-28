@@ -129,8 +129,18 @@ namespace FlexOrder
                 cboxRecommend.Checked = goods.is_recommend;
                 cboxAvailable.Checked = goods.is_available;
                 cboxVege.Checked = goods.is_vegetarian;
-                picboxImage.Image = ImagePro.ConvertByteArrayToImage(goods.goods_image);
-                
+                string imagePath = ImagePro.GetImagePath(goods.goods_image_filename);
+                if (File.Exists(imagePath))
+                {
+                    using (var tempImage = Image.FromFile(imagePath))
+                    {
+                        picboxImage.Image = new Bitmap(tempImage);
+                    }
+                }
+                else
+                {
+                    picboxImage.Image = Properties.Resources.testimage1;
+                }
 
             }
         }

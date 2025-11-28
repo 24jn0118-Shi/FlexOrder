@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -23,6 +24,8 @@ namespace FlexOrder
         bool vege = false;
         string ordertype;
 
+        private Dictionary<string, List<Goods>> _allGoodsCache = new Dictionary<string, List<Goods>>();
+        private bool _controlsCreated = false;
         public Frm_C_Menu(string ordertype)
         {
             InitializeComponent();
@@ -92,96 +95,127 @@ namespace FlexOrder
         private void TbcntMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             //LoadProductsForTab(tbcntMenu.SelectedTab);
-            Console.WriteLine(tbcntMenu.SelectedTab.Tag + " Selected");
+            //Console.WriteLine(tbcntMenu.SelectedTab.Tag + " Selected");
         }
-        private void LoadProductsForTabs() 
+        private void LoadProductsForTabs()
         {
-            if (tbcntMenu.TabPages.Count == 0)
-            {
-                return;
-            }
+            if (_controlsCreated) return;
+            if (tbcntMenu.TabPages.Count == 0) return;
             GoodsTable goodsTable = new GoodsTable();
-            
+            _allGoodsCache.Clear();
             foreach (TabPage tab in tbcntMenu.TabPages)
             {
-                Console.WriteLine(tab.Tag + " Start");
-                List<Goods> goodsList;
-                FlowLayoutPanel panel;
+                List<Goods> goodsList = null;
+                string groupCode = null;
+
                 if (tab == tbcntMenu.TabPages[0])
                 {
                     goodsList = goodsTable.GetRecommendGoods(currentLangNo);
-                    panel = flowLayoutPanelMenuRecommend;
+                    groupCode = "RECOMMEND";
                 }
                 else
                 {
-                    string groupCode = tab.Tag as string;
-                    if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) continue;
-                    panel = (FlowLayoutPanel)tab.Controls[0];
+                    groupCode = tab.Tag as string;
                     if (string.IsNullOrEmpty(groupCode)) continue;
                     goodsList = goodsTable.GetGoodsByGroup(currentLangNo, groupCode);
                 }
-                panel.Controls.Clear();
-                if (goodsList != null)
+                if (goodsList != null && !string.IsNullOrEmpty(groupCode))
                 {
-                    foreach (Goods good in goodsList)
+                    _allGoodsCache[groupCode] = goodsList;
+                }
+            }
+            CreateAllProductControls();
+        }
+        private void CreateAllProductControls()
+        {
+            if (_controlsCreated) return;
+            foreach (TabPage tab in tbcntMenu.TabPages)
+            {
+                FlowLayoutPanel panel;
+                string groupCode;
+                if (tab == tbcntMenu.TabPages[0])
+                {
+                    panel = flowLayoutPanelMenuRecommend;
+                    groupCode = "RECOMMEND";
+                }
+                else
+                {
+                    if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) continue;
+                    panel = (FlowLayoutPanel)tab.Controls[0];
+                    groupCode = tab.Tag as string;
+                }
+                if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
+                {
+                    foreach (Goods good in cachedList)
                     {
-                        if (vege && !good.is_vegetarian) continue;
-
                         ProductItem product = new ProductItem
                         {
                             Code = good.goods_code,
                             ProductTitle = good.goods_name,
                             ProductPrice = "¥ " + good.goods_price.ToString("N0")
                         };
-                        product.ProductImage = ImagePro.ConvertByteArrayToImage(good.goods_image);
+                        string imagePath = ImagePro.GetImagePath(good.goods_image_filename);
+                        if (File.Exists(imagePath))
+                        {
+                            using (var tempImage = Image.FromFile(imagePath))
+                            {
+                                product.ProductImage = new Bitmap(tempImage);
+                            }
+                        }
+                        else
+                        {   
+                            product.ProductImage = Properties.Resources.testimage1; 
+                        }
                         product.ProductClicked += ProductItem_ProductClicked;
                         panel.Controls.Add(product);
                     }
                 }
-                Console.WriteLine(tab.Tag + " End");
             }
+            _controlsCreated = true;
+            ApplyVegetarianFilter();
         }
-        private void LoadProductsForTab(TabPage tab)
+        private void ApplyVegetarianFilter()
         {
-            if (tab == null) return;
-
-            FlowLayoutPanel panel = (tab == tbcntMenu.TabPages[0]) ? flowLayoutPanelMenuRecommend : (FlowLayoutPanel)tab.Controls[0];
-
-            panel.Controls.Clear();
-
-            string groupCode = tab.Tag as string;
-            GoodsTable goodsTable = new GoodsTable();
-            List<Goods> goodsList;
-
-            if (groupCode == "flowLayoutPanelMenuRecommend" || tab == tbcntMenu.TabPages[0])
+            if (!_controlsCreated) return;
+            foreach (TabPage tab in tbcntMenu.TabPages)
             {
-                goodsList = goodsTable.GetRecommendGoods(currentLangNo);
-            }
-            else
-            {
-                goodsList = goodsTable.GetGoodsByGroup(currentLangNo, groupCode);
-            }
+                FlowLayoutPanel panel;
+                string groupCode;
 
-            foreach (Goods good in goodsList)
-            {
-                if (vege && !good.is_vegetarian) continue;
-
-                ProductItem product = new ProductItem
+                if (tab == tbcntMenu.TabPages[0])
                 {
-                    Code = good.goods_code,
-                    ProductTitle = good.goods_name,
-                    ProductPrice = "¥ " + good.goods_price.ToString("N0")
-                };
-                product.ProductImage = ImagePro.ConvertByteArrayToImage(good.goods_image);
-                product.ProductClicked += ProductItem_ProductClicked;
-                panel.Controls.Add(product);
+                    panel = flowLayoutPanelMenuRecommend;
+                    groupCode = "RECOMMEND";
+                }
+                else
+                {
+                    if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) continue;
+                    panel = (FlowLayoutPanel)tab.Controls[0];
+                    groupCode = tab.Tag as string;
+                }
+                if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
+                {
+                    foreach (Control control in panel.Controls)
+                    {
+                        if (control is ProductItem productItem)
+                        {
+                            Goods good = cachedList.FirstOrDefault(g => g.goods_code == productItem.Code);
+
+                            if (good != null)
+                            {
+                                bool shouldBeVisible = !vege || good.is_vegetarian;
+                                productItem.Visible = shouldBeVisible;
+                            }
+                        }
+                    }
+                }
             }
         }
-
         private void ProductItem_ProductClicked(ProductItem productItem)
         {
             Frm_C_GoodsDetail frm = new Frm_C_GoodsDetail(productItem.Code);
             frm.ShowDialog();
+            //この時点でCart dgvをrefreshする
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -198,7 +232,7 @@ namespace FlexOrder
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-            LoadProductsForTabs();
+            ApplyVegetarianFilter();
         }
 
         private void lblVeget_Click(object sender, EventArgs e)

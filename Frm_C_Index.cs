@@ -36,6 +36,7 @@ namespace FlexOrder
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
+            ImagePro.CheckAndCacheAllImages(false);
         }
 
         private void ApplyResources(Control control, string cultureName)
@@ -55,13 +56,11 @@ namespace FlexOrder
                     }
                 }
             }
-
             foreach (Control childControl in control.Controls)
             {
                 ApplyResources(childControl, cultureName);
             }
         }
-
         private void SwitchLanguage(string cultureName)
         {
             if (string.IsNullOrEmpty(cultureName))
@@ -75,26 +74,29 @@ namespace FlexOrder
 
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
         }
-
         private void btnJapanese_Click(object sender, EventArgs e)
         {
             SwitchLanguage("ja");
         }
-
         private void btnEnglish_Click(object sender, EventArgs e)
         {
             SwitchLanguage("en");
         }
-
         private void btnChinese_Click(object sender, EventArgs e)
         {
             SwitchLanguage("zh");
         }
-
         private void btnRussian_Click(object sender, EventArgs e)
         {
             SwitchLanguage("ru");
         }
-
+        private void Frm_C_Index_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char keyChar = Char.ToLower(e.KeyChar);
+            if (keyChar == 'u')
+            {
+                ImagePro.CheckAndCacheAllImages(true);
+            }
+        }
     }
 }

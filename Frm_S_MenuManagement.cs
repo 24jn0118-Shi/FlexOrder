@@ -128,6 +128,8 @@ namespace FlexOrder
         private void btnExportBinary_Click(object sender, EventArgs e)
         {
             ImagePro.ExportInitialBinary(true);
+            MessageBox.Show("ただいまこの機能が使用できません", "ダメ",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btnInsertImages_Click(object sender, EventArgs e)

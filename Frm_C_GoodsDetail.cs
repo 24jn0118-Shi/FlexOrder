@@ -45,7 +45,18 @@ namespace FlexOrder
             lblDetail.Text = goods.goods_detail;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
             lblNum.Text = "1";
-            picGoods.Image = ImagePro.ConvertByteArrayToImage(goods.goods_image);
+            string imagePath = ImagePro.GetImagePath(goods.goods_image_filename);
+            if (File.Exists(imagePath))
+            {
+                using (var tempImage = Image.FromFile(imagePath))
+                {
+                    picGoods.Image = new Bitmap(tempImage);
+                }
+            }
+            else
+            {
+                picGoods.Image = Properties.Resources.testimage1;
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

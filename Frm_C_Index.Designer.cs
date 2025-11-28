@@ -96,8 +96,10 @@
             this.Controls.Add(this.btnEnglish);
             this.Controls.Add(this.btnChinese);
             this.Controls.Add(this.btnRussian);
+            this.KeyPreview = true;
             this.Name = "Frm_C_Index";
             this.Load += new System.EventHandler(this.FrmCIndex_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_C_Index_KeyPress);
             this.ResumeLayout(false);
 
         }

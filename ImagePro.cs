@@ -1,12 +1,14 @@
 ﻿using FlexOrderLibrary;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace FlexOrder
 {
@@ -16,41 +18,108 @@ namespace FlexOrder
         string relativePath = Path.Combine(Application.StartupPath, "Images");
         string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
-        string imagepath = Path.Combine(Application.StartupPath, "Images");
-        public string GetImagePath(string filename)
-        {
-            string path = Path.Combine(imagepath, filename);
+        private const string CacheFolderName = "Images";
+        private const string LastRunLogFile = "ImageCacheLog.txt";
 
-            return path;
-        }
+        private static string CacheDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CacheFolderName);
+        private static string LogFilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LastRunLogFile);
 
-        public bool DeleteImageFile(List<string> namelist)
+        private static string imagepath = Path.Combine(Application.StartupPath, "Images");
+
+        public static void CheckAndCacheAllImages(bool forceexecutecache)
         {
-            bool allSucceeded = true;
-            foreach (string filename in namelist)
+            if (IsCacheUpToDate() && !forceexecutecache)
             {
-                string filepath = GetImagePath(filename);
-                if (File.Exists(filepath))
+                Console.WriteLine("Cache skipped since Image cache is already up to date");
+                return;
+            }
+
+            Console.WriteLine("Start caching...");
+            try
+            {
+                CleanupCache();
+                Dictionary<string, byte[]> imageDataMap = GoodsTable.GetImagesFromDatabase();
+                SaveImagesToFiles(imageDataMap);
+                RecordSuccessfulRunDate();
+                Console.WriteLine("Images cached!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failure: {ex.Message}");
+            }
+        }
+        private static bool IsCacheUpToDate()
+        {
+            if (!File.Exists(LogFilePath))
+            {
+                return false;
+            }
+            try
+            {
+                string lastRunDateString = File.ReadAllText(LogFilePath).Trim();
+                if (DateTime.TryParse(lastRunDateString, out DateTime lastRunDate))
                 {
-                    try
-                    {
-                        File.Delete(filepath);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"ファイル削除失败: {ex.Message}", "削除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        allSucceeded = false;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"ファイル {filename}が存在しません", "Message");
-                    return true;
+                    return lastRunDate.Date == DateTime.Today;
                 }
             }
-            return allSucceeded;
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to read log: {ex.Message}");
+            }
+            return false;
         }
+        private static void RecordSuccessfulRunDate()
+        {
+            try
+            {
+                File.WriteAllText(LogFilePath, DateTime.Today.ToString("yyyy-MM-dd"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to log: {ex.Message}");
+            }
+        }
+        private static void CleanupCache()
+        {
+            if (Directory.Exists(CacheDirectory))
+            {
+                Directory.Delete(CacheDirectory, true);
+            }
+            Directory.CreateDirectory(CacheDirectory);
+        }
+        private static void SaveImagesToFiles(Dictionary<string, byte[]> imageDataMap)
+        {
+            foreach (var kvp in imageDataMap)
+            {
+                string code = kvp.Key;
+                byte[] data = kvp.Value;
+                try
+                {
+                    string filePath = Path.Combine(CacheDirectory, $"{code}.jpg");
+                    using (MemoryStream ms = new MemoryStream(data))
+                    {
+                        using (Image image = Image.FromStream(ms))
+                        {
+                            image.Save(filePath, ImageFormat.Jpeg);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to load Goods: {code} Message: {ex.Message}");
+                }
+            }
+        }
+        public static string GetImagePath(string goods_image)
+        {
+            string path = Path.Combine(CacheDirectory, goods_image);
+            if (File.Exists(path))
+            {
+                return path;
+            }
+            return null;
+        }
+    
         /*public string CopyImageFile(string sourceFilePath) 
         {
 

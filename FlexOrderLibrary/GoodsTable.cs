@@ -38,14 +38,7 @@ namespace FlexOrderLibrary
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    if (row["goods_image"] != DBNull.Value)
-                    {
-                        goods.goods_image = (byte[])row["goods_image"];
-                    }
-                    else
-                    {
-                        goods.goods_image = null;
-                    }
+                    goods.goods_image_filename = goods.goods_code + ".jpg";
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -80,14 +73,7 @@ namespace FlexOrderLibrary
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    if (row["goods_image"] != DBNull.Value)
-                    {
-                        goods.goods_image = (byte[])row["goods_image"];
-                    }
-                    else
-                    {
-                        goods.goods_image = null;
-                    }
+                    goods.goods_image_filename = goods.goods_code + ".jpg";
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -126,14 +112,7 @@ namespace FlexOrderLibrary
                     goods.goods_name = table.Rows[0]["goods_name"].ToString();
                     goods.goods_detail = table.Rows[0]["goods_detail"].ToString();
                     goods.goods_price = int.Parse(table.Rows[0]["goods_price"].ToString());
-                    if (table.Rows[0]["goods_image"] != DBNull.Value)
-                    {
-                        goods.goods_image = (byte[])table.Rows[0]["goods_image"];
-                    }
-                    else
-                    {
-                        goods.goods_image = null;
-                    }
+                    goods.goods_image_filename = goods.goods_code + ".jpg";
                     goods.is_recommend = bool.Parse(table.Rows[0]["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(table.Rows[0]["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(table.Rows[0]["is_available"].ToString());
@@ -168,14 +147,7 @@ namespace FlexOrderLibrary
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    if (row["goods_image"] != DBNull.Value)
-                    {
-                        goods.goods_image = (byte[])row["goods_image"];
-                    }
-                    else
-                    {
-                        goods.goods_image = null;
-                    }
+                    goods.goods_image_filename = goods.goods_code + ".jpg";
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -217,6 +189,34 @@ namespace FlexOrderLibrary
                 return table.Rows[0]["res"].ToString();
             }
         }
+        public static Dictionary<string, byte[]> GetImagesFromDatabase()
+        {
+            Dictionary<string, byte[]> imageMap = new Dictionary<string, byte[]>();
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            string sql = "SELECT goods_code, goods_image FROM Goods WHERE goods_image IS NOT NULL";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string code = reader["goods_code"].ToString();
+                            if (reader["goods_image"] != DBNull.Value)
+                            {
+                                byte[] imageData = (byte[])reader["goods_image"];
+                                imageMap[code] = imageData;
+                            }
+                        }
+                    }
+                }
+            }
+            return imageMap;
+        }
         public int InsertNewGoods(Goods goods)
         {
             int ret = 0;
@@ -234,9 +234,8 @@ namespace FlexOrderLibrary
                 command.Parameters.AddWithValue("@is_recommend", goods.is_recommend);
                 command.Parameters.AddWithValue("@is_vegetarian", goods.is_vegetarian);
                 command.Parameters.AddWithValue("@group_code", goods.group_code);
-                command.Parameters.AddWithValue("@goods_image", goods.goods_image);
+                command.Parameters.AddWithValue("@goods_image", goods.goods_image_bytes);
                 command.Parameters.AddWithValue("@is_available", goods.is_available);
-
 
                 connection.Open();
 
@@ -326,7 +325,7 @@ namespace FlexOrderLibrary
                 command.Parameters.AddWithValue("@is_recommend", goods.is_recommend);
                 command.Parameters.AddWithValue("@is_vegetarian", goods.is_vegetarian);
                 command.Parameters.AddWithValue("@group_code", goods.group_code);
-                command.Parameters.AddWithValue("@goods_image", goods.goods_image);
+                command.Parameters.AddWithValue("@goods_image", goods.goods_image_bytes);
                 command.Parameters.AddWithValue("@is_available", goods.is_available);
 
                 connection.Open();
