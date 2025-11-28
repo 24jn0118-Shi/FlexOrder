@@ -356,18 +356,18 @@ namespace FlexOrderLibrary
             return ret;
 
         }
-        public int UpdateAvailable(string goods_code)
+        public int UpdateAvailable(Goods goods)
         {
             int ret = 0;
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"UPDATE Goods SET is_available=(CASE WHEN is_available = 0 THEN 1 ELSE 0 END)
+                string sql = @"UPDATE Goods SET is_available= @is_available
                                 WHERE goods_code = @goods_code";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@goods_code", goods_code);
+                command.Parameters.AddWithValue("@goods_code", goods.goods_code);
+                command.Parameters.AddWithValue("@is_available", !goods.is_available);
 
                 connection.Open();
                 ret = command.ExecuteNonQuery();

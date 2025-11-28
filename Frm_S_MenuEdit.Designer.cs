@@ -230,10 +230,11 @@
             this.btnClearImage.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.btnClearImage.Location = new System.Drawing.Point(415, 401);
             this.btnClearImage.Name = "btnClearImage";
-            this.btnClearImage.Size = new System.Drawing.Size(101, 37);
+            this.btnClearImage.Size = new System.Drawing.Size(115, 37);
             this.btnClearImage.TabIndex = 12;
-            this.btnClearImage.Text = "画像クリア";
+            this.btnClearImage.Text = "画像取り消し";
             this.btnClearImage.UseVisualStyleBackColor = true;
+            this.btnClearImage.Click += new System.EventHandler(this.btnClearImage_Click);
             // 
             // Frm_S_MenuEdit
             // 

@@ -30,10 +30,9 @@ namespace FlexOrder
         {
             if (IsCacheUpToDate() && !forceexecutecache)
             {
-                Console.WriteLine("Cache skipped since Image cache is already up to date");
+                Console.WriteLine("Caching skipped because the image was cached within the past hour");
                 return;
             }
-
             Console.WriteLine("Start caching...");
             try
             {
@@ -50,16 +49,21 @@ namespace FlexOrder
         }
         private static bool IsCacheUpToDate()
         {
+            TimeSpan cacheDuration = TimeSpan.FromHours(1);
             if (!File.Exists(LogFilePath))
             {
                 return false;
             }
             try
             {
-                string lastRunDateString = File.ReadAllText(LogFilePath).Trim();
-                if (DateTime.TryParse(lastRunDateString, out DateTime lastRunDate))
+                string lastRunString = File.ReadAllText(LogFilePath).Trim();
+                if (DateTime.TryParse(lastRunString, out DateTime lastRunTime))
                 {
-                    return lastRunDate.Date == DateTime.Today;
+                    TimeSpan timeSinceLastRun = DateTime.Now - lastRunTime;
+                    if (timeSinceLastRun <= cacheDuration)
+                    {
+                        return true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -72,7 +76,8 @@ namespace FlexOrder
         {
             try
             {
-                File.WriteAllText(LogFilePath, DateTime.Today.ToString("yyyy-MM-dd"));
+                string nowString = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                File.WriteAllText(LogFilePath, nowString);
             }
             catch (Exception ex)
             {

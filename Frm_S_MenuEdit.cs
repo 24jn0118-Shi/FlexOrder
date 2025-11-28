@@ -17,8 +17,11 @@ namespace FlexOrder
         string type;
         string nextno;
         bool replaceimg = false;
+        bool anychanged = false;
         byte[] oldimageBytes = null;
         byte[] newimageBytes = null;
+        Goods editgoods = null;
+        Image oldimage;
         public Frm_S_MenuEdit(String type)
         {
             InitializeComponent();
@@ -81,12 +84,21 @@ namespace FlexOrder
             else
             {
                 //UPDATE
+
+
+
+
+
+
+                //If Updated --> ImagePro.CheckAndCacheAllImages(true);
+                //Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
+                //frm_S_MenuMultilingual.ShowDialog();
             }
 
 
-            
-            
-                
+
+
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -122,25 +134,23 @@ namespace FlexOrder
                 lblGroup.Visible = false;
                 cmbGroup.Visible = false;
                 txtCode.Text = type;
-                Goods goods = goodsTable.GetGoodsByCode(1, type);
-                GoodsGroup goodsGroup = goodsGroupTable.GetGroupByCode(1, goods.group_code);
+                editgoods = goodsTable.GetGoodsByCode(1, type);
+                GoodsGroup goodsGroup = goodsGroupTable.GetGroupByCode(1, editgoods.group_code);
                 lblGroupName.Text = goodsGroup.group_name;
-                txtPrice.Text = goods.goods_price.ToString();
-                cboxRecommend.Checked = goods.is_recommend;
-                cboxAvailable.Checked = goods.is_available;
-                cboxVege.Checked = goods.is_vegetarian;
-                string imagePath = ImagePro.GetImagePath(goods.goods_image_filename);
+                txtPrice.Text = editgoods.goods_price.ToString();
+                cboxRecommend.Checked = editgoods.is_recommend;
+                cboxAvailable.Checked = editgoods.is_available;
+                cboxVege.Checked = editgoods.is_vegetarian;
+                string imagePath = ImagePro.GetImagePath(editgoods.goods_image_filename);
                 if (File.Exists(imagePath))
                 {
                     using (var tempImage = Image.FromFile(imagePath))
                     {
-                        picboxImage.Image = new Bitmap(tempImage);
+                        oldimage = new Bitmap(tempImage);
+                        picboxImage.Image = oldimage;
                     }
                 }
-                else
-                {
-                    picboxImage.Image = Properties.Resources.testimage1;
-                }
+
 
             }
         }
@@ -179,6 +189,20 @@ namespace FlexOrder
         private void Frm_S_MenuEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void btnClearImage_Click(object sender, EventArgs e)
+        {
+            newimageBytes = null;
+            replaceimg = false;
+            if (type == "Add")
+            {
+                picboxImage.Image = null;
+            }
+            else
+            {
+                picboxImage.Image = oldimage;
+            }
         }
     }
 }

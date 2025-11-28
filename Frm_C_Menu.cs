@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FlexOrder
 {
@@ -41,7 +42,7 @@ namespace FlexOrder
             tbcntMenu.ItemSize = new Size(60, 160);
             tbcntMenu.DrawMode = TabDrawMode.OwnerDrawFixed;
             tbcntMenu.DrawItem += TabControl1_DrawItem;
-            //tbcntMenu.SelectedIndexChanged += TbcntMenu_SelectedIndexChanged;
+            tbcntMenu.SelectedIndexChanged += TbcntMenu_SelectedIndexChanged;
         }
 
         private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
@@ -67,7 +68,9 @@ namespace FlexOrder
                 currentLangNo = result;
 
             LoadGroupsTabs();
-            LoadProductsForTabs();
+            tbcntMenu.SelectedIndex = -1;
+            tbcntMenu.SelectedIndex = 0;
+            //LoadProductsForTabs();
         }
 
         private void LoadGroupsTabs()
@@ -94,8 +97,8 @@ namespace FlexOrder
 
         private void TbcntMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //LoadProductsForTab(tbcntMenu.SelectedTab);
-            //Console.WriteLine(tbcntMenu.SelectedTab.Tag + " Selected");
+            LoadProductsForTab(tbcntMenu.SelectedTab);
+            ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
         }
         private void LoadProductsForTabs()
         {
@@ -125,6 +128,97 @@ namespace FlexOrder
                 }
             }
             CreateAllProductControls();
+        }
+        private void LoadProductsForTab(TabPage tab) 
+        {
+            if (tab == null) return;
+
+            FlowLayoutPanel panel;
+            string groupCode;
+
+            // 1. 确定 Panel 和 GroupCode
+            if (tab == tbcntMenu.TabPages[0])
+            {
+                panel = flowLayoutPanelMenuRecommend;
+                groupCode = "RECOMMEND";
+            }
+            else
+            {
+                // 确保 FlowLayoutPanel 已经创建（在 LoadGroupsTabs 中已完成）
+                if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) return;
+                panel = (FlowLayoutPanel)tab.Controls[0];
+                groupCode = tab.Tag as string;
+            }
+
+            // ⭐ 核心判断：如果面板中已经有控件，说明此 Tab 已加载过，直接返回。
+            // 注意：即使面板中没有控件，groupCode 也是必须的。
+            if (panel.Controls.Count > 0)
+            {
+                // 如果需要，这里可以调用 ApplyVegetarianFilter() 确保可见性正确
+                return;
+            }
+
+            // ----------------------------------------------------
+            // 2. 耗时操作：首次加载 Tab 时执行查询和创建
+            // ----------------------------------------------------
+
+            if (string.IsNullOrEmpty(groupCode) || _allGoodsCache.ContainsKey(groupCode))
+            {
+                // 如果 groupCode 无效或数据已在缓存中，则跳过数据库查询。
+                // 但如果此 Tab 的控件尚未创建 (Controls.Count == 0)，则继续到步骤 3 使用缓存创建控件。
+            }
+            else
+            {
+                // 数据库查询：仅对当前 Tab 执行查询
+                GoodsTable goodsTable = new GoodsTable();
+                List<Goods> goodsList = (groupCode == "RECOMMEND")
+                    ? goodsTable.GetRecommendGoods(currentLangNo)
+                    : goodsTable.GetGoodsByGroup(currentLangNo, groupCode);
+
+                if (goodsList != null)
+                {
+                    // ⭐ 缓存数据，供后续筛选使用
+                    _allGoodsCache[groupCode] = goodsList;
+                }
+            }
+
+            // ----------------------------------------------------
+            // 3. 控件创建：从缓存中读取数据并创建 ProductItem
+            // ----------------------------------------------------
+
+            if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
+            {
+                // 这里执行的是原 CreateAllProductControls 中针对单个 Tab 的逻辑
+                foreach (Goods good in cachedList)
+                {
+                    // ... (创建 ProductItem 实例的代码保持不变) ...
+                    ProductItem product = new ProductItem
+                    {
+                        Code = good.goods_code,
+                        ProductTitle = good.goods_name,
+                        ProductPrice = "¥ " + good.goods_price.ToString("N0")
+                    };
+
+                    // 假设 ImagePro.GetImagePath 使用了 good.goods_code
+                    // 示例中使用 goods_image_filename，这里沿用您的字段名
+                    string imagePath = ImagePro.GetImagePath(good.goods_image_filename);
+
+                    if (File.Exists(imagePath))
+                    {
+                        using (var tempImage = Image.FromFile(imagePath))
+                        {
+                            product.ProductImage = new Bitmap(tempImage);
+                        }
+                    }
+                    else
+                    {
+                        product.ProductImage = Properties.Resources.testimage1;
+                    }
+
+                    product.ProductClicked += ProductItem_ProductClicked;
+                    panel.Controls.Add(product);
+                }
+            }
         }
         private void CreateAllProductControls()
         {
@@ -211,6 +305,42 @@ namespace FlexOrder
                 }
             }
         }
+        private void ApplyVegetarianFilterToTab(TabPage tab)
+        {
+            FlowLayoutPanel panel;
+            string groupCode;
+
+            if (tab == tbcntMenu.TabPages[0])
+            {
+                panel = flowLayoutPanelMenuRecommend;
+                groupCode = "RECOMMEND";
+            }
+            else
+            {
+                if (tab == null || tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) return;
+                panel = (FlowLayoutPanel)tab.Controls[0];
+                groupCode = tab.Tag as string;
+            }
+
+            if (panel.Controls.Count == 0) return;
+
+            if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
+            {
+                foreach (Control control in panel.Controls)
+                {
+                    if (control is ProductItem productItem)
+                    {
+                        Goods good = cachedList.FirstOrDefault(g => g.goods_code == productItem.Code);
+
+                        if (good != null)
+                        {
+                            bool shouldBeVisible = !vege || good.is_vegetarian;
+                            productItem.Visible = shouldBeVisible;
+                        }
+                    }
+                }
+            }
+        }
         private void ProductItem_ProductClicked(ProductItem productItem)
         {
             Frm_C_GoodsDetail frm = new Frm_C_GoodsDetail(productItem.Code);
@@ -232,7 +362,9 @@ namespace FlexOrder
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-            ApplyVegetarianFilter();
+            //ApplyVegetarianFilter();
+            tbcntMenu.SelectedIndex = 0;
+            ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
         }
 
         private void lblVeget_Click(object sender, EventArgs e)
