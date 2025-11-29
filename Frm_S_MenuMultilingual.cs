@@ -14,18 +14,13 @@ namespace FlexOrder
     {
         Form parent;
         string type;
-        public Frm_S_MenuMultilingual(string type, Form parent)
+        string goodscode;
+        public Frm_S_MenuMultilingual(string type, string goodscode, Form parent)
         {
             InitializeComponent();
-            if (type == "Add")
-            {
-                lblTitle.Text = "商品追加";
-            }
-            else
-            {
-                lblTitle.Text = "商品編集";
-            }
+            lblTitle.Text = goodscode;
             this.type = type;
+            this.goodscode = goodscode;
             this.parent = parent;
         }
 
@@ -41,9 +36,9 @@ namespace FlexOrder
             this.Close();
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void Frm_S_MenuMultilingual_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

@@ -38,31 +38,23 @@ namespace FlexOrder
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            GoodsTable goodsTable = new GoodsTable();
+            Goods goods = null;
             string errs = "";
+            bool parseresult = int.TryParse(txtPrice.Text, out int newprice);
             if (type == "Add")
             {
-                //INSERT
-                bool parseresult = int.TryParse(lblPrice.Text, out int newprice);
                 if (cmbGroup.SelectedIndex < 0) 
                 {
                     errs += "分類を選択してください\n";
-                    
                 }
-                if (lblPrice.Text == "")
+                if (txtPrice.Text == "")
                 {
                     errs += "価格を入力してください\n";
                 }
                 else if (!parseresult)
                 {
                     errs += "価格は整数を入力してください\n";
-                }
-                if(picboxImage.Image == null) 
-                {
-                    Console.WriteLine("Imageなし");
-                }
-                else 
-                {
-                    Console.WriteLine("Imageあり");
                 }
                 if (errs != "") 
                 {
@@ -71,34 +63,70 @@ namespace FlexOrder
                 }
                 else 
                 {
-                    DialogResult dret = MessageBox.Show("以上の内容で登録してよろしいですか", "確認", 
+                    string replace = replaceimg ? "あり" : "なし";
+                    DialogResult dret = MessageBox.Show("商品分類：" + cmbGroup.Text + " " + lblGroupName.Text + "\n" + "商品コード：" + txtCode.Text + "\n" + "商品単価(¥)：" + newprice + "\n" + "おすすめ：" + cboxRecommend.Checked + "\n" + "ベジタリアン：" + cboxVege.Checked + "\n" + "商品在庫：" + cboxAvailable.Checked + "\n" + "商品画像：" + replace + "\n" + "\n以上の内容で登録してよろしいですか", "確認", 
                         MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dret == DialogResult.Yes)
                     {
-                        //Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
-                        //frm_S_MenuMultilingual.ShowDialog();
+                        goods = new Goods();
+                        goods.goods_code = txtCode.Text;
+                        goods.group_code = cmbGroup.Text;
+                        goods.goods_price = newprice;
+                        goods.is_recommend = cboxRecommend.Checked;
+                        goods.is_vegetarian = cboxVege.Checked;
+                        goods.is_available = cboxAvailable.Checked;
+                        goods.goods_image_bytes = newimageBytes;
+                        int cnt = goodsTable.InsertNewGoods(goods);
+                        Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, goods.goods_code, this);
+                        frm_S_MenuMultilingual.ShowDialog();
+                        this.Close();
                     }
                 }
-                    
             }
             else
             {
-                //UPDATE
-
-
-
-
-
-
-                //If Updated --> ImagePro.CheckAndCacheAllImages(true);
-                //Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, this);
-                //frm_S_MenuMultilingual.ShowDialog();
+                if (txtPrice.Text == "")
+                {
+                    errs += "価格を入力してください\n";
+                }
+                else if (!parseresult)
+                {
+                    errs += "価格は整数を入力してください\n";
+                }
+                if (errs != "")
+                {
+                    MessageBox.Show(errs, "エラー",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string replace = replaceimg ? "あり" : "なし";
+                    DialogResult dret = MessageBox.Show("商品分類：" + cmbGroup.Text + " " + lblGroupName.Text + "\n" + "商品コード：" + txtCode.Text + "\n" + "商品単価(¥)：" + newprice + "\n" + "おすすめ：" + cboxRecommend.Checked + "\n" + "ベジタリアン：" + cboxVege.Checked + "\n" + "商品在庫：" + cboxAvailable.Checked + "\n" + "画像変更：" + replace + "\n" + "\n以上の内容に変更しますか", "確認",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dret == DialogResult.Yes)
+                    {
+                        goods = new Goods();
+                        goods.goods_code = txtCode.Text;
+                        goods.group_code = cmbGroup.Text;
+                        goods.goods_price = newprice;
+                        goods.is_recommend = cboxRecommend.Checked;
+                        goods.is_vegetarian = cboxVege.Checked;
+                        goods.is_available = cboxAvailable.Checked;
+                        if (replaceimg) 
+                        {
+                            goods.goods_image_bytes = newimageBytes;
+                        }
+                        else 
+                        {
+                            goods.goods_image_bytes = oldimageBytes;
+                        }
+                        int cnt = goodsTable.Update(goods);
+                        Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, goods.goods_code, this);
+                        frm_S_MenuMultilingual.ShowDialog();
+                        this.Close();
+                    }
+                }
             }
-
-
-
-
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -110,30 +138,27 @@ namespace FlexOrder
         {
             GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
             GoodsTable goodsTable = new GoodsTable();
+            List<GoodsGroup> grouplist = goodsGroupTable.GetGroupByLanguage(1);
+            foreach (GoodsGroup group in grouplist)
+            {
+                cmbGroup.Items.Add(group.group_code);
+
+            }
             lblGroupName.Text = "";
             if (type == "Add")
             {
-
-                nextno = (int.Parse(goodsTable.GetLastGoodsNo()) + 1).ToString();
+                nextno = goodsTable.GetFirstAvailableGoodsNo();
                 while (nextno.Length < 4)
                 {
                     nextno = "0" + nextno;
                 }
                 txtCode.Text = nextno;
-
-                List<GoodsGroup> grouplist = goodsGroupTable.GetGroupByLanguage(1);
-                foreach (GoodsGroup group in grouplist)
-                {
-                    cmbGroup.Items.Add(group.group_code);
-
-                }
                 cmbGroup.SelectedIndex = -1;
             }
             else
             {
-                lblGroup.Visible = false;
-                cmbGroup.Visible = false;
-                txtCode.Text = type;
+                nextno = type.Substring(type.Length - 4);
+                txtCode.Text = nextno;
                 editgoods = goodsTable.GetGoodsByCode(1, type);
                 GoodsGroup goodsGroup = goodsGroupTable.GetGroupByCode(1, editgoods.group_code);
                 lblGroupName.Text = goodsGroup.group_name;
@@ -141,17 +166,14 @@ namespace FlexOrder
                 cboxRecommend.Checked = editgoods.is_recommend;
                 cboxAvailable.Checked = editgoods.is_available;
                 cboxVege.Checked = editgoods.is_vegetarian;
-                string imagePath = ImagePro.GetImagePath(editgoods.goods_image_filename);
-                if (File.Exists(imagePath))
+                if (editgoods.goods_image_bytes != null) 
                 {
-                    using (var tempImage = Image.FromFile(imagePath))
-                    {
-                        oldimage = new Bitmap(tempImage);
-                        picboxImage.Image = oldimage;
-                    }
+                    oldimageBytes = editgoods.goods_image_bytes;
+                    oldimage = ImagePro.ConvertByteArrayToImage(oldimageBytes);
+                    picboxImage.Image = oldimage;
                 }
-
-
+                cmbGroup.SelectedItem = editgoods.group_code;
+                cmbGroup.Visible = false;
             }
         }
 

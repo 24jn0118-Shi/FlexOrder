@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblGoodsName = new System.Windows.Forms.Label();
             this.lblGoodsDetail = new System.Windows.Forms.Label();
@@ -39,17 +38,6 @@
             this.btnEnd = new System.Windows.Forms.Button();
             this.lblMul = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(648, 14);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(85, 47);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "戻る";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblTitle
             // 
@@ -155,17 +143,15 @@
             this.Controls.Add(this.lblGoodsDetail);
             this.Controls.Add(this.lblGoodsName);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_MenuMultilingual";
             this.Text = "Frm_S_MenuMultilingual";
+            this.Load += new System.EventHandler(this.Frm_S_MenuMultilingual_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblGoodsName;
         private System.Windows.Forms.Label lblGoodsDetail;

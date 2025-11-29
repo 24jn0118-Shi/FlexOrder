@@ -31,6 +31,7 @@ namespace FlexOrder
         {
             Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit("Add");
             frm_S_MenuEdit.ShowDialog();
+            Refresh_page();
         }
         private void btnEditGoods_Click(object sender, EventArgs e)
         {
@@ -61,14 +62,17 @@ namespace FlexOrder
                 if (dret == DialogResult.Yes)
                 {
                     GoodsTable goodsTable = new GoodsTable();
-                    Goods goods = goodsTable.GetGoodsByCode(1, selected_goodscode);
-                    int cnt = goodsTable.Delete(goods.goods_code);
-                    if (cnt > -999)
+                    int cnt = goodsTable.Delete(selected_goodscode);
+                    if (cnt > 0)
                     {
                         MessageBox.Show(cnt + "件の商品を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } else 
+                    {
+                        MessageBox.Show("削除失敗", "削除失敗",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    Refresh_page();
+                        Refresh_page();
                 }
             }
         }
@@ -76,10 +80,48 @@ namespace FlexOrder
         {
             Frm_S_GoodsGroupManagement frm_S_GoodsGroupManagement = new Frm_S_GoodsGroupManagement();
             frm_S_GoodsGroupManagement.ShowDialog();
+            Refresh_page();
         }
         private void btnChangeAvailable_Click(object sender, EventArgs e)
         {
+            if (selected_goodscode == null)
+            {
+                MessageBox.Show("商品を選択してください", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else 
+            {
+                string target = "";
+                if (dgvMenu.CurrentRow.Cells["str_is_available"].Value.ToString() == "〇") 
+                {
+                    target = "在庫なし";
+                } else 
+                {
+                    target = "在庫あり";
+                }
+                    DialogResult dret = MessageBox.Show("商品を " + target + " に変更しますか", "確認",
+                                                               MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dret == DialogResult.Yes) 
+                {
+                    //Update Available
+                    GoodsTable goodsTable = new GoodsTable();
+                    Goods goods = goodsTable.GetGoodsByCode(1, selected_goodscode);
+                    int cnt = goodsTable.UpdateAvailable(goods);
+                    if (cnt > 0)
+                    {
+                        MessageBox.Show(cnt + "件の商品の在庫状況を変更しました", "変更完了",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("変更失敗", "変更失敗",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    Refresh_page();
+                }
+            }
 
+            
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -112,7 +154,7 @@ namespace FlexOrder
                 bool flag = Convert.ToBoolean(row["is_recommend"]);
                 row["str_is_recommend"] = flag ? "〇" : "";
                 flag = Convert.ToBoolean(row["is_available"]);
-                row["str_is_available"] = flag ? "〇" : "";
+                row["str_is_available"] = flag ? "〇" : "✕";
             }
             dgvMenu.DataSource = table;
             
