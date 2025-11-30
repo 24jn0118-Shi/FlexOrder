@@ -173,8 +173,7 @@ namespace FlexOrder
             MessageBox.Show("ただいまこの機能が使用できません", "ダメ",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        private void btnInsertImages_Click(object sender, EventArgs e)
+        private void btnUpdateImages_Click(object sender, EventArgs e)
         {
             string filepath;
             DialogResult ret = ofdInsertImages.ShowDialog();
@@ -183,21 +182,19 @@ namespace FlexOrder
                 filepath = ofdInsertImages.FileName;
                 Console.WriteLine("From: " + filepath);
                 ImagePro imagePro = new ImagePro();
-                
-                
+
                 if (filepath != null)
                 {
-                    DialogResult dret = MessageBox.Show(filepath+"\nをInsertしますか", "確認",
+                    DialogResult dret = MessageBox.Show(filepath + "\nをUpdateしますか", "確認",
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (dret == DialogResult.Yes) 
+                    if (dret == DialogResult.Yes)
                     {
                         GoodsTable goodsTable = new GoodsTable();
-                        int cnt = goodsTable.InsertInitialImagesFromBinaryFile(filepath);
-                        MessageBox.Show(cnt +"件Insertしました", "Insert完了",
+                        int cnt = goodsTable.UpdateImagesFromBinaryFile(filepath);
+                        MessageBox.Show(cnt + "件Updateしました", "Update完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-
             }
         }
     }

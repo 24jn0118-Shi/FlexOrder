@@ -37,6 +37,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEnd = new System.Windows.Forms.Button();
             this.lblMul = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -79,6 +80,7 @@
             this.cmbLanguage.Name = "cmbLanguage";
             this.cmbLanguage.Size = new System.Drawing.Size(182, 36);
             this.cmbLanguage.TabIndex = 4;
+            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.cmbLanguage_SelectedIndexChanged);
             // 
             // txbGoodsName
             // 
@@ -100,7 +102,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnSave.Location = new System.Drawing.Point(153, 389);
+            this.btnSave.Location = new System.Drawing.Point(568, 334);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(165, 49);
             this.btnSave.TabIndex = 7;
@@ -129,11 +131,23 @@
             this.lblMul.TabIndex = 9;
             this.lblMul.Text = "多言語情報";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(658, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 38);
+            this.btnBack.TabIndex = 14;
+            this.btnBack.Text = "戻る";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Frm_S_MenuMultilingual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 468);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblMul);
             this.Controls.Add(this.btnEnd);
             this.Controls.Add(this.btnSave);
@@ -161,5 +175,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEnd;
         private System.Windows.Forms.Label lblMul;
+        private System.Windows.Forms.Button btnBack;
     }
 }

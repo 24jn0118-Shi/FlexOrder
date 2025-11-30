@@ -300,7 +300,7 @@ namespace FlexOrderLibrary
 
             return ret;
         }
-        public int InsertInitialImagesFromBinaryFile(string binaryfilepath) 
+        public int UpdateImagesFromBinaryFile(string binaryfilepath) 
         {
             int ret = 0;
             string connectionString = Properties.Settings.Default.DBConnectionString;
@@ -321,7 +321,7 @@ namespace FlexOrderLibrary
                         using (SqlConnection connection = new SqlConnection(connectionString))
                         {
                             string sql = @"UPDATE Goods 
-                                        SET goods_image = @imageBytes 
+                                        SET goods_image = @goods_image 
                                         WHERE goods_code = @goods_code";
                             SqlCommand command = new SqlCommand(sql, connection);
 
@@ -389,13 +389,14 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"UPDATE LocalizationGoods SET goods_name = @goods_name 
+                string sql = @"UPDATE LocalizationGoods SET goods_name = @goods_name, goods_detail = @goods_detail
                             WHERE goods_code = @goods_code AND language_no = @language_no";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@group_code", goods.goods_code);
+                command.Parameters.AddWithValue("@goods_name", goods.goods_name);
+                command.Parameters.AddWithValue("@goods_detail", goods.goods_detail);
                 command.Parameters.AddWithValue("@language_no", goods.language_no);
-                command.Parameters.AddWithValue("@group_name", goods.goods_name);
+                command.Parameters.AddWithValue("@goods_code", goods.goods_code);
 
                 connection.Open();
                 ret = command.ExecuteNonQuery();

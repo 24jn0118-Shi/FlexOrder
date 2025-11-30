@@ -33,6 +33,8 @@
             this.btnCustomer = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblPresent = new System.Windows.Forms.Label();
+            this.ofdInsertImages = new System.Windows.Forms.OpenFileDialog();
+            this.btnUpdateImages = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -70,7 +72,7 @@
             // lblWelcome
             // 
             this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.Location = new System.Drawing.Point(128, 90);
             this.lblWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWelcome.Name = "lblWelcome";
@@ -88,17 +90,33 @@
             this.lblPresent.TabIndex = 3;
             this.lblPresent.Text = "label3";
             // 
-            // FrmTempStart
+            // ofdInsertImages
+            // 
+            this.ofdInsertImages.Title = "使用するバイナリファイルを選択してください";
+            // 
+            // btnUpdateImages
+            // 
+            this.btnUpdateImages.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUpdateImages.Location = new System.Drawing.Point(524, 248);
+            this.btnUpdateImages.Name = "btnUpdateImages";
+            this.btnUpdateImages.Size = new System.Drawing.Size(185, 55);
+            this.btnUpdateImages.TabIndex = 7;
+            this.btnUpdateImages.Text = "Update Images With BinaryFile";
+            this.btnUpdateImages.UseVisualStyleBackColor = true;
+            this.btnUpdateImages.Click += new System.EventHandler(this.btnUpdateImages_Click);
+            // 
+            // Frm_T_TempStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 474);
+            this.Controls.Add(this.btnUpdateImages);
             this.Controls.Add(this.lblPresent);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnShop);
             this.Controls.Add(this.lblTitle);
-            this.Name = "FrmTempStart";
+            this.Name = "Frm_T_TempStart";
             this.Text = "FlexOrderシステム選択";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,6 +130,8 @@
         private System.Windows.Forms.Button btnCustomer;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblPresent;
+        private System.Windows.Forms.OpenFileDialog ofdInsertImages;
+        private System.Windows.Forms.Button btnUpdateImages;
     }
 }
 

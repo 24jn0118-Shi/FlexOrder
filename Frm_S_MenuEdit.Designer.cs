@@ -260,7 +260,6 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuEdit";
             this.Text = "メニュー設定";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_MenuEdit_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_MenuEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);
