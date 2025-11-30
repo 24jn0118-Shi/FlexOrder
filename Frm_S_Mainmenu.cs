@@ -50,9 +50,17 @@ namespace FlexOrder
         private void Frm_S_Mainmenu_Load(object sender, EventArgs e)
         {
             lblWelcome.Text = "ようこそ、" + staff.staff_lastname + " " + staff.staff_firstname;
+            ImagePro.CheckAndCacheAllImages(false);
 
         }
 
-        
+        private void Frm_S_Mainmenu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char keyChar = Char.ToLower(e.KeyChar);
+            if (keyChar == 'u')
+            {
+                ImagePro.CheckAndCacheAllImages(true);
+            }
+        }
     }
 }

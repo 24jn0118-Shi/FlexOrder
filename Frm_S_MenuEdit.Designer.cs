@@ -45,7 +45,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.lblGroupName = new System.Windows.Forms.Label();
             this.ofdImage = new System.Windows.Forms.OpenFileDialog();
-            this.lblImageName = new System.Windows.Forms.Label();
+            this.btnClearImage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -225,13 +225,16 @@
             this.ofdImage.Filter = "Image Files(*.png;*.jpg;*.jpeg)|*.png;*.jpg;*.jpeg|All Files (*.*)|*.*";
             this.ofdImage.Title = "使用する画像ファイルを選択してください";
             // 
-            // lblImageName
+            // btnClearImage
             // 
-            this.lblImageName.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImageName.Location = new System.Drawing.Point(489, 44);
-            this.lblImageName.Name = "lblImageName";
-            this.lblImageName.Size = new System.Drawing.Size(259, 42);
-            this.lblImageName.TabIndex = 11;
+            this.btnClearImage.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnClearImage.Location = new System.Drawing.Point(415, 401);
+            this.btnClearImage.Name = "btnClearImage";
+            this.btnClearImage.Size = new System.Drawing.Size(115, 37);
+            this.btnClearImage.TabIndex = 12;
+            this.btnClearImage.Text = "画像取り消し";
+            this.btnClearImage.UseVisualStyleBackColor = true;
+            this.btnClearImage.Click += new System.EventHandler(this.btnClearImage_Click);
             // 
             // Frm_S_MenuEdit
             // 
@@ -240,8 +243,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnClearImage);
             this.Controls.Add(this.btnSelectImageFile);
-            this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.lblImg);
             this.Controls.Add(this.picboxImage);
             this.Controls.Add(this.cboxAvailable);
@@ -257,7 +260,6 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuEdit";
             this.Text = "メニュー設定";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_MenuEdit_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_MenuEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);
@@ -284,6 +286,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblGroupName;
         private System.Windows.Forms.OpenFileDialog ofdImage;
-        private System.Windows.Forms.Label lblImageName;
+        private System.Windows.Forms.Button btnClearImage;
     }
 }

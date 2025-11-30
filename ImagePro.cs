@@ -1,5 +1,9 @@
-﻿using System;
+﻿using FlexOrderLibrary;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,47 +14,120 @@ namespace FlexOrder
 {
     public class ImagePro
     {
-        
+        public static string WRITEBINARYFILE = @"C:\Users\brown\Downloads\Binary.txt";
         string relativePath = Path.Combine(Application.StartupPath, "Images");
         string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
-        string imagepath = Path.Combine(Application.StartupPath, "Images");
-        public string GetImagePath(string filename)
-        {
-            string path = Path.Combine(imagepath, filename);
+        private const string CacheFolderName = "Images";
+        private const string LastRunLogFile = "ImageCacheLog.txt";
 
-            return path;
-        }
+        private static string CacheDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CacheFolderName);
+        private static string LogFilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LastRunLogFile);
 
-        public bool DeleteImageFile(List<string> namelist)
+        private static string imagepath = Path.Combine(Application.StartupPath, "Images");
+
+        public static void CheckAndCacheAllImages(bool forceexecutecache)
         {
-            bool allSucceeded = true;
-            foreach (string filename in namelist)
+            if (IsCacheUpToDate() && !forceexecutecache)
             {
-                string filepath = GetImagePath(filename);
-                if (File.Exists(filepath))
+                Console.WriteLine("Caching skipped because the image was cached within the past hour");
+                return;
+            }
+            Console.WriteLine("Start caching...");
+            try
+            {
+                CleanupCache();
+                Dictionary<string, byte[]> imageDataMap = GoodsTable.GetImagesFromDatabase();
+                SaveImagesToFiles(imageDataMap);
+                RecordSuccessfulRunDate();
+                Console.WriteLine("Images cached!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failure: {ex.Message}");
+            }
+        }
+        private static bool IsCacheUpToDate()
+        {
+            TimeSpan cacheDuration = TimeSpan.FromHours(1);
+            if (!File.Exists(LogFilePath))
+            {
+                return false;
+            }
+            try
+            {
+                string lastRunString = File.ReadAllText(LogFilePath).Trim();
+                if (DateTime.TryParse(lastRunString, out DateTime lastRunTime))
                 {
-                    try
+                    TimeSpan timeSinceLastRun = DateTime.Now - lastRunTime;
+                    if (timeSinceLastRun <= cacheDuration)
                     {
-                        File.Delete(filepath);
+                        return true;
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"ファイル削除失败: {ex.Message}", "削除失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        allSucceeded = false;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine($"ファイル {filename}が存在しません", "Message");
-                    return true;
                 }
             }
-            return allSucceeded;
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to read log: {ex.Message}");
+            }
+            return false;
         }
-        public string CopyImageFile(string sourceFilePath) 
+        private static void RecordSuccessfulRunDate()
         {
+            try
+            {
+                string nowString = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                File.WriteAllText(LogFilePath, nowString);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to log: {ex.Message}");
+            }
+        }
+        private static void CleanupCache()
+        {
+            if (Directory.Exists(CacheDirectory))
+            {
+                Directory.Delete(CacheDirectory, true);
+            }
+            Directory.CreateDirectory(CacheDirectory);
+        }
+        private static void SaveImagesToFiles(Dictionary<string, byte[]> imageDataMap)
+        {
+            foreach (var kvp in imageDataMap)
+            {
+                string code = kvp.Key;
+                byte[] data = kvp.Value;
+                try
+                {
+                    string filePath = Path.Combine(CacheDirectory, $"{code}.jpg");
+                    using (MemoryStream ms = new MemoryStream(data))
+                    {
+                        using (Image image = Image.FromStream(ms))
+                        {
+                            image.Save(filePath, ImageFormat.Jpeg);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to load Goods: {code} Message: {ex.Message}");
+                }
+            }
+        }
+        public static string GetImagePath(string goods_image)
+        {
+            string path = Path.Combine(CacheDirectory, goods_image);
+            if (File.Exists(path))
+            {
+                return path;
+            }
+            return null;
+        }
+    
+        /*public string CopyImageFile(string sourceFilePath) 
+        {
+
             string newDestinationFilePath;
             if (string.IsNullOrEmpty(sourceFilePath) || !File.Exists(sourceFilePath))
             {
@@ -75,6 +152,48 @@ namespace FlexOrder
                 MessageBox.Show($"ファイル保存失敗: {ex.Message}", "保存失敗", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
+        }*/
+        public static Image ConvertByteArrayToImage(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0)
+            {
+                return null;
+            }
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"失敗: {ex.Message}");
+                return null;
+            }
+        }
+        public static void ExportInitialBinary(bool withgoodscode) 
+        {
+            /*using (StreamWriter sw = new StreamWriter(WRITEBINARYFILE, false))
+            {
+                GoodsTable goodsTable = new GoodsTable();
+                List<Goods> goodslist = goodsTable.GetAllGoodsList(1);
+                foreach (Goods good in goodslist)
+                {
+                    ImagePro imagePro = new ImagePro();
+                    String image = imagePro.GetImagePath(good.goods_image);
+
+                    byte[] imageBytes = File.ReadAllBytes(image);
+                    string base64String = Convert.ToBase64String(imageBytes);
+                    if (withgoodscode) 
+                    {
+                        base64String = good.goods_code + "," + base64String;
+                    }
+                    sw.WriteLine(base64String);
+                    Console.WriteLine(good.goods_code + "done");
+                }
+
+            }*/
         }
     }
 }

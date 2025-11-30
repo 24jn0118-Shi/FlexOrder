@@ -31,11 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Menu));
             this.tbcntMenu = new System.Windows.Forms.TabControl();
             this.tbpagePop = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanelMenu = new System.Windows.Forms.FlowLayoutPanel();
-            this.tbpageClass1 = new System.Windows.Forms.TabPage();
-            this.tbpageClass2 = new System.Windows.Forms.TabPage();
-            this.tbpageClass3 = new System.Windows.Forms.TabPage();
-            this.tbpageClass4 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelMenuRecommend = new System.Windows.Forms.FlowLayoutPanel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.orderlist = new System.Windows.Forms.ListBox();
@@ -57,10 +53,6 @@
             resources.ApplyResources(this.tbcntMenu, "tbcntMenu");
             this.tbcntMenu.AllowDrop = true;
             this.tbcntMenu.Controls.Add(this.tbpagePop);
-            this.tbcntMenu.Controls.Add(this.tbpageClass1);
-            this.tbcntMenu.Controls.Add(this.tbpageClass2);
-            this.tbcntMenu.Controls.Add(this.tbpageClass3);
-            this.tbcntMenu.Controls.Add(this.tbpageClass4);
             this.tbcntMenu.Multiline = true;
             this.tbcntMenu.Name = "tbcntMenu";
             this.tbcntMenu.SelectedIndex = 0;
@@ -68,39 +60,15 @@
             // 
             // tbpagePop
             // 
-            this.tbpagePop.Controls.Add(this.flowLayoutPanelMenu);
+            this.tbpagePop.Controls.Add(this.flowLayoutPanelMenuRecommend);
             resources.ApplyResources(this.tbpagePop, "tbpagePop");
             this.tbpagePop.Name = "tbpagePop";
             this.tbpagePop.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanelMenu
+            // flowLayoutPanelMenuRecommend
             // 
-            resources.ApplyResources(this.flowLayoutPanelMenu, "flowLayoutPanelMenu");
-            this.flowLayoutPanelMenu.Name = "flowLayoutPanelMenu";
-            // 
-            // tbpageClass1
-            // 
-            resources.ApplyResources(this.tbpageClass1, "tbpageClass1");
-            this.tbpageClass1.Name = "tbpageClass1";
-            this.tbpageClass1.UseVisualStyleBackColor = true;
-            // 
-            // tbpageClass2
-            // 
-            resources.ApplyResources(this.tbpageClass2, "tbpageClass2");
-            this.tbpageClass2.Name = "tbpageClass2";
-            this.tbpageClass2.UseVisualStyleBackColor = true;
-            // 
-            // tbpageClass3
-            // 
-            resources.ApplyResources(this.tbpageClass3, "tbpageClass3");
-            this.tbpageClass3.Name = "tbpageClass3";
-            this.tbpageClass3.UseVisualStyleBackColor = true;
-            // 
-            // tbpageClass4
-            // 
-            resources.ApplyResources(this.tbpageClass4, "tbpageClass4");
-            this.tbpageClass4.Name = "tbpageClass4";
-            this.tbpageClass4.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.flowLayoutPanelMenuRecommend, "flowLayoutPanelMenuRecommend");
+            this.flowLayoutPanelMenuRecommend.Name = "flowLayoutPanelMenuRecommend";
             // 
             // btnConfirm
             // 
@@ -203,19 +171,15 @@
 
         private System.Windows.Forms.TabControl tbcntMenu;
         private System.Windows.Forms.TabPage tbpagePop;
-        private System.Windows.Forms.TabPage tbpageClass1;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ListBox orderlist;
         private System.Windows.Forms.Button btnRestart;
-        private System.Windows.Forms.TabPage tbpageClass2;
-        private System.Windows.Forms.TabPage tbpageClass3;
-        private System.Windows.Forms.TabPage tbpageClass4;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtKaikei;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Label lblen;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenu;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenuRecommend;
         private System.Windows.Forms.CheckBox ckbVeget;
         private System.Windows.Forms.Label lblVeget;
         private System.Windows.Forms.Label lblConfirm1;

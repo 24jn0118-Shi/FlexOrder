@@ -122,45 +122,45 @@
     <value>Left</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanelMenu.AutoScroll" type="System.Boolean, mscorlib">
+  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="flowLayoutPanelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="flowLayoutPanelMenu.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="flowLayoutPanelMenu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
-  <data name="flowLayoutPanelMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>602, 792</value>
+  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>593, 792</value>
   </data>
-  <data name="flowLayoutPanelMenu.TabIndex" type="System.Int32, mscorlib">
+  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelMenu.Name" xml:space="preserve">
-    <value>flowLayoutPanelMenu</value>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
+    <value>flowLayoutPanelMenuRecommend</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Type" xml:space="preserve">
     <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelMenu.Parent" xml:space="preserve">
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Parent" xml:space="preserve">
     <value>tbpagePop</value>
   </data>
-  <data name="&gt;&gt;flowLayoutPanelMenu.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="tbpagePop.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 4</value>
+    <value>31, 4</value>
   </data>
   <data name="tbpagePop.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 798</value>
+    <value>599, 798</value>
   </data>
   <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -180,113 +180,8 @@
   <data name="&gt;&gt;tbpagePop.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tbpageClass1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 4</value>
-  </data>
-  <data name="tbpageClass1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpageClass1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 798</value>
-  </data>
-  <data name="tbpageClass1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tbpageClass1.Text" xml:space="preserve">
-    <value>商品分類1</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass1.Name" xml:space="preserve">
-    <value>tbpageClass1</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass1.Parent" xml:space="preserve">
-    <value>tbcntMenu</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tbpageClass2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 4</value>
-  </data>
-  <data name="tbpageClass2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpageClass2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 798</value>
-  </data>
-  <data name="tbpageClass2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="tbpageClass2.Text" xml:space="preserve">
-    <value>商品分類2</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass2.Name" xml:space="preserve">
-    <value>tbpageClass2</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass2.Parent" xml:space="preserve">
-    <value>tbcntMenu</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="tbpageClass3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 4</value>
-  </data>
-  <data name="tbpageClass3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpageClass3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 798</value>
-  </data>
-  <data name="tbpageClass3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tbpageClass3.Text" xml:space="preserve">
-    <value>商品分類3</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass3.Name" xml:space="preserve">
-    <value>tbpageClass3</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass3.Parent" xml:space="preserve">
-    <value>tbcntMenu</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass3.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tbpageClass4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 4</value>
-  </data>
-  <data name="tbpageClass4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="tbpageClass4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>608, 798</value>
-  </data>
-  <data name="tbpageClass4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="tbpageClass4.Text" xml:space="preserve">
-    <value>商品分類4</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass4.Name" xml:space="preserve">
-    <value>tbpageClass4</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass4.Parent" xml:space="preserve">
-    <value>tbcntMenu</value>
-  </data>
-  <data name="&gt;&gt;tbpageClass4.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="tbcntMenu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt, style=Bold</value>
   </data>
   <data name="tbcntMenu.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 22</value>
@@ -448,10 +343,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>791, 345</value>
+    <value>720, 383</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 28</value>
+    <value>122, 28</value>
   </data>
   <data name="txtKaikei.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -592,7 +487,7 @@
     <value>12, 367</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 12</value>
+    <value>71, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -625,7 +520,7 @@
     <value>12, 392</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 12</value>
+    <value>71, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>

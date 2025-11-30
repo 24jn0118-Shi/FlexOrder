@@ -121,69 +121,6 @@
   <data name="ice_cream" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ice_cream.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="image001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image001.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image002.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image003" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image003.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image004" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image004.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image005" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image005.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image006" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image006.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image007" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image007.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image008" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image008.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image009" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image009.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image010" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image010.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image011" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image011.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image012" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image012.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image013" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image013.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image014" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image014.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image015" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image015.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image016" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image016.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image017" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image017.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image018" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image018.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image019" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image020" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image020.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="image021" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\image021.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pizza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

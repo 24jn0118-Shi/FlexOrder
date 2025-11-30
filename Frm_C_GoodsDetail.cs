@@ -45,12 +45,17 @@ namespace FlexOrder
             lblDetail.Text = goods.goods_detail;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
             lblNum.Text = "1";
-            ImagePro imagePro = new ImagePro();
-            String image = imagePro.GetImagePath(goods.goods_image);
-            using (FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read))
+            string imagePath = ImagePro.GetImagePath(goods.goods_image_filename);
+            if (File.Exists(imagePath))
             {
-                Image img = Image.FromStream(fs);
-                picGoods.Image = img;
+                using (var tempImage = Image.FromFile(imagePath))
+                {
+                    picGoods.Image = new Bitmap(tempImage);
+                }
+            }
+            else
+            {
+                picGoods.Image = Properties.Resources.testimage1;
             }
         }
 
@@ -71,7 +76,10 @@ namespace FlexOrder
         private void btnPlus_Click(object sender, EventArgs e)
         {
             num = int.Parse(lblNum.Text);
-            lblNum.Text = (num + 1).ToString();
+            if(num < 10) 
+            { 
+                lblNum.Text = (num + 1).ToString();
+            }
         }
     }
 }
