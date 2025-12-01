@@ -126,9 +126,6 @@
   <data name="goods_name.HeaderText" xml:space="preserve">
     <value>Product Name</value>
   </data>
-  <data name="sale_num.HeaderText" xml:space="preserve">
-    <value>Quantity</value>
-  </data>
   <data name="goods_price.HeaderText" xml:space="preserve">
     <value>Price</value>
   </data>
@@ -136,7 +133,7 @@
     <value>Proceed to Checkout</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
-    <value>Total Amount</value>
+    <value>Total</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Cart</value>
@@ -152,5 +149,14 @@
   </data>
   <data name="lblConfirm2.Text" xml:space="preserve">
     <value>Do you want to start over from the beginning?</value>
+  </data>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="img_goods_image.HeaderText" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>Subtotal</value>
   </data>
 </root>

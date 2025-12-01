@@ -25,12 +25,13 @@ namespace FlexOrder
         };
         int thisid;
         int thisprice;
-        int num = 1;
+        int num;
         public OrderDetail AddedItem { get; private set; }
-        public Frm_C_GoodsDetail(int id)
+        public Frm_C_GoodsDetail(int id, int quantity)
         {
             InitializeComponent();
             thisid = id;
+            num = quantity;
         }
 
         private void Frm_C_GoodsDetail_Load(object sender, EventArgs e)

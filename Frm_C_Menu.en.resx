@@ -175,4 +175,13 @@
   <data name="lblConfirm2.Text" xml:space="preserve">
     <value>Do you want to start over from the beginning?</value>
   </data>
+  <data name="goods_name.HeaderText" xml:space="preserve">
+    <value>Product Name</value>
+  </data>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>Subtotal</value>
+  </data>
 </root>

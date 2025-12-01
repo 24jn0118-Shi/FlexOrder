@@ -26,7 +26,7 @@ namespace FlexOrderLibrary
 
             if (existingItem != null)
             {
-                existingItem.quantity += newquantity;
+                existingItem.quantity = newquantity;
             }
             else
             {

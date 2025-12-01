@@ -30,10 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Cart));
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.goods_image = new System.Windows.Forms.DataGridViewImageColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sale_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGoPay = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
@@ -42,6 +38,11 @@
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblConfirm2 = new System.Windows.Forms.Label();
             this.lblConfirm1 = new System.Windows.Forms.Label();
+            this.img_goods_image = new System.Windows.Forms.DataGridViewImageColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,39 +52,15 @@
             this.dgvCart.AllowUserToDeleteRows = false;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.goods_image,
+            this.img_goods_image,
             this.goods_name,
-            this.sale_num,
-            this.goods_price});
+            this.order_num,
+            this.goods_price,
+            this.subtotal});
             resources.ApplyResources(this.dgvCart, "dgvCart");
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowTemplate.Height = 50;
-            // 
-            // goods_image
-            // 
-            this.goods_image.FillWeight = 140F;
-            resources.ApplyResources(this.goods_image, "goods_image");
-            this.goods_image.Name = "goods_image";
-            this.goods_image.ReadOnly = true;
-            // 
-            // goods_name
-            // 
-            resources.ApplyResources(this.goods_name, "goods_name");
-            this.goods_name.Name = "goods_name";
-            this.goods_name.ReadOnly = true;
-            // 
-            // sale_num
-            // 
-            resources.ApplyResources(this.sale_num, "sale_num");
-            this.sale_num.Name = "sale_num";
-            this.sale_num.ReadOnly = true;
-            // 
-            // goods_price
-            // 
-            resources.ApplyResources(this.goods_price, "goods_price");
-            this.goods_price.Name = "goods_price";
-            this.goods_price.ReadOnly = true;
             // 
             // btnGoPay
             // 
@@ -131,6 +108,42 @@
             resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
             this.lblConfirm1.Name = "lblConfirm1";
             // 
+            // img_goods_image
+            // 
+            this.img_goods_image.DataPropertyName = "img_goods_image";
+            this.img_goods_image.FillWeight = 140F;
+            resources.ApplyResources(this.img_goods_image, "img_goods_image");
+            this.img_goods_image.Name = "img_goods_image";
+            this.img_goods_image.ReadOnly = true;
+            // 
+            // goods_name
+            // 
+            this.goods_name.DataPropertyName = "goods_name";
+            resources.ApplyResources(this.goods_name, "goods_name");
+            this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
+            // 
+            // order_num
+            // 
+            this.order_num.DataPropertyName = "order_num";
+            resources.ApplyResources(this.order_num, "order_num");
+            this.order_num.Name = "order_num";
+            this.order_num.ReadOnly = true;
+            // 
+            // goods_price
+            // 
+            this.goods_price.DataPropertyName = "goods_price";
+            resources.ApplyResources(this.goods_price, "goods_price");
+            this.goods_price.Name = "goods_price";
+            this.goods_price.ReadOnly = true;
+            // 
+            // subtotal
+            // 
+            this.subtotal.DataPropertyName = "subtotal";
+            resources.ApplyResources(this.subtotal, "subtotal");
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            // 
             // Frm_C_Cart
             // 
             resources.ApplyResources(this, "$this");
@@ -161,11 +174,12 @@
         private System.Windows.Forms.TextBox tboxTotalPrice;
         private System.Windows.Forms.Label lblYen;
         private System.Windows.Forms.Button btnRestart;
-        private System.Windows.Forms.DataGridViewImageColumn goods_image;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sale_num;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
         private System.Windows.Forms.Label lblConfirm2;
         private System.Windows.Forms.Label lblConfirm1;
+        private System.Windows.Forms.DataGridViewImageColumn img_goods_image;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
     }
 }

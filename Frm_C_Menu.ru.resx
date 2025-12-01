@@ -175,4 +175,13 @@
   <data name="lblConfirm2.Text" xml:space="preserve">
     <value>Хотите начать с самого начала?</value>
   </data>
+  <data name="goods_name.HeaderText" xml:space="preserve">
+    <value>Название товара</value>
+  </data>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>Количество</value>
+  </data>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>Предварительная сумма</value>
+  </data>
 </root>

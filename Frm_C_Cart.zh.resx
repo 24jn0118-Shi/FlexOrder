@@ -126,9 +126,6 @@
   <data name="goods_name.HeaderText" xml:space="preserve">
     <value>商品名称</value>
   </data>
-  <data name="sale_num.HeaderText" xml:space="preserve">
-    <value>数量</value>
-  </data>
   <data name="goods_price.HeaderText" xml:space="preserve">
     <value>价格</value>
   </data>
@@ -152,5 +149,14 @@
   </data>
   <data name="lblConfirm2.Text" xml:space="preserve">
     <value>您要从头开始重新开始吗？</value>
+  </data>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="img_goods_image.HeaderText" xml:space="preserve">
+    <value>图片</value>
+  </data>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>小计</value>
   </data>
 </root>

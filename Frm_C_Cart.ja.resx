@@ -129,9 +129,6 @@
   <data name="goods_name.HeaderText" xml:space="preserve">
     <value>商品名</value>
   </data>
-  <data name="sale_num.HeaderText" xml:space="preserve">
-    <value>数量</value>
-  </data>
   <data name="goods_price.HeaderText" xml:space="preserve">
     <value>価格</value>
   </data>
@@ -152,5 +149,14 @@
   </data>
   <data name="lblConfirm2.Text" xml:space="preserve">
     <value>最初からやり直しますか?</value>
+  </data>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="img_goods_image.HeaderText" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>小計</value>
   </data>
 </root>

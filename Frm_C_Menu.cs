@@ -65,6 +65,8 @@ namespace FlexOrder
 
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
+            dgvOrderList.MultiSelect = false;
+            dgvOrderList.AutoGenerateColumns = false;
             string currentLang = Thread.CurrentThread.CurrentUICulture.Name;
             if (langMap.TryGetValue(currentLang, out int result))
                 currentLangNo = result;
@@ -92,7 +94,6 @@ namespace FlexOrder
                 };
                 tab.Controls.Add(panel);
                 tab.Tag = groupCode;
-                Console.WriteLine(tab.Tag + " Added");
                 tbcntMenu.TabPages.Add(tab);
             }
         }
@@ -322,7 +323,14 @@ namespace FlexOrder
         }
         private void ProductItem_ProductClicked(ProductItem productItem)
         {
-            using (Frm_C_GoodsDetail detailForm = new Frm_C_GoodsDetail(productItem.Id))
+            int initialQuantity = 1;
+            var existingItem = currentOrder.orderdetaillist.FirstOrDefault(item => item.goods_id == productItem.Id);
+
+            if (existingItem != null)
+            {
+                initialQuantity = existingItem.quantity;
+            }
+            using (Frm_C_GoodsDetail detailForm = new Frm_C_GoodsDetail(productItem.Id, initialQuantity))
             {
                 DialogResult result = detailForm.ShowDialog();
 
@@ -339,14 +347,30 @@ namespace FlexOrder
                             newDetail.quantity
                         );
                         RefreshCart();
-                        Console.WriteLine("Added to Cart!");
                     }
                 }
             } 
         }
-        
-        private void RefreshCart() 
+
+        private void RefreshCart()
         {
+            dgvOrderList.Rows.Clear();
+            if (currentOrder.orderdetaillist == null || currentOrder.orderdetaillist.Count == 0)
+            {
+                txtKaikei.Text = "¥ " + "0";
+                return;
+            }
+            foreach (var item in currentOrder.orderdetaillist)
+            {
+                int subtotal = item.Subtotal;
+
+                dgvOrderList.Rows.Add(
+                    item.goods_name,
+                    item.quantity,
+                    subtotal.ToString("N0")
+                );
+            }
+            dgvOrderList.ClearSelection();
             txtKaikei.Text = "¥ "+currentOrder.TotalPrice.ToString("N0");
         }
         private void btnConfirm_Click(object sender, EventArgs e)

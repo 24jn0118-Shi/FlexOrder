@@ -117,17 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="img_goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="goods_image.HeaderText" xml:space="preserve">
-    <value>goods_image</value>
+  <data name="img_goods_image.HeaderText" xml:space="preserve">
+    <value>img_goods_image</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="goods_image.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="img_goods_image.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="goods_image.Width" type="System.Int32, mscorlib">
+  <data name="img_goods_image.Width" type="System.Int32, mscorlib">
     <value>150</value>
   </data>
   <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -142,13 +142,13 @@
   <data name="goods_name.Width" type="System.Int32, mscorlib">
     <value>140</value>
   </data>
-  <metadata name="sale_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="sale_num.HeaderText" xml:space="preserve">
-    <value>sale_num</value>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>order_num</value>
   </data>
-  <data name="sale_num.MinimumWidth" type="System.Int32, mscorlib">
+  <data name="order_num.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <metadata name="goods_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -163,6 +163,12 @@
   <data name="goods_price.Width" type="System.Int32, mscorlib">
     <value>140</value>
   </data>
+  <metadata name="subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>subtotal</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
     <value>113, 12</value>
@@ -171,7 +177,7 @@
     <value>51</value>
   </data>
   <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>614, 297</value>
+    <value>688, 297</value>
   </data>
   <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -430,15 +436,15 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>863, 450</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_C_Cart</value>
   </data>
-  <data name="&gt;&gt;goods_image.Name" xml:space="preserve">
-    <value>goods_image</value>
+  <data name="&gt;&gt;img_goods_image.Name" xml:space="preserve">
+    <value>img_goods_image</value>
   </data>
-  <data name="&gt;&gt;goods_image.Type" xml:space="preserve">
+  <data name="&gt;&gt;img_goods_image.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;goods_name.Name" xml:space="preserve">
@@ -447,10 +453,10 @@
   <data name="&gt;&gt;goods_name.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;sale_num.Name" xml:space="preserve">
-    <value>sale_num</value>
+  <data name="&gt;&gt;order_num.Name" xml:space="preserve">
+    <value>order_num</value>
   </data>
-  <data name="&gt;&gt;sale_num.Type" xml:space="preserve">
+  <data name="&gt;&gt;order_num.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;goods_price.Name" xml:space="preserve">
@@ -459,10 +465,19 @@
   <data name="&gt;&gt;goods_price.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;subtotal.Name" xml:space="preserve">
+    <value>subtotal</value>
+  </data>
+  <data name="&gt;&gt;subtotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_Cart</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="goods_image.HeaderText" xml:space="preserve">
+    <value>goods_image</value>
   </data>
 </root>
