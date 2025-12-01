@@ -47,6 +47,10 @@
     <Compile Include="GoodsTable.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="LanguageTable.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="OrderDetail.cs" />
+    <Compile Include="OrderDetailTable.cs" />
+    <Compile Include="OrderTable.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

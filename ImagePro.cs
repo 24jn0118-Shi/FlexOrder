@@ -16,7 +16,7 @@ namespace FlexOrder
     {
         public static string WRITEBINARYFILE = @"C:\Users\brown\Downloads\Binary.txt";
         string relativePath = Path.Combine(Application.StartupPath, "Images");
-        string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
+        //string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
         private const string CacheFolderName = "Images";
         private const string LastRunLogFile = "ImageCacheLog.txt";

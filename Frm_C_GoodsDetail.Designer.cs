@@ -78,6 +78,7 @@
             resources.ApplyResources(this.btnAddtoCart, "btnAddtoCart");
             this.btnAddtoCart.Name = "btnAddtoCart";
             this.btnAddtoCart.UseVisualStyleBackColor = true;
+            this.btnAddtoCart.Click += new System.EventHandler(this.btnAddtoCart_Click);
             // 
             // lblGoodsName
             // 

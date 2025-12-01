@@ -71,6 +71,7 @@
             // 
             // cmbLanguage
             // 
+            this.cmbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.Name = "cmbLanguage";

@@ -74,6 +74,7 @@
             // 
             // cmbLanguage
             // 
+            this.cmbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLanguage.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
             this.cmbLanguage.FormattingEnabled = true;
             this.cmbLanguage.Location = new System.Drawing.Point(153, 44);

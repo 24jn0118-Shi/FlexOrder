@@ -27,6 +27,8 @@ namespace FlexOrder
 
         private Dictionary<string, List<Goods>> _allGoodsCache = new Dictionary<string, List<Goods>>();
         private bool _controlsCreated = false;
+
+        private Order currentOrder = new Order();
         public Frm_C_Menu(string ordertype)
         {
             InitializeComponent();
@@ -166,27 +168,20 @@ namespace FlexOrder
 
                 if (goodsList != null)
                 {
-                    // ⭐ 缓存数据，供后续筛选使用
                     _allGoodsCache[groupCode] = goodsList;
                 }
             }
             if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
             {
-                // 这里执行的是原 CreateAllProductControls 中针对单个 Tab 的逻辑
                 foreach (Goods good in cachedList)
                 {
-                    // ... (创建 ProductItem 实例的代码保持不变) ...
                     ProductItem product = new ProductItem
                     {
                         Id = good.goods_id,
                         ProductTitle = good.goods_name,
                         ProductPrice = "¥ " + good.goods_price.ToString("N0")
                     };
-
-                    // 假设 ImagePro.GetImagePath 使用了 good.goods_code
-                    // 示例中使用 goods_image_filename，这里沿用您的字段名
                     string imagePath = ImagePro.GetImagePath(good.goods_image_filename);
-
                     if (File.Exists(imagePath))
                     {
                         using (var tempImage = Image.FromFile(imagePath))
@@ -327,11 +322,33 @@ namespace FlexOrder
         }
         private void ProductItem_ProductClicked(ProductItem productItem)
         {
-            Frm_C_GoodsDetail frm = new Frm_C_GoodsDetail(productItem.Id);
-            frm.ShowDialog();
-            //この時点でCart dgvをrefreshする
-        }
+            using (Frm_C_GoodsDetail detailForm = new Frm_C_GoodsDetail(productItem.Id))
+            {
+                DialogResult result = detailForm.ShowDialog();
 
+                if (result == DialogResult.OK)
+                {
+                    OrderDetail newDetail = detailForm.AddedItem;
+
+                    if (newDetail != null && newDetail.quantity > 0)
+                    {
+                        currentOrder.AddOrUpdateItem(
+                            newDetail.goods_id,
+                            newDetail.goods_name,
+                            newDetail.price,
+                            newDetail.quantity
+                        );
+                        RefreshCart();
+                        Console.WriteLine("Added to Cart!");
+                    }
+                }
+            } 
+        }
+        
+        private void RefreshCart() 
+        {
+            txtKaikei.Text = "¥ "+currentOrder.TotalPrice.ToString("N0");
+        }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             Frm_C_Cart form = new Frm_C_Cart(ordertype);

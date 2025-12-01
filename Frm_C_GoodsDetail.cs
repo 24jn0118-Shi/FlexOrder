@@ -23,12 +23,14 @@ namespace FlexOrder
             { "zh", 3 },
             { "ru", 4 }
         };
-        int id;
+        int thisid;
+        int thisprice;
         int num = 1;
+        public OrderDetail AddedItem { get; private set; }
         public Frm_C_GoodsDetail(int id)
         {
             InitializeComponent();
-            this.id = id;
+            thisid = id;
         }
 
         private void Frm_C_GoodsDetail_Load(object sender, EventArgs e)
@@ -40,11 +42,12 @@ namespace FlexOrder
                 currentLangNo = result;
             }
             GoodsTable goodsTable = new GoodsTable();
-            Goods goods = goodsTable.GetGoodsById(currentLangNo, id);
+            Goods goods = goodsTable.GetGoodsById(currentLangNo, thisid);
             lblGoodsName.Text = goods.goods_name;
             lblDetail.Text = goods.goods_detail;
+            thisprice = goods.goods_price;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
-            lblNum.Text = "1";
+            lblNum.Text = num.ToString();
             string imagePath = ImagePro.GetImagePath(goods.goods_image_filename);
             if (File.Exists(imagePath))
             {
@@ -61,25 +64,39 @@ namespace FlexOrder
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
 
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            num = int.Parse(lblNum.Text);
             if(num > 1) 
             {
                 lblNum.Text = (num - 1).ToString();
             }
+            num = int.Parse(lblNum.Text);
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            num = int.Parse(lblNum.Text);
             if(num < 10) 
             { 
                 lblNum.Text = (num + 1).ToString();
             }
+            num = int.Parse(lblNum.Text);
+        }
+
+        private void btnAddtoCart_Click(object sender, EventArgs e)
+        {
+            this.AddedItem = new OrderDetail
+            {
+                goods_id = thisid,
+                goods_name = lblGoodsName.Text,
+                price = thisprice,
+                quantity = num
+            };
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
