@@ -20,7 +20,7 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
-				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
+				INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
 				WHERE is_recommend = 1 AND language_no = @language_no 
 				AND is_available = 1 ORDER BY group_sort";
@@ -32,13 +32,13 @@ namespace FlexOrderLibrary
                 {
                     Goods goods = new Goods();
 
-                    goods.goods_code = row["goods_code"].ToString();
+                    goods.goods_id = int.Parse(row["goods_id"].ToString());
                     goods.language_no = language_no;
                     goods.group_code = row["group_code"].ToString();
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    goods.goods_image_filename = goods.goods_code + ".jpg";
+                    goods.goods_image_filename = goods.goods_id.ToString() + ".jpg";
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -56,9 +56,9 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 
-				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code 
+				INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id 
 				WHERE language_no = @language_no 
-				ORDER BY RIGHT(G.goods_code, 4) ASC";
+				ORDER BY RIGHT goods_id ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.Fill(table);
@@ -67,13 +67,13 @@ namespace FlexOrderLibrary
                 {
                     Goods goods = new Goods();
 
-                    goods.goods_code = row["goods_code"].ToString();
+                    goods.goods_id = int.Parse(row["goods_id"].ToString());
                     goods.language_no = language_no;
                     goods.group_code = row["group_code"].ToString();
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    goods.goods_image_filename = goods.goods_code + ".jpg";
+                    goods.goods_image_filename = goods.goods_id.ToString() + ".jpg";
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -84,7 +84,7 @@ namespace FlexOrderLibrary
             return goodsList;
         }
 
-        public Goods GetGoodsByCode(int language_no, String code)
+        public Goods GetGoodsById(int language_no, int id)
         {
             Goods goods = null;
 
@@ -93,12 +93,12 @@ namespace FlexOrderLibrary
             {
                 string sql = @"SELECT G.*, LG.goods_name, LG.goods_detail 
                             FROM Goods AS G 							
-                            INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
-                            WHERE LG.language_no = @language_no AND G.goods_code = @goodscode";
+                            INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id
+                            WHERE LG.language_no = @language_no AND G.goods_id = @goods_id";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@language_no", language_no);
-                    command.Parameters.AddWithValue("@goodscode", code);
+                    command.Parameters.AddWithValue("@goods_id", id);
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -106,14 +106,14 @@ namespace FlexOrderLibrary
                         {
                             goods = new Goods();
 
-                            goods.goods_code = code;
+                            goods.goods_id = id;
                             goods.language_no = language_no;
                             goods.group_code = reader["group_code"]?.ToString();
                             goods.goods_name = reader["goods_name"]?.ToString();
                             goods.goods_detail = reader["goods_detail"]?.ToString();
                             goods.goods_price = Convert.ToInt32(reader["goods_price"]);
                             goods.goods_image_bytes = reader["goods_image"] as byte[];
-                            goods.goods_image_filename = goods.goods_code + ".jpg";
+                            goods.goods_image_filename = goods.goods_id.ToString() + ".jpg";
                             goods.is_recommend = Convert.ToBoolean(reader["is_recommend"]);
                             goods.is_vegetarian = Convert.ToBoolean(reader["is_vegetarian"]);
                             goods.is_available = Convert.ToBoolean(reader["is_available"]);
@@ -131,7 +131,7 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
-				INNER JOIN LocalizationGoods AS LG ON G.goods_code = LG.goods_code
+				INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
 				WHERE language_no = @language_no AND G.group_code = @group_code
 				AND is_available = 1";
@@ -144,13 +144,13 @@ namespace FlexOrderLibrary
                 {
                     Goods goods = new Goods();
 
-                    goods.goods_code = row["goods_code"].ToString();
+                    goods.goods_id = int.Parse(row["goods_id"].ToString());
                     goods.language_no = language_no;
                     goods.group_code = row["group_code"].ToString();
                     goods.goods_name = row["goods_name"].ToString();
                     goods.goods_detail = row["goods_detail"].ToString();
                     goods.goods_price = int.Parse(row["goods_price"].ToString());
-                    goods.goods_image_filename = goods.goods_code + ".jpg";
+                    goods.goods_image_filename = goods.goods_id.ToString() + ".jpg";
                     goods.is_recommend = bool.Parse(row["is_recommend"].ToString());
                     goods.is_vegetarian = bool.Parse(row["is_vegetarian"].ToString());
                     goods.is_available = bool.Parse(row["is_available"].ToString());
@@ -168,62 +168,21 @@ namespace FlexOrderLibrary
             {
                 string sql = @"SELECT G.*, goods_name 
                     FROM Goods AS G 
-                    INNER JOIN LocalizationGoods AS L ON G.goods_code = L.goods_code 
+                    INNER JOIN LocalizationGoods AS L ON G.goods_id = L.goods_id 
                     WHERE language_no = 1 
-                    ORDER BY RIGHT(G.goods_code, 4) ASC";
+                    ORDER BY goods_id ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 adapter.Fill(table);
             }
             return table;
         }
-        public String GetFirstAvailableGoodsNo()
+        public static Dictionary<int, byte[]> GetImagesFromDatabase()
         {
-            List<int> usedNumbers = new List<int>();
+            Dictionary<int, byte[]> imageMap = new Dictionary<int, byte[]>();
 
             string connectionString = Properties.Settings.Default.DBConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string sql = @"SELECT RIGHT(goods_code, 4) AS suffix FROM Goods";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string suffixString = reader["suffix"].ToString();
-                            if (int.TryParse(suffixString, out int suffixNumber))
-                            {
-                                usedNumbers.Add(suffixNumber);
-                            }
-                        }
-                    }
-                }
-            }
-            var sortedUsedNumbers = usedNumbers.Distinct().OrderBy(n => n).ToList();
-            int nextAvailableNumber = 1;
-            foreach (int usedNumber in sortedUsedNumbers)
-            {
-                if (usedNumber == nextAvailableNumber)
-                {
-                    nextAvailableNumber++;
-                }
-                else if (usedNumber > nextAvailableNumber)
-                {
-                    break;
-                }
-            }
-            return nextAvailableNumber.ToString("D4");
-        }
-        public static Dictionary<string, byte[]> GetImagesFromDatabase()
-        {
-            Dictionary<string, byte[]> imageMap = new Dictionary<string, byte[]>();
-
-            string connectionString = Properties.Settings.Default.DBConnectionString;
-            string sql = "SELECT goods_code, goods_image FROM Goods WHERE goods_image IS NOT NULL";
+            string sql = "SELECT goods_id, goods_image FROM Goods WHERE goods_image IS NOT NULL";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -234,11 +193,11 @@ namespace FlexOrderLibrary
                     {
                         while (reader.Read())
                         {
-                            string code = reader["goods_code"].ToString();
+                            int id = int.Parse(reader["goods_id"].ToString());
                             if (reader["goods_image"] != DBNull.Value)
                             {
                                 byte[] imageData = (byte[])reader["goods_image"];
-                                imageMap[code] = imageData;
+                                imageMap[id] = imageData;
                             }
                         }
                     }
@@ -248,47 +207,43 @@ namespace FlexOrderLibrary
         }
         public int InsertNewGoods(Goods goods)
         {
+            int newGoodsId = 0;
             int ret = 0;
+
             LanguageTable languageTable = new LanguageTable();
             int languagecount = languageTable.GetLanguageCount();
 
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"INSERT INTO Goods VALUES(@goods_code, @goods_price, 
-			                @is_recommend, @is_vegetarian, @group_code, @goods_image, @is_available)";
+                string sql = @"
+                                INSERT INTO Goods
+                                    (goods_price, is_recommend, is_vegetarian, group_code, goods_image, is_available)
+                                VALUES
+                                    (@goods_price, @is_recommend, @is_vegetarian, @group_code, @goods_image, @is_available);
+                                SELECT CAST(SCOPE_IDENTITY() AS int);";
+
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@goods_code", goods.goods_code);
                 command.Parameters.AddWithValue("@goods_price", goods.goods_price);
                 command.Parameters.AddWithValue("@is_recommend", goods.is_recommend);
                 command.Parameters.AddWithValue("@is_vegetarian", goods.is_vegetarian);
                 command.Parameters.AddWithValue("@group_code", goods.group_code);
                 SqlParameter imageParam = new SqlParameter("@goods_image", SqlDbType.VarBinary);
-                if (goods.goods_image_bytes != null)
-                {
-                    imageParam.Value = goods.goods_image_bytes;
-                }
-                else
-                {
-                    imageParam.Value = DBNull.Value;
-                }
+                imageParam.Value = (object)goods.goods_image_bytes ?? DBNull.Value;
                 command.Parameters.Add(imageParam);
                 command.Parameters.AddWithValue("@is_available", goods.is_available);
-
                 connection.Open();
-
-                ret = command.ExecuteNonQuery();
-                Console.WriteLine("Goodsに" + ret + "件を追加しました");
+                newGoodsId = (int)command.ExecuteScalar();
+                Console.WriteLine("Goods に 1 件を追加しました。新ID: " + newGoodsId);
             }
-
             ret = 0;
             for (int i = 0; i < languagecount; i++)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string sql = @"INSERT INTO LocalizationGoods VALUES(@goods_code, @language_no, @goods_name, @goods_detail)";
+                    string sql = @"INSERT INTO LocalizationGoods VALUES(@goods_id, @language_no, @goods_name, @goods_detail)";
                     SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@goods_code", goods.goods_code);
+                    command.Parameters.AddWithValue("@goods_id", newGoodsId);
                     command.Parameters.AddWithValue("@language_no", i + 1);
                     command.Parameters.AddWithValue("@goods_name", "");
                     command.Parameters.AddWithValue("@goods_detail", "");
@@ -298,7 +253,7 @@ namespace FlexOrderLibrary
             }
             Console.WriteLine("LocalizationGoodsに" + ret + "つの言語情報を追加しました");
 
-            return ret;
+            return newGoodsId;
         }
         public int UpdateImagesFromBinaryFile(string binaryfilepath) 
         {
@@ -314,7 +269,7 @@ namespace FlexOrderLibrary
                         string[] parts = line.Split(new[] { ',' }, 2, StringSplitOptions.None);
                         if (parts.Length != 2) continue;
 
-                        string goodscode = parts[0];
+                        int goodsid = int.Parse(parts[0]);
                         string base64Data = parts[1];
                         byte[] imageBytes = Convert.FromBase64String(base64Data);
 
@@ -322,10 +277,10 @@ namespace FlexOrderLibrary
                         {
                             string sql = @"UPDATE Goods 
                                         SET goods_image = @goods_image 
-                                        WHERE goods_code = @goods_code";
+                                        WHERE goods_id = @goods_id";
                             SqlCommand command = new SqlCommand(sql, connection);
 
-                            command.Parameters.AddWithValue("@goods_code", goodscode);
+                            command.Parameters.AddWithValue("@goods_id", goodsid);
                             object imageValue = imageBytes ?? (object)DBNull.Value;
                             command.Parameters.AddWithValue("@goods_image", imageValue);
 
@@ -333,7 +288,7 @@ namespace FlexOrderLibrary
                             int cnt = command.ExecuteNonQuery();
                             if(cnt < 1) 
                             {
-                                Console.WriteLine(goodscode + ": 失敗した");
+                                Console.WriteLine(goodsid + ": 失敗した");
                             }
                             ret += cnt;
                         }
@@ -355,10 +310,10 @@ namespace FlexOrderLibrary
             {
                 string sql = @"UPDATE Goods SET goods_price=@goods_price,is_recommend=@is_recommend,
 			is_vegetarian=@is_vegetarian,group_code=@group_code,goods_image=@goods_image,
-			is_available=@is_available WHERE goods_code = @goods_code";
+			is_available=@is_available WHERE goods_id = @goods_id";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@goods_code", goods.goods_code);
+                command.Parameters.AddWithValue("@goods_id", goods.goods_id);
                 command.Parameters.AddWithValue("@goods_price", goods.goods_price);
                 command.Parameters.AddWithValue("@is_recommend", goods.is_recommend);
                 command.Parameters.AddWithValue("@is_vegetarian", goods.is_vegetarian);
@@ -390,13 +345,13 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"UPDATE LocalizationGoods SET goods_name = @goods_name, goods_detail = @goods_detail
-                            WHERE goods_code = @goods_code AND language_no = @language_no";
+                            WHERE goods_id = @goods_id AND language_no = @language_no";
 
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@goods_name", goods.goods_name);
                 command.Parameters.AddWithValue("@goods_detail", goods.goods_detail);
                 command.Parameters.AddWithValue("@language_no", goods.language_no);
-                command.Parameters.AddWithValue("@goods_code", goods.goods_code);
+                command.Parameters.AddWithValue("@goods_id", goods.goods_id);
 
                 connection.Open();
                 ret = command.ExecuteNonQuery();
@@ -411,10 +366,10 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"UPDATE Goods SET is_available= @is_available
-                                WHERE goods_code = @goods_code";
+                                WHERE goods_id = @goods_id";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@goods_code", goods.goods_code);
+                command.Parameters.AddWithValue("@goods_id", goods.goods_id);
                 command.Parameters.AddWithValue("@is_available", !goods.is_available);
 
                 connection.Open();
@@ -424,17 +379,17 @@ namespace FlexOrderLibrary
             return ret;
         }
 
-        public int Delete(string goods_code)
+        public int Delete(int goods_id)
         {
             int ret = 0;
 
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"DELETE FROM LocalizationGoods WHERE goods_code = @goods_code";
+                string sql = @"DELETE FROM LocalizationGoods WHERE goods_id = @goods_id";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@goods_code", goods_code);
+                command.Parameters.AddWithValue("@goods_id", goods_id);
                 connection.Open();
 
                 ret = command.ExecuteNonQuery();
@@ -443,10 +398,10 @@ namespace FlexOrderLibrary
             {
                 using (SqlConnection connection = new SqlConnection(connectionString)) 
                 { 
-                    string sql = @"DELETE FROM Goods WHERE goods_code = @goods_code";
+                    string sql = @"DELETE FROM Goods WHERE goods_id = @goods_id";
 
                     SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@goods_code", goods_code);
+                    command.Parameters.AddWithValue("@goods_id", goods_id);
 
                     connection.Open();
                     ret = command.ExecuteNonQuery();

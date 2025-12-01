@@ -36,8 +36,8 @@ namespace FlexOrder
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
-            ImagePro.CheckAndCacheAllImages(false);
-            //ImagePro.CheckAndCacheAllImages(true);
+            ImagePro.CheckAndCacheAllImages(true);
+            //ImagePro.CheckAndCacheAllImages(false);
         }
 
         private void ApplyResources(Control control, string cultureName)

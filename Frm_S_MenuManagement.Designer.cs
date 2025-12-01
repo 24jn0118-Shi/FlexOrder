@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
-            this.index = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.str_is_recommend = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +47,6 @@
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.btnDeleteGoods = new System.Windows.Forms.Button();
             this.btnChangeAvailable = new System.Windows.Forms.Button();
-            this.btnExportBinary = new System.Windows.Forms.Button();
-            this.lblBinaryPath = new System.Windows.Forms.Label();
-            this.btnUpdateImages = new System.Windows.Forms.Button();
-            this.ofdInsertImages = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,8 +67,7 @@
             this.dgvMenu.AllowUserToDeleteRows = false;
             this.dgvMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.index,
-            this.goods_code,
+            this.goods_id,
             this.goods_name,
             this.goods_price,
             this.str_is_recommend,
@@ -89,29 +82,19 @@
             this.dgvMenu.TabIndex = 1;
             this.dgvMenu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellClick);
             // 
-            // index
+            // goods_id
             // 
-            this.index.DataPropertyName = "index";
-            this.index.HeaderText = "順番";
-            this.index.Name = "index";
-            this.index.ReadOnly = true;
-            this.index.Width = 60;
-            // 
-            // goods_code
-            // 
-            this.goods_code.DataPropertyName = "goods_code";
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.goods_code.DefaultCellStyle = dataGridViewCellStyle13;
-            this.goods_code.HeaderText = "商品コード";
-            this.goods_code.Name = "goods_code";
-            this.goods_code.ReadOnly = true;
-            this.goods_code.Width = 88;
+            this.goods_id.DataPropertyName = "goods_id";
+            this.goods_id.HeaderText = "ID";
+            this.goods_id.Name = "goods_id";
+            this.goods_id.ReadOnly = true;
+            this.goods_id.Width = 60;
             // 
             // goods_name
             // 
             this.goods_name.DataPropertyName = "goods_name";
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.goods_name.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.goods_name.DefaultCellStyle = dataGridViewCellStyle1;
             this.goods_name.HeaderText = "商品名";
             this.goods_name.Name = "goods_name";
             this.goods_name.ReadOnly = true;
@@ -120,8 +103,8 @@
             // goods_price
             // 
             this.goods_price.DataPropertyName = "goods_price";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.goods_price.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.goods_price.DefaultCellStyle = dataGridViewCellStyle2;
             this.goods_price.HeaderText = "単価（¥）";
             this.goods_price.Name = "goods_price";
             this.goods_price.ReadOnly = true;
@@ -130,8 +113,8 @@
             // str_is_recommend
             // 
             this.str_is_recommend.DataPropertyName = "str_is_recommend";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.str_is_recommend.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_is_recommend.DefaultCellStyle = dataGridViewCellStyle3;
             this.str_is_recommend.HeaderText = "おすすめ";
             this.str_is_recommend.Name = "str_is_recommend";
             this.str_is_recommend.ReadOnly = true;
@@ -140,8 +123,8 @@
             // group_code
             // 
             this.group_code.DataPropertyName = "group_code";
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.group_code.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.group_code.DefaultCellStyle = dataGridViewCellStyle4;
             this.group_code.HeaderText = "分類コード";
             this.group_code.Name = "group_code";
             this.group_code.ReadOnly = true;
@@ -160,8 +143,8 @@
             // str_is_available
             // 
             this.str_is_available.DataPropertyName = "str_is_available";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.str_is_available.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_is_available.DefaultCellStyle = dataGridViewCellStyle5;
             this.str_is_available.HeaderText = "在庫状況";
             this.str_is_available.Name = "str_is_available";
             this.str_is_available.ReadOnly = true;
@@ -222,48 +205,11 @@
             this.btnChangeAvailable.UseVisualStyleBackColor = true;
             this.btnChangeAvailable.Click += new System.EventHandler(this.btnChangeAvailable_Click);
             // 
-            // btnExportBinary
-            // 
-            this.btnExportBinary.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnExportBinary.Location = new System.Drawing.Point(751, 520);
-            this.btnExportBinary.Name = "btnExportBinary";
-            this.btnExportBinary.Size = new System.Drawing.Size(185, 55);
-            this.btnExportBinary.TabIndex = 6;
-            this.btnExportBinary.Text = "Export Binary";
-            this.btnExportBinary.UseVisualStyleBackColor = true;
-            this.btnExportBinary.Click += new System.EventHandler(this.btnExportBinary_Click);
-            // 
-            // lblBinaryPath
-            // 
-            this.lblBinaryPath.Location = new System.Drawing.Point(751, 498);
-            this.lblBinaryPath.Name = "lblBinaryPath";
-            this.lblBinaryPath.Size = new System.Drawing.Size(218, 19);
-            this.lblBinaryPath.TabIndex = 7;
-            this.lblBinaryPath.Text = "lblBinaryPath";
-            // 
-            // btnUpdateImages
-            // 
-            this.btnUpdateImages.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpdateImages.Location = new System.Drawing.Point(751, 575);
-            this.btnUpdateImages.Name = "btnUpdateImages";
-            this.btnUpdateImages.Size = new System.Drawing.Size(185, 55);
-            this.btnUpdateImages.TabIndex = 6;
-            this.btnUpdateImages.Text = "Update Images With BinaryFile";
-            this.btnUpdateImages.UseVisualStyleBackColor = true;
-            this.btnUpdateImages.Click += new System.EventHandler(this.btnUpdateImages_Click);
-            // 
-            // ofdInsertImages
-            // 
-            this.ofdInsertImages.Title = "使用するバイナリファイルを選択してください";
-            // 
             // Frm_S_MenuManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 632);
-            this.Controls.Add(this.btnUpdateImages);
-            this.Controls.Add(this.btnExportBinary);
-            this.Controls.Add(this.lblBinaryPath);
             this.Controls.Add(this.btnDeleteGoods);
             this.Controls.Add(this.btnChangeAvailable);
             this.Controls.Add(this.btnAddGroup);
@@ -288,12 +234,7 @@
         private System.Windows.Forms.Button btnAddGroup;
         private System.Windows.Forms.Button btnDeleteGoods;
         private System.Windows.Forms.Button btnChangeAvailable;
-        private System.Windows.Forms.Button btnExportBinary;
-        private System.Windows.Forms.Label lblBinaryPath;
-        private System.Windows.Forms.Button btnUpdateImages;
-        private System.Windows.Forms.OpenFileDialog ofdInsertImages;
-        private System.Windows.Forms.DataGridViewTextBoxColumn index;
-        private System.Windows.Forms.DataGridViewTextBoxColumn goods_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn str_is_recommend;

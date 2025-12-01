@@ -30,10 +30,10 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblGroup = new System.Windows.Forms.Label();
-            this.lblGoodsCode = new System.Windows.Forms.Label();
+            this.lblGoodsId = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.cmbGroup = new System.Windows.Forms.ComboBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.cboxRecommend = new System.Windows.Forms.CheckBox();
             this.cboxVege = new System.Windows.Forms.CheckBox();
@@ -63,23 +63,23 @@
             // 
             this.lblGroup.AutoSize = true;
             this.lblGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGroup.Location = new System.Drawing.Point(47, 92);
+            this.lblGroup.Location = new System.Drawing.Point(47, 170);
             this.lblGroup.Name = "lblGroup";
             this.lblGroup.Size = new System.Drawing.Size(90, 21);
             this.lblGroup.TabIndex = 1;
             this.lblGroup.Text = "商品分類：";
             this.lblGroup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblGoodsCode
+            // lblGoodsId
             // 
-            this.lblGoodsCode.AutoSize = true;
-            this.lblGoodsCode.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGoodsCode.Location = new System.Drawing.Point(47, 171);
-            this.lblGoodsCode.Name = "lblGoodsCode";
-            this.lblGoodsCode.Size = new System.Drawing.Size(106, 21);
-            this.lblGoodsCode.TabIndex = 2;
-            this.lblGoodsCode.Text = "商品コード：";
-            this.lblGoodsCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGoodsId.AutoSize = true;
+            this.lblGoodsId.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblGoodsId.Location = new System.Drawing.Point(47, 87);
+            this.lblGoodsId.Name = "lblGoodsId";
+            this.lblGoodsId.Size = new System.Drawing.Size(75, 21);
+            this.lblGoodsId.TabIndex = 2;
+            this.lblGoodsId.Text = "商品ID：";
+            this.lblGoodsId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblPrice
             // 
@@ -96,20 +96,20 @@
             // 
             this.cmbGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.cmbGroup.FormattingEnabled = true;
-            this.cmbGroup.Location = new System.Drawing.Point(143, 89);
+            this.cmbGroup.Location = new System.Drawing.Point(143, 167);
             this.cmbGroup.Name = "cmbGroup";
             this.cmbGroup.Size = new System.Drawing.Size(121, 29);
             this.cmbGroup.TabIndex = 4;
             this.cmbGroup.SelectedIndexChanged += new System.EventHandler(this.cmbGroup_SelectedIndexChanged);
             // 
-            // txtCode
+            // txtId
             // 
-            this.txtCode.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.txtCode.Location = new System.Drawing.Point(143, 168);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.ReadOnly = true;
-            this.txtCode.Size = new System.Drawing.Size(121, 28);
-            this.txtCode.TabIndex = 5;
+            this.txtId.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.txtId.Location = new System.Drawing.Point(143, 84);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(121, 28);
+            this.txtId.TabIndex = 5;
             // 
             // txtPrice
             // 
@@ -213,7 +213,7 @@
             // 
             this.lblGroupName.AutoSize = true;
             this.lblGroupName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGroupName.Location = new System.Drawing.Point(143, 132);
+            this.lblGroupName.Location = new System.Drawing.Point(270, 170);
             this.lblGroupName.Name = "lblGroupName";
             this.lblGroupName.Size = new System.Drawing.Size(122, 21);
             this.lblGroupName.TabIndex = 1;
@@ -251,10 +251,10 @@
             this.Controls.Add(this.cboxVege);
             this.Controls.Add(this.cboxRecommend);
             this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.txtCode);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.cmbGroup);
             this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.lblGoodsCode);
+            this.Controls.Add(this.lblGoodsId);
             this.Controls.Add(this.lblGroupName);
             this.Controls.Add(this.lblGroup);
             this.Controls.Add(this.lblTitle);
@@ -271,10 +271,10 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblGroup;
-        private System.Windows.Forms.Label lblGoodsCode;
+        private System.Windows.Forms.Label lblGoodsId;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox cmbGroup;
-        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.CheckBox cboxRecommend;
         private System.Windows.Forms.CheckBox cboxVege;

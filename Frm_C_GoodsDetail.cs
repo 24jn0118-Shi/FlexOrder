@@ -23,12 +23,12 @@ namespace FlexOrder
             { "zh", 3 },
             { "ru", 4 }
         };
-        string code;
+        int id;
         int num = 1;
-        public Frm_C_GoodsDetail(string code)
+        public Frm_C_GoodsDetail(int id)
         {
             InitializeComponent();
-            this.code = code;
+            this.id = id;
         }
 
         private void Frm_C_GoodsDetail_Load(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace FlexOrder
                 currentLangNo = result;
             }
             GoodsTable goodsTable = new GoodsTable();
-            Goods goods = goodsTable.GetGoodsByCode(currentLangNo, code);
+            Goods goods = goodsTable.GetGoodsById(currentLangNo, id);
             lblGoodsName.Text = goods.goods_name;
             lblDetail.Text = goods.goods_detail;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
@@ -55,7 +55,7 @@ namespace FlexOrder
             }
             else
             {
-                picGoods.Image = Properties.Resources.testimage1;
+                picGoods.Image = Properties.Resources.noimage;
             }
         }
 

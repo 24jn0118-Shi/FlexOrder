@@ -144,32 +144,21 @@ namespace FlexOrder
             }
             else
             {
-                // 确保 FlowLayoutPanel 已经创建（在 LoadGroupsTabs 中已完成）
                 if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) return;
                 panel = (FlowLayoutPanel)tab.Controls[0];
                 groupCode = tab.Tag as string;
             }
 
-            // ⭐ 核心判断：如果面板中已经有控件，说明此 Tab 已加载过，直接返回。
-            // 注意：即使面板中没有控件，groupCode 也是必须的。
             if (panel.Controls.Count > 0)
             {
-                // 如果需要，这里可以调用 ApplyVegetarianFilter() 确保可见性正确
                 return;
             }
 
-            // ----------------------------------------------------
-            // 2. 耗时操作：首次加载 Tab 时执行查询和创建
-            // ----------------------------------------------------
-
             if (string.IsNullOrEmpty(groupCode) || _allGoodsCache.ContainsKey(groupCode))
             {
-                // 如果 groupCode 无效或数据已在缓存中，则跳过数据库查询。
-                // 但如果此 Tab 的控件尚未创建 (Controls.Count == 0)，则继续到步骤 3 使用缓存创建控件。
             }
             else
             {
-                // 数据库查询：仅对当前 Tab 执行查询
                 GoodsTable goodsTable = new GoodsTable();
                 List<Goods> goodsList = (groupCode == "RECOMMEND")
                     ? goodsTable.GetRecommendGoods(currentLangNo)
@@ -181,11 +170,6 @@ namespace FlexOrder
                     _allGoodsCache[groupCode] = goodsList;
                 }
             }
-
-            // ----------------------------------------------------
-            // 3. 控件创建：从缓存中读取数据并创建 ProductItem
-            // ----------------------------------------------------
-
             if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
             {
                 // 这里执行的是原 CreateAllProductControls 中针对单个 Tab 的逻辑
@@ -194,7 +178,7 @@ namespace FlexOrder
                     // ... (创建 ProductItem 实例的代码保持不变) ...
                     ProductItem product = new ProductItem
                     {
-                        Code = good.goods_code,
+                        Id = good.goods_id,
                         ProductTitle = good.goods_name,
                         ProductPrice = "¥ " + good.goods_price.ToString("N0")
                     };
@@ -212,7 +196,7 @@ namespace FlexOrder
                     }
                     else
                     {
-                        product.ProductImage = Properties.Resources.testimage1;
+                        product.ProductImage = Properties.Resources.noimage;
                     }
 
                     product.ProductClicked += ProductItem_ProductClicked;
@@ -244,7 +228,7 @@ namespace FlexOrder
                     {
                         ProductItem product = new ProductItem
                         {
-                            Code = good.goods_code,
+                            Id = good.goods_id,
                             ProductTitle = good.goods_name,
                             ProductPrice = "¥ " + good.goods_price.ToString("N0")
                         };
@@ -293,7 +277,7 @@ namespace FlexOrder
                     {
                         if (control is ProductItem productItem)
                         {
-                            Goods good = cachedList.FirstOrDefault(g => g.goods_code == productItem.Code);
+                            Goods good = cachedList.FirstOrDefault(g => g.goods_id == productItem.Id);
 
                             if (good != null)
                             {
@@ -330,7 +314,7 @@ namespace FlexOrder
                 {
                     if (control is ProductItem productItem)
                     {
-                        Goods good = cachedList.FirstOrDefault(g => g.goods_code == productItem.Code);
+                        Goods good = cachedList.FirstOrDefault(g => g.goods_id == productItem.Id);
 
                         if (good != null)
                         {
@@ -343,7 +327,7 @@ namespace FlexOrder
         }
         private void ProductItem_ProductClicked(ProductItem productItem)
         {
-            Frm_C_GoodsDetail frm = new Frm_C_GoodsDetail(productItem.Code);
+            Frm_C_GoodsDetail frm = new Frm_C_GoodsDetail(productItem.Id);
             frm.ShowDialog();
             //この時点でCart dgvをrefreshする
         }

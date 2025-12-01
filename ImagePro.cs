@@ -37,7 +37,7 @@ namespace FlexOrder
             try
             {
                 CleanupCache();
-                Dictionary<string, byte[]> imageDataMap = GoodsTable.GetImagesFromDatabase();
+                Dictionary<int, byte[]> imageDataMap = GoodsTable.GetImagesFromDatabase();
                 SaveImagesToFiles(imageDataMap);
                 RecordSuccessfulRunDate();
                 Console.WriteLine("Images cached!");
@@ -92,15 +92,15 @@ namespace FlexOrder
             }
             Directory.CreateDirectory(CacheDirectory);
         }
-        private static void SaveImagesToFiles(Dictionary<string, byte[]> imageDataMap)
+        private static void SaveImagesToFiles(Dictionary<int, byte[]> imageDataMap)
         {
             foreach (var kvp in imageDataMap)
             {
-                string code = kvp.Key;
+                int id = kvp.Key;
                 byte[] data = kvp.Value;
                 try
                 {
-                    string filePath = Path.Combine(CacheDirectory, $"{code}.jpg");
+                    string filePath = Path.Combine(CacheDirectory, $"{id}.jpg");
                     using (MemoryStream ms = new MemoryStream(data))
                     {
                         using (Image image = Image.FromStream(ms))
@@ -111,7 +111,7 @@ namespace FlexOrder
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to load Goods: {code} Message: {ex.Message}");
+                    Console.WriteLine($"Failed to load Goods: {id} Message: {ex.Message}");
                 }
             }
         }

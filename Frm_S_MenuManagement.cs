@@ -14,7 +14,7 @@ namespace FlexOrder
 {
     public partial class Frm_S_MenuManagement : Form
     {
-        string selected_goodscode = null;
+        int selected_goodsid = -1;
         public Frm_S_MenuManagement(Staff staff)
         {
             InitializeComponent();
@@ -35,21 +35,21 @@ namespace FlexOrder
         }
         private void btnEditGoods_Click(object sender, EventArgs e)
         {
-            if(selected_goodscode == null) 
+            if(selected_goodsid < 0) 
             {
                 MessageBox.Show("商品を選択してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
             {
-                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit(selected_goodscode);
+                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit(selected_goodsid.ToString());
                 frm_S_MenuEdit.ShowDialog();
                 Refresh_page();
             }
         }
         private void btnDeleteGoods_Click(object sender, EventArgs e)
         {
-            if (selected_goodscode == null)
+            if (selected_goodsid < 0)
             {
                 MessageBox.Show("商品を選択してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -62,7 +62,7 @@ namespace FlexOrder
                 if (dret == DialogResult.Yes)
                 {
                     GoodsTable goodsTable = new GoodsTable();
-                    int cnt = goodsTable.Delete(selected_goodscode);
+                    int cnt = goodsTable.Delete(selected_goodsid);
                     if (cnt > 0)
                     {
                         MessageBox.Show(cnt + "件の商品を削除しました", "削除完了",
@@ -84,7 +84,7 @@ namespace FlexOrder
         }
         private void btnChangeAvailable_Click(object sender, EventArgs e)
         {
-            if (selected_goodscode == null)
+            if (selected_goodsid < 0)
             {
                 MessageBox.Show("商品を選択してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -103,9 +103,8 @@ namespace FlexOrder
                                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes) 
                 {
-                    //Update Available
                     GoodsTable goodsTable = new GoodsTable();
-                    Goods goods = goodsTable.GetGoodsByCode(1, selected_goodscode);
+                    Goods goods = goodsTable.GetGoodsById(1, selected_goodsid);
                     int cnt = goodsTable.UpdateAvailable(goods);
                     if (cnt > 0)
                     {
@@ -134,23 +133,17 @@ namespace FlexOrder
             dgvMenu.MultiSelect = false;
             dgvMenu.AutoGenerateColumns = false;
             Refresh_page();
-
-
-            lblBinaryPath.Text = "Export to: " + ImagePro.WRITEBINARYFILE;
         }
         private void Refresh_page()
         {
-            selected_goodscode = null;
+            selected_goodsid = -1;
             GoodsTable goodsTable = new GoodsTable();
             DataTable table = goodsTable.GetAllGoods();
             table.Columns.Add("str_is_recommend", typeof(string));
             table.Columns.Add("str_is_available", typeof(string));
             table.Columns.Add("index", typeof(int));
-            int index = 1;
             foreach (DataRow row in table.Rows)
             {
-                row["index"] = index;
-                index++;
                 bool flag = Convert.ToBoolean(row["is_recommend"]);
                 row["str_is_recommend"] = flag ? "〇" : "";
                 flag = Convert.ToBoolean(row["is_available"]);
@@ -164,38 +157,7 @@ namespace FlexOrder
 
         private void dgvMenu_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selected_goodscode = dgvMenu.CurrentRow.Cells["goods_code"].Value.ToString();
-        }
-
-        private void btnExportBinary_Click(object sender, EventArgs e)
-        {
-            ImagePro.ExportInitialBinary(true);
-            MessageBox.Show("ただいまこの機能が使用できません", "ダメ",
-                                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        private void btnUpdateImages_Click(object sender, EventArgs e)
-        {
-            string filepath;
-            DialogResult ret = ofdInsertImages.ShowDialog();
-            if (ret == DialogResult.OK)
-            {
-                filepath = ofdInsertImages.FileName;
-                Console.WriteLine("From: " + filepath);
-                ImagePro imagePro = new ImagePro();
-
-                if (filepath != null)
-                {
-                    DialogResult dret = MessageBox.Show(filepath + "\nをUpdateしますか", "確認",
-                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (dret == DialogResult.Yes)
-                    {
-                        GoodsTable goodsTable = new GoodsTable();
-                        int cnt = goodsTable.UpdateImagesFromBinaryFile(filepath);
-                        MessageBox.Show(cnt + "件Updateしました", "Update完了",
-                                                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
+            selected_goodsid = (int)dgvMenu.CurrentRow.Cells["goods_id"].Value;
         }
     }
 }
