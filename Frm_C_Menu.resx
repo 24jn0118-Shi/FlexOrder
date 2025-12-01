@@ -121,26 +121,6 @@
   <data name="tbcntMenu.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>593, 792</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
     <value>flowLayoutPanelMenuRecommend</value>
   </data>
@@ -153,6 +133,7 @@
   <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tbpagePop.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 4</value>
   </data>
@@ -162,6 +143,7 @@
   <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
     <value>599, 798</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -204,14 +186,44 @@
   <data name="&gt;&gt;tbcntMenu.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>593, 792</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
+    <value>flowLayoutPanelMenuRecommend</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Parent" xml:space="preserve">
+    <value>tbpagePop</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>690, 861</value>
+    <value>738, 861</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 50</value>
+    <value>171, 50</value>
   </data>
   <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -258,30 +270,6 @@
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="orderlist.ItemHeight" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="orderlist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 76</value>
-  </data>
-  <data name="orderlist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 256</value>
-  </data>
-  <data name="orderlist.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;orderlist.Name" xml:space="preserve">
-    <value>orderlist</value>
-  </data>
-  <data name="&gt;&gt;orderlist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;orderlist.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;orderlist.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 16pt</value>
   </data>
@@ -307,7 +295,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +304,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>706, 346</value>
+    <value>732, 717</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 21</value>
@@ -337,13 +325,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtKaikei.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 383</value>
+    <value>746, 754</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 28</value>
@@ -361,7 +349,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtKaikei.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblCart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -391,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCart.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -418,7 +406,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblen.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ckbVeget.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,7 +436,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ckbVeget.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblVeget.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -478,7 +466,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblVeget.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblConfirm1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -487,7 +475,7 @@
     <value>12, 367</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -508,7 +496,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblConfirm2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -520,7 +508,7 @@
     <value>12, 392</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -541,6 +529,27 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dgvOrderList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>720, 83</value>
+  </data>
+  <data name="dgvOrderList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 585</value>
+  </data>
+  <data name="dgvOrderList.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.Name" xml:space="preserve">
+    <value>dgvOrderList</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -550,7 +559,10 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>884, 1060</value>
+    <value>1084, 1060</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>メニュー一覧</value>

@@ -34,7 +34,6 @@
             this.flowLayoutPanelMenuRecommend = new System.Windows.Forms.FlowLayoutPanel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.orderlist = new System.Windows.Forms.ListBox();
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtKaikei = new System.Windows.Forms.TextBox();
@@ -44,8 +43,10 @@
             this.lblVeget = new System.Windows.Forms.Label();
             this.lblConfirm1 = new System.Windows.Forms.Label();
             this.lblConfirm2 = new System.Windows.Forms.Label();
+            this.dgvOrderList = new System.Windows.Forms.DataGridView();
             this.tbcntMenu.SuspendLayout();
             this.tbpagePop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcntMenu
@@ -83,12 +84,6 @@
             this.btnBack.Name = "btnBack";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // orderlist
-            // 
-            this.orderlist.FormattingEnabled = true;
-            resources.ApplyResources(this.orderlist, "orderlist");
-            this.orderlist.Name = "orderlist";
             // 
             // btnRestart
             // 
@@ -141,10 +136,21 @@
             resources.ApplyResources(this.lblConfirm2, "lblConfirm2");
             this.lblConfirm2.Name = "lblConfirm2";
             // 
+            // dgvOrderList
+            // 
+            this.dgvOrderList.AllowUserToAddRows = false;
+            this.dgvOrderList.AllowUserToDeleteRows = false;
+            this.dgvOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvOrderList, "dgvOrderList");
+            this.dgvOrderList.Name = "dgvOrderList";
+            this.dgvOrderList.ReadOnly = true;
+            this.dgvOrderList.RowTemplate.Height = 21;
+            // 
             // Frm_C_Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvOrderList);
             this.Controls.Add(this.lblConfirm2);
             this.Controls.Add(this.lblConfirm1);
             this.Controls.Add(this.lblVeget);
@@ -154,7 +160,6 @@
             this.Controls.Add(this.txtKaikei);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnRestart);
-            this.Controls.Add(this.orderlist);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.tbcntMenu);
@@ -162,6 +167,7 @@
             this.Load += new System.EventHandler(this.FrmCMenu_Load);
             this.tbcntMenu.ResumeLayout(false);
             this.tbpagePop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +179,6 @@
         private System.Windows.Forms.TabPage tbpagePop;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.ListBox orderlist;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtKaikei;
@@ -184,5 +189,6 @@
         private System.Windows.Forms.Label lblVeget;
         private System.Windows.Forms.Label lblConfirm1;
         private System.Windows.Forms.Label lblConfirm2;
+        private System.Windows.Forms.DataGridView dgvOrderList;
     }
 }
