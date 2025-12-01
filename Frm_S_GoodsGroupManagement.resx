@@ -179,50 +179,8 @@
   <metadata name="group_code.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="group_sort.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ja.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="en.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="zh.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ru.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 67</value>
-  </data>
-  <data name="dgvGroupList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>692, 265</value>
-  </data>
-  <data name="dgvGroupList.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.Name" xml:space="preserve">
-    <value>dgvGroupList</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dgvGroupList.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <metadata name="group_code.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="group_code.HeaderText" xml:space="preserve">
     <value>分類コード</value>
-  </data>
-  <data name="group_code.Width" type="System.Int32, mscorlib">
-    <value>90</value>
   </data>
   <metadata name="group_sort.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -231,7 +189,7 @@
     <value>優先順位</value>
   </data>
   <data name="group_sort.Width" type="System.Int32, mscorlib">
-    <value>80</value>
+    <value>85</value>
   </data>
   <metadata name="ja.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -267,7 +225,28 @@
     <value>Русский</value>
   </data>
   <data name="ru.Width" type="System.Int32, mscorlib">
-    <value>160</value>
+    <value>150</value>
+  </data>
+  <data name="dgvGroupList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 67</value>
+  </data>
+  <data name="dgvGroupList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>692, 265</value>
+  </data>
+  <data name="dgvGroupList.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.Name" xml:space="preserve">
+    <value>dgvGroupList</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvGroupList.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="lblCode.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

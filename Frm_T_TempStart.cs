@@ -42,7 +42,7 @@ namespace FlexOrder
 
         private void Frm_T_TempStart_Load(object sender, EventArgs e)
         {
-            ImagePro.CheckAndCacheAllImages(false);
+            //ImagePro.CheckAndCacheAllImages(false);
         }
     }
 }

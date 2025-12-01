@@ -15,10 +15,12 @@ namespace FlexOrder
     public partial class Frm_C_Cart : Form
     {
         string ordertype;
-        public Frm_C_Cart(string ordertype)
+        public Order currentOrder;
+        public Frm_C_Cart(string ordertype, Order currentOrder)
         {
             InitializeComponent();
             this.ordertype = ordertype;
+            this.currentOrder = currentOrder;
         }
 
         private void btnPay_Click(object sender, EventArgs e)
@@ -47,8 +49,8 @@ namespace FlexOrder
                 product.ProductImage = img;
             }*/
 
-            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "1000");
-            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250");
+            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "500",1000.ToString("N0"));
+            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250","250");
 
             tboxTotalPrice.Text = "1250";
         }
@@ -62,6 +64,12 @@ namespace FlexOrder
                 Application.Restart();
                 Environment.Exit(0);
             }
+        }
+
+        private void Frm_C_Cart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            currentOrder = new Order();
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

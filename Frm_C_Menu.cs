@@ -351,7 +351,6 @@ namespace FlexOrder
                 }
             } 
         }
-
         private void RefreshCart()
         {
             dgvOrderList.Rows.Clear();
@@ -375,8 +374,17 @@ namespace FlexOrder
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            Frm_C_Cart form = new Frm_C_Cart(ordertype);
-            form.ShowDialog();
+            using (Frm_C_Cart form = new Frm_C_Cart(ordertype, currentOrder))
+            {
+                DialogResult result = form.ShowDialog();
+                Console.WriteLine(result.ToString());
+                if (result == DialogResult.Cancel || result == DialogResult.None)
+                {
+
+                    this.currentOrder = form.currentOrder;
+                    RefreshCart();
+                }
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

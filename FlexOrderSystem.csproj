@@ -181,8 +181,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Cart.resx">
       <DependentUpon>Frm_C_Cart.cs</DependentUpon>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Frm_C_Cart1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Cart.ru.resx">
       <DependentUpon>Frm_C_Cart.cs</DependentUpon>
