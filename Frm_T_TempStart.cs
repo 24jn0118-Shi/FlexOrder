@@ -39,29 +39,10 @@ namespace FlexOrder
             Frm_S_Login form = new Frm_S_Login();
             form.ShowDialog();
         }
-        private void btnUpdateImages_Click(object sender, EventArgs e)
-        {
-            string filepath;
-            DialogResult ret = ofdInsertImages.ShowDialog();
-            if (ret == DialogResult.OK)
-            {
-                filepath = ofdInsertImages.FileName;
-                Console.WriteLine("From: " + filepath);
-                ImagePro imagePro = new ImagePro();
 
-                if (filepath != null)
-                {
-                    DialogResult dret = MessageBox.Show(filepath + "\nをUpdateしますか", "確認",
-                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (dret == DialogResult.Yes)
-                    {
-                        GoodsTable goodsTable = new GoodsTable();
-                        int cnt = goodsTable.UpdateImagesFromBinaryFile(filepath);
-                        MessageBox.Show(cnt + "件Updateしました", "Update完了",
-                                                           MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
+        private void Frm_T_TempStart_Load(object sender, EventArgs e)
+        {
+            ImagePro.CheckAndCacheAllImages(false);
         }
     }
 }

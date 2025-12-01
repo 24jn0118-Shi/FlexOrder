@@ -14,7 +14,7 @@ namespace FlexOrder
     {
         public event Action<ProductItem> ProductClicked;
 
-        String code;
+        int id;
         public ProductItem()
         {
             InitializeComponent();
@@ -22,10 +22,10 @@ namespace FlexOrder
             this.lblTitle.Click += ProductItem_Click;
             this.lblPrice.Click += ProductItem_Click;
         }
-        public string Code
+        public int Id
         {
-            get { return code; }
-            set { code = value; }
+            get { return id; }
+            set { id = value; }
         }
         public string ProductTitle
         {

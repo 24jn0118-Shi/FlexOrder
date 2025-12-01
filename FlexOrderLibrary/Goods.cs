@@ -8,7 +8,7 @@ namespace FlexOrderLibrary
 {
     public class Goods
     {
-        public string goods_code { get; set; }
+        public int goods_id {  get; set; }
         public int language_no { get; set; }
         public string group_code { get; set; }
         public string goods_name { get; set; }

@@ -15,18 +15,18 @@ namespace FlexOrder
     {
         Form parent;
         string type;
-        string code;
+        int id;
         int languageno;
         string languagename;
-        bool anychanged;
+        //bool anychanged;
         string beforename = "";
         string beforedetail = "";
-        public Frm_S_MenuMultilingual(string type, string code, Form parent)
+        public Frm_S_MenuMultilingual(string type, int id, Form parent)
         {
             InitializeComponent();
-            lblTitle.Text = code;
+            lblTitle.Text = "商品" + id.ToString();
             this.type = type;
-            this.code = code;
+            this.id = id;
             this.parent = parent;
             if(type == "Add") 
             {
@@ -36,7 +36,7 @@ namespace FlexOrder
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dret = MessageBox.Show("商品コード：" + code + "\n" + "内容言語名：" + languagename + "\n" + "商品名：" + txbGoodsName.Text + "\n" + "商品詳細：" + txbGoodsDetail.Text + "\n" + "\n以上の内容に変更しますか", "確認",
+            DialogResult dret = MessageBox.Show("商品ID：" + id + "\n" + "内容言語名：" + languagename + "\n" + "商品名：" + txbGoodsName.Text + "\n" + "商品詳細：" + txbGoodsDetail.Text + "\n" + "\n以上の内容に変更しますか", "確認",
                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dret == DialogResult.Yes) 
             {
@@ -44,7 +44,7 @@ namespace FlexOrder
                 beforedetail = txbGoodsDetail.Text;
                 GoodsTable goodsTable = new GoodsTable();
                 Goods goods = new Goods();
-                goods.goods_code = code;
+                goods.goods_id = id;
                 goods.goods_name = txbGoodsName.Text;
                 goods.goods_detail = txbGoodsDetail.Text;
                 goods.language_no = languageno;
@@ -107,7 +107,7 @@ namespace FlexOrder
                 languageno = int.Parse(sp[0]);
                 languagename = sp[1];
                 GoodsTable goodsTable = new GoodsTable();
-                Goods goods = goodsTable.GetGoodsByCode(languageno, code);
+                Goods goods = goodsTable.GetGoodsById(languageno, id);
                 beforename = goods.goods_name;
                 beforedetail = goods.goods_detail;
                 txbGoodsName.Text = beforename;

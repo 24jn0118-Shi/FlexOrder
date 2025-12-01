@@ -57,7 +57,7 @@
             // ptbImage
             // 
             this.ptbImage.Image = global::FlexOrder.Properties.Resources.noimage;
-            this.ptbImage.Location = new System.Drawing.Point(27, 3);
+            this.ptbImage.Location = new System.Drawing.Point(24, 3);
             this.ptbImage.Name = "ptbImage";
             this.ptbImage.Size = new System.Drawing.Size(94, 71);
             this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
