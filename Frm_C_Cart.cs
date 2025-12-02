@@ -35,12 +35,9 @@ namespace FlexOrder
         }
         private void FrmCCart_Load(object sender, EventArgs e)
         {
-            dgvCart.MultiSelect = false;
-            dgvCart.AutoGenerateColumns = false;
+            dgvCart.DefaultCellStyle.SelectionBackColor = dgvCart.DefaultCellStyle.BackColor;
+            dgvCart.DefaultCellStyle.SelectionForeColor = dgvCart.DefaultCellStyle.ForeColor;
 
-            //dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "500",1000.ToString("N0"));
-            //dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250","250");
-            //tboxTotalPrice.Text = "1250";
 
             RefreshCart();
         }
@@ -61,7 +58,7 @@ namespace FlexOrder
                 {
                     using (var tempImage = Image.FromFile(imagePath))
                     {
-                        image = new Bitmap(tempImage);
+                        image = ImagePro.ResizeImageToCell(tempImage, 300, 240);
                     }
                 }
                 else
@@ -72,7 +69,10 @@ namespace FlexOrder
                     image,
                     item.goods_name,
                     item.price,
+                    "🗑️",//❌
+                    "➖",
                     item.quantity,
+                    "➕",
                     subtotal.ToString("N0")
                 );
             }
@@ -93,7 +93,6 @@ namespace FlexOrder
 
         private void Frm_C_Cart_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //currentOrder = new Order();
             this.DialogResult = DialogResult.Cancel;
         }
     }

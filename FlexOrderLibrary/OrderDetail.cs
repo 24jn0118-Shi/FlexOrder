@@ -11,12 +11,13 @@ namespace FlexOrderLibrary
         public int goods_id { get; set; }
         public string goods_name { get; set; }
         public int price { get; set; }
-        public int quantity { get; set; }
+        public int quantity { get ; set; }
         public bool is_provided { get; set; }
 
         public int Subtotal
         {
             get { return price * quantity; }
         }
+
     }
 }

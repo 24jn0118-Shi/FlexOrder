@@ -65,8 +65,8 @@ namespace FlexOrder
 
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
-            dgvOrderList.MultiSelect = false;
-            dgvOrderList.AutoGenerateColumns = false;
+            dgvOrderList.DefaultCellStyle.SelectionBackColor = dgvOrderList.DefaultCellStyle.BackColor;
+            dgvOrderList.DefaultCellStyle.SelectionForeColor = dgvOrderList.DefaultCellStyle.ForeColor;
             string currentLang = Thread.CurrentThread.CurrentUICulture.Name;
             if (langMap.TryGetValue(currentLang, out int result))
                 currentLangNo = result;
@@ -329,7 +329,7 @@ namespace FlexOrder
             {
                 initialQuantity = existingItem.quantity;
             }
-            using (Frm_C_GoodsDetail detailForm = new Frm_C_GoodsDetail(productItem.Id, initialQuantity))
+            using (Frm_C_GoodsDetail detailForm = new Frm_C_GoodsDetail(productItem.Id))
             {
                 DialogResult result = detailForm.ShowDialog();
 
@@ -339,7 +339,7 @@ namespace FlexOrder
 
                     if (newDetail != null && newDetail.quantity >= 0)
                     {
-                        currentOrder.EditItem(
+                        currentOrder.AddItem(
                             newDetail.goods_id,
                             newDetail.goods_name,
                             newDetail.price,
@@ -364,6 +364,7 @@ namespace FlexOrder
 
                 dgvOrderList.Rows.Add(
                     item.goods_name,
+                    "➖",
                     item.quantity,
                     subtotal.ToString("N0")
                 );
