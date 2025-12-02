@@ -33,26 +33,51 @@ namespace FlexOrder
         {
             this.Close();
         }
-
         private void FrmCCart_Load(object sender, EventArgs e)
         {
+            dgvCart.MultiSelect = false;
+            dgvCart.AutoGenerateColumns = false;
+
+            //dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "500",1000.ToString("N0"));
+            //dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250","250");
+            //tboxTotalPrice.Text = "1250";
+
+            RefreshCart();
+        }
+        private void RefreshCart()
+        {
             dgvCart.Rows.Clear();
-
-            //dgvCart.Rows.Add(Properties.Resources.pizza, "Pizza", 2, "1000");
-            //dgvCart.Rows.Add(Properties.Resources.ice_cream, "Ice-Cream", 1, "250");
-
-            /*ImagePro imagePro = new ImagePro();
-            String image = imagePro.GetImagePath(good.goods_image);
-            using (FileStream fs = new FileStream(image, FileMode.Open, FileAccess.Read))
+            if (currentOrder.orderdetaillist == null || currentOrder.orderdetaillist.Count == 0)
             {
-                Image img = Image.FromStream(fs);
-                product.ProductImage = img;
-            }*/
-
-            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("pizza"), "Pizza", 2, "500",1000.ToString("N0"));
-            dgvCart.Rows.Add(Properties.Resources.ResourceManager.GetObject("ice_cream"), "Ice-Cream", 1, "250","250");
-
-            tboxTotalPrice.Text = "1250";
+                tboxTotalPrice.Text = "0";
+                return;
+            }
+            foreach (var item in currentOrder.orderdetaillist)
+            {
+                int subtotal = item.Subtotal;
+                Image image;
+                string imagePath = ImagePro.GetImagePath((item.goods_id.ToString())+".jpg");
+                if (File.Exists(imagePath))
+                {
+                    using (var tempImage = Image.FromFile(imagePath))
+                    {
+                        image = new Bitmap(tempImage);
+                    }
+                }
+                else
+                {
+                    image = Properties.Resources.noimage;
+                }
+                dgvCart.Rows.Add(
+                    image,
+                    item.goods_name,
+                    item.price,
+                    item.quantity,
+                    subtotal.ToString("N0")
+                );
+            }
+            dgvCart.ClearSelection();
+            tboxTotalPrice.Text = "¥ " + currentOrder.TotalPrice.ToString("N0");
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
@@ -68,7 +93,7 @@ namespace FlexOrder
 
         private void Frm_C_Cart_FormClosing(object sender, FormClosingEventArgs e)
         {
-            currentOrder = new Order();
+            //currentOrder = new Order();
             this.DialogResult = DialogResult.Cancel;
         }
     }

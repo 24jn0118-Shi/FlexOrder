@@ -147,6 +147,8 @@
             // 
             this.dgvOrderList.AllowUserToAddRows = false;
             this.dgvOrderList.AllowUserToDeleteRows = false;
+            this.dgvOrderList.AllowUserToResizeColumns = false;
+            this.dgvOrderList.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -20,10 +20,9 @@ namespace FlexOrderLibrary
                 return orderdetaillist.Sum(item => item.Subtotal);
             }
         }
-        public void AddOrUpdateItem(int newgoods_id, string newgoods_name, int newprice, int newquantity) // 修正 price 为 int
+        public void EditItem(int newgoods_id, string newgoods_name, int newprice, int newquantity)
         {
             var existingItem = orderdetaillist.FirstOrDefault(i => i.goods_id == newgoods_id);
-
             if (existingItem != null)
             {
                 existingItem.quantity = newquantity;
@@ -37,6 +36,24 @@ namespace FlexOrderLibrary
                     price = newprice,
                     quantity = newquantity
                 });
+            }
+        }
+        public void PlusMinus(int editgoods_id, int order) 
+        {
+            var existingItem = orderdetaillist.FirstOrDefault(i => i.goods_id == editgoods_id);
+            if (existingItem != null)
+            {
+                switch (order){ 
+                    case -1:
+                        break;
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        Console.WriteLine("無効な操作です");
+                        break;
+                }
             }
         }
 

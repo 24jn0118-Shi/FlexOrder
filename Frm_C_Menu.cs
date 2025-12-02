@@ -139,7 +139,6 @@ namespace FlexOrder
             FlowLayoutPanel panel;
             string groupCode;
 
-            // 1. 确定 Panel 和 GroupCode
             if (tab == tbcntMenu.TabPages[0])
             {
                 panel = flowLayoutPanelMenuRecommend;
@@ -338,16 +337,16 @@ namespace FlexOrder
                 {
                     OrderDetail newDetail = detailForm.AddedItem;
 
-                    if (newDetail != null && newDetail.quantity > 0)
+                    if (newDetail != null && newDetail.quantity >= 0)
                     {
-                        currentOrder.AddOrUpdateItem(
+                        currentOrder.EditItem(
                             newDetail.goods_id,
                             newDetail.goods_name,
                             newDetail.price,
                             newDetail.quantity
                         );
-                        RefreshCart();
                     }
+                    RefreshCart();
                 }
             } 
         }
@@ -377,10 +376,8 @@ namespace FlexOrder
             using (Frm_C_Cart form = new Frm_C_Cart(ordertype, currentOrder))
             {
                 DialogResult result = form.ShowDialog();
-                Console.WriteLine(result.ToString());
                 if (result == DialogResult.Cancel || result == DialogResult.None)
                 {
-
                     this.currentOrder = form.currentOrder;
                     RefreshCart();
                 }

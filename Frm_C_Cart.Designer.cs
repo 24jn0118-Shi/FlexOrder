@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Cart));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCart = new System.Windows.Forms.DataGridView();
             this.btnGoPay = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -45,8 +45,8 @@
             this.lblConfirm1 = new System.Windows.Forms.Label();
             this.img_goods_image = new System.Windows.Forms.DataGridViewImageColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
@@ -55,25 +55,27 @@
             // 
             this.dgvCart.AllowUserToAddRows = false;
             this.dgvCart.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.dgvCart.AllowUserToResizeColumns = false;
+            this.dgvCart.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCart.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCart.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.img_goods_image,
             this.goods_name,
-            this.order_num,
             this.goods_price,
+            this.order_num,
             this.subtotal});
             resources.ApplyResources(this.dgvCart, "dgvCart");
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
-            this.dgvCart.RowTemplate.Height = 50;
+            this.dgvCart.RowTemplate.Height = 80;
             // 
             // btnGoPay
             // 
@@ -98,6 +100,7 @@
             // 
             resources.ApplyResources(this.tboxTotalPrice, "tboxTotalPrice");
             this.tboxTotalPrice.Name = "tboxTotalPrice";
+            this.tboxTotalPrice.ReadOnly = true;
             // 
             // lblYen
             // 
@@ -132,35 +135,35 @@
             // goods_name
             // 
             this.goods_name.DataPropertyName = "goods_name";
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.goods_name.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.goods_name.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.goods_name, "goods_name");
             this.goods_name.Name = "goods_name";
             this.goods_name.ReadOnly = true;
             // 
-            // order_num
-            // 
-            this.order_num.DataPropertyName = "order_num";
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.order_num.DefaultCellStyle = dataGridViewCellStyle28;
-            resources.ApplyResources(this.order_num, "order_num");
-            this.order_num.Name = "order_num";
-            this.order_num.ReadOnly = true;
-            // 
             // goods_price
             // 
             this.goods_price.DataPropertyName = "goods_price";
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.goods_price.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.goods_price.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.goods_price, "goods_price");
             this.goods_price.Name = "goods_price";
             this.goods_price.ReadOnly = true;
             // 
+            // order_num
+            // 
+            this.order_num.DataPropertyName = "order_num";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.order_num.DefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(this.order_num, "order_num");
+            this.order_num.Name = "order_num";
+            this.order_num.ReadOnly = true;
+            // 
             // subtotal
             // 
             this.subtotal.DataPropertyName = "subtotal";
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.subtotal, "subtotal");
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
@@ -200,8 +203,8 @@
         private System.Windows.Forms.Label lblConfirm1;
         private System.Windows.Forms.DataGridViewImageColumn img_goods_image;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn order_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
     }
 }

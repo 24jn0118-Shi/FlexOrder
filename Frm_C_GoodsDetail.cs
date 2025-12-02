@@ -62,13 +62,11 @@ namespace FlexOrder
                 picGoods.Image = Properties.Resources.noimage;
             }
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
         private void btnMinus_Click(object sender, EventArgs e)
         {
             if(num > 1) 
@@ -77,7 +75,6 @@ namespace FlexOrder
             }
             num = int.Parse(lblNum.Text);
         }
-
         private void btnPlus_Click(object sender, EventArgs e)
         {
             if(num < 10) 
@@ -86,7 +83,6 @@ namespace FlexOrder
             }
             num = int.Parse(lblNum.Text);
         }
-
         private void btnAddtoCart_Click(object sender, EventArgs e)
         {
             this.AddedItem = new OrderDetail

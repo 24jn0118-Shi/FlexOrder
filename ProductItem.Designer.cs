@@ -49,7 +49,7 @@
             this.lblPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.Location = new System.Drawing.Point(3, 128);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(136, 22);
+            this.lblPrice.Size = new System.Drawing.Size(130, 22);
             this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "￥99999";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

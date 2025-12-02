@@ -142,15 +142,6 @@
   <data name="goods_name.Width" type="System.Int32, mscorlib">
     <value>140</value>
   </data>
-  <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="order_num.HeaderText" xml:space="preserve">
-    <value>order_num</value>
-  </data>
-  <data name="order_num.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <metadata name="goods_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -162,6 +153,15 @@
   </data>
   <data name="goods_price.Width" type="System.Int32, mscorlib">
     <value>140</value>
+  </data>
+  <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>order_num</value>
+  </data>
+  <data name="order_num.MinimumWidth" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <metadata name="subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -177,7 +177,7 @@
     <value>51</value>
   </data>
   <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>688, 297</value>
+    <value>688, 460</value>
   </data>
   <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -198,7 +198,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 362</value>
+    <value>646, 517</value>
   </data>
   <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 60</value>
@@ -225,7 +225,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 362</value>
+    <value>32, 517</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 60</value>
@@ -255,7 +255,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>490, 326</value>
+    <value>490, 481</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>82, 21</value>
@@ -285,10 +285,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="tboxTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>627, 323</value>
+    <value>627, 478</value>
   </data>
   <data name="tboxTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>174, 28</value>
   </data>
   <data name="tboxTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -312,7 +312,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblYen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>602, 326</value>
+    <value>602, 481</value>
   </data>
   <data name="lblYen.Size" type="System.Drawing.Size, System.Drawing">
     <value>19, 21</value>
@@ -373,7 +373,7 @@
     <value>21, 197</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -406,7 +406,7 @@
     <value>21, 172</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -436,7 +436,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>863, 450</value>
+    <value>863, 589</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_C_Cart</value>
@@ -453,16 +453,16 @@
   <data name="&gt;&gt;goods_name.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;order_num.Name" xml:space="preserve">
-    <value>order_num</value>
-  </data>
-  <data name="&gt;&gt;order_num.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;goods_price.Name" xml:space="preserve">
     <value>goods_price</value>
   </data>
   <data name="&gt;&gt;goods_price.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;order_num.Name" xml:space="preserve">
+    <value>order_num</value>
+  </data>
+  <data name="&gt;&gt;order_num.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;subtotal.Name" xml:space="preserve">
