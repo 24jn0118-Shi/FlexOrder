@@ -127,9 +127,6 @@
   <data name="img_goods_image.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="img_goods_image.Width" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
   <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -160,11 +157,17 @@
   <data name="btnDelete.HeaderText" xml:space="preserve">
     <value />
   </data>
+  <data name="btnDelete.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
   <metadata name="btnMinus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="btnMinus.HeaderText" xml:space="preserve">
     <value />
+  </data>
+  <data name="btnMinus.Width" type="System.Int32, mscorlib">
+    <value>80</value>
   </data>
   <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -184,11 +187,23 @@
   <data name="btnPlus.HeaderText" xml:space="preserve">
     <value />
   </data>
+  <data name="btnPlus.Width" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
   <metadata name="subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="subtotal.HeaderText" xml:space="preserve">
     <value>subtotal</value>
+  </data>
+  <metadata name="goods_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="goods_id.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="goods_id.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
@@ -198,7 +213,7 @@
     <value>51</value>
   </data>
   <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>996, 460</value>
+    <value>793, 524</value>
   </data>
   <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -213,13 +228,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="btnGoPay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>834, 567</value>
+    <value>751, 648</value>
   </data>
   <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 87</value>
@@ -240,13 +255,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnGoPay.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 567</value>
+    <value>113, 648</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 87</value>
@@ -267,19 +282,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="lblTotalPrice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>774, 493</value>
+    <value>588, 561</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 21</value>
+    <value>122, 31</value>
   </data>
   <data name="lblTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -297,22 +312,23 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotalPrice.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="tboxTotalPrice.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>4</value>
   </data>
   <data name="tboxTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="tboxTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>911, 490</value>
+    <value>716, 603</value>
   </data>
   <data name="tboxTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 28</value>
+    <value>174, 38</value>
   </data>
   <data name="tboxTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tboxTotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;tboxTotalPrice.Name" xml:space="preserve">
     <value>tboxTotalPrice</value>
@@ -324,36 +340,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tboxTotalPrice.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="lblYen.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblYen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="lblYen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>886, 493</value>
-  </data>
-  <data name="lblYen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>19, 21</value>
-  </data>
-  <data name="lblYen.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lblYen.Text" xml:space="preserve">
-    <value>¥</value>
-  </data>
-  <data name="&gt;&gt;lblYen.Name" xml:space="preserve">
-    <value>lblYen</value>
-  </data>
-  <data name="&gt;&gt;lblYen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblYen.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblYen.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
@@ -386,7 +372,6 @@
   <data name="lblConfirm2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblConfirm2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -457,7 +442,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 747</value>
+    <value>984, 747</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_C_Cart</value>
@@ -508,6 +493,12 @@
     <value>subtotal</value>
   </data>
   <data name="&gt;&gt;subtotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;goods_id.Name" xml:space="preserve">
+    <value>goods_id</value>
+  </data>
+  <data name="&gt;&gt;goods_id.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

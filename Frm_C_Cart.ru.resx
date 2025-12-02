@@ -133,7 +133,7 @@
     <value>Перейти к оплате</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
-    <value>Общая сумма</value>
+    <value>Общая сумма:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Корзина</value>

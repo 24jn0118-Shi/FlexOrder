@@ -133,7 +133,7 @@
     <value>価格</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
-    <value>合計金額</value>
+    <value>合計金額：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>カート</value>

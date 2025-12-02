@@ -121,26 +121,6 @@
   <data name="tbcntMenu.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>593, 792</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
     <value>flowLayoutPanelMenuRecommend</value>
   </data>
@@ -153,6 +133,7 @@
   <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tbpagePop.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 4</value>
   </data>
@@ -162,6 +143,7 @@
   <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
     <value>599, 798</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -204,11 +186,44 @@
   <data name="&gt;&gt;tbcntMenu.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>593, 792</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
+    <value>flowLayoutPanelMenuRecommend</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Parent" xml:space="preserve">
+    <value>tbpagePop</value>
+  </data>
+  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnConfirm.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>738, 861</value>
+    <value>928, 861</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 50</value>
@@ -289,13 +304,13 @@
     <value>True</value>
   </data>
   <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>732, 717</value>
+    <value>804, 717</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 21</value>
+    <value>134, 31</value>
   </data>
   <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -316,16 +331,19 @@
     <value>8</value>
   </data>
   <data name="txtKaikei.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>738, 754</value>
+    <value>936, 751</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 28</value>
+    <value>163, 38</value>
   </data>
   <data name="txtKaikei.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="txtKaikei.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtKaikei.Name" xml:space="preserve">
     <value>txtKaikei</value>
@@ -534,6 +552,9 @@
   <data name="btnMinus.HeaderText" xml:space="preserve">
     <value />
   </data>
+  <data name="btnMinus.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -543,17 +564,35 @@
   <data name="order_num.Width" type="System.Int32, mscorlib">
     <value>60</value>
   </data>
+  <metadata name="btnPlus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnPlus.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPlus.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
   <metadata name="subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="subtotal.HeaderText" xml:space="preserve">
     <value>subtotal</value>
   </data>
+  <metadata name="goods_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="goods_id.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="goods_id.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="dgvOrderList.Location" type="System.Drawing.Point, System.Drawing">
     <value>720, 83</value>
   </data>
   <data name="dgvOrderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 585</value>
+    <value>400, 585</value>
   </data>
   <data name="dgvOrderList.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -577,7 +616,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 1047</value>
+    <value>1134, 1047</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>メニュー一覧</value>
@@ -600,10 +639,22 @@
   <data name="&gt;&gt;order_num.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btnPlus.Name" xml:space="preserve">
+    <value>btnPlus</value>
+  </data>
+  <data name="&gt;&gt;btnPlus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;subtotal.Name" xml:space="preserve">
     <value>subtotal</value>
   </data>
   <data name="&gt;&gt;subtotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;goods_id.Name" xml:space="preserve">
+    <value>goods_id</value>
+  </data>
+  <data name="&gt;&gt;goods_id.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

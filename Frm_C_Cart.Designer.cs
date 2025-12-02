@@ -42,7 +42,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.tboxTotalPrice = new System.Windows.Forms.TextBox();
-            this.lblYen = new System.Windows.Forms.Label();
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblConfirm2 = new System.Windows.Forms.Label();
             this.lblConfirm1 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.order_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,13 +80,15 @@
             this.btnMinus,
             this.order_num,
             this.btnPlus,
-            this.subtotal});
+            this.subtotal,
+            this.goods_id});
             resources.ApplyResources(this.dgvCart, "dgvCart");
             this.dgvCart.MultiSelect = false;
             this.dgvCart.Name = "dgvCart";
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowHeadersVisible = false;
-            this.dgvCart.RowTemplate.Height = 120;
+            this.dgvCart.RowTemplate.Height = 80;
+            this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
             // 
             // btnGoPay
             // 
@@ -112,11 +114,6 @@
             resources.ApplyResources(this.tboxTotalPrice, "tboxTotalPrice");
             this.tboxTotalPrice.Name = "tboxTotalPrice";
             this.tboxTotalPrice.ReadOnly = true;
-            // 
-            // lblYen
-            // 
-            resources.ApplyResources(this.lblYen, "lblYen");
-            this.lblYen.Name = "lblYen";
             // 
             // btnRestart
             // 
@@ -159,7 +156,7 @@
             // 
             this.goods_price.DataPropertyName = "goods_price";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
             this.goods_price.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.goods_price, "goods_price");
             this.goods_price.Name = "goods_price";
@@ -188,7 +185,7 @@
             // 
             this.order_num.DataPropertyName = "order_num";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
             this.order_num.DefaultCellStyle = dataGridViewCellStyle6;
             resources.ApplyResources(this.order_num, "order_num");
             this.order_num.Name = "order_num";
@@ -208,12 +205,20 @@
             // 
             this.subtotal.DataPropertyName = "subtotal";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
             this.subtotal.DefaultCellStyle = dataGridViewCellStyle8;
             resources.ApplyResources(this.subtotal, "subtotal");
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
             this.subtotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // goods_id
+            // 
+            this.goods_id.DataPropertyName = "goods_id";
+            resources.ApplyResources(this.goods_id, "goods_id");
+            this.goods_id.Name = "goods_id";
+            this.goods_id.ReadOnly = true;
+            this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Frm_C_Cart
             // 
@@ -222,7 +227,6 @@
             this.Controls.Add(this.lblConfirm2);
             this.Controls.Add(this.lblConfirm1);
             this.Controls.Add(this.btnRestart);
-            this.Controls.Add(this.lblYen);
             this.Controls.Add(this.tboxTotalPrice);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.btnBack);
@@ -244,7 +248,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label lblTotalPrice;
         private System.Windows.Forms.TextBox tboxTotalPrice;
-        private System.Windows.Forms.Label lblYen;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblConfirm2;
         private System.Windows.Forms.Label lblConfirm1;
@@ -256,5 +259,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn order_num;
         private System.Windows.Forms.DataGridViewButtonColumn btnPlus;
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_id;
     }
 }

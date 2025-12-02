@@ -133,7 +133,7 @@
     <value>前往结算</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
-    <value>总计金额</value>
+    <value>总计金额：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>购物车</value>

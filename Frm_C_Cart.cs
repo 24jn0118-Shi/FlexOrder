@@ -43,10 +43,16 @@ namespace FlexOrder
         }
         private void RefreshCart()
         {
+            int firstVisibleRowIndex = -1;
+            if (dgvCart.Rows.Count > 0 && dgvCart.FirstDisplayedScrollingRowIndex >= 0)
+            {
+                firstVisibleRowIndex = dgvCart.FirstDisplayedScrollingRowIndex;
+            }
             dgvCart.Rows.Clear();
             if (currentOrder.orderdetaillist == null || currentOrder.orderdetaillist.Count == 0)
             {
-                tboxTotalPrice.Text = "0";
+                tboxTotalPrice.Text = "¥ 0";
+                btnGoPay.Enabled = false;
                 return;
             }
             foreach (var item in currentOrder.orderdetaillist)
@@ -58,7 +64,7 @@ namespace FlexOrder
                 {
                     using (var tempImage = Image.FromFile(imagePath))
                     {
-                        image = ImagePro.ResizeImageToCell(tempImage, 300, 240);
+                        image = ImagePro.ResizeImageToCell(tempImage, 180, 144);
                     }
                 }
                 else
@@ -68,16 +74,33 @@ namespace FlexOrder
                 dgvCart.Rows.Add(
                     image,
                     item.goods_name,
-                    item.price,
+                    item.price.ToString("N0"),
                     "🗑️",//❌
                     "➖",
                     item.quantity,
                     "➕",
-                    subtotal.ToString("N0")
+                    subtotal.ToString("N0"),
+                    item.goods_id
                 );
             }
             dgvCart.ClearSelection();
             tboxTotalPrice.Text = "¥ " + currentOrder.TotalPrice.ToString("N0");
+
+            if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvCart.Rows.Count)
+            {
+                try
+                {
+                    dgvCart.FirstDisplayedScrollingRowIndex = firstVisibleRowIndex;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                }
+            }
+            if (currentOrder.orderdetaillist.Count > 0 && currentOrder.TotalPrice > 0)
+            {
+                btnGoPay.Enabled = true;
+            }
         }
 
         private void btnRestart_Click(object sender, EventArgs e)
@@ -94,6 +117,36 @@ namespace FlexOrder
         private void Frm_C_Cart_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvCart.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            {
+                return;
+            }
+
+            int deleteColumnIndex = 3;
+            int minusColumnIndex = 4;
+            int plusColumnIndex = 6;
+            var itemToModify = currentOrder.orderdetaillist[e.RowIndex];
+
+            int currentQuantity = itemToModify.quantity;
+
+            if (e.ColumnIndex == plusColumnIndex)
+            {
+                
+                currentOrder.PlusMinus(itemToModify.goods_id, 1);
+            }
+            else if (e.ColumnIndex == minusColumnIndex)
+            {
+                currentOrder.PlusMinus(itemToModify.goods_id, -1);
+            }
+            else if (e.ColumnIndex == deleteColumnIndex)
+            {
+                currentOrder.PlusMinus(itemToModify.goods_id, 0);
+            }
+            RefreshCart();
         }
     }
 }

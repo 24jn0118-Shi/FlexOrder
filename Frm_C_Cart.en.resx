@@ -133,7 +133,7 @@
     <value>Proceed to Checkout</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
-    <value>Total</value>
+    <value>Total:</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Cart</value>
