@@ -213,7 +213,7 @@
     <value>51</value>
   </data>
   <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>793, 524</value>
+    <value>793, 530</value>
   </data>
   <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -291,7 +291,7 @@
     <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 561</value>
+    <value>588, 571</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 31</value>

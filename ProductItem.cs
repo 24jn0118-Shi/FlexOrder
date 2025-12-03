@@ -84,6 +84,5 @@ namespace FlexOrder
                 this.BackColor = PressedColor;
             }
         }
-
     }
 }

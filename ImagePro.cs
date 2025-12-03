@@ -127,26 +127,22 @@ namespace FlexOrder
 
         public static Image ResizeImageToCell(Image originalImage, int targetWidth, int targetHeight) 
         {
-            // 假设目标是 150x80，但我们希望图片最大边不超过 80，以适应行高
-            int maxDimension = targetHeight; // 限制图片最大边为 80 像素
+            int maxDimension = targetHeight;
 
-            // 计算缩放比例
             float ratioX = (float)maxDimension / originalImage.Width;
             float ratioY = (float)maxDimension / originalImage.Height;
-            float ratio = Math.Min(ratioX, ratioY); // 采用较小的比例以保证图片完整显示
+            float ratio = Math.Min(ratioX, ratioY);
 
             int newWidth = (int)(originalImage.Width * ratio);
             int newHeight = (int)(originalImage.Height * ratio);
 
-            // 创建新的 Bitmap 并绘制居中的图片
             Bitmap newImage = new Bitmap(targetWidth, targetHeight);
             using (Graphics g = Graphics.FromImage(newImage))
             {
-                g.Clear(Color.White); // 或者使用您希望的背景色填充空白区域
+                g.Clear(Color.White);
                 int x = (targetWidth - newWidth) / 2;
                 int y = (targetHeight - newHeight) / 2;
 
-                // 绘制缩放后的图片
                 g.DrawImage(originalImage, x, y, newWidth, newHeight);
             }
             return newImage;

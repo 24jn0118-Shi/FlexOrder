@@ -121,6 +121,26 @@
   <data name="tbcntMenu.Alignment" type="System.Windows.Forms.TabAlignment, System.Windows.Forms">
     <value>Left</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
+    <value>593, 792</value>
+  </data>
+  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
     <value>flowLayoutPanelMenuRecommend</value>
   </data>
@@ -133,7 +153,6 @@
   <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tbpagePop.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 4</value>
   </data>
@@ -143,7 +162,6 @@
   <data name="tbpagePop.Size" type="System.Drawing.Size, System.Drawing">
     <value>599, 798</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tbpagePop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -185,36 +203,6 @@
   </data>
   <data name="&gt;&gt;tbcntMenu.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.Size" type="System.Drawing.Size, System.Drawing">
-    <value>593, 792</value>
-  </data>
-  <data name="flowLayoutPanelMenuRecommend.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Name" xml:space="preserve">
-    <value>flowLayoutPanelMenuRecommend</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.Parent" xml:space="preserve">
-    <value>tbpagePop</value>
-  </data>
-  <data name="&gt;&gt;flowLayoutPanelMenuRecommend.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="btnConfirm.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -592,7 +580,7 @@
     <value>720, 83</value>
   </data>
   <data name="dgvOrderList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>400, 585</value>
+    <value>400, 580</value>
   </data>
   <data name="dgvOrderList.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>

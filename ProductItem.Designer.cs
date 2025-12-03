@@ -77,9 +77,6 @@
             this.Name = "ProductItem";
             this.Size = new System.Drawing.Size(142, 151);
             this.Click += new System.EventHandler(this.ProductItem_Click);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProductItem_MouseDown);
-            this.MouseEnter += new System.EventHandler(this.ProductItem_MouseEnter);
-            this.MouseLeave += new System.EventHandler(this.ProductItem_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
 
