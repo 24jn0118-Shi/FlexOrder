@@ -64,7 +64,10 @@ namespace FlexOrder
 
         private void ProductItem_Click(object sender, EventArgs e)
         {
+            this.BackColor = DefaultColor;
+            this.Parent.Focus();
             ProductClicked?.Invoke(this);
+            this.BackColor = DefaultColor;
         }
 
         private void ProductItem_MouseEnter(object sender, EventArgs e)

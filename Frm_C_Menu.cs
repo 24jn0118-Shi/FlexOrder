@@ -349,7 +349,7 @@ namespace FlexOrder
                     }
                     RefreshCart();
                 }
-            } 
+            }
         }
         private void RefreshCart()
         {
