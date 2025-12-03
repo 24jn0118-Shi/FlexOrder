@@ -80,7 +80,6 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ProductItem_MouseDown);
             this.MouseEnter += new System.EventHandler(this.ProductItem_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.ProductItem_MouseLeave);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ProductItem_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
 

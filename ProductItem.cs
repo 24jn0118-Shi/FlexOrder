@@ -15,10 +15,10 @@ namespace FlexOrder
         public event Action<ProductItem> ProductClicked;
 
         int id;
-        private Color DefaultColor;
+        public Color DefaultColor;
         private Color HoverColor = Color.LightGray;
-        //private Color PressedColor = Color.Silver;
-        private Color PressedColor = Color.LightSlateGray;
+        //Color.LightGray
+        private Color PressedColor = Color.LightSkyBlue;
         public ProductItem()
         {
             InitializeComponent();
@@ -35,9 +35,9 @@ namespace FlexOrder
             this.ptbImage.MouseDown += ProductItem_MouseDown;
             this.lblTitle.MouseDown += ProductItem_MouseDown;
             this.lblPrice.MouseDown += ProductItem_MouseDown;
-            this.ptbImage.MouseUp += ProductItem_MouseUp;
-            this.lblTitle.MouseUp += ProductItem_MouseUp;
-            this.lblPrice.MouseUp += ProductItem_MouseUp;
+            this.MouseEnter += ProductItem_MouseEnter;
+            this.MouseLeave += ProductItem_MouseLeave;
+            this.MouseDown += ProductItem_MouseDown;
         }
         public int Id
         {
@@ -64,10 +64,7 @@ namespace FlexOrder
 
         private void ProductItem_Click(object sender, EventArgs e)
         {
-            this.BackColor = DefaultColor;
-            this.Parent.Focus();
             ProductClicked?.Invoke(this);
-            this.BackColor = DefaultColor;
         }
 
         private void ProductItem_MouseEnter(object sender, EventArgs e)
@@ -88,12 +85,5 @@ namespace FlexOrder
             }
         }
 
-        private void ProductItem_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                this.BackColor = HoverColor;
-            }
-        }
     }
 }

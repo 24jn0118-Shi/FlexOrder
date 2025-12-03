@@ -417,7 +417,7 @@ namespace FlexOrder
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-            //ApplyVegetarianFilter();
+            //ApplyVegetarianFilter();  
             tbcntMenu.SelectedIndex = 0;
             ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
         }
