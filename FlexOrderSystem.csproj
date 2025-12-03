@@ -86,6 +86,12 @@
     <Compile Include="Frm_C_Payment.Designer.cs">
       <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_C_Payment2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_C_Payment2.Designer.cs">
+      <DependentUpon>Frm_C_Payment2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_S_GoodsGroupManagement.cs">
       <SubType>Form</SubType>
     </Compile>

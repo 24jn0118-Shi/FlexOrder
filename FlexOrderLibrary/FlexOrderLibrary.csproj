@@ -49,15 +49,12 @@
     <Compile Include="LanguageTable.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
-    <Compile Include="OrderDetailTable.cs" />
-    <Compile Include="OrderTable.cs" />
+    <Compile Include="Order_DetailTable.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Sale.cs" />
-    <Compile Include="SaleTable.cs" />
     <Compile Include="StaffTable.cs" />
     <Compile Include="Staff.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
