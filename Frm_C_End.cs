@@ -21,8 +21,7 @@ namespace FlexOrder
 
         private void btnRestart_Click(object sender, EventArgs e)
         {
-            Application.Restart();
-            Environment.Exit(0);
+            this.Close();
         }
 
         private void Frm_C_End_Load(object sender, EventArgs e)
@@ -39,6 +38,12 @@ namespace FlexOrder
                     break;
 
             }
+        }
+
+        private void Frm_C_End_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
         }
     }
 }

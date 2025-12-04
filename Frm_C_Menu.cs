@@ -26,7 +26,6 @@ namespace FlexOrder
         string ordertype;
 
         private Dictionary<string, List<Goods>> _allGoodsCache = new Dictionary<string, List<Goods>>();
-        private bool _controlsCreated = false;
 
         private Order currentOrder = new Order();
 
@@ -40,6 +39,14 @@ namespace FlexOrder
             InitializeComponent();
             this.ordertype = ordertype;
             SetupCustomTabs();
+            if(ordertype == "in") 
+            {
+                currentOrder.is_takeout = false;
+            } 
+            else if(ordertype == "out")
+            {
+                currentOrder.is_takeout = true;
+            }
         }
 
         private void SetupCustomTabs()

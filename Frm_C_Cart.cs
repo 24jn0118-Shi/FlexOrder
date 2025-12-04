@@ -29,7 +29,7 @@ namespace FlexOrder
 
         private void btnPay_Click(object sender, EventArgs e)
         {
-            Frm_C_Payment form = new Frm_C_Payment(ordertype);
+            Frm_C_Payment form = new Frm_C_Payment(ordertype, currentOrder);
             form.ShowDialog();
         }
 

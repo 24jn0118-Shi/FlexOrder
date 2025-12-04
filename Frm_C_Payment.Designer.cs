@@ -33,6 +33,7 @@
             this.btnCreditCard = new System.Windows.Forms.Button();
             this.btnCash = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnEMoney
@@ -61,15 +62,21 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // FrmCPayment
+            // lblTotal
+            // 
+            resources.ApplyResources(this.lblTotal, "lblTotal");
+            this.lblTotal.Name = "lblTotal";
+            // 
+            // Frm_C_Payment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnCash);
             this.Controls.Add(this.btnCreditCard);
             this.Controls.Add(this.btnEMoney);
-            this.Name = "FrmCPayment";
+            this.Name = "Frm_C_Payment";
             this.ResumeLayout(false);
 
         }
@@ -80,5 +87,6 @@
         private System.Windows.Forms.Button btnCreditCard;
         private System.Windows.Forms.Button btnCash;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Label lblTotal;
     }
 }

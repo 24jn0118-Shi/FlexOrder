@@ -8,27 +8,25 @@ using System.Threading.Tasks;
 
 namespace FlexOrderLibrary
 {
-    public class OrderDetailTable
+    public class OrderTable
     {
         public int InsertNewOrder(Order neworder) 
         {
-            //order_seat 座席番号をInsertしない
-            //いったん 
             int ret = 0;
             int newOrderId = 0;
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"
-                                INSERT INTO Order
+                                INSERT INTO [Order]
                                     (order_date, is_takeout)
                                 VALUES
-                                    (@order_date, is_takeout);
+                                    (@order_date, @is_takeout);
                                 SELECT CAST(SCOPE_IDENTITY() AS int);";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@order_date", neworder.order_date);
+                DateTime dateTimenow = DateTime.Now;
+                command.Parameters.AddWithValue("@order_date", dateTimenow);
                 command.Parameters.AddWithValue("@is_takeout", neworder.is_takeout);
                 connection.Open();
                 newOrderId = (int)command.ExecuteScalar();
@@ -51,7 +49,6 @@ namespace FlexOrderLibrary
                 }
             }
             Console.WriteLine("OrderDetailに" + ret + "件追加しました");
-
             return newOrderId;
         }
     }
