@@ -94,6 +94,7 @@
             // 
             // cmbGroup
             // 
+            this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.cmbGroup.FormattingEnabled = true;
             this.cmbGroup.Location = new System.Drawing.Point(143, 167);

@@ -56,7 +56,6 @@ namespace FlexOrder
             }
             else
             {
-                //！！！未完成
                 DialogResult dret = MessageBox.Show("商品を削除しますか", "確認",
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes)

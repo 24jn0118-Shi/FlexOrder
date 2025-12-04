@@ -204,14 +204,17 @@
   <data name="&gt;&gt;tbcntMenu.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="btnConfirm.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>690, 861</value>
+    <value>928, 861</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 50</value>
+    <value>171, 50</value>
   </data>
   <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -258,30 +261,6 @@
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="orderlist.ItemHeight" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="orderlist.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 76</value>
-  </data>
-  <data name="orderlist.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 256</value>
-  </data>
-  <data name="orderlist.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;orderlist.Name" xml:space="preserve">
-    <value>orderlist</value>
-  </data>
-  <data name="&gt;&gt;orderlist.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;orderlist.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;orderlist.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 16pt</value>
   </data>
@@ -307,19 +286,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>706, 346</value>
+    <value>804, 717</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 21</value>
+    <value>134, 31</value>
   </data>
   <data name="lblTotal.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -337,19 +316,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtKaikei.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 383</value>
+    <value>936, 751</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 28</value>
+    <value>163, 38</value>
   </data>
   <data name="txtKaikei.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
+  </data>
+  <data name="txtKaikei.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="&gt;&gt;txtKaikei.Name" xml:space="preserve">
     <value>txtKaikei</value>
@@ -361,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtKaikei.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="lblCart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -391,7 +373,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCart.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -418,7 +400,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblen.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="ckbVeget.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -448,7 +430,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ckbVeget.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblVeget.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -478,7 +460,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblVeget.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lblConfirm1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -508,7 +490,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblConfirm2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -541,6 +523,78 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="goods_name.HeaderText" xml:space="preserve">
+    <value>goods_name</value>
+  </data>
+  <data name="goods_name.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
+  <metadata name="btnMinus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnMinus.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnMinus.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="order_num.HeaderText" xml:space="preserve">
+    <value>order_num</value>
+  </data>
+  <data name="order_num.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <metadata name="btnPlus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnPlus.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="btnPlus.Width" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <metadata name="subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="subtotal.HeaderText" xml:space="preserve">
+    <value>subtotal</value>
+  </data>
+  <metadata name="goods_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="goods_id.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="goods_id.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="dgvOrderList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>720, 83</value>
+  </data>
+  <data name="dgvOrderList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 580</value>
+  </data>
+  <data name="dgvOrderList.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.Name" xml:space="preserve">
+    <value>dgvOrderList</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvOrderList.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -550,10 +604,46 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>884, 1060</value>
+    <value>1134, 1047</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>メニュー一覧</value>
+  </data>
+  <data name="&gt;&gt;goods_name.Name" xml:space="preserve">
+    <value>goods_name</value>
+  </data>
+  <data name="&gt;&gt;goods_name.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnMinus.Name" xml:space="preserve">
+    <value>btnMinus</value>
+  </data>
+  <data name="&gt;&gt;btnMinus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;order_num.Name" xml:space="preserve">
+    <value>order_num</value>
+  </data>
+  <data name="&gt;&gt;order_num.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnPlus.Name" xml:space="preserve">
+    <value>btnPlus</value>
+  </data>
+  <data name="&gt;&gt;btnPlus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;subtotal.Name" xml:space="preserve">
+    <value>subtotal</value>
+  </data>
+  <data name="&gt;&gt;subtotal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;goods_id.Name" xml:space="preserve">
+    <value>goods_id</value>
+  </data>
+  <data name="&gt;&gt;goods_id.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_Menu</value>

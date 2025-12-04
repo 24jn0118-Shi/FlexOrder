@@ -16,7 +16,7 @@ namespace FlexOrder
     {
         public static string WRITEBINARYFILE = @"C:\Users\brown\Downloads\Binary.txt";
         string relativePath = Path.Combine(Application.StartupPath, "Images");
-        string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
+        //string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
         private const string CacheFolderName = "Images";
         private const string LastRunLogFile = "ImageCacheLog.txt";
@@ -124,7 +124,30 @@ namespace FlexOrder
             }
             return null;
         }
-    
+
+        public static Image ResizeImageToCell(Image originalImage, int targetWidth, int targetHeight) 
+        {
+            int maxDimension = targetHeight;
+
+            float ratioX = (float)maxDimension / originalImage.Width;
+            float ratioY = (float)maxDimension / originalImage.Height;
+            float ratio = Math.Min(ratioX, ratioY);
+
+            int newWidth = (int)(originalImage.Width * ratio);
+            int newHeight = (int)(originalImage.Height * ratio);
+
+            Bitmap newImage = new Bitmap(targetWidth, targetHeight);
+            using (Graphics g = Graphics.FromImage(newImage))
+            {
+                g.Clear(Color.White);
+                int x = (targetWidth - newWidth) / 2;
+                int y = (targetHeight - newHeight) / 2;
+
+                g.DrawImage(originalImage, x, y, newWidth, newHeight);
+            }
+            return newImage;
+        }
+
         /*public string CopyImageFile(string sourceFilePath) 
         {
 
