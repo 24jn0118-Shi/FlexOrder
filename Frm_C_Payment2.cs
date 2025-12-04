@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq; // 用于解析 JSON，你需要安装 Newtonsoft.Json NuGet 包
 using System;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,25 +10,50 @@ namespace FlexOrder
 {
     public partial class Frm_C_Payment2 : Form
     {
-        public Frm_C_Payment2(int total)
+        public StringBuilder result = new StringBuilder("");
+        string paytype;
+        int total;
+        public Frm_C_Payment2(string paytype, int total)
         {
             InitializeComponent();
+            this.paytype = paytype;
+            this.total = total;
+            if (paytype != "card")
+            {
+                lblCardNumber.Visible = false;
+                lblMY.Visible = false;
+                lblSlash.Visible = false;
+                lblCvc.Visible = false;
+                txtCardNumber.Visible = false;
+                txtExpMonth.Visible = false;
+                txtExpYear.Visible = false;
+                txtCvc.Visible = false;
+                btnPay.Visible = false;
+
+            }
+            else 
+            {
+                lblEnter.Visible = false;
+                txtCardNumber.Text = "4000000000000002";
+                txtExpMonth.Text = "11";
+                txtExpYear.Text = "2028";
+                txtCvc.Text = "123";
+            }
         }
 
-        private　async void Frm_C_Payment2_KeyPress(object sender, KeyPressEventArgs e)
+        private void Frm_C_Payment2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter) 
             {
-                bool success = await PaymentAsync();
-                if (success) 
+                if (paytype != "card")
                 {
                     this.DialogResult = DialogResult.OK;
+                    this.Close();
                 }
                 else 
                 {
-                    this.DialogResult = DialogResult.Cancel;
+                    btnPay.PerformClick();
                 }
-                this.Close();
             }
         }
 
@@ -35,65 +61,136 @@ namespace FlexOrder
         {
             try
             {
-                // 1️⃣ 创建 Customer
+                // 1️⃣ Customer
                 string custJson = await PayjpHelper.CreateCustomerAsync();
-                string customerId = JObject.Parse(custJson)["id"].ToString();
+                JObject cust = JObject.Parse(custJson);
+                if (cust["error"] != null || cust["error_occurred"] != null)
+                {
+                    MessageBox.Show("顧客作成エラー: " + cust.ToString());
+                    return false;
+                }
+                string customerId = cust["id"].ToString();
 
-                // 2️⃣ 创建 Token
-                //string tokenJson = await PayjpHelper.CreateTokenAsync("4242424242424242", "12", "2030", "123");
-                string tokenJson = await PayjpHelper.CreateTokenAsync("5555555555554444", "11", "2028", "123");
-                string tokenId = JObject.Parse(tokenJson)["id"].ToString();
+                // 2️⃣ Token
+                string tokenJson = await PayjpHelper.CreateTokenAsync(
+                    txtCardNumber.Text,
+                    txtExpMonth.Text,
+                    txtExpYear.Text,
+                    txtCvc.Text
+                );
 
-                // 3️⃣ 绑定 Card 到 Customer
+                JObject token = JObject.Parse(tokenJson);
+                if (token["error"] != null || token["error_occurred"] != null)
+                {
+                    MessageBox.Show("カードエラー: " + token.ToString());
+                    return false;
+                }
+                string tokenId = token["id"].ToString();
+
+                // 3️⃣ Add Card
                 string cardJson = await PayjpHelper.AddCardToCustomerAsync(customerId, tokenId);
-                string cardId = JObject.Parse(cardJson)["id"].ToString();
+                JObject card = JObject.Parse(cardJson);
+                if (card["error"] != null || card["error_occurred"] != null)
+                {
+                    MessageBox.Show("カード追加エラー: " + card.ToString());
+                    return false;
+                }
+                string cardId = card["id"].ToString();
 
-                // 4️⃣ 扣款
-                string chargeJson = await PayjpHelper.ChargeCustomerAsync(customerId, cardId, 1000);
-
-                Console.WriteLine("Customer: " + custJson);
-                Console.WriteLine("Token: " + tokenJson);
-                Console.WriteLine("Card: " + cardJson);
-                Console.WriteLine("Charge: " + chargeJson);
+                // 4️⃣ Charge
+                string chargeJson = await PayjpHelper.ChargeCustomerAsync(customerId, cardId, total);
 
                 return ShowChargeResult(chargeJson);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");
+                MessageBox.Show("予期せぬエラー: " + ex.Message);
                 return false;
             }
         }
 
+
         private bool ShowChargeResult(string chargeJson)
         {
-            dynamic charge = Newtonsoft.Json.JsonConvert.DeserializeObject(chargeJson);
+            JObject charge = JObject.Parse(chargeJson);
 
-            bool paid = charge.paid;
-            bool captured = charge.captured;
-            string failureCode = charge.failure_code;
-            string failureMessage = charge.failure_message;
+            if (charge["error"] != null)
+            {
+                result.AppendLine("Chargeエラー：\n" + charge["error"]["message"]);
+                return false;
+            }
 
-            StringBuilder result = new StringBuilder();
-            result.AppendLine("結果:");
+            bool paid = charge["paid"]?.ToObject<bool>() ?? false;
+            bool captured = charge["captured"]?.ToObject<bool>() ?? false;
+            string failureCode = charge["failure_code"]?.ToString();
+            string failureMessage = charge["failure_message"]?.ToString();
 
             if (paid && captured && string.IsNullOrEmpty(failureCode))
             {
-                result.AppendLine("✅ お支払い成功！");
-                result.AppendLine($"お支払い金額: {charge.amount} {charge.currency}");
-                result.AppendLine("カード番号: "+"**** **** **** " + charge.card.last4);
+                result.AppendLine("カード決済成功！");
+                return true;
             }
             else
             {
-                result.AppendLine("❌ お支払い失敗！");
-                if (!string.IsNullOrEmpty(failureCode))
-                    result.AppendLine($"エラーコード: {failureCode}");
-                if (!string.IsNullOrEmpty(failureMessage))
-                    result.AppendLine($"エラーメッセージ: {failureMessage}");
+                result.AppendLine($"カード決済失敗：{failureCode}\n{failureMessage}");
+                return false;
+            }
+        }
+
+        private async void btnPay_Click(object sender, EventArgs e)
+        {
+            bool result = ValidateCardInput();
+            if (result) 
+            {
+                bool success = await PaymentAsync();
+                if (success)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
+                this.Close();
+            }
+        }
+
+        private bool ValidateCardInput()
+        {
+            StringBuilder errs = new StringBuilder("");
+            if (string.IsNullOrWhiteSpace(txtCardNumber.Text) ||
+                txtCardNumber.Text.Length < 13 ||
+                txtCardNumber.Text.Length > 19 ||
+                !txtCardNumber.Text.All(char.IsDigit))
+            {
+                errs.AppendLine("カード番号が正しくありません。");
             }
 
-            MessageBox.Show(result.ToString(), "お支払い状況");
-            return paid && captured && string.IsNullOrEmpty(failureCode);
+            if (!int.TryParse(txtExpMonth.Text, out int month) || month < 1 || month > 12)
+            {
+                errs.AppendLine("有効期限（月）が正しくありません。");
+            }
+
+            if (txtExpYear.Text.Length != 4 || !int.TryParse(txtExpYear.Text, out int year) || year < DateTime.Now.Year)
+            {
+                errs.AppendLine("有効期限（年）が正しくありません。");
+            }
+
+            if (string.IsNullOrWhiteSpace(txtCvc.Text) ||
+                txtCvc.Text.Length < 3 || txtCvc.Text.Length > 4 ||
+                !txtCvc.Text.All(char.IsDigit))
+            {
+                errs.AppendLine("CVC が正しくありません。");
+            }
+            if (errs.ToString() != "") 
+            {
+                MessageBox.Show(errs.ToString(),"Error");
+                return false;
+            }
+            else 
+            { 
+                return true;
+            }
         }
     }
 }

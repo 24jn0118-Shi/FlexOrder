@@ -41,12 +41,14 @@
             resources.ApplyResources(this.btnEMoney, "btnEMoney");
             this.btnEMoney.Name = "btnEMoney";
             this.btnEMoney.UseVisualStyleBackColor = true;
+            this.btnEMoney.Click += new System.EventHandler(this.btnEMoney_Click);
             // 
             // btnCreditCard
             // 
             resources.ApplyResources(this.btnCreditCard, "btnCreditCard");
             this.btnCreditCard.Name = "btnCreditCard";
             this.btnCreditCard.UseVisualStyleBackColor = true;
+            this.btnCreditCard.Click += new System.EventHandler(this.btnCreditCard_Click);
             // 
             // btnCash
             // 

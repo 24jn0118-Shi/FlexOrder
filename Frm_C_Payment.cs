@@ -31,16 +31,35 @@ namespace FlexOrder
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            Frm_C_Payment2 form = new Frm_C_Payment2(currentOrder.TotalPrice);
+            GoPay("cash");
+        }
+
+        private void btnEMoney_Click(object sender, EventArgs e)
+        {
+            GoPay("em");
+        }
+
+        private void btnCreditCard_Click(object sender, EventArgs e)
+        {
+            GoPay("card");
+        }
+
+        private void GoPay(string paytype) 
+        {
+            Frm_C_Payment2 form = new Frm_C_Payment2(paytype, currentOrder.TotalPrice);
             form.ShowDialog();
-            if (form.DialogResult == DialogResult.OK) 
+            
+            if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
                 orderTable.InsertNewOrder(currentOrder);
+                if (paytype == "card" && form.result.ToString() != "")
+                {
+                    MessageBox.Show(form.result.ToString(), "カード決済結果");
+                }
                 Frm_C_End formend = new Frm_C_End(ordertype);
                 formend.ShowDialog();
             }
-
         }
     }
 }
