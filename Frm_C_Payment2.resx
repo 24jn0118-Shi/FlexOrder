@@ -147,7 +147,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEnter.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="lblCvc.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -177,7 +177,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCvc.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="lblMY.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -211,7 +211,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblMY.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="lblCardNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -244,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCardNumber.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtCvc.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtCvc.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtExpYear.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -292,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtExpYear.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtExpMonth.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
@@ -316,31 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtExpMonth.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="txtCardNumber.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="txtCardNumber.Location" type="System.Drawing.Point, System.Drawing">
-    <value>240, 75</value>
-  </data>
-  <data name="txtCardNumber.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 28</value>
-  </data>
-  <data name="txtCardNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txtCardNumber.Name" xml:space="preserve">
-    <value>txtCardNumber</value>
-  </data>
-  <data name="&gt;&gt;txtCardNumber.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtCardNumber.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtCardNumber.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblSlash.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -370,7 +346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSlash.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btnPay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
@@ -397,7 +373,61 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnPay.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cmbCardNumber.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="cmbCardNumber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 75</value>
+  </data>
+  <data name="cmbCardNumber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 29</value>
+  </data>
+  <data name="cmbCardNumber.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmbCardNumber.Name" xml:space="preserve">
+    <value>cmbCardNumber</value>
+  </data>
+  <data name="&gt;&gt;cmbCardNumber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbCardNumber.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmbCardNumber.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnRef.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 15.75pt</value>
+  </data>
+  <data name="btnRef.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRef.Location" type="System.Drawing.Point, System.Drawing">
+    <value>441, 139</value>
+  </data>
+  <data name="btnRef.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 59</value>
+  </data>
+  <data name="btnRef.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnRef.Text" xml:space="preserve">
+    <value>Card Info</value>
+  </data>
+  <data name="&gt;&gt;btnRef.Name" xml:space="preserve">
+    <value>btnRef</value>
+  </data>
+  <data name="&gt;&gt;btnRef.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRef.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnRef.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

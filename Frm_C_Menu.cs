@@ -406,7 +406,6 @@ namespace FlexOrder
                 FlowLayoutPanel panel = sender as FlowLayoutPanel;
                 if (panel == null)
                 {
-                    // 如果 sender 是 ProductItem，我们需要获取它的 Parent (即 FlowLayoutPanel)
                     Control ctrl = sender as Control;
                     if (ctrl != null && ctrl.Parent is FlowLayoutPanel flp)
                     {
@@ -415,39 +414,17 @@ namespace FlexOrder
                 }
                 if (panel == null || !isDragging) return;
 
-                // 计算鼠标/手指移动的距离 (Delta)
                 int deltaY = e.Y - lastMousePosition.Y;
 
-                // 获取当前的滚动位置
                 Point currentScroll = panel.AutoScrollPosition;
 
-                // 关键：更新 AutoScrollPosition
-                // AutoScrollPosition 是负数，我们需要将 deltaY (移动方向) 反向应用到滚动位置上。
-                // 向下拖动 (deltaY > 0) -> 滚动条应该向上移动 (滚动位置 Y 值减小)
-                // 向上拖动 (deltaY < 0) -> 滚动条应该向下移动 (滚动位置 Y 值增大)
                 int newY = -currentScroll.Y - deltaY;
 
-                // 设置新的滚动位置
                 panel.AutoScrollPosition = new Point(0, newY);
 
-                // 更新上次的位置，准备迎接下一次移动
                 lastMousePosition = e.Location;
                 if (isDragging)
                 {
-                    // 计算鼠标/手指移动的距离 (Delta)
-                    // 关键：这里需要使用 e.Location 减去 lastMousePosition，但 e.Location 可能是相对于 ProductItem 的
-                    // 🚨 这一步很危险，因为坐标系可能不一致。我们采用更简单且安全的方式：
-                    // 1. 在 MouseDown 时记录 FlowLayoutPanel 的坐标。
-                    // 2. 在 MouseMove 时，将 ProductItem 的坐标转换为 FlowLayoutPanel 的坐标再计算 delta。
-
-                    // **安全简化方案：在 ProductItem 中实现拖动标记，并让 FlowLayoutPanel 监听全局鼠标位置**
-                    // 💡 重新思考，最简单的解决方案是：让 ProductItem 上的 MouseMove 只是更新它的 isDraggingOccurred 状态，
-                    // 而 FlowLayoutPanel 滚动逻辑则保持不变，因为它已经绑定了事件。
-
-                    // 让我们只在 ProductItem 内部做标记，不进行事件委托：
-
-                    // 保持 Frm_C_Menu.FlowLayoutPanel_MouseMove 为 private，不改动。
-                    // 保持 Frm_C_Menu 的 FlowLayoutPanel_MouseMove 逻辑不变。
                 }
             }
         }
@@ -468,38 +445,21 @@ namespace FlexOrder
                 DataGridView dgv = sender as DataGridView;
                 if (dgv == null || dgv.RowCount == 0) return;
 
-                // 计算鼠标/手指移动的距离 (Delta)
                 int deltaY = e.Y - lastMouseY;
-
-                // --- 核心滚动逻辑 ---
-
-                // 1. 计算要滚动的行数。使用 SCROLL_SENSITIVITY 来调整滚动速度。
-                // 向下拖动 (deltaY > 0) -> 列表应该向上滚动 (索引增大)
-                // 向上拖动 (deltaY < 0) -> 列表应该向下滚动 (索引减小)
-                // 注意：deltaY 必须 *反向* 影响滚动索引。
                 int rowsToScroll = deltaY / SCROLL_SENSITIVITY;
 
-                // 只有当拖动距离达到敏感度阈值时才滚动
                 if (rowsToScroll != 0)
                 {
                     int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
 
-                    // 计算新的第一行索引
-                    int newFirstRow = currentFirstRow - rowsToScroll; // 注意这里的减法实现了滚动方向反转
+                    int newFirstRow = currentFirstRow - rowsToScroll;
 
-                    // 确保新索引在有效范围内 [0, MaxRowIndex]
                     newFirstRow = Math.Max(0, newFirstRow);
-                    // 最大索引是 dgv.RowCount - 1，但如果设置的太大，会显示空白区域
-                    // 所以通常只需要限制最小值为 0。
-
-                    // 只有当索引实际发生变化时才设置
                     if (newFirstRow != currentFirstRow)
                     {
                         dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
                     }
 
-                    // 更新上次的位置，准备迎接下一次移动
-                    // 使用 rowsToScroll * SCROLL_SENSITIVITY 来精确匹配滚动步长，防止累计误差
                     lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
                 }
             }

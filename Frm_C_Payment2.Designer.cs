@@ -36,9 +36,10 @@
             this.txtCvc = new System.Windows.Forms.TextBox();
             this.txtExpYear = new System.Windows.Forms.TextBox();
             this.txtExpMonth = new System.Windows.Forms.TextBox();
-            this.txtCardNumber = new System.Windows.Forms.TextBox();
             this.lblSlash = new System.Windows.Forms.Label();
             this.btnPay = new System.Windows.Forms.Button();
+            this.cmbCardNumber = new System.Windows.Forms.ComboBox();
+            this.btnRef = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblEnter
@@ -76,11 +77,6 @@
             resources.ApplyResources(this.txtExpMonth, "txtExpMonth");
             this.txtExpMonth.Name = "txtExpMonth";
             // 
-            // txtCardNumber
-            // 
-            resources.ApplyResources(this.txtCardNumber, "txtCardNumber");
-            this.txtCardNumber.Name = "txtCardNumber";
-            // 
             // lblSlash
             // 
             resources.ApplyResources(this.lblSlash, "lblSlash");
@@ -93,13 +89,27 @@
             this.btnPay.UseVisualStyleBackColor = true;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
+            // cmbCardNumber
+            // 
+            resources.ApplyResources(this.cmbCardNumber, "cmbCardNumber");
+            this.cmbCardNumber.FormattingEnabled = true;
+            this.cmbCardNumber.Name = "cmbCardNumber";
+            // 
+            // btnRef
+            // 
+            resources.ApplyResources(this.btnRef, "btnRef");
+            this.btnRef.Name = "btnRef";
+            this.btnRef.UseVisualStyleBackColor = true;
+            this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
+            // 
             // Frm_C_Payment2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cmbCardNumber);
+            this.Controls.Add(this.btnRef);
             this.Controls.Add(this.btnPay);
             this.Controls.Add(this.lblSlash);
-            this.Controls.Add(this.txtCardNumber);
             this.Controls.Add(this.txtExpMonth);
             this.Controls.Add(this.txtExpYear);
             this.Controls.Add(this.txtCvc);
@@ -109,6 +119,7 @@
             this.Controls.Add(this.lblEnter);
             this.KeyPreview = true;
             this.Name = "Frm_C_Payment2";
+            this.Load += new System.EventHandler(this.Frm_C_Payment2_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_C_Payment2_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -124,8 +135,9 @@
         private System.Windows.Forms.TextBox txtCvc;
         private System.Windows.Forms.TextBox txtExpYear;
         private System.Windows.Forms.TextBox txtExpMonth;
-        private System.Windows.Forms.TextBox txtCardNumber;
         private System.Windows.Forms.Label lblSlash;
         private System.Windows.Forms.Button btnPay;
+        private System.Windows.Forms.ComboBox cmbCardNumber;
+        private System.Windows.Forms.Button btnRef;
     }
 }

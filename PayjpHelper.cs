@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FlexOrder
 {
@@ -127,18 +128,23 @@ namespace FlexOrder
         }
         public static void LoadKeys()
         {
+
             string path = "W:\\24JN01卒業制作\\GroupI\\DBReset\\クレジットカード決済\\sk.txt";
 
             if (!File.Exists(path))
             {
-                throw new FileNotFoundException(path + "ファイル存在しません");
+                MessageBox.Show(path + "ファイル存在しません", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             SecretKey = File.ReadAllText(path).Trim();
 
             if (string.IsNullOrEmpty(SecretKey))
             {
-                throw new Exception(path + "ファイル内容ありません");
+                MessageBox.Show(path + "ファイルに内容ありません", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
         }
     }

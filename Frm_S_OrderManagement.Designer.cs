@@ -29,24 +29,36 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.sale_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sale_seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sale_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.is_provided = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
+            this.str_order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.str_is_takeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.is_provided = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(718, 12);
+            this.btnBack.Location = new System.Drawing.Point(786, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(70, 32);
             this.btnBack.TabIndex = 0;
@@ -56,8 +68,9 @@
             // 
             // dgvOrder
             // 
+            this.dgvOrder.AllowUserToAddRows = false;
             this.dgvOrder.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -67,53 +80,44 @@
             this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sale_id,
-            this.sale_seat,
+            this.str_order_id,
+            this.order_id,
+            this.str_is_takeout,
+            this.order_date,
             this.goods_name,
-            this.sale_date,
+            this.order_quantity,
+            this.order_seat,
             this.is_provided});
-            this.dgvOrder.Location = new System.Drawing.Point(105, 64);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvOrder.Location = new System.Drawing.Point(46, 62);
+            this.dgvOrder.MultiSelect = false;
             this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.ReadOnly = true;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvOrder.RowTemplate.Height = 21;
-            this.dgvOrder.Size = new System.Drawing.Size(617, 252);
+            this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrder.Size = new System.Drawing.Size(810, 581);
             this.dgvOrder.TabIndex = 1;
-            // 
-            // sale_id
-            // 
-            this.sale_id.HeaderText = "注文番号";
-            this.sale_id.Name = "sale_id";
-            this.sale_id.ReadOnly = true;
-            // 
-            // sale_seat
-            // 
-            this.sale_seat.HeaderText = "座席番号";
-            this.sale_seat.Name = "sale_seat";
-            this.sale_seat.ReadOnly = true;
-            // 
-            // goods_name
-            // 
-            this.goods_name.HeaderText = "注文商品";
-            this.goods_name.Name = "goods_name";
-            this.goods_name.ReadOnly = true;
-            // 
-            // sale_date
-            // 
-            this.sale_date.HeaderText = "注文時間";
-            this.sale_date.Name = "sale_date";
-            this.sale_date.ReadOnly = true;
-            // 
-            // is_provided
-            // 
-            this.is_provided.HeaderText = "注文状態";
-            this.is_provided.Name = "is_provided";
-            this.is_provided.ReadOnly = true;
-            this.is_provided.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellClick);
+            this.dgvOrder.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvOrder_CellPainting);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(133, 333);
+            this.btnAdd.Location = new System.Drawing.Point(166, 649);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(103, 38);
             this.btnAdd.TabIndex = 2;
@@ -124,7 +128,7 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEdit.Location = new System.Drawing.Point(357, 333);
+            this.btnEdit.Location = new System.Drawing.Point(390, 649);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(103, 38);
             this.btnEdit.TabIndex = 3;
@@ -135,7 +139,7 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(573, 333);
+            this.btnDelete.Location = new System.Drawing.Point(606, 649);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(103, 38);
             this.btnDelete.TabIndex = 4;
@@ -146,7 +150,7 @@
             // btnHistory
             // 
             this.btnHistory.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnHistory.Location = new System.Drawing.Point(347, 386);
+            this.btnHistory.Location = new System.Drawing.Point(380, 702);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(125, 38);
             this.btnHistory.TabIndex = 5;
@@ -154,11 +158,109 @@
             this.btnHistory.UseVisualStyleBackColor = true;
             this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
+            // str_order_id
+            // 
+            this.str_order_id.DataPropertyName = "str_order_id";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_order_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.str_order_id.HeaderText = "注文番号";
+            this.str_order_id.Name = "str_order_id";
+            this.str_order_id.ReadOnly = true;
+            this.str_order_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.str_order_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.str_order_id.Width = 70;
+            // 
+            // order_id
+            // 
+            this.order_id.DataPropertyName = "order_id";
+            this.order_id.HeaderText = "order_id";
+            this.order_id.Name = "order_id";
+            this.order_id.ReadOnly = true;
+            this.order_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.order_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.order_id.Visible = false;
+            // 
+            // str_is_takeout
+            // 
+            this.str_is_takeout.DataPropertyName = "str_is_takeout";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_is_takeout.DefaultCellStyle = dataGridViewCellStyle3;
+            this.str_is_takeout.HeaderText = "利用方法";
+            this.str_is_takeout.Name = "str_is_takeout";
+            this.str_is_takeout.ReadOnly = true;
+            this.str_is_takeout.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.str_is_takeout.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.str_is_takeout.Width = 80;
+            // 
+            // order_date
+            // 
+            this.order_date.DataPropertyName = "order_date";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.NullValue = null;
+            this.order_date.DefaultCellStyle = dataGridViewCellStyle4;
+            this.order_date.HeaderText = "注文時間";
+            this.order_date.Name = "order_date";
+            this.order_date.ReadOnly = true;
+            this.order_date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.order_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.order_date.Width = 130;
+            // 
+            // goods_name
+            // 
+            this.goods_name.DataPropertyName = "goods_name";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.goods_name.DefaultCellStyle = dataGridViewCellStyle5;
+            this.goods_name.HeaderText = "注文商品";
+            this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
+            this.goods_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_name.Width = 250;
+            // 
+            // order_quantity
+            // 
+            this.order_quantity.DataPropertyName = "order_quantity";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.order_quantity.DefaultCellStyle = dataGridViewCellStyle6;
+            this.order_quantity.HeaderText = "数量";
+            this.order_quantity.Name = "order_quantity";
+            this.order_quantity.ReadOnly = true;
+            this.order_quantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.order_quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.order_quantity.Width = 50;
+            // 
+            // order_seat
+            // 
+            this.order_seat.DataPropertyName = "order_seat";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.order_seat.DefaultCellStyle = dataGridViewCellStyle7;
+            this.order_seat.HeaderText = "座席番号";
+            this.order_seat.Name = "order_seat";
+            this.order_seat.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.order_seat.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.order_seat.Width = 70;
+            // 
+            // is_provided
+            // 
+            this.is_provided.DataPropertyName = "is_provided";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.NullValue = false;
+            this.is_provided.DefaultCellStyle = dataGridViewCellStyle8;
+            this.is_provided.HeaderText = "注文状態";
+            this.is_provided.Name = "is_provided";
+            this.is_provided.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.is_provided.Width = 70;
+            // 
             // Frm_S_OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(884, 747);
             this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -167,6 +269,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_OrderManagement";
             this.Text = "注文管理";
+            this.Load += new System.EventHandler(this.Frm_S_OrderManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.ResumeLayout(false);
 
@@ -180,10 +283,13 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sale_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sale_seat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn str_order_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn str_is_takeout;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sale_date;
-        private System.Windows.Forms.DataGridViewButtonColumn is_provided;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_seat;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn is_provided;
     }
 }

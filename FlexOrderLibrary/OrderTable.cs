@@ -51,5 +51,49 @@ namespace FlexOrderLibrary
             Console.WriteLine("OrderDetailに" + ret + "件追加しました");
             return newOrderId;
         }
+
+        public DataTable GetPendingOrders()
+        {
+            DataTable table = new DataTable();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT D.*, order_date, order_seat, is_takeout 
+                    FROM OrderDetail AS D 
+                    INNER JOIN [Order] AS O ON D.order_id = O.order_id 
+                    WHERE D.order_id IN (
+                            SELECT order_id
+                            FROM OrderDetail
+                            GROUP BY order_id
+                            HAVING MIN(CASE WHEN is_provided = 1 THEN 1 ELSE 0 END) = 0 
+                      )
+                    AND order_date >= CAST(GETDATE() AS date) 
+                    AND order_date < DATEADD(day, 1, CAST(GETDATE() AS date)) 
+                    ORDER BY D.order_id ASC";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            return table;
+        }
+
+        public DataTable GetHistoryOrders()
+        {
+            DataTable table = new DataTable();
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT D.*, order_date, order_seat, is_takeout 
+                    FROM OrderDetail AS D 
+                    INNER JOIN [Order] AS O ON D.order_id = O.order_id 
+                    WHERE order_date >= DATEADD(day, -6, CAST(GETDATE() AS date)) 
+                    AND order_date < DATEADD(day, 1, CAST(GETDATE() AS date)) 
+                    ORDER BY D.order_id ASC";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            return table;
+        }
     }
 }

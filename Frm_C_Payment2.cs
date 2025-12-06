@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json.Linq; // 用于解析 JSON，你需要安装 Newtonsoft.Json NuGet 包
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -18,27 +20,6 @@ namespace FlexOrder
             InitializeComponent();
             this.paytype = paytype;
             this.total = total;
-            if (paytype != "card")
-            {
-                lblCardNumber.Visible = false;
-                lblMY.Visible = false;
-                lblSlash.Visible = false;
-                lblCvc.Visible = false;
-                txtCardNumber.Visible = false;
-                txtExpMonth.Visible = false;
-                txtExpYear.Visible = false;
-                txtCvc.Visible = false;
-                btnPay.Visible = false;
-
-            }
-            else 
-            {
-                lblEnter.Visible = false;
-                txtCardNumber.Text = "4000000000000002";
-                txtExpMonth.Text = "11";
-                txtExpYear.Text = "2028";
-                txtCvc.Text = "123";
-            }
         }
 
         private void Frm_C_Payment2_KeyPress(object sender, KeyPressEventArgs e)
@@ -73,7 +54,7 @@ namespace FlexOrder
 
                 // 2️⃣ Token
                 string tokenJson = await PayjpHelper.CreateTokenAsync(
-                    txtCardNumber.Text,
+                    cmbCardNumber.Text,
                     txtExpMonth.Text,
                     txtExpYear.Text,
                     txtCvc.Text
@@ -158,10 +139,10 @@ namespace FlexOrder
         private bool ValidateCardInput()
         {
             StringBuilder errs = new StringBuilder("");
-            if (string.IsNullOrWhiteSpace(txtCardNumber.Text) ||
-                txtCardNumber.Text.Length < 13 ||
-                txtCardNumber.Text.Length > 19 ||
-                !txtCardNumber.Text.All(char.IsDigit))
+            if (string.IsNullOrWhiteSpace(cmbCardNumber.Text) ||
+                cmbCardNumber.Text.Length < 13 ||
+                cmbCardNumber.Text.Length > 19 ||
+                !cmbCardNumber.Text.All(char.IsDigit))
             {
                 errs.AppendLine("カード番号が正しくありません。");
             }
@@ -191,6 +172,59 @@ namespace FlexOrder
             { 
                 return true;
             }
+        }
+
+        private void Frm_C_Payment2_Load(object sender, EventArgs e)
+        {
+            
+            if (paytype != "card")
+            {
+                lblCardNumber.Visible = false;
+                lblMY.Visible = false;
+                lblSlash.Visible = false;
+                lblCvc.Visible = false;
+                cmbCardNumber.Visible = false;
+                txtExpMonth.Visible = false;
+                txtExpYear.Visible = false;
+                txtCvc.Visible = false;
+                btnPay.Visible = false;
+                btnRef.Visible = false;
+            }
+            else
+            {
+                lblEnter.Visible = false;
+                const string READFILE = @"W:\\24JN01卒業制作\\GroupI\\DBReset\\クレジットカード決済\\testcards.txt";
+                if (!File.Exists(READFILE))
+                {
+                    MessageBox.Show(READFILE + "ファイル存在しません", "エラー",
+                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (StreamReader sr = new StreamReader(READFILE))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            string line = sr.ReadLine();
+                            cmbCardNumber.Items.Add(line);
+                        }
+                    }
+                    cmbCardNumber.SelectedItem = 0;
+                }
+                txtExpMonth.Text = "11";
+                txtExpYear.Text = "2028";
+                txtCvc.Text = "123";
+            }
+
+        }
+
+        private void btnRef_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://docs.pay.jp/v1/testcard",
+                UseShellExecute = true
+            });
         }
     }
 }

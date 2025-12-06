@@ -12,9 +12,12 @@ namespace FlexOrder
 {
     public partial class Frm_S_OrderEdit : Form
     {
-        public Frm_S_OrderEdit()
+        int orderid;
+        public Frm_S_OrderEdit(int orderid)
         {
             InitializeComponent();
+            this.orderid = orderid;
+            lblOrderNo.Text = orderid.ToString();
         }
 
         private void btnBack_Click(object sender, EventArgs e)

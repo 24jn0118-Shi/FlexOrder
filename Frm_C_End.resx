@@ -150,10 +150,10 @@
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
   <data name="lblEnd1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 109</value>
+    <value>217, 108</value>
   </data>
   <data name="lblEnd1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
+    <value>300, 150</value>
   </data>
   <data name="lblEnd1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -180,10 +180,10 @@
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
   <data name="lblEnd2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>261, 209</value>
+    <value>217, 241</value>
   </data>
   <data name="lblEnd2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 100</value>
+    <value>300, 150</value>
   </data>
   <data name="lblEnd2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
