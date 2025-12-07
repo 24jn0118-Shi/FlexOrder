@@ -49,6 +49,7 @@
             this.str_is_takeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.is_provided = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -85,6 +86,7 @@
             this.str_is_takeout,
             this.order_date,
             this.goods_name,
+            this.goods_price,
             this.order_quantity,
             this.order_seat,
             this.is_provided});
@@ -219,6 +221,16 @@
             this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.goods_name.Width = 250;
             // 
+            // goods_price
+            // 
+            this.goods_price.DataPropertyName = "goods_price";
+            this.goods_price.HeaderText = "単価";
+            this.goods_price.Name = "goods_price";
+            this.goods_price.ReadOnly = true;
+            this.goods_price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.goods_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.goods_price.Visible = false;
+            // 
             // order_quantity
             // 
             this.order_quantity.DataPropertyName = "order_quantity";
@@ -288,6 +300,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn str_is_takeout;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goods_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_seat;
         private System.Windows.Forms.DataGridViewCheckBoxColumn is_provided;

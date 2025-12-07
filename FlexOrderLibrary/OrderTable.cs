@@ -95,5 +95,10 @@ namespace FlexOrderLibrary
             }
             return table;
         }
+
+        public Order GetOrderById(int id) 
+        {
+            return null;
+        }
     }
 }

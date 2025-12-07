@@ -13,11 +13,17 @@ namespace FlexOrder
 {
     public partial class Frm_S_OrderManagement : Form
     {
+        Staff staff = null;
+
         bool gethistory = false;
         int selected_orderid = -1;
-        public Frm_S_OrderManagement()
+        Order selectedOrder;
+
+        private List<Order> currentOrderList = null;
+        public Frm_S_OrderManagement(Staff staff)
         {
             InitializeComponent();
+            this.staff = staff;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -51,7 +57,8 @@ namespace FlexOrder
             }
             else
             {
-                DialogResult dret = MessageBox.Show("注文を削除しますか", "確認",
+                int total = selectedOrder.TotalPrice;
+                DialogResult dret = MessageBox.Show("返金金額： ¥ "+total+ "\n返金してから注文を削除してください。", "確認",
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes)
                 {
@@ -100,6 +107,8 @@ namespace FlexOrder
 
         private void Refresh_page() 
         {
+            selected_orderid = -1;
+            selectedOrder = null;
             OrderTable orderTable = new OrderTable();
             DataTable dataTable = null;
             if (gethistory)
@@ -115,12 +124,62 @@ namespace FlexOrder
             dataTable.Columns.Add("str_order_id", typeof(string));
             dataTable.Columns.Add("str_is_takeout", typeof(string));
             dataTable.Columns.Add("goods_name", typeof(string));
+
+            currentOrderList = new List<Order>();
+            int previd = -1;
+            int currentid = -1;
+            Order currentOrder = null;
+            int index = 0;
+            int lastIndex = dataTable.Rows.Count - 1;
             foreach (DataRow row in dataTable.Rows)
             {
-                row["str_order_id"] = row["order_id"].ToString();
-                Goods goods = goodsTable.GetGoodsById(1,int.Parse(row["goods_id"].ToString()));
+                bool isLastRow = (index == lastIndex);
+                currentid = int.Parse(row["order_id"].ToString());
+
+                row["str_order_id"] = currentid.ToString();
+                int currentgoodsid = int.Parse(row["goods_id"].ToString());
+                Goods goods = goodsTable.GetGoodsById(1, currentgoodsid);
                 row["goods_name"] = goods.goods_name;
                 row["str_is_takeout"] = bool.Parse(row["is_takeout"].ToString()) ? "持帰" : "店内";
+
+
+                if (currentid != previd)
+                {
+                    if (currentOrder != null)
+                    {
+                        currentOrderList.Add(currentOrder);
+                    }
+                    currentOrder = new Order();
+                    currentOrder.order_id = currentid;
+                    currentOrder.order_date = (DateTime)row["order_date"];
+                    if (row["order_seat"] != DBNull.Value)
+                    {
+                        currentOrder.order_seat = int.Parse(row["order_seat"].ToString());
+                    }
+                    else
+                    {
+                        currentOrder.order_seat = null;
+                    }
+                    currentOrder.is_takeout = (bool)row["is_takeout"];
+                    
+                }
+                OrderDetail detail = new OrderDetail();
+                detail.goods_id = currentgoodsid;
+                detail.goods_name = goods.goods_name;
+                detail.price = int.Parse(row["goods_price"].ToString());
+                detail.quantity = int.Parse(row["order_quantity"].ToString());
+                detail.is_provided = (bool)row["is_provided"];
+                currentOrder.orderdetaillist.Add(detail);
+
+                if (isLastRow)
+                {
+                    currentOrderList.Add(currentOrder);
+                }
+                else
+                {
+                    previd = currentid;
+                }
+                index++;
             }
             dgvOrder.DataSource = dataTable;
             dgvOrder.ClearSelection();
@@ -202,6 +261,7 @@ namespace FlexOrder
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
+            selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
         }
     }
 }
