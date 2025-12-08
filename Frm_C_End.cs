@@ -42,8 +42,12 @@ namespace FlexOrder
 
         private void Frm_C_End_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Restart();
-            Environment.Exit(0);
+            if (ordertype == "in" || ordertype == "out") 
+            {
+                Application.Restart();
+                Environment.Exit(0);
+            }
+            
         }
     }
 }

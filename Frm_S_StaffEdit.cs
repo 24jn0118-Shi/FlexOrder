@@ -151,7 +151,7 @@ namespace FlexOrder
                 if (errs == "") 
                 {
                     string access = rbtnAdmin.Checked ? "管理者" : "店員";
-                    DialogResult dret = MessageBox.Show("商品分類：" + newid + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか", "確認",
+                    DialogResult dret = MessageBox.Show("商品分類：" + newid + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
                     {
@@ -207,7 +207,7 @@ namespace FlexOrder
                 {
                     string access = rbtnAdmin.Checked ? "管理者" : "店員";
                     string changepass = change_password ? "あり" : "なし";
-                    DialogResult dret = MessageBox.Show("ID：" + txbID.Text + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "パスワード変更：" + changepass + "\n" + "権限：" + access + "\n" + "\n以上の内容に変更しますか", "確認",
+                    DialogResult dret = MessageBox.Show("ID：" + txbID.Text + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "パスワード変更：" + changepass + "\n" + "権限：" + access + "\n" + "\n以上の内容に変更しますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes)
                     {

@@ -56,7 +56,7 @@ namespace FlexOrder
             }
             else
             {
-                DialogResult dret = MessageBox.Show("商品を削除しますか", "確認",
+                DialogResult dret = MessageBox.Show("商品を削除しますか？", "確認",
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes)
                 {
@@ -98,7 +98,7 @@ namespace FlexOrder
                 {
                     target = "在庫あり";
                 }
-                    DialogResult dret = MessageBox.Show("商品を " + target + " に変更しますか", "確認",
+                    DialogResult dret = MessageBox.Show("商品を " + target + " に変更しますか？", "確認",
                                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes) 
                 {

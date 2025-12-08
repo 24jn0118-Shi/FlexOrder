@@ -38,6 +38,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCart = new System.Windows.Forms.DataGridView();
+            this.btnGoPay = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.tboxTotalPrice = new System.Windows.Forms.TextBox();
+            this.btnRestart = new System.Windows.Forms.Button();
+            this.lblConfirm2 = new System.Windows.Forms.Label();
+            this.lblConfirm1 = new System.Windows.Forms.Label();
             this.img_goods_image = new System.Windows.Forms.DataGridViewImageColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +54,6 @@
             this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGoPay = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.tboxTotalPrice = new System.Windows.Forms.TextBox();
-            this.btnRestart = new System.Windows.Forms.Button();
-            this.lblConfirm2 = new System.Windows.Forms.Label();
-            this.lblConfirm1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,94 +92,6 @@
             this.dgvCart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseDown);
             this.dgvCart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseMove);
             this.dgvCart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseUp);
-            // 
-            // img_goods_image
-            // 
-            this.img_goods_image.DataPropertyName = "img_goods_image";
-            this.img_goods_image.FillWeight = 140F;
-            resources.ApplyResources(this.img_goods_image, "img_goods_image");
-            this.img_goods_image.Name = "img_goods_image";
-            this.img_goods_image.ReadOnly = true;
-            // 
-            // goods_name
-            // 
-            this.goods_name.DataPropertyName = "goods_name";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.goods_name.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.goods_name, "goods_name");
-            this.goods_name.Name = "goods_name";
-            this.goods_name.ReadOnly = true;
-            this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // goods_price
-            // 
-            this.goods_price.DataPropertyName = "goods_price";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
-            this.goods_price.DefaultCellStyle = dataGridViewCellStyle3;
-            resources.ApplyResources(this.goods_price, "goods_price");
-            this.goods_price.Name = "goods_price";
-            this.goods_price.ReadOnly = true;
-            this.goods_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // btnDelete
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle4;
-            resources.ApplyResources(this.btnDelete, "btnDelete");
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ReadOnly = true;
-            // 
-            // btnMinus
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnMinus.DefaultCellStyle = dataGridViewCellStyle5;
-            resources.ApplyResources(this.btnMinus, "btnMinus");
-            this.btnMinus.Name = "btnMinus";
-            this.btnMinus.ReadOnly = true;
-            // 
-            // order_num
-            // 
-            this.order_num.DataPropertyName = "order_num";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
-            this.order_num.DefaultCellStyle = dataGridViewCellStyle6;
-            resources.ApplyResources(this.order_num, "order_num");
-            this.order_num.Name = "order_num";
-            this.order_num.ReadOnly = true;
-            this.order_num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // btnPlus
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPlus.DefaultCellStyle = dataGridViewCellStyle7;
-            resources.ApplyResources(this.btnPlus, "btnPlus");
-            this.btnPlus.Name = "btnPlus";
-            this.btnPlus.ReadOnly = true;
-            // 
-            // subtotal
-            // 
-            this.subtotal.DataPropertyName = "subtotal";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle8;
-            resources.ApplyResources(this.subtotal, "subtotal");
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            this.subtotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // goods_id
-            // 
-            this.goods_id.DataPropertyName = "goods_id";
-            resources.ApplyResources(this.goods_id, "goods_id");
-            this.goods_id.Name = "goods_id";
-            this.goods_id.ReadOnly = true;
-            this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnGoPay
             // 
@@ -222,6 +134,103 @@
             // 
             resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
             this.lblConfirm1.Name = "lblConfirm1";
+            // 
+            // img_goods_image
+            // 
+            this.img_goods_image.DataPropertyName = "img_goods_image";
+            this.img_goods_image.FillWeight = 140F;
+            resources.ApplyResources(this.img_goods_image, "img_goods_image");
+            this.img_goods_image.Name = "img_goods_image";
+            this.img_goods_image.ReadOnly = true;
+            this.img_goods_image.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // goods_name
+            // 
+            this.goods_name.DataPropertyName = "goods_name";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.goods_name.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.goods_name, "goods_name");
+            this.goods_name.Name = "goods_name";
+            this.goods_name.ReadOnly = true;
+            this.goods_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // goods_price
+            // 
+            this.goods_price.DataPropertyName = "goods_price";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
+            this.goods_price.DefaultCellStyle = dataGridViewCellStyle3;
+            resources.ApplyResources(this.goods_price, "goods_price");
+            this.goods_price.Name = "goods_price";
+            this.goods_price.ReadOnly = true;
+            this.goods_price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.goods_price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // btnDelete
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDelete.DefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ReadOnly = true;
+            this.btnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // btnMinus
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnMinus.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.btnMinus, "btnMinus");
+            this.btnMinus.Name = "btnMinus";
+            this.btnMinus.ReadOnly = true;
+            this.btnMinus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // order_num
+            // 
+            this.order_num.DataPropertyName = "order_num";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
+            this.order_num.DefaultCellStyle = dataGridViewCellStyle6;
+            resources.ApplyResources(this.order_num, "order_num");
+            this.order_num.Name = "order_num";
+            this.order_num.ReadOnly = true;
+            this.order_num.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.order_num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // btnPlus
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnPlus.DefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(this.btnPlus, "btnPlus");
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.ReadOnly = true;
+            this.btnPlus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // subtotal
+            // 
+            this.subtotal.DataPropertyName = "subtotal";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle8;
+            resources.ApplyResources(this.subtotal, "subtotal");
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.subtotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // goods_id
+            // 
+            this.goods_id.DataPropertyName = "goods_id";
+            resources.ApplyResources(this.goods_id, "goods_id");
+            this.goods_id.Name = "goods_id";
+            this.goods_id.ReadOnly = true;
+            this.goods_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Frm_C_Cart
             // 

@@ -98,9 +98,7 @@ namespace FlexOrderLibrary
 
         public Order GetOrderById(int id) 
         {
-            
-            OrderTable orderTable = new OrderTable();
-            DataTable table = null;
+            DataTable table = new DataTable();
 
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -125,6 +123,7 @@ namespace FlexOrderLibrary
                 }
 
                 OrderDetail detail = new OrderDetail();
+                detail.goods_id = int.Parse(row["goods_id"].ToString());
                 detail.goods_name = row["goods_name"].ToString();
                 detail.price = int.Parse(row["goods_price"].ToString());
                 detail.quantity = int.Parse(row["order_quantity"].ToString());
@@ -132,12 +131,10 @@ namespace FlexOrderLibrary
                 detailList.Add(detail);
 
             }
-
             if (order != null)
             {
                 order.orderdetaillist = detailList;
             }
-            
             return order;
         }
 
@@ -172,7 +169,7 @@ namespace FlexOrderLibrary
                         command.Parameters.AddWithValue("@goods_id", detail.goods_id);
                         command.Parameters.AddWithValue("@price", detail.price);
                         command.Parameters.AddWithValue("@quantity", detail.quantity);
-                        command.Parameters.AddWithValue("@is_provided", detail.is_provided);
+                        command.Parameters.AddWithValue("@is_provided", false);
                         connection.Open();
                         ret += command.ExecuteNonQuery();
                     }
@@ -195,20 +192,6 @@ namespace FlexOrderLibrary
                 connection.Open();
 
                 ret = command.ExecuteNonQuery();
-            }
-            if (ret > 0)
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string sql = @"DELETE FROM Order WHERE goods_id = @goods_id";
-
-                    SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@order_id", id);
-                    connection.Open();
-
-                    ret = command.ExecuteNonQuery();
-
-                }
             }
 
             return ret;

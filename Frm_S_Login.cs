@@ -45,11 +45,11 @@ namespace FlexOrder
             int useridInt;
             if (txbUserId.Text=="" || txbPassword.Text=="")
             {
-                MessageBox.Show("IDとパスワードを入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("IDとパスワードを入力してください", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (!int.TryParse(txbUserId.Text, out useridInt))
             {
-                MessageBox.Show("ユーザーIDは数字で入力してください。", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("ユーザーIDは数字で入力してください", "入力エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else {
                     StaffTable stafftable = new StaffTable();

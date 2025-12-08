@@ -82,6 +82,95 @@ namespace FlexOrderLibrary
                 }
             }
         }
+        public static bool CompareOrders(Order a, Order b)
+        {
+            if (a == null && b == null)
+                return true;
 
+            if (a == null || b == null)
+                return false;
+
+            Dictionary<int, (int totalQty, int price)> AggregateOrderDetails(Order o)
+            {
+                var dict = new Dictionary<int, (int totalQty, int price)>();
+
+                if (o.orderdetaillist == null || o.orderdetaillist.Count == 0)
+                    return dict;
+
+                var groups = o.orderdetaillist.GroupBy(d => d.goods_id);
+
+                foreach (var g in groups)
+                {
+                    int goodsId = g.Key;
+                    int totalQty = g.Sum(x => x.quantity);
+
+                    int priceToUse = g.Select(x => x.price).FirstOrDefault();
+
+                    dict[goodsId] = (totalQty, priceToUse);
+                }
+
+                return dict;
+            }
+
+            var dictA = AggregateOrderDetails(a);
+            var dictB = AggregateOrderDetails(b);
+
+            var keysA = new HashSet<int>(dictA.Keys);
+            var keysB = new HashSet<int>(dictB.Keys);
+
+            if (!keysA.SetEquals(keysB))
+                return false;
+
+            foreach (var gid in keysA)
+            {
+                var aItem = dictA[gid];
+                var bItem = dictB[gid];
+
+                if (aItem.totalQty != bItem.totalQty)
+                    return false;
+
+                if (aItem.price != bItem.price)
+                    return false;
+            }
+
+            return true;
+        }
+
+        public void CombineOrders(Order newOrder)
+        {
+            if (newOrder == null || newOrder.orderdetaillist == null)
+                return;
+
+            foreach (var newItem in newOrder.orderdetaillist)
+            {
+                var oldItem = this.orderdetaillist.FirstOrDefault(i => i.goods_id == newItem.goods_id);
+
+                if (oldItem == null)
+                {
+                    this.orderdetaillist.Add(new OrderDetail
+                    {
+                        goods_id = newItem.goods_id,
+                        goods_name = newItem.goods_name,
+                        price = newItem.price,
+                        quantity = newItem.quantity
+                    });
+                }
+                else
+                {
+                    if (oldItem.price == newItem.price)
+                    {
+                        oldItem.quantity += newItem.quantity;
+                    }
+                    else
+                    {
+                        oldItem.price = newItem.price;
+                        oldItem.quantity += newItem.quantity;
+                    }
+
+                    if (oldItem.quantity > 10)
+                        oldItem.quantity = 10;
+                }
+            }
+        }
     }
 }

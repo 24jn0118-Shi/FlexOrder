@@ -179,6 +179,8 @@ namespace FlexOrder
             
             if (paytype != "card")
             {
+                lblWarning1.Visible = false;
+                lblWarning2.Visible = false;
                 lblCardNumber.Visible = false;
                 lblMY.Visible = false;
                 lblSlash.Visible = false;

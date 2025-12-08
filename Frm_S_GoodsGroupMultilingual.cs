@@ -55,7 +55,7 @@ namespace FlexOrder
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DialogResult dret = MessageBox.Show("分類コード：" + lblGroupCode.Text + "\n" + "内容言語名：" + languagename + "\n" + "分類名：" + txbGroupName.Text + "\n" + "\n以上の内容に変更しますか", "確認",
+            DialogResult dret = MessageBox.Show("分類コード：" + lblGroupCode.Text + "\n" + "内容言語名：" + languagename + "\n" + "分類名：" + txbGroupName.Text + "\n" + "\n以上の内容に変更しますか？", "確認",
                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dret == DialogResult.Yes)
             {

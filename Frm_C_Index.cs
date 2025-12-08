@@ -23,12 +23,12 @@ namespace FlexOrder
 
         private void btnDinein_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu form = new Frm_C_Menu("in");
+            Frm_C_Menu form = new Frm_C_Menu(false, "in");
             form.ShowDialog();
         }
         private void btnTakeout_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu form = new Frm_C_Menu("out");
+            Frm_C_Menu form = new Frm_C_Menu(true, "out");
             form.ShowDialog();
         }
 

@@ -146,6 +146,8 @@ namespace FlexOrder
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            Console.WriteLine("Key Loaded Form File.");
         }
     }
 }
