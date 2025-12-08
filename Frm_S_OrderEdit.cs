@@ -38,10 +38,14 @@ namespace FlexOrder
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu frm_C_Menu = new Frm_C_Menu(beforeOrder.is_takeout,"edit");
+            Frm_C_Menu frm_C_Menu = new Frm_C_Menu(afterOrder,"edit");
             frm_C_Menu.ShowDialog();
-            afterOrder.CombineOrders(frm_C_Menu.currentOrder);
-            Refresh_page();
+            if (frm_C_Menu.DialogResult == DialogResult.OK) 
+            {
+                afterOrder = frm_C_Menu.currentOrder;
+                Refresh_page();
+            }
+            
         }
 
         private void Frm_S_OrderEdit_Load(object sender, EventArgs e)
@@ -119,7 +123,7 @@ namespace FlexOrder
             Console.WriteLine(issame);
             if (issame) 
             {
-                type = "null";
+                type = "no";
                 lblType.Text = "金額変更なし";
                 lblResult.Text = "0";
             }
@@ -199,7 +203,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品を変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -220,7 +224,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -241,7 +245,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

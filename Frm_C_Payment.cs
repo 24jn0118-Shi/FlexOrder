@@ -94,7 +94,7 @@ namespace FlexOrder
 
         private void Frm_C_Payment_Load(object sender, EventArgs e)
         {
-            if (ordertype == "add") 
+            if (ordertype == "add" || ordertype == "edit") 
             {
                 btnCreditCard.Visible = false;
                 btnEMoney.Visible = false;

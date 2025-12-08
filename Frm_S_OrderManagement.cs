@@ -17,6 +17,7 @@ namespace FlexOrder
 
         bool gethistory = false;
         int selected_orderid = -1;
+        bool selected_istakeout = false;
         Order selectedOrder;
 
         private List<Order> currentOrderList = null;
@@ -75,7 +76,7 @@ namespace FlexOrder
                     int cnt = orderTable.Delete(selected_orderid);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を削除しました", "削除完了",
+                        MessageBox.Show(cnt + "件の注文商品を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -198,6 +199,7 @@ namespace FlexOrder
             }
             dgvOrder.DataSource = dataTable;
             dgvOrder.ClearSelection();
+            txbSeat.Text = "";
             if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvOrder.Rows.Count)
             {
                 try
@@ -215,6 +217,7 @@ namespace FlexOrder
 
         private void dgvOrder_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            
             if (dgvOrder.Columns[e.ColumnIndex].Name == "order_date" && e.Value != null)
             {
                 DateTime dt;
@@ -233,7 +236,7 @@ namespace FlexOrder
                 {
                     string colName = dgvOrder.Columns[e.ColumnIndex].Name;
                     
-                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout")
+                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout" || colName == "order_seat")
                     {
                         e.Value = "";
                         e.FormattingApplied = true;
@@ -287,7 +290,11 @@ namespace FlexOrder
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
+            selected_istakeout = (bool)dgvOrder.CurrentRow.Cells["is_takeout"].Value;
             selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
+            txbSeat.Text = dgvOrder.CurrentRow.Cells["order_seat"].Value.ToString();
+            txbSeat.Focus();
+            txbSeat.SelectAll();
         }
 
         private void btnAddOut_Click(object sender, EventArgs e)
@@ -335,80 +342,6 @@ namespace FlexOrder
             isDraggingDGV = false;
         }
 
-        private void dgvOrder_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            if (dgvOrder.Columns[e.ColumnIndex].Name == "order_seat")
-            {
-                _editingSeat = true;
-                _oldSeatText = dgvOrder[e.ColumnIndex, e.RowIndex].Value?.ToString() ?? "";
-            }
-        }
-
-        private void dgvOrder_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
-
-            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
-
-            var cell = dgvOrder[e.ColumnIndex, e.RowIndex];
-            string txt = (cell.Value?.ToString() ?? "").Trim();
-
-            // 空输入 → 恢复旧值，不刷新
-            if (txt == "")
-            {
-                cell.Value = _oldSeatText;
-                return;
-            }
-
-            if (!int.TryParse(txt, out int seat))
-            {
-                cell.Value = _oldSeatText;
-                return;
-            }
-
-            if (seat < 1 || seat > 15)
-            {
-                cell.Value = _oldSeatText;
-                return;
-            }
-
-            // 合法
-            cell.Value = seat;
-        }
-
-        private void dgvOrder_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!_editingSeat) return;
-            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
-
-            _editingSeat = false;
-
-            var val = dgvOrder["order_seat", e.RowIndex].Value;
-            if (val == null) return;
-
-            if (!int.TryParse(val.ToString(), out int seat)) return;
-
-            int orderId = Convert.ToInt32(dgvOrder["order_id", e.RowIndex].Value);
-
-            OrderTable orderTable = new OrderTable();
-            orderTable.UpdateSeat(orderId, seat);
-
-            if (_isRefreshing) return;
-            _isRefreshing = true;
-
-            // 防止再入
-            BeginInvoke(new Action(() =>
-            {
-                Refresh_page();
-                _isRefreshing = false;
-            }));
-        }
-
-        private void dgvOrder_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.ThrowException = false;
-        }
-
         private void dgvOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (_isRefreshing) return;
@@ -430,13 +363,32 @@ namespace FlexOrder
                 _isRefreshing = false;
             }));
         }
-
         private void dgvOrder_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dgvOrder.IsCurrentCellDirty &&
                 dgvOrder.CurrentCell is DataGridViewCheckBoxCell)
             {
                 dgvOrder.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        private void btnUpdateSeat_Click(object sender, EventArgs e)
+        {
+            this.SelectNextControl(txbSeat, true, true, true, true);
+            bool res = int.TryParse(txbSeat.Text, out int seat);
+            if (res && !selected_istakeout && seat >= 1 && seat <= 15) 
+            {
+                OrderTable orderTable = new OrderTable();
+                orderTable.UpdateSeat(selected_orderid,seat);
+            }
+            Refresh_page();
+        }
+
+        private void txbSeat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnUpdateSeat.PerformClick();
             }
         }
     }

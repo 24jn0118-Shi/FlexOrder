@@ -41,6 +41,13 @@ namespace FlexOrder
             currentOrder.is_takeout = istakeout;
             SetupCustomTabs();
         }
+        public Frm_C_Menu(Order order, string ordertype)
+        {
+            InitializeComponent();
+            this.ordertype = ordertype;
+            currentOrder = order;
+            SetupCustomTabs();
+        }
 
         private void SetupCustomTabs()
         {
@@ -81,6 +88,7 @@ namespace FlexOrder
             LoadGroupsTabs();
             tbcntMenu.SelectedIndex = -1;
             tbcntMenu.SelectedIndex = 0;
+            RefreshCart();
         }
 
         private void BindTouchScrollEvents(FlowLayoutPanel panel)
@@ -320,6 +328,7 @@ namespace FlexOrder
             }
             else 
             {
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             
