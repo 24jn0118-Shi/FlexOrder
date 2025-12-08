@@ -16,12 +16,23 @@ namespace FlexOrder
     {
         string ordertype;
         private Order currentOrder;
+        int total;
+        public bool closeparent = false;
         public Frm_C_Payment(string ordertype, Order currentOrder)
         {
             InitializeComponent();
             this.ordertype = ordertype;
             this.currentOrder = currentOrder;
-            lblTotal.Text = "¥ " + currentOrder.TotalPrice.ToString("N0");
+            total = currentOrder.TotalPrice; 
+            lblTotal.Text = "¥ " + total.ToString("N0");
+        }
+        public Frm_C_Payment(string ordertype, int total)
+        {
+            InitializeComponent();
+            this.ordertype = ordertype;
+            this.total = total;
+            lblTotal.Text = "¥ " + total.ToString("N0");
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -46,19 +57,47 @@ namespace FlexOrder
 
         private void GoPay(string paytype) 
         {
-            Frm_C_Payment2 form = new Frm_C_Payment2(paytype, currentOrder.TotalPrice);
+            Frm_C_Payment2 form = new Frm_C_Payment2(paytype, total);
             form.ShowDialog();
             
             if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
-                orderTable.InsertNewOrder(currentOrder);
-                if (paytype == "card" && form.result.ToString() != "")
-                {
-                    MessageBox.Show(form.result.ToString(), "カード決済結果");
+                if (ordertype != "edit") 
+                { 
+                    
+                    orderTable.InsertNewOrder(currentOrder);
+                    if (paytype == "card" && form.result.ToString() != "")
+                    {
+                        MessageBox.Show(form.result.ToString(), "カード決済結果");
+                    }
+
+                    if (ordertype == "in" || ordertype == "out")
+                    {
+                        Frm_C_End formend = new Frm_C_End(ordertype);
+                        formend.ShowDialog();
+                    }
+                    else
+                    {
+                        closeparent = true;
+                        this.Close();
+                    }
                 }
-                Frm_C_End formend = new Frm_C_End(ordertype);
-                formend.ShowDialog();
+                else 
+                {
+                    closeparent = true;
+                    this.Close();
+                }
+
+            }
+        }
+
+        private void Frm_C_Payment_Load(object sender, EventArgs e)
+        {
+            if (ordertype == "add") 
+            {
+                btnCreditCard.Visible = false;
+                btnEMoney.Visible = false;
             }
         }
     }

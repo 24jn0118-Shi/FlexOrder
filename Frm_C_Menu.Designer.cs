@@ -194,6 +194,7 @@
             resources.ApplyResources(this.goods_name, "goods_name");
             this.goods_name.Name = "goods_name";
             this.goods_name.ReadOnly = true;
+            this.goods_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnMinus
@@ -204,6 +205,7 @@
             resources.ApplyResources(this.btnMinus, "btnMinus");
             this.btnMinus.Name = "btnMinus";
             this.btnMinus.ReadOnly = true;
+            this.btnMinus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // order_num
             // 
@@ -214,6 +216,7 @@
             resources.ApplyResources(this.order_num, "order_num");
             this.order_num.Name = "order_num";
             this.order_num.ReadOnly = true;
+            this.order_num.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.order_num.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // btnPlus
@@ -224,6 +227,7 @@
             resources.ApplyResources(this.btnPlus, "btnPlus");
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.ReadOnly = true;
+            this.btnPlus.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // subtotal
             // 
@@ -234,6 +238,7 @@
             resources.ApplyResources(this.subtotal, "subtotal");
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
+            this.subtotal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.subtotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // goods_id
@@ -242,6 +247,7 @@
             resources.ApplyResources(this.goods_id, "goods_id");
             this.goods_id.Name = "goods_id";
             this.goods_id.ReadOnly = true;
+            this.goods_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Frm_C_Menu

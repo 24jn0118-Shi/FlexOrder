@@ -83,7 +83,7 @@ namespace FlexOrder
                 }
                 else
                 {
-                    DialogResult dret = MessageBox.Show("分類コード：" + txbGroupCode.Text + "\n" + "分類名（日本語）：" + txbGroupName.Text + "\n" + "\n以上の内容で登録しますか", "確認",
+                    DialogResult dret = MessageBox.Show("分類コード：" + txbGroupCode.Text + "\n" + "分類名（日本語）：" + txbGroupName.Text + "\n" + "\n以上の内容で登録しますか？", "確認",
                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes)
                     {
@@ -136,7 +136,7 @@ namespace FlexOrder
                 }
                 else
                 {
-                    DialogResult dret = MessageBox.Show("交換対象の分類コード：：" + txbSortCode.Text + "\n" + "交換先の順番：" + txbSortIndex.Text + "\n" + "\n以上の内容で交換しますか", "確認",
+                    DialogResult dret = MessageBox.Show("交換対象の分類コード：：" + txbSortCode.Text + "\n" + "交換先の順番：" + txbSortIndex.Text + "\n" + "\n以上の内容で交換しますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
                     {

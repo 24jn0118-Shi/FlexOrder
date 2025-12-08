@@ -64,7 +64,7 @@ namespace FlexOrder
         {
             if ((beforename != txbGoodsName.Text) || (beforedetail != txbGoodsDetail.Text)) 
             {
-                DialogResult dret = MessageBox.Show("未保存の変更があります。閉じてもよろしいですか", "確認",
+                DialogResult dret = MessageBox.Show("未保存の変更があります\n閉じてもよろしいですか", "確認",
                                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dret == DialogResult.Yes)
                 {

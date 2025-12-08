@@ -20,6 +20,14 @@ namespace FlexOrder
         Order selectedOrder;
 
         private List<Order> currentOrderList = null;
+
+        private bool isDraggingDGV = false;
+        private int lastMouseY = 0;
+        private const int SCROLL_SENSITIVITY = 50;
+
+        bool _isRefreshing = false;
+        string _oldSeatText = "";
+        bool _editingSeat = false;
         public Frm_S_OrderManagement(Staff staff)
         {
             InitializeComponent();
@@ -28,8 +36,9 @@ namespace FlexOrder
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu frm_C_Menu = new Frm_C_Menu("add");
+            Frm_C_Menu frm_C_Menu = new Frm_C_Menu(false, "add");
             frm_C_Menu.ShowDialog();
+            Refresh_page();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -58,12 +67,12 @@ namespace FlexOrder
             else
             {
                 int total = selectedOrder.TotalPrice;
-                DialogResult dret = MessageBox.Show("返金金額： ¥ "+total+ "\n返金してから注文を削除してください。", "確認",
+                DialogResult dret = MessageBox.Show("返金金額： ¥ "+total+ "\n返金してから確認ボタンを押してください", "確認",
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes)
                 {
                     OrderTable orderTable = new OrderTable();
-                    int cnt = -1;//orderTable.Delete(selected_orderid);
+                    int cnt = orderTable.Delete(selected_orderid);
                     if (cnt > 0)
                     {
                         MessageBox.Show(cnt + "件の注文を削除しました", "削除完了",
@@ -107,6 +116,12 @@ namespace FlexOrder
 
         private void Refresh_page() 
         {
+            int firstVisibleRowIndex = -1;
+            if (dgvOrder.Rows.Count > 0 && dgvOrder.FirstDisplayedScrollingRowIndex >= 0)
+            {
+                firstVisibleRowIndex = dgvOrder.FirstDisplayedScrollingRowIndex;
+            }
+            dgvOrder.DataSource = null;
             selected_orderid = -1;
             selectedOrder = null;
             OrderTable orderTable = new OrderTable();
@@ -183,6 +198,17 @@ namespace FlexOrder
             }
             dgvOrder.DataSource = dataTable;
             dgvOrder.ClearSelection();
+            if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvOrder.Rows.Count)
+            {
+                try
+                {
+                    dgvOrder.FirstDisplayedScrollingRowIndex = firstVisibleRowIndex;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                }
+            }
             Console.WriteLine(this.Text + ": Page Refreshed");
 
         }
@@ -262,6 +288,156 @@ namespace FlexOrder
         {
             selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
             selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
+        }
+
+        private void btnAddOut_Click(object sender, EventArgs e)
+        {
+            Frm_C_Menu frm_C_Menu = new Frm_C_Menu(true, "add");
+            frm_C_Menu.ShowDialog();
+            Refresh_page();
+        }
+
+        private void dgvOrder_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDraggingDGV = true;
+                lastMouseY = e.Y;
+            }
+        }
+
+        private void dgvOrder_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDraggingDGV)
+            {
+                DataGridView dgv = sender as DataGridView;
+                if (dgv == null || dgv.RowCount == 0) return;
+
+                int deltaY = e.Y - lastMouseY;
+                int rowsToScroll = deltaY / SCROLL_SENSITIVITY;
+
+                if (rowsToScroll != 0)
+                {
+                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                    int newFirstRow = currentFirstRow - rowsToScroll;
+                    newFirstRow = Math.Max(0, newFirstRow);
+                    if (newFirstRow != currentFirstRow)
+                    {
+                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                    }
+                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                }
+            }
+        }
+
+        private void dgvOrder_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDraggingDGV = false;
+        }
+
+        private void dgvOrder_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvOrder.Columns[e.ColumnIndex].Name == "order_seat")
+            {
+                _editingSeat = true;
+                _oldSeatText = dgvOrder[e.ColumnIndex, e.RowIndex].Value?.ToString() ?? "";
+            }
+        }
+
+        private void dgvOrder_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
+
+            var cell = dgvOrder[e.ColumnIndex, e.RowIndex];
+            string txt = (cell.Value?.ToString() ?? "").Trim();
+
+            // 空输入 → 恢复旧值，不刷新
+            if (txt == "")
+            {
+                cell.Value = _oldSeatText;
+                return;
+            }
+
+            if (!int.TryParse(txt, out int seat))
+            {
+                cell.Value = _oldSeatText;
+                return;
+            }
+
+            if (seat < 1 || seat > 15)
+            {
+                cell.Value = _oldSeatText;
+                return;
+            }
+
+            // 合法
+            cell.Value = seat;
+        }
+
+        private void dgvOrder_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!_editingSeat) return;
+            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
+
+            _editingSeat = false;
+
+            var val = dgvOrder["order_seat", e.RowIndex].Value;
+            if (val == null) return;
+
+            if (!int.TryParse(val.ToString(), out int seat)) return;
+
+            int orderId = Convert.ToInt32(dgvOrder["order_id", e.RowIndex].Value);
+
+            OrderTable orderTable = new OrderTable();
+            orderTable.UpdateSeat(orderId, seat);
+
+            if (_isRefreshing) return;
+            _isRefreshing = true;
+
+            // 防止再入
+            BeginInvoke(new Action(() =>
+            {
+                Refresh_page();
+                _isRefreshing = false;
+            }));
+        }
+
+        private void dgvOrder_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void dgvOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (_isRefreshing) return;
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            if (dgvOrder.Columns[e.ColumnIndex].Name != "is_provided") return;
+
+            bool newVal = Convert.ToBoolean(dgvOrder[e.ColumnIndex, e.RowIndex].Value ?? false);
+            int orderId = Convert.ToInt32(dgvOrder["order_id", e.RowIndex].Value);
+            int goodsId = Convert.ToInt32(dgvOrder["goods_id", e.RowIndex].Value);
+
+            OrderTable orderTable = new OrderTable();
+            orderTable.UpdateProvided(orderId, goodsId, newVal);
+
+            _isRefreshing = true;
+            BeginInvoke(new Action(() =>
+            {
+                Refresh_page();
+                _isRefreshing = false;
+            }));
+        }
+
+        private void dgvOrder_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvOrder.IsCurrentCellDirty &&
+                dgvOrder.CurrentCell is DataGridViewCheckBoxCell)
+            {
+                dgvOrder.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
     }
 }

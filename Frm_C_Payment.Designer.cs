@@ -79,6 +79,7 @@
             this.Controls.Add(this.btnCreditCard);
             this.Controls.Add(this.btnEMoney);
             this.Name = "Frm_C_Payment";
+            this.Load += new System.EventHandler(this.Frm_C_Payment_Load);
             this.ResumeLayout(false);
 
         }

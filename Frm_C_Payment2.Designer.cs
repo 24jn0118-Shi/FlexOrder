@@ -40,6 +40,8 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.cmbCardNumber = new System.Windows.Forms.ComboBox();
             this.btnRef = new System.Windows.Forms.Button();
+            this.lblWarning2 = new System.Windows.Forms.Label();
+            this.lblWarning1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblEnter
@@ -102,6 +104,16 @@
             this.btnRef.UseVisualStyleBackColor = true;
             this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
             // 
+            // lblWarning2
+            // 
+            resources.ApplyResources(this.lblWarning2, "lblWarning2");
+            this.lblWarning2.Name = "lblWarning2";
+            // 
+            // lblWarning1
+            // 
+            resources.ApplyResources(this.lblWarning1, "lblWarning1");
+            this.lblWarning1.Name = "lblWarning1";
+            // 
             // Frm_C_Payment2
             // 
             resources.ApplyResources(this, "$this");
@@ -113,6 +125,8 @@
             this.Controls.Add(this.txtExpMonth);
             this.Controls.Add(this.txtExpYear);
             this.Controls.Add(this.txtCvc);
+            this.Controls.Add(this.lblWarning1);
+            this.Controls.Add(this.lblWarning2);
             this.Controls.Add(this.lblCardNumber);
             this.Controls.Add(this.lblMY);
             this.Controls.Add(this.lblCvc);
@@ -139,5 +153,7 @@
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.ComboBox cmbCardNumber;
         private System.Windows.Forms.Button btnRef;
+        private System.Windows.Forms.Label lblWarning2;
+        private System.Windows.Forms.Label lblWarning1;
     }
 }

@@ -27,26 +27,19 @@ namespace FlexOrder
 
         private Dictionary<string, List<Goods>> _allGoodsCache = new Dictionary<string, List<Goods>>();
 
-        private Order currentOrder = new Order();
+        public Order currentOrder = new Order();
 
         private bool isDragging = false;
         private Point lastMousePosition = Point.Empty;
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 50;
-        public Frm_C_Menu(string ordertype)
+        public Frm_C_Menu(bool istakeout, string ordertype)
         {
             InitializeComponent();
             this.ordertype = ordertype;
+            currentOrder.is_takeout = istakeout;
             SetupCustomTabs();
-            if(ordertype == "in") 
-            {
-                currentOrder.is_takeout = false;
-            } 
-            else if(ordertype == "out")
-            {
-                currentOrder.is_takeout = true;
-            }
         }
 
         private void SetupCustomTabs()
@@ -309,15 +302,27 @@ namespace FlexOrder
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            using (Frm_C_Cart form = new Frm_C_Cart(ordertype, currentOrder))
+            if (ordertype != "edit") 
             {
-                DialogResult result = form.ShowDialog();
-                if (result == DialogResult.Cancel || result == DialogResult.None)
+                using (Frm_C_Cart form = new Frm_C_Cart(ordertype, currentOrder))
                 {
-                    this.currentOrder = form.currentOrder;
-                    RefreshCart();
+                    DialogResult result = form.ShowDialog();
+                    if (form.closeparent)
+                    {
+                        this.Close();
+                    }
+                    if (result == DialogResult.Cancel || result == DialogResult.None)
+                    {
+                        this.currentOrder = form.currentOrder;
+                        RefreshCart();
+                    }
                 }
             }
+            else 
+            {
+                this.Close();
+            }
+            
         }
 
         private void btnBack_Click(object sender, EventArgs e)
