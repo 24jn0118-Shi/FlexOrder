@@ -207,7 +207,7 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"Update OrderDetail SET is_provided = CASE WHEN is_provided = 1 THEN 0 ELSE 1 END
+                string sql = @"UPDATE OrderDetail SET is_provided = CASE WHEN is_provided = 1 THEN 0 ELSE 1 END
                                 WHERE order_id = @order_id AND goods_id = @goods_id";
 
                 SqlCommand command = new SqlCommand(sql, connection);
