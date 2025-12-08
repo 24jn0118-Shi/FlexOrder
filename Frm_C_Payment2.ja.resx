@@ -117,4 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+<<<<<<< HEAD
+=======
+  <data name="lblEnter.Text" xml:space="preserve">
+    <value>Enterキーを押して続行</value>
+  </data>
+  <data name="lblMY.Text" xml:space="preserve">
+    <value>有効期限(MM/YYYY):</value>
+  </data>
+  <data name="lblCardNumber.Text" xml:space="preserve">
+    <value>カード番号:</value>
+  </data>
+  <data name="btnPay.Text" xml:space="preserve">
+    <value>購入</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>クレジットカード決済</value>
+  </data>
+>>>>>>> e8230762e876ad821925cb9bba6cfd56a75e83ab
 </root>
