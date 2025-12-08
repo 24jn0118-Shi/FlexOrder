@@ -18,7 +18,10 @@ namespace FlexOrder
         bool gethistory = false;
         int selected_orderid = -1;
         bool selected_istakeout = false;
+        private int maxid = 0;
         Order selectedOrder;
+        Timer seatFocusTimer = new Timer();
+        int seatFocusSeconds = 0;
 
         private List<Order> currentOrderList = null;
 
@@ -33,6 +36,8 @@ namespace FlexOrder
         {
             InitializeComponent();
             this.staff = staff;
+            seatFocusTimer.Interval = 1000;
+            seatFocusTimer.Tick += SeatFocusTimer_Tick;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -110,6 +115,7 @@ namespace FlexOrder
 
         private void Frm_S_OrderManagement_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             txbSeat.ReadOnly = true;
             btnUpdateSeat.Enabled = false;
             dgvOrder.AutoGenerateColumns = false;
@@ -128,6 +134,7 @@ namespace FlexOrder
             selected_orderid = -1;
             selectedOrder = null;
             OrderTable orderTable = new OrderTable();
+            maxid = orderTable.GetMaxId();
             DataTable dataTable = null;
             if (gethistory)
             {
@@ -419,6 +426,56 @@ namespace FlexOrder
             {
                 btnUpdateSeat.PerformClick();
             }
+        }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (_isRefreshing) return;           // 避免重入
+            if (IsUserEditing()) return;         // 正在操作 → 不刷新
+
+            OrderTable orderTable = new OrderTable();
+            int newmax = orderTable.GetMaxId();
+            Console.WriteLine("CurrentMaxID: "+newmax.ToString());
+            if (newmax > maxid) 
+            {
+                maxid = newmax;
+
+                _isRefreshing = true;
+                BeginInvoke(new Action(() =>
+                {
+                    Refresh_page();
+                    _isRefreshing = false;
+                }));
+            }
+        }
+        private bool IsUserEditing()
+        {
+            if (txbSeat.Focused) return true;
+            if (dgvOrder.IsCurrentCellInEditMode) return true;
+            if (isDraggingDGV) return true;
+
+            return false;
+        }
+        private void SeatFocusTimer_Tick(object sender, EventArgs e)
+        {
+            seatFocusSeconds++;
+
+            if (seatFocusSeconds >= 5)
+            {
+                seatFocusTimer.Stop();
+                this.SelectNextControl(txbSeat, true, true, true, true);
+            }
+        }
+
+        private void txbSeat_Enter(object sender, EventArgs e)
+        {
+            seatFocusSeconds = 0;
+            seatFocusTimer.Start();
+        }
+
+        private void txbSeat_TextChanged(object sender, EventArgs e)
+        {
+            seatFocusSeconds = 0;
         }
     }
 }

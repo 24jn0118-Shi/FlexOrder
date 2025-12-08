@@ -22,8 +22,8 @@ namespace FlexOrder
             InitializeComponent();
 
             //テスト用アカウント
-            txbUserId.Text = "100002";
-            txbPassword.Text = "100002";
+            //txbUserId.Text = "100002";
+            //txbPassword.Text = "100002";
             //テスト用アカウント
         }
 

@@ -139,7 +139,22 @@ namespace FlexOrderLibrary
             }
             return order;
         }
+        public int GetMaxId()
+        {
+            DataTable table = new DataTable();
 
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT MAX(order_id) AS M FROM [order]";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            int ret = -1;
+            ret = int.Parse(table.Rows[0]["M"].ToString());
+            return ret;
+        }
         public int UpdateOrder(Order order)
         {
             int ret = 0;
