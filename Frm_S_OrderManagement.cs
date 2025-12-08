@@ -24,6 +24,10 @@ namespace FlexOrder
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 50;
+
+        bool _isRefreshing = false;
+        string _oldSeatText = "";
+        bool _editingSeat = false;
         public Frm_S_OrderManagement(Staff staff)
         {
             InitializeComponent();
@@ -329,6 +333,111 @@ namespace FlexOrder
         private void dgvOrder_MouseUp(object sender, MouseEventArgs e)
         {
             isDraggingDGV = false;
+        }
+
+        private void dgvOrder_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvOrder.Columns[e.ColumnIndex].Name == "order_seat")
+            {
+                _editingSeat = true;
+                _oldSeatText = dgvOrder[e.ColumnIndex, e.RowIndex].Value?.ToString() ?? "";
+            }
+        }
+
+        private void dgvOrder_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
+
+            var cell = dgvOrder[e.ColumnIndex, e.RowIndex];
+            string txt = (cell.Value?.ToString() ?? "").Trim();
+
+            // 空输入 → 恢复旧值，不刷新
+            if (txt == "")
+            {
+                cell.Value = _oldSeatText;
+                return;
+            }
+
+            if (!int.TryParse(txt, out int seat))
+            {
+                cell.Value = _oldSeatText;
+                return;
+            }
+
+            if (seat < 1 || seat > 15)
+            {
+                cell.Value = _oldSeatText;
+                return;
+            }
+
+            // 合法
+            cell.Value = seat;
+        }
+
+        private void dgvOrder_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!_editingSeat) return;
+            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
+
+            _editingSeat = false;
+
+            var val = dgvOrder["order_seat", e.RowIndex].Value;
+            if (val == null) return;
+
+            if (!int.TryParse(val.ToString(), out int seat)) return;
+
+            int orderId = Convert.ToInt32(dgvOrder["order_id", e.RowIndex].Value);
+
+            OrderTable orderTable = new OrderTable();
+            orderTable.UpdateSeat(orderId, seat);
+
+            if (_isRefreshing) return;
+            _isRefreshing = true;
+
+            // 防止再入
+            BeginInvoke(new Action(() =>
+            {
+                Refresh_page();
+                _isRefreshing = false;
+            }));
+        }
+
+        private void dgvOrder_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
+
+        private void dgvOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (_isRefreshing) return;
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+
+            if (dgvOrder.Columns[e.ColumnIndex].Name != "is_provided") return;
+
+            bool newVal = Convert.ToBoolean(dgvOrder[e.ColumnIndex, e.RowIndex].Value ?? false);
+            int orderId = Convert.ToInt32(dgvOrder["order_id", e.RowIndex].Value);
+            int goodsId = Convert.ToInt32(dgvOrder["goods_id", e.RowIndex].Value);
+
+            OrderTable orderTable = new OrderTable();
+            orderTable.UpdateProvided(orderId, goodsId, newVal);
+
+            _isRefreshing = true;
+            BeginInvoke(new Action(() =>
+            {
+                Refresh_page();
+                _isRefreshing = false;
+            }));
+        }
+
+        private void dgvOrder_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvOrder.IsCurrentCellDirty &&
+                dgvOrder.CurrentCell is DataGridViewCheckBoxCell)
+            {
+                dgvOrder.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
     }
 }
