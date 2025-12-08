@@ -20,6 +20,7 @@ namespace FlexOrder
         int afterTotal;
         bool issame = true;
         string type = "no";
+        bool permit = true;
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
@@ -54,6 +55,10 @@ namespace FlexOrder
             dgvOrderDetail.DefaultCellStyle.SelectionForeColor = dgvOrderDetail.DefaultCellStyle.ForeColor;
             OrderTable orderTable = new OrderTable();
             beforeOrder = orderTable.GetOrderById(orderid);
+            if (beforeOrder.order_date.Date < DateTime.Today) 
+            {
+                permit = false;
+            }
             beforeTotal = beforeOrder.TotalPrice;
             lblBefore.Text = beforeTotal.ToString("N0");
 
@@ -85,6 +90,12 @@ namespace FlexOrder
             lblResult.Text = "変更なし";
 
             Refresh_page();
+            if (!permit) 
+            {
+                btnAddOrder.Enabled = false;
+                btnGoPay.Enabled = false;
+                lblType.Text = "過去の注文のため、変更できません";
+            }
         }
 
         private void Refresh_page()
@@ -120,7 +131,6 @@ namespace FlexOrder
             dgvOrderDetail.ClearSelection();
             lblAfter.Text = afterTotal.ToString("N0");
             issame = Order.CompareOrders(beforeOrder, afterOrder);
-            Console.WriteLine(issame);
             if (issame) 
             {
                 type = "no";
@@ -162,7 +172,7 @@ namespace FlexOrder
         }
         private void dgvOrderDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderDetail.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            if (!permit || e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderDetail.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
             {
                 return;
             }

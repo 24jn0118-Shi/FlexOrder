@@ -18,6 +18,7 @@ namespace FlexOrder
     {
         public Frm_C_Index()
         {
+            SwitchLanguage("ja");
             InitializeComponent();
         }
 
@@ -34,7 +35,6 @@ namespace FlexOrder
 
         private void FrmCIndex_Load(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
             //ImagePro.CheckAndCacheAllImages(true);
             ImagePro.CheckAndCacheAllImages(false);

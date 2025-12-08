@@ -110,6 +110,8 @@ namespace FlexOrder
 
         private void Frm_S_OrderManagement_Load(object sender, EventArgs e)
         {
+            txbSeat.ReadOnly = true;
+            btnUpdateSeat.Enabled = false;
             dgvOrder.AutoGenerateColumns = false;
             dgvOrder.CellFormatting += dgvOrder_CellFormatting;
             Refresh_page();
@@ -211,6 +213,8 @@ namespace FlexOrder
                     Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
                 }
             }
+            txbSeat.ReadOnly = true;
+            btnUpdateSeat.Enabled = false;
             Console.WriteLine(this.Text + ": Page Refreshed");
 
         }
@@ -289,12 +293,37 @@ namespace FlexOrder
 
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
-            selected_istakeout = (bool)dgvOrder.CurrentRow.Cells["is_takeout"].Value;
-            selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
-            txbSeat.Text = dgvOrder.CurrentRow.Cells["order_seat"].Value.ToString();
-            txbSeat.Focus();
-            txbSeat.SelectAll();
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
+            DataGridViewColumn clickedColumn = dgvOrder.Columns[e.ColumnIndex];
+            if (clickedColumn.Name == "is_provided")
+            {
+                if (clickedColumn is DataGridViewCheckBoxColumn)
+                {
+
+                }
+            }
+            else 
+            {
+                selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
+                selected_istakeout = (bool)dgvOrder.CurrentRow.Cells["is_takeout"].Value;
+                selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
+                txbSeat.Text = dgvOrder.CurrentRow.Cells["order_seat"].Value.ToString();
+                if (selected_istakeout)
+                {
+                    txbSeat.ReadOnly = true;
+                    btnUpdateSeat.Enabled = false;
+                }
+                else
+                {
+                    txbSeat.ReadOnly = false;
+                    btnUpdateSeat.Enabled = true;
+                    txbSeat.Focus();
+                    txbSeat.SelectAll();
+                }
+            }
         }
 
         private void btnAddOut_Click(object sender, EventArgs e)
@@ -376,7 +405,7 @@ namespace FlexOrder
         {
             this.SelectNextControl(txbSeat, true, true, true, true);
             bool res = int.TryParse(txbSeat.Text, out int seat);
-            if (res && !selected_istakeout && seat >= 1 && seat <= 15) 
+            if (res && seat >= 1 && seat <= 15) 
             {
                 OrderTable orderTable = new OrderTable();
                 orderTable.UpdateSeat(selected_orderid,seat);

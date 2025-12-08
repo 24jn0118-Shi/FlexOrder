@@ -103,8 +103,9 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT O.*, goods_name FROM [OrderDetail] AS O INNER JOIN LocalizationGoods AS G 
-                                ON O.goods_id = G.goods_id WHERE order_id = @order_id AND language_no = 1";
+                string sql = @"SELECT OD.*, goods_name, order_date FROM [OrderDetail] AS OD INNER JOIN LocalizationGoods AS G 
+                                ON OD.goods_id = G.goods_id INNER JOIN [Order] AS O ON OD.order_id = O.order_id 
+                                WHERE OD.order_id = @order_id AND language_no = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@order_id", id);
 
@@ -120,6 +121,7 @@ namespace FlexOrderLibrary
                 {
                     order = new Order();
                     order.order_id = id;
+                    order.order_date = (DateTime)row["order_date"];
                 }
 
                 OrderDetail detail = new OrderDetail();

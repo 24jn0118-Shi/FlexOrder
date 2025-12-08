@@ -253,7 +253,7 @@
             this.lblType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lblType.Location = new System.Drawing.Point(434, 458);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(267, 21);
+            this.lblType.Size = new System.Drawing.Size(293, 21);
             this.lblType.TabIndex = 18;
             this.lblType.Text = "lblType";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
