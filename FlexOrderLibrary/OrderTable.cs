@@ -98,7 +98,47 @@ namespace FlexOrderLibrary
 
         public Order GetOrderById(int id) 
         {
-            return null;
+            
+            OrderTable orderTable = new OrderTable();
+            DataTable table = null;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT O.*, goods_name FROM [OrderDetail] AS O INNER JOIN LocalizationGoods AS G 
+                                ON O.goods_id = G.goods_id WHERE order_id = @order_id AND language_no = 1";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@order_id", id);
+
+                adapter.Fill(table);
+            }
+
+            Order order = null;
+            List<OrderDetail> detailList = new List<OrderDetail>();
+
+            foreach (DataRow row in table.Rows)
+            {
+                if (order == null)
+                {
+                    order = new Order();
+                    order.order_id = id;
+                }
+
+                OrderDetail detail = new OrderDetail();
+                detail.goods_name = row["goods_name"].ToString();
+                detail.price = int.Parse(row["goods_price"].ToString());
+                detail.quantity = int.Parse(row["order_quantity"].ToString());
+                
+                detailList.Add(detail);
+
+            }
+
+            if (order != null)
+            {
+                order.orderdetaillist = detailList;
+            }
+            
+            return order;
         }
     }
 }
