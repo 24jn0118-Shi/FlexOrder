@@ -140,5 +140,79 @@ namespace FlexOrderLibrary
             
             return order;
         }
+
+        public int UpdateOrder(Order order)
+        {
+            int ret = 0;
+            int order_id = order.order_id;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"DELETE FROM OrderDetail WHERE order_id = @order_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@order_id", order_id);
+                connection.Open();
+
+                ret = command.ExecuteNonQuery();
+    
+            }
+            if (ret > 0)
+            {
+                ret = 0;
+
+                foreach (OrderDetail detail in order.orderdetaillist)
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        string sql = @"INSERT INTO OrderDetail VALUES(@order_id, @goods_id, @price, @quantity, @is_provided)";
+                        SqlCommand command = new SqlCommand(sql, connection);
+                        command.Parameters.AddWithValue("@order_id", order_id);
+                        command.Parameters.AddWithValue("@goods_id", detail.goods_id);
+                        command.Parameters.AddWithValue("@price", detail.price);
+                        command.Parameters.AddWithValue("@quantity", detail.quantity);
+                        command.Parameters.AddWithValue("@is_provided", detail.is_provided);
+                        connection.Open();
+                        ret += command.ExecuteNonQuery();
+                    }
+                }
+            }
+            return ret;
+        }
+
+        public int Delete(int id)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"DELETE FROM OrderDetail WHERE order_id = @order_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@order_id", id);
+                connection.Open();
+
+                ret = command.ExecuteNonQuery();
+            }
+            if (ret > 0)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = @"DELETE FROM Order WHERE goods_id = @goods_id";
+
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@order_id", id);
+                    connection.Open();
+
+                    ret = command.ExecuteNonQuery();
+
+                }
+            }
+
+            return ret;
+
+        }
     }
 }
