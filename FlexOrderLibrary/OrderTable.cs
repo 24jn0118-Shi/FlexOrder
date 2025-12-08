@@ -178,6 +178,47 @@ namespace FlexOrderLibrary
             return ret;
         }
 
+        public int UpdateSeat(int id, int order_seat)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"UPDATE Order SET order_seat = @order_seat
+                            WHERE order_id = @ order_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@ordetr_id", id);
+                command.Parameters.AddWithValue("@order_seat", order_seat);
+
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+            }
+            return ret;
+        }
+
+        public int UpdateProvided(int order_id, int goods_id)
+        {
+            int ret = 0;
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"UPDATE OrderDetail SET is_provided = CASE WHEN is_provided = 1 THEN 0 ELSE 1 END
+                                WHERE order_id = @order_id AND goods_id = @goods_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@order_id", order_id);
+                command.Parameters.AddWithValue("@goods_id", goods_id);
+
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+
+            }
+            return ret;
+
+        }
+
         public int Delete(int id)
         {
             int ret = 0;
