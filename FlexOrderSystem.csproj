@@ -274,9 +274,6 @@
     <EmbeddedResource Include="Frm_C_Payment.zh.resx">
       <DependentUpon>Frm_C_Payment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_Payment2.ja.resx">
-      <DependentUpon>Frm_C_Payment2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Payment2.resx">
       <DependentUpon>Frm_C_Payment2.cs</DependentUpon>
     </EmbeddedResource>
