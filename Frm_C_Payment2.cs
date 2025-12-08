@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Newtonsoft.Json.Linq; // 用于解析 JSON，你需要安装 Newtonsoft.Json NuGet 包
+using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,9 +12,219 @@ namespace FlexOrder
 {
     public partial class Frm_C_Payment2 : Form
     {
-        public Frm_C_Payment2()
+        public StringBuilder result = new StringBuilder("");
+        string paytype;
+        int total;
+        public Frm_C_Payment2(string paytype, int total)
         {
             InitializeComponent();
+            this.paytype = paytype;
+            this.total = total;
+        }
+
+        private void Frm_C_Payment2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter) 
+            {
+                if (paytype != "card")
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else 
+                {
+                    btnPay.PerformClick();
+                }
+            }
+        }
+
+        private async Task<bool> PaymentAsync()
+        {
+            try
+            {
+                // 1️⃣ Customer
+                string custJson = await PayjpHelper.CreateCustomerAsync();
+                JObject cust = JObject.Parse(custJson);
+                if (cust["error"] != null || cust["error_occurred"] != null)
+                {
+                    MessageBox.Show("顧客作成エラー: " + cust.ToString());
+                    return false;
+                }
+                string customerId = cust["id"].ToString();
+
+                // 2️⃣ Token
+                string tokenJson = await PayjpHelper.CreateTokenAsync(
+                    cmbCardNumber.Text,
+                    txtExpMonth.Text,
+                    txtExpYear.Text,
+                    txtCvc.Text
+                );
+
+                JObject token = JObject.Parse(tokenJson);
+                if (token["error"] != null || token["error_occurred"] != null)
+                {
+                    MessageBox.Show("カードエラー: " + token.ToString());
+                    return false;
+                }
+                string tokenId = token["id"].ToString();
+
+                // 3️⃣ Add Card
+                string cardJson = await PayjpHelper.AddCardToCustomerAsync(customerId, tokenId);
+                JObject card = JObject.Parse(cardJson);
+                if (card["error"] != null || card["error_occurred"] != null)
+                {
+                    MessageBox.Show("カード追加エラー: " + card.ToString());
+                    return false;
+                }
+                string cardId = card["id"].ToString();
+
+                // 4️⃣ Charge
+                string chargeJson = await PayjpHelper.ChargeCustomerAsync(customerId, cardId, total);
+
+                return ShowChargeResult(chargeJson);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("予期せぬエラー: " + ex.Message);
+                return false;
+            }
+        }
+
+
+        private bool ShowChargeResult(string chargeJson)
+        {
+            JObject charge = JObject.Parse(chargeJson);
+
+            if (charge["error"] != null)
+            {
+                result.AppendLine("Chargeエラー：\n" + charge["error"]["message"]);
+                return false;
+            }
+
+            bool paid = charge["paid"]?.ToObject<bool>() ?? false;
+            bool captured = charge["captured"]?.ToObject<bool>() ?? false;
+            string failureCode = charge["failure_code"]?.ToString();
+            string failureMessage = charge["failure_message"]?.ToString();
+
+            if (paid && captured && string.IsNullOrEmpty(failureCode))
+            {
+                result.AppendLine("カード決済成功！");
+                return true;
+            }
+            else
+            {
+                result.AppendLine($"カード決済失敗：{failureCode}\n{failureMessage}");
+                return false;
+            }
+        }
+
+        private async void btnPay_Click(object sender, EventArgs e)
+        {
+            bool result = ValidateCardInput();
+            if (result) 
+            {
+                bool success = await PaymentAsync();
+                if (success)
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    this.DialogResult = DialogResult.Cancel;
+                }
+                this.Close();
+            }
+        }
+
+        private bool ValidateCardInput()
+        {
+            StringBuilder errs = new StringBuilder("");
+            if (string.IsNullOrWhiteSpace(cmbCardNumber.Text) ||
+                cmbCardNumber.Text.Length < 13 ||
+                cmbCardNumber.Text.Length > 19 ||
+                !cmbCardNumber.Text.All(char.IsDigit))
+            {
+                errs.AppendLine("カード番号が正しくありません。");
+            }
+
+            if (!int.TryParse(txtExpMonth.Text, out int month) || month < 1 || month > 12)
+            {
+                errs.AppendLine("有効期限（月）が正しくありません。");
+            }
+
+            if (txtExpYear.Text.Length != 4 || !int.TryParse(txtExpYear.Text, out int year) || year < DateTime.Now.Year)
+            {
+                errs.AppendLine("有効期限（年）が正しくありません。");
+            }
+
+            if (string.IsNullOrWhiteSpace(txtCvc.Text) ||
+                txtCvc.Text.Length < 3 || txtCvc.Text.Length > 4 ||
+                !txtCvc.Text.All(char.IsDigit))
+            {
+                errs.AppendLine("CVC が正しくありません。");
+            }
+            if (errs.ToString() != "") 
+            {
+                MessageBox.Show(errs.ToString(),"Error");
+                return false;
+            }
+            else 
+            { 
+                return true;
+            }
+        }
+
+        private void Frm_C_Payment2_Load(object sender, EventArgs e)
+        {
+            
+            if (paytype != "card")
+            {
+                lblCardNumber.Visible = false;
+                lblMY.Visible = false;
+                lblSlash.Visible = false;
+                lblCvc.Visible = false;
+                cmbCardNumber.Visible = false;
+                txtExpMonth.Visible = false;
+                txtExpYear.Visible = false;
+                txtCvc.Visible = false;
+                btnPay.Visible = false;
+                btnRef.Visible = false;
+            }
+            else
+            {
+                lblEnter.Visible = false;
+                const string READFILE = @"W:\\24JN01卒業制作\\GroupI\\DBReset\\クレジットカード決済\\testcards.txt";
+                if (!File.Exists(READFILE))
+                {
+                    MessageBox.Show(READFILE + "ファイル存在しません", "エラー",
+                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    using (StreamReader sr = new StreamReader(READFILE))
+                    {
+                        while (!sr.EndOfStream)
+                        {
+                            string line = sr.ReadLine();
+                            cmbCardNumber.Items.Add(line);
+                        }
+                    }
+                    cmbCardNumber.SelectedItem = 0;
+                }
+                txtExpMonth.Text = "11";
+                txtExpYear.Text = "2028";
+                txtCvc.Text = "123";
+            }
+
+        }
+
+        private void btnRef_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://docs.pay.jp/v1/testcard",
+                UseShellExecute = true
+            });
         }
     }
 }

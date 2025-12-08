@@ -15,6 +15,9 @@ namespace FlexOrder
         [STAThread]
         static void Main()
         {
+            PayjpHelper.LoadKeys();
+            ImagePro.CheckAndCacheAllImages(true);
+            //ImagePro.CheckAndCacheAllImages(false);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Frm_T_TempStart());

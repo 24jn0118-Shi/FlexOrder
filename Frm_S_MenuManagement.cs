@@ -128,8 +128,6 @@ namespace FlexOrder
 
         private void Frm_S_MenuManagement_Load(object sender, EventArgs e)
         {
-            dgvMenu.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvMenu.MultiSelect = false;
             dgvMenu.AutoGenerateColumns = false;
             Refresh_page();
         }

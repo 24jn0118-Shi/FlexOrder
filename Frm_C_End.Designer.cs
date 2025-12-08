@@ -80,6 +80,7 @@
             this.Controls.Add(this.lblEnd1);
             this.Controls.Add(this.btnRestart);
             this.Name = "Frm_C_End";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_C_End_FormClosing);
             this.Load += new System.EventHandler(this.Frm_C_End_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

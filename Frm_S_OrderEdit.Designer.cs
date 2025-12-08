@@ -159,7 +159,7 @@
             // 
             this.lblTyp.AutoSize = true;
             this.lblTyp.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblTyp.Location = new System.Drawing.Point(81, 410);
+            this.lblTyp.Location = new System.Drawing.Point(81, 407);
             this.lblTyp.Name = "lblTyp";
             this.lblTyp.Size = new System.Drawing.Size(90, 21);
             this.lblTyp.TabIndex = 11;
@@ -230,7 +230,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblType.Location = new System.Drawing.Point(165, 410);
+            this.lblType.Location = new System.Drawing.Point(165, 407);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(64, 21);
             this.lblType.TabIndex = 18;

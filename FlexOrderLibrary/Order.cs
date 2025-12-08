@@ -10,7 +10,7 @@ namespace FlexOrderLibrary
     {
         public int order_id { get; set; }
         public DateTime order_date { get; set; }
-        public int order_seat { get; set; }
+        public int? order_seat { get; set; }
         public bool is_takeout { get; set; }
         public List<OrderDetail> orderdetaillist { get; set; } = new List<OrderDetail>();
         public int TotalPrice

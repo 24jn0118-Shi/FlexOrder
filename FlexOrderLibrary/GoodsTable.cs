@@ -48,6 +48,7 @@ namespace FlexOrderLibrary
             }
             return goodsList;
         }
+        /*
         public List<Goods> GetAllGoodsList(int language_no)
         {
             DataTable table = new DataTable();
@@ -82,7 +83,7 @@ namespace FlexOrderLibrary
                 }
             }
             return goodsList;
-        }
+        }*/
 
         public Goods GetGoodsById(int language_no, int id)
         {
