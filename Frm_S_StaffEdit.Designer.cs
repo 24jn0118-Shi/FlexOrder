@@ -264,6 +264,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "店員詳細";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_StaffEdit_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_StaffEdit_Load);

@@ -39,6 +39,12 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvGroupList = new System.Windows.Forms.DataGridView();
+            this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.group_sort = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.en = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCode = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.txbGroupCode = new System.Windows.Forms.TextBox();
@@ -50,12 +56,6 @@
             this.txbSortCode = new System.Windows.Forms.TextBox();
             this.txbSortIndex = new System.Windows.Forms.TextBox();
             this.btnGoSort = new System.Windows.Forms.Button();
-            this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.group_sort = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.en = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroupList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,6 +96,60 @@
             this.dgvGroupList.ReadOnly = true;
             this.dgvGroupList.RowTemplate.Height = 21;
             this.dgvGroupList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellClick);
+            // 
+            // group_code
+            // 
+            this.group_code.DataPropertyName = "group_code";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.group_code.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.group_code, "group_code");
+            this.group_code.Name = "group_code";
+            this.group_code.ReadOnly = true;
+            // 
+            // group_sort
+            // 
+            this.group_sort.DataPropertyName = "group_sort";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.group_sort.DefaultCellStyle = dataGridViewCellStyle3;
+            resources.ApplyResources(this.group_sort, "group_sort");
+            this.group_sort.Name = "group_sort";
+            this.group_sort.ReadOnly = true;
+            // 
+            // ja
+            // 
+            this.ja.DataPropertyName = "ja";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ja.DefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(this.ja, "ja");
+            this.ja.Name = "ja";
+            this.ja.ReadOnly = true;
+            // 
+            // en
+            // 
+            this.en.DataPropertyName = "en";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.en.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.en, "en");
+            this.en.Name = "en";
+            this.en.ReadOnly = true;
+            // 
+            // zh
+            // 
+            this.zh.DataPropertyName = "zh";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.zh.DefaultCellStyle = dataGridViewCellStyle6;
+            resources.ApplyResources(this.zh, "zh");
+            this.zh.Name = "zh";
+            this.zh.ReadOnly = true;
+            // 
+            // ru
+            // 
+            this.ru.DataPropertyName = "ru";
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ru.DefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(this.ru, "ru");
+            this.ru.Name = "ru";
+            this.ru.ReadOnly = true;
             // 
             // lblCode
             // 
@@ -158,60 +212,6 @@
             this.btnGoSort.Name = "btnGoSort";
             this.btnGoSort.UseVisualStyleBackColor = true;
             this.btnGoSort.Click += new System.EventHandler(this.btnGoSort_Click);
-            // 
-            // group_code
-            // 
-            this.group_code.DataPropertyName = "group_code";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.group_code.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.group_code, "group_code");
-            this.group_code.Name = "group_code";
-            this.group_code.ReadOnly = true;
-            // 
-            // group_sort
-            // 
-            this.group_sort.DataPropertyName = "group_sort";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.group_sort.DefaultCellStyle = dataGridViewCellStyle3;
-            resources.ApplyResources(this.group_sort, "group_sort");
-            this.group_sort.Name = "group_sort";
-            this.group_sort.ReadOnly = true;
-            // 
-            // ja
-            // 
-            this.ja.DataPropertyName = "ja";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ja.DefaultCellStyle = dataGridViewCellStyle4;
-            resources.ApplyResources(this.ja, "ja");
-            this.ja.Name = "ja";
-            this.ja.ReadOnly = true;
-            // 
-            // en
-            // 
-            this.en.DataPropertyName = "en";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.en.DefaultCellStyle = dataGridViewCellStyle5;
-            resources.ApplyResources(this.en, "en");
-            this.en.Name = "en";
-            this.en.ReadOnly = true;
-            // 
-            // zh
-            // 
-            this.zh.DataPropertyName = "zh";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.zh.DefaultCellStyle = dataGridViewCellStyle6;
-            resources.ApplyResources(this.zh, "zh");
-            this.zh.Name = "zh";
-            this.zh.ReadOnly = true;
-            // 
-            // ru
-            // 
-            this.ru.DataPropertyName = "ru";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ru.DefaultCellStyle = dataGridViewCellStyle7;
-            resources.ApplyResources(this.ru, "ru");
-            this.ru.Name = "ru";
-            this.ru.ReadOnly = true;
             // 
             // Frm_S_GoodsGroupManagement
             // 

@@ -307,29 +307,35 @@ namespace FlexOrder
             DataGridViewColumn clickedColumn = dgvOrder.Columns[e.ColumnIndex];
             if (clickedColumn.Name == "is_provided")
             {
-                if (clickedColumn is DataGridViewCheckBoxColumn)
-                {
+                return;
+            }
+            int currentOrderId = Convert.ToInt32(dgvOrder.Rows[e.RowIndex].Cells["order_id"].Value);
 
+            dgvOrder.ClearSelection();
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["order_id"].Value) == currentOrderId)
+                {
+                    row.Selected = true;
                 }
             }
-            else 
+            selected_orderid = currentOrderId;
+            selected_istakeout = (bool)dgvOrder.Rows[e.RowIndex].Cells["is_takeout"].Value;
+            selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
+
+            txbSeat.Text = dgvOrder.Rows[e.RowIndex].Cells["order_seat"].Value.ToString();
+
+            if (selected_istakeout)
             {
-                selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
-                selected_istakeout = (bool)dgvOrder.CurrentRow.Cells["is_takeout"].Value;
-                selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
-                txbSeat.Text = dgvOrder.CurrentRow.Cells["order_seat"].Value.ToString();
-                if (selected_istakeout)
-                {
-                    txbSeat.ReadOnly = true;
-                    btnUpdateSeat.Enabled = false;
-                }
-                else
-                {
-                    txbSeat.ReadOnly = false;
-                    btnUpdateSeat.Enabled = true;
-                    txbSeat.Focus();
-                    txbSeat.SelectAll();
-                }
+                txbSeat.ReadOnly = true;
+                btnUpdateSeat.Enabled = false;
+            }
+            else
+            {
+                txbSeat.ReadOnly = false;
+                btnUpdateSeat.Enabled = true;
+                txbSeat.Focus();
+                txbSeat.SelectAll();
             }
         }
 
