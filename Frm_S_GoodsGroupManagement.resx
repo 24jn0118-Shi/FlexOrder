@@ -421,16 +421,16 @@
     <value>NoControl</value>
   </data>
   <data name="lblSortCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 353</value>
+    <value>367, 353</value>
   </data>
   <data name="lblSortCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 21</value>
+    <value>186, 21</value>
   </data>
   <data name="lblSortCode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="lblSortCode.Text" xml:space="preserve">
-    <value>順番交換対象の分類コード：</value>
+    <value>並び替える分類コード：</value>
   </data>
   <data name="&gt;&gt;lblSortCode.Name" xml:space="preserve">
     <value>lblSortCode</value>
@@ -454,16 +454,16 @@
     <value>NoControl</value>
   </data>
   <data name="lblSortIndex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 392</value>
+    <value>463, 392</value>
   </data>
   <data name="lblSortIndex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 21</value>
+    <value>90, 21</value>
   </data>
   <data name="lblSortIndex.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="lblSortIndex.Text" xml:space="preserve">
-    <value>交換先の順番：</value>
+    <value>目標順番：</value>
   </data>
   <data name="&gt;&gt;lblSortIndex.Name" xml:space="preserve">
     <value>lblSortIndex</value>

@@ -256,6 +256,7 @@ namespace FlexOrderLibrary
 
             return newGoodsId;
         }
+        /*
         public int UpdateImagesFromBinaryFile(string binaryfilepath) 
         {
             int ret = 0;
@@ -302,6 +303,7 @@ namespace FlexOrderLibrary
             }
             return ret;
         }
+        */
         public int Update(Goods goods)
         {
             int ret = 0;
@@ -337,7 +339,6 @@ namespace FlexOrderLibrary
             }
             return ret;
         }
-
         public int UpdateGoodsLocalization(Goods goods)
         {
             int ret = 0;

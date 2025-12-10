@@ -24,7 +24,7 @@ namespace FlexOrder
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 50;
+        private const int SCROLL_SENSITIVITY = 80;
         public Frm_S_OrderEdit(int orderid)
         {
             InitializeComponent();

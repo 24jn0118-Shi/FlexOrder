@@ -88,7 +88,7 @@ namespace FlexOrderLibrary
                     INNER JOIN [Order] AS O ON D.order_id = O.order_id 
                     WHERE order_date >= DATEADD(day, -6, CAST(GETDATE() AS date)) 
                     AND order_date < DATEADD(day, 1, CAST(GETDATE() AS date)) 
-                    ORDER BY D.order_id ASC";
+                    ORDER BY D.order_id DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 adapter.Fill(table);

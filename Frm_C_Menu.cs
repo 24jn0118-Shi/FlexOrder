@@ -33,7 +33,7 @@ namespace FlexOrder
         private Point lastMousePosition = Point.Empty;
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 50;
+        private const int SCROLL_SENSITIVITY = 80;
         public Frm_C_Menu(bool istakeout, string ordertype)
         {
             InitializeComponent();
@@ -48,7 +48,6 @@ namespace FlexOrder
             currentOrder = order;
             SetupCustomTabs();
         }
-
         private void SetupCustomTabs()
         {
             tbcntMenu.Alignment = TabAlignment.Left;
@@ -59,7 +58,6 @@ namespace FlexOrder
             tbcntMenu.DrawItem += TabControl1_DrawItem;
             tbcntMenu.SelectedIndexChanged += TbcntMenu_SelectedIndexChanged;
         }
-
         private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             TabControl tabControl = (TabControl)sender;
@@ -75,7 +73,6 @@ namespace FlexOrder
             Brush textBrush = e.State == DrawItemState.Selected ? Brushes.Blue : Brushes.Black;
             e.Graphics.DrawString(tabPage.Text, e.Font, textBrush, e.Bounds, sf);
         }
-
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
             txtKaikei.Text = "¥ 0";
@@ -90,7 +87,6 @@ namespace FlexOrder
             tbcntMenu.SelectedIndex = 0;
             RefreshCart();
         }
-
         private void BindTouchScrollEvents(FlowLayoutPanel panel)
         {
             panel.MouseDown -= flowLayoutPanelMenuRecommend_MouseDown;
@@ -101,7 +97,6 @@ namespace FlexOrder
             panel.MouseMove += flowLayoutPanelMenuRecommend_MouseMove;
             panel.MouseUp += flowLayoutPanelMenuRecommend_MouseUp;
         }
-
         private void LoadGroupsTabs()
         {
             GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
@@ -123,20 +118,16 @@ namespace FlexOrder
                 BindTouchScrollEvents(panel);
             }
         }
-
         private void TbcntMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadProductsForTab(tbcntMenu.SelectedTab);
             ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
         }
-        
         private void LoadProductsForTab(TabPage tab) 
         {
             if (tab == null) return;
-
             FlowLayoutPanel panel;
             string groupCode;
-
             if (tab == tbcntMenu.TabPages[0])
             {
                 panel = flowLayoutPanelMenuRecommend;
@@ -148,12 +139,10 @@ namespace FlexOrder
                 panel = (FlowLayoutPanel)tab.Controls[0];
                 groupCode = tab.Tag as string;
             }
-
             if (panel.Controls.Count > 0)
             {
                 return;
             }
-
             if (string.IsNullOrEmpty(groupCode) || _allGoodsCache.ContainsKey(groupCode))
             {
             }
@@ -331,27 +320,21 @@ namespace FlexOrder
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-            //ApplyVegetarianFilter();  
             tbcntMenu.SelectedIndex = 0;
             ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
         }
-
         private void lblVeget_Click(object sender, EventArgs e)
         {
             ckbVeget.Checked = !ckbVeget.Checked;
         }
-
         private void btnRestart_Click(object sender, EventArgs e)
         {
             DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
@@ -363,7 +346,6 @@ namespace FlexOrder
                 Environment.Exit(0);
             }
         }
-
         private void dgvOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderList.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
@@ -388,7 +370,6 @@ namespace FlexOrder
             }
             RefreshCart();
         }
-
         private void flowLayoutPanelMenuRecommend_MouseUp(object sender, MouseEventArgs e)
         {
             FlowLayoutPanel panel = sender as FlowLayoutPanel;
@@ -398,7 +379,6 @@ namespace FlexOrder
 
             panel.Capture = false;
         }
-
         private void flowLayoutPanelMenuRecommend_MouseDown(object sender, MouseEventArgs e)
         {
             FlowLayoutPanel panel = sender as FlowLayoutPanel;
@@ -412,7 +392,6 @@ namespace FlexOrder
                 panel.Capture = true;
             }
         }
-
         private void flowLayoutPanelMenuRecommend_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDragging)
@@ -442,7 +421,6 @@ namespace FlexOrder
                 }
             }
         }
-
         private void dgvOrderList_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -451,7 +429,6 @@ namespace FlexOrder
                 lastMouseY = e.Y;
             }
         }
-
         private void dgvOrderList_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDraggingDGV)
@@ -478,7 +455,6 @@ namespace FlexOrder
                 }
             }
         }
-
         private void dgvOrderList_MouseUp(object sender, MouseEventArgs e)
         {
             isDraggingDGV = false;

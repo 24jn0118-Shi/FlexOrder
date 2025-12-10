@@ -27,11 +27,11 @@ namespace FlexOrder
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 50;
+        private const int SCROLL_SENSITIVITY = 80;
 
         bool _isRefreshing = false;
-        string _oldSeatText = "";
-        bool _editingSeat = false;
+        //string _oldSeatText = "";
+        //bool _editingSeat = false;
         public Frm_S_OrderManagement(Staff staff)
         {
             InitializeComponent();
@@ -118,6 +118,8 @@ namespace FlexOrder
             timer1.Start();
             txbSeat.ReadOnly = true;
             btnUpdateSeat.Enabled = false;
+            dgvOrder.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+            dgvOrder.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvOrder.AutoGenerateColumns = false;
             dgvOrder.CellFormatting += dgvOrder_CellFormatting;
             Refresh_page();
@@ -311,32 +313,7 @@ namespace FlexOrder
             }
             int currentOrderId = Convert.ToInt32(dgvOrder.Rows[e.RowIndex].Cells["order_id"].Value);
 
-            dgvOrder.ClearSelection();
-            foreach (DataGridViewRow row in dgvOrder.Rows)
-            {
-                if (Convert.ToInt32(row.Cells["order_id"].Value) == currentOrderId)
-                {
-                    row.Selected = true;
-                }
-            }
-            selected_orderid = currentOrderId;
-            selected_istakeout = (bool)dgvOrder.Rows[e.RowIndex].Cells["is_takeout"].Value;
-            selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
-
-            txbSeat.Text = dgvOrder.Rows[e.RowIndex].Cells["order_seat"].Value.ToString();
-
-            if (selected_istakeout)
-            {
-                txbSeat.ReadOnly = true;
-                btnUpdateSeat.Enabled = false;
-            }
-            else
-            {
-                txbSeat.ReadOnly = false;
-                btnUpdateSeat.Enabled = true;
-                txbSeat.Focus();
-                txbSeat.SelectAll();
-            }
+            SelectWholeOrder(currentOrderId);
         }
 
         private void btnAddOut_Click(object sender, EventArgs e)
@@ -379,9 +356,47 @@ namespace FlexOrder
             }
         }
 
+        private void SelectWholeOrder(int orderId) 
+        {
+            dgvOrder.ClearSelection();
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["order_id"].Value) == orderId)
+                {
+                    row.Selected = true;
+                }
+            }
+            selected_orderid = orderId;
+            selectedOrder = currentOrderList.First(o => o.order_id == orderId);
+            txbSeat.Text = selectedOrder.order_seat?.ToString() ?? "";
+            selected_istakeout = selectedOrder.is_takeout;
+            if (selected_istakeout)
+            {
+                txbSeat.ReadOnly = true;
+                btnUpdateSeat.Enabled = false;
+            }
+            else
+            {
+                txbSeat.ReadOnly = false;
+                btnUpdateSeat.Enabled = true;
+                txbSeat.Focus();
+                txbSeat.SelectAll();
+            }
+        }
+
         private void dgvOrder_MouseUp(object sender, MouseEventArgs e)
         {
             isDraggingDGV = false;
+            var hit = dgvOrder.HitTest(e.X, e.Y);
+            if (hit.RowIndex < 0) return;
+
+            int rowIndex = hit.RowIndex;
+
+            int currentOrderId = Convert.ToInt32(
+                dgvOrder.Rows[rowIndex].Cells["order_id"].Value
+            );
+
+            SelectWholeOrder(currentOrderId);
         }
 
         private void dgvOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)

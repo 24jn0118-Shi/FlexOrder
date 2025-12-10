@@ -136,41 +136,5 @@ namespace FlexOrderLibrary
             return true;
         }
 
-        public void CombineOrders(Order newOrder)
-        {
-            if (newOrder == null || newOrder.orderdetaillist == null)
-                return;
-
-            foreach (var newItem in newOrder.orderdetaillist)
-            {
-                var oldItem = this.orderdetaillist.FirstOrDefault(i => i.goods_id == newItem.goods_id);
-
-                if (oldItem == null)
-                {
-                    this.orderdetaillist.Add(new OrderDetail
-                    {
-                        goods_id = newItem.goods_id,
-                        goods_name = newItem.goods_name,
-                        price = newItem.price,
-                        quantity = newItem.quantity
-                    });
-                }
-                else
-                {
-                    if (oldItem.price == newItem.price)
-                    {
-                        oldItem.quantity += newItem.quantity;
-                    }
-                    else
-                    {
-                        oldItem.price = newItem.price;
-                        oldItem.quantity += newItem.quantity;
-                    }
-
-                    if (oldItem.quantity > 10)
-                        oldItem.quantity = 10;
-                }
-            }
-        }
     }
 }
