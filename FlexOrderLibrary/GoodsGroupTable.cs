@@ -189,19 +189,23 @@ namespace FlexOrderLibrary
             int ret = 0;
             int i = goodsGroup.group_sort;
             string connectionString = Properties.Settings.Default.DBConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
+            
                 string sql = @"UPDATE GoodsGroup SET group_sort = @group_sort WHERE group_sort = @group_sort_before";
                 while (i > target)
                 {
-                    SqlCommand command = new SqlCommand(sql, connection);
-                    command.Parameters.AddWithValue("@group_sort", i);
-                    command.Parameters.AddWithValue("@group_sort_before", i - 1);
-                    connection.Open();
-                    ret = command.ExecuteNonQuery();
-                    i--;
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        SqlCommand command = new SqlCommand(sql, connection);
+                        command.Parameters.AddWithValue("@group_sort", i);
+                        command.Parameters.AddWithValue("@group_sort_before", i - 1);
+                        connection.Open();
+                        ret = command.ExecuteNonQuery();
+                        i--;
+                    }
                 }
-                while (i < target)
+            while (i < target)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     SqlCommand command = new SqlCommand(sql, connection);
                     command.Parameters.AddWithValue("@group_sort", i);
@@ -210,15 +214,16 @@ namespace FlexOrderLibrary
                     ret = command.ExecuteNonQuery();
                     i++;
                 }
-
             }
+
+            
             ret = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"UPDATE GoodsGroup SET group_sort = @group_sort WHERE group_name = @group_name";
-                SqlCommand command = new SqlCommand(sql, connection);
+                string sql2 = @"UPDATE GoodsGroup SET group_sort = @group_sort WHERE group_code = @group_code";
+                SqlCommand command = new SqlCommand(sql2, connection);
                 command.Parameters.AddWithValue("@group_sort", target);
-                command.Parameters.AddWithValue("@group_name", goodsGroup.group_name);
+                command.Parameters.AddWithValue("@group_code", goodsGroup.group_code);
                 connection.Open();
                 ret = command.ExecuteNonQuery();
             }
