@@ -81,6 +81,9 @@
             this.dgvStaff.Size = new System.Drawing.Size(570, 273);
             this.dgvStaff.TabIndex = 1;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            this.dgvStaff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseDown);
+            this.dgvStaff.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseMove);
+            this.dgvStaff.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseUp);
             // 
             // staff_id
             // 

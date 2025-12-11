@@ -13,6 +13,9 @@ namespace FlexOrder
 {
     public partial class Frm_S_GoodsGroupManagement : Form
     {
+        private bool isDraggingDGV = false;
+        private int lastMouseY = 0;
+        private const int SCROLL_SENSITIVITY = 15;
         public Frm_S_GoodsGroupManagement()
         {
             InitializeComponent();
@@ -30,12 +33,28 @@ namespace FlexOrder
         }
         private void Refresh_page()
         {
+            int firstVisibleRowIndex = -1;
+            if (dgvGroupList.Rows.Count > 0 && dgvGroupList.FirstDisplayedScrollingRowIndex >= 0)
+            {
+                firstVisibleRowIndex = dgvGroupList.FirstDisplayedScrollingRowIndex;
+            }
             txbSortCode.Text = "";
             GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
             DataTable dataTable = goodsGroupTable.GetAllGroup();
             dgvGroupList.DataSource = dataTable;
             dgvGroupList.ClearSelection();
             Console.WriteLine(this.Text+": Page Refreshed");
+            if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvGroupList.Rows.Count)
+            {
+                try
+                {
+                    dgvGroupList.FirstDisplayedScrollingRowIndex = firstVisibleRowIndex;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                }
+            }
         }
         private void dgvGroupList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -131,7 +150,7 @@ namespace FlexOrder
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
                     {
-                        int cnt = goodsGroupTable.ExchangeGroupSort(goodsGroup, target);
+                        int cnt = goodsGroupTable.SortGroup(goodsGroup, target);
                         if (cnt == 1)
                         {
                             MessageBox.Show("並び替えました", "整列完了",
@@ -146,5 +165,42 @@ namespace FlexOrder
 
         }
 
+        private void dgvGroupList_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDraggingDGV = true;
+                lastMouseY = e.Y;
+            }
+        }
+
+        private void dgvGroupList_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDraggingDGV)
+            {
+                DataGridView dgv = sender as DataGridView;
+                if (dgv == null || dgv.RowCount == 0) return;
+
+                int deltaY = e.Y - lastMouseY;
+                int rowsToScroll = deltaY / SCROLL_SENSITIVITY;
+
+                if (rowsToScroll != 0)
+                {
+                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                    int newFirstRow = currentFirstRow - rowsToScroll;
+                    newFirstRow = Math.Max(0, newFirstRow);
+                    if (newFirstRow != currentFirstRow)
+                    {
+                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                    }
+                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                }
+            }
+        }
+
+        private void dgvGroupList_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDraggingDGV = false;
+        }
     }
 }

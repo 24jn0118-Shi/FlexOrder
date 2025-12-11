@@ -33,7 +33,7 @@ namespace FlexOrder
         private Point lastMousePosition = Point.Empty;
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 80;
+        private const int SCROLL_SENSITIVITY = 15;
         public Frm_C_Menu(bool istakeout, string ordertype)
         {
             InitializeComponent();
