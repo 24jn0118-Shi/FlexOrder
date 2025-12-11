@@ -458,9 +458,8 @@ namespace FlexOrder
         
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (_isRefreshing) return;
-            if (IsUserEditing()) return;
-            if (!this.IsHandleCreated || this.IsDisposed) return;
+            if (_isRefreshing) return;           // 避免重入
+            if (IsUserEditing()) return;         // 正在操作 → 不刷新
 
             OrderTable orderTable = new OrderTable();
             int newmax = orderTable.GetMaxId();
@@ -505,12 +504,6 @@ namespace FlexOrder
         private void txbSeat_TextChanged(object sender, EventArgs e)
         {
             seatFocusSeconds = 0;
-        }
-
-        private void Frm_S_OrderManagement_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            timer1.Stop();
-            timer1.Enabled = false;
         }
     }
 }
