@@ -41,14 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnHistory = new System.Windows.Forms.Button();
-            this.btnAddOut = new System.Windows.Forms.Button();
-            this.btnUpdateSeat = new System.Windows.Forms.Button();
-            this.txbSeat = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.str_order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.str_is_takeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +52,14 @@
             this.order_seat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.is_provided = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.btnAddOut = new System.Windows.Forms.Button();
+            this.btnUpdateSeat = new System.Windows.Forms.Button();
+            this.txbSeat = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,7 +103,7 @@
             this.is_provided});
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -114,7 +114,7 @@
             this.dgvOrder.Name = "dgvOrder";
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -132,90 +132,6 @@
             this.dgvOrder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvOrder_MouseDown);
             this.dgvOrder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvOrder_MouseMove);
             this.dgvOrder.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvOrder_MouseUp);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(166, 658);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(159, 38);
-            this.btnAdd.TabIndex = 2;
-            this.btnAdd.Text = "新規注文（店内）";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEdit.Location = new System.Drawing.Point(363, 658);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(103, 38);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "注文の変更";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(363, 702);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(103, 38);
-            this.btnDelete.TabIndex = 4;
-            this.btnDelete.Text = "注文の削除";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnHistory.Location = new System.Drawing.Point(35, 675);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(125, 38);
-            this.btnHistory.TabIndex = 5;
-            this.btnHistory.Text = "過去注文ON";
-            this.btnHistory.UseVisualStyleBackColor = true;
-            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
-            // 
-            // btnAddOut
-            // 
-            this.btnAddOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAddOut.Location = new System.Drawing.Point(166, 702);
-            this.btnAddOut.Name = "btnAddOut";
-            this.btnAddOut.Size = new System.Drawing.Size(159, 38);
-            this.btnAddOut.TabIndex = 2;
-            this.btnAddOut.Text = "新規注文（持帰）";
-            this.btnAddOut.UseVisualStyleBackColor = true;
-            this.btnAddOut.Click += new System.EventHandler(this.btnAddOut_Click);
-            // 
-            // btnUpdateSeat
-            // 
-            this.btnUpdateSeat.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnUpdateSeat.Location = new System.Drawing.Point(543, 702);
-            this.btnUpdateSeat.Name = "btnUpdateSeat";
-            this.btnUpdateSeat.Size = new System.Drawing.Size(137, 38);
-            this.btnUpdateSeat.TabIndex = 4;
-            this.btnUpdateSeat.Text = "座席番号入力";
-            this.btnUpdateSeat.UseVisualStyleBackColor = true;
-            this.btnUpdateSeat.Click += new System.EventHandler(this.btnUpdateSeat_Click);
-            // 
-            // txbSeat
-            // 
-            this.txbSeat.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSeat.Location = new System.Drawing.Point(561, 659);
-            this.txbSeat.Name = "txbSeat";
-            this.txbSeat.Size = new System.Drawing.Size(100, 34);
-            this.txbSeat.TabIndex = 6;
-            this.txbSeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txbSeat.TextChanged += new System.EventHandler(this.txbSeat_TextChanged);
-            this.txbSeat.Enter += new System.EventHandler(this.txbSeat_Enter);
-            this.txbSeat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSeat_KeyPress);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // str_order_id
             // 
@@ -347,6 +263,90 @@
             this.is_provided.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.is_provided.Width = 70;
             // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAdd.Location = new System.Drawing.Point(166, 658);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(159, 38);
+            this.btnAdd.TabIndex = 2;
+            this.btnAdd.Text = "新規注文（店内）";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnEdit.Location = new System.Drawing.Point(363, 658);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(103, 38);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "注文の変更";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnDelete.Location = new System.Drawing.Point(363, 702);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(103, 38);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "注文の削除";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnHistory.Location = new System.Drawing.Point(35, 675);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(125, 38);
+            this.btnHistory.TabIndex = 5;
+            this.btnHistory.Text = "過去注文ON";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
+            // 
+            // btnAddOut
+            // 
+            this.btnAddOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAddOut.Location = new System.Drawing.Point(166, 702);
+            this.btnAddOut.Name = "btnAddOut";
+            this.btnAddOut.Size = new System.Drawing.Size(159, 38);
+            this.btnAddOut.TabIndex = 2;
+            this.btnAddOut.Text = "新規注文（持帰）";
+            this.btnAddOut.UseVisualStyleBackColor = true;
+            this.btnAddOut.Click += new System.EventHandler(this.btnAddOut_Click);
+            // 
+            // btnUpdateSeat
+            // 
+            this.btnUpdateSeat.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnUpdateSeat.Location = new System.Drawing.Point(543, 702);
+            this.btnUpdateSeat.Name = "btnUpdateSeat";
+            this.btnUpdateSeat.Size = new System.Drawing.Size(137, 38);
+            this.btnUpdateSeat.TabIndex = 4;
+            this.btnUpdateSeat.Text = "座席番号入力";
+            this.btnUpdateSeat.UseVisualStyleBackColor = true;
+            this.btnUpdateSeat.Click += new System.EventHandler(this.btnUpdateSeat_Click);
+            // 
+            // txbSeat
+            // 
+            this.txbSeat.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbSeat.Location = new System.Drawing.Point(561, 659);
+            this.txbSeat.Name = "txbSeat";
+            this.txbSeat.Size = new System.Drawing.Size(100, 34);
+            this.txbSeat.TabIndex = 6;
+            this.txbSeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbSeat.TextChanged += new System.EventHandler(this.txbSeat_TextChanged);
+            this.txbSeat.Enter += new System.EventHandler(this.txbSeat_Enter);
+            this.txbSeat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbSeat_KeyPress);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Frm_S_OrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -364,6 +364,7 @@
             this.Name = "Frm_S_OrderManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "注文管理";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_S_OrderManagement_FormClosing);
             this.Load += new System.EventHandler(this.Frm_S_OrderManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.ResumeLayout(false);
