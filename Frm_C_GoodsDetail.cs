@@ -32,7 +32,6 @@ namespace FlexOrder
             InitializeComponent();
             thisid = id;
         }
-
         private void Frm_C_GoodsDetail_Load(object sender, EventArgs e)
         {
             string currentLang = Thread.CurrentThread.CurrentUICulture.Name;

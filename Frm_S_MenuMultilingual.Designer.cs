@@ -159,6 +159,7 @@
             this.Controls.Add(this.lblGoodsName);
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuMultilingual";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Frm_S_MenuMultilingual";
             this.Load += new System.EventHandler(this.Frm_S_MenuMultilingual_Load);
             this.ResumeLayout(false);

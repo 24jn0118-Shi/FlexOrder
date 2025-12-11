@@ -195,9 +195,10 @@ namespace FlexOrder
                 return null;
             }
         }
+        /*
         public static void ExportInitialBinary(bool withgoodscode) 
         {
-            /*using (StreamWriter sw = new StreamWriter(WRITEBINARYFILE, false))
+            using (StreamWriter sw = new StreamWriter(WRITEBINARYFILE, false))
             {
                 GoodsTable goodsTable = new GoodsTable();
                 List<Goods> goodslist = goodsTable.GetAllGoodsList(1);
@@ -216,7 +217,7 @@ namespace FlexOrder
                     Console.WriteLine(good.goods_code + "done");
                 }
 
-            }*/
-        }
+            }
+        }*/
     }
 }

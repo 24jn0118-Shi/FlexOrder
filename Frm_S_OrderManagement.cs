@@ -17,21 +17,27 @@ namespace FlexOrder
 
         bool gethistory = false;
         int selected_orderid = -1;
+        bool selected_istakeout = false;
+        private int maxid = 0;
         Order selectedOrder;
+        Timer seatFocusTimer = new Timer();
+        int seatFocusSeconds = 0;
 
         private List<Order> currentOrderList = null;
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 50;
+        private const int SCROLL_SENSITIVITY = 80;
 
         bool _isRefreshing = false;
-        string _oldSeatText = "";
-        bool _editingSeat = false;
+        //string _oldSeatText = "";
+        //bool _editingSeat = false;
         public Frm_S_OrderManagement(Staff staff)
         {
             InitializeComponent();
             this.staff = staff;
+            seatFocusTimer.Interval = 1000;
+            seatFocusTimer.Tick += SeatFocusTimer_Tick;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -75,7 +81,7 @@ namespace FlexOrder
                     int cnt = orderTable.Delete(selected_orderid);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を削除しました", "削除完了",
+                        MessageBox.Show(cnt + "件の注文商品を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -109,6 +115,11 @@ namespace FlexOrder
 
         private void Frm_S_OrderManagement_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+            txbSeat.ReadOnly = true;
+            btnUpdateSeat.Enabled = false;
+            dgvOrder.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+            dgvOrder.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvOrder.AutoGenerateColumns = false;
             dgvOrder.CellFormatting += dgvOrder_CellFormatting;
             Refresh_page();
@@ -125,6 +136,7 @@ namespace FlexOrder
             selected_orderid = -1;
             selectedOrder = null;
             OrderTable orderTable = new OrderTable();
+            maxid = orderTable.GetMaxId();
             DataTable dataTable = null;
             if (gethistory)
             {
@@ -198,6 +210,7 @@ namespace FlexOrder
             }
             dgvOrder.DataSource = dataTable;
             dgvOrder.ClearSelection();
+            txbSeat.Text = "";
             if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvOrder.Rows.Count)
             {
                 try
@@ -209,12 +222,15 @@ namespace FlexOrder
                     Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
                 }
             }
+            txbSeat.ReadOnly = true;
+            btnUpdateSeat.Enabled = false;
             Console.WriteLine(this.Text + ": Page Refreshed");
 
         }
 
         private void dgvOrder_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            
             if (dgvOrder.Columns[e.ColumnIndex].Name == "order_date" && e.Value != null)
             {
                 DateTime dt;
@@ -233,7 +249,7 @@ namespace FlexOrder
                 {
                     string colName = dgvOrder.Columns[e.ColumnIndex].Name;
                     
-                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout")
+                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout" || colName == "order_seat")
                     {
                         e.Value = "";
                         e.FormattingApplied = true;
@@ -286,8 +302,18 @@ namespace FlexOrder
 
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            selected_orderid = (int)dgvOrder.CurrentRow.Cells["order_id"].Value;
-            selectedOrder = currentOrderList.First(o => o.order_id == selected_orderid);
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+            {
+                return;
+            }
+            DataGridViewColumn clickedColumn = dgvOrder.Columns[e.ColumnIndex];
+            if (clickedColumn.Name == "is_provided")
+            {
+                return;
+            }
+            int currentOrderId = Convert.ToInt32(dgvOrder.Rows[e.RowIndex].Cells["order_id"].Value);
+
+            SelectWholeOrder(currentOrderId);
         }
 
         private void btnAddOut_Click(object sender, EventArgs e)
@@ -330,83 +356,47 @@ namespace FlexOrder
             }
         }
 
+        private void SelectWholeOrder(int orderId) 
+        {
+            dgvOrder.ClearSelection();
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                if (Convert.ToInt32(row.Cells["order_id"].Value) == orderId)
+                {
+                    row.Selected = true;
+                }
+            }
+            selected_orderid = orderId;
+            selectedOrder = currentOrderList.First(o => o.order_id == orderId);
+            txbSeat.Text = selectedOrder.order_seat?.ToString() ?? "";
+            selected_istakeout = selectedOrder.is_takeout;
+            if (selected_istakeout)
+            {
+                txbSeat.ReadOnly = true;
+                btnUpdateSeat.Enabled = false;
+            }
+            else
+            {
+                txbSeat.ReadOnly = false;
+                btnUpdateSeat.Enabled = true;
+                txbSeat.Focus();
+                txbSeat.SelectAll();
+            }
+        }
+
         private void dgvOrder_MouseUp(object sender, MouseEventArgs e)
         {
             isDraggingDGV = false;
-        }
+            var hit = dgvOrder.HitTest(e.X, e.Y);
+            if (hit.RowIndex < 0) return;
 
-        private void dgvOrder_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            if (dgvOrder.Columns[e.ColumnIndex].Name == "order_seat")
-            {
-                _editingSeat = true;
-                _oldSeatText = dgvOrder[e.ColumnIndex, e.RowIndex].Value?.ToString() ?? "";
-            }
-        }
+            int rowIndex = hit.RowIndex;
 
-        private void dgvOrder_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            int currentOrderId = Convert.ToInt32(
+                dgvOrder.Rows[rowIndex].Cells["order_id"].Value
+            );
 
-            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
-
-            var cell = dgvOrder[e.ColumnIndex, e.RowIndex];
-            string txt = (cell.Value?.ToString() ?? "").Trim();
-
-            // 空输入 → 恢复旧值，不刷新
-            if (txt == "")
-            {
-                cell.Value = _oldSeatText;
-                return;
-            }
-
-            if (!int.TryParse(txt, out int seat))
-            {
-                cell.Value = _oldSeatText;
-                return;
-            }
-
-            if (seat < 1 || seat > 15)
-            {
-                cell.Value = _oldSeatText;
-                return;
-            }
-
-            // 合法
-            cell.Value = seat;
-        }
-
-        private void dgvOrder_CellValidated(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!_editingSeat) return;
-            if (dgvOrder.Columns[e.ColumnIndex].Name != "order_seat") return;
-
-            _editingSeat = false;
-
-            var val = dgvOrder["order_seat", e.RowIndex].Value;
-            if (val == null) return;
-
-            if (!int.TryParse(val.ToString(), out int seat)) return;
-
-            int orderId = Convert.ToInt32(dgvOrder["order_id", e.RowIndex].Value);
-
-            OrderTable orderTable = new OrderTable();
-            orderTable.UpdateSeat(orderId, seat);
-
-            if (_isRefreshing) return;
-            _isRefreshing = true;
-
-            // 防止再入
-            BeginInvoke(new Action(() =>
-            {
-                Refresh_page();
-                _isRefreshing = false;
-            }));
-        }
-
-        private void dgvOrder_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            e.ThrowException = false;
+            SelectWholeOrder(currentOrderId);
         }
 
         private void dgvOrder_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -430,7 +420,6 @@ namespace FlexOrder
                 _isRefreshing = false;
             }));
         }
-
         private void dgvOrder_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (dgvOrder.IsCurrentCellDirty &&
@@ -438,6 +427,76 @@ namespace FlexOrder
             {
                 dgvOrder.CommitEdit(DataGridViewDataErrorContexts.Commit);
             }
+        }
+
+        private void btnUpdateSeat_Click(object sender, EventArgs e)
+        {
+            this.SelectNextControl(txbSeat, true, true, true, true);
+            bool res = int.TryParse(txbSeat.Text, out int seat);
+            if (res && seat >= 1 && seat <= 15) 
+            {
+                OrderTable orderTable = new OrderTable();
+                orderTable.UpdateSeat(selected_orderid,seat);
+            }
+            Refresh_page();
+        }
+
+        private void txbSeat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnUpdateSeat.PerformClick();
+            }
+        }
+        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (_isRefreshing) return;           // 避免重入
+            if (IsUserEditing()) return;         // 正在操作 → 不刷新
+
+            OrderTable orderTable = new OrderTable();
+            int newmax = orderTable.GetMaxId();
+            Console.WriteLine("CurrentMaxID: "+newmax.ToString());
+            if (newmax > maxid) 
+            {
+                maxid = newmax;
+
+                _isRefreshing = true;
+                BeginInvoke(new Action(() =>
+                {
+                    Refresh_page();
+                    _isRefreshing = false;
+                }));
+            }
+        }
+        private bool IsUserEditing()
+        {
+            if (txbSeat.Focused) return true;
+            if (dgvOrder.IsCurrentCellInEditMode) return true;
+            if (isDraggingDGV) return true;
+
+            return false;
+        }
+        private void SeatFocusTimer_Tick(object sender, EventArgs e)
+        {
+            seatFocusSeconds++;
+
+            if (seatFocusSeconds >= 5)
+            {
+                seatFocusTimer.Stop();
+                this.SelectNextControl(txbSeat, true, true, true, true);
+            }
+        }
+
+        private void txbSeat_Enter(object sender, EventArgs e)
+        {
+            seatFocusSeconds = 0;
+            seatFocusTimer.Start();
+        }
+
+        private void txbSeat_TextChanged(object sender, EventArgs e)
+        {
+            seatFocusSeconds = 0;
         }
     }
 }

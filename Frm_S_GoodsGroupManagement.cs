@@ -17,12 +17,10 @@ namespace FlexOrder
         {
             InitializeComponent();
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void Frm_S_GoodsGroupManagement_Load(object sender, EventArgs e)
         {
             dgvGroupList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -39,12 +37,10 @@ namespace FlexOrder
             dgvGroupList.ClearSelection();
             Console.WriteLine(this.Text+": Page Refreshed");
         }
-
         private void dgvGroupList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txbSortCode.Text = dgvGroupList.CurrentRow.Cells["group_code"].Value.ToString();
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (txbSortCode.Text == "")
@@ -59,7 +55,6 @@ namespace FlexOrder
                 Refresh_page();
             }
         }
-
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txbGroupCode.Text) || string.IsNullOrEmpty(txbGroupName.Text)) 
@@ -92,7 +87,6 @@ namespace FlexOrder
                         newgroup.group_code = txbGroupCode.Text;
                         newgroup.group_name = txbGroupName.Text;
                         newgroup.language_no = 1;
-
                         int cnt = goodsGroupTable.InsertNewGroup(newgroup);
                         if(cnt == 4) 
                         {
@@ -102,11 +96,8 @@ namespace FlexOrder
                         Refresh_page();
                     }
                 }
-
-                    
             }
         }
-
         private void btnGoSort_Click(object sender, EventArgs e)
         {
             if (txbSortCode.Text == "")
@@ -116,12 +107,12 @@ namespace FlexOrder
             }
             else if(txbSortIndex.Text == "")
             {
-                MessageBox.Show("交換先の順番を入力してください", "エラー",
+                MessageBox.Show("目標順番を入力してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(!int.TryParse(txbSortIndex.Text, out int target))
             {
-                MessageBox.Show("交換先の順番は整数を入力してください", "エラー",
+                MessageBox.Show("目標順番は整数を入力してください", "エラー",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else 
@@ -131,19 +122,19 @@ namespace FlexOrder
                 GoodsGroup goodsGroup = goodsGroupTable.GetGroupByCode(1, txbSortCode.Text);
                 if (target > maxsort || target <= 0 || target == goodsGroup.group_sort) 
                 {
-                    MessageBox.Show("交換先の順番は無効です", "エラー",
+                    MessageBox.Show("目標順番は無効です", "エラー",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    DialogResult dret = MessageBox.Show("交換対象の分類コード：：" + txbSortCode.Text + "\n" + "交換先の順番：" + txbSortIndex.Text + "\n" + "\n以上の内容で交換しますか？", "確認",
+                    DialogResult dret = MessageBox.Show("並び替える分類コード：：" + txbSortCode.Text + "\n" + "目標順番：" + txbSortIndex.Text + "\n" + "\n以上の内容で交換しますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
                     {
                         int cnt = goodsGroupTable.ExchangeGroupSort(goodsGroup, target);
                         if (cnt == 1)
                         {
-                            MessageBox.Show("分類優先順番を交換しました", "交換完了",
+                            MessageBox.Show("並び替えました", "整列完了",
                                                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txbSortIndex.Text = "";
                             Refresh_page();

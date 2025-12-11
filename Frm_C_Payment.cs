@@ -34,38 +34,31 @@ namespace FlexOrder
             lblTotal.Text = "¥ " + total.ToString("N0");
             
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnCash_Click(object sender, EventArgs e)
         {
             GoPay("cash");
         }
-
         private void btnEMoney_Click(object sender, EventArgs e)
         {
             GoPay("em");
         }
-
         private void btnCreditCard_Click(object sender, EventArgs e)
         {
             GoPay("card");
         }
-
         private void GoPay(string paytype) 
         {
             Frm_C_Payment2 form = new Frm_C_Payment2(paytype, total);
             form.ShowDialog();
-            
             if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
                 if (ordertype != "edit") 
                 { 
-                    
                     orderTable.InsertNewOrder(currentOrder);
                     if (paytype == "card" && form.result.ToString() != "")
                     {
@@ -88,13 +81,11 @@ namespace FlexOrder
                     closeparent = true;
                     this.Close();
                 }
-
             }
         }
-
         private void Frm_C_Payment_Load(object sender, EventArgs e)
         {
-            if (ordertype == "add") 
+            if (ordertype == "add" || ordertype == "edit") 
             {
                 btnCreditCard.Visible = false;
                 btnEMoney.Visible = false;

@@ -19,7 +19,7 @@ namespace FlexOrder
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 50;
+        private const int SCROLL_SENSITIVITY = 80;
 
         public bool closeparent = false;
         public Frm_C_Cart(string ordertype, Order currentOrder)
@@ -28,7 +28,6 @@ namespace FlexOrder
             this.ordertype = ordertype;
             this.currentOrder = currentOrder;
         }
-
         private void btnPay_Click(object sender, EventArgs e)
         {
             Frm_C_Payment form = new Frm_C_Payment(ordertype, currentOrder);
@@ -39,7 +38,6 @@ namespace FlexOrder
                 this.Close();
             }
         }
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -96,7 +94,6 @@ namespace FlexOrder
             }
             dgvCart.ClearSelection();
             tboxTotalPrice.Text = "¥ " + currentOrder.TotalPrice.ToString("N0");
-
             if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvCart.Rows.Count)
             {
                 try
@@ -113,7 +110,6 @@ namespace FlexOrder
                 btnGoPay.Enabled = true;
             }
         }
-
         private void btnRestart_Click(object sender, EventArgs e)
         {
             DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
@@ -124,12 +120,10 @@ namespace FlexOrder
                 Environment.Exit(0);
             }
         }
-
         private void Frm_C_Cart_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
-
         private void dgvCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvCart.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
@@ -159,7 +153,6 @@ namespace FlexOrder
             }
             RefreshCart();
         }
-
         private void dgvCart_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -168,7 +161,6 @@ namespace FlexOrder
                 lastMouseY = e.Y;
             }
         }
-
         private void dgvCart_MouseMove(object sender, MouseEventArgs e)
         {
             if (isDraggingDGV)
@@ -192,7 +184,6 @@ namespace FlexOrder
                 }
             }
         }
-
         private void dgvCart_MouseUp(object sender, MouseEventArgs e)
         {
             isDraggingDGV = false;

@@ -20,10 +20,11 @@ namespace FlexOrder
         int afterTotal;
         bool issame = true;
         string type = "no";
+        bool permit = true;
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 50;
+        private const int SCROLL_SENSITIVITY = 80;
         public Frm_S_OrderEdit(int orderid)
         {
             InitializeComponent();
@@ -38,10 +39,14 @@ namespace FlexOrder
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            Frm_C_Menu frm_C_Menu = new Frm_C_Menu(beforeOrder.is_takeout,"edit");
+            Frm_C_Menu frm_C_Menu = new Frm_C_Menu(afterOrder,"edit");
             frm_C_Menu.ShowDialog();
-            afterOrder.CombineOrders(frm_C_Menu.currentOrder);
-            Refresh_page();
+            if (frm_C_Menu.DialogResult == DialogResult.OK) 
+            {
+                afterOrder = frm_C_Menu.currentOrder;
+                Refresh_page();
+            }
+            
         }
 
         private void Frm_S_OrderEdit_Load(object sender, EventArgs e)
@@ -50,6 +55,10 @@ namespace FlexOrder
             dgvOrderDetail.DefaultCellStyle.SelectionForeColor = dgvOrderDetail.DefaultCellStyle.ForeColor;
             OrderTable orderTable = new OrderTable();
             beforeOrder = orderTable.GetOrderById(orderid);
+            if (beforeOrder.order_date.Date < DateTime.Today) 
+            {
+                permit = false;
+            }
             beforeTotal = beforeOrder.TotalPrice;
             lblBefore.Text = beforeTotal.ToString("N0");
 
@@ -81,6 +90,12 @@ namespace FlexOrder
             lblResult.Text = "変更なし";
 
             Refresh_page();
+            if (!permit) 
+            {
+                btnAddOrder.Enabled = false;
+                btnGoPay.Enabled = false;
+                lblType.Text = "過去の注文のため、変更できません";
+            }
         }
 
         private void Refresh_page()
@@ -116,10 +131,9 @@ namespace FlexOrder
             dgvOrderDetail.ClearSelection();
             lblAfter.Text = afterTotal.ToString("N0");
             issame = Order.CompareOrders(beforeOrder, afterOrder);
-            Console.WriteLine(issame);
             if (issame) 
             {
-                type = "null";
+                type = "no";
                 lblType.Text = "金額変更なし";
                 lblResult.Text = "0";
             }
@@ -158,7 +172,7 @@ namespace FlexOrder
         }
         private void dgvOrderDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderDetail.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            if (!permit || e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderDetail.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
             {
                 return;
             }
@@ -199,7 +213,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品を変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -220,7 +234,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -241,7 +255,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

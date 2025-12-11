@@ -62,6 +62,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Name = "Frm_S_SalesStatistics";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Frm_S_SalesStatistics";
             this.ResumeLayout(false);
             this.PerformLayout();

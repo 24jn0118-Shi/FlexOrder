@@ -18,12 +18,10 @@ namespace FlexOrder
             InitializeComponent();
             this.ordertype = ordertype;
         }
-
         private void btnRestart_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void Frm_C_End_Load(object sender, EventArgs e)
         {
             switch (ordertype) 
@@ -39,7 +37,6 @@ namespace FlexOrder
 
             }
         }
-
         private void Frm_C_End_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (ordertype == "in" || ordertype == "out") 
@@ -47,7 +44,6 @@ namespace FlexOrder
                 Application.Restart();
                 Environment.Exit(0);
             }
-            
         }
     }
 }

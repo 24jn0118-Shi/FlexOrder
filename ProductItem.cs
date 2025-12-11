@@ -48,34 +48,28 @@ namespace FlexOrder
             get { return lblTitle.Text; }
             set { lblTitle.Text = value; }
         }
-
         public string ProductPrice
         {
             get { return lblPrice.Text; }
             set { lblPrice.Text = value; }
         }
-
         public Image ProductImage
         {
             get { return ptbImage.Image; }
             set { ptbImage.Image = value; }
         }
-
         private void ProductItem_Click(object sender, EventArgs e)
         {
             ProductClicked?.Invoke(this);
         }
-
         private void ProductItem_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = HoverColor;
         }
-
         private void ProductItem_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = DefaultColor;
         }
-
         private void ProductItem_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)

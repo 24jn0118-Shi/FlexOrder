@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq; // 用于解析 JSON，你需要安装 Newtonsoft.Json NuGet 包
+﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -21,7 +21,6 @@ namespace FlexOrder
             this.paytype = paytype;
             this.total = total;
         }
-
         private void Frm_C_Payment2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter) 
@@ -37,12 +36,10 @@ namespace FlexOrder
                 }
             }
         }
-
         private async Task<bool> PaymentAsync()
         {
             try
             {
-                // 1️⃣ Customer
                 string custJson = await PayjpHelper.CreateCustomerAsync();
                 JObject cust = JObject.Parse(custJson);
                 if (cust["error"] != null || cust["error_occurred"] != null)
@@ -51,15 +48,12 @@ namespace FlexOrder
                     return false;
                 }
                 string customerId = cust["id"].ToString();
-
-                // 2️⃣ Token
                 string tokenJson = await PayjpHelper.CreateTokenAsync(
                     cmbCardNumber.Text,
                     txtExpMonth.Text,
                     txtExpYear.Text,
                     txtCvc.Text
                 );
-
                 JObject token = JObject.Parse(tokenJson);
                 if (token["error"] != null || token["error_occurred"] != null)
                 {
@@ -67,8 +61,6 @@ namespace FlexOrder
                     return false;
                 }
                 string tokenId = token["id"].ToString();
-
-                // 3️⃣ Add Card
                 string cardJson = await PayjpHelper.AddCardToCustomerAsync(customerId, tokenId);
                 JObject card = JObject.Parse(cardJson);
                 if (card["error"] != null || card["error_occurred"] != null)
@@ -77,10 +69,7 @@ namespace FlexOrder
                     return false;
                 }
                 string cardId = card["id"].ToString();
-
-                // 4️⃣ Charge
                 string chargeJson = await PayjpHelper.ChargeCustomerAsync(customerId, cardId, total);
-
                 return ShowChargeResult(chargeJson);
             }
             catch (Exception ex)
@@ -89,23 +78,18 @@ namespace FlexOrder
                 return false;
             }
         }
-
-
         private bool ShowChargeResult(string chargeJson)
         {
             JObject charge = JObject.Parse(chargeJson);
-
             if (charge["error"] != null)
             {
                 result.AppendLine("Chargeエラー：\n" + charge["error"]["message"]);
                 return false;
             }
-
             bool paid = charge["paid"]?.ToObject<bool>() ?? false;
             bool captured = charge["captured"]?.ToObject<bool>() ?? false;
             string failureCode = charge["failure_code"]?.ToString();
             string failureMessage = charge["failure_message"]?.ToString();
-
             if (paid && captured && string.IsNullOrEmpty(failureCode))
             {
                 result.AppendLine("カード決済成功！");
@@ -117,7 +101,6 @@ namespace FlexOrder
                 return false;
             }
         }
-
         private async void btnPay_Click(object sender, EventArgs e)
         {
             bool result = ValidateCardInput();
@@ -135,7 +118,6 @@ namespace FlexOrder
                 this.Close();
             }
         }
-
         private bool ValidateCardInput()
         {
             StringBuilder errs = new StringBuilder("");
@@ -146,17 +128,14 @@ namespace FlexOrder
             {
                 errs.AppendLine("カード番号が正しくありません。");
             }
-
             if (!int.TryParse(txtExpMonth.Text, out int month) || month < 1 || month > 12)
             {
                 errs.AppendLine("有効期限（月）が正しくありません。");
             }
-
             if (txtExpYear.Text.Length != 4 || !int.TryParse(txtExpYear.Text, out int year) || year < DateTime.Now.Year)
             {
                 errs.AppendLine("有効期限（年）が正しくありません。");
             }
-
             if (string.IsNullOrWhiteSpace(txtCvc.Text) ||
                 txtCvc.Text.Length < 3 || txtCvc.Text.Length > 4 ||
                 !txtCvc.Text.All(char.IsDigit))
@@ -173,10 +152,8 @@ namespace FlexOrder
                 return true;
             }
         }
-
         private void Frm_C_Payment2_Load(object sender, EventArgs e)
         {
-            
             if (paytype != "card")
             {
                 lblWarning1.Visible = false;
@@ -217,9 +194,7 @@ namespace FlexOrder
                 txtExpYear.Text = "2028";
                 txtCvc.Text = "123";
             }
-
         }
-
         private void btnRef_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo

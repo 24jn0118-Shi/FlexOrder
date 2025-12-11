@@ -18,9 +18,9 @@ namespace FlexOrder
     {
         public Frm_C_Index()
         {
+            SwitchLanguage("ja");
             InitializeComponent();
         }
-
         private void btnDinein_Click(object sender, EventArgs e)
         {
             Frm_C_Menu form = new Frm_C_Menu(false, "in");
@@ -31,15 +31,12 @@ namespace FlexOrder
             Frm_C_Menu form = new Frm_C_Menu(true, "out");
             form.ShowDialog();
         }
-
         private void FrmCIndex_Load(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ja");
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
             //ImagePro.CheckAndCacheAllImages(true);
             ImagePro.CheckAndCacheAllImages(false);
         }
-
         private void ApplyResources(Control control, string cultureName)
         {
             System.Resources.ResourceManager rm = new System.Resources.ResourceManager(typeof(Frm_C_Index));

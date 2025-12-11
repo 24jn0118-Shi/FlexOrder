@@ -88,7 +88,7 @@ namespace FlexOrderLibrary
                     INNER JOIN [Order] AS O ON D.order_id = O.order_id 
                     WHERE order_date >= DATEADD(day, -6, CAST(GETDATE() AS date)) 
                     AND order_date < DATEADD(day, 1, CAST(GETDATE() AS date)) 
-                    ORDER BY D.order_id ASC";
+                    ORDER BY D.order_id DESC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 adapter.Fill(table);
@@ -103,8 +103,9 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT O.*, goods_name FROM [OrderDetail] AS O INNER JOIN LocalizationGoods AS G 
-                                ON O.goods_id = G.goods_id WHERE order_id = @order_id AND language_no = 1";
+                string sql = @"SELECT OD.*, goods_name, order_date FROM [OrderDetail] AS OD INNER JOIN LocalizationGoods AS G 
+                                ON OD.goods_id = G.goods_id INNER JOIN [Order] AS O ON OD.order_id = O.order_id 
+                                WHERE OD.order_id = @order_id AND language_no = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@order_id", id);
 
@@ -120,6 +121,7 @@ namespace FlexOrderLibrary
                 {
                     order = new Order();
                     order.order_id = id;
+                    order.order_date = (DateTime)row["order_date"];
                 }
 
                 OrderDetail detail = new OrderDetail();
@@ -137,7 +139,22 @@ namespace FlexOrderLibrary
             }
             return order;
         }
+        public int GetMaxId()
+        {
+            DataTable table = new DataTable();
 
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT MAX(order_id) AS M FROM [order]";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            int ret = -1;
+            ret = int.Parse(table.Rows[0]["M"].ToString());
+            return ret;
+        }
         public int UpdateOrder(Order order)
         {
             int ret = 0;

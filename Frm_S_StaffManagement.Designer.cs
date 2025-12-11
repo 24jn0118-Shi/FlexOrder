@@ -165,6 +165,7 @@
             this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "店員管理";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_StaffManagement_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_StaffManagement_Load);

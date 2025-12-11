@@ -73,7 +73,6 @@ namespace FlexOrderLibrary
         public GoodsGroup GetGroupByCode(int language_no, String code) 
         {
             GoodsGroup goodsGroup = null;
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -81,27 +80,21 @@ namespace FlexOrderLibrary
                     FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L ON G.group_code = L.group_code 
                     WHERE G.group_code = @goodscode AND L.language_no = @language_no";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.SelectCommand.Parameters.AddWithValue("@goodscode", code);
-
                 DataTable table = new DataTable();
                 int cnt = adapter.Fill(table);
-
                 if (cnt != 0)
                 {
                     goodsGroup = new GoodsGroup();
-
                     goodsGroup.group_code = table.Rows[0]["group_code"].ToString();
                     goodsGroup.group_sort = int.Parse(table.Rows[0]["group_sort"].ToString());
                     goodsGroup.group_name = table.Rows[0]["group_name"].ToString();
                     goodsGroup.language_no = language_no;
                 }
             }
-
             return goodsGroup;
         }
-
         public DataTable GetAllGroup()
         {
             DataTable table = new DataTable();
@@ -116,7 +109,6 @@ namespace FlexOrderLibrary
                     WHERE L1.language_no = 1 AND L2.language_no = 2 AND L3.language_no = 3 AND L4.language_no = 4 
                     ORDER BY group_sort ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-
                 adapter.Fill(table);
             }
             return table;
@@ -124,23 +116,19 @@ namespace FlexOrderLibrary
         public int GetMaxSort() 
         {
             int maxsort = -1;
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"SELECT MAX(group_sort) AS m 
                     FROM GoodsGroup";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
-
                 DataTable table = new DataTable();
                 int cnt = adapter.Fill(table);
-
                 if (cnt != 0)
                 {
                     maxsort = int.Parse(table.Rows[0]["m"].ToString());
                 }
             }
-
             return maxsort;
         }
         public int InsertNewGroup(GoodsGroup goodsGroup)
@@ -149,7 +137,6 @@ namespace FlexOrderLibrary
             String groupcode = goodsGroup.group_code;
             LanguageTable languageTable = new LanguageTable();
             int languagecount = languageTable.GetLanguageCount();
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -157,13 +144,10 @@ namespace FlexOrderLibrary
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@group_code", groupcode);
                 command.Parameters.AddWithValue("@group_sort", GetMaxSort()+1);
-
                 connection.Open();
-
                 ret = command.ExecuteNonQuery();
                 Console.WriteLine("GoodsGroupにGroup" + ret + "件を追加しました");
             }
-            
             ret = 0;
             for (int i = 0; i < languagecount; i++)
             {
@@ -180,34 +164,29 @@ namespace FlexOrderLibrary
                 }
             }
             Console.WriteLine("LocalizationGoodsGroupにGroup名" + ret + "つの言語情報を追加しました");
-            
             return ret;
         }
         public int UpdateGroupName(GoodsGroup goodsGroup)
         {
             int ret = 0;
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"UPDATE LocalizationGoodsGroup SET group_name = @group_name 
                             WHERE group_code = @group_code AND language_no = @language_no";
-
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@group_code", goodsGroup.group_code);
                 command.Parameters.AddWithValue("@language_no", goodsGroup.language_no);
                 command.Parameters.AddWithValue("@group_name", goodsGroup.group_name);
-
                 connection.Open();
                 ret = command.ExecuteNonQuery();
             }
             return ret;
-
         }
         public int ExchangeGroupSort(GoodsGroup goodsGroup, int target) 
         {
+            //優先順番交換
             int ret = 0;
-
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -264,8 +243,6 @@ namespace FlexOrderLibrary
 
                     connection.Open();
                     ret = command.ExecuteNonQuery();
-
-
                 }
             }
             return ret;
