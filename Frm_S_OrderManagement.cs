@@ -166,7 +166,14 @@ namespace FlexOrder
                 row["str_order_id"] = currentid.ToString();
                 int currentgoodsid = int.Parse(row["goods_id"].ToString());
                 Goods goods = goodsTable.GetGoodsById(1, currentgoodsid);
-                row["goods_name"] = goods.goods_name;
+                if (goods != null) {
+                    row["goods_name"] = goods.goods_name;
+                }
+                else 
+                {
+                    row["goods_name"] = "";
+                }
+                    
                 row["str_is_takeout"] = bool.Parse(row["is_takeout"].ToString()) ? "持帰" : "店内";
 
 
@@ -192,7 +199,7 @@ namespace FlexOrder
                 }
                 OrderDetail detail = new OrderDetail();
                 detail.goods_id = currentgoodsid;
-                detail.goods_name = goods.goods_name;
+                detail.goods_name = row["goods_name"].ToString();
                 detail.price = int.Parse(row["goods_price"].ToString());
                 detail.quantity = int.Parse(row["order_quantity"].ToString());
                 detail.is_provided = (bool)row["is_provided"];

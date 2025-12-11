@@ -11,7 +11,7 @@ namespace FlexOrder
 {
     public class PayjpHelper
     {
-        public static string SecretKey { get; private set; } // 私钥
+        public static string SecretKey { get; private set; }
         private static readonly string publicKey = "pk_test_fd84d4fb687a43d3f07e63c8"; // 公钥
 
         // 创建 token
