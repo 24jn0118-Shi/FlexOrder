@@ -27,11 +27,9 @@ namespace FlexOrder
 
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 80;
+        private const int SCROLL_SENSITIVITY = 15;
 
         bool _isRefreshing = false;
-        //string _oldSeatText = "";
-        //bool _editingSeat = false;
         public Frm_S_OrderManagement(Staff staff)
         {
             InitializeComponent();
@@ -313,6 +311,8 @@ namespace FlexOrder
             {
                 return;
             }
+            seatFocusSeconds = 0;
+            seatFocusTimer.Start();
             DataGridViewColumn clickedColumn = dgvOrder.Columns[e.ColumnIndex];
             if (clickedColumn.Name == "is_provided")
             {
@@ -419,7 +419,7 @@ namespace FlexOrder
 
             OrderTable orderTable = new OrderTable();
             orderTable.UpdateProvided(orderId, goodsId, newVal);
-
+            this.SelectNextControl(txbSeat, true, true, true, true);
             _isRefreshing = true;
             BeginInvoke(new Action(() =>
             {
@@ -468,7 +468,7 @@ namespace FlexOrder
             if (newmax > maxid) 
             {
                 maxid = newmax;
-
+                dgvOrder.ClearSelection();
                 _isRefreshing = true;
                 BeginInvoke(new Action(() =>
                 {
@@ -482,6 +482,7 @@ namespace FlexOrder
             if (txbSeat.Focused) return true;
             if (dgvOrder.IsCurrentCellInEditMode) return true;
             if (isDraggingDGV) return true;
+            if (selected_orderid >= 0) return true;
 
             return false;
         }
@@ -492,6 +493,8 @@ namespace FlexOrder
             if (seatFocusSeconds >= 5)
             {
                 seatFocusTimer.Stop();
+                dgvOrder.ClearSelection();
+                selected_orderid = -1;
                 this.SelectNextControl(txbSeat, true, true, true, true);
             }
         }

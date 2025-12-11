@@ -96,6 +96,9 @@
             this.dgvGroupList.ReadOnly = true;
             this.dgvGroupList.RowTemplate.Height = 21;
             this.dgvGroupList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellClick);
+            this.dgvGroupList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvGroupList_MouseDown);
+            this.dgvGroupList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvGroupList_MouseMove);
+            this.dgvGroupList.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvGroupList_MouseUp);
             // 
             // group_code
             // 

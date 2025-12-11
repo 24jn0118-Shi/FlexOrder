@@ -51,7 +51,8 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"SELECT L.*, group_sort FROM GoodsGroup AS G INNER JOIN
-                                LocalizationGoodsGroup AS L on G.group_code = L.group_code WHERE language_no = @language_no";
+                                LocalizationGoodsGroup AS L on G.group_code = L.group_code WHERE language_no = @language_no 
+                                ORDER BY group_sort";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.Fill(table);
@@ -183,26 +184,24 @@ namespace FlexOrderLibrary
             }
             return ret;
         }
-        public int ExchangeGroupSort(GoodsGroup goodsGroup, int target) 
+        public int SortGroup(GoodsGroup goodsGroup, int target) 
         {
-            //優先順番交換
             int ret = 0;
             int i = goodsGroup.group_sort;
             string connectionString = Properties.Settings.Default.DBConnectionString;
-            
-                string sql = @"UPDATE GoodsGroup SET group_sort = @group_sort WHERE group_sort = @group_sort_before";
-                while (i > target)
+            string sql = @"UPDATE GoodsGroup SET group_sort = @group_sort WHERE group_sort = @group_sort_before";
+            while (i > target)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        SqlCommand command = new SqlCommand(sql, connection);
-                        command.Parameters.AddWithValue("@group_sort", i);
-                        command.Parameters.AddWithValue("@group_sort_before", i - 1);
-                        connection.Open();
-                        ret = command.ExecuteNonQuery();
-                        i--;
-                    }
+                    SqlCommand command = new SqlCommand(sql, connection);
+                    command.Parameters.AddWithValue("@group_sort", i);
+                    command.Parameters.AddWithValue("@group_sort_before", i - 1);
+                    connection.Open();
+                    ret = command.ExecuteNonQuery();
+                    i--;
                 }
+            }
             while (i < target)
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -215,8 +214,7 @@ namespace FlexOrderLibrary
                     i++;
                 }
             }
-
-            
+            Console.WriteLine("ずらした件数: "+ret);
             ret = 0;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

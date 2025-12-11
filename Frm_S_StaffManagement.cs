@@ -20,6 +20,10 @@ namespace FlexOrder
         string selected_id = null;
         Boolean closeparent = false;
         Staff loginstaff;
+
+        private bool isDraggingDGV = false;
+        private int lastMouseY = 0;
+        private const int SCROLL_SENSITIVITY = 15;
         public Frm_S_StaffManagement(Staff loginstaff, Form parent)
         {
             InitializeComponent();
@@ -28,6 +32,11 @@ namespace FlexOrder
         }
         private void Refresh_page() 
         {
+            int firstVisibleRowIndex = -1;
+            if (dgvStaff.Rows.Count > 0 && dgvStaff.FirstDisplayedScrollingRowIndex >= 0)
+            {
+                firstVisibleRowIndex = dgvStaff.FirstDisplayedScrollingRowIndex;
+            }
             selected_id = null;
             StaffTable staffTable = new StaffTable();
             DataTable table = staffTable.GetAllStaff();
@@ -39,6 +48,17 @@ namespace FlexOrder
             }
             dgvStaff.DataSource = table;
             dgvStaff.ClearSelection();
+            if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvStaff.Rows.Count)
+            {
+                try
+                {
+                    dgvStaff.FirstDisplayedScrollingRowIndex = firstVisibleRowIndex;
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                }
+            }
             Console.WriteLine(this.Text+": Page Refreshed");
         }
         private void btnAdd_Click(object sender, EventArgs e)
@@ -122,6 +142,44 @@ namespace FlexOrder
             {
                 parent.Close();
             }
+        }
+
+        private void dgvStaff_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isDraggingDGV = true;
+                lastMouseY = e.Y;
+            }
+        }
+
+        private void dgvStaff_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isDraggingDGV)
+            {
+                DataGridView dgv = sender as DataGridView;
+                if (dgv == null || dgv.RowCount == 0) return;
+
+                int deltaY = e.Y - lastMouseY;
+                int rowsToScroll = deltaY / SCROLL_SENSITIVITY;
+
+                if (rowsToScroll != 0)
+                {
+                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                    int newFirstRow = currentFirstRow - rowsToScroll;
+                    newFirstRow = Math.Max(0, newFirstRow);
+                    if (newFirstRow != currentFirstRow)
+                    {
+                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                    }
+                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                }
+            }
+        }
+
+        private void dgvStaff_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDraggingDGV = false;
         }
     }
 }
