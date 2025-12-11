@@ -57,8 +57,8 @@ namespace FlexOrder
             if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
-                if (ordertype != "edit") 
-                { 
+                if (ordertype != "edit")
+                {
                     orderTable.InsertNewOrder(currentOrder);
                     if (paytype == "card" && form.result.ToString() != "")
                     {
@@ -76,10 +76,17 @@ namespace FlexOrder
                         this.Close();
                     }
                 }
-                else 
+                else
                 {
                     closeparent = true;
                     this.Close();
+                }
+            }
+            else 
+            {
+                if (paytype == "card" && form.result.ToString() != "")
+                {
+                    MessageBox.Show(form.result.ToString(), "カード決済結果");
                 }
             }
         }

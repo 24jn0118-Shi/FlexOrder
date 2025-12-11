@@ -103,9 +103,8 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT OD.*, goods_name, order_date FROM [OrderDetail] AS OD INNER JOIN LocalizationGoods AS G 
-                                ON OD.goods_id = G.goods_id INNER JOIN [Order] AS O ON OD.order_id = O.order_id 
-                                WHERE OD.order_id = @order_id AND language_no = 1";
+                string sql = @"SELECT OD.*, order_date FROM [OrderDetail] AS OD INNER JOIN [Order] AS O ON OD.order_id = O.order_id 
+                                WHERE OD.order_id = @order_id";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@order_id", id);
 
@@ -126,10 +125,17 @@ namespace FlexOrderLibrary
 
                 OrderDetail detail = new OrderDetail();
                 detail.goods_id = int.Parse(row["goods_id"].ToString());
-                detail.goods_name = row["goods_name"].ToString();
+                GoodsTable goodsTable = new GoodsTable();
+                Goods goods = goodsTable.GetGoodsById(1, detail.goods_id);
+                if (goods != null) 
+                { 
+                    detail.goods_name = goods.goods_name; 
+                } else 
+                {
+                    detail.goods_name = "";
+                }
                 detail.price = int.Parse(row["goods_price"].ToString());
                 detail.quantity = int.Parse(row["order_quantity"].ToString());
-                
                 detailList.Add(detail);
 
             }

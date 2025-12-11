@@ -38,43 +38,127 @@ namespace FlexOrder
         }
         private async Task<bool> PaymentAsync()
         {
+            string logPath = @"W:\24JN01卒業制作\GroupI\DBReset\クレジットカード決済\jsonlog.txt";
+            StringBuilder jsonLog = new StringBuilder();
+
             try
             {
+                // 1. Create Customer
                 string custJson = await PayjpHelper.CreateCustomerAsync();
-                JObject cust = JObject.Parse(custJson);
-                if (cust["error"] != null || cust["error_occurred"] != null)
+                jsonLog.AppendLine("=== CreateCustomer Response ===");
+                jsonLog.AppendLine(custJson);
+
+                JObject cust;
+                try
                 {
-                    MessageBox.Show("顧客作成エラー: " + cust.ToString());
+                    cust = JObject.Parse(custJson);
+                }
+                catch
+                {
+                    MessageBox.Show("顧客作成のAPI応答が不正です:\n" + custJson);
+                    File.WriteAllText(logPath, jsonLog.ToString());
                     return false;
                 }
-                string customerId = cust["id"].ToString();
+
+                if (cust["error"] != null || cust["error_occurred"] != null)
+                {
+                    MessageBox.Show("顧客作成エラー:\n" + cust.ToString());
+                    File.WriteAllText(logPath, jsonLog.ToString());
+                    return false;
+                }
+
+                string customerId = cust["id"]?.ToString();
+                if (string.IsNullOrEmpty(customerId))
+                {
+                    MessageBox.Show("顧客IDが取得できません。\n" + custJson);
+                    File.WriteAllText(logPath, jsonLog.ToString());
+                    return false;
+                }
+
+                // 2. Create Token
                 string tokenJson = await PayjpHelper.CreateTokenAsync(
                     cmbCardNumber.Text,
                     txtExpMonth.Text,
                     txtExpYear.Text,
                     txtCvc.Text
                 );
-                JObject token = JObject.Parse(tokenJson);
+                jsonLog.AppendLine("\n=== CreateToken Response ===");
+                jsonLog.AppendLine(tokenJson);
+
+                JObject token;
+                try
+                {
+                    token = JObject.Parse(tokenJson);
+                }
+                catch
+                {
+                    MessageBox.Show("トークン作成のAPI応答が不正です:\n" + tokenJson);
+                    File.WriteAllText(logPath, jsonLog.ToString());
+                    return false;
+                }
+
                 if (token["error"] != null || token["error_occurred"] != null)
                 {
-                    MessageBox.Show("カードエラー: " + token.ToString());
+                    MessageBox.Show("カードエラー:\n" + token.ToString());
+                    File.WriteAllText(logPath, jsonLog.ToString());
                     return false;
                 }
-                string tokenId = token["id"].ToString();
+
+                string tokenId = token["id"]?.ToString();
+                if (string.IsNullOrEmpty(tokenId))
+                {
+                    MessageBox.Show("トークンIDが取得できません。\n" + tokenJson);
+                    File.WriteAllText(logPath, jsonLog.ToString());
+                    return false;
+                }
+
+                // 3. Add Card
                 string cardJson = await PayjpHelper.AddCardToCustomerAsync(customerId, tokenId);
-                JObject card = JObject.Parse(cardJson);
+                jsonLog.AppendLine("\n=== AddCardToCustomer Response ===");
+                jsonLog.AppendLine(cardJson);
+
+                JObject card;
+                try
+                {
+                    card = JObject.Parse(cardJson);
+                }
+                catch
+                {
+                    MessageBox.Show("カード追加API応答が不正です:\n" + cardJson);
+                    File.WriteAllText(logPath, jsonLog.ToString());
+                    return false;
+                }
+
                 if (card["error"] != null || card["error_occurred"] != null)
                 {
-                    MessageBox.Show("カード追加エラー: " + card.ToString());
+                    MessageBox.Show("カード追加エラー:\n" + card.ToString());
+                    File.WriteAllText(logPath, jsonLog.ToString());
                     return false;
                 }
-                string cardId = card["id"].ToString();
+
+                string cardId = card["id"]?.ToString();
+                if (string.IsNullOrEmpty(cardId))
+                {
+                    MessageBox.Show("カードIDが取得できません。\n" + cardJson);
+                    File.WriteAllText(logPath, jsonLog.ToString());
+                    return false;
+                }
+
+                // 4. Charge
                 string chargeJson = await PayjpHelper.ChargeCustomerAsync(customerId, cardId, total);
+                jsonLog.AppendLine("\n=== Charge Response ===");
+                jsonLog.AppendLine(chargeJson);
+                File.WriteAllText(logPath, jsonLog.ToString());  // ← ここで保存
+
                 return ShowChargeResult(chargeJson);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("予期せぬエラー: " + ex.Message);
+                jsonLog.AppendLine("\n=== Fatal Exception ===");
+                jsonLog.AppendLine(ex.ToString());
+                File.WriteAllText(logPath, jsonLog.ToString());
+
+                MessageBox.Show("予期せぬエラー:\n" + ex.Message);
                 return false;
             }
         }
@@ -102,9 +186,10 @@ namespace FlexOrder
             }
         }
         private async void btnPay_Click(object sender, EventArgs e)
-        {
-            bool result = ValidateCardInput();
-            if (result) 
+        {   
+            btnPay.Enabled = false;
+            bool res = ValidateCardInput();
+            if (res) 
             {
                 bool success = await PaymentAsync();
                 if (success)
@@ -117,6 +202,7 @@ namespace FlexOrder
                 }
                 this.Close();
             }
+            btnPay.Enabled = true;
         }
         private bool ValidateCardInput()
         {

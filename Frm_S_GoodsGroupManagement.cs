@@ -127,7 +127,7 @@ namespace FlexOrder
                 }
                 else
                 {
-                    DialogResult dret = MessageBox.Show("並び替える分類コード：：" + txbSortCode.Text + "\n" + "目標順番：" + txbSortIndex.Text + "\n" + "\n以上の内容で交換しますか？", "確認",
+                    DialogResult dret = MessageBox.Show("並び替える分類コード：：" + txbSortCode.Text + "\n" + "目標順番：" + txbSortIndex.Text + "\n" + "\n以上の内容で並び替えますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
                     {

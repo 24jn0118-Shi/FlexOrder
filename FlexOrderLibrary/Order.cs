@@ -60,7 +60,7 @@ namespace FlexOrderLibrary
                         }
                         else 
                         {
-                            orderdetaillist.Remove(existingItem);
+                            //orderdetaillist.Remove(existingItem);
                         }
                         break;
                     case 0:
