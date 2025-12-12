@@ -79,7 +79,7 @@ namespace FlexOrder
                     int cnt = orderTable.Delete(selected_orderid);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文商品を削除しました", "削除完了",
+                        MessageBox.Show("注文を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

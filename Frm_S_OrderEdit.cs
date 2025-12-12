@@ -213,7 +213,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        MessageBox.Show(cnt + "件の注文商品を変更しました", "変更成功",
+                        MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
