@@ -24,6 +24,7 @@ namespace FlexOrder
         }
         private void Frm_C_End_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             switch (ordertype) 
             {
                 case "in":
@@ -34,16 +35,22 @@ namespace FlexOrder
                     break;
                 default:
                     break;
-
             }
+
         }
         private void Frm_C_End_FormClosing(object sender, FormClosingEventArgs e)
         {
+            timer1.Enabled = false;
             if (ordertype == "in" || ordertype == "out") 
             {
                 Application.Restart();
                 Environment.Exit(0);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

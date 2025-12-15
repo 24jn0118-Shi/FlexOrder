@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_End));
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblEnd1 = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.lblOrderType = new System.Windows.Forms.Label();
             this.lblOut = new System.Windows.Forms.Label();
             this.lblIn = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnRestart
@@ -69,6 +71,11 @@
             resources.ApplyResources(this.lblIn, "lblIn");
             this.lblIn.Name = "lblIn";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 6000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
@@ -95,5 +102,6 @@
         private System.Windows.Forms.Label lblOrderType;
         private System.Windows.Forms.Label lblOut;
         private System.Windows.Forms.Label lblIn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
