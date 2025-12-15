@@ -70,13 +70,14 @@ namespace FlexOrder
             }
             else
             {
+                int deleteid = selected_orderid;
                 int total = selectedOrder.TotalPrice;
                 DialogResult dret = MessageBox.Show("返金金額： ¥ "+total+ "\n返金してから確認ボタンを押してください", "確認",
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dret == DialogResult.Yes)
                 {
                     OrderTable orderTable = new OrderTable();
-                    int cnt = orderTable.Delete(selected_orderid);
+                    int cnt = orderTable.Delete(deleteid);
                     if (cnt > 0)
                     {
                         MessageBox.Show("注文を削除しました", "削除完了",

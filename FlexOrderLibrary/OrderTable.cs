@@ -152,7 +152,7 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT MAX(order_id) AS M FROM [order]";
+                string sql = @"SELECT ISNULL(MAX(order_id), 0) AS M FROM [order]";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
 
                 adapter.Fill(table);

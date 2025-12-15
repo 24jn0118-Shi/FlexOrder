@@ -532,16 +532,16 @@
     <value>NoControl</value>
   </data>
   <data name="btnGoSort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 424</value>
+    <value>544, 424</value>
   </data>
   <data name="btnGoSort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 43</value>
+    <value>100, 43</value>
   </data>
   <data name="btnGoSort.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
   <data name="btnGoSort.Text" xml:space="preserve">
-    <value>分類順番交換</value>
+    <value>並び替える</value>
   </data>
   <data name="&gt;&gt;btnGoSort.Name" xml:space="preserve">
     <value>btnGoSort</value>
