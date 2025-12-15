@@ -38,7 +38,8 @@ namespace FlexOrder
                 {
                     txbUserId.Text = "";
                     txbPassword.Text = "";
-                    Frm_S_Mainmenu form = new Frm_S_Mainmenu(staff);
+                    txbUserId.Focus();
+                    Frm_S_Mainmenu form = new Frm_S_Mainmenu(staff.staff_id);
                     form.ShowDialog();
                 }
                 else

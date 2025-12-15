@@ -42,7 +42,7 @@
             this.btnStaffManagement.Location = new System.Drawing.Point(152, 248);
             this.btnStaffManagement.Name = "btnStaffManagement";
             this.btnStaffManagement.Size = new System.Drawing.Size(139, 66);
-            this.btnStaffManagement.TabIndex = 0;
+            this.btnStaffManagement.TabIndex = 3;
             this.btnStaffManagement.Text = "店員管理";
             this.btnStaffManagement.UseVisualStyleBackColor = true;
             this.btnStaffManagement.Click += new System.EventHandler(this.btnStaffManagement_Click);
@@ -76,7 +76,7 @@
             this.btnSalesStatistics.Location = new System.Drawing.Point(461, 248);
             this.btnSalesStatistics.Name = "btnSalesStatistics";
             this.btnSalesStatistics.Size = new System.Drawing.Size(139, 66);
-            this.btnSalesStatistics.TabIndex = 3;
+            this.btnSalesStatistics.TabIndex = 4;
             this.btnSalesStatistics.Text = "売上統計";
             this.btnSalesStatistics.UseVisualStyleBackColor = true;
             this.btnSalesStatistics.Click += new System.EventHandler(this.btnSalesStatistics_Click);

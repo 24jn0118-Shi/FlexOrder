@@ -60,6 +60,8 @@
             // 
             this.dgvStaff.AllowUserToAddRows = false;
             this.dgvStaff.AllowUserToDeleteRows = false;
+            this.dgvStaff.AllowUserToResizeColumns = false;
+            this.dgvStaff.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -77,7 +79,9 @@
             this.dgvStaff.Location = new System.Drawing.Point(122, 46);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
+            this.dgvStaff.RowHeadersVisible = false;
             this.dgvStaff.RowTemplate.Height = 21;
+            this.dgvStaff.ShowCellToolTips = false;
             this.dgvStaff.Size = new System.Drawing.Size(570, 273);
             this.dgvStaff.TabIndex = 1;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);

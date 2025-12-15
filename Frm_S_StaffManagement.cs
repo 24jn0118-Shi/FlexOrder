@@ -79,6 +79,11 @@ namespace FlexOrder
             {
                 Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(loginstaff, selected_id,this);
                 frmSStaffEdit.ShowDialog();
+                closeparent = frmSStaffEdit.closeparent;
+                if (closeparent) 
+                { 
+                    this.Close();
+                }
                 Refresh_page();
             }
         }
@@ -137,7 +142,6 @@ namespace FlexOrder
 
         private void Frm_S_StaffManagement_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
             if (closeparent)
             {
                 parent.Close();

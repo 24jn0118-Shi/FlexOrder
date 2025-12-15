@@ -16,21 +16,22 @@ namespace FlexOrder
         string type;
         int id = 0;
         Boolean change_password = false;
+        Boolean change_name = false;
         Form parent;
-        Boolean closeparent = false;
-        Staff staff;
+        public Boolean closeparent = false;
+        Staff loginstaff;
         public Frm_S_StaffEdit(string type, Form parent)
         {
             InitializeComponent();
             this.type = type;
             this.parent = parent;
         }
-        public Frm_S_StaffEdit(Staff staff, string type, Form parent)
+        public Frm_S_StaffEdit(Staff loginstaff, string type, Form parent)
         {
             InitializeComponent();
             this.type = type;
             this.parent = parent;
-            this.staff = staff;
+            this.loginstaff = loginstaff;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -69,6 +70,11 @@ namespace FlexOrder
                 lblTitle.Text = "店員編集";
                 lblIdHint.Visible = false;
                 id = int.Parse(type);
+                if (id == loginstaff.staff_id) 
+                {
+                    rbtnAdmin.Enabled = false;
+                    rbtnStaff.Enabled = false;
+                }
                 StaffTable staffTable = new StaffTable();
                 Staff staff = staffTable.GetStaffById(id);
                 txbID.Text = id.ToString();
@@ -91,7 +97,6 @@ namespace FlexOrder
 
         private void Frm_S_StaffEdit_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
             if (closeparent) 
             {
                 parent.Close();
@@ -228,8 +233,7 @@ namespace FlexOrder
                         {
                             MessageBox.Show(cnt + "件の店員アカウントを編集しました", "編集完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            //Update処理成功なら
-                            if (staff != null && staff.staff_id == id)
+                            if (loginstaff != null && loginstaff.staff_id == id && change_password)
                             {
                                 closeparent = true;
                             }

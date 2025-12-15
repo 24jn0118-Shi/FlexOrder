@@ -14,16 +14,14 @@ namespace FlexOrder
 {
     public partial class Frm_S_Mainmenu : Form
     {
+        int staffid;
         Staff staff;
-        public Frm_S_Mainmenu(Staff staff)
+        string lname = "";
+        string fname = "";
+        public Frm_S_Mainmenu(int staffid)
         {
             InitializeComponent();
-            this.staff = staff;
-            if (staff.is_manager)
-            {
-                btnStaffManagement.Enabled = true;
-                btnSalesStatistics.Enabled = true;
-            }
+            this.staffid = staffid;
         }
 
         private void btnOrderManagement_Click(object sender, EventArgs e)
@@ -40,6 +38,7 @@ namespace FlexOrder
         {
             Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement(staff, this);
             frm_S_StaffManagement.ShowDialog();
+            UpdateName();
         }
         private void btnSalesStatistics_Click(object sender, EventArgs e)
         {
@@ -49,9 +48,27 @@ namespace FlexOrder
 
         private void Frm_S_Mainmenu_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "ようこそ、" + staff.staff_lastname + " " + staff.staff_firstname;
+            
+            UpdateName();
             //ImagePro.CheckAndCacheAllImages(true);
             ImagePro.CheckAndCacheAllImages(false);
+        }
+
+        private void UpdateName() 
+        {
+            StaffTable staffTable = new StaffTable();
+            staff = staffTable.GetStaffById(staffid);
+            if (staff != null)
+            {
+                if (staff.is_manager)
+                {
+                    btnStaffManagement.Enabled = true;
+                    btnSalesStatistics.Enabled = true;
+                }
+                lname = staff.staff_lastname;
+                fname = staff.staff_firstname;
+            }
+            lblWelcome.Text = "ようこそ、" + lname + "　" + fname;
         }
 
         private void Frm_S_Mainmenu_KeyPress(object sender, KeyPressEventArgs e)
