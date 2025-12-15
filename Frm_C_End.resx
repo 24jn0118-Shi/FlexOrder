@@ -247,7 +247,7 @@
     <value>64, 91</value>
   </data>
   <data name="lblOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 12</value>
+    <value>35, 12</value>
   </data>
   <data name="lblOut.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -280,7 +280,7 @@
     <value>64, 66</value>
   </data>
   <data name="lblIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 12</value>
+    <value>26, 12</value>
   </data>
   <data name="lblIn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -303,6 +303,9 @@
   <data name="&gt;&gt;lblIn.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -317,6 +320,12 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_C_End</value>
+  </data>
+  <data name="&gt;&gt;timer1.Name" xml:space="preserve">
+    <value>timer1</value>
+  </data>
+  <data name="&gt;&gt;timer1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_End</value>

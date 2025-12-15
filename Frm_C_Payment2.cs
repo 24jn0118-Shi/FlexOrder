@@ -34,6 +34,9 @@ namespace FlexOrder
                 {
                     btnPay.PerformClick();
                 }
+            } else if (e.KeyChar == (char)Keys.Escape) 
+            {
+                this.Close();
             }
         }
         private async Task<bool> PaymentAsync()

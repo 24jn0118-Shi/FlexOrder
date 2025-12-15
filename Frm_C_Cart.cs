@@ -143,7 +143,7 @@ namespace FlexOrder
                 
                 currentOrder.PlusMinus(itemToModify.goods_id, 1);
             }
-            else if (e.ColumnIndex == minusColumnIndex)
+            else if (e.ColumnIndex == minusColumnIndex && itemToModify.quantity > 1)
             {
                 currentOrder.PlusMinus(itemToModify.goods_id, -1);
             }
