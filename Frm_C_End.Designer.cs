@@ -43,6 +43,7 @@
             // 
             resources.ApplyResources(this.btnRestart, "btnRestart");
             this.btnRestart.Name = "btnRestart";
+            this.btnRestart.TabStop = false;
             this.btnRestart.UseVisualStyleBackColor = true;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
