@@ -26,8 +26,6 @@ namespace FlexOrder
         }
         private void Frm_S_GoodsGroupManagement_Load(object sender, EventArgs e)
         {
-            dgvGroupList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvGroupList.MultiSelect = false;
             dgvGroupList.AutoGenerateColumns = false;
             Refresh_page();
         }

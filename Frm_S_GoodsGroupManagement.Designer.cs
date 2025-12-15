@@ -92,9 +92,12 @@
             this.zh,
             this.ru});
             resources.ApplyResources(this.dgvGroupList, "dgvGroupList");
+            this.dgvGroupList.MultiSelect = false;
             this.dgvGroupList.Name = "dgvGroupList";
             this.dgvGroupList.ReadOnly = true;
             this.dgvGroupList.RowTemplate.Height = 21;
+            this.dgvGroupList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGroupList.ShowCellToolTips = false;
             this.dgvGroupList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroupList_CellClick);
             this.dgvGroupList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvGroupList_MouseDown);
             this.dgvGroupList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvGroupList_MouseMove);

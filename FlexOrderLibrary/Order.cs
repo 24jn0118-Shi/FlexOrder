@@ -60,7 +60,7 @@ namespace FlexOrderLibrary
                         }
                         else 
                         {
-                            orderdetaillist.Remove(existingItem);
+                            existingItem.quantity = 0;
                         }
                         break;
                     case 0:
@@ -135,6 +135,12 @@ namespace FlexOrderLibrary
 
             return true;
         }
+        public void RemoveZeros()
+        {
+            if (orderdetaillist == null || orderdetaillist.Count == 0)
+                return;
 
+            orderdetaillist.RemoveAll(item => item.quantity <= 0);
+        }
     }
 }

@@ -179,6 +179,7 @@
             this.dgvOrderList.ReadOnly = true;
             this.dgvOrderList.RowHeadersVisible = false;
             this.dgvOrderList.RowTemplate.Height = 50;
+            this.dgvOrderList.ShowCellToolTips = false;
             this.dgvOrderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellContentClick);
             this.dgvOrderList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvOrderList_MouseDown);
             this.dgvOrderList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvOrderList_MouseMove);

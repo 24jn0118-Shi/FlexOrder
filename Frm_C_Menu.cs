@@ -299,6 +299,7 @@ namespace FlexOrder
         }
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            currentOrder.RemoveZeros();
             if (ordertype != "edit") 
             {
                 using (Frm_C_Cart form = new Frm_C_Cart(ordertype, currentOrder))
@@ -337,8 +338,7 @@ namespace FlexOrder
         private void btnRestart_Click(object sender, EventArgs e)
         {
             DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
-            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
+                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dret == DialogResult.Yes)
             {
                 Application.Restart();
@@ -355,8 +355,6 @@ namespace FlexOrder
             int minusColumnIndex = 1;
             int plusColumnIndex = 3;
             var itemToModify = currentOrder.orderdetaillist[e.RowIndex];
-
-            int currentQuantity = itemToModify.quantity;
 
             if (e.ColumnIndex == plusColumnIndex)
             {

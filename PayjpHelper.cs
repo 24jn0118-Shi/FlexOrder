@@ -135,6 +135,7 @@ namespace FlexOrder
             {
                 MessageBox.Show(path + "ファイル存在しません", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
                 return;
             }
 
@@ -144,6 +145,7 @@ namespace FlexOrder
             {
                 MessageBox.Show(path + "ファイルに内容ありません", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 

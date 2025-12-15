@@ -88,6 +88,7 @@
             this.dgvCart.ReadOnly = true;
             this.dgvCart.RowHeadersVisible = false;
             this.dgvCart.RowTemplate.Height = 80;
+            this.dgvCart.ShowCellToolTips = false;
             this.dgvCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCart_CellContentClick);
             this.dgvCart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseDown);
             this.dgvCart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseMove);
