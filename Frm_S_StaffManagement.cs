@@ -113,6 +113,7 @@ namespace FlexOrder
                         int cnt = staffTable.Delete(st.staff_id);
                         if (cnt > 0) 
                         {
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"Staff",st.staff_id.ToString(),"削除","");
                             MessageBox.Show(cnt+"件の店員アカウントを削除しました", "削除完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

@@ -20,6 +20,7 @@ namespace FlexOrder
         Form parent;
         public Boolean closeparent = false;
         Staff loginstaff;
+        Staff beforeeditstaff;
         public Frm_S_StaffEdit(string type, Form parent)
         {
             InitializeComponent();
@@ -76,11 +77,11 @@ namespace FlexOrder
                     rbtnStaff.Enabled = false;
                 }
                 StaffTable staffTable = new StaffTable();
-                Staff staff = staffTable.GetStaffById(id);
+                beforeeditstaff = staffTable.GetStaffById(id);
                 txbID.Text = id.ToString();
-                txbLastname.Text = staff.staff_lastname;
-                txbFirstname.Text = staff.staff_firstname;
-                if (staff.is_manager)
+                txbLastname.Text = beforeeditstaff.staff_lastname;
+                txbFirstname.Text = beforeeditstaff.staff_firstname;
+                if (beforeeditstaff.is_manager)
                 {
                     rbtnAdmin.Checked = true;
                 }
@@ -169,7 +170,8 @@ namespace FlexOrder
                         int cnt = staffTable.Insert(newstaff);
                         if (cnt > 0) 
                         {
-                            MessageBox.Show(cnt + "件の店員アカウントを追加しました", "追加完了",
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", newid.ToString(), "登録", "");
+                            MessageBox.Show(cnt + "件の店員アカウントを登録しました", "登録完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         this.Close();
@@ -231,6 +233,34 @@ namespace FlexOrder
                         int cnt = staffTable.Update(editstaff);
                         if (cnt > 0)
                         {
+                            string message = "";
+                            if (change_password) 
+                            {
+                                message += "パスワード変更あり";
+                            }
+                            if (beforeeditstaff.is_manager != editstaff.is_manager) 
+                            {
+                                message += ";権限を ";
+                                if (beforeeditstaff.is_manager) 
+                                {
+                                    message += "管理者";
+                                }
+                                else 
+                                {
+                                    message += "一般";
+                                }
+                                message += " から ";
+                                if (editstaff.is_manager)
+                                {
+                                    message += "管理者";
+                                }
+                                else
+                                {
+                                    message += "一般";
+                                }
+                                message += " に変更した";
+                            }
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", id.ToString(), "編集", message);
                             MessageBox.Show(cnt + "件の店員アカウントを編集しました", "編集完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (loginstaff != null && loginstaff.staff_id == id && change_password)
