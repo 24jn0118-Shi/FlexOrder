@@ -150,7 +150,8 @@ namespace FlexOrder
             dataTable.Columns.Add("str_order_id", typeof(string));
             dataTable.Columns.Add("str_is_takeout", typeof(string));
             dataTable.Columns.Add("goods_name", typeof(string));
-
+            dataTable.Columns.Add("today_id", typeof(string));
+            int pastmaxid = orderTable.GetPastMaxId();
             currentOrderList = new List<Order>();
             int previd = -1;
             int currentid = -1;
@@ -161,7 +162,22 @@ namespace FlexOrder
             {
                 bool isLastRow = (index == lastIndex);
                 currentid = int.Parse(row["order_id"].ToString());
-
+                string todayid;
+                DateTime orderdate = (DateTime)row["order_date"];
+                if (orderdate.Date == DateTime.Today) 
+                {
+                    todayid = (currentid - pastmaxid).ToString();
+                    while (todayid.Length < 4)
+                    {
+                        todayid = "0" + todayid;
+                    }
+                    row["today_id"] = todayid;
+                }
+                else 
+                {
+                    row["today_id"] = "";
+                }
+                
                 row["str_order_id"] = currentid.ToString();
                 int currentgoodsid = int.Parse(row["goods_id"].ToString());
                 Goods goods = goodsTable.GetGoodsById(1, currentgoodsid);

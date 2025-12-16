@@ -145,6 +145,24 @@ namespace FlexOrderLibrary
             }
             return order;
         }
+        public int GetPastMaxId()
+        {
+            DataTable table = new DataTable();
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT ISNULL(MAX(order_id), 0) AS M 
+                            FROM [order] 
+                            WHERE order_date < CAST(GETDATE() AS date)";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+
+                adapter.Fill(table);
+            }
+            int ret = -1;
+            ret = int.Parse(table.Rows[0]["M"].ToString());
+            return ret;
+        }
         public int GetMaxId()
         {
             DataTable table = new DataTable();

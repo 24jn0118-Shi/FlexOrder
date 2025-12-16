@@ -39,6 +39,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
+            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnMinus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.order_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.lblBef = new System.Windows.Forms.Label();
@@ -54,14 +62,6 @@
             this.lblAfter = new System.Windows.Forms.Label();
             this.lblType = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
-            this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnMinus = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.order_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,162 +112,6 @@
             this.dgvOrderDetail.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvOrderDetail_MouseDown);
             this.dgvOrderDetail.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvOrderDetail_MouseMove);
             this.dgvOrderDetail.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvOrderDetail_MouseUp);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(720, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(68, 44);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "戻る";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnAddOrder
-            // 
-            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAddOrder.Location = new System.Drawing.Point(59, 397);
-            this.btnAddOrder.Name = "btnAddOrder";
-            this.btnAddOrder.Size = new System.Drawing.Size(101, 40);
-            this.btnAddOrder.TabIndex = 4;
-            this.btnAddOrder.Text = "商品追加";
-            this.btnAddOrder.UseVisualStyleBackColor = true;
-            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
-            // 
-            // lblBef
-            // 
-            this.lblBef.AutoSize = true;
-            this.lblBef.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblBef.Location = new System.Drawing.Point(65, 458);
-            this.lblBef.Name = "lblBef";
-            this.lblBef.Size = new System.Drawing.Size(106, 21);
-            this.lblBef.TabIndex = 5;
-            this.lblBef.Text = "変更前価格：";
-            this.lblBef.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblYen1
-            // 
-            this.lblYen1.AutoSize = true;
-            this.lblYen1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblYen1.Location = new System.Drawing.Point(249, 458);
-            this.lblYen1.Name = "lblYen1";
-            this.lblYen1.Size = new System.Drawing.Size(26, 21);
-            this.lblYen1.TabIndex = 6;
-            this.lblYen1.Text = "円";
-            // 
-            // lblYen2
-            // 
-            this.lblYen2.AutoSize = true;
-            this.lblYen2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblYen2.Location = new System.Drawing.Point(249, 495);
-            this.lblYen2.Name = "lblYen2";
-            this.lblYen2.Size = new System.Drawing.Size(26, 21);
-            this.lblYen2.TabIndex = 9;
-            this.lblYen2.Text = "円";
-            // 
-            // lblAft
-            // 
-            this.lblAft.AutoSize = true;
-            this.lblAft.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblAft.Location = new System.Drawing.Point(65, 495);
-            this.lblAft.Name = "lblAft";
-            this.lblAft.Size = new System.Drawing.Size(106, 21);
-            this.lblAft.TabIndex = 8;
-            this.lblAft.Text = "変更後価格：";
-            this.lblAft.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblTyp
-            // 
-            this.lblTyp.AutoSize = true;
-            this.lblTyp.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblTyp.Location = new System.Drawing.Point(347, 458);
-            this.lblTyp.Name = "lblTyp";
-            this.lblTyp.Size = new System.Drawing.Size(90, 21);
-            this.lblTyp.TabIndex = 11;
-            this.lblTyp.Text = "決済種類：";
-            this.lblTyp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblYen3
-            // 
-            this.lblYen3.AutoSize = true;
-            this.lblYen3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblYen3.Location = new System.Drawing.Point(519, 495);
-            this.lblYen3.Name = "lblYen3";
-            this.lblYen3.Size = new System.Drawing.Size(26, 21);
-            this.lblYen3.TabIndex = 14;
-            this.lblYen3.Text = "円";
-            // 
-            // lblRes
-            // 
-            this.lblRes.AutoSize = true;
-            this.lblRes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblRes.Location = new System.Drawing.Point(381, 495);
-            this.lblRes.Name = "lblRes";
-            this.lblRes.Size = new System.Drawing.Size(46, 21);
-            this.lblRes.TabIndex = 13;
-            this.lblRes.Text = "金額:";
-            // 
-            // btnGoPay
-            // 
-            this.btnGoPay.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnGoPay.Location = new System.Drawing.Point(613, 486);
-            this.btnGoPay.Name = "btnGoPay";
-            this.btnGoPay.Size = new System.Drawing.Size(136, 55);
-            this.btnGoPay.TabIndex = 16;
-            this.btnGoPay.Text = "変更を保存して次へ進む";
-            this.btnGoPay.UseVisualStyleBackColor = true;
-            this.btnGoPay.Click += new System.EventHandler(this.btnGoPay_Click);
-            // 
-            // lblOrderNo
-            // 
-            this.lblOrderNo.AutoSize = true;
-            this.lblOrderNo.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblOrderNo.Location = new System.Drawing.Point(129, 28);
-            this.lblOrderNo.Name = "lblOrderNo";
-            this.lblOrderNo.Size = new System.Drawing.Size(125, 28);
-            this.lblOrderNo.TabIndex = 17;
-            this.lblOrderNo.Text = "lblOrderNo";
-            // 
-            // lblBefore
-            // 
-            this.lblBefore.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblBefore.Location = new System.Drawing.Point(165, 458);
-            this.lblBefore.Name = "lblBefore";
-            this.lblBefore.Size = new System.Drawing.Size(78, 21);
-            this.lblBefore.TabIndex = 18;
-            this.lblBefore.Text = "lblBefore";
-            this.lblBefore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAfter
-            // 
-            this.lblAfter.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblAfter.Location = new System.Drawing.Point(165, 495);
-            this.lblAfter.Name = "lblAfter";
-            this.lblAfter.Size = new System.Drawing.Size(78, 21);
-            this.lblAfter.TabIndex = 18;
-            this.lblAfter.Text = "lblAfter";
-            this.lblAfter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblType
-            // 
-            this.lblType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblType.Location = new System.Drawing.Point(434, 458);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(293, 21);
-            this.lblType.TabIndex = 18;
-            this.lblType.Text = "lblType";
-            this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblResult
-            // 
-            this.lblResult.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblResult.Location = new System.Drawing.Point(433, 495);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(78, 21);
-            this.lblResult.TabIndex = 18;
-            this.lblResult.Text = "lblResult";
-            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // goods_name
             // 
@@ -366,6 +210,162 @@
             this.goods_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.goods_id.Visible = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(720, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(68, 44);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "戻る";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnAddOrder.Location = new System.Drawing.Point(59, 397);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(101, 40);
+            this.btnAddOrder.TabIndex = 4;
+            this.btnAddOrder.Text = "商品追加";
+            this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
+            // 
+            // lblBef
+            // 
+            this.lblBef.AutoSize = true;
+            this.lblBef.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblBef.Location = new System.Drawing.Point(65, 458);
+            this.lblBef.Name = "lblBef";
+            this.lblBef.Size = new System.Drawing.Size(106, 21);
+            this.lblBef.TabIndex = 5;
+            this.lblBef.Text = "変更前価格：";
+            this.lblBef.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblYen1
+            // 
+            this.lblYen1.AutoSize = true;
+            this.lblYen1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblYen1.Location = new System.Drawing.Point(249, 458);
+            this.lblYen1.Name = "lblYen1";
+            this.lblYen1.Size = new System.Drawing.Size(26, 21);
+            this.lblYen1.TabIndex = 6;
+            this.lblYen1.Text = "円";
+            // 
+            // lblYen2
+            // 
+            this.lblYen2.AutoSize = true;
+            this.lblYen2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblYen2.Location = new System.Drawing.Point(249, 495);
+            this.lblYen2.Name = "lblYen2";
+            this.lblYen2.Size = new System.Drawing.Size(26, 21);
+            this.lblYen2.TabIndex = 9;
+            this.lblYen2.Text = "円";
+            // 
+            // lblAft
+            // 
+            this.lblAft.AutoSize = true;
+            this.lblAft.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblAft.Location = new System.Drawing.Point(65, 495);
+            this.lblAft.Name = "lblAft";
+            this.lblAft.Size = new System.Drawing.Size(106, 21);
+            this.lblAft.TabIndex = 8;
+            this.lblAft.Text = "変更後価格：";
+            this.lblAft.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTyp
+            // 
+            this.lblTyp.AutoSize = true;
+            this.lblTyp.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblTyp.Location = new System.Drawing.Point(347, 458);
+            this.lblTyp.Name = "lblTyp";
+            this.lblTyp.Size = new System.Drawing.Size(90, 21);
+            this.lblTyp.TabIndex = 11;
+            this.lblTyp.Text = "決済種類：";
+            this.lblTyp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblYen3
+            // 
+            this.lblYen3.AutoSize = true;
+            this.lblYen3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblYen3.Location = new System.Drawing.Point(519, 495);
+            this.lblYen3.Name = "lblYen3";
+            this.lblYen3.Size = new System.Drawing.Size(26, 21);
+            this.lblYen3.TabIndex = 14;
+            this.lblYen3.Text = "円";
+            // 
+            // lblRes
+            // 
+            this.lblRes.AutoSize = true;
+            this.lblRes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblRes.Location = new System.Drawing.Point(381, 495);
+            this.lblRes.Name = "lblRes";
+            this.lblRes.Size = new System.Drawing.Size(46, 21);
+            this.lblRes.TabIndex = 13;
+            this.lblRes.Text = "差額:";
+            // 
+            // btnGoPay
+            // 
+            this.btnGoPay.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnGoPay.Location = new System.Drawing.Point(613, 486);
+            this.btnGoPay.Name = "btnGoPay";
+            this.btnGoPay.Size = new System.Drawing.Size(136, 55);
+            this.btnGoPay.TabIndex = 16;
+            this.btnGoPay.Text = "変更を保存して次へ進む";
+            this.btnGoPay.UseVisualStyleBackColor = true;
+            this.btnGoPay.Click += new System.EventHandler(this.btnGoPay_Click);
+            // 
+            // lblOrderNo
+            // 
+            this.lblOrderNo.AutoSize = true;
+            this.lblOrderNo.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
+            this.lblOrderNo.Location = new System.Drawing.Point(129, 28);
+            this.lblOrderNo.Name = "lblOrderNo";
+            this.lblOrderNo.Size = new System.Drawing.Size(125, 28);
+            this.lblOrderNo.TabIndex = 17;
+            this.lblOrderNo.Text = "lblOrderNo";
+            // 
+            // lblBefore
+            // 
+            this.lblBefore.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblBefore.Location = new System.Drawing.Point(165, 458);
+            this.lblBefore.Name = "lblBefore";
+            this.lblBefore.Size = new System.Drawing.Size(78, 21);
+            this.lblBefore.TabIndex = 18;
+            this.lblBefore.Text = "lblBefore";
+            this.lblBefore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAfter
+            // 
+            this.lblAfter.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblAfter.Location = new System.Drawing.Point(165, 495);
+            this.lblAfter.Name = "lblAfter";
+            this.lblAfter.Size = new System.Drawing.Size(78, 21);
+            this.lblAfter.TabIndex = 18;
+            this.lblAfter.Text = "lblAfter";
+            this.lblAfter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblType
+            // 
+            this.lblType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblType.Location = new System.Drawing.Point(434, 458);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(293, 21);
+            this.lblType.TabIndex = 18;
+            this.lblType.Text = "lblType";
+            this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblResult
+            // 
+            this.lblResult.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblResult.Location = new System.Drawing.Point(433, 495);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(78, 21);
+            this.lblResult.TabIndex = 18;
+            this.lblResult.Text = "lblResult";
+            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Frm_S_OrderEdit
             // 
