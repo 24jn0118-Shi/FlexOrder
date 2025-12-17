@@ -166,8 +166,8 @@ namespace FlexOrder
                 DateTime orderdate = (DateTime)row["order_date"];
                 if (orderdate.Date == DateTime.Today) 
                 {
-                    todayid = (currentid - pastmaxid).ToString();
-                    while (todayid.Length < 4)
+                    todayid = ((currentid - pastmaxid) % 100).ToString();
+                    while (todayid.Length < 3)
                     {
                         todayid = "0" + todayid;
                     }
