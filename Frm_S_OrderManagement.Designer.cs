@@ -317,7 +317,7 @@
             this.goods_name.ReadOnly = true;
             this.goods_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.goods_name.Width = 250;
+            this.goods_name.Width = 240;
             // 
             // goods_price
             // 

@@ -512,6 +512,9 @@ namespace FlexOrder
                 seatFocusTimer.Stop();
                 dgvOrder.ClearSelection();
                 selected_orderid = -1;
+                txbSeat.Text = "";
+                txbSeat.ReadOnly = true;
+                btnUpdateSeat.Enabled = false;
                 this.SelectNextControl(txbSeat, true, true, true, true);
             }
         }

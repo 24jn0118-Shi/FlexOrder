@@ -16,7 +16,6 @@ namespace FlexOrder
         string type;
         int id = 0;
         Boolean change_password = false;
-        Boolean change_name = false;
         Form parent;
         public Boolean closeparent = false;
         Staff loginstaff;
