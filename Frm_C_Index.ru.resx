@@ -121,7 +121,7 @@
     <value>С собой</value>
   </data>
   <data name="btnDinein.Text" xml:space="preserve">
-    <value>Для еды в заведении</value>
+    <value>В заведении</value>
   </data>
   <data name="lblWelcome.Text" xml:space="preserve">
     <value>Добро пожаловать</value>

@@ -208,13 +208,13 @@
     <value>False</value>
   </data>
   <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>928, 861</value>
+    <value>834, 861</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 50</value>
+    <value>250, 135</value>
   </data>
   <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -235,13 +235,13 @@
     <value>11</value>
   </data>
   <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 861</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 50</value>
+    <value>250, 135</value>
   </data>
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -409,7 +409,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="ckbVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 870</value>
+    <value>580, 887</value>
   </data>
   <data name="ckbVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 14</value>
@@ -433,13 +433,13 @@
     <value>4</value>
   </data>
   <data name="lblVeget.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
+    <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
   <data name="lblVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 885</value>
+    <value>470, 921</value>
   </data>
   <data name="lblVeget.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 23</value>
+    <value>241, 37</value>
   </data>
   <data name="lblVeget.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -469,7 +469,7 @@
     <value>12, 367</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -502,7 +502,7 @@
     <value>12, 392</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -606,8 +606,11 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1134, 1047</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>メニュー一覧</value>

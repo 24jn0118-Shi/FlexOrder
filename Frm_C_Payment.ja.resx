@@ -132,4 +132,7 @@
   <data name="btnCreditCard.Text" xml:space="preserve">
     <value>クレジットカード</value>
   </data>
+  <data name="lblGreet.Text" xml:space="preserve">
+    <value>ご利用可能なお支払い方法をお選びください：現金・カード・電子決済</value>
+  </data>
 </root>

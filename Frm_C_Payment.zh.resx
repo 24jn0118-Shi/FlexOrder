@@ -132,4 +132,7 @@
   <data name="btnCreditCard.Text" xml:space="preserve">
     <value>信用卡</value>
   </data>
+  <data name="lblGreet.Text" xml:space="preserve">
+    <value>请选择您方便的付款方式：现金、银行卡或电子支付</value>
+  </data>
 </root>

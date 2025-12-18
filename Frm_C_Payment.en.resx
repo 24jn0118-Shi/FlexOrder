@@ -132,4 +132,7 @@
   <data name="btnCreditCard.Text" xml:space="preserve">
     <value>Credit Card</value>
   </data>
+  <data name="lblGreet.Text" xml:space="preserve">
+    <value>Please choose your preferred payment method: Cash, Card or Electronic Payment.</value>
+  </data>
 </root>

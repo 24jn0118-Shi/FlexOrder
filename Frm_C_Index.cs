@@ -31,6 +31,7 @@ namespace FlexOrder
             Frm_C_Menu form = new Frm_C_Menu(true, "out");
             form.ShowDialog();
         }
+
         private void FrmCIndex_Load(object sender, EventArgs e)
         {
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
@@ -95,6 +96,11 @@ namespace FlexOrder
             {
                 ImagePro.CheckAndCacheAllImages(true);
             }
+        }
+
+        private void btnTakeOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

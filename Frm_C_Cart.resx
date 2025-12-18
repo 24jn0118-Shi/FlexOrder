@@ -127,6 +127,9 @@
   <data name="img_goods_image.MinimumWidth" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="img_goods_image.Width" type="System.Int32, mscorlib">
+    <value>130</value>
+  </data>
   <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -137,7 +140,7 @@
     <value>6</value>
   </data>
   <data name="goods_name.Width" type="System.Int32, mscorlib">
-    <value>140</value>
+    <value>170</value>
   </data>
   <metadata name="goods_price.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -157,17 +160,11 @@
   <data name="btnDelete.HeaderText" xml:space="preserve">
     <value />
   </data>
-  <data name="btnDelete.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
   <metadata name="btnMinus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="btnMinus.HeaderText" xml:space="preserve">
     <value />
-  </data>
-  <data name="btnMinus.Width" type="System.Int32, mscorlib">
-    <value>80</value>
   </data>
   <metadata name="order_num.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -179,16 +176,13 @@
     <value>6</value>
   </data>
   <data name="order_num.Width" type="System.Int32, mscorlib">
-    <value>60</value>
+    <value>80</value>
   </data>
   <metadata name="btnPlus.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="btnPlus.HeaderText" xml:space="preserve">
     <value />
-  </data>
-  <data name="btnPlus.Width" type="System.Int32, mscorlib">
-    <value>80</value>
   </data>
   <metadata name="subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -213,7 +207,7 @@
     <value>51</value>
   </data>
   <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>793, 530</value>
+    <value>924, 530</value>
   </data>
   <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -234,10 +228,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>751, 648</value>
+    <value>787, 806</value>
   </data>
   <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 87</value>
+    <value>250, 135</value>
   </data>
   <data name="btnGoPay.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -261,10 +255,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 648</value>
+    <value>113, 806</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 87</value>
+    <value>250, 135</value>
   </data>
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -291,7 +285,7 @@
     <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 571</value>
+    <value>693, 616</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 31</value>
@@ -318,7 +312,7 @@
     <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="tboxTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>716, 603</value>
+    <value>863, 609</value>
   </data>
   <data name="tboxTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>174, 38</value>
@@ -379,7 +373,7 @@
     <value>21, 197</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -412,7 +406,7 @@
     <value>21, 172</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -442,10 +436,10 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>984, 747</value>
+    <value>1134, 1047</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_C_Cart</value>

@@ -122,10 +122,10 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnEMoney.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 250</value>
+    <value>781, 322</value>
   </data>
   <data name="btnEMoney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 65</value>
+    <value>250, 135</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnEMoney.TabIndex" type="System.Int32, mscorlib">
@@ -144,16 +144,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEMoney.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btnCreditCard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnCreditCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 140</value>
+    <value>456, 322</value>
   </data>
   <data name="btnCreditCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 65</value>
+    <value>250, 135</value>
   </data>
   <data name="btnCreditCard.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -171,16 +171,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCreditCard.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="btnCash.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnCash.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 140</value>
+    <value>142, 322</value>
   </data>
   <data name="btnCash.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 65</value>
+    <value>250, 135</value>
   </data>
   <data name="btnCash.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -198,16 +198,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCash.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>621, 36</value>
+    <value>136, 683</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 65</value>
+    <value>250, 135</value>
   </data>
   <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -225,13 +225,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblTotal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>158, 93</value>
+    <value>796, 577</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 23</value>
@@ -252,6 +252,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblGreet.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblGreet.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 20pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblGreet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblGreet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 139</value>
+  </data>
+  <data name="lblGreet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 27</value>
+  </data>
+  <data name="lblGreet.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblGreet.Text" xml:space="preserve">
+    <value>lblGreet</value>
+  </data>
+  <data name="&gt;&gt;lblGreet.Name" xml:space="preserve">
+    <value>lblGreet</value>
+  </data>
+  <data name="&gt;&gt;lblGreet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblGreet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblGreet.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -261,11 +295,10 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>1134, 1047</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Frm_C_Payment</value>
