@@ -16,5 +16,10 @@ namespace FlexOrder
         {
             InitializeComponent();
         }
+
+        private void MealTicket_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
