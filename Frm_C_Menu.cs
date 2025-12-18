@@ -151,7 +151,7 @@ namespace FlexOrder
                 GoodsTable goodsTable = new GoodsTable();
                 List<Goods> goodsList = (groupCode == "RECOMMEND")
                     ? goodsTable.GetRecommendGoods(currentLangNo)
-                    : goodsTable.GetGoodsByGroup(currentLangNo, groupCode, true);
+                    : goodsTable.GetGoodsByGroup(currentLangNo, groupCode);
 
                 if (goodsList != null)
                 {

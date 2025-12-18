@@ -48,7 +48,7 @@ namespace FlexOrderLibrary
             }
             return goodsList;
         }
-        
+        /*
         public List<Goods> GetAllGoodsList(int language_no)
         {
             DataTable table = new DataTable();
@@ -59,7 +59,7 @@ namespace FlexOrderLibrary
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 
 				INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id 
 				WHERE language_no = @language_no 
-				ORDER BY goods_id ASC";
+				ORDER BY RIGHT goods_id ASC";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.Fill(table);
@@ -83,7 +83,7 @@ namespace FlexOrderLibrary
                 }
             }
             return goodsList;
-        }
+        }*/
 
         public Goods GetGoodsById(int language_no, int id)
         {
@@ -124,7 +124,7 @@ namespace FlexOrderLibrary
             }
             return goods;
         }
-        public List<Goods> GetGoodsByGroup(int language_no, String groupcode, bool must_be_available)
+        public List<Goods> GetGoodsByGroup(int language_no, String groupcode)
         {
             DataTable table = new DataTable();
             List<Goods> goodsList = new List<Goods>();
@@ -134,11 +134,8 @@ namespace FlexOrderLibrary
                 string sql = @"SELECT G.*, goods_name, goods_detail FROM Goods AS G 							
 				INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id
                 INNER JOIN GoodsGroup AS GG ON G.group_code = GG.group_code
-				WHERE language_no = @language_no AND G.group_code = @group_code";
-                if (must_be_available)
-                {
-                    sql += " AND is_available = 1";
-                }
+				WHERE language_no = @language_no AND G.group_code = @group_code
+				AND is_available = 1";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
                 adapter.SelectCommand.Parameters.AddWithValue("@group_code", groupcode);
