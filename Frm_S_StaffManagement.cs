@@ -53,8 +53,12 @@ namespace FlexOrder
                     case 1:
                         row["str_staff_accesslevel"] = "店長";
                         break;
-
                     case 9:
+                        if (loginstaff.staff_accesslevel < 9) 
+                        {
+                            row.Delete();
+                            continue;
+                        }
                         row["str_staff_accesslevel"] = "IT管理者";
                         break;
                     default:
@@ -78,7 +82,7 @@ namespace FlexOrder
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit("Add",this);
+            Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(loginstaff, "Add",this);
             frmSStaffEdit.ShowDialog();
             Refresh_page();
         }
@@ -90,13 +94,18 @@ namespace FlexOrder
                 MessageBox.Show("スタッフを選択してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else 
+            else if(Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"]) >= loginstaff.staff_accesslevel && Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_id"]) != loginstaff.staff_id) 
             {
-                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(loginstaff, selected_id,this);
+                MessageBox.Show("アカウントが編集できません", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                Frm_S_StaffEdit frmSStaffEdit = new Frm_S_StaffEdit(loginstaff, selected_id, this);
                 frmSStaffEdit.ShowDialog();
                 closeparent = frmSStaffEdit.closeparent;
-                if (closeparent) 
-                { 
+                if (closeparent)
+                {
                     this.Close();
                 }
                 Refresh_page();
@@ -112,11 +121,10 @@ namespace FlexOrder
             }
             else
             {
-                StaffTable staffTable = new StaffTable();
-                Staff st = staffTable.GetStaffById(int.Parse(selected_id));
-                if (st != null && st.is_manager) 
+                int selectedid = Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"]);
+                if (selectedid >= loginstaff.staff_accesslevel) 
                 {
-                    MessageBox.Show("管理者のアカウントが削除できません", "エラー",
+                    MessageBox.Show("アカウントが削除できません", "エラー",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else 
@@ -125,10 +133,11 @@ namespace FlexOrder
                                                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dret == DialogResult.Yes)
                     {
-                        int cnt = staffTable.Delete(st.staff_id);
+                        StaffTable staffTable = new StaffTable();
+                        int cnt = staffTable.Delete(selectedid);
                         if (cnt > 0) 
                         {
-                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"Staff",st.staff_id.ToString(),"削除","");
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"Staff", selectedid.ToString(),"削除","");
                             MessageBox.Show(cnt+"件の店員アカウントを削除しました", "削除完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }

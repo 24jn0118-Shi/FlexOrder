@@ -42,6 +42,7 @@
             this.staff_lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.str_is_manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff_accesslevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,8 @@
             this.staff_id,
             this.staff_lastname,
             this.staff_firstname,
-            this.str_is_manager});
+            this.str_is_manager,
+            this.staff_accesslevel});
             this.dgvStaff.Location = new System.Drawing.Point(122, 46);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
@@ -159,6 +161,14 @@
             this.str_is_manager.ReadOnly = true;
             this.str_is_manager.Width = 120;
             // 
+            // staff_accesslevel
+            // 
+            this.staff_accesslevel.DataPropertyName = "staff_accesslevel";
+            this.staff_accesslevel.HeaderText = "AccessLevel";
+            this.staff_accesslevel.Name = "staff_accesslevel";
+            this.staff_accesslevel.ReadOnly = true;
+            this.staff_accesslevel.Visible = false;
+            // 
             // Frm_S_StaffManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -190,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_lastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_firstname;
         private System.Windows.Forms.DataGridViewTextBoxColumn str_is_manager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_accesslevel;
     }
 }

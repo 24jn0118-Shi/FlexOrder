@@ -39,7 +39,7 @@
             this.txbFirstname = new System.Windows.Forms.TextBox();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.rbtnStaff = new System.Windows.Forms.RadioButton();
-            this.rbtnAdmin = new System.Windows.Forms.RadioButton();
+            this.rbtnManager = new System.Windows.Forms.RadioButton();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.txbPassword2 = new System.Windows.Forms.TextBox();
@@ -160,17 +160,17 @@
             this.rbtnStaff.Text = "一般店員";
             this.rbtnStaff.UseVisualStyleBackColor = true;
             // 
-            // rbtnAdmin
+            // rbtnManager
             // 
-            this.rbtnAdmin.AutoSize = true;
-            this.rbtnAdmin.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rbtnAdmin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.rbtnAdmin.Location = new System.Drawing.Point(312, 399);
-            this.rbtnAdmin.Name = "rbtnAdmin";
-            this.rbtnAdmin.Size = new System.Drawing.Size(76, 25);
-            this.rbtnAdmin.TabIndex = 12;
-            this.rbtnAdmin.Text = "管理者";
-            this.rbtnAdmin.UseVisualStyleBackColor = true;
+            this.rbtnManager.AutoSize = true;
+            this.rbtnManager.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rbtnManager.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.rbtnManager.Location = new System.Drawing.Point(312, 399);
+            this.rbtnManager.Name = "rbtnManager";
+            this.rbtnManager.Size = new System.Drawing.Size(60, 25);
+            this.rbtnManager.TabIndex = 12;
+            this.rbtnManager.Text = "店長";
+            this.rbtnManager.UseVisualStyleBackColor = true;
             // 
             // btnConfirm
             // 
@@ -247,7 +247,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.rbtnAdmin);
+            this.Controls.Add(this.rbtnManager);
             this.Controls.Add(this.rbtnStaff);
             this.Controls.Add(this.txbPassword2);
             this.Controls.Add(this.txbPassword);
@@ -286,7 +286,7 @@
         private System.Windows.Forms.TextBox txbFirstname;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.RadioButton rbtnStaff;
-        private System.Windows.Forms.RadioButton rbtnAdmin;
+        private System.Windows.Forms.RadioButton rbtnManager;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.TextBox txbPassword2;
