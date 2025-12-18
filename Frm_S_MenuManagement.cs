@@ -15,14 +15,15 @@ namespace FlexOrder
     public partial class Frm_S_MenuManagement : Form
     {
         int selected_goodsid = -1;
-
+        Staff staff = null;
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 15;
         public Frm_S_MenuManagement(Staff staff)
         {
             InitializeComponent();
-            if (!staff.is_manager) 
+            this.staff = staff;
+            if (staff.staff_accesslevel == 0) 
             {
                 btnAddGoods.Visible = false;
                 btnAddGroup.Visible = false;

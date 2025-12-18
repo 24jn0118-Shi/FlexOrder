@@ -11,7 +11,7 @@ namespace FlexOrderLibrary
         public int staff_id { get; set; }
         public string staff_lastname { get; set; }
         public string staff_firstname { get; set; }
-        public bool is_manager { get; set; }
+        public int staff_accesslevel { get; set; }
         public string staff_password { get; set; }
     }
 }
