@@ -40,11 +40,26 @@ namespace FlexOrder
             selected_id = null;
             StaffTable staffTable = new StaffTable();
             DataTable table = staffTable.GetAllStaff();
-            table.Columns.Add("str_is_manager", typeof(string));
+            table.Columns.Add("str_staff_accesslevel", typeof(string));
             foreach (DataRow row in table.Rows)
             {
-                bool isManager = Convert.ToBoolean(row["is_manager"]);
-                row["str_is_manager"] = isManager ? "管理者" : "店員";
+                int accesslevel = Convert.ToInt32(row["staff_accesslevel"]);
+                switch (accesslevel) 
+                {
+                    case 0:
+                        row["str_staff_accesslevel"] = "一般店員";
+                        break;
+
+                    case 1:
+                        row["str_staff_accesslevel"] = "店長";
+                        break;
+
+                    case 9:
+                        row["str_staff_accesslevel"] = "IT管理者";
+                        break;
+                    default:
+                        break;
+                }
             }
             dgvStaff.DataSource = table;
             dgvStaff.ClearSelection();
