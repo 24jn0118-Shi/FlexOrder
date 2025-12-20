@@ -35,13 +35,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_lastname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.str_is_manager = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.staff_accesslevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,8 @@
             this.staff_id,
             this.staff_lastname,
             this.staff_firstname,
-            this.str_is_manager});
+            this.str_is_manager,
+            this.staff_accesslevel});
             this.dgvStaff.Location = new System.Drawing.Point(122, 46);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
@@ -86,45 +88,6 @@
             this.dgvStaff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseDown);
             this.dgvStaff.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseMove);
             this.dgvStaff.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseUp);
-            // 
-            // staff_id
-            // 
-            this.staff_id.DataPropertyName = "staff_id";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.staff_id.DefaultCellStyle = dataGridViewCellStyle2;
-            this.staff_id.HeaderText = "店員ID";
-            this.staff_id.Name = "staff_id";
-            this.staff_id.ReadOnly = true;
-            // 
-            // staff_lastname
-            // 
-            this.staff_lastname.DataPropertyName = "staff_lastname";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.staff_lastname.DefaultCellStyle = dataGridViewCellStyle3;
-            this.staff_lastname.HeaderText = "姓";
-            this.staff_lastname.Name = "staff_lastname";
-            this.staff_lastname.ReadOnly = true;
-            this.staff_lastname.Width = 120;
-            // 
-            // staff_firstname
-            // 
-            this.staff_firstname.DataPropertyName = "staff_firstname";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.staff_firstname.DefaultCellStyle = dataGridViewCellStyle4;
-            this.staff_firstname.HeaderText = "名";
-            this.staff_firstname.Name = "staff_firstname";
-            this.staff_firstname.ReadOnly = true;
-            this.staff_firstname.Width = 180;
-            // 
-            // str_is_manager
-            // 
-            this.str_is_manager.DataPropertyName = "str_is_manager";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.str_is_manager.DefaultCellStyle = dataGridViewCellStyle5;
-            this.str_is_manager.HeaderText = "店員識別";
-            this.str_is_manager.Name = "str_is_manager";
-            this.str_is_manager.ReadOnly = true;
-            this.str_is_manager.Width = 120;
             // 
             // btnAdd
             // 
@@ -159,6 +122,53 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // staff_id
+            // 
+            this.staff_id.DataPropertyName = "staff_id";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.staff_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.staff_id.HeaderText = "店員ID";
+            this.staff_id.Name = "staff_id";
+            this.staff_id.ReadOnly = true;
+            // 
+            // staff_lastname
+            // 
+            this.staff_lastname.DataPropertyName = "staff_lastname";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.staff_lastname.DefaultCellStyle = dataGridViewCellStyle3;
+            this.staff_lastname.HeaderText = "姓";
+            this.staff_lastname.Name = "staff_lastname";
+            this.staff_lastname.ReadOnly = true;
+            this.staff_lastname.Width = 120;
+            // 
+            // staff_firstname
+            // 
+            this.staff_firstname.DataPropertyName = "staff_firstname";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.staff_firstname.DefaultCellStyle = dataGridViewCellStyle4;
+            this.staff_firstname.HeaderText = "名";
+            this.staff_firstname.Name = "staff_firstname";
+            this.staff_firstname.ReadOnly = true;
+            this.staff_firstname.Width = 180;
+            // 
+            // str_is_manager
+            // 
+            this.str_is_manager.DataPropertyName = "str_staff_accesslevel";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_is_manager.DefaultCellStyle = dataGridViewCellStyle5;
+            this.str_is_manager.HeaderText = "店員識別";
+            this.str_is_manager.Name = "str_is_manager";
+            this.str_is_manager.ReadOnly = true;
+            this.str_is_manager.Width = 120;
+            // 
+            // staff_accesslevel
+            // 
+            this.staff_accesslevel.DataPropertyName = "staff_accesslevel";
+            this.staff_accesslevel.HeaderText = "AccessLevel";
+            this.staff_accesslevel.Name = "staff_accesslevel";
+            this.staff_accesslevel.ReadOnly = true;
+            this.staff_accesslevel.Visible = false;
+            // 
             // Frm_S_StaffManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -190,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_lastname;
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_firstname;
         private System.Windows.Forms.DataGridViewTextBoxColumn str_is_manager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_accesslevel;
     }
 }

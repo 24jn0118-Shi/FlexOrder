@@ -96,6 +96,31 @@ namespace FlexOrderLibrary
             }
             return goodsGroup;
         }
+        public GoodsGroup GetGroupBySort(int language_no, int sort)
+        {
+            GoodsGroup goodsGroup = null;
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT G.group_code, group_sort, L.group_name 
+                    FROM GoodsGroup AS G INNER JOIN LocalizationGoodsGroup AS L ON G.group_code = L.group_code 
+                    WHERE group_sort = @group_sort AND L.language_no = @language_no";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@language_no", language_no);
+                adapter.SelectCommand.Parameters.AddWithValue("@group_sort", sort);
+                DataTable table = new DataTable();
+                int cnt = adapter.Fill(table);
+                if (cnt != 0)
+                {
+                    goodsGroup = new GoodsGroup();
+                    goodsGroup.group_code = table.Rows[0]["group_code"].ToString();
+                    goodsGroup.group_sort = sort;
+                    goodsGroup.group_name = table.Rows[0]["group_name"].ToString();
+                    goodsGroup.language_no = language_no;
+                }
+            }
+            return goodsGroup;
+        }
         public DataTable GetAllGroup()
         {
             DataTable table = new DataTable();

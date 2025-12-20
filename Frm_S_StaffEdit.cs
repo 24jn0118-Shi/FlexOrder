@@ -20,12 +20,6 @@ namespace FlexOrder
         public Boolean closeparent = false;
         Staff loginstaff;
         Staff beforeeditstaff;
-        public Frm_S_StaffEdit(string type, Form parent)
-        {
-            InitializeComponent();
-            this.type = type;
-            this.parent = parent;
-        }
         public Frm_S_StaffEdit(Staff loginstaff, string type, Form parent)
         {
             InitializeComponent();
@@ -70,21 +64,22 @@ namespace FlexOrder
                 lblTitle.Text = "店員編集";
                 lblIdHint.Visible = false;
                 id = int.Parse(type);
-                if (id == loginstaff.staff_id) 
-                {
-                    rbtnAdmin.Enabled = false;
-                    rbtnStaff.Enabled = false;
-                }
                 StaffTable staffTable = new StaffTable();
                 beforeeditstaff = staffTable.GetStaffById(id);
                 txbID.Text = id.ToString();
+                if (loginstaff.staff_accesslevel < 9 || beforeeditstaff.staff_accesslevel == 9)
+                {
+                    rbtnManager.Enabled = false;
+                    rbtnStaff.Enabled = false;
+                }
                 txbLastname.Text = beforeeditstaff.staff_lastname;
                 txbFirstname.Text = beforeeditstaff.staff_firstname;
-                if (beforeeditstaff.is_manager)
+
+                if (beforeeditstaff.staff_accesslevel == 1)
                 {
-                    rbtnAdmin.Checked = true;
+                    rbtnManager.Checked = true;
                 }
-                else
+                else if (beforeeditstaff.staff_accesslevel == 0)
                 {
                     rbtnStaff.Checked = true;
                 }
@@ -126,7 +121,7 @@ namespace FlexOrder
                         {
                             errs += "このスタッフIDは既に登録されています。\n";
                         }
-                        //ここならID OK
+                        //ここならID OK : errs == ""
                     }
                     else 
                     {
@@ -155,7 +150,7 @@ namespace FlexOrder
                 //ここからはInsert処理
                 if (errs == "") 
                 {
-                    string access = rbtnAdmin.Checked ? "管理者" : "店員";
+                    string access = rbtnManager.Checked ? "店長" : "一般店員";
                     DialogResult dret = MessageBox.Show("商品分類：" + newid + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "権限：" + access +  "\n" + "\n以上の内容で登録しますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dret == DialogResult.Yes) 
@@ -164,7 +159,14 @@ namespace FlexOrder
                         newstaff.staff_id = newid;
                         newstaff.staff_lastname = txbLastname.Text;
                         newstaff.staff_firstname = txbFirstname.Text;
-                        newstaff.is_manager = rbtnAdmin.Checked;
+                        if (rbtnManager.Checked)
+                        {
+                            newstaff.staff_accesslevel = 1;
+                        }
+                        else if(rbtnStaff.Checked) 
+                        {
+                            newstaff.staff_accesslevel = 0;
+                        }
                         newstaff.staff_password = StaffTable.ComputeSha256Hex(txbPassword2.Text);
                         int cnt = staffTable.Insert(newstaff);
                         if (cnt > 0) 
@@ -184,6 +186,7 @@ namespace FlexOrder
             } 
             else 
             {
+                //Edit
                 string errs = "";
                 Staff editstaff = new Staff();
                 if (txbFirstname.Text == "" && txbLastname.Text == "")
@@ -211,7 +214,19 @@ namespace FlexOrder
                 }
                 if (errs == "")
                 {
-                    string access = rbtnAdmin.Checked ? "管理者" : "店員";
+                    string access = rbtnManager.Checked ? "店長" : "一般店員";
+                    if (rbtnManager.Checked)
+                    {
+                        access = "店長";
+                    }
+                    else if (rbtnStaff.Checked)
+                    {
+                        access = "一般店員";
+                    }
+                    else 
+                    {
+                        access = "IT管理者";
+                    }
                     string changepass = change_password ? "あり" : "なし";
                     DialogResult dret = MessageBox.Show("ID：" + txbID.Text + "\n" + "姓：" + txbLastname.Text + "\n" + "名：" + txbFirstname.Text + "\n" + "パスワード変更：" + changepass + "\n" + "権限：" + access + "\n" + "\n以上の内容に変更しますか？", "確認",
                                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -220,7 +235,18 @@ namespace FlexOrder
                         editstaff.staff_id = id;
                         editstaff.staff_lastname = txbLastname.Text;
                         editstaff.staff_firstname = txbFirstname.Text;
-                        editstaff.is_manager = rbtnAdmin.Checked;
+                        if (rbtnManager.Checked)
+                        {
+                            editstaff.staff_accesslevel = 1;
+                        }
+                        else if (rbtnStaff.Checked)
+                        {
+                            editstaff.staff_accesslevel = 0;
+                        }
+                        else
+                        {
+                            editstaff.staff_accesslevel = 9;
+                        }
                         if (change_password) 
                         {
                             editstaff.staff_password = StaffTable.ComputeSha256Hex(txbPassword2.Text);
@@ -237,26 +263,12 @@ namespace FlexOrder
                             {
                                 message += "パスワード変更あり";
                             }
-                            if (beforeeditstaff.is_manager != editstaff.is_manager) 
+                            if (beforeeditstaff.staff_accesslevel != editstaff.staff_accesslevel) 
                             {
                                 message += ";権限を ";
-                                if (beforeeditstaff.is_manager) 
-                                {
-                                    message += "管理者";
-                                }
-                                else 
-                                {
-                                    message += "一般";
-                                }
+                                message += beforeeditstaff.staff_accesslevel;
                                 message += " から ";
-                                if (editstaff.is_manager)
-                                {
-                                    message += "管理者";
-                                }
-                                else
-                                {
-                                    message += "一般";
-                                }
+                                message += editstaff.staff_accesslevel;
                                 message += " に変更した";
                             }
                             SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", id.ToString(), "編集", message);

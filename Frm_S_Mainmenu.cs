@@ -48,8 +48,12 @@ namespace FlexOrder
 
         private void Frm_S_Mainmenu_Load(object sender, EventArgs e)
         {
-            
             UpdateName();
+            if (staff != null && staff.staff_accesslevel > 0)
+            {
+                btnStaffManagement.Enabled = true;
+                btnSalesStatistics.Enabled = true;
+            }
             //ImagePro.CheckAndCacheAllImages(true);
             ImagePro.CheckAndCacheAllImages(false);
         }
@@ -60,11 +64,6 @@ namespace FlexOrder
             staff = staffTable.GetStaffById(staffid);
             if (staff != null)
             {
-                if (staff.is_manager)
-                {
-                    btnStaffManagement.Enabled = true;
-                    btnSalesStatistics.Enabled = true;
-                }
                 lname = staff.staff_lastname;
                 fname = staff.staff_firstname;
             }
@@ -78,6 +77,11 @@ namespace FlexOrder
             {
                 ImagePro.CheckAndCacheAllImages(true);
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

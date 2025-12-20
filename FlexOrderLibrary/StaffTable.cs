@@ -46,7 +46,7 @@ namespace FlexOrderLibrary
                         staff.staff_id = int.Parse(table.Rows[0]["staff_id"].ToString());
                         staff.staff_lastname = table.Rows[0]["staff_lastname"].ToString();
                         staff.staff_firstname = table.Rows[0]["staff_firstname"].ToString();
-                        staff.is_manager = bool.Parse(table.Rows[0]["is_manager"].ToString());
+                        staff.staff_accesslevel = int.Parse(table.Rows[0]["staff_accesslevel"].ToString());
                     }
                     
                 }
@@ -88,7 +88,7 @@ namespace FlexOrderLibrary
                     staff.staff_id = int.Parse(table.Rows[0]["staff_id"].ToString());
                     staff.staff_lastname = table.Rows[0]["staff_lastname"].ToString();
                     staff.staff_firstname = table.Rows[0]["staff_firstname"].ToString();
-                    staff.is_manager = (bool)table.Rows[0]["is_manager"];
+                    staff.staff_accesslevel = int.Parse(table.Rows[0]["staff_accesslevel"].ToString());
                     staff.staff_password = table.Rows[0]["staff_password"].ToString();
                 }
             }
@@ -101,12 +101,12 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"INSERT INTO Staff VALUES(@staff_id,@staff_lastname,@staff_firstname,@is_manager,@staff_password)";
+                string sql = @"INSERT INTO Staff VALUES(@staff_id,@staff_lastname,@staff_firstname,@staff_accesslevel,@staff_password)";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@staff_id", staff.staff_id);
                 command.Parameters.AddWithValue("@staff_lastname", staff.staff_lastname);
                 command.Parameters.AddWithValue("@staff_firstname", staff.staff_firstname);
-                command.Parameters.AddWithValue("@is_manager", staff.is_manager);
+                command.Parameters.AddWithValue("@staff_accesslevel", staff.staff_accesslevel);
                 command.Parameters.AddWithValue("@staff_password", staff.staff_password);
 
                 connection.Open();
@@ -129,12 +129,12 @@ namespace FlexOrderLibrary
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string sql = @"UPDATE Staff SET staff_lastname=@staff_lastname, staff_firstname=@staff_firstname,
-                                is_manager=@is_manager, staff_password=@staff_password WHERE staff_id = @staff_id";
+                                staff_accesslevel=@staff_accesslevel, staff_password=@staff_password WHERE staff_id = @staff_id";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@staff_id", staff.staff_id);
                 command.Parameters.AddWithValue("@staff_lastname", staff.staff_lastname);
                 command.Parameters.AddWithValue("@staff_firstname", staff.staff_firstname);
-                command.Parameters.AddWithValue("@is_manager", staff.is_manager);
+                command.Parameters.AddWithValue("@staff_accesslevel", staff.staff_accesslevel);
                 command.Parameters.AddWithValue("@staff_password", staff.staff_password);
 
                 connection.Open();

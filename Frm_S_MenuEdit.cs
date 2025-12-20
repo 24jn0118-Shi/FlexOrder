@@ -80,7 +80,10 @@ namespace FlexOrder
                         int newid = goodsTable.InsertNewGoods(goods);
                         if (newid > 0) 
                         {
-                            ImagePro.CheckAndCacheAllImages(true);
+                            if (replaceimg) 
+                            { 
+                                Task.Run(() => ImagePro.CheckAndCacheAllImages(true));
+                            }
                             MessageBox.Show("商品情報を追加しました", "追加完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, newid, this);
@@ -142,7 +145,10 @@ namespace FlexOrder
                             int cnt = goodsTable.Update(goods); 
                             if (cnt == 1) 
                             {
-                                ImagePro.CheckAndCacheAllImages(true);
+                                if (replaceimg)
+                                {
+                                    Task.Run(() => ImagePro.CheckAndCacheAllImages(true));
+                                }
                                 MessageBox.Show("商品情報を変更しました", "変更完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, goods.goods_id, this);
