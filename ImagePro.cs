@@ -19,9 +19,11 @@ namespace FlexOrder
         //string absolutePath = @"\\192.168.3.3\SharedFolder\Images";
 
         private const string CacheFolderName = "Images";
+        private const string TempCacheFolderName = "Images_tmp";
         private const string LastRunLogFile = "ImageCacheLog.txt";
 
         private static string CacheDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CacheFolderName);
+        private static string TempCacheDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, TempCacheFolderName);
         private static string LogFilePath => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, LastRunLogFile);
 
         private static string imagepath = Path.Combine(Application.StartupPath, "Images");
@@ -30,21 +32,32 @@ namespace FlexOrder
         {
             if (IsCacheUpToDate() && !forceexecutecache)
             {
-                Console.WriteLine("Caching skipped because the image was cached within the past hour");
+                Console.WriteLine("Caching skipped");
                 return;
             }
-            Console.WriteLine("Start caching...");
+            Console.WriteLine("Start safe caching...");
             try
             {
-                CleanupCache();
-                Dictionary<int, byte[]> imageDataMap = GoodsTable.GetImagesFromDatabase();
-                SaveImagesToFiles(imageDataMap);
-                RecordSuccessfulRunDate();
-                Console.WriteLine("Images cached!");
+                PrepareTempCache();
+                Dictionary<int, byte[]> imageDataMap =
+                    GoodsTable.GetImagesFromDatabase();
+                if (imageDataMap.Count == 0) 
+                {
+                    MessageBox.Show("No images downloaded", "Error",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else 
+                {
+                    SaveImagesToFiles(imageDataMap, TempCacheDirectory);
+                    ReplaceCacheAtomically();
+                    RecordSuccessfulRunDate();
+                    Console.WriteLine("Images cached successfully!");
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Failure: {ex.Message}");
+                Console.WriteLine($"Caching failed: {ex.Message}");
+                CleanupTempCache();
             }
         }
         private static bool IsCacheUpToDate()
@@ -84,35 +97,44 @@ namespace FlexOrder
                 Console.WriteLine($"Failed to log: {ex.Message}");
             }
         }
-        private static void CleanupCache()
+        private static void PrepareTempCache()
         {
-            if (Directory.Exists(CacheDirectory))
+            if (Directory.Exists(TempCacheDirectory))
             {
-                Directory.Delete(CacheDirectory, true);
+                Directory.Delete(TempCacheDirectory, true);
             }
-            Directory.CreateDirectory(CacheDirectory);
+            Directory.CreateDirectory(TempCacheDirectory);
         }
-        private static void SaveImagesToFiles(Dictionary<int, byte[]> imageDataMap)
+        private static void SaveImagesToFiles(Dictionary<int, byte[]> imageDataMap, string targetDirectory)
         {
             foreach (var kvp in imageDataMap)
             {
                 int id = kvp.Key;
                 byte[] data = kvp.Value;
-                try
+
+                string filePath = Path.Combine(targetDirectory, $"{id}.jpg");
+
+                using (MemoryStream ms = new MemoryStream(data))
+                using (Image image = Image.FromStream(ms))
                 {
-                    string filePath = Path.Combine(CacheDirectory, $"{id}.jpg");
-                    using (MemoryStream ms = new MemoryStream(data))
-                    {
-                        using (Image image = Image.FromStream(ms))
-                        {
-                            image.Save(filePath, ImageFormat.Jpeg);
-                        }
-                    }
+                    image.Save(filePath, ImageFormat.Jpeg);
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Failed to load Goods: {id} Message: {ex.Message}");
-                }
+            }
+        }
+        private static void ReplaceCacheAtomically()
+        {
+            if (Directory.Exists(CacheDirectory))
+            {
+                Directory.Delete(CacheDirectory, true);
+            }
+
+            Directory.Move(TempCacheDirectory, CacheDirectory);
+        }
+        private static void CleanupTempCache()
+        {
+            if (Directory.Exists(TempCacheDirectory))
+            {
+                Directory.Delete(TempCacheDirectory, true);
             }
         }
         public static string GetImagePath(string goods_image)
@@ -124,7 +146,6 @@ namespace FlexOrder
             }
             return null;
         }
-
         public static Image ResizeImageToCell(Image originalImage, int targetWidth, int targetHeight) 
         {
             int maxDimension = targetHeight;

@@ -16,7 +16,7 @@ namespace FlexOrder
         static void Main()
         {
             PayjpHelper.LoadKeys();
-            ImagePro.CheckAndCacheAllImages(true);
+            Task.Run(() => ImagePro.CheckAndCacheAllImages(true));
             //ImagePro.CheckAndCacheAllImages(false);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

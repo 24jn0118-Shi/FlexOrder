@@ -78,5 +78,10 @@ namespace FlexOrder
                 ImagePro.CheckAndCacheAllImages(true);
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

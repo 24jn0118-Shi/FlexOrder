@@ -94,7 +94,7 @@ namespace FlexOrder
                 MessageBox.Show("スタッフを選択してください", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if(Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"]) >= loginstaff.staff_accesslevel && Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_id"]) != loginstaff.staff_id) 
+            else if(Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"].Value) >= loginstaff.staff_accesslevel && Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_id"].Value) != loginstaff.staff_id) 
             {
                 MessageBox.Show("アカウントが編集できません", "エラー",
                                          MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -121,7 +121,7 @@ namespace FlexOrder
             }
             else
             {
-                int selectedid = Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"]);
+                int selectedid = Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"].Value);
                 if (selectedid >= loginstaff.staff_accesslevel) 
                 {
                     MessageBox.Show("アカウントが削除できません", "エラー",

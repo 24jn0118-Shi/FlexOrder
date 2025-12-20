@@ -33,6 +33,7 @@
             this.btnMenuManagement = new System.Windows.Forms.Button();
             this.btnSalesStatistics = new System.Windows.Forms.Button();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStaffManagement
@@ -91,11 +92,23 @@
             this.lblWelcome.TabIndex = 4;
             this.lblWelcome.Text = "ようこそ、";
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.btnBack.Location = new System.Drawing.Point(645, 49);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(78, 31);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "戻る";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Frm_S_Mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnSalesStatistics);
             this.Controls.Add(this.btnMenuManagement);
@@ -119,5 +132,6 @@
         private System.Windows.Forms.Button btnMenuManagement;
         private System.Windows.Forms.Button btnSalesStatistics;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Button btnBack;
     }
 }
