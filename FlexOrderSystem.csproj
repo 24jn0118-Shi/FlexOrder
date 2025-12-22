@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BigCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Frm_C_Cart.cs">
       <SubType>Form</SubType>
     </Compile>

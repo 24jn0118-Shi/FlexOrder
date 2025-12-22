@@ -120,6 +120,24 @@
   <metadata name="img_goods_image.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridViewCellStyle2.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
+        w8bGw8bGw8bGw8bGw8bGw8YAAAAAAISChP///////////////////////////////////////////8bD
+        xgAAAAAAhIKE////////////////////////////////////////////xsPGAAAAAACEgoT/////////
+        ///////////////////////////////////Gw8YAAAAAAISChP//////////////////////////////
+        /////////////8bDxgAAAAAAhIKE////////////AAD/AAD/////////AAD/AAD/////////xsPGAAAA
+        AACEgoT///////////////8AAP8AAP8AAP8AAP/////////////Gw8YAAAAAAISChP//////////////
+        /////wAA/wAA/////////////////8bDxgAAAAAAhIKE////////////////AAD/AAD/AAD/AAD/////
+        ////////xsPGAAAAAACEgoT///////////8AAP8AAP////////8AAP8AAP/////////Gw8YAAAAAAISC
+        hP///////////////////////////////////////////8bDxgAAAAAAhIKE////////////////////
+        ////////////////////////xsPGAAAAAACEgoT/////////////////////////////////////////
+        ///Gw8YAAAAAAISChP///////////////////////////////////////////8bDxgAAAAAAhIKEhIKE
+        hIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEhIKEAAA=
+</value>
+  </data>
   <data name="img_goods_image.HeaderText" xml:space="preserve">
     <value>img_goods_image</value>
   </data>
@@ -190,6 +208,9 @@
   <data name="subtotal.HeaderText" xml:space="preserve">
     <value>subtotal</value>
   </data>
+  <data name="subtotal.Width" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
   <metadata name="goods_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -199,15 +220,14 @@
   <data name="goods_id.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 12</value>
+    <value>113, 50</value>
   </data>
   <data name="dgvCart.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="dgvCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>924, 530</value>
+    <value>942, 530</value>
   </data>
   <data name="dgvCart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -224,65 +244,15 @@
   <data name="&gt;&gt;dgvCart.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="btnGoPay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>787, 806</value>
-  </data>
-  <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 135</value>
-  </data>
-  <data name="btnGoPay.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnGoPay.Text" xml:space="preserve">
-    <value>btnGoPay</value>
-  </data>
-  <data name="&gt;&gt;btnGoPay.Name" xml:space="preserve">
-    <value>btnGoPay</value>
-  </data>
-  <data name="&gt;&gt;btnGoPay.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnGoPay.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnGoPay.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>113, 806</value>
-  </data>
-  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 135</value>
-  </data>
-  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnBack.Text" xml:space="preserve">
-    <value>btnBack</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
-    <value>btnBack</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="lblTotalPrice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lblTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 18pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblTotalPrice.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
     <value>693, 616</value>
@@ -306,7 +276,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotalPrice.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="tboxTotalPrice.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 18pt</value>
@@ -320,7 +290,6 @@
   <data name="tboxTotalPrice.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="tboxTotalPrice.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -334,10 +303,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tboxTotalPrice.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
     <value>MS UI Gothic, 16pt</value>
+  </data>
+  <data name="btnRestart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnRestart.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 12</value>
@@ -361,7 +333,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblConfirm2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -394,7 +366,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblConfirm1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -427,6 +399,72 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnGoPay.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnGoPay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 20.25pt</value>
+  </data>
+  <data name="btnGoPay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
+    <value>787, 792</value>
+  </data>
+  <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 150</value>
+  </data>
+  <data name="btnGoPay.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnGoPay.Text" xml:space="preserve">
+    <value>roundButton2</value>
+  </data>
+  <data name="&gt;&gt;btnGoPay.Name" xml:space="preserve">
+    <value>btnGoPay</value>
+  </data>
+  <data name="&gt;&gt;btnGoPay.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnGoPay.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnGoPay.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnBack.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 20.25pt</value>
+  </data>
+  <data name="btnBack.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>113, 792</value>
+  </data>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 150</value>
+  </data>
+  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>roundButton1</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
+    <value>btnBack</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -437,6 +475,9 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1134, 1047</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>Manual</value>

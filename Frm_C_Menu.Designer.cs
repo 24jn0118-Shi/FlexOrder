@@ -35,70 +35,29 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.tbcntMenu = new System.Windows.Forms.TabControl();
-            this.tbpagePop = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanelMenuRecommend = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtKaikei = new System.Windows.Forms.TextBox();
             this.lblCart = new System.Windows.Forms.Label();
             this.lblen = new System.Windows.Forms.Label();
-            this.ckbVeget = new System.Windows.Forms.CheckBox();
             this.lblVeget = new System.Windows.Forms.Label();
             this.lblConfirm1 = new System.Windows.Forms.Label();
             this.lblConfirm2 = new System.Windows.Forms.Label();
             this.dgvOrderList = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanelCategory = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelContent = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnConfirm = new FlexOrder.RoundButton();
+            this.btnBack = new FlexOrder.RoundButton();
+            this.ckbVeget = new FlexOrder.BigCheckBox();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMinus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.order_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbcntMenu.SuspendLayout();
-            this.tbpagePop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tbcntMenu
-            // 
-            resources.ApplyResources(this.tbcntMenu, "tbcntMenu");
-            this.tbcntMenu.AllowDrop = true;
-            this.tbcntMenu.Controls.Add(this.tbpagePop);
-            this.tbcntMenu.Multiline = true;
-            this.tbcntMenu.Name = "tbcntMenu";
-            this.tbcntMenu.SelectedIndex = 0;
-            this.tbcntMenu.Tag = "";
-            // 
-            // tbpagePop
-            // 
-            this.tbpagePop.Controls.Add(this.flowLayoutPanelMenuRecommend);
-            resources.ApplyResources(this.tbpagePop, "tbpagePop");
-            this.tbpagePop.Name = "tbpagePop";
-            this.tbpagePop.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanelMenuRecommend
-            // 
-            resources.ApplyResources(this.flowLayoutPanelMenuRecommend, "flowLayoutPanelMenuRecommend");
-            this.flowLayoutPanelMenuRecommend.Name = "flowLayoutPanelMenuRecommend";
-            this.flowLayoutPanelMenuRecommend.MouseDown += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelMenuRecommend_MouseDown);
-            this.flowLayoutPanelMenuRecommend.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelMenuRecommend_MouseMove);
-            this.flowLayoutPanelMenuRecommend.MouseUp += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanelMenuRecommend_MouseUp);
-            // 
-            // btnConfirm
-            // 
-            resources.ApplyResources(this.btnConfirm, "btnConfirm");
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnBack
-            // 
-            resources.ApplyResources(this.btnBack, "btnBack");
-            this.btnBack.Name = "btnBack";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnRestart
             // 
@@ -114,6 +73,7 @@
             // 
             // txtKaikei
             // 
+            this.txtKaikei.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
             resources.ApplyResources(this.txtKaikei, "txtKaikei");
             this.txtKaikei.Name = "txtKaikei";
             this.txtKaikei.ReadOnly = true;
@@ -127,13 +87,6 @@
             // 
             resources.ApplyResources(this.lblen, "lblen");
             this.lblen.Name = "lblen";
-            // 
-            // ckbVeget
-            // 
-            resources.ApplyResources(this.ckbVeget, "ckbVeget");
-            this.ckbVeget.Name = "ckbVeget";
-            this.ckbVeget.UseVisualStyleBackColor = true;
-            this.ckbVeget.CheckedChanged += new System.EventHandler(this.ckbVeget_CheckedChanged);
             // 
             // lblVeget
             // 
@@ -157,6 +110,7 @@
             this.dgvOrderList.AllowUserToDeleteRows = false;
             this.dgvOrderList.AllowUserToResizeColumns = false;
             this.dgvOrderList.AllowUserToResizeRows = false;
+            this.dgvOrderList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,6 +127,7 @@
             this.btnPlus,
             this.subtotal,
             this.goods_id});
+            this.dgvOrderList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
             resources.ApplyResources(this.dgvOrderList, "dgvOrderList");
             this.dgvOrderList.MultiSelect = false;
             this.dgvOrderList.Name = "dgvOrderList";
@@ -180,15 +135,64 @@
             this.dgvOrderList.RowHeadersVisible = false;
             this.dgvOrderList.RowTemplate.Height = 50;
             this.dgvOrderList.ShowCellToolTips = false;
-            this.dgvOrderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellContentClick);
-            this.dgvOrderList.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvOrderList_MouseDown);
-            this.dgvOrderList.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvOrderList_MouseMove);
-            this.dgvOrderList.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvOrderList_MouseUp);
+            // 
+            // flowLayoutPanelCategory
+            // 
+            resources.ApplyResources(this.flowLayoutPanelCategory, "flowLayoutPanelCategory");
+            this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
+            // 
+            // flowLayoutPanelContent
+            // 
+            resources.ApplyResources(this.flowLayoutPanelContent, "flowLayoutPanelContent");
+            this.flowLayoutPanelContent.Name = "flowLayoutPanelContent";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnConfirm.CornerRadius = 16;
+            this.btnConfirm.FlatAppearance.BorderSize = 0;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnConfirm, "btnConfirm");
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.btnConfirm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.btnConfirm.TabStop = false;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBack.CornerRadius = 16;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnBack.Name = "btnBack";
+            this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnBack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBack.TabStop = false;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            // 
+            // ckbVeget
+            // 
+            resources.ApplyResources(this.ckbVeget, "ckbVeget");
+            this.ckbVeget.Name = "ckbVeget";
+            this.ckbVeget.UseVisualStyleBackColor = true;
             // 
             // goods_name
             // 
             this.goods_name.DataPropertyName = "goods_name";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.goods_name.DefaultCellStyle = dataGridViewCellStyle2;
@@ -202,6 +206,7 @@
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Transparent;
             this.btnMinus.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.btnMinus, "btnMinus");
             this.btnMinus.Name = "btnMinus";
@@ -212,6 +217,7 @@
             // 
             this.order_num.DataPropertyName = "order_num";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
             this.order_num.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.order_num, "order_num");
@@ -223,6 +229,7 @@
             // btnPlus
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnPlus.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.btnPlus, "btnPlus");
@@ -234,6 +241,7 @@
             // 
             this.subtotal.DataPropertyName = "subtotal";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Transparent;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F);
             this.subtotal.DefaultCellStyle = dataGridViewCellStyle6;
             resources.ApplyResources(this.subtotal, "subtotal");
@@ -245,6 +253,8 @@
             // goods_id
             // 
             this.goods_id.DataPropertyName = "goods_id";
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Transparent;
+            this.goods_id.DefaultCellStyle = dataGridViewCellStyle7;
             resources.ApplyResources(this.goods_id, "goods_id");
             this.goods_id.Name = "goods_id";
             this.goods_id.ReadOnly = true;
@@ -255,23 +265,23 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.ckbVeget);
+            this.Controls.Add(this.flowLayoutPanelContent);
+            this.Controls.Add(this.flowLayoutPanelCategory);
             this.Controls.Add(this.dgvOrderList);
             this.Controls.Add(this.lblConfirm2);
             this.Controls.Add(this.lblConfirm1);
             this.Controls.Add(this.lblVeget);
-            this.Controls.Add(this.ckbVeget);
             this.Controls.Add(this.lblen);
             this.Controls.Add(this.lblCart);
             this.Controls.Add(this.txtKaikei);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnRestart);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.tbcntMenu);
             this.Name = "Frm_C_Menu";
             this.Load += new System.EventHandler(this.FrmCMenu_Load);
-            this.tbcntMenu.ResumeLayout(false);
-            this.tbpagePop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,22 +289,20 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tbcntMenu;
-        private System.Windows.Forms.TabPage tbpagePop;
-        private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtKaikei;
         private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Label lblen;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMenuRecommend;
-        private System.Windows.Forms.CheckBox ckbVeget;
         private System.Windows.Forms.Label lblVeget;
         private System.Windows.Forms.Label lblConfirm1;
         private System.Windows.Forms.Label lblConfirm2;
         private System.Windows.Forms.DataGridView dgvOrderList;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelCategory;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelContent;
+        private BigCheckBox ckbVeget;
+        private RoundButton btnBack;
+        private RoundButton btnConfirm;
         private System.Windows.Forms.DataGridViewTextBoxColumn goods_name;
         private System.Windows.Forms.DataGridViewButtonColumn btnMinus;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_num;

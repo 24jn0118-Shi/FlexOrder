@@ -33,11 +33,11 @@
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.lblNum = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Button();
-            this.btnAddtoCart = new System.Windows.Forms.Button();
             this.lblGoodsName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblDetail = new System.Windows.Forms.Label();
+            this.btnAddtoCart = new FlexOrder.RoundButton();
+            this.btnBack = new FlexOrder.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.picGoods)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,20 +66,6 @@
             resources.ApplyResources(this.lblNum, "lblNum");
             this.lblNum.Name = "lblNum";
             // 
-            // btnBack
-            // 
-            resources.ApplyResources(this.btnBack, "btnBack");
-            this.btnBack.Name = "btnBack";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnAddtoCart
-            // 
-            resources.ApplyResources(this.btnAddtoCart, "btnAddtoCart");
-            this.btnAddtoCart.Name = "btnAddtoCart";
-            this.btnAddtoCart.UseVisualStyleBackColor = true;
-            this.btnAddtoCart.Click += new System.EventHandler(this.btnAddtoCart_Click);
-            // 
             // lblGoodsName
             // 
             resources.ApplyResources(this.lblGoodsName, "lblGoodsName");
@@ -95,15 +81,52 @@
             resources.ApplyResources(this.lblDetail, "lblDetail");
             this.lblDetail.Name = "lblDetail";
             // 
+            // btnAddtoCart
+            // 
+            this.btnAddtoCart.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddtoCart.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAddtoCart.CornerRadius = 16;
+            this.btnAddtoCart.FlatAppearance.BorderSize = 0;
+            this.btnAddtoCart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddtoCart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnAddtoCart, "btnAddtoCart");
+            this.btnAddtoCart.ForeColor = System.Drawing.Color.White;
+            this.btnAddtoCart.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnAddtoCart.Name = "btnAddtoCart";
+            this.btnAddtoCart.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(70)))));
+            this.btnAddtoCart.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.btnAddtoCart.TabStop = false;
+            this.btnAddtoCart.UseVisualStyleBackColor = false;
+            this.btnAddtoCart.Click += new System.EventHandler(this.btnAddtoCart_Click_1);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBack.CornerRadius = 16;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnBack.Name = "btnBack";
+            this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnBack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBack.TabStop = false;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            // 
             // Frm_C_GoodsDetail
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.btnAddtoCart);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblDetail);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.lblGoodsName);
-            this.Controls.Add(this.btnAddtoCart);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblNum);
             this.Controls.Add(this.btnPlus);
             this.Controls.Add(this.btnMinus);
@@ -122,10 +145,10 @@
         private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Label lblNum;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnAddtoCart;
         private System.Windows.Forms.Label lblGoodsName;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblDetail;
+        private RoundButton btnBack;
+        private RoundButton btnAddtoCart;
     }
 }

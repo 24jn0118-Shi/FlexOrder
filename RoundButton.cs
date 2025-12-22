@@ -7,24 +7,26 @@ namespace FlexOrder
 {
     public class RoundButton : Button
     {
-        private bool isPressed = false;
-        private bool isHover = false;
+        private bool isHover;
+        private bool isPressed;
 
-        public int CornerRadius { get; set; } = 14;
-
-        public Color NormalColor { get; set; } = Color.FromArgb(55, 55, 55);
-        public Color HoverColor { get; set; } = Color.FromArgb(65, 65, 65);
-        public Color PressedColor { get; set; } = Color.FromArgb(35, 35, 35);
-        public Color BorderColor { get; set; } = Color.Transparent;
+        public int CornerRadius { get; set; } = 16;
+        public Color NormalColor { get; set; } = SystemColors.Control;
+        public Color HoverColor { get; set; }
+        public Color PressedColor { get; set; }
+        public Color BorderColor { get; set; } = SystemColors.ControlDark;
 
         public RoundButton()
         {
+            // Отключаем все стандартные рамки Windows
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
+            FlatAppearance.MouseDownBackColor = Color.Transparent;
+            FlatAppearance.MouseOverBackColor = Color.Transparent;
+            BackColor = Color.Transparent; // Позволяет избежать черных рамок
+
             UseVisualStyleBackColor = false;
             TabStop = false;
-
-            BackColor = Color.Transparent;
             ForeColor = Color.White;
 
             SetStyle(
@@ -32,104 +34,84 @@ namespace FlexOrder
                 ControlStyles.AllPaintingInWmPaint |
                 ControlStyles.OptimizedDoubleBuffer |
                 ControlStyles.ResizeRedraw |
-                ControlStyles.Selectable, false
+                ControlStyles.SupportsTransparentBackColor,
+                true
             );
         }
 
-        // 🔒 Полностью отключаем focus rectangle
         protected override bool ShowFocusCues => false;
 
-        protected override void OnMouseEnter(EventArgs e)
-        {
-            isHover = true;
-            Invalidate();
-            base.OnMouseEnter(e);
-        }
-
-        protected override void OnMouseLeave(EventArgs e)
-        {
-            isHover = false;
-            isPressed = false;
-            Invalidate();
-            base.OnMouseLeave(e);
-        }
-
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                isPressed = true;
-                Invalidate();
-            }
-            base.OnMouseDown(e);
-        }
-
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            isPressed = false;
-            Invalidate();
-            base.OnMouseUp(e);
-        }
-
-        private GraphicsPath GetRoundPath(RectangleF rect, int radius)
-        {
-            float r = radius;
-            GraphicsPath path = new GraphicsPath();
-
-            path.StartFigure();
-            path.AddArc(rect.X, rect.Y, r, r, 180, 90);
-            path.AddLine(rect.X + r, rect.Y, rect.Right - r, rect.Y);
-            path.AddArc(rect.Right - r, rect.Y, r, r, 270, 90);
-            path.AddLine(rect.Right, rect.Y + r, rect.Right, rect.Bottom - r);
-            path.AddArc(rect.Right - r, rect.Bottom - r, r, r, 0, 90);
-            path.AddLine(rect.Right - r, rect.Bottom, rect.X + r, rect.Bottom);
-            path.AddArc(rect.X, rect.Bottom - r, r, r, 90, 90);
-            path.AddLine(rect.X, rect.Bottom - r, rect.X, rect.Y + r);
-            path.CloseFigure();
-
-            return path;
-        }
+        protected override void OnMouseEnter(EventArgs e) { isHover = true; Invalidate(); base.OnMouseEnter(e); }
+        protected override void OnMouseLeave(EventArgs e) { isHover = false; isPressed = false; Invalidate(); base.OnMouseLeave(e); }
+        protected override void OnMouseDown(MouseEventArgs e) { if (e.Button == MouseButtons.Left) { isPressed = true; Invalidate(); } base.OnMouseDown(e); }
+        protected override void OnMouseUp(MouseEventArgs e) { isPressed = false; Invalidate(); base.OnMouseUp(e); }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality; // Добавлено для точности краев
 
-            float offset = isPressed ? 1.5f : 0f;
-            RectangleF rect = new RectangleF(
-                offset,
-                offset,
-                Width - 1.5f - offset,
-                Height - 1.5f - offset
-            );
-
-            using (GraphicsPath path = GetRoundPath(rect, CornerRadius))
+            // Вместо закрашивания прямоугольником, мы просто берем фон родителя
+            if (Parent != null)
             {
-                Region = new Region(path);
-
-                Color fill =
-                    isPressed ? PressedColor :
-                    isHover ? HoverColor :
-                    NormalColor;
-
-                using (SolidBrush brush = new SolidBrush(fill))
-                    e.Graphics.FillPath(brush, path);
-
-                if (BorderColor.A > 0)
+                using (var parentBrush = new SolidBrush(Parent.BackColor))
                 {
-                    using (Pen pen = new Pen(BorderColor, isPressed ? 1f : 1.5f))
-                        e.Graphics.DrawPath(pen, path);
+                    g.FillRectangle(parentBrush, ClientRectangle);
                 }
             }
 
+            // Важно: отступаем на 1 пиксель, чтобы Anti-Aliasing не упирался в край контрола
+            Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
+
+            using (GraphicsPath path = GetRoundPath(rect, CornerRadius))
+            {
+                Color fill = isPressed ? PressedColor : isHover ? HoverColor : NormalColor;
+
+                // Рисуем тело кнопки
+                using (SolidBrush b = new SolidBrush(fill))
+                {
+                    g.FillPath(b, path);
+                }
+
+                // Рисуем границу (если она нужна)
+                if (BorderColor != Color.Transparent)
+                {
+                    using (Pen p = new Pen(BorderColor, 1))
+                    {
+                        p.Alignment = PenAlignment.Inset;
+                        g.DrawPath(p, path);
+                    }
+                }
+            }
+
+            // Рисуем текст
             TextRenderer.DrawText(
-                e.Graphics,
+                g,
                 Text,
                 Font,
-                Rectangle.Round(rect),
+                ClientRectangle,
                 ForeColor,
-                TextFormatFlags.HorizontalCenter |
-                TextFormatFlags.VerticalCenter
+                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.WordBreak
             );
+        }
+
+        private GraphicsPath GetRoundPath(Rectangle rect, int radius)
+        {
+            int d = radius * 2;
+            GraphicsPath path = new GraphicsPath();
+
+            if (d > rect.Width) d = rect.Width;
+            if (d > rect.Height) d = rect.Height;
+            if (d <= 0) d = 1;
+
+            path.AddArc(rect.X, rect.Y, d, d, 180, 90);
+            path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
+            path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90);
+            path.CloseFigure();
+
+            return path;
         }
     }
 }

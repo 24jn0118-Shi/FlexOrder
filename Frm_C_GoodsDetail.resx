@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="picGoods.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 71</value>
+    <value>33, 40</value>
   </data>
   <data name="picGoods.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 261</value>
+    <value>468, 261</value>
   </data>
   <data name="picGoods.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -150,8 +150,11 @@
   <data name="btnMinus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt, style=Bold</value>
   </data>
+  <data name="btnMinus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnMinus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>316, 339</value>
+    <value>323, 352</value>
   </data>
   <data name="btnMinus.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 43</value>
@@ -177,8 +180,11 @@
   <data name="btnPlus.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt, style=Bold</value>
   </data>
+  <data name="btnPlus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnPlus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>455, 339</value>
+    <value>446, 352</value>
   </data>
   <data name="btnPlus.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 43</value>
@@ -204,11 +210,14 @@
   <data name="lblNum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
+  <data name="lblNum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>366, 333</value>
+    <value>375, 352</value>
   </data>
   <data name="lblNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 59</value>
+    <value>65, 40</value>
   </data>
   <data name="lblNum.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -231,65 +240,14 @@
   <data name="&gt;&gt;lblNum.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 376</value>
-  </data>
-  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 66</value>
-  </data>
-  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnBack.Text" xml:space="preserve">
-    <value>btnBack</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
-    <value>btnBack</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnAddtoCart.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 12pt</value>
-  </data>
-  <data name="btnAddtoCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>538, 372</value>
-  </data>
-  <data name="btnAddtoCart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>182, 66</value>
-  </data>
-  <data name="btnAddtoCart.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="btnAddtoCart.Text" xml:space="preserve">
-    <value>btnAddtoCart</value>
-  </data>
-  <data name="&gt;&gt;btnAddtoCart.Name" xml:space="preserve">
-    <value>btnAddtoCart</value>
-  </data>
-  <data name="&gt;&gt;btnAddtoCart.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAddtoCart.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnAddtoCart.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="lblGoodsName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt, style=Bold</value>
   </data>
+  <data name="lblGoodsName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblGoodsName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>55, 40</value>
+    <value>55, 9</value>
   </data>
   <data name="lblGoodsName.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 28</value>
@@ -313,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblGoodsName.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblPrice.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,10 +304,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPrice.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblDetail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
+  </data>
+  <data name="lblDetail.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>528, 71</value>
@@ -373,7 +334,73 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblDetail.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnAddtoCart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnAddtoCart.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 18pt</value>
+  </data>
+  <data name="btnAddtoCart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAddtoCart.Location" type="System.Drawing.Point, System.Drawing">
+    <value>569, 327</value>
+  </data>
+  <data name="btnAddtoCart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="btnAddtoCart.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnAddtoCart.Text" xml:space="preserve">
+    <value>roundButton1</value>
+  </data>
+  <data name="&gt;&gt;btnAddtoCart.Name" xml:space="preserve">
+    <value>btnAddtoCart</value>
+  </data>
+  <data name="&gt;&gt;btnAddtoCart.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnAddtoCart.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAddtoCart.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnBack.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 18pt</value>
+  </data>
+  <data name="btnBack.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 327</value>
+  </data>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 100</value>
+  </data>
+  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>roundButton1</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
+    <value>btnBack</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
