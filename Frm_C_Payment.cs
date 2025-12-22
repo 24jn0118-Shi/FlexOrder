@@ -63,6 +63,10 @@ namespace FlexOrder
                     int pastmaxid = orderTable.GetPastMaxId();
                     currentOrder.order_id = (newid - pastmaxid - 1) % 999 + 1;
                     PrintHelper printHelper = new PrintHelper();
+                    if (Thread.CurrentThread.CurrentUICulture.Name != "ja") 
+                    {
+                        currentOrder.orderdetaillist = orderTable.ReplaceGoodsName(currentOrder.orderdetaillist);
+                    }
                     printHelper.PrintReceipt(currentOrder);
                     //Task.Run(() => { printHelper.PrintReceipt(currentOrder); });
                     if (paytype == "card" && form.result.ToString() != "")

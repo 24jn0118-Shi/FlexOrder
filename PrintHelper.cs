@@ -19,7 +19,7 @@ namespace FlexOrder
             _order = order;
             _tickets = new List<Bitmap>();
             _printIndex = 0;
-
+            
             foreach (var d in order.orderdetaillist)
             {
                 for (int i = 0; i < d.quantity; i++)

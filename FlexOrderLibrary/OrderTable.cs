@@ -94,7 +94,34 @@ namespace FlexOrderLibrary
             }
             return table;
         }
-
+        public List<OrderDetail> ReplaceGoodsName(List<OrderDetail> orderdetaillist) 
+        {
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            GoodsTable goodsTable = new GoodsTable();
+            foreach (OrderDetail orderdetail in orderdetaillist)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = @"SELECT G.*, LG.goods_name 
+                            FROM Goods AS G 							
+                            INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id
+                            WHERE LG.language_no = 1 AND G.goods_id = @goods_id";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@goods_id", orderdetail.goods_id);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                orderdetail.goods_name = reader["goods_name"]?.ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            return orderdetaillist;
+        }
         public Order GetOrderById(int id) 
         {
             DataTable table = new DataTable();
