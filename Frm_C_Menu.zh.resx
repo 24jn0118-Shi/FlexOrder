@@ -152,7 +152,7 @@
     <value>确认订单</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>总计金额：</value>
+    <value>总计金额（含税）：</value>
   </data>
   <data name="lblCart.Text" xml:space="preserve">
     <value>当前订单</value>
@@ -182,6 +182,6 @@
     <value>数量</value>
   </data>
   <data name="subtotal.HeaderText" xml:space="preserve">
-    <value>小计</value>
+    <value>小计（含税）</value>
   </data>
 </root>

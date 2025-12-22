@@ -25,8 +25,7 @@ namespace FlexOrderLibrary
                                 SELECT CAST(SCOPE_IDENTITY() AS int);";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                DateTime dateTimenow = DateTime.Now;
-                command.Parameters.AddWithValue("@order_date", dateTimenow);
+                command.Parameters.AddWithValue("@order_date", neworder.order_date);
                 command.Parameters.AddWithValue("@is_takeout", neworder.is_takeout);
                 connection.Open();
                 newOrderId = (int)command.ExecuteScalar();

@@ -124,7 +124,7 @@
     <value>戻る</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>合計金額：</value>
+    <value>合計金額（税込）：</value>
   </data>
   <data name="lblCart.Text" xml:space="preserve">
     <value>現在の注文</value>
@@ -161,6 +161,6 @@
     <value>数量</value>
   </data>
   <data name="subtotal.HeaderText" xml:space="preserve">
-    <value>小計</value>
+    <value>小計（税込）</value>
   </data>
 </root>

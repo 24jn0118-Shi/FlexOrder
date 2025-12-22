@@ -56,9 +56,15 @@ namespace FlexOrder
             if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
+                currentOrder.order_date = DateTime.Now;
                 if (ordertype != "edit")
                 {
-                    orderTable.InsertNewOrder(currentOrder);
+                    int newid = orderTable.InsertNewOrder(currentOrder);
+                    int pastmaxid = orderTable.GetPastMaxId();
+                    currentOrder.order_id = (newid - pastmaxid - 1) % 999 + 1;
+                    PrintHelper printHelper = new PrintHelper();
+                    printHelper.PrintReceipt(currentOrder);
+                    //Task.Run(() => { printHelper.PrintReceipt(currentOrder); });
                     if (paytype == "card" && form.result.ToString() != "")
                     {
                         MessageBox.Show(form.result.ToString(), "カード決済結果");

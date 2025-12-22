@@ -43,18 +43,19 @@
             this.lblTimeB = new System.Windows.Forms.Label();
             this.lblPriceB = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblNoA = new System.Windows.Forms.Label();
+            this.lblNoB = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblGoodsNameA
             // 
-            this.lblGoodsNameA.AutoSize = true;
-            this.lblGoodsNameA.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblGoodsNameA.Location = new System.Drawing.Point(57, 58);
+            this.lblGoodsNameA.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoodsNameA.Location = new System.Drawing.Point(9, 49);
             this.lblGoodsNameA.Name = "lblGoodsNameA";
-            this.lblGoodsNameA.Size = new System.Drawing.Size(79, 30);
+            this.lblGoodsNameA.Size = new System.Drawing.Size(170, 83);
             this.lblGoodsNameA.TabIndex = 0;
             this.lblGoodsNameA.Text = "商品名";
-            this.lblGoodsNameA.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblGoodsNameA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDate
             // 
@@ -79,17 +80,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(6, 163);
+            this.label2.Location = new System.Drawing.Point(21, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(24, 19);
+            this.label2.Size = new System.Drawing.Size(54, 19);
             this.label2.TabIndex = 2;
-            this.label2.Text = "￥";
+            this.label2.Text = "税込￥";
             // 
             // lblPriceA
             // 
             this.lblPriceA.AutoSize = true;
             this.lblPriceA.Font = new System.Drawing.Font("Microsoft YaHei UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblPriceA.Location = new System.Drawing.Point(58, 163);
+            this.lblPriceA.Location = new System.Drawing.Point(85, 163);
             this.lblPriceA.Name = "lblPriceA";
             this.lblPriceA.Size = new System.Drawing.Size(27, 19);
             this.lblPriceA.TabIndex = 3;
@@ -100,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.label4.Location = new System.Drawing.Point(11, 183);
+            this.label4.Location = new System.Drawing.Point(11, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 21);
             this.label4.TabIndex = 6;
@@ -110,7 +111,7 @@
             // 
             this.lblTEL.AutoSize = true;
             this.lblTEL.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblTEL.Location = new System.Drawing.Point(58, 183);
+            this.lblTEL.Location = new System.Drawing.Point(58, 187);
             this.lblTEL.Name = "lblTEL";
             this.lblTEL.Size = new System.Drawing.Size(114, 21);
             this.lblTEL.TabIndex = 7;
@@ -140,11 +141,11 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(64, 280);
+            this.label.Location = new System.Drawing.Point(66, 280);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(69, 17);
+            this.label.Size = new System.Drawing.Size(65, 17);
             this.label.TabIndex = 10;
-            this.label.Text = "Flex Order";
+            this.label.Text = "FlexOrder";
             this.label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label5
@@ -157,20 +158,19 @@
             // 
             // lblGoodsNameB
             // 
-            this.lblGoodsNameB.AutoSize = true;
-            this.lblGoodsNameB.Font = new System.Drawing.Font("Microsoft YaHei UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblGoodsNameB.Location = new System.Drawing.Point(229, 58);
+            this.lblGoodsNameB.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGoodsNameB.Location = new System.Drawing.Point(200, 49);
             this.lblGoodsNameB.Name = "lblGoodsNameB";
-            this.lblGoodsNameB.Size = new System.Drawing.Size(79, 30);
+            this.lblGoodsNameB.Size = new System.Drawing.Size(135, 83);
             this.lblGoodsNameB.TabIndex = 12;
             this.lblGoodsNameB.Text = "商品名";
-            this.lblGoodsNameB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblGoodsNameB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTimeB
             // 
             this.lblTimeB.AutoSize = true;
             this.lblTimeB.Font = new System.Drawing.Font("Microsoft YaHei UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTimeB.Location = new System.Drawing.Point(244, 145);
+            this.lblTimeB.Location = new System.Drawing.Point(228, 145);
             this.lblTimeB.Name = "lblTimeB";
             this.lblTimeB.Size = new System.Drawing.Size(79, 26);
             this.lblTimeB.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             this.lblPriceB.AutoSize = true;
             this.lblPriceB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblPriceB.Location = new System.Drawing.Point(288, 258);
+            this.lblPriceB.Location = new System.Drawing.Point(272, 258);
             this.lblPriceB.Name = "lblPriceB";
             this.lblPriceB.Size = new System.Drawing.Size(28, 22);
             this.lblPriceB.TabIndex = 15;
@@ -191,11 +191,31 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(262, 258);
+            this.label7.Location = new System.Drawing.Point(211, 258);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 22);
+            this.label7.Size = new System.Drawing.Size(58, 22);
             this.label7.TabIndex = 14;
-            this.label7.Text = "￥";
+            this.label7.Text = "税込￥";
+            // 
+            // lblNoA
+            // 
+            this.lblNoA.AutoSize = true;
+            this.lblNoA.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblNoA.Location = new System.Drawing.Point(135, 7);
+            this.lblNoA.Name = "lblNoA";
+            this.lblNoA.Size = new System.Drawing.Size(37, 21);
+            this.lblNoA.TabIndex = 7;
+            this.lblNoA.Text = "000";
+            // 
+            // lblNoB
+            // 
+            this.lblNoB.AutoSize = true;
+            this.lblNoB.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lblNoB.Location = new System.Drawing.Point(250, 7);
+            this.lblNoB.Name = "lblNoB";
+            this.lblNoB.Size = new System.Drawing.Size(37, 21);
+            this.lblNoB.TabIndex = 7;
+            this.lblNoB.Text = "000";
             // 
             // MealTicket
             // 
@@ -209,6 +229,8 @@
             this.Controls.Add(this.label);
             this.Controls.Add(this.lblIsTakeout);
             this.Controls.Add(this.lblTimeA);
+            this.Controls.Add(this.lblNoB);
+            this.Controls.Add(this.lblNoA);
             this.Controls.Add(this.lblTEL);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblPriceA);
@@ -241,5 +263,7 @@
         private System.Windows.Forms.Label lblTimeB;
         private System.Windows.Forms.Label lblPriceB;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblNoA;
+        private System.Windows.Forms.Label lblNoB;
     }
 }

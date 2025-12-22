@@ -132,4 +132,7 @@
   <data name="btnCreditCard.Text" xml:space="preserve">
     <value>Credit Card</value>
   </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Total (Tax Included):</value>
+  </data>
 </root>

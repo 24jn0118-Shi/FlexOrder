@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,50 +14,34 @@ namespace FlexOrder
 {
     public partial class MealTicket : UserControl
     {
+
         public MealTicket()
         {
             InitializeComponent();
         }
-        public int Price
+        public void Bind(Order order, OrderDetail detail)
         {
-            get { return Price; }
-            set { lblPriceA.Text = value.ToString();
-                lblPriceB.Text = value.ToString();
-            }
-        }
+            lblGoodsNameA.Text = detail.goods_name;
+            lblGoodsNameB.Text = lblGoodsNameA.Text;
 
-        public bool Is_takeout
-        {
-            get { return Is_takeout; }
-            set {
-                if (value == false)
-                {
-                    lblIsTakeout.Text = "店内";
-                }
-                else
-                {
-                    lblIsTakeout.Text = "持帰";
-                }
-            }
-        }
+            lblPriceA.Text = detail.price.ToString("N0");
+            lblPriceB.Text = lblPriceA.Text;
 
-        public string Goods_name
-        {
-            get { return Goods_name; }
-            set { lblGoodsNameA.Text = value.ToString();
-                lblGoodsNameB.Text = value.ToString();
-            }
-        }
+            lblIsTakeout.Text = order.is_takeout ? "持帰" : "店内";
 
-        public DateTime Order_date
-        {
-            get { return Order_date; }
-            set {
-                lblDate.Text = value.ToString("yyyy/MM/dd");
-                lblTimeA.Text = value.ToString("HH/mm");
-                lblTimeB.Text = lblTimeA.Text;
+            lblDate.Text = order.order_date.ToString("yyyy/MM/dd");
+            lblTimeA.Text = order.order_date.ToString("HH:mm");
+            lblTimeB.Text = lblTimeA.Text;
+
+            string todayid = order.order_id.ToString();
+            while (todayid.Length < 3)
+            {
+                todayid = "0" + todayid;
             }
+            lblNoA.Text = todayid;
+            lblNoB.Text = lblNoA.Text;
         }
-        
     }
 }
+
+    
