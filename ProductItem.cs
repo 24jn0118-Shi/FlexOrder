@@ -16,8 +16,8 @@ namespace FlexOrder
 
         int id;
         public Color DefaultColor;
-        private Color HoverColor = Color.LightGray;
-        private Color PressedColor = Color.LightSkyBlue;
+        private readonly Color HoverColor = Color.LightGray;
+        private readonly Color PressedColor = Color.LightSkyBlue;
         public ProductItem()
         {
             InitializeComponent();

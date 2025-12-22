@@ -32,11 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_End));
             this.btnRestart = new System.Windows.Forms.Button();
             this.lblEnd1 = new System.Windows.Forms.Label();
-            this.lblEnd2 = new System.Windows.Forms.Label();
+            this.lblEndIn2 = new System.Windows.Forms.Label();
             this.lblOrderType = new System.Windows.Forms.Label();
             this.lblOut = new System.Windows.Forms.Label();
             this.lblIn = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.lblEndOut2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRestart
@@ -52,10 +55,10 @@
             resources.ApplyResources(this.lblEnd1, "lblEnd1");
             this.lblEnd1.Name = "lblEnd1";
             // 
-            // lblEnd2
+            // lblEndIn2
             // 
-            resources.ApplyResources(this.lblEnd2, "lblEnd2");
-            this.lblEnd2.Name = "lblEnd2";
+            resources.ApplyResources(this.lblEndIn2, "lblEndIn2");
+            this.lblEndIn2.Name = "lblEndIn2";
             // 
             // lblOrderType
             // 
@@ -74,19 +77,37 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 8000;
+            this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lbl1
+            // 
+            resources.ApplyResources(this.lbl1, "lbl1");
+            this.lbl1.Name = "lbl1";
+            // 
+            // lbl2
+            // 
+            resources.ApplyResources(this.lbl2, "lbl2");
+            this.lbl2.Name = "lbl2";
+            // 
+            // lblEndOut2
+            // 
+            resources.ApplyResources(this.lblEndOut2, "lblEndOut2");
+            this.lblEndOut2.Name = "lblEndOut2";
             // 
             // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblEndOut2);
             this.Controls.Add(this.lblIn);
             this.Controls.Add(this.lblOut);
-            this.Controls.Add(this.lblEnd2);
+            this.Controls.Add(this.lblEndIn2);
             this.Controls.Add(this.lblOrderType);
             this.Controls.Add(this.lblEnd1);
             this.Controls.Add(this.btnRestart);
+            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.lbl2);
             this.Name = "Frm_C_End";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_C_End_FormClosing);
             this.Load += new System.EventHandler(this.Frm_C_End_Load);
@@ -99,10 +120,13 @@
 
         private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblEnd1;
-        private System.Windows.Forms.Label lblEnd2;
+        private System.Windows.Forms.Label lblEndIn2;
         private System.Windows.Forms.Label lblOrderType;
         private System.Windows.Forms.Label lblOut;
         private System.Windows.Forms.Label lblIn;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label lbl2;
+        private System.Windows.Forms.Label lblEndOut2;
     }
 }

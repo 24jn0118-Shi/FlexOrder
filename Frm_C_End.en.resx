@@ -123,10 +123,6 @@
   <data name="lblEnd1.Text" xml:space="preserve">
     <value>Payment Complete</value>
   </data>
-  <data name="lblEnd2.Text" xml:space="preserve">
-    <value>After securing a seat, 
-please give your meal ticket to the staff</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Payment Complete</value>
   </data>
@@ -135,5 +131,13 @@ please give your meal ticket to the staff</value>
   </data>
   <data name="lblOut.Text" xml:space="preserve">
     <value>Take-Out</value>
+  </data>
+  <data name="lblEndIn2.Text" xml:space="preserve">
+    <value>After securing a seat, 
+please give your meal ticket to the staff</value>
+  </data>
+  <data name="lblEndOut2.Text" xml:space="preserve">
+    <value>Please take the ticket 
+and wait at the pickup counter</value>
   </data>
 </root>
