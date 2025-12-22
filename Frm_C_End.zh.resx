@@ -123,10 +123,6 @@
   <data name="lblEnd1.Text" xml:space="preserve">
     <value>支付完成</value>
   </data>
-  <data name="lblEnd2.Text" xml:space="preserve">
-    <value>请在就座后
-将餐券交给店员</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>支付完成</value>
   </data>
@@ -135,5 +131,13 @@
   </data>
   <data name="lblOut.Text" xml:space="preserve">
     <value>外带</value>
+  </data>
+  <data name="lblEndIn2.Text" xml:space="preserve">
+    <value>请在就座后
+将餐券交给店员</value>
+  </data>
+  <data name="lblEndOut2.Text" xml:space="preserve">
+    <value>请拿好餐券，
+在取餐处等候</value>
   </data>
 </root>

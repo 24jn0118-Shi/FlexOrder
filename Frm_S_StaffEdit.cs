@@ -175,7 +175,8 @@ namespace FlexOrder
                         int cnt = staffTable.Insert(newstaff);
                         if (cnt > 0) 
                         {
-                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", newid.ToString(), "登録", "");
+                            string message = "権限 " + newstaff.staff_accesslevel.ToString();
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", newid.ToString(), "登録", message);
                             MessageBox.Show(cnt + "件の店員アカウントを登録しました", "登録完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -218,7 +219,7 @@ namespace FlexOrder
                 }
                 if (errs == "")
                 {
-                    string access = rbtnManager.Checked ? "店長" : "一般店員";
+                    string access = "";
                     if (rbtnManager.Checked)
                     {
                         access = "店長";

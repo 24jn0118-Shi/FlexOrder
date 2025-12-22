@@ -144,16 +144,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="lblEnd1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
   <data name="lblEnd1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 108</value>
+    <value>12, 119</value>
   </data>
   <data name="lblEnd1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 150</value>
+    <value>155, 29</value>
   </data>
   <data name="lblEnd1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -163,6 +163,9 @@
   </data>
   <data name="lblEnd1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
+  </data>
+  <data name="lblEnd1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;lblEnd1.Name" xml:space="preserve">
     <value>lblEnd1</value>
@@ -174,37 +177,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEnd1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
-  <data name="lblEnd2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblEndIn2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
-  <data name="lblEnd2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 241</value>
+  <data name="lblEndIn2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 192</value>
   </data>
-  <data name="lblEnd2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 150</value>
+  <data name="lblEndIn2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 29</value>
   </data>
-  <data name="lblEnd2.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblEndIn2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="lblEnd2.Text" xml:space="preserve">
-    <value>lblEnd2</value>
+  <data name="lblEndIn2.Text" xml:space="preserve">
+    <value>lblEndIn2</value>
   </data>
-  <data name="lblEnd2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="lblEndIn2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;lblEnd2.Name" xml:space="preserve">
-    <value>lblEnd2</value>
+  <data name="lblEndIn2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;lblEnd2.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblEndIn2.Name" xml:space="preserve">
+    <value>lblEndIn2</value>
+  </data>
+  <data name="&gt;&gt;lblEndIn2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblEnd2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblEndIn2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblEnd2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;lblEndIn2.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="lblOrderType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
@@ -238,7 +244,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOrderType.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblOut.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -268,7 +274,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOut.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="lblIn.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -301,11 +307,113 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblIn.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="lbl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 15.75pt</value>
+  </data>
+  <data name="lbl1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 106</value>
+  </data>
+  <data name="lbl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 150</value>
+  </data>
+  <data name="lbl1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbl1.Text" xml:space="preserve">
+    <value>lbl1</value>
+  </data>
+  <data name="lbl1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lbl1.Name" xml:space="preserve">
+    <value>lbl1</value>
+  </data>
+  <data name="&gt;&gt;lbl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl1.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 15.75pt</value>
+  </data>
+  <data name="lbl2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 236</value>
+  </data>
+  <data name="lbl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 150</value>
+  </data>
+  <data name="lbl2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>lbl2</value>
+  </data>
+  <data name="lbl2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;lbl2.Name" xml:space="preserve">
+    <value>lbl2</value>
+  </data>
+  <data name="&gt;&gt;lbl2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblEndOut2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 15.75pt</value>
+  </data>
+  <data name="lblEndOut2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblEndOut2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 221</value>
+  </data>
+  <data name="lblEndOut2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 29</value>
+  </data>
+  <data name="lblEndOut2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="lblEndOut2.Text" xml:space="preserve">
+    <value>lblEndOut2</value>
+  </data>
+  <data name="lblEndOut2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="lblEndOut2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;lblEndOut2.Name" xml:space="preserve">
+    <value>lblEndOut2</value>
+  </data>
+  <data name="&gt;&gt;lblEndOut2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEndOut2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEndOut2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -313,7 +421,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
+    <value>793, 450</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

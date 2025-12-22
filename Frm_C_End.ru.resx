@@ -123,10 +123,6 @@
   <data name="lblEnd1.Text" xml:space="preserve">
     <value>Оплата завершена</value>
   </data>
-  <data name="lblEnd2.Text" xml:space="preserve">
-    <value>После того как займёте место, 
-передайте талон официанту</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Завершение оплаты</value>
   </data>
@@ -135,5 +131,13 @@
   </data>
   <data name="lblOut.Text" xml:space="preserve">
     <value>С собой</value>
+  </data>
+  <data name="lblEndIn2.Text" xml:space="preserve">
+    <value>После того как займёте место, 
+передайте талон официанту</value>
+  </data>
+  <data name="lblEndOut2.Text" xml:space="preserve">
+    <value>Пожалуйста, возьмите талон,
+и ожидайте у стойки выдачи</value>
   </data>
 </root>
