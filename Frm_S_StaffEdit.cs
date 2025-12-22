@@ -60,7 +60,7 @@ namespace FlexOrder
                 rbtnStaff.Checked = true;
                 if (loginstaff.staff_accesslevel == 1) 
                 {
-                    rbtnManager.Visible = false;
+                    rbtnManager.Enabled = false;
                 }
             }
             else
