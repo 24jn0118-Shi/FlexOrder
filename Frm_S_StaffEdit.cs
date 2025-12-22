@@ -58,6 +58,10 @@ namespace FlexOrder
             {
                 lblTitle.Text = "店員登録";
                 rbtnStaff.Checked = true;
+                if (loginstaff.staff_accesslevel == 1) 
+                {
+                    rbtnManager.Visible = false;
+                }
             }
             else
             {
