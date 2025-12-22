@@ -219,7 +219,6 @@
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
             this.Name = "MealTicket";
             this.Size = new System.Drawing.Size(336, 309);
-            this.Load += new System.EventHandler(this.MealTicket_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
