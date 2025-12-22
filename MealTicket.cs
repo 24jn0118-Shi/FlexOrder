@@ -16,23 +16,46 @@ namespace FlexOrder
         public MealTicket(Order order, OrderDetail detail)
         {
             InitializeComponent();
-            // 注文データを各ラベルに反映
-            lblDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
-            lblTimeA.Text = DateTime.Now.ToString("HH/mm");
-            lblTimeB.Text = lblTimeA.Text;
-            lblGoodsNameA.Text = detail.goods_name;
-            lblGoodsNameB.Text = lblGoodsNameA.Text;
-            if (order.is_takeout==false)
-            {
-                lblIsTakeout.Text = "店内";
+        }
+        public int price
+        {
+            get { return price; }
+            set { lblPriceA.Text = value.ToString();
+                lblPriceB.Text = value.ToString();
             }
-            else
-            {
-                lblIsTakeout.Text = "持帰";
+        }
+
+        public bool Is_takeout
+        {
+            get { return Is_takeout; }
+            set {
+                if (value == false)
+                {
+                    lblIsTakeout.Text = "店内";
+                }
+                else
+                {
+                    lblIsTakeout.Text = "持帰";
+                }
             }
-            lblPriceA.Text = detail.price.ToString();
-            lblPriceB.Text = lblPriceA.Text;
-            
+        }
+
+        public string Goods_name
+        {
+            get { return Goods_name; }
+            set { lblGoodsNameA.Text = value.ToString();
+                lblGoodsNameB.Text = value.ToString();
+            }
+        }
+
+        public DateTime OrderDate
+        {
+            get { return OrderDate; }
+            set {
+                lblDate.Text = value.ToString("yyyy/MM/dd");
+                lblTimeA.Text = value.ToString("HH/mm");
+                lblTimeB.Text = lblTimeA.Text;
+            }
         }
 
         private void MealTicket_Load(object sender, EventArgs e)
