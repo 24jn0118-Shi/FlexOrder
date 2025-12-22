@@ -126,14 +126,18 @@
   <data name="lblEnd1.Text" xml:space="preserve">
     <value>お会計が完了しました</value>
   </data>
-  <data name="lblEnd2.Text" xml:space="preserve">
-    <value>席を確保してから、
-食券を店員にお渡しください</value>
-  </data>
   <data name="lblIn.Text" xml:space="preserve">
     <value>店内でのご利用</value>
   </data>
   <data name="lblOut.Text" xml:space="preserve">
     <value>お持ち帰り</value>
+  </data>
+  <data name="lblEndIn2.Text" xml:space="preserve">
+    <value>席を確保してから、
+食券を店員にお渡しください</value>
+  </data>
+  <data name="lblEndOut2.Text" xml:space="preserve">
+    <value>食券をお取りいただき、
+受け取り口でお待ちください</value>
   </data>
 </root>
