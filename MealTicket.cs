@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace FlexOrder
 {
     public partial class MealTicket : UserControl
     {
+
         public MealTicket()
         {
             InitializeComponent();
@@ -20,7 +22,9 @@ namespace FlexOrder
         public int Price
         {
             get { return Price; }
-            set { lblPriceA.Text = value.ToString();
+            set
+            {
+                lblPriceA.Text = value.ToString();
                 lblPriceB.Text = value.ToString();
             }
         }
@@ -28,7 +32,8 @@ namespace FlexOrder
         public bool Is_takeout
         {
             get { return Is_takeout; }
-            set {
+            set
+            {
                 if (value == false)
                 {
                     lblIsTakeout.Text = "店内";
@@ -43,7 +48,9 @@ namespace FlexOrder
         public string Goods_name
         {
             get { return Goods_name; }
-            set { lblGoodsNameA.Text = value.ToString();
+            set
+            {
+                lblGoodsNameA.Text = value.ToString();
                 lblGoodsNameB.Text = value.ToString();
             }
         }
@@ -51,12 +58,32 @@ namespace FlexOrder
         public DateTime Order_date
         {
             get { return Order_date; }
-            set {
+            set
+            {
                 lblDate.Text = value.ToString("yyyy/MM/dd");
-                lblTimeA.Text = value.ToString("HH/mm");
+                lblTimeA.Text = value.ToString("HH:mm");
                 lblTimeB.Text = lblTimeA.Text;
             }
         }
-        
+        // 外部からこのメソッドを呼んで印刷を開始する
+        public void PrintTicket()
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+            pd.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+            {
+                this.DrawToBitmap(bmp, new Rectangle(0, 0, this.Width, this.Height));
+
+                e.Graphics.DrawImage(bmp, 0, 0);
+            }
+        }
     }
 }
+
+    
