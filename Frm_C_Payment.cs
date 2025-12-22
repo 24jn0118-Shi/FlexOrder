@@ -32,7 +32,6 @@ namespace FlexOrder
             this.ordertype = ordertype;
             this.total = total;
             lblTotal.Text = "¥ " + total.ToString("N0");
-            
         }
         private void btnBack_Click(object sender, EventArgs e)
         {

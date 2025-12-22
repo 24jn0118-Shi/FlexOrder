@@ -28,7 +28,6 @@ namespace FlexOrder
         private Dictionary<string, List<Goods>> _allGoodsCache = new Dictionary<string, List<Goods>>();
 
         public Order currentOrder = new Order();
-
         private bool isDragging = false;
         private Point lastMousePosition = Point.Empty;
         private bool isDraggingDGV = false;

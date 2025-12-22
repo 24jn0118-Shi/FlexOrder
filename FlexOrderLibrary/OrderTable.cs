@@ -238,6 +238,25 @@ namespace FlexOrderLibrary
             }
             return ret;
         }
+        public int UpdateTakeout(int order_id, bool target)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"UPDATE [Order] SET is_takeout = @is_takeout
+                            WHERE order_id = @order_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@order_id", order_id);
+                command.Parameters.AddWithValue("@is_takeout", target);
+
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+            }
+            return ret;
+        }
 
         public int UpdateProvided(int order_id, int goods_id, bool target)
         {
