@@ -121,8 +121,8 @@ namespace FlexOrder
             }
             else
             {
-                int selectedid = Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"].Value);
-                if (selectedid >= loginstaff.staff_accesslevel) 
+                int selectedlevel = Convert.ToInt32(dgvStaff.CurrentRow.Cells["staff_accesslevel"].Value);
+                if (selectedlevel >= loginstaff.staff_accesslevel) 
                 {
                     MessageBox.Show("アカウントが削除できません", "エラー",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -134,10 +134,10 @@ namespace FlexOrder
                     if (dret == DialogResult.Yes)
                     {
                         StaffTable staffTable = new StaffTable();
-                        int cnt = staffTable.Delete(selectedid);
+                        int cnt = staffTable.Delete(int.Parse(selected_id));
                         if (cnt > 0) 
                         {
-                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"Staff", selectedid.ToString(),"削除","");
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"Staff", selected_id.ToString(),"削除","");
                             MessageBox.Show(cnt+"件の店員アカウントを削除しました", "削除完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
