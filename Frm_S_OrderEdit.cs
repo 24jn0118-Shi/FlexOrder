@@ -203,6 +203,7 @@ namespace FlexOrder
 
         private void btnGoPay_Click(object sender, EventArgs e)
         {
+            PrintHelper printHelper = new PrintHelper();
             if (type == "extra")
             {
                 Frm_C_Payment frm_C_Payment = new Frm_C_Payment("edit", afterTotal - beforeTotal);
@@ -213,6 +214,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
+                        printHelper.PrintReceipt(afterOrder);
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -234,6 +236,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
+                        printHelper.PrintReceipt(afterOrder);
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -255,6 +258,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
+                        printHelper.PrintReceipt(afterOrder);
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
