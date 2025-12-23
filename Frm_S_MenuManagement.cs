@@ -15,15 +15,15 @@ namespace FlexOrder
     public partial class Frm_S_MenuManagement : Form
     {
         int selected_goodsid = -1;
-        Staff staff = null;
+        Staff loginstaff = null;
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 15;
-        public Frm_S_MenuManagement(Staff staff)
+        public Frm_S_MenuManagement(Staff loginstaff)
         {
             InitializeComponent();
-            this.staff = staff;
-            if (staff.staff_accesslevel == 0) 
+            this.loginstaff = loginstaff;
+            if (loginstaff.staff_accesslevel == 0) 
             {
                 btnAddGoods.Visible = false;
                 btnAddGroup.Visible = false;
@@ -69,6 +69,7 @@ namespace FlexOrder
                     int cnt = goodsTable.Delete(selected_goodsid);
                     if (cnt > 0)
                     {
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "商品", selected_goodsid.ToString(), "削除", "");
                         MessageBox.Show(cnt + "件の商品を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } else 
@@ -76,13 +77,13 @@ namespace FlexOrder
                         MessageBox.Show("削除失敗", "削除失敗",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                        Refresh_page();
+                    Refresh_page();
                 }
             }
         }
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            Frm_S_GoodsGroupManagement frm_S_GoodsGroupManagement = new Frm_S_GoodsGroupManagement();
+            Frm_S_GoodsGroupManagement frm_S_GoodsGroupManagement = new Frm_S_GoodsGroupManagement(loginstaff);
             frm_S_GoodsGroupManagement.ShowDialog();
             Refresh_page();
         }
@@ -112,6 +113,7 @@ namespace FlexOrder
                     int cnt = goodsTable.UpdateAvailable(goods);
                     if (cnt > 0)
                     {
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "商品", selected_goodsid.ToString(), "在庫状況変更", target+ "に");
                         MessageBox.Show(cnt + "件の商品の在庫状況を変更しました", "変更完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

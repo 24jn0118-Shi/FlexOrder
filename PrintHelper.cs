@@ -11,7 +11,6 @@ namespace FlexOrder
 {
     public class PrintHelper
     {
-        private Order _order;
         private List<Bitmap> _tickets;
         private int _printIndex = 0;
         public void PrintReceipt(Order order)

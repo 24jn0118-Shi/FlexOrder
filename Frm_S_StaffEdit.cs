@@ -176,7 +176,7 @@ namespace FlexOrder
                         if (cnt > 0) 
                         {
                             string message = "権限 " + newstaff.staff_accesslevel.ToString();
-                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", newid.ToString(), "登録", message);
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "スタッフ", newid.ToString(), "登録", message);
                             MessageBox.Show(cnt + "件の店員アカウントを登録しました", "登録完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -276,7 +276,7 @@ namespace FlexOrder
                                 message += editstaff.staff_accesslevel;
                                 message += " に変更した";
                             }
-                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "Staff", id.ToString(), "編集", message);
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "スタッフ", id.ToString(), "編集", message);
                             MessageBox.Show(cnt + "件の店員アカウントを編集しました", "編集完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                             if (loginstaff != null && loginstaff.staff_id == id && change_password)

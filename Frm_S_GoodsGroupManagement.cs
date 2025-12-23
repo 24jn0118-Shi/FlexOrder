@@ -16,9 +16,11 @@ namespace FlexOrder
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 15;
-        public Frm_S_GoodsGroupManagement()
+        Staff loginstaff;
+        public Frm_S_GoodsGroupManagement(Staff loginstaff)
         {
             InitializeComponent();
+            this.loginstaff = loginstaff;
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -107,6 +109,7 @@ namespace FlexOrder
                         int cnt = goodsGroupTable.InsertNewGroup(newgroup);
                         if(cnt == 4) 
                         {
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "商品分類", txbGroupCode.Text, "登録", "分類名："+txbGroupName.Text);
                             MessageBox.Show("分類を登録しました", "登録完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -151,6 +154,7 @@ namespace FlexOrder
                         int cnt = goodsGroupTable.SortGroup(goodsGroup, target);
                         if (cnt == 1)
                         {
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "商品分類", txbGroupCode.Text, "並び替え", "目標順番：" + txbSortIndex.Text);
                             MessageBox.Show("並び替えました", "整列完了",
                                                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                             txbSortIndex.Text = "";

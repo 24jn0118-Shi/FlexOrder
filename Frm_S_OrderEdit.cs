@@ -25,11 +25,13 @@ namespace FlexOrder
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 15;
-        public Frm_S_OrderEdit(int orderid)
+        Staff loginstaff = null;
+        public Frm_S_OrderEdit(int orderid, Staff loginstaff)
         {
             InitializeComponent();
             this.orderid = orderid;
             lblOrderNo.Text = orderid.ToString();
+            this.loginstaff = loginstaff;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -217,6 +219,7 @@ namespace FlexOrder
                     if (cnt > 0)
                     {
                         printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "追加支払い");
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -239,6 +242,7 @@ namespace FlexOrder
                     if (cnt > 0)
                     {
                         printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "返金");
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -261,6 +265,7 @@ namespace FlexOrder
                     if (cnt > 0)
                     {
                         printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "商品変更あり、金額変更なし");
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

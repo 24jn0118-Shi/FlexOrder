@@ -13,7 +13,7 @@ namespace FlexOrder
 {
     public partial class Frm_S_OrderManagement : Form
     {
-        Staff staff = null;
+        Staff loginstaff = null;
 
         bool gethistory = false;
         int selected_orderid = -1;
@@ -30,10 +30,10 @@ namespace FlexOrder
         private const int SCROLL_SENSITIVITY = 15;
 
         bool _isRefreshing = false;
-        public Frm_S_OrderManagement(Staff staff)
+        public Frm_S_OrderManagement(Staff loginstaff)
         {
             InitializeComponent();
-            this.staff = staff;
+            this.loginstaff = loginstaff;
             seatFocusTimer.Interval = 1000;
             seatFocusTimer.Tick += SeatFocusTimer_Tick;
         }
@@ -54,7 +54,7 @@ namespace FlexOrder
             }
             else
             {
-                Frm_S_OrderEdit frm_S_OrderEdit = new Frm_S_OrderEdit(selected_orderid);
+                Frm_S_OrderEdit frm_S_OrderEdit = new Frm_S_OrderEdit(selected_orderid, loginstaff);
                 frm_S_OrderEdit.ShowDialog();
                 Refresh_page();
             }
@@ -80,6 +80,7 @@ namespace FlexOrder
                     int cnt = orderTable.Delete(deleteid);
                     if (cnt > 0)
                     {
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", deleteid.ToString(), "削除", "");
                         MessageBox.Show("注文を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
