@@ -56,9 +56,10 @@ namespace FlexOrder
             if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
-                currentOrder.order_date = DateTime.Now;
+                
                 if (ordertype != "edit")
                 {
+                    currentOrder.order_date = DateTime.Now;
                     int newid = orderTable.InsertNewOrder(currentOrder);
                     int pastmaxid = orderTable.GetPastMaxId();
                     currentOrder.order_id = (newid - pastmaxid - 1) % 999 + 1;

@@ -135,6 +135,67 @@ namespace FlexOrderLibrary
 
             return true;
         }
+        public static Order NewOrMore(Order a, Order b)
+        {
+            if (b == null)
+                return null;
+
+            Order result = new Order
+            {
+                order_id = b.order_id,
+                order_date = b.order_date,
+                order_seat = b.order_seat,
+                is_takeout = b.is_takeout
+            };
+
+            if (a == null || a.orderdetaillist == null || a.orderdetaillist.Count == 0)
+            {
+                foreach (var item in b.orderdetaillist)
+                {
+                    if (item.quantity > 0)
+                    {
+                        result.orderdetaillist.Add(new OrderDetail
+                        {
+                            goods_id = item.goods_id,
+                            goods_name = item.goods_name,
+                            price = item.price,
+                            quantity = item.quantity
+                        });
+                    }
+                }
+                return result;
+            }
+
+            var dictA = a.orderdetaillist
+                .GroupBy(d => d.goods_id)
+                .ToDictionary(g => g.Key, g => g.Sum(x => x.quantity));
+
+            foreach (var bItem in b.orderdetaillist)
+            {
+                if (bItem.quantity <= 0)
+                    continue;
+
+                int qtyInA = dictA.ContainsKey(bItem.goods_id)
+                    ? dictA[bItem.goods_id]
+                    : 0;
+
+                int diffQty = bItem.quantity - qtyInA;
+
+                if (diffQty > 0)
+                {
+                    result.orderdetaillist.Add(new OrderDetail
+                    {
+                        goods_id = bItem.goods_id,
+                        goods_name = bItem.goods_name,
+                        price = bItem.price,
+                        quantity = diffQty
+                    });
+                }
+            }
+
+            return result;
+        }
+
         public void RemoveZeros()
         {
             if (orderdetaillist == null || orderdetaillist.Count == 0)

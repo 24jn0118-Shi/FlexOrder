@@ -270,7 +270,7 @@ namespace FlexOrder
                 {
                     string colName = dgvOrder.Columns[e.ColumnIndex].Name;
                     
-                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout" || colName == "order_seat")
+                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout" || colName == "order_seat" || colName == "today_id")
                     {
                         e.Value = "";
                         e.FormattingApplied = true;
@@ -367,14 +367,21 @@ namespace FlexOrder
 
                 if (rowsToScroll != 0)
                 {
-                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-                    int newFirstRow = currentFirstRow - rowsToScroll;
-                    newFirstRow = Math.Max(0, newFirstRow);
-                    if (newFirstRow != currentFirstRow)
+                    try
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                        int newFirstRow = currentFirstRow - rowsToScroll;
+                        newFirstRow = Math.Max(0, newFirstRow);
+                        if (newFirstRow != currentFirstRow)
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        }
+                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
                     }
-                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                    }
                 }
             }
         }

@@ -16,10 +16,9 @@ namespace FlexOrder
         private int _printIndex = 0;
         public void PrintReceipt(Order order)
         {
-            _order = order;
             _tickets = new List<Bitmap>();
             _printIndex = 0;
-            
+
             foreach (var d in order.orderdetaillist)
             {
                 for (int i = 0; i < d.quantity; i++)
@@ -30,24 +29,30 @@ namespace FlexOrder
                     _tickets.Add(RenderMealTicket(ticket));
                 }
             }
-
-            PrintDocument pd = new PrintDocument();
-            foreach (string printer in PrinterSettings.InstalledPrinters)
+            if (order.orderdetaillist.Count > 0)
             {
-                Console.WriteLine(printer);
-            }
-            try {
-                //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
-                if (!pd.PrinterSettings.IsValid)
+                PrintDocument pd = new PrintDocument();
+                foreach (string printer in PrinterSettings.InstalledPrinters)
                 {
-                    Console.WriteLine("Printer doesn't exist");
+                    Console.WriteLine(printer);
                 }
-                pd.PrintPage += Pd_PrintPage;
-                pd.Print();
-            } catch (Exception ex) { 
-                Console.WriteLine(ex.ToString());
+                try {
+                    //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+                    if (!pd.PrinterSettings.IsValid)
+                    {
+                        Console.WriteLine("Printer doesn't exist");
+                    }
+                    pd.PrintPage += Pd_PrintPage;
+                    pd.Print();
+                } catch (Exception ex) {
+                    Console.WriteLine(ex.ToString());
+                }
             }
-            
+            else 
+            {
+                Console.WriteLine("No detail in Order. Print Skipped");
+            }
+
         }
         private Bitmap RenderMealTicket(MealTicket ticket)
         {

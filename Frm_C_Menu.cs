@@ -437,17 +437,23 @@ namespace FlexOrder
 
                 if (rowsToScroll != 0)
                 {
-                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-
-                    int newFirstRow = currentFirstRow - rowsToScroll;
-
-                    newFirstRow = Math.Max(0, newFirstRow);
-                    if (newFirstRow != currentFirstRow)
+                    try
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
-                    }
+                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                        int newFirstRow = currentFirstRow - rowsToScroll;
 
-                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                        newFirstRow = Math.Max(0, newFirstRow);
+                        if (newFirstRow != currentFirstRow)
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        }
+
+                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                    }
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                    }
                 }
             }
         }

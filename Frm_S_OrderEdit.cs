@@ -70,6 +70,8 @@ namespace FlexOrder
             {
                 afterOrder = new Order();
                 afterOrder.order_id = beforeOrder.order_id;
+                afterOrder.order_date = beforeOrder.order_date;
+                afterOrder.is_takeout = beforeOrder.is_takeout;
                 if (beforeOrder.orderdetaillist != null)
                 {
                     afterOrder.orderdetaillist = beforeOrder.orderdetaillist
@@ -134,7 +136,7 @@ namespace FlexOrder
             if (issame) 
             {
                 type = "no";
-                lblType.Text = "金額変更なし";
+                lblType.Text = "商品変更なし";
                 lblResult.Text = "0";
             }
             else 
@@ -154,7 +156,7 @@ namespace FlexOrder
                 else 
                 {
                     type = "same";
-                    lblType.Text = "金額変更なし、商品変更あり";
+                    lblType.Text = "商品変更あり、金額変更なし";
                     lblResult.Text = "0";
                 }
             }
@@ -214,7 +216,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        printHelper.PrintReceipt(afterOrder);
+                        printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -236,7 +238,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        printHelper.PrintReceipt(afterOrder);
+                        printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -258,7 +260,7 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
-                        printHelper.PrintReceipt(afterOrder);
+                        printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -302,14 +304,21 @@ namespace FlexOrder
 
                 if (rowsToScroll != 0)
                 {
-                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-                    int newFirstRow = currentFirstRow - rowsToScroll;
-                    newFirstRow = Math.Max(0, newFirstRow);
-                    if (newFirstRow != currentFirstRow)
+                    try
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                        int newFirstRow = currentFirstRow - rowsToScroll;
+                        newFirstRow = Math.Max(0, newFirstRow);
+                        if (newFirstRow != currentFirstRow)
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        }
+                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
                     }
-                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                    }
                 }
             }
         }
