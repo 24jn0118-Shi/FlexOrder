@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -495,6 +496,9 @@ namespace FlexOrder
                 maxid = newmax;
                 dgvOrder.ClearSelection();
                 _isRefreshing = true;
+                SoundPlayer player = new SoundPlayer("W:\\24JN01卒業制作\\GroupI\\sound\\SoundOrderBell.wav");
+                //player.PlaySync();
+                Task.Run(() => { player.PlaySync(); });
                 BeginInvoke(new Action(() =>
                 {
                     Refresh_page();
