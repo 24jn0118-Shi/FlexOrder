@@ -53,10 +53,6 @@ namespace FlexOrder
         // ==========================================
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
-            // イベントハンドラの再登録 (重複防止のため一旦削除してから追加)
-            dgvOrderList.CellClick -= dgvOrderList_CellClick;
-            dgvOrderList.CellClick += dgvOrderList_CellClick; 
-
             ckbVeget.CheckedChanged -= ckbVeget_CheckedChanged;
             ckbVeget.CheckedChanged += ckbVeget_CheckedChanged; 
 
@@ -281,30 +277,6 @@ namespace FlexOrder
             return currentOrder.orderdetaillist.Sum(d => d.Subtotal);
         }
 
-        // 数量変更ボタン（プラス・マイナス）の処理
-        private void dgvOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
-            if (dgvOrderList.Rows[e.RowIndex].Tag == null) return;
-            int id = (int)dgvOrderList.Rows[e.RowIndex].Tag;
-
-            string cellValue = dgvOrderList.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
-            if (cellValue == "➕") ChangeQty(id, 1);
-            else if (cellValue == "➖") ChangeQty(id, -1);
-        }
-
-        private void ChangeQty(int id, int diff)
-        {
-            var item = currentOrder.orderdetaillist.FirstOrDefault(x => x.goods_id == id);
-            if (item != null)
-            {
-                int newQty = item.quantity + diff;
-                if (newQty <= 0) currentOrder.orderdetaillist.Remove(item);
-                else if (newQty <= 99) item.quantity = newQty;
-            }
-            RefreshCart();
-        }
-
         // ==========================================
         // 🏁 最終アクション (Final Actions)
         // ==========================================
@@ -372,6 +344,29 @@ namespace FlexOrder
                 case 4: return "Рекомендуем";
                 default: return "Recommend";
             }
+        }
+
+        private void dgvOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderList.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            {
+                return;
+            }
+
+            int minusColumnIndex = 1;
+            int plusColumnIndex = 3;
+            var itemToModify = currentOrder.orderdetaillist[e.RowIndex];
+
+            if (e.ColumnIndex == plusColumnIndex)
+            {
+
+                currentOrder.PlusMinus(itemToModify.goods_id, 1);
+            }
+            else if (e.ColumnIndex == minusColumnIndex)
+            {
+                currentOrder.PlusMinus(itemToModify.goods_id, -1);
+            }
+            RefreshCart();
         }
     }
 }

@@ -45,17 +45,17 @@
             this.lblConfirm1 = new System.Windows.Forms.Label();
             this.lblConfirm2 = new System.Windows.Forms.Label();
             this.dgvOrderList = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanelCategory = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanelContent = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnConfirm = new FlexOrder.RoundButton();
-            this.btnBack = new FlexOrder.RoundButton();
-            this.ckbVeget = new FlexOrder.BigCheckBox();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnMinus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.order_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanelCategory = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelContent = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnConfirm = new FlexOrder.RoundButton();
+            this.btnBack = new FlexOrder.RoundButton();
+            this.ckbVeget = new FlexOrder.BigCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,58 +135,7 @@
             this.dgvOrderList.RowHeadersVisible = false;
             this.dgvOrderList.RowTemplate.Height = 50;
             this.dgvOrderList.ShowCellToolTips = false;
-            // 
-            // flowLayoutPanelCategory
-            // 
-            resources.ApplyResources(this.flowLayoutPanelCategory, "flowLayoutPanelCategory");
-            this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
-            // 
-            // flowLayoutPanelContent
-            // 
-            resources.ApplyResources(this.flowLayoutPanelContent, "flowLayoutPanelContent");
-            this.flowLayoutPanelContent.Name = "flowLayoutPanelContent";
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.btnConfirm.CornerRadius = 16;
-            this.btnConfirm.FlatAppearance.BorderSize = 0;
-            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnConfirm, "btnConfirm");
-            this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
-            this.btnConfirm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            this.btnConfirm.TabStop = false;
-            this.btnConfirm.UseVisualStyleBackColor = false;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.btnBack.CornerRadius = 16;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnBack, "btnBack");
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnBack.Name = "btnBack";
-            this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
-            this.btnBack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnBack.TabStop = false;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
-            // 
-            // ckbVeget
-            // 
-            resources.ApplyResources(this.ckbVeget, "ckbVeget");
-            this.ckbVeget.Name = "ckbVeget";
-            this.ckbVeget.UseVisualStyleBackColor = true;
+            this.dgvOrderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellContentClick);
             // 
             // goods_name
             // 
@@ -260,6 +209,58 @@
             this.goods_id.ReadOnly = true;
             this.goods_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // flowLayoutPanelCategory
+            // 
+            resources.ApplyResources(this.flowLayoutPanelCategory, "flowLayoutPanelCategory");
+            this.flowLayoutPanelCategory.Name = "flowLayoutPanelCategory";
+            // 
+            // flowLayoutPanelContent
+            // 
+            resources.ApplyResources(this.flowLayoutPanelContent, "flowLayoutPanelContent");
+            this.flowLayoutPanelContent.Name = "flowLayoutPanelContent";
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnConfirm.CornerRadius = 16;
+            this.btnConfirm.FlatAppearance.BorderSize = 0;
+            this.btnConfirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnConfirm, "btnConfirm");
+            this.btnConfirm.ForeColor = System.Drawing.Color.White;
+            this.btnConfirm.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.btnConfirm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.btnConfirm.TabStop = false;
+            this.btnConfirm.UseVisualStyleBackColor = false;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBack.CornerRadius = 16;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnBack.Name = "btnBack";
+            this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnBack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBack.TabStop = false;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            // 
+            // ckbVeget
+            // 
+            resources.ApplyResources(this.ckbVeget, "ckbVeget");
+            this.ckbVeget.Name = "ckbVeget";
+            this.ckbVeget.UseVisualStyleBackColor = true;
             // 
             // Frm_C_Menu
             // 
