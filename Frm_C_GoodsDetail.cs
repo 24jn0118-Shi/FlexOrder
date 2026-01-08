@@ -1,52 +1,55 @@
 ﻿using FlexOrderLibrary;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FlexOrder
 {
     public partial class Frm_C_GoodsDetail : Form
     {
-        Dictionary<string, int> langMap = new Dictionary<string, int>()
+        private readonly Dictionary<string, int> langMap = new Dictionary<string, int>()
         {
-            { "ja", 1 },
-            { "en", 2 },
-            { "zh", 3 },
-            { "ru", 4 }
+            { "ja", 1 }, { "en", 2 }, { "zh", 3 }, { "ru", 4 }
         };
-        int thisid;
-        int thisprice;
-        int num = 1;
+
+        private int thisid;
+        private int thisprice;
+        private int num = 1;
+
         public OrderDetail AddedItem { get; private set; }
+
         public Frm_C_GoodsDetail(int id)
         {
+   
+            this.FormBorderStyle = FormBorderStyle.None;
             InitializeComponent();
-            thisid = id;
+
+            this.thisid = id;
+
+            this.Paint += Frm_C_Detail_Border;
+
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
         }
+
         private void Frm_C_GoodsDetail_Load(object sender, EventArgs e)
         {
             string currentLang = Thread.CurrentThread.CurrentUICulture.Name;
             int currentLangNo = 1;
-            if (langMap.TryGetValue(currentLang, out int result))
-            {
-                currentLangNo = result;
-            }
+            if (langMap.TryGetValue(currentLang, out int result)) currentLangNo = result;
+
             GoodsTable goodsTable = new GoodsTable();
             Goods goods = goodsTable.GetGoodsById(currentLangNo, thisid);
+
             lblGoodsName.Text = goods.goods_name;
             lblDetail.Text = goods.goods_detail;
             thisprice = goods.goods_price;
             lblPrice.Text = "¥ " + goods.goods_price.ToString("N0");
             lblNum.Text = num.ToString();
+
             string imagePath = ImagePro.GetImagePath(goods.goods_image_filename);
             if (File.Exists(imagePath))
             {
@@ -60,28 +63,28 @@ namespace FlexOrder
                 picGoods.Image = Properties.Resources.noimage;
             }
         }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            if(num > 1) 
-            {
-                lblNum.Text = (num - 1).ToString();
-            }
-            num = int.Parse(lblNum.Text);
+            if (num > 1) num--;
+            lblNum.Text = num.ToString();
         }
+
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            if(num < 10) 
-            { 
-                lblNum.Text = (num + 1).ToString();
-            }
-            num = int.Parse(lblNum.Text);
+            if (num < 10) num++;
+            lblNum.Text = num.ToString();
         }
-        private void btnAddtoCart_Click(object sender, EventArgs e)
+
+        private void Frm_C_Detail_Border(object sender, PaintEventArgs e)
+        {
+            using (Pen pen = new Pen(Color.Black, 1))
+            {
+                e.Graphics.DrawRectangle(pen, 0, 0, this.Width - 1, this.Height - 1);
+            }
+        }
+
+        private void btnAddtoCart_Click_1(object sender, EventArgs e)
         {
             this.AddedItem = new OrderDetail
             {
@@ -91,6 +94,12 @@ namespace FlexOrder
                 quantity = num
             };
             this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
     }

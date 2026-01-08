@@ -1,465 +1,377 @@
 ﻿using FlexOrderLibrary;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FlexOrder
 {
     public partial class Frm_C_Menu : Form
     {
-        Dictionary<string, int> langMap = new Dictionary<string, int>()
+        // ==========================================
+        // 🌐 言語設定と定数 (Language & Constants)
+        // ==========================================
+        private readonly Dictionary<string, int> langMap = new Dictionary<string, int>()
         {
-            { "ja", 1 },
-            { "en", 2 },
-            { "zh", 3 },
-            { "ru", 4 }
+            { "ja", 1 }, { "en", 2 }, { "zh", 3 }, { "ru", 4 }
         };
 
-        int currentLangNo = 1;
-        bool vege = false;
-        string ordertype;
-
-        private Dictionary<string, List<Goods>> _allGoodsCache = new Dictionary<string, List<Goods>>();
+        private int currentLangNo = 1;
+        private bool vege = false;
+        private string ordertype;
 
         public Order currentOrder = new Order();
-        private bool isDragging = false;
-        private Point lastMousePosition = Point.Empty;
-        private bool isDraggingDGV = false;
-        private int lastMouseY = 0;
-        private const int SCROLL_SENSITIVITY = 15;
-        public Frm_C_Menu(bool istakeout, string ordertype)
+
+        private string currentGroupCode = "RECOMMEND";
+        private RoundButton activeCategoryButton = null;
+
+        private readonly Dictionary<string, List<Goods>> goodsCache
+            = new Dictionary<string, List<Goods>>();
+
+        // ==========================================
+        // 🏗️ コンストラクタ (Constructors)
+        // ==========================================
+        public Frm_C_Menu(bool isTakeout, string ordertype)
         {
             InitializeComponent();
             this.ordertype = ordertype;
-            currentOrder.is_takeout = istakeout;
-            SetupCustomTabs();
+            currentOrder.is_takeout = isTakeout;
         }
+
         public Frm_C_Menu(Order order, string ordertype)
         {
             InitializeComponent();
             this.ordertype = ordertype;
             currentOrder = order;
-            SetupCustomTabs();
         }
-        private void SetupCustomTabs()
-        {
-            tbcntMenu.Alignment = TabAlignment.Left;
-            tbcntMenu.Multiline = true;
-            tbcntMenu.SizeMode = TabSizeMode.Fixed;
-            tbcntMenu.ItemSize = new Size(60, 160);
-            tbcntMenu.DrawMode = TabDrawMode.OwnerDrawFixed;
-            tbcntMenu.DrawItem += TabControl1_DrawItem;
-            tbcntMenu.SelectedIndexChanged += TbcntMenu_SelectedIndexChanged;
-        }
-        private void TabControl1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            TabControl tabControl = (TabControl)sender;
-            TabPage tabPage = tabControl.TabPages[e.Index];
-            e.Graphics.FillRectangle(new SolidBrush(SystemColors.Control), e.Bounds);
 
-            StringFormat sf = new StringFormat
-            {
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
-
-            Brush textBrush = e.State == DrawItemState.Selected ? Brushes.Blue : Brushes.Black;
-            e.Graphics.DrawString(tabPage.Text, e.Font, textBrush, e.Bounds, sf);
-        }
+        // ==========================================
+        // 🚀 フォームイベント (Form Events)
+        // ==========================================
         private void FrmCMenu_Load(object sender, EventArgs e)
         {
-            txtKaikei.Text = "¥ 0";
-            dgvOrderList.DefaultCellStyle.SelectionBackColor = dgvOrderList.DefaultCellStyle.BackColor;
-            dgvOrderList.DefaultCellStyle.SelectionForeColor = dgvOrderList.DefaultCellStyle.ForeColor;
-            string currentLang = Thread.CurrentThread.CurrentUICulture.Name;
-            if (langMap.TryGetValue(currentLang, out int result))
-                currentLangNo = result;
+            // イベントハンドラの再登録 (重複防止のため一旦削除してから追加)
+            dgvOrderList.CellClick -= dgvOrderList_CellClick;
+            dgvOrderList.CellClick += dgvOrderList_CellClick; 
 
-            LoadGroupsTabs();
-            tbcntMenu.SelectedIndex = -1;
-            tbcntMenu.SelectedIndex = 0;
+            ckbVeget.CheckedChanged -= ckbVeget_CheckedChanged;
+            ckbVeget.CheckedChanged += ckbVeget_CheckedChanged; 
+
+            // 言語設定の取得
+            string lang = Thread.CurrentThread.CurrentUICulture.Name;
+            if (langMap.TryGetValue(lang, out int l))
+                currentLangNo = l;
+
+            // 初期表示データの構築
+            BuildCategoryButtons();
+            SelectFirstCategory();
             RefreshCart();
         }
-        private void BindTouchScrollEvents(FlowLayoutPanel panel)
-        {
-            panel.MouseDown -= flowLayoutPanelMenuRecommend_MouseDown;
-            panel.MouseMove -= flowLayoutPanelMenuRecommend_MouseMove;
-            panel.MouseUp -= flowLayoutPanelMenuRecommend_MouseUp;
 
-            panel.MouseDown += flowLayoutPanelMenuRecommend_MouseDown;
-            panel.MouseMove += flowLayoutPanelMenuRecommend_MouseMove;
-            panel.MouseUp += flowLayoutPanelMenuRecommend_MouseUp;
-        }
-        private void LoadGroupsTabs()
-        {
-            GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
-            List<GoodsGroup> groups = goodsGroupTable.GetAllAvailableGroup(currentLangNo);
+        // ==========================================
+        // 📂 カテゴリ制御 (Category Control)
+        // ==========================================
 
-            foreach (GoodsGroup group in groups)
+        // カテゴリボタンの生成
+        private void BuildCategoryButtons()
+        {
+            flowLayoutPanelCategory.Controls.Clear();
+            activeCategoryButton = null;
+
+            // おすすめ商品の確認
+            if (HasVisibleGoods("RECOMMEND"))
             {
-                string groupCode = group.group_code;
+                flowLayoutPanelCategory.Controls.Add(
+                    CreateCategoryButton(GetRecommendText(), "RECOMMEND"));
+            }
 
-                TabPage tab = new TabPage(group.group_name);
-                FlowLayoutPanel panel = new FlowLayoutPanel
-                {
-                    Dock = DockStyle.Fill,
-                    AutoScroll = true
-                };
-                tab.Controls.Add(panel);
-                tab.Tag = groupCode;
-                tbcntMenu.TabPages.Add(tab);
-                BindTouchScrollEvents(panel);
+            // DBからカテゴリ一覧を取得
+            GoodsGroupTable table = new GoodsGroupTable();
+            var groups = table.GetAllAvailableGroup(currentLangNo);
+
+            foreach (var g in groups)
+            {
+                // 表示可能な商品があるカテゴリのみ追加
+                if (!HasVisibleGoods(g.group_code)) continue;
+                flowLayoutPanelCategory.Controls.Add(
+                    CreateCategoryButton(g.group_name, g.group_code));
             }
         }
-        private void TbcntMenu_SelectedIndexChanged(object sender, EventArgs e)
+
+        private RoundButton CreateCategoryButton(string text, string groupCode)
         {
-            LoadProductsForTab(tbcntMenu.SelectedTab);
-            ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
+            RoundButton btn = new RoundButton
+            {
+                Text = text,
+                Tag = groupCode,
+                Width = 160,
+                Height = 70,
+                Font = new Font("Microsoft YaHei UI", 12, FontStyle.Bold),
+                ForeColor = Color.White,
+                NormalColor = Color.FromArgb(229, 57, 53), // 通常時：赤
+                HoverColor = Color.FromArgb(211, 47, 47),
+                PressedColor = Color.FromArgb(198, 40, 40)
+            };
+            btn.Click += CategoryButton_Click;
+            return btn;
         }
-        private void LoadProductsForTab(TabPage tab) 
+
+        private void CategoryButton_Click(object sender, EventArgs e)
         {
-            if (tab == null) return;
-            FlowLayoutPanel panel;
-            string groupCode;
-            if (tab == tbcntMenu.TabPages[0])
+            if (!(sender is RoundButton btn)) return;
+            SetActiveCategory(btn);
+            currentGroupCode = btn.Tag.ToString();
+            LoadProducts(currentGroupCode);
+        }
+
+        // 選択中のカテゴリをハイライト表示
+        private void SetActiveCategory(RoundButton btn)
+        {
+            if (activeCategoryButton != null)
             {
-                panel = flowLayoutPanelMenuRecommend;
-                groupCode = "RECOMMEND";
+                activeCategoryButton.NormalColor = Color.FromArgb(229, 57, 53); // 赤に戻す
+                activeCategoryButton.Invalidate();
             }
-            else
+            activeCategoryButton = btn;
+            btn.NormalColor = Color.FromArgb(25, 118, 210); // 選択時：青
+            btn.Invalidate();
+        }
+
+        // 最初のカテゴリを自動選択
+        private void SelectFirstCategory()
+        {
+            if (flowLayoutPanelCategory.Controls.Count == 0)
             {
-                if (tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) return;
-                panel = (FlowLayoutPanel)tab.Controls[0];
-                groupCode = tab.Tag as string;
-            }
-            if (panel.Controls.Count > 0)
-            {
+                flowLayoutPanelContent.Controls.Clear();
                 return;
             }
-            if (string.IsNullOrEmpty(groupCode) || _allGoodsCache.ContainsKey(groupCode))
-            {
-            }
-            else
-            {
-                GoodsTable goodsTable = new GoodsTable();
-                List<Goods> goodsList = (groupCode == "RECOMMEND")
-                    ? goodsTable.GetRecommendGoods(currentLangNo)
-                    : goodsTable.GetGoodsByGroup(currentLangNo, groupCode, true);
+            RoundButton first = flowLayoutPanelCategory.Controls[0] as RoundButton;
+            if (first != null) CategoryButton_Click(first, EventArgs.Empty);
+        }
 
-                if (goodsList != null)
-                {
-                    _allGoodsCache[groupCode] = goodsList;
-                }
-            }
-            if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
-            {
-                foreach (Goods good in cachedList)
-                {
-                    ProductItem product = new ProductItem
-                    {
-                        Id = good.goods_id,
-                        ProductTitle = good.goods_name,
-                        ProductPrice = "¥ " + good.goods_price.ToString("N0")
-                    };
-                    string imagePath = ImagePro.GetImagePath(good.goods_image_filename);
-                    if (File.Exists(imagePath))
-                    {
-                        using (var tempImage = Image.FromFile(imagePath))
-                        {
-                            product.ProductImage = new Bitmap(tempImage);
-                        }
-                    }
-                    else
-                    {
-                        product.ProductImage = Properties.Resources.noimage;
-                    }
+        // ==========================================
+        // 🍱 商品表示 (Product Display)
+        // ==========================================
+        private void LoadProducts(string groupCode)
+        {
+            flowLayoutPanelContent.Controls.Clear();
 
-                    product.ProductClicked += ProductItem_ProductClicked;
-                    panel.Controls.Add(product);
-                }
+            if (!goodsCache.ContainsKey(groupCode))
+            {
+                GoodsTable t = new GoodsTable();
+                goodsCache[groupCode] =
+                    groupCode == "RECOMMEND"
+                        ? t.GetRecommendGoods(currentLangNo)
+                        : t.GetGoodsByGroup(currentLangNo, groupCode, true);
+            }
+
+            foreach (var g in goodsCache[groupCode])
+            {
+                // ベジタリアンフィルターの適用
+                if (vege && !g.is_vegetarian) continue;
+
+                ProductItem item = new ProductItem
+                {
+                    Id = g.goods_id,
+                    ProductTitle = g.goods_name,
+                    ProductPrice = "¥ " + g.goods_price.ToString("N0"),
+                    Font = new Font("Microsoft YaHei UI", 11)
+                };
+
+                string img = ImagePro.GetImagePath(g.goods_image_filename);
+                item.ProductImage = File.Exists(img)
+                    ? Image.FromFile(img)
+                    : Properties.Resources.noimage;
+
+                item.ProductClicked += ProductItem_ProductClicked;
+                flowLayoutPanelContent.Controls.Add(item);
             }
         }
-        private void ApplyVegetarianFilterToTab(TabPage tab)
+
+        private void ProductItem_ProductClicked(ProductItem item)
         {
-            FlowLayoutPanel panel;
-            string groupCode;
-
-            if (tab == tbcntMenu.TabPages[0])
+            using (Frm_C_GoodsDetail f = new Frm_C_GoodsDetail(item.Id))
             {
-                panel = flowLayoutPanelMenuRecommend;
-                groupCode = "RECOMMEND";
-            }
-            else
-            {
-                if (tab == null || tab.Controls.Count == 0 || !(tab.Controls[0] is FlowLayoutPanel)) return;
-                panel = (FlowLayoutPanel)tab.Controls[0];
-                groupCode = tab.Tag as string;
-            }
-
-            if (panel.Controls.Count == 0) return;
-
-            if (_allGoodsCache.TryGetValue(groupCode, out List<Goods> cachedList))
-            {
-                foreach (Control control in panel.Controls)
+                if (f.ShowDialog() == DialogResult.OK && f.AddedItem != null)
                 {
-                    if (control is ProductItem productItem)
-                    {
-                        Goods good = cachedList.FirstOrDefault(g => g.goods_id == productItem.Id);
-
-                        if (good != null)
-                        {
-                            bool shouldBeVisible = !vege || good.is_vegetarian;
-                            productItem.Visible = shouldBeVisible;
-                        }
-                    }
-                }
-            }
-        }
-        private void ProductItem_ProductClicked(ProductItem productItem)
-        {
-            int initialQuantity = 1;
-            var existingItem = currentOrder.orderdetaillist.FirstOrDefault(item => item.goods_id == productItem.Id);
-
-            if (existingItem != null)
-            {
-                initialQuantity = existingItem.quantity;
-            }
-            using (Frm_C_GoodsDetail detailForm = new Frm_C_GoodsDetail(productItem.Id))
-            {
-                DialogResult result = detailForm.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    OrderDetail newDetail = detailForm.AddedItem;
-
-                    if (newDetail != null && newDetail.quantity >= 0)
-                    {
-                        currentOrder.AddItem(
-                            newDetail.goods_id,
-                            newDetail.goods_name,
-                            newDetail.price,
-                            newDetail.quantity
-                        );
-                    }
+                    currentOrder.AddItem(
+                        f.AddedItem.goods_id,
+                        f.AddedItem.goods_name,
+                        f.AddedItem.price,
+                        f.AddedItem.quantity);
                     RefreshCart();
                 }
             }
         }
-        private void RefreshCart()
-        {
-            int firstVisibleRowIndex = -1;
-            if (dgvOrderList.Rows.Count > 0 && dgvOrderList.FirstDisplayedScrollingRowIndex >= 0)
-            {
-                firstVisibleRowIndex = dgvOrderList.FirstDisplayedScrollingRowIndex;
-            }
-            dgvOrderList.Rows.Clear();
-            if (currentOrder.orderdetaillist == null || currentOrder.orderdetaillist.Count == 0)
-            {
-                txtKaikei.Text = "¥ " + "0";
-                btnConfirm.Enabled = false;
-                return;
-            }
-            foreach (var item in currentOrder.orderdetaillist)
-            {
-                int subtotal = item.Subtotal;
 
-                dgvOrderList.Rows.Add(
-                    item.goods_name,
-                    "➖",
-                    item.quantity,
-                    "➕",
-                    subtotal.ToString("N0"),
-                    item.goods_id
-                );
-            }
-            dgvOrderList.ClearSelection();
-            txtKaikei.Text = "¥ "+currentOrder.TotalPrice.ToString("N0");
-            if (firstVisibleRowIndex >= 0 && firstVisibleRowIndex < dgvOrderList.Rows.Count)
-            {
-                try
-                {
-                    dgvOrderList.FirstDisplayedScrollingRowIndex = firstVisibleRowIndex;
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
-                }
-            }
-            if (currentOrder.orderdetaillist.Count > 0 && currentOrder.TotalPrice > 0)
-            {
-                btnConfirm.Enabled = true;
-            }
-        }
-        private void btnConfirm_Click(object sender, EventArgs e)
-        {
-            currentOrder.RemoveZeros();
-            if (ordertype != "edit") 
-            {
-                using (Frm_C_Cart form = new Frm_C_Cart(ordertype, currentOrder))
-                {
-                    DialogResult result = form.ShowDialog();
-                    if (form.closeparent)
-                    {
-                        this.Close();
-                    }
-                    if (result == DialogResult.Cancel || result == DialogResult.None)
-                    {
-                        this.currentOrder = form.currentOrder;
-                        RefreshCart();
-                    }
-                }
-            }
-            else 
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-        }
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        // ==========================================
+        // 🌱 ベジタリアン設定 (Vegetarian Toggle)
+        // ==========================================
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-            ApplyVegetarianFilterToTab(tbcntMenu.SelectedTab);
+
+            // カテゴリボタンを再構築（肉料理しかないカテゴリを隠す）
+            BuildCategoryButtons();
+
+            // 現在のカテゴリに表示できる商品がない場合、最初のカテゴリへ移動
+            if (!HasVisibleGoods(currentGroupCode))
+            {
+                SelectFirstCategory();
+            }
+            else
+            {
+                LoadProducts(currentGroupCode);
+            }
         }
+
         private void lblVeget_Click(object sender, EventArgs e)
         {
             ckbVeget.Checked = !ckbVeget.Checked;
         }
-        private void btnRestart_Click(object sender, EventArgs e)
+
+        // ==========================================
+        // 🛒 カート管理 (Cart Management)
+        // ==========================================
+        private void RefreshCart()
         {
-            DialogResult dret = MessageBox.Show(lblConfirm2.Text, lblConfirm1.Text,
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (dret == DialogResult.Yes)
+            dgvOrderList.SuspendLayout();
+            dgvOrderList.Rows.Clear();
+            dgvOrderList.Invalidate();
+
+            if (currentOrder.orderdetaillist == null || currentOrder.orderdetaillist.Count == 0)
             {
-                Application.Restart();
-                Environment.Exit(0);
-            }
-        }
-        private void dgvOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderList.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
-            {
+                txtKaikei.Text = "¥ 0";
+                btnConfirm.Enabled = false;
+                btnConfirm.NormalColor = Color.FromArgb(189, 189, 189);
+                btnConfirm.Invalidate();
+                dgvOrderList.ResumeLayout();
                 return;
             }
 
-            int minusColumnIndex = 1;
-            int plusColumnIndex = 3;
-            var itemToModify = currentOrder.orderdetaillist[e.RowIndex];
-
-            if (e.ColumnIndex == plusColumnIndex)
+            foreach (var d in currentOrder.orderdetaillist)
             {
+                int rowIndex = dgvOrderList.Rows.Add(
+                    d.goods_name,
+                    "➖",
+                    d.quantity,
+                    "➕",
+                    d.Subtotal.ToString("N0")
+                );
+                dgvOrderList.Rows[rowIndex].Tag = d.goods_id;
 
-                currentOrder.PlusMinus(itemToModify.goods_id, 1);
+                dgvOrderList.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 248, 240);
             }
-            else if (e.ColumnIndex == minusColumnIndex)
+
+            txtKaikei.Text = "¥ " + CalculateTotal().ToString("N0");
+            btnConfirm.Enabled = true;
+            btnConfirm.NormalColor = Color.FromArgb(67, 160, 70);
+            dgvOrderList.ClearSelection();
+            dgvOrderList.CurrentCell = null;
+            dgvOrderList.ResumeLayout();
+            dgvOrderList.Update();
+            btnConfirm.Invalidate();
+        }
+
+        private int CalculateTotal()
+        {
+            return currentOrder.orderdetaillist.Sum(d => d.Subtotal);
+        }
+
+        // 数量変更ボタン（プラス・マイナス）の処理
+        private void dgvOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0) return;
+            if (dgvOrderList.Rows[e.RowIndex].Tag == null) return;
+            int id = (int)dgvOrderList.Rows[e.RowIndex].Tag;
+
+            string cellValue = dgvOrderList.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+            if (cellValue == "➕") ChangeQty(id, 1);
+            else if (cellValue == "➖") ChangeQty(id, -1);
+        }
+
+        private void ChangeQty(int id, int diff)
+        {
+            var item = currentOrder.orderdetaillist.FirstOrDefault(x => x.goods_id == id);
+            if (item != null)
             {
-                currentOrder.PlusMinus(itemToModify.goods_id, -1);
+                int newQty = item.quantity + diff;
+                if (newQty <= 0) currentOrder.orderdetaillist.Remove(item);
+                else if (newQty <= 99) item.quantity = newQty;
             }
             RefreshCart();
         }
-        private void flowLayoutPanelMenuRecommend_MouseUp(object sender, MouseEventArgs e)
+
+        // ==========================================
+        // 🏁 最終アクション (Final Actions)
+        // ==========================================
+
+        // 注文確定
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
-            FlowLayoutPanel panel = sender as FlowLayoutPanel;
-            if (panel == null) return;
-
-            isDragging = false;
-
-            panel.Capture = false;
-        }
-        private void flowLayoutPanelMenuRecommend_MouseDown(object sender, MouseEventArgs e)
-        {
-            FlowLayoutPanel panel = sender as FlowLayoutPanel;
-            if (panel == null) return;
-
-            if (e.Button == MouseButtons.Left)
+            currentOrder.RemoveZeros();
+            if (ordertype != "edit")
             {
-                isDragging = true;
-                lastMousePosition = e.Location;
-
-                panel.Capture = true;
-            }
-        }
-        private void flowLayoutPanelMenuRecommend_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                FlowLayoutPanel panel = sender as FlowLayoutPanel;
-                if (panel == null)
+                using (Frm_C_Cart f = new Frm_C_Cart(ordertype, currentOrder))
                 {
-                    Control ctrl = sender as Control;
-                    if (ctrl != null && ctrl.Parent is FlowLayoutPanel flp)
+                    if (f.ShowDialog() != DialogResult.OK)
                     {
-                        panel = flp;
-                    }
-                }
-                if (panel == null || !isDragging) return;
-
-                int deltaY = e.Y - lastMousePosition.Y;
-
-                Point currentScroll = panel.AutoScrollPosition;
-
-                int newY = -currentScroll.Y - deltaY;
-
-                panel.AutoScrollPosition = new Point(0, newY);
-
-                lastMousePosition = e.Location;
-                if (isDragging)
-                {
-                }
-            }
-        }
-        private void dgvOrderList_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                isDraggingDGV = true;
-                lastMouseY = e.Y;
-            }
-        }
-        private void dgvOrderList_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDraggingDGV)
-            {
-                DataGridView dgv = sender as DataGridView;
-                if (dgv == null || dgv.RowCount == 0) return;
-
-                int deltaY = e.Y - lastMouseY;
-                int rowsToScroll = deltaY / SCROLL_SENSITIVITY;
-
-                if (rowsToScroll != 0)
-                {
-                    try
-                    {
-                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-                        int newFirstRow = currentFirstRow - rowsToScroll;
-
-                        newFirstRow = Math.Max(0, newFirstRow);
-                        if (newFirstRow != currentFirstRow)
-                        {
-                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
-                        }
-
-                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
-                    }
-                    catch (ArgumentOutOfRangeException)
-                    {
-                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                        currentOrder = f.currentOrder;
+                        RefreshCart();
                     }
                 }
             }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
-        private void dgvOrderList_MouseUp(object sender, MouseEventArgs e)
+
+        // 最初からやり直し
+        private void btnRestart_Click(object sender, EventArgs e)
         {
-            isDraggingDGV = false;
+            currentOrder.orderdetaillist.Clear();
+            RefreshCart();
+        }
+
+        // 戻るボタン
+        private void btnBack_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        // ==========================================
+        // 🔍 ヘルパーメソッド (Helpers)
+        // ==========================================
+
+        // 指定したカテゴリに表示可能な商品があるかチェック
+        private bool HasVisibleGoods(string groupCode)
+        {
+            if (!goodsCache.ContainsKey(groupCode))
+            {
+                GoodsTable t = new GoodsTable();
+                goodsCache[groupCode] =
+                    groupCode == "RECOMMEND"
+                        ? t.GetRecommendGoods(currentLangNo)
+                        : t.GetGoodsByGroup(currentLangNo, groupCode, true);
+            }
+            return goodsCache[groupCode].Any(g => !vege || g.is_vegetarian);
+        }
+
+        private string GetRecommendText()
+        {
+            switch (currentLangNo)
+            {
+                case 1: return "おすすめ";
+                case 2: return "Recommend";
+                case 3: return "推荐";
+                case 4: return "Рекомендуем";
+                default: return "Recommend";
+            }
         }
     }
 }

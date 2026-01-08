@@ -53,6 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BigCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Frm_C_Cart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +193,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SecurityLogger.cs" />
     <EmbeddedResource Include="Frm_C_Cart.en.resx">
       <DependentUpon>Frm_C_Cart.cs</DependentUpon>
@@ -260,6 +266,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Menu.resx">
       <DependentUpon>Frm_C_Menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Menu.ru.resx">
       <DependentUpon>Frm_C_Menu.cs</DependentUpon>
