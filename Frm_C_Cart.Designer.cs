@@ -56,11 +56,6 @@
             this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.tboxTotalPrice = new System.Windows.Forms.TextBox();
-            this.btnRestart = new System.Windows.Forms.Button();
-            this.lblConfirm2 = new System.Windows.Forms.Label();
-            this.lblConfirm1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -276,48 +271,6 @@
             this.goods_id.ReadOnly = true;
             this.goods_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // btnGoPay
-            // 
-            resources.ApplyResources(this.btnGoPay, "btnGoPay");
-            this.btnGoPay.Name = "btnGoPay";
-            this.btnGoPay.UseVisualStyleBackColor = true;
-            this.btnGoPay.Click += new System.EventHandler(this.btnPay_Click);
-            // 
-            // btnBack
-            // 
-            resources.ApplyResources(this.btnBack, "btnBack");
-            this.btnBack.Name = "btnBack";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // lblTotalPrice
-            // 
-            resources.ApplyResources(this.lblTotalPrice, "lblTotalPrice");
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            // 
-            // tboxTotalPrice
-            // 
-            resources.ApplyResources(this.tboxTotalPrice, "tboxTotalPrice");
-            this.tboxTotalPrice.Name = "tboxTotalPrice";
-            this.tboxTotalPrice.ReadOnly = true;
-            // 
-            // btnRestart
-            // 
-            resources.ApplyResources(this.btnRestart, "btnRestart");
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.UseVisualStyleBackColor = true;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
-            // 
-            // lblConfirm2
-            // 
-            resources.ApplyResources(this.lblConfirm2, "lblConfirm2");
-            this.lblConfirm2.Name = "lblConfirm2";
-            // 
-            // lblConfirm1
-            // 
-            resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
-            this.lblConfirm1.Name = "lblConfirm1";
             // 
             // Frm_C_Cart
             // 
