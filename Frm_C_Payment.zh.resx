@@ -135,4 +135,7 @@
   <data name="lblTitle.Text" xml:space="preserve">
     <value>总计金额（含税）：</value>
   </data>
+  <data name="lblPgreet.Text" xml:space="preserve">
+    <value>选择支付方式</value>
+  </data>
 </root>

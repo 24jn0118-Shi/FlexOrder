@@ -40,13 +40,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCart = new System.Windows.Forms.DataGridView();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.tboxTotalPrice = new System.Windows.Forms.TextBox();
-            this.btnRestart = new System.Windows.Forms.Button();
-            this.lblConfirm2 = new System.Windows.Forms.Label();
-            this.lblConfirm1 = new System.Windows.Forms.Label();
-            this.btnGoPay = new FlexOrder.RoundButton();
-            this.btnBack = new FlexOrder.RoundButton();
             this.img_goods_image = new System.Windows.Forms.DataGridViewImageColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +49,13 @@
             this.btnPlus = new System.Windows.Forms.DataGridViewButtonColumn();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.tboxTotalPrice = new System.Windows.Forms.TextBox();
+            this.btnRestart = new System.Windows.Forms.Button();
+            this.lblConfirm2 = new System.Windows.Forms.Label();
+            this.lblConfirm1 = new System.Windows.Forms.Label();
+            this.btnGoPay = new FlexOrder.RoundButton();
+            this.btnBack = new FlexOrder.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCart)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,71 +96,6 @@
             this.dgvCart.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseDown);
             this.dgvCart.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseMove);
             this.dgvCart.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvCart_MouseUp);
-            // 
-            // lblTotalPrice
-            // 
-            resources.ApplyResources(this.lblTotalPrice, "lblTotalPrice");
-            this.lblTotalPrice.Name = "lblTotalPrice";
-            // 
-            // tboxTotalPrice
-            // 
-            this.tboxTotalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
-            resources.ApplyResources(this.tboxTotalPrice, "tboxTotalPrice");
-            this.tboxTotalPrice.Name = "tboxTotalPrice";
-            this.tboxTotalPrice.ReadOnly = true;
-            // 
-            // btnRestart
-            // 
-            resources.ApplyResources(this.btnRestart, "btnRestart");
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.UseVisualStyleBackColor = true;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
-            // 
-            // lblConfirm2
-            // 
-            resources.ApplyResources(this.lblConfirm2, "lblConfirm2");
-            this.lblConfirm2.Name = "lblConfirm2";
-            // 
-            // lblConfirm1
-            // 
-            resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
-            this.lblConfirm1.Name = "lblConfirm1";
-            // 
-            // btnGoPay
-            // 
-            this.btnGoPay.BackColor = System.Drawing.Color.Transparent;
-            this.btnGoPay.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.btnGoPay.CornerRadius = 16;
-            this.btnGoPay.FlatAppearance.BorderSize = 0;
-            this.btnGoPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnGoPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnGoPay, "btnGoPay");
-            this.btnGoPay.ForeColor = System.Drawing.Color.White;
-            this.btnGoPay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
-            this.btnGoPay.Name = "btnGoPay";
-            this.btnGoPay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(70)))));
-            this.btnGoPay.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
-            this.btnGoPay.TabStop = false;
-            this.btnGoPay.UseVisualStyleBackColor = false;
-            this.btnGoPay.Click += new System.EventHandler(this.btnPay_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.btnBack.CornerRadius = 16;
-            this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnBack, "btnBack");
-            this.btnBack.ForeColor = System.Drawing.Color.White;
-            this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnBack.Name = "btnBack";
-            this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
-            this.btnBack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnBack.TabStop = false;
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // img_goods_image
             // 
@@ -271,6 +206,71 @@
             this.goods_id.ReadOnly = true;
             this.goods_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.goods_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // lblTotalPrice
+            // 
+            resources.ApplyResources(this.lblTotalPrice, "lblTotalPrice");
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            // 
+            // tboxTotalPrice
+            // 
+            this.tboxTotalPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            resources.ApplyResources(this.tboxTotalPrice, "tboxTotalPrice");
+            this.tboxTotalPrice.Name = "tboxTotalPrice";
+            this.tboxTotalPrice.ReadOnly = true;
+            // 
+            // btnRestart
+            // 
+            resources.ApplyResources(this.btnRestart, "btnRestart");
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.UseVisualStyleBackColor = true;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
+            // lblConfirm2
+            // 
+            resources.ApplyResources(this.lblConfirm2, "lblConfirm2");
+            this.lblConfirm2.Name = "lblConfirm2";
+            // 
+            // lblConfirm1
+            // 
+            resources.ApplyResources(this.lblConfirm1, "lblConfirm1");
+            this.lblConfirm1.Name = "lblConfirm1";
+            // 
+            // btnGoPay
+            // 
+            this.btnGoPay.BackColor = System.Drawing.Color.Transparent;
+            this.btnGoPay.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnGoPay.CornerRadius = 16;
+            this.btnGoPay.FlatAppearance.BorderSize = 0;
+            this.btnGoPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGoPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnGoPay, "btnGoPay");
+            this.btnGoPay.ForeColor = System.Drawing.Color.White;
+            this.btnGoPay.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnGoPay.Name = "btnGoPay";
+            this.btnGoPay.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(70)))));
+            this.btnGoPay.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.btnGoPay.TabStop = false;
+            this.btnGoPay.UseVisualStyleBackColor = false;
+            this.btnGoPay.Click += new System.EventHandler(this.btnPay_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBack.CornerRadius = 16;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnBack, "btnBack");
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnBack.Name = "btnBack";
+            this.btnBack.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnBack.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnBack.TabStop = false;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Frm_C_Cart
             // 

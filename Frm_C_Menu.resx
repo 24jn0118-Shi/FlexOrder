@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>759, 706</value>
+    <value>739, 706</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 31</value>
@@ -187,10 +187,10 @@
     <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>929, 706</value>
+    <value>931, 745</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 38</value>
+    <value>142, 38</value>
   </data>
   <data name="txtKaikei.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -565,7 +565,7 @@
     <value>NoControl</value>
   </data>
   <data name="ckbVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>541, 832</value>
+    <value>550, 832</value>
   </data>
   <data name="ckbVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>

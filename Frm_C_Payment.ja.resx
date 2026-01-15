@@ -135,4 +135,7 @@
   <data name="lblTitle.Text" xml:space="preserve">
     <value>合計金額（税込）：</value>
   </data>
+  <data name="lblPgreet.Text" xml:space="preserve">
+    <value>お支払い方法を選択してください</value>
+  </data>
 </root>

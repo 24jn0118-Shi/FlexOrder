@@ -108,7 +108,7 @@ namespace FlexOrder
                 Font = new Font("Microsoft YaHei UI", 12, FontStyle.Bold),
                 ForeColor = Color.White,
                 NormalColor = Color.FromArgb(229, 57, 53), // 通常時：赤
-                HoverColor = Color.FromArgb(211, 47, 47),
+                HoverColor = Color.FromArgb(25, 118, 210),
                 PressedColor = Color.FromArgb(198, 40, 40)
             };
             btn.Click += CategoryButton_Click;
@@ -209,18 +209,18 @@ namespace FlexOrder
         private void ckbVeget_CheckedChanged(object sender, EventArgs e)
         {
             vege = ckbVeget.Checked;
-
-            // カテゴリボタンを再構築（肉料理しかないカテゴリを隠す）
+            string previousGroupCode = currentGroupCode;
             BuildCategoryButtons();
-
-            // 現在のカテゴリに表示できる商品がない場合、最初のカテゴリへ移動
-            if (!HasVisibleGoods(currentGroupCode))
+            RoundButton btnToActivate = flowLayoutPanelCategory.Controls
+                .OfType<RoundButton>()
+                .FirstOrDefault(b => b.Tag.ToString() == previousGroupCode);
+            if (btnToActivate != null)
             {
-                SelectFirstCategory();
+                CategoryButton_Click(btnToActivate, EventArgs.Empty);
             }
             else
             {
-                LoadProducts(currentGroupCode);
+                SelectFirstCategory();
             }
         }
 

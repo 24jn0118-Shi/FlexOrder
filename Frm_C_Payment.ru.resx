@@ -135,4 +135,7 @@
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Общая сумма (с налогом):</value>
   </data>
+  <data name="lblPgreet.Text" xml:space="preserve">
+    <value>Выберите способ оплаты</value>
+  </data>
 </root>
