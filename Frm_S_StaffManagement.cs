@@ -137,7 +137,7 @@ namespace FlexOrder
                         int cnt = staffTable.Delete(int.Parse(selected_id));
                         if (cnt > 0) 
                         {
-                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"Staff", selected_id.ToString(),"削除","");
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(),"スタッフ", selected_id.ToString(),"削除","");
                             MessageBox.Show(cnt+"件の店員アカウントを削除しました", "削除完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -194,14 +194,21 @@ namespace FlexOrder
 
                 if (rowsToScroll != 0)
                 {
-                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-                    int newFirstRow = currentFirstRow - rowsToScroll;
-                    newFirstRow = Math.Max(0, newFirstRow);
-                    if (newFirstRow != currentFirstRow)
+                    try
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                        int newFirstRow = currentFirstRow - rowsToScroll;
+                        newFirstRow = Math.Max(0, newFirstRow);
+                        if (newFirstRow != currentFirstRow)
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        }
+                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
                     }
-                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                    }
                 }
             }
         }

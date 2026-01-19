@@ -32,7 +32,6 @@ namespace FlexOrder
             this.ordertype = ordertype;
             this.total = total;
             lblTotal.Text = "¥ " + total.ToString("N0");
-            
         }
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -57,9 +56,20 @@ namespace FlexOrder
             if (form.DialogResult == DialogResult.OK)
             {
                 OrderTable orderTable = new OrderTable();
+                
                 if (ordertype != "edit")
                 {
-                    orderTable.InsertNewOrder(currentOrder);
+                    currentOrder.order_date = DateTime.Now;
+                    int newid = orderTable.InsertNewOrder(currentOrder);
+                    int pastmaxid = orderTable.GetPastMaxId();
+                    currentOrder.order_id = (newid - pastmaxid - 1) % 999 + 1;
+                    PrintHelper printHelper = new PrintHelper();
+                    if (Thread.CurrentThread.CurrentUICulture.Name != "ja") 
+                    {
+                        currentOrder.orderdetaillist = orderTable.ReplaceGoodsName(currentOrder.orderdetaillist);
+                    }
+                    printHelper.PrintReceipt(currentOrder);
+                    //Task.Run(() => { printHelper.PrintReceipt(currentOrder); });
                     if (paytype == "card" && form.result.ToString() != "")
                     {
                         MessageBox.Show(form.result.ToString(), "カード決済結果");

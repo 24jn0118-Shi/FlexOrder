@@ -152,7 +152,7 @@
     <value>Подтвердить заказ</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
-    <value>Общая сумма:</value>
+    <value>Общая сумма (с налогом):</value>
   </data>
   <data name="lblCart.Text" xml:space="preserve">
     <value>Текущий заказ</value>
@@ -182,6 +182,6 @@
     <value>Количество</value>
   </data>
   <data name="subtotal.HeaderText" xml:space="preserve">
-    <value>Предварительная сумма</value>
+    <value>Предварительная сумма (с налогом)</value>
   </data>
 </root>

@@ -25,11 +25,13 @@ namespace FlexOrder
         private bool isDraggingDGV = false;
         private int lastMouseY = 0;
         private const int SCROLL_SENSITIVITY = 15;
-        public Frm_S_OrderEdit(int orderid)
+        Staff loginstaff = null;
+        public Frm_S_OrderEdit(int orderid, Staff loginstaff)
         {
             InitializeComponent();
             this.orderid = orderid;
             lblOrderNo.Text = orderid.ToString();
+            this.loginstaff = loginstaff;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -70,6 +72,8 @@ namespace FlexOrder
             {
                 afterOrder = new Order();
                 afterOrder.order_id = beforeOrder.order_id;
+                afterOrder.order_date = beforeOrder.order_date;
+                afterOrder.is_takeout = beforeOrder.is_takeout;
                 if (beforeOrder.orderdetaillist != null)
                 {
                     afterOrder.orderdetaillist = beforeOrder.orderdetaillist
@@ -134,7 +138,7 @@ namespace FlexOrder
             if (issame) 
             {
                 type = "no";
-                lblType.Text = "金額変更なし";
+                lblType.Text = "商品変更なし";
                 lblResult.Text = "0";
             }
             else 
@@ -154,7 +158,7 @@ namespace FlexOrder
                 else 
                 {
                     type = "same";
-                    lblType.Text = "金額変更なし、商品変更あり";
+                    lblType.Text = "商品変更あり、金額変更なし";
                     lblResult.Text = "0";
                 }
             }
@@ -203,6 +207,7 @@ namespace FlexOrder
 
         private void btnGoPay_Click(object sender, EventArgs e)
         {
+            PrintHelper printHelper = new PrintHelper();
             if (type == "extra")
             {
                 Frm_C_Payment frm_C_Payment = new Frm_C_Payment("edit", afterTotal - beforeTotal);
@@ -213,6 +218,8 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
+                        printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "追加支払い");
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -234,6 +241,8 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
+                        printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "返金");
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -255,6 +264,8 @@ namespace FlexOrder
                     int cnt = orderTable.UpdateOrder(afterOrder);
                     if (cnt > 0)
                     {
+                        printHelper.PrintReceipt(Order.NewOrMore(beforeOrder, afterOrder));
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "商品変更あり、金額変更なし");
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -298,14 +309,21 @@ namespace FlexOrder
 
                 if (rowsToScroll != 0)
                 {
-                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-                    int newFirstRow = currentFirstRow - rowsToScroll;
-                    newFirstRow = Math.Max(0, newFirstRow);
-                    if (newFirstRow != currentFirstRow)
+                    try
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                        int newFirstRow = currentFirstRow - rowsToScroll;
+                        newFirstRow = Math.Max(0, newFirstRow);
+                        if (newFirstRow != currentFirstRow)
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        }
+                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
                     }
-                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                    }
                 }
             }
         }

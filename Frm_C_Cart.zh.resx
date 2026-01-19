@@ -133,7 +133,7 @@
     <value>前往结算</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
-    <value>总计金额：</value>
+    <value>总计金额（含税）：</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>购物车</value>
@@ -157,6 +157,6 @@
     <value>图片</value>
   </data>
   <data name="subtotal.HeaderText" xml:space="preserve">
-    <value>小计</value>
+    <value>小计（含税）</value>
   </data>
 </root>

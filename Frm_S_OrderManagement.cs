@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace FlexOrder
 {
     public partial class Frm_S_OrderManagement : Form
     {
-        Staff staff = null;
+        Staff loginstaff = null;
 
         bool gethistory = false;
         int selected_orderid = -1;
@@ -30,10 +31,10 @@ namespace FlexOrder
         private const int SCROLL_SENSITIVITY = 15;
 
         bool _isRefreshing = false;
-        public Frm_S_OrderManagement(Staff staff)
+        public Frm_S_OrderManagement(Staff loginstaff)
         {
             InitializeComponent();
-            this.staff = staff;
+            this.loginstaff = loginstaff;
             seatFocusTimer.Interval = 1000;
             seatFocusTimer.Tick += SeatFocusTimer_Tick;
         }
@@ -54,7 +55,7 @@ namespace FlexOrder
             }
             else
             {
-                Frm_S_OrderEdit frm_S_OrderEdit = new Frm_S_OrderEdit(selected_orderid);
+                Frm_S_OrderEdit frm_S_OrderEdit = new Frm_S_OrderEdit(selected_orderid, loginstaff);
                 frm_S_OrderEdit.ShowDialog();
                 Refresh_page();
             }
@@ -80,6 +81,7 @@ namespace FlexOrder
                     int cnt = orderTable.Delete(deleteid);
                     if (cnt > 0)
                     {
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", deleteid.ToString(), "削除", "");
                         MessageBox.Show("注文を削除しました", "削除完了",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -115,8 +117,6 @@ namespace FlexOrder
         private void Frm_S_OrderManagement_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            txbSeat.ReadOnly = true;
-            btnUpdateSeat.Enabled = false;
             dgvOrder.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
             dgvOrder.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvOrder.AutoGenerateColumns = false;
@@ -223,6 +223,9 @@ namespace FlexOrder
                 if (isLastRow)
                 {
                     currentOrderList.Add(currentOrder);
+                    SoundPlayer player = new SoundPlayer("W:\\24JN01卒業制作\\GroupI\\sound\\SoundOrderBell.wav");
+                    //player.PlaySync();
+                    Task.Run(() => { player.PlaySync(); });
                 }
                 else
                 {
@@ -246,6 +249,7 @@ namespace FlexOrder
             }
             txbSeat.ReadOnly = true;
             btnUpdateSeat.Enabled = false;
+            btnUpdateTakeout.Enabled = false;
             Console.WriteLine(this.Text + ": Page Refreshed");
 
         }
@@ -271,7 +275,7 @@ namespace FlexOrder
                 {
                     string colName = dgvOrder.Columns[e.ColumnIndex].Name;
                     
-                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout" || colName == "order_seat")
+                    if (colName == "str_order_id" || colName == "order_date" || colName == "str_is_takeout" || colName == "order_seat" || colName == "today_id")
                     {
                         e.Value = "";
                         e.FormattingApplied = true;
@@ -368,14 +372,21 @@ namespace FlexOrder
 
                 if (rowsToScroll != 0)
                 {
-                    int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
-                    int newFirstRow = currentFirstRow - rowsToScroll;
-                    newFirstRow = Math.Max(0, newFirstRow);
-                    if (newFirstRow != currentFirstRow)
+                    try
                     {
-                        dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        int currentFirstRow = dgv.FirstDisplayedScrollingRowIndex;
+                        int newFirstRow = currentFirstRow - rowsToScroll;
+                        newFirstRow = Math.Max(0, newFirstRow);
+                        if (newFirstRow != currentFirstRow)
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = newFirstRow;
+                        }
+                        lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
                     }
-                    lastMouseY += (rowsToScroll * SCROLL_SENSITIVITY);
+                    catch (ArgumentOutOfRangeException)
+                    {
+                        Console.WriteLine("FirstDisplayedScrollingRowIndex Error");
+                    }
                 }
             }
         }
@@ -394,6 +405,7 @@ namespace FlexOrder
             selectedOrder = currentOrderList.First(o => o.order_id == orderId);
             txbSeat.Text = selectedOrder.order_seat?.ToString() ?? "";
             selected_istakeout = selectedOrder.is_takeout;
+            btnUpdateTakeout.Enabled = true;
             if (selected_istakeout)
             {
                 txbSeat.ReadOnly = true;
@@ -515,6 +527,7 @@ namespace FlexOrder
                 txbSeat.Text = "";
                 txbSeat.ReadOnly = true;
                 btnUpdateSeat.Enabled = false;
+                btnUpdateTakeout.Enabled = false;
                 this.SelectNextControl(txbSeat, true, true, true, true);
             }
         }
@@ -533,6 +546,50 @@ namespace FlexOrder
         private void Frm_S_OrderManagement_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Enabled = false;
+        }
+
+        private void btnUpdateTakeout_Click(object sender, EventArgs e)
+        {
+            if (selected_orderid < 0)
+            {
+                MessageBox.Show("注文を選択してください", "エラー",
+                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string targetstr;
+                bool target;
+                int deleteid = selected_orderid;
+                if (dgvOrder.CurrentRow.Cells["str_is_takeout"].Value.ToString() == "店内")
+                {
+                    targetstr = "持帰";
+                    target = true;
+                }
+                else
+                {
+                    targetstr = "店内";
+                    target = false;
+                }
+                DialogResult dret = MessageBox.Show("注文の利用方法を " + targetstr + " に変更しますか？", "確認",
+                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dret == DialogResult.Yes)
+                {
+                    OrderTable orderTable = new OrderTable();
+                    
+                    int cnt = orderTable.UpdateTakeout(deleteid, target);
+                    if (cnt > 0)
+                    {
+                        MessageBox.Show(cnt + "件の注文の利用方法を変更しました", "変更完了",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("変更失敗", "変更失敗",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    Refresh_page();
+                }
+            }
         }
     }
 }

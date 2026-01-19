@@ -25,8 +25,7 @@ namespace FlexOrderLibrary
                                 SELECT CAST(SCOPE_IDENTITY() AS int);";
 
                 SqlCommand command = new SqlCommand(sql, connection);
-                DateTime dateTimenow = DateTime.Now;
-                command.Parameters.AddWithValue("@order_date", dateTimenow);
+                command.Parameters.AddWithValue("@order_date", neworder.order_date);
                 command.Parameters.AddWithValue("@is_takeout", neworder.is_takeout);
                 connection.Open();
                 newOrderId = (int)command.ExecuteScalar();
@@ -95,7 +94,34 @@ namespace FlexOrderLibrary
             }
             return table;
         }
-
+        public List<OrderDetail> ReplaceGoodsName(List<OrderDetail> orderdetaillist) 
+        {
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            GoodsTable goodsTable = new GoodsTable();
+            foreach (OrderDetail orderdetail in orderdetaillist)
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = @"SELECT G.*, LG.goods_name 
+                            FROM Goods AS G 							
+                            INNER JOIN LocalizationGoods AS LG ON G.goods_id = LG.goods_id
+                            WHERE LG.language_no = 1 AND G.goods_id = @goods_id";
+                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@goods_id", orderdetail.goods_id);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                orderdetail.goods_name = reader["goods_name"]?.ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            return orderdetaillist;
+        }
         public Order GetOrderById(int id) 
         {
             DataTable table = new DataTable();
@@ -232,6 +258,25 @@ namespace FlexOrderLibrary
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@order_id", order_id);
                 command.Parameters.AddWithValue("@order_seat", order_seat);
+
+                connection.Open();
+                ret = command.ExecuteNonQuery();
+            }
+            return ret;
+        }
+        public int UpdateTakeout(int order_id, bool target)
+        {
+            int ret = 0;
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"UPDATE [Order] SET is_takeout = @is_takeout
+                            WHERE order_id = @order_id";
+
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@order_id", order_id);
+                command.Parameters.AddWithValue("@is_takeout", target);
 
                 connection.Open();
                 ret = command.ExecuteNonQuery();

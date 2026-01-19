@@ -132,4 +132,7 @@
   <data name="btnCreditCard.Text" xml:space="preserve">
     <value>クレジットカード</value>
   </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>合計金額（税込）：</value>
+  </data>
 </root>

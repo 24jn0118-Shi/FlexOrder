@@ -239,6 +239,7 @@
       <DependentUpon>MealTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="PayjpHelper.cs" />
+    <Compile Include="PrintHelper.cs" />
     <Compile Include="ProductItem.cs">
       <SubType>UserControl</SubType>
     </Compile>

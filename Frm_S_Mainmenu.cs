@@ -15,7 +15,7 @@ namespace FlexOrder
     public partial class Frm_S_Mainmenu : Form
     {
         int staffid;
-        Staff staff;
+        Staff loginstaff;
         string lname = "";
         string fname = "";
         public Frm_S_Mainmenu(int staffid)
@@ -26,17 +26,17 @@ namespace FlexOrder
 
         private void btnOrderManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_OrderManagement frm_S_OrderManagement = new Frm_S_OrderManagement(staff);
+            Frm_S_OrderManagement frm_S_OrderManagement = new Frm_S_OrderManagement(loginstaff);
             frm_S_OrderManagement.ShowDialog();
         }
         private void btnMenuManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_MenuManagement frm_S_MenuManagement = new Frm_S_MenuManagement(staff);
+            Frm_S_MenuManagement frm_S_MenuManagement = new Frm_S_MenuManagement(loginstaff);
             frm_S_MenuManagement.ShowDialog();
         }
         private void btnStaffManagement_Click(object sender, EventArgs e)
         {
-            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement(staff, this);
+            Frm_S_StaffManagement frm_S_StaffManagement = new Frm_S_StaffManagement(loginstaff, this);
             frm_S_StaffManagement.ShowDialog();
             UpdateName();
         }
@@ -49,7 +49,7 @@ namespace FlexOrder
         private void Frm_S_Mainmenu_Load(object sender, EventArgs e)
         {
             UpdateName();
-            if (staff != null && staff.staff_accesslevel > 0)
+            if (loginstaff != null && loginstaff.staff_accesslevel > 0)
             {
                 btnStaffManagement.Enabled = true;
                 btnSalesStatistics.Enabled = true;
@@ -61,11 +61,11 @@ namespace FlexOrder
         private void UpdateName() 
         {
             StaffTable staffTable = new StaffTable();
-            staff = staffTable.GetStaffById(staffid);
-            if (staff != null)
+            loginstaff = staffTable.GetStaffById(staffid);
+            if (loginstaff != null)
             {
-                lname = staff.staff_lastname;
-                fname = staff.staff_firstname;
+                lname = loginstaff.staff_lastname;
+                fname = loginstaff.staff_firstname;
             }
             lblWelcome.Text = "ようこそ、" + lname + "　" + fname;
         }
