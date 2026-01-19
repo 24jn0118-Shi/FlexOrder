@@ -32,10 +32,15 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnBack = new FlexOrder.RoundButton();
-            this.btnCreditCard = new FlexOrder.RoundButton();
-            this.btnEMoney = new FlexOrder.RoundButton();
             this.lblPgreet = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnEMoney = new FlexOrder.RoundButton();
+            this.btnCreditCard = new FlexOrder.RoundButton();
             this.btnCash = new FlexOrder.RoundButton();
+            this.lblCard = new System.Windows.Forms.Label();
+            this.lblEmoney = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotal
@@ -66,23 +71,15 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnCreditCard
+            // lblPgreet
             // 
-            this.btnCreditCard.BackColor = System.Drawing.Color.Transparent;
-            this.btnCreditCard.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.btnCreditCard.CornerRadius = 16;
-            this.btnCreditCard.FlatAppearance.BorderSize = 0;
-            this.btnCreditCard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCreditCard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnCreditCard, "btnCreditCard");
-            this.btnCreditCard.ForeColor = System.Drawing.Color.White;
-            this.btnCreditCard.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnCreditCard.Name = "btnCreditCard";
-            this.btnCreditCard.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
-            this.btnCreditCard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnCreditCard.TabStop = false;
-            this.btnCreditCard.UseVisualStyleBackColor = false;
-            this.btnCreditCard.Click += new System.EventHandler(this.btnCreditCard_Click);
+            resources.ApplyResources(this.lblPgreet, "lblPgreet");
+            this.lblPgreet.Name = "lblPgreet";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // btnEMoney
             // 
@@ -95,6 +92,7 @@
             resources.ApplyResources(this.btnEMoney, "btnEMoney");
             this.btnEMoney.ForeColor = System.Drawing.Color.White;
             this.btnEMoney.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnEMoney.Image = global::FlexOrder.Properties.Resources.Emoney;
             this.btnEMoney.Name = "btnEMoney";
             this.btnEMoney.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.btnEMoney.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
@@ -102,10 +100,24 @@
             this.btnEMoney.UseVisualStyleBackColor = false;
             this.btnEMoney.Click += new System.EventHandler(this.btnEMoney_Click);
             // 
-            // lblPgreet
+            // btnCreditCard
             // 
-            resources.ApplyResources(this.lblPgreet, "lblPgreet");
-            this.lblPgreet.Name = "lblPgreet";
+            this.btnCreditCard.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreditCard.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCreditCard.CornerRadius = 16;
+            this.btnCreditCard.FlatAppearance.BorderSize = 0;
+            this.btnCreditCard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCreditCard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnCreditCard, "btnCreditCard");
+            this.btnCreditCard.ForeColor = System.Drawing.Color.White;
+            this.btnCreditCard.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.btnCreditCard.Image = global::FlexOrder.Properties.Resources.CreditCard;
+            this.btnCreditCard.Name = "btnCreditCard";
+            this.btnCreditCard.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnCreditCard.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnCreditCard.TabStop = false;
+            this.btnCreditCard.UseVisualStyleBackColor = false;
+            this.btnCreditCard.Click += new System.EventHandler(this.btnCreditCard_Click);
             // 
             // btnCash
             // 
@@ -126,20 +138,43 @@
             this.btnCash.UseVisualStyleBackColor = false;
             this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
+            // lblCard
+            // 
+            this.lblCard.AllowDrop = true;
+            resources.ApplyResources(this.lblCard, "lblCard");
+            this.lblCard.Name = "lblCard";
+            // 
+            // lblEmoney
+            // 
+            this.lblEmoney.AllowDrop = true;
+            resources.ApplyResources(this.lblEmoney, "lblEmoney");
+            this.lblEmoney.Name = "lblEmoney";
+            // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.lblEmoney, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblCard, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
             // Frm_C_Payment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
-            this.Controls.Add(this.lblPgreet);
+            this.Controls.Add(this.btnCash);
             this.Controls.Add(this.btnEMoney);
             this.Controls.Add(this.btnCreditCard);
-            this.Controls.Add(this.btnCash);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.lblPgreet);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTotal);
             this.Name = "Frm_C_Payment";
             this.Load += new System.EventHandler(this.Frm_C_Payment_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +188,9 @@
         private RoundButton btnCreditCard;
         private RoundButton btnEMoney;
         private System.Windows.Forms.Label lblPgreet;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCard;
+        private System.Windows.Forms.Label lblEmoney;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

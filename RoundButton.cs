@@ -18,13 +18,12 @@ namespace FlexOrder
 
         public RoundButton()
         {
-            // Отключаем все стандартные рамки Windows
+           
             FlatStyle = FlatStyle.Flat;
             FlatAppearance.BorderSize = 0;
             FlatAppearance.MouseDownBackColor = Color.Transparent;
             FlatAppearance.MouseOverBackColor = Color.Transparent;
-            BackColor = Color.Transparent; // Позволяет избежать черных рамок
-
+            BackColor = Color.Transparent; 
             UseVisualStyleBackColor = false;
             TabStop = false;
             ForeColor = Color.White;
@@ -50,9 +49,8 @@ namespace FlexOrder
         {
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.PixelOffsetMode = PixelOffsetMode.HighQuality; // Добавлено для точности краев
-
-            // Вместо закрашивания прямоугольником, мы просто берем фон родителя
+            g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+            
             if (Parent != null)
             {
                 using (var parentBrush = new SolidBrush(Parent.BackColor))
@@ -61,20 +59,29 @@ namespace FlexOrder
                 }
             }
 
-            // Важно: отступаем на 1 пиксель, чтобы Anti-Aliasing не упирался в край контрола
+           
             Rectangle rect = new Rectangle(0, 0, Width - 1, Height - 1);
 
             using (GraphicsPath path = GetRoundPath(rect, CornerRadius))
             {
                 Color fill = isPressed ? PressedColor : isHover ? HoverColor : NormalColor;
 
-                // Рисуем тело кнопки
+                
                 using (SolidBrush b = new SolidBrush(fill))
                 {
                     g.FillPath(b, path);
                 }
 
-                // Рисуем границу (если она нужна)
+                if (Image != null)
+                {
+                    int size = Math.Min(Width, Height) - 12;
+                    int x = (Width - size) / 2;
+                    int y = (Height - size) / 2;
+
+                    g.DrawImage(Image, x, y, size, size);
+                }
+
+
                 if (BorderColor != Color.Transparent)
                 {
                     using (Pen p = new Pen(BorderColor, 1))
@@ -85,7 +92,7 @@ namespace FlexOrder
                 }
             }
 
-            // Рисуем текст
+           
             TextRenderer.DrawText(
                 g,
                 Text,

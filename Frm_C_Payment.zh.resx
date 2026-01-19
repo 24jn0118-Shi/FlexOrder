@@ -123,19 +123,19 @@
   <data name="$this.Text" xml:space="preserve">
     <value>选择支付方式</value>
   </data>
-  <data name="btnEMoney.Text" xml:space="preserve">
-    <value>电子货币</value>
-  </data>
-  <data name="btnCash.Text" xml:space="preserve">
-    <value>现金</value>
-  </data>
-  <data name="btnCreditCard.Text" xml:space="preserve">
-    <value>信用卡</value>
-  </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>总计金额（含税）：</value>
   </data>
   <data name="lblPgreet.Text" xml:space="preserve">
     <value>选择支付方式</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>现金</value>
+  </data>
+  <data name="lblCard.Text" xml:space="preserve">
+    <value>信用卡</value>
+  </data>
+  <data name="lblEmoney.Text" xml:space="preserve">
+    <value>电子货币</value>
   </data>
 </root>

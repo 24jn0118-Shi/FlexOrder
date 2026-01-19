@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_End));
-            this.btnRestart = new System.Windows.Forms.Button();
             this.lblEnd1 = new System.Windows.Forms.Label();
             this.lblEndIn2 = new System.Windows.Forms.Label();
             this.lblOrderType = new System.Windows.Forms.Label();
@@ -40,15 +39,8 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lblEndOut2 = new System.Windows.Forms.Label();
+            this.btnRestart = new FlexOrder.RoundButton();
             this.SuspendLayout();
-            // 
-            // btnRestart
-            // 
-            resources.ApplyResources(this.btnRestart, "btnRestart");
-            this.btnRestart.Name = "btnRestart";
-            this.btnRestart.TabStop = false;
-            this.btnRestart.UseVisualStyleBackColor = true;
-            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // lblEnd1
             // 
@@ -95,17 +87,36 @@
             resources.ApplyResources(this.lblEndOut2, "lblEndOut2");
             this.lblEndOut2.Name = "lblEndOut2";
             // 
+            // btnRestart
+            // 
+            this.btnRestart.BackColor = System.Drawing.Color.Transparent;
+            this.btnRestart.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRestart.CornerRadius = 16;
+            this.btnRestart.FlatAppearance.BorderSize = 0;
+            this.btnRestart.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRestart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnRestart, "btnRestart");
+            this.btnRestart.ForeColor = System.Drawing.Color.White;
+            this.btnRestart.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(70)))));
+            this.btnRestart.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.btnRestart.TabStop = false;
+            this.btnRestart.UseVisualStyleBackColor = false;
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
+            // 
             // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblEndOut2);
             this.Controls.Add(this.lblIn);
             this.Controls.Add(this.lblOut);
             this.Controls.Add(this.lblEndIn2);
             this.Controls.Add(this.lblOrderType);
             this.Controls.Add(this.lblEnd1);
-            this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl2);
             this.Name = "Frm_C_End";
@@ -117,8 +128,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRestart;
         private System.Windows.Forms.Label lblEnd1;
         private System.Windows.Forms.Label lblEndIn2;
         private System.Windows.Forms.Label lblOrderType;
@@ -128,5 +137,6 @@
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lblEndOut2;
+        private RoundButton btnRestart;
     }
 }

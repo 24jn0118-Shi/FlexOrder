@@ -123,19 +123,19 @@
   <data name="$this.Text" xml:space="preserve">
     <value>支払方法選択</value>
   </data>
-  <data name="btnEMoney.Text" xml:space="preserve">
-    <value>電子マネー</value>
-  </data>
-  <data name="btnCash.Text" xml:space="preserve">
-    <value>現金</value>
-  </data>
-  <data name="btnCreditCard.Text" xml:space="preserve">
-    <value>クレジットカード</value>
-  </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>合計金額（税込）：</value>
   </data>
   <data name="lblPgreet.Text" xml:space="preserve">
     <value>お支払い方法を選択してください</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>現金</value>
+  </data>
+  <data name="lblCard.Text" xml:space="preserve">
+    <value>クレジットカード</value>
+  </data>
+  <data name="lblEmoney.Text" xml:space="preserve">
+    <value>電子マネー</value>
   </data>
 </root>
