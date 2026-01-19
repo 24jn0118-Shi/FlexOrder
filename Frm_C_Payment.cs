@@ -106,6 +106,8 @@ namespace FlexOrder
             {
                 btnCreditCard.Visible = false;
                 btnEMoney.Visible = false;
+                lblCard.Visible = false;
+                lblEmoney.Visible = false;
             }
         }
     }
