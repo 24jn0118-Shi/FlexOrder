@@ -262,7 +262,7 @@
     <value>3, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 96</value>
+    <value>292, 96</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -385,10 +385,10 @@
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
   <data name="lblCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 0</value>
+    <value>301, 0</value>
   </data>
   <data name="lblCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>296, 96</value>
+    <value>302, 96</value>
   </data>
   <data name="lblCard.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -421,10 +421,10 @@
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
   <data name="lblEmoney.Location" type="System.Drawing.Point, System.Drawing">
-    <value>593, 0</value>
+    <value>609, 0</value>
   </data>
   <data name="lblEmoney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>278, 96</value>
+    <value>273, 96</value>
   </data>
   <data name="lblEmoney.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -451,13 +451,13 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 449</value>
+    <value>107, 449</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>874, 96</value>
+    <value>885, 96</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -475,7 +475,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblEmoney" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblCard" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,48.88124,Percent,51.11876,Absolute,283" /&gt;&lt;Rows Styles="Percent,50,Absolute,111" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblEmoney" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblCard" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,49.25125,Percent,50.74875,Absolute,278" /&gt;&lt;Rows Styles="Percent,50,Absolute,111" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

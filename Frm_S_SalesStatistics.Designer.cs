@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F);
-            this.label1.Location = new System.Drawing.Point(310, 30);
+            this.label1.Location = new System.Drawing.Point(327, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 41);
             this.label1.TabIndex = 1;
@@ -55,9 +55,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(646, 23);
+            this.btnBack.Location = new System.Drawing.Point(12, 508);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(113, 48);
+            this.btnBack.Size = new System.Drawing.Size(130, 41);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -65,9 +65,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(152, 90);
+            this.pictureBox1.Location = new System.Drawing.Point(87, 74);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(464, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(591, 327);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -75,7 +75,7 @@
             // 
             this.dtpStart.Checked = false;
             this.dtpStart.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStart.Location = new System.Drawing.Point(50, 358);
+            this.dtpStart.Location = new System.Drawing.Point(65, 425);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(158, 28);
             this.dtpStart.TabIndex = 4;
@@ -83,7 +83,7 @@
             // dtpEnd
             // 
             this.dtpEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEnd.Location = new System.Drawing.Point(50, 393);
+            this.dtpEnd.Location = new System.Drawing.Point(65, 460);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(158, 28);
             this.dtpEnd.TabIndex = 4;
@@ -93,7 +93,7 @@
             this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGroup.FormattingEnabled = true;
-            this.cmbGroup.Location = new System.Drawing.Point(222, 371);
+            this.cmbGroup.Location = new System.Drawing.Point(237, 438);
             this.cmbGroup.Name = "cmbGroup";
             this.cmbGroup.Size = new System.Drawing.Size(158, 29);
             this.cmbGroup.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.cmbGoods.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGoods.FormattingEnabled = true;
-            this.cmbGoods.Location = new System.Drawing.Point(386, 371);
+            this.cmbGoods.Location = new System.Drawing.Point(401, 438);
             this.cmbGoods.Name = "cmbGoods";
             this.cmbGoods.Size = new System.Drawing.Size(247, 29);
             this.cmbGoods.TabIndex = 5;
@@ -112,7 +112,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(646, 386);
+            this.btnExport.Location = new System.Drawing.Point(674, 475);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(130, 47);
             this.btnExport.TabIndex = 6;
@@ -122,7 +122,7 @@
             // btnShowGraph
             // 
             this.btnShowGraph.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowGraph.Location = new System.Drawing.Point(646, 333);
+            this.btnShowGraph.Location = new System.Drawing.Point(674, 422);
             this.btnShowGraph.Name = "btnShowGraph";
             this.btnShowGraph.Size = new System.Drawing.Size(130, 47);
             this.btnShowGraph.TabIndex = 6;
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.btnShowGraph);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.cmbGoods);
@@ -144,7 +144,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Name = "Frm_S_SalesStatistics";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_S_SalesStatistics";
             this.Load += new System.EventHandler(this.Frm_S_SalesStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

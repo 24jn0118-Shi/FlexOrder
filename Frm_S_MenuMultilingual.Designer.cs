@@ -43,7 +43,7 @@
             // lblTitle
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblTitle.Location = new System.Drawing.Point(35, 61);
+            this.lblTitle.Location = new System.Drawing.Point(52, 81);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(106, 28);
             this.lblTitle.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             this.lblGoodsName.AutoSize = true;
             this.lblGoodsName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGoodsName.Location = new System.Drawing.Point(79, 126);
+            this.lblGoodsName.Location = new System.Drawing.Point(96, 146);
             this.lblGoodsName.Name = "lblGoodsName";
             this.lblGoodsName.Size = new System.Drawing.Size(74, 21);
             this.lblGoodsName.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.lblGoodsDetail.AutoSize = true;
             this.lblGoodsDetail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lblGoodsDetail.Location = new System.Drawing.Point(63, 193);
+            this.lblGoodsDetail.Location = new System.Drawing.Point(68, 218);
             this.lblGoodsDetail.Name = "lblGoodsDetail";
             this.lblGoodsDetail.Size = new System.Drawing.Size(90, 21);
             this.lblGoodsDetail.TabIndex = 3;
@@ -77,7 +77,7 @@
             this.cmbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLanguage.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
             this.cmbLanguage.FormattingEnabled = true;
-            this.cmbLanguage.Location = new System.Drawing.Point(153, 44);
+            this.cmbLanguage.Location = new System.Drawing.Point(170, 64);
             this.cmbLanguage.Name = "cmbLanguage";
             this.cmbLanguage.Size = new System.Drawing.Size(182, 36);
             this.cmbLanguage.TabIndex = 4;
@@ -86,7 +86,7 @@
             // txbGoodsName
             // 
             this.txbGoodsName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.txbGoodsName.Location = new System.Drawing.Point(153, 123);
+            this.txbGoodsName.Location = new System.Drawing.Point(170, 143);
             this.txbGoodsName.Name = "txbGoodsName";
             this.txbGoodsName.Size = new System.Drawing.Size(182, 28);
             this.txbGoodsName.TabIndex = 5;
@@ -94,16 +94,16 @@
             // txbGoodsDetail
             // 
             this.txbGoodsDetail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.txbGoodsDetail.Location = new System.Drawing.Point(153, 190);
+            this.txbGoodsDetail.Location = new System.Drawing.Point(170, 215);
             this.txbGoodsDetail.Multiline = true;
             this.txbGoodsDetail.Name = "txbGoodsDetail";
-            this.txbGoodsDetail.Size = new System.Drawing.Size(303, 178);
+            this.txbGoodsDetail.Size = new System.Drawing.Size(559, 201);
             this.txbGoodsDetail.TabIndex = 6;
             // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnSave.Location = new System.Drawing.Point(568, 334);
+            this.btnSave.Location = new System.Drawing.Point(564, 60);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(165, 49);
             this.btnSave.TabIndex = 7;
@@ -114,7 +114,7 @@
             // btnEnd
             // 
             this.btnEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEnd.Location = new System.Drawing.Point(568, 389);
+            this.btnEnd.Location = new System.Drawing.Point(564, 115);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(165, 49);
             this.btnEnd.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             this.lblMul.AutoSize = true;
             this.lblMul.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F);
-            this.lblMul.Location = new System.Drawing.Point(30, 33);
+            this.lblMul.Location = new System.Drawing.Point(47, 53);
             this.lblMul.Name = "lblMul";
             this.lblMul.Size = new System.Drawing.Size(117, 28);
             this.lblMul.TabIndex = 9;
@@ -135,7 +135,7 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(658, 12);
+            this.btnBack.Location = new System.Drawing.Point(52, 484);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 38);
             this.btnBack.TabIndex = 14;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 468);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblMul);
             this.Controls.Add(this.btnEnd);

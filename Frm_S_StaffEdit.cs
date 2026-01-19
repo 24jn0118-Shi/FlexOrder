@@ -295,5 +295,20 @@ namespace FlexOrder
                 }
             }
         }
+
+        private void txbPassword2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassHint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -77,6 +77,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ControlBox = false;
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txbUserId);

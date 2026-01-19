@@ -49,9 +49,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(710, 12);
+            this.btnBack.Location = new System.Drawing.Point(79, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(78, 31);
+            this.btnBack.Size = new System.Drawing.Size(97, 40);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -76,13 +76,13 @@
             this.staff_firstname,
             this.str_is_manager,
             this.staff_accesslevel});
-            this.dgvStaff.Location = new System.Drawing.Point(122, 46);
+            this.dgvStaff.Location = new System.Drawing.Point(79, 26);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersVisible = false;
             this.dgvStaff.RowTemplate.Height = 30;
             this.dgvStaff.ShowCellToolTips = false;
-            this.dgvStaff.Size = new System.Drawing.Size(570, 273);
+            this.dgvStaff.Size = new System.Drawing.Size(692, 339);
             this.dgvStaff.TabIndex = 1;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             this.dgvStaff.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvStaff_MouseDown);
@@ -92,9 +92,9 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(57, 351);
+            this.btnAdd.Location = new System.Drawing.Point(79, 399);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 53);
+            this.btnAdd.Size = new System.Drawing.Size(150, 68);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "登録";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -103,9 +103,9 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEdit.Location = new System.Drawing.Point(351, 351);
+            this.btnEdit.Location = new System.Drawing.Point(348, 399);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(90, 53);
+            this.btnEdit.Size = new System.Drawing.Size(150, 68);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "編集";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -114,9 +114,9 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(653, 351);
+            this.btnDelete.Location = new System.Drawing.Point(621, 399);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(90, 53);
+            this.btnDelete.Size = new System.Drawing.Size(150, 68);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "削除";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -130,6 +130,7 @@
             this.staff_id.HeaderText = "店員ID";
             this.staff_id.Name = "staff_id";
             this.staff_id.ReadOnly = true;
+            this.staff_id.Width = 140;
             // 
             // staff_lastname
             // 
@@ -139,7 +140,7 @@
             this.staff_lastname.HeaderText = "姓";
             this.staff_lastname.Name = "staff_lastname";
             this.staff_lastname.ReadOnly = true;
-            this.staff_lastname.Width = 120;
+            this.staff_lastname.Width = 200;
             // 
             // staff_firstname
             // 
@@ -149,7 +150,7 @@
             this.staff_firstname.HeaderText = "名";
             this.staff_firstname.Name = "staff_firstname";
             this.staff_firstname.ReadOnly = true;
-            this.staff_firstname.Width = 180;
+            this.staff_firstname.Width = 200;
             // 
             // str_is_manager
             // 
@@ -159,7 +160,7 @@
             this.str_is_manager.HeaderText = "店員識別";
             this.str_is_manager.Name = "str_is_manager";
             this.str_is_manager.ReadOnly = true;
-            this.str_is_manager.Width = 120;
+            this.str_is_manager.Width = 140;
             // 
             // staff_accesslevel
             // 
@@ -173,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);

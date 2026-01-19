@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.str_order_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +69,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(786, 12);
+            this.btnBack.Location = new System.Drawing.Point(13, 505);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(70, 32);
+            this.btnBack.Size = new System.Drawing.Size(77, 44);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -83,14 +83,14 @@
             this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.AllowUserToResizeColumns = false;
             this.dgvOrder.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.str_order_id,
@@ -105,29 +105,29 @@
             this.order_quantity,
             this.goods_id,
             this.is_provided});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvOrder.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvOrder.Location = new System.Drawing.Point(46, 62);
+            this.dgvOrder.Location = new System.Drawing.Point(13, 12);
             this.dgvOrder.Name = "dgvOrder";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrder.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvOrder.RowHeadersVisible = false;
             this.dgvOrder.RowTemplate.Height = 35;
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrder.Size = new System.Drawing.Size(810, 581);
+            this.dgvOrder.Size = new System.Drawing.Size(809, 387);
             this.dgvOrder.TabIndex = 1;
             this.dgvOrder.TabStop = false;
             this.dgvOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellClick);
@@ -141,9 +141,9 @@
             // str_order_id
             // 
             this.str_order_id.DataPropertyName = "str_order_id";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.str_order_id.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_order_id.DefaultCellStyle = dataGridViewCellStyle13;
             this.str_order_id.HeaderText = "注文番号";
             this.str_order_id.Name = "str_order_id";
             this.str_order_id.ReadOnly = true;
@@ -164,9 +164,9 @@
             // today_id
             // 
             this.today_id.DataPropertyName = "today_id";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.today_id.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.today_id.DefaultCellStyle = dataGridViewCellStyle14;
             this.today_id.HeaderText = "当日番号";
             this.today_id.Name = "today_id";
             this.today_id.ReadOnly = true;
@@ -177,9 +177,9 @@
             // str_is_takeout
             // 
             this.str_is_takeout.DataPropertyName = "str_is_takeout";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.str_is_takeout.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.str_is_takeout.DefaultCellStyle = dataGridViewCellStyle15;
             this.str_is_takeout.HeaderText = "利用方法";
             this.str_is_takeout.Name = "str_is_takeout";
             this.str_is_takeout.ReadOnly = true;
@@ -200,9 +200,9 @@
             // order_date
             // 
             this.order_date.DataPropertyName = "order_date";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle5.NullValue = null;
-            this.order_date.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle16.NullValue = null;
+            this.order_date.DefaultCellStyle = dataGridViewCellStyle16;
             this.order_date.HeaderText = "注文時間";
             this.order_date.Name = "order_date";
             this.order_date.ReadOnly = true;
@@ -213,9 +213,9 @@
             // order_seat
             // 
             this.order_seat.DataPropertyName = "order_seat";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.order_seat.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.order_seat.DefaultCellStyle = dataGridViewCellStyle17;
             this.order_seat.HeaderText = "座席番号";
             this.order_seat.Name = "order_seat";
             this.order_seat.ReadOnly = true;
@@ -226,9 +226,9 @@
             // goods_name
             // 
             this.goods_name.DataPropertyName = "goods_name";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.goods_name.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.goods_name.DefaultCellStyle = dataGridViewCellStyle18;
             this.goods_name.HeaderText = "注文商品";
             this.goods_name.Name = "goods_name";
             this.goods_name.ReadOnly = true;
@@ -249,9 +249,9 @@
             // order_quantity
             // 
             this.order_quantity.DataPropertyName = "order_quantity";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.order_quantity.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.order_quantity.DefaultCellStyle = dataGridViewCellStyle19;
             this.order_quantity.HeaderText = "数量";
             this.order_quantity.Name = "order_quantity";
             this.order_quantity.ReadOnly = true;
@@ -272,10 +272,10 @@
             // is_provided
             // 
             this.is_provided.DataPropertyName = "is_provided";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle9.NullValue = false;
-            this.is_provided.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle20.NullValue = false;
+            this.is_provided.DefaultCellStyle = dataGridViewCellStyle20;
             this.is_provided.HeaderText = "提供状態";
             this.is_provided.Name = "is_provided";
             this.is_provided.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -284,9 +284,9 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAdd.Location = new System.Drawing.Point(55, 658);
+            this.btnAdd.Location = new System.Drawing.Point(13, 410);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(159, 38);
+            this.btnAdd.Size = new System.Drawing.Size(150, 35);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "新規注文（店内）";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -295,9 +295,9 @@
             // btnEdit
             // 
             this.btnEdit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEdit.Location = new System.Drawing.Point(280, 658);
+            this.btnEdit.Location = new System.Drawing.Point(243, 410);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(103, 38);
+            this.btnEdit.Size = new System.Drawing.Size(150, 35);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "注文の変更";
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -306,9 +306,9 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(280, 702);
+            this.btnDelete.Location = new System.Drawing.Point(243, 454);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(103, 38);
+            this.btnDelete.Size = new System.Drawing.Size(150, 35);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "注文の削除";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -317,9 +317,9 @@
             // btnHistory
             // 
             this.btnHistory.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnHistory.Location = new System.Drawing.Point(462, 658);
+            this.btnHistory.Location = new System.Drawing.Point(453, 410);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(125, 38);
+            this.btnHistory.Size = new System.Drawing.Size(150, 35);
             this.btnHistory.TabIndex = 1;
             this.btnHistory.Text = "過去注文ON";
             this.btnHistory.UseVisualStyleBackColor = true;
@@ -328,9 +328,9 @@
             // btnAddOut
             // 
             this.btnAddOut.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnAddOut.Location = new System.Drawing.Point(55, 702);
+            this.btnAddOut.Location = new System.Drawing.Point(13, 454);
             this.btnAddOut.Name = "btnAddOut";
-            this.btnAddOut.Size = new System.Drawing.Size(159, 38);
+            this.btnAddOut.Size = new System.Drawing.Size(150, 35);
             this.btnAddOut.TabIndex = 3;
             this.btnAddOut.Text = "新規注文（持帰）";
             this.btnAddOut.UseVisualStyleBackColor = true;
@@ -339,9 +339,9 @@
             // btnUpdateSeat
             // 
             this.btnUpdateSeat.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnUpdateSeat.Location = new System.Drawing.Point(667, 702);
+            this.btnUpdateSeat.Location = new System.Drawing.Point(672, 454);
             this.btnUpdateSeat.Name = "btnUpdateSeat";
-            this.btnUpdateSeat.Size = new System.Drawing.Size(137, 38);
+            this.btnUpdateSeat.Size = new System.Drawing.Size(150, 35);
             this.btnUpdateSeat.TabIndex = 7;
             this.btnUpdateSeat.Text = "座席番号入力";
             this.btnUpdateSeat.UseVisualStyleBackColor = true;
@@ -350,9 +350,9 @@
             // txbSeat
             // 
             this.txbSeat.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSeat.Location = new System.Drawing.Point(685, 659);
+            this.txbSeat.Location = new System.Drawing.Point(672, 411);
             this.txbSeat.Name = "txbSeat";
-            this.txbSeat.Size = new System.Drawing.Size(100, 34);
+            this.txbSeat.Size = new System.Drawing.Size(150, 34);
             this.txbSeat.TabIndex = 6;
             this.txbSeat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbSeat.TextChanged += new System.EventHandler(this.txbSeat_TextChanged);
@@ -368,9 +368,9 @@
             // btnUpdateTakeout
             // 
             this.btnUpdateTakeout.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnUpdateTakeout.Location = new System.Drawing.Point(462, 702);
+            this.btnUpdateTakeout.Location = new System.Drawing.Point(453, 454);
             this.btnUpdateTakeout.Name = "btnUpdateTakeout";
-            this.btnUpdateTakeout.Size = new System.Drawing.Size(125, 38);
+            this.btnUpdateTakeout.Size = new System.Drawing.Size(150, 35);
             this.btnUpdateTakeout.TabIndex = 1;
             this.btnUpdateTakeout.Text = "利用方法変更";
             this.btnUpdateTakeout.UseVisualStyleBackColor = true;
@@ -380,7 +380,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 747);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.txbSeat);
             this.Controls.Add(this.btnUpdateTakeout);
             this.Controls.Add(this.btnHistory);
@@ -392,7 +392,7 @@
             this.Controls.Add(this.dgvOrder);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_OrderManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "注文管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_S_OrderManagement_FormClosing);
             this.Load += new System.EventHandler(this.Frm_S_OrderManagement_Load);

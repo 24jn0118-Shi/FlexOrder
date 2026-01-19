@@ -39,10 +39,10 @@
             // btnStaffManagement
             // 
             this.btnStaffManagement.Enabled = false;
-            this.btnStaffManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnStaffManagement.Location = new System.Drawing.Point(152, 248);
+            this.btnStaffManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
+            this.btnStaffManagement.Location = new System.Drawing.Point(125, 337);
             this.btnStaffManagement.Name = "btnStaffManagement";
-            this.btnStaffManagement.Size = new System.Drawing.Size(139, 66);
+            this.btnStaffManagement.Size = new System.Drawing.Size(250, 135);
             this.btnStaffManagement.TabIndex = 3;
             this.btnStaffManagement.Text = "店員管理";
             this.btnStaffManagement.UseVisualStyleBackColor = true;
@@ -50,10 +50,10 @@
             // 
             // btnOrderManagement
             // 
-            this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnOrderManagement.Location = new System.Drawing.Point(152, 95);
+            this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrderManagement.Location = new System.Drawing.Point(125, 125);
             this.btnOrderManagement.Name = "btnOrderManagement";
-            this.btnOrderManagement.Size = new System.Drawing.Size(139, 66);
+            this.btnOrderManagement.Size = new System.Drawing.Size(250, 135);
             this.btnOrderManagement.TabIndex = 1;
             this.btnOrderManagement.Text = "注文管理";
             this.btnOrderManagement.UseVisualStyleBackColor = true;
@@ -61,10 +61,10 @@
             // 
             // btnMenuManagement
             // 
-            this.btnMenuManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnMenuManagement.Location = new System.Drawing.Point(461, 95);
+            this.btnMenuManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
+            this.btnMenuManagement.Location = new System.Drawing.Point(455, 125);
             this.btnMenuManagement.Name = "btnMenuManagement";
-            this.btnMenuManagement.Size = new System.Drawing.Size(139, 66);
+            this.btnMenuManagement.Size = new System.Drawing.Size(250, 135);
             this.btnMenuManagement.TabIndex = 2;
             this.btnMenuManagement.Text = "メニュー管理";
             this.btnMenuManagement.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             // btnSalesStatistics
             // 
             this.btnSalesStatistics.Enabled = false;
-            this.btnSalesStatistics.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnSalesStatistics.Location = new System.Drawing.Point(461, 248);
+            this.btnSalesStatistics.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
+            this.btnSalesStatistics.Location = new System.Drawing.Point(455, 337);
             this.btnSalesStatistics.Name = "btnSalesStatistics";
-            this.btnSalesStatistics.Size = new System.Drawing.Size(139, 66);
+            this.btnSalesStatistics.Size = new System.Drawing.Size(250, 135);
             this.btnSalesStatistics.TabIndex = 4;
             this.btnSalesStatistics.Text = "売上統計";
             this.btnSalesStatistics.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(53, 49);
+            this.lblWelcome.Location = new System.Drawing.Point(90, 49);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(117, 28);
             this.lblWelcome.TabIndex = 4;
@@ -95,9 +95,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(645, 49);
+            this.btnBack.Location = new System.Drawing.Point(664, 49);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(78, 31);
+            this.btnBack.Size = new System.Drawing.Size(109, 40);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblWelcome);
             this.Controls.Add(this.btnSalesStatistics);
@@ -116,7 +116,7 @@
             this.Controls.Add(this.btnStaffManagement);
             this.KeyPreview = true;
             this.Name = "Frm_S_Mainmenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "メインメニュー";
             this.Load += new System.EventHandler(this.Frm_S_Mainmenu_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_S_Mainmenu_KeyPress);
