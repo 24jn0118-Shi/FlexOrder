@@ -387,33 +387,40 @@ namespace FlexOrderLibrary
         public int Delete(int goods_id)
         {
             int ret = 0;
-
-            string connectionString = Properties.Settings.Default.DBConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                string sql = @"DELETE FROM LocalizationGoods WHERE goods_id = @goods_id";
-
-                SqlCommand command = new SqlCommand(sql, connection);
-                command.Parameters.AddWithValue("@goods_id", goods_id);
-                connection.Open();
-
-                ret = command.ExecuteNonQuery();
-            }
-            if (ret > 0)
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString)) 
-                { 
-                    string sql = @"DELETE FROM Goods WHERE goods_id = @goods_id";
+                string connectionString = Properties.Settings.Default.DBConnectionString;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = @"DELETE FROM LocalizationGoods WHERE goods_id = @goods_id";
 
                     SqlCommand command = new SqlCommand(sql, connection);
                     command.Parameters.AddWithValue("@goods_id", goods_id);
-
                     connection.Open();
-                    ret = command.ExecuteNonQuery();
 
+                    ret = command.ExecuteNonQuery();
                 }
+                if (ret > 0)
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        string sql = @"DELETE FROM Goods WHERE goods_id = @goods_id";
+
+                        SqlCommand command = new SqlCommand(sql, connection);
+                        command.Parameters.AddWithValue("@goods_id", goods_id);
+
+                        connection.Open();
+                        ret = command.ExecuteNonQuery();
+
+                    }
+                }
+
+                
             }
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex);
+            }
             return ret;
         }
     }

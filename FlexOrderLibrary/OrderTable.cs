@@ -158,7 +158,7 @@ namespace FlexOrderLibrary
                     detail.goods_name = goods.goods_name; 
                 } else 
                 {
-                    detail.goods_name = "";
+                    detail.goods_name = "商品が見つかりません";
                 }
                 detail.price = int.Parse(row["goods_price"].ToString());
                 detail.quantity = int.Parse(row["order_quantity"].ToString());

@@ -176,7 +176,9 @@ namespace FlexOrder
         }
         private void dgvOrderDetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!permit || e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderDetail.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            if (!permit || e.RowIndex < 0 || e.ColumnIndex < 0 ||
+                !(dgvOrderDetail.Columns[e.ColumnIndex] is DataGridViewButtonColumn) ||
+                    (string)dgvOrderDetail.Rows[e.RowIndex].Cells["goods_name"].Value == "商品が見つかりません")
             {
                 return;
             }

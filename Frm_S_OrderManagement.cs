@@ -186,7 +186,7 @@ namespace FlexOrder
                 }
                 else 
                 {
-                    row["goods_name"] = "";
+                    row["goods_name"] = "商品名が見つかりません";
                 }
                     
                 row["str_is_takeout"] = bool.Parse(row["is_takeout"].ToString()) ? "持帰" : "店内";

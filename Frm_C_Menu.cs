@@ -287,13 +287,16 @@ namespace FlexOrder
             currentOrder.RemoveZeros();
             if (ordertype != "edit")
             {
-                using (Frm_C_Cart f = new Frm_C_Cart(ordertype, currentOrder))
+                Frm_C_Cart f = new Frm_C_Cart(ordertype, currentOrder);
+                DialogResult res = f.ShowDialog();
+                if (f.closeparent) 
                 {
-                    if (f.ShowDialog() != DialogResult.OK)
-                    {
-                        currentOrder = f.currentOrder;
-                        RefreshCart();
-                    }
+                    this.Close();
+                }
+                if (res != DialogResult.OK)
+                {
+                    currentOrder = f.currentOrder;
+                    RefreshCart();
                 }
             }
             else
@@ -348,7 +351,9 @@ namespace FlexOrder
 
         private void dgvOrderList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0 || !(dgvOrderList.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            if (e.RowIndex < 0 || e.ColumnIndex < 0 ||
+                !(dgvOrderList.Columns[e.ColumnIndex] is DataGridViewButtonColumn) ||
+                (string)dgvOrderList.Rows[e.RowIndex].Cells["goods_name"].Value == "商品が見つかりません")
             {
                 return;
             }
