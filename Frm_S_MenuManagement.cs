@@ -34,7 +34,7 @@ namespace FlexOrder
 
         private void btnAddGoods_Click(object sender, EventArgs e)
         {
-            Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit("Add");
+            Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit("Add", loginstaff);
             frm_S_MenuEdit.ShowDialog();
             Refresh_page();
         }
@@ -47,7 +47,7 @@ namespace FlexOrder
             }
             else 
             {
-                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit(selected_goodsid.ToString());
+                Frm_S_MenuEdit frm_S_MenuEdit = new Frm_S_MenuEdit(selected_goodsid.ToString(), loginstaff);
                 frm_S_MenuEdit.ShowDialog();
                 Refresh_page();
             }

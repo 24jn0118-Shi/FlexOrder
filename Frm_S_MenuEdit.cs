@@ -22,7 +22,8 @@ namespace FlexOrder
         byte[] newimageBytes = null;
         Goods editgoods = null;
         Image oldimage;
-        public Frm_S_MenuEdit(string type)
+        Staff loginstaff = null;
+        public Frm_S_MenuEdit(string type, Staff loginstaff)
         {
             InitializeComponent();
             this.type = type;
@@ -35,7 +36,7 @@ namespace FlexOrder
                 lblTitle.Text = "商品編集";
                 bool res = int.TryParse(type, out id);
             }
-            
+            this.loginstaff = loginstaff;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -81,10 +82,11 @@ namespace FlexOrder
                         if (newid > 0) 
                         {
                             if (replaceimg) 
-                            { 
+                            {
                                 Task.Run(() => ImagePro.CheckAndCacheAllImages(true));
                             }
-                            MessageBox.Show("商品情報を追加しました", "追加完了",
+                            SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "商品", newid.ToString(), "登録", "Group: "+ goods.group_code);
+                            MessageBox.Show("商品情報を登録しました", "登録完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, newid, this);
                             frm_S_MenuMultilingual.ShowDialog();
@@ -92,7 +94,7 @@ namespace FlexOrder
                         }
                         else 
                         {
-                            MessageBox.Show("追加失敗", "エラー",
+                            MessageBox.Show("登録失敗", "エラー",
                                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -149,6 +151,7 @@ namespace FlexOrder
                                 {
                                     Task.Run(() => ImagePro.CheckAndCacheAllImages(true));
                                 }
+                                SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "商品", goods.goods_id.ToString(), "変更", "Group: " + goods.group_code);
                                 MessageBox.Show("商品情報を変更しました", "変更完了",
                                                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, goods.goods_id, this);
