@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
@@ -41,16 +41,17 @@
             this.btnShowGraph = new System.Windows.Forms.Button();
             this.sfdExport = new System.Windows.Forms.SaveFileDialog();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F);
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(340, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 41);
+            this.label1.Size = new System.Drawing.Size(123, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "売上統計";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -66,19 +67,11 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(152, 90);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(464, 260);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // dtpStart
             // 
             this.dtpStart.Checked = false;
             this.dtpStart.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStart.Location = new System.Drawing.Point(65, 425);
+            this.dtpStart.Location = new System.Drawing.Point(36, 65);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(158, 28);
             this.dtpStart.TabIndex = 4;
@@ -86,7 +79,7 @@
             // dtpEnd
             // 
             this.dtpEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEnd.Location = new System.Drawing.Point(65, 460);
+            this.dtpEnd.Location = new System.Drawing.Point(210, 65);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(158, 28);
             this.dtpEnd.TabIndex = 4;
@@ -96,7 +89,7 @@
             this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGroup.FormattingEnabled = true;
-            this.cmbGroup.Location = new System.Drawing.Point(237, 438);
+            this.cmbGroup.Location = new System.Drawing.Point(394, 65);
             this.cmbGroup.Name = "cmbGroup";
             this.cmbGroup.Size = new System.Drawing.Size(158, 29);
             this.cmbGroup.TabIndex = 5;
@@ -107,7 +100,7 @@
             this.cmbGoods.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGoods.FormattingEnabled = true;
-            this.cmbGoods.Location = new System.Drawing.Point(401, 438);
+            this.cmbGoods.Location = new System.Drawing.Point(560, 65);
             this.cmbGoods.Name = "cmbGoods";
             this.cmbGoods.Size = new System.Drawing.Size(247, 29);
             this.cmbGoods.TabIndex = 5;
@@ -116,7 +109,7 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(681, 495);
+            this.btnExport.Location = new System.Drawing.Point(677, 494);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(130, 55);
             this.btnExport.TabIndex = 6;
@@ -127,9 +120,9 @@
             // btnShowGraph
             // 
             this.btnShowGraph.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowGraph.Location = new System.Drawing.Point(681, 438);
+            this.btnShowGraph.Location = new System.Drawing.Point(328, 494);
             this.btnShowGraph.Name = "btnShowGraph";
-            this.btnShowGraph.Size = new System.Drawing.Size(130, 55);
+            this.btnShowGraph.Size = new System.Drawing.Size(121, 55);
             this.btnShowGraph.TabIndex = 6;
             this.btnShowGraph.Text = "グラフを表示";
             this.btnShowGraph.UseVisualStyleBackColor = true;
@@ -138,26 +131,36 @@
             // 
             // chart1
             // 
-            chartArea4.AxisX.IsLabelAutoFit = false;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(152, 100);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(99, 100);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(481, 252);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(639, 379);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(188, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 30);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "~";
             // 
             // Frm_S_SalesStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnShowGraph);
             this.Controls.Add(this.btnExport);
@@ -167,6 +170,7 @@
             this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Name = "Frm_S_SalesStatistics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Frm_S_SalesStatistics";
@@ -188,5 +192,6 @@
         private System.Windows.Forms.Button btnShowGraph;
         private System.Windows.Forms.SaveFileDialog sfdExport;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label label2;
     }
 }
