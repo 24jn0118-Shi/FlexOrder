@@ -193,7 +193,7 @@
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(98, 54);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 13;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.Controls.Add(this.lblGroup);
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuEdit";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "メニュー設定";
             this.Load += new System.EventHandler(this.Frm_S_MenuEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();

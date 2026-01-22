@@ -37,11 +37,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
-            this.btnAddGoods = new System.Windows.Forms.Button();
-            this.btnEditGoods = new System.Windows.Forms.Button();
-            this.btnAddGroup = new System.Windows.Forms.Button();
-            this.btnDeleteGoods = new System.Windows.Forms.Button();
-            this.btnChangeAvailable = new System.Windows.Forms.Button();
             this.goods_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.goods_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,15 +44,20 @@
             this.group_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.img_goods_image = new System.Windows.Forms.DataGridViewImageColumn();
             this.str_is_available = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddGoods = new System.Windows.Forms.Button();
+            this.btnEditGoods = new System.Windows.Forms.Button();
+            this.btnAddGroup = new System.Windows.Forms.Button();
+            this.btnDeleteGoods = new System.Windows.Forms.Button();
+            this.btnChangeAvailable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(21, 492);
+            this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(88, 58);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -96,61 +96,6 @@
             this.dgvMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dgvMenu_MouseDown);
             this.dgvMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dgvMenu_MouseMove);
             this.dgvMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvMenu_MouseUp);
-            // 
-            // btnAddGoods
-            // 
-            this.btnAddGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
-            this.btnAddGoods.Location = new System.Drawing.Point(21, 423);
-            this.btnAddGoods.Name = "btnAddGoods";
-            this.btnAddGoods.Size = new System.Drawing.Size(150, 60);
-            this.btnAddGoods.TabIndex = 2;
-            this.btnAddGoods.Text = "商品登録";
-            this.btnAddGoods.UseVisualStyleBackColor = true;
-            this.btnAddGoods.Click += new System.EventHandler(this.btnAddGoods_Click);
-            // 
-            // btnEditGoods
-            // 
-            this.btnEditGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
-            this.btnEditGoods.Location = new System.Drawing.Point(663, 424);
-            this.btnEditGoods.Name = "btnEditGoods";
-            this.btnEditGoods.Size = new System.Drawing.Size(150, 60);
-            this.btnEditGoods.TabIndex = 3;
-            this.btnEditGoods.Text = "商品編集";
-            this.btnEditGoods.UseVisualStyleBackColor = true;
-            this.btnEditGoods.Click += new System.EventHandler(this.btnEditGoods_Click);
-            // 
-            // btnAddGroup
-            // 
-            this.btnAddGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
-            this.btnAddGroup.Location = new System.Drawing.Point(343, 490);
-            this.btnAddGroup.Name = "btnAddGroup";
-            this.btnAddGroup.Size = new System.Drawing.Size(150, 60);
-            this.btnAddGroup.TabIndex = 4;
-            this.btnAddGroup.Text = "商品分類管理";
-            this.btnAddGroup.UseVisualStyleBackColor = true;
-            this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
-            // 
-            // btnDeleteGoods
-            // 
-            this.btnDeleteGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
-            this.btnDeleteGoods.Location = new System.Drawing.Point(663, 488);
-            this.btnDeleteGoods.Name = "btnDeleteGoods";
-            this.btnDeleteGoods.Size = new System.Drawing.Size(150, 60);
-            this.btnDeleteGoods.TabIndex = 5;
-            this.btnDeleteGoods.Text = "商品削除";
-            this.btnDeleteGoods.UseVisualStyleBackColor = true;
-            this.btnDeleteGoods.Click += new System.EventHandler(this.btnDeleteGoods_Click);
-            // 
-            // btnChangeAvailable
-            // 
-            this.btnChangeAvailable.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
-            this.btnChangeAvailable.Location = new System.Drawing.Point(343, 424);
-            this.btnChangeAvailable.Name = "btnChangeAvailable";
-            this.btnChangeAvailable.Size = new System.Drawing.Size(150, 60);
-            this.btnChangeAvailable.TabIndex = 4;
-            this.btnChangeAvailable.Text = "商品在庫変更";
-            this.btnChangeAvailable.UseVisualStyleBackColor = true;
-            this.btnChangeAvailable.Click += new System.EventHandler(this.btnChangeAvailable_Click);
             // 
             // goods_id
             // 
@@ -231,6 +176,61 @@
             this.str_is_available.ReadOnly = true;
             this.str_is_available.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.str_is_available.Width = 80;
+            // 
+            // btnAddGoods
+            // 
+            this.btnAddGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
+            this.btnAddGoods.Location = new System.Drawing.Point(21, 423);
+            this.btnAddGoods.Name = "btnAddGoods";
+            this.btnAddGoods.Size = new System.Drawing.Size(150, 60);
+            this.btnAddGoods.TabIndex = 2;
+            this.btnAddGoods.Text = "商品登録";
+            this.btnAddGoods.UseVisualStyleBackColor = true;
+            this.btnAddGoods.Click += new System.EventHandler(this.btnAddGoods_Click);
+            // 
+            // btnEditGoods
+            // 
+            this.btnEditGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
+            this.btnEditGoods.Location = new System.Drawing.Point(663, 424);
+            this.btnEditGoods.Name = "btnEditGoods";
+            this.btnEditGoods.Size = new System.Drawing.Size(150, 60);
+            this.btnEditGoods.TabIndex = 3;
+            this.btnEditGoods.Text = "商品編集";
+            this.btnEditGoods.UseVisualStyleBackColor = true;
+            this.btnEditGoods.Click += new System.EventHandler(this.btnEditGoods_Click);
+            // 
+            // btnAddGroup
+            // 
+            this.btnAddGroup.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
+            this.btnAddGroup.Location = new System.Drawing.Point(343, 490);
+            this.btnAddGroup.Name = "btnAddGroup";
+            this.btnAddGroup.Size = new System.Drawing.Size(150, 60);
+            this.btnAddGroup.TabIndex = 4;
+            this.btnAddGroup.Text = "商品分類管理";
+            this.btnAddGroup.UseVisualStyleBackColor = true;
+            this.btnAddGroup.Click += new System.EventHandler(this.btnAddGroup_Click);
+            // 
+            // btnDeleteGoods
+            // 
+            this.btnDeleteGoods.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
+            this.btnDeleteGoods.Location = new System.Drawing.Point(663, 488);
+            this.btnDeleteGoods.Name = "btnDeleteGoods";
+            this.btnDeleteGoods.Size = new System.Drawing.Size(150, 60);
+            this.btnDeleteGoods.TabIndex = 5;
+            this.btnDeleteGoods.Text = "商品削除";
+            this.btnDeleteGoods.UseVisualStyleBackColor = true;
+            this.btnDeleteGoods.Click += new System.EventHandler(this.btnDeleteGoods_Click);
+            // 
+            // btnChangeAvailable
+            // 
+            this.btnChangeAvailable.Font = new System.Drawing.Font("Microsoft YaHei UI", 15F);
+            this.btnChangeAvailable.Location = new System.Drawing.Point(343, 424);
+            this.btnChangeAvailable.Name = "btnChangeAvailable";
+            this.btnChangeAvailable.Size = new System.Drawing.Size(150, 60);
+            this.btnChangeAvailable.TabIndex = 4;
+            this.btnChangeAvailable.Text = "商品在庫変更";
+            this.btnChangeAvailable.UseVisualStyleBackColor = true;
+            this.btnChangeAvailable.Click += new System.EventHandler(this.btnChangeAvailable_Click);
             // 
             // Frm_S_MenuManagement
             // 

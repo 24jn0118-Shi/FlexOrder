@@ -97,7 +97,7 @@
             this.txbGoodsDetail.Location = new System.Drawing.Point(170, 215);
             this.txbGoodsDetail.Multiline = true;
             this.txbGoodsDetail.Name = "txbGoodsDetail";
-            this.txbGoodsDetail.Size = new System.Drawing.Size(559, 201);
+            this.txbGoodsDetail.Size = new System.Drawing.Size(559, 252);
             this.txbGoodsDetail.TabIndex = 6;
             // 
             // btnSave
@@ -114,7 +114,7 @@
             // btnEnd
             // 
             this.btnEnd.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnEnd.Location = new System.Drawing.Point(564, 115);
+            this.btnEnd.Location = new System.Drawing.Point(564, 122);
             this.btnEnd.Name = "btnEnd";
             this.btnEnd.Size = new System.Drawing.Size(165, 49);
             this.btnEnd.TabIndex = 8;
@@ -135,9 +135,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(52, 484);
+            this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 38);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 14;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;

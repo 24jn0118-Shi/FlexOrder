@@ -40,7 +40,7 @@
             // 
             this.btnStaffManagement.Enabled = false;
             this.btnStaffManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
-            this.btnStaffManagement.Location = new System.Drawing.Point(125, 337);
+            this.btnStaffManagement.Location = new System.Drawing.Point(145, 277);
             this.btnStaffManagement.Name = "btnStaffManagement";
             this.btnStaffManagement.Size = new System.Drawing.Size(250, 135);
             this.btnStaffManagement.TabIndex = 3;
@@ -51,7 +51,7 @@
             // btnOrderManagement
             // 
             this.btnOrderManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOrderManagement.Location = new System.Drawing.Point(125, 125);
+            this.btnOrderManagement.Location = new System.Drawing.Point(145, 118);
             this.btnOrderManagement.Name = "btnOrderManagement";
             this.btnOrderManagement.Size = new System.Drawing.Size(250, 135);
             this.btnOrderManagement.TabIndex = 1;
@@ -62,7 +62,7 @@
             // btnMenuManagement
             // 
             this.btnMenuManagement.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
-            this.btnMenuManagement.Location = new System.Drawing.Point(455, 125);
+            this.btnMenuManagement.Location = new System.Drawing.Point(432, 118);
             this.btnMenuManagement.Name = "btnMenuManagement";
             this.btnMenuManagement.Size = new System.Drawing.Size(250, 135);
             this.btnMenuManagement.TabIndex = 2;
@@ -74,7 +74,7 @@
             // 
             this.btnSalesStatistics.Enabled = false;
             this.btnSalesStatistics.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
-            this.btnSalesStatistics.Location = new System.Drawing.Point(455, 337);
+            this.btnSalesStatistics.Location = new System.Drawing.Point(432, 277);
             this.btnSalesStatistics.Name = "btnSalesStatistics";
             this.btnSalesStatistics.Size = new System.Drawing.Size(250, 135);
             this.btnSalesStatistics.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(90, 49);
+            this.lblWelcome.Location = new System.Drawing.Point(303, 46);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(117, 28);
             this.lblWelcome.TabIndex = 4;
@@ -95,9 +95,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(664, 49);
+            this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(109, 40);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             this.Controls.Add(this.btnStaffManagement);
             this.KeyPreview = true;
             this.Name = "Frm_S_Mainmenu";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "メインメニュー";
             this.Load += new System.EventHandler(this.Frm_S_Mainmenu_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_S_Mainmenu_KeyPress);

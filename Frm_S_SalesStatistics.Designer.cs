@@ -45,7 +45,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F);
-            this.label1.Location = new System.Drawing.Point(327, 17);
+            this.label1.Location = new System.Drawing.Point(340, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 41);
             this.label1.TabIndex = 1;
@@ -55,9 +55,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(12, 508);
+            this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(130, 41);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -65,7 +65,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(87, 74);
+            this.pictureBox1.Location = new System.Drawing.Point(128, 72);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(591, 327);
             this.pictureBox1.TabIndex = 3;
@@ -112,9 +112,9 @@
             // btnExport
             // 
             this.btnExport.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(674, 475);
+            this.btnExport.Location = new System.Drawing.Point(681, 495);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(130, 47);
+            this.btnExport.Size = new System.Drawing.Size(130, 55);
             this.btnExport.TabIndex = 6;
             this.btnExport.Text = "ファイル出力";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -122,9 +122,9 @@
             // btnShowGraph
             // 
             this.btnShowGraph.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowGraph.Location = new System.Drawing.Point(674, 422);
+            this.btnShowGraph.Location = new System.Drawing.Point(681, 438);
             this.btnShowGraph.Name = "btnShowGraph";
-            this.btnShowGraph.Size = new System.Drawing.Size(130, 47);
+            this.btnShowGraph.Size = new System.Drawing.Size(130, 55);
             this.btnShowGraph.TabIndex = 6;
             this.btnShowGraph.Text = "グラフを表示";
             this.btnShowGraph.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Name = "Frm_S_SalesStatistics";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Frm_S_SalesStatistics";
             this.Load += new System.EventHandler(this.Frm_S_SalesStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

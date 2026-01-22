@@ -49,9 +49,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(79, 495);
+            this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(97, 40);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "戻る";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             this.staff_firstname,
             this.str_is_manager,
             this.staff_accesslevel});
-            this.dgvStaff.Location = new System.Drawing.Point(79, 26);
+            this.dgvStaff.Location = new System.Drawing.Point(79, 31);
             this.dgvStaff.Name = "dgvStaff";
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.RowHeadersVisible = false;
@@ -140,7 +140,7 @@
             this.staff_lastname.HeaderText = "姓";
             this.staff_lastname.Name = "staff_lastname";
             this.staff_lastname.ReadOnly = true;
-            this.staff_lastname.Width = 200;
+            this.staff_lastname.Width = 207;
             // 
             // staff_firstname
             // 

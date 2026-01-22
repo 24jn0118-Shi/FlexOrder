@@ -126,7 +126,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 266</value>
+    <value>318, 298</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>165, 49</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 14</value>
+    <value>12, 300</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 47</value>
@@ -184,7 +184,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="txbGroupName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 190</value>
+    <value>106, 195</value>
   </data>
   <data name="txbGroupName.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -217,7 +217,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblGroupName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 193</value>
+    <value>26, 198</value>
   </data>
   <data name="lblGroupName.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 21</value>
@@ -253,7 +253,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblGC.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 126</value>
+    <value>27, 127</value>
   </data>
   <data name="lblGC.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 21</value>
@@ -283,7 +283,7 @@
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>
   <data name="cmbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 44</value>
+    <value>143, 43</value>
   </data>
   <data name="cmbLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 36</value>
@@ -310,7 +310,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 61</value>
+    <value>25, 60</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 28</value>
@@ -346,7 +346,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblMul.Location" type="System.Drawing.Point, System.Drawing">
-    <value>30, 33</value>
+    <value>20, 32</value>
   </data>
   <data name="lblMul.Size" type="System.Drawing.Size, System.Drawing">
     <value>117, 28</value>
@@ -373,7 +373,7 @@
     <value>Microsoft YaHei UI, 12pt</value>
   </data>
   <data name="lblGroupCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 126</value>
+    <value>139, 127</value>
   </data>
   <data name="lblGroupCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 23</value>
@@ -403,7 +403,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>781, 359</value>
+    <value>495, 359</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

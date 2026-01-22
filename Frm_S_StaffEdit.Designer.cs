@@ -51,9 +51,9 @@
             // btnBack
             // 
             this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnBack.Location = new System.Drawing.Point(12, 513);
+            this.btnBack.Location = new System.Drawing.Point(21, 495);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(93, 36);
+            this.btnBack.Size = new System.Drawing.Size(100, 55);
             this.btnBack.TabIndex = 0;
             this.btnBack.TabStop = false;
             this.btnBack.Text = "戻る";
@@ -175,7 +175,7 @@
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.btnConfirm.Location = new System.Drawing.Point(656, 462);
+            this.btnConfirm.Location = new System.Drawing.Point(663, 482);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(150, 68);
             this.btnConfirm.TabIndex = 12;
@@ -188,7 +188,7 @@
             // 
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.btnChangePassword.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnChangePassword.Location = new System.Drawing.Point(656, 388);
+            this.btnChangePassword.Location = new System.Drawing.Point(663, 408);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(150, 68);
             this.btnChangePassword.TabIndex = 12;
@@ -267,7 +267,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnBack);
             this.Name = "Frm_S_StaffEdit";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "店員詳細";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Frm_S_StaffEdit_FormClosed);
             this.Load += new System.EventHandler(this.Frm_S_StaffEdit_Load);
