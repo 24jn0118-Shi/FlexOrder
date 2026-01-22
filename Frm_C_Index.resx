@@ -240,6 +240,72 @@
   <data name="&gt;&gt;btnJapanese.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnTakeout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnTakeout.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24.75pt</value>
+  </data>
+  <data name="btnTakeout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnTakeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>642, 407</value>
+  </data>
+  <data name="btnTakeout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 200</value>
+  </data>
+  <data name="btnTakeout.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnTakeout.Text" xml:space="preserve">
+    <value>btnTakeout</value>
+  </data>
+  <data name="&gt;&gt;btnTakeout.Name" xml:space="preserve">
+    <value>btnTakeout</value>
+  </data>
+  <data name="&gt;&gt;btnTakeout.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnTakeout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnTakeout.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnDinein.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDinein.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 24.75pt</value>
+  </data>
+  <data name="btnDinein.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDinein.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 407</value>
+  </data>
+  <data name="btnDinein.Size" type="System.Drawing.Size, System.Drawing">
+    <value>380, 200</value>
+  </data>
+  <data name="btnDinein.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnDinein.Text" xml:space="preserve">
+    <value>btnDinein</value>
+  </data>
+  <data name="&gt;&gt;btnDinein.Name" xml:space="preserve">
+    <value>btnDinein</value>
+  </data>
+  <data name="&gt;&gt;btnDinein.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnDinein.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDinein.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="lblWelcome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 24pt</value>
   </data>
@@ -247,7 +313,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblWelcome.Location" type="System.Drawing.Point, System.Drawing">
-    <value>223, 146</value>
+    <value>233, 146</value>
   </data>
   <data name="lblWelcome.Size" type="System.Drawing.Size, System.Drawing">
     <value>685, 58</value>
@@ -271,73 +337,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblWelcome.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnTakeout.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnTakeout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 24.75pt</value>
-  </data>
-  <data name="btnTakeout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnTakeout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>634, 407</value>
-  </data>
-  <data name="btnTakeout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 200</value>
-  </data>
-  <data name="btnTakeout.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="btnTakeout.Text" xml:space="preserve">
-    <value>btnTakeout</value>
-  </data>
-  <data name="&gt;&gt;btnTakeout.Name" xml:space="preserve">
-    <value>btnTakeout</value>
-  </data>
-  <data name="&gt;&gt;btnTakeout.Type" xml:space="preserve">
-    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnTakeout.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnTakeout.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnDinein.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnDinein.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 24.75pt</value>
-  </data>
-  <data name="btnDinein.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDinein.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 407</value>
-  </data>
-  <data name="btnDinein.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 200</value>
-  </data>
-  <data name="btnDinein.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnDinein.Text" xml:space="preserve">
-    <value>btnDinein</value>
-  </data>
-  <data name="&gt;&gt;btnDinein.Name" xml:space="preserve">
-    <value>btnDinein</value>
-  </data>
-  <data name="&gt;&gt;btnDinein.Type" xml:space="preserve">
-    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnDinein.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnDinein.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

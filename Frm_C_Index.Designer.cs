@@ -95,6 +95,7 @@
             this.btnDinein.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.btnDinein.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnDinein.TabStop = false;
+            this.btnDinein.UseMnemonic = false;
             this.btnDinein.UseVisualStyleBackColor = false;
             this.btnDinein.Click += new System.EventHandler(this.btnDinein_Click);
             // 

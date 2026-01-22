@@ -220,7 +220,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>732, 47</value>
+    <value>731, 47</value>
   </data>
   <data name="lblCart.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 21</value>
@@ -280,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 903</value>
+    <value>405, 902</value>
   </data>
   <data name="lblVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 37</value>
@@ -424,7 +424,7 @@
     <value>False</value>
   </data>
   <data name="dgvOrderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>736, 83</value>
+    <value>720, 83</value>
   </data>
   <data name="dgvOrderList.Size" type="System.Drawing.Size, System.Drawing">
     <value>376, 580</value>
@@ -499,7 +499,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>842, 832</value>
+    <value>846, 832</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 135</value>
@@ -565,7 +565,7 @@
     <value>NoControl</value>
   </data>
   <data name="ckbVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>550, 832</value>
+    <value>567, 832</value>
   </data>
   <data name="ckbVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
