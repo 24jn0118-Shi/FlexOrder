@@ -252,13 +252,12 @@ namespace FlexOrderLibrary
                 string sql = @" SELECT  FORMAT(o.order_date, @format) AS datetime, SUM(od.order_quantity * od.goods_price) AS total_amount
 								FROM OrderDetail AS od INNER JOIN LocalizationGoods AS lg ON od.goods_id = lg.goods_id 
                                 INNER JOIN [Order] AS o ON od.order_id = o.order_id  WHERE goods_name = @goods_name AND
-                                order_date BETWEEN @from AND @to GROUP BY FORMAT(o.order_date, @format2) ";
+                                order_date BETWEEN @from AND @to GROUP BY FORMAT(o.order_date, @format) ";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
                 adapter.SelectCommand.Parameters.AddWithValue("@goods_name", goods_name);
                 adapter.SelectCommand.Parameters.AddWithValue("@from", from);
                 adapter.SelectCommand.Parameters.AddWithValue("@to", to.AddDays(1));
                 adapter.SelectCommand.Parameters.AddWithValue("@format", format);
-                adapter.SelectCommand.Parameters.AddWithValue("@format2", format);
 
 
 

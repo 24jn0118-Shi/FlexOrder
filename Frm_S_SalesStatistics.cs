@@ -33,7 +33,7 @@ namespace FlexOrder
 
         private void Frm_S_SalesStatistics_Load(object sender, EventArgs e)
         {
-            dtpStart.Value = DateTime.Today;
+            dtpStart.Value = DateTime.Today.AddMonths(-3);
             dtpEnd.Value = DateTime.Today;
             GoodsGroupTable goodsGroupTable = new GoodsGroupTable();
             List<GoodsGroup> groupList = goodsGroupTable.GetGroupByLanguage(1);
@@ -70,7 +70,14 @@ namespace FlexOrder
 
         }
 
-        private void btnShowGraph_Click(object sender, EventArgs e)
+        private void cmbGoods_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbGroup.SelectedIndex > 0 || cmbGoods.SelectedIndex > 0) 
+            { 
+                ShowGraph();
+            }
+        }
+        private void ShowGraph() 
         {
             if (dtpStart.Value > dtpEnd.Value)
             {
@@ -90,30 +97,20 @@ namespace FlexOrder
                     chart1.Series.Clear();
                     chart1.Legends.Clear();
 
-
                     //グラフエリアと凡例を作成
 
                     ChartArea ca = new ChartArea("chartArea");
                     chart1.ChartAreas.Add(ca);//グラフエリア
-
                     chart1.ChartAreas["chartArea"].AxisX.LabelStyle.Angle = -30;
-
-
 
                     //データ系列を作成
                     System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series();
                     series.ChartType = SeriesChartType.Column;
 
-
-
-
                     foreach (DataRow row in table.Rows)
                     {
-
                         series.Points.AddXY(row["goods_name"].ToString(), int.Parse(row["total_amount"].ToString()));
-
                     }
-
                     //データ系列をChartコントロールに追加
                     chart1.Series.Add(series);
                 }
@@ -123,7 +120,7 @@ namespace FlexOrder
                                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (cmbGoods.SelectedIndex > 0 )
+            else if (cmbGoods.SelectedIndex > 0)
             {
                 Order order = new Order();
                 DataTable table = order.GetSalesReportByGoodsName(dtpStart.Value, dtpEnd.Value, cmbGoods.Text);
@@ -138,24 +135,19 @@ namespace FlexOrder
                     ChartArea ca = new ChartArea("chartArea");
                     chart1.ChartAreas.Add(ca);//グラフエリア
 
-
                     //データ系列を作成
                     System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series();
                     series.ChartType = SeriesChartType.Column;
-
                     series.XValueType = ChartValueType.DateTime;
 
                     TimeSpan span = dtpEnd.Value - dtpStart.Value;
                     string format;
-
                     if (span.Days < 60)
                     {
-
                         format = "MM/dd";
                     }
                     else
                     {
-
                         chart1.ChartAreas["chartArea"].AxisX.LabelStyle.Angle = -30;
                         format = "yyyy/MM/dd";
                     }
@@ -163,15 +155,10 @@ namespace FlexOrder
                     //X軸の目盛の書式設定
                     chart1.ChartAreas[0].AxisX.LabelStyle.Format = format;
 
-
-
                     foreach (DataRow row in table.Rows)
                     {
-
                         series.Points.AddXY(DateTime.Parse(row["datetime"].ToString()), int.Parse(row["total_amount"].ToString()));
-
                     }
-
                     //データ系列をChartコントロールに追加
                     chart1.Series.Add(series);
                 }
@@ -185,12 +172,11 @@ namespace FlexOrder
             {
                 MessageBox.Show("GroupName かGoodsNameの片方を選択してください", "表示失敗",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
             }
-                
-
-
+        }
+        private void btnShowGraph_Click(object sender, EventArgs e)
+        {
+            ShowGraph();
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -317,6 +303,7 @@ namespace FlexOrder
                     {
                         MessageBox.Show($"現在開いているexcelファイルを閉じてください", "更新失敗",
                                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Console.WriteLine("Error: "+ex.ToString());
 
                     }
                 }
@@ -336,5 +323,7 @@ namespace FlexOrder
 
             }
         }
+
+        
     }
 }
