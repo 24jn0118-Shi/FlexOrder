@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpEnd = new System.Windows.Forms.DateTimePicker();
             this.cmbGroup = new System.Windows.Forms.ComboBox();
@@ -38,7 +40,8 @@
             this.btnExport = new System.Windows.Forms.Button();
             this.btnShowGraph = new System.Windows.Forms.Button();
             this.sfdExport = new System.Windows.Forms.SaveFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,9 +68,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(128, 72);
+            this.pictureBox1.Location = new System.Drawing.Point(152, 90);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(591, 327);
+            this.pictureBox1.Size = new System.Drawing.Size(464, 260);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -108,6 +111,7 @@
             this.cmbGoods.Name = "cmbGoods";
             this.cmbGoods.Size = new System.Drawing.Size(247, 29);
             this.cmbGoods.TabIndex = 5;
+            this.cmbGoods.SelectedIndexChanged += new System.EventHandler(this.cmbGoods_SelectedIndexChanged);
             // 
             // btnExport
             // 
@@ -118,6 +122,7 @@
             this.btnExport.TabIndex = 6;
             this.btnExport.Text = "ファイル出力";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // btnShowGraph
             // 
@@ -128,26 +133,45 @@
             this.btnShowGraph.TabIndex = 6;
             this.btnShowGraph.Text = "グラフを表示";
             this.btnShowGraph.UseVisualStyleBackColor = true;
+            this.btnShowGraph.Visible = false;
+            this.btnShowGraph.Click += new System.EventHandler(this.btnShowGraph_Click);
+            // 
+            // chart1
+            // 
+            chartArea4.AxisX.IsLabelAutoFit = false;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(152, 100);
+            this.chart1.Name = "chart1";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(481, 252);
+            this.chart1.TabIndex = 7;
+            this.chart1.Text = "chart1";
             // 
             // Frm_S_SalesStatistics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 561);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnShowGraph);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.cmbGoods);
             this.Controls.Add(this.cmbGroup);
             this.Controls.Add(this.dtpEnd);
             this.Controls.Add(this.dtpStart);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Name = "Frm_S_SalesStatistics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Frm_S_SalesStatistics";
             this.Load += new System.EventHandler(this.Frm_S_SalesStatistics_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,7 +180,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.DateTimePicker dtpEnd;
         private System.Windows.Forms.ComboBox cmbGroup;
@@ -164,5 +187,6 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnShowGraph;
         private System.Windows.Forms.SaveFileDialog sfdExport;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

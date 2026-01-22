@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -203,5 +205,67 @@ namespace FlexOrderLibrary
 
             orderdetaillist.RemoveAll(item => item.quantity <= 0);
         }
+
+        public DataTable GetSalesReportByGroupName(DateTime from, DateTime to, string group_name)
+        {
+            DataTable table = new DataTable();
+            
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @"SELECT  goods_name, SUM(od.order_quantity * od.goods_price) AS total_amount
+                                 FROM OrderDetail AS od INNER JOIN Goods AS g ON od.goods_id = g.goods_id 
+                                 INNER JOIN LocalizationGoods AS lg ON od.goods_id = lg.goods_id 
+                                 INNER JOIN LocalizationGoodsGroup AS lgg ON g.group_code = lgg.group_code
+                                 INNER JOIN [Order] AS o ON od.order_id = o.order_id  WHERE group_name = @group_name
+                                 AND order_date BETWEEN @from AND @to　AND lg.language_no = 1 GROUP BY goods_name";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@group_name", group_name); 
+                adapter.SelectCommand.Parameters.AddWithValue("@from", from);
+                adapter.SelectCommand.Parameters.AddWithValue("@to", to.AddDays(1));
+
+                adapter.Fill(table);
+            }
+            return table;
+
+        }
+
+        public DataTable GetSalesReportByGoodsName(DateTime from, DateTime to, string goods_name)
+        {
+
+            DataTable table = new DataTable();
+            TimeSpan span = to - from;
+            string format;
+
+            if (span.Days < 4)
+            {
+                format = "MM/dd HH";
+            }
+            else
+            {
+                format = "yyyy/MM/dd";
+            }
+
+            string connectionString = Properties.Settings.Default.DBConnectionString;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string sql = @" SELECT  FORMAT(o.order_date, @format) AS datetime, SUM(od.order_quantity * od.goods_price) AS total_amount
+								FROM OrderDetail AS od INNER JOIN LocalizationGoods AS lg ON od.goods_id = lg.goods_id 
+                                INNER JOIN [Order] AS o ON od.order_id = o.order_id  WHERE goods_name = @goods_name AND
+                                order_date BETWEEN @from AND @to GROUP BY FORMAT(o.order_date, @format) ";
+                SqlDataAdapter adapter = new SqlDataAdapter(sql, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@goods_name", goods_name);
+                adapter.SelectCommand.Parameters.AddWithValue("@from", from);
+                adapter.SelectCommand.Parameters.AddWithValue("@to", to.AddDays(1));
+                adapter.SelectCommand.Parameters.AddWithValue("@format", format);
+
+
+
+                adapter.Fill(table);
+            }
+            return table;
+
+        }
+
     }
 }
