@@ -135,7 +135,9 @@ namespace FlexOrder
                     chart1.Legends.Clear();
 
                     //グラフエリアと凡例を作成
-                    chart1.ChartAreas.Add(new ChartArea());//グラフエリア
+                    ChartArea ca = new ChartArea("chartArea");
+                    chart1.ChartAreas.Add(ca);//グラフエリア
+
 
                     //データ系列を作成
                     System.Windows.Forms.DataVisualization.Charting.Series series = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -153,7 +155,9 @@ namespace FlexOrder
                     }
                     else
                     {
-                        format = "yyyy/MM";
+
+                        chart1.ChartAreas["chartArea"].AxisX.LabelStyle.Angle = -30;
+                        format = "yyyy/MM/dd";
                     }
 
                     //X軸の目盛の書式設定
@@ -200,7 +204,7 @@ namespace FlexOrder
 
             if (cmbGroup.SelectedIndex > 0 && cmbGoods.SelectedIndex == 0)
             {
-                
+
                 Order order = new Order();
                 DataTable table = order.GetSalesReportByGroupName(dtpStart.Value, dtpEnd.Value, cmbGroup.Text);
 
@@ -254,55 +258,66 @@ namespace FlexOrder
                                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (cmbGoods.SelectedIndex > 0) { 
+            else if (cmbGoods.SelectedIndex > 0) {
                 Order order = new Order();
                 DataTable table = order.GetSalesReportByGoodsName(dtpStart.Value, dtpEnd.Value, cmbGoods.Text);
 
                 if (table.Rows.Count > 0)
                 {
+                    try {
+                        ExcelPackage.License.SetNonCommercialOrganization("My Noncommercial organization");
 
-                    ExcelPackage.License.SetNonCommercialOrganization("My Noncommercial organization");
+                        string filePath = $"W:\\24JN01卒業制作\\GroupI\\xlsx\\{cmbGoods.Text} {dtpStart.Value:yyyy年MM月dd日}-{dtpEnd.Value:yyyy年MM月dd日}.xlsx";
+                        FileInfo fileInfo = new FileInfo(filePath);
 
-                    string filePath = $"W:\\24JN01卒業制作\\GroupI\\xlsx\\{cmbGoods.Text} {dtpStart.Value:yyyy年MM月dd日}-{dtpEnd.Value:yyyy年MM月dd日}.xlsx";
-                    FileInfo fileInfo = new FileInfo(filePath);
+                        if (fileInfo.Exists)
+                        {
 
-                    if (fileInfo.Exists)
-                    {
-                        fileInfo.Delete();
-                        fileInfo = new FileInfo(filePath);
+                            fileInfo.Delete();
+                            fileInfo = new FileInfo(filePath);
+
+                        }
+                        
+                
+
+                        using (ExcelPackage package = new ExcelPackage(fileInfo))
+                        {
+                            // ワークシートを追加
+                            var ws = package.Workbook.Worksheets.Add("Sheet1");
+
+
+                            ws.Cells["B2"].Value = $"{cmbGoods.Text} 売上表";
+                            ws.Cells["C2"].Value = $"{dtpStart.Value:yyyy年MM月dd日}-{dtpEnd.Value:yyyy年MM月dd日}";
+
+
+
+                            //データテーブルからエクセルファイルに書き込み処理
+                            ws.Cells[3, 2].LoadFromDataTable(table, true, OfficeOpenXml.Table.TableStyles.Medium6);
+
+                            //カラムの幅を自動調整
+                            ws.Cells.AutoFitColumns(1);
+
+                            var chart = ws.Drawings.AddChart("棒グラフ", OfficeOpenXml.Drawing.Chart.eChartType.ColumnClustered);
+                            chart.Title.Text = "売上数";
+                            chart.SetPosition(5, 0, 4, 0); // 行・列の位置
+                            chart.SetSize(600, 400);
+
+                            int r = table.Rows.Count;
+                            var series = chart.Series.Add($"C3:C{r + 3}", $"B3:B{r + 3}");
+                            series.Header = "数量";
+
+                            // ファイルを保存
+                            package.Save();
+
+                            MessageBox.Show($"{cmbGoods.Text} {dtpStart.Value:yyyy年MM月dd日}-{dtpEnd.Value:yyyy年MM月dd日}.xlsx に出力されました", "出力成功",
+                                                           MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-
-                    using (ExcelPackage package = new ExcelPackage(fileInfo))
+                    catch (System.IO.IOException ex)
                     {
-                        // ワークシートを追加
-                        var ws = package.Workbook.Worksheets.Add("Sheet1");
+                        MessageBox.Show($"現在開いているexcelファイルを閉じてください", "更新失敗",
+                                                   MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-                        ws.Cells["B2"].Value = $"{cmbGoods.Text} 売上表";
-                        ws.Cells["C2"].Value = $"{dtpStart.Value:yyyy年MM月dd日}-{dtpEnd.Value:yyyy年MM月dd日}";
-
-
-
-                        //データテーブルからエクセルファイルに書き込み処理
-                        ws.Cells[3, 2].LoadFromDataTable(table, true, OfficeOpenXml.Table.TableStyles.Medium6);
-
-                        //カラムの幅を自動調整
-                        ws.Cells.AutoFitColumns(1);
-
-                        var chart = ws.Drawings.AddChart("棒グラフ", OfficeOpenXml.Drawing.Chart.eChartType.ColumnClustered);
-                        chart.Title.Text = "売上数";
-                        chart.SetPosition(5, 0, 4, 0); // 行・列の位置
-                        chart.SetSize(600, 400);
-
-                        int r = table.Rows.Count;
-                        var series = chart.Series.Add($"C3:C{r + 3}", $"B3:B{r + 3}");
-                        series.Header = "数量";
-
-                        // ファイルを保存
-                        package.Save();
-
-                        MessageBox.Show($"{cmbGoods.Text} {dtpStart.Value:yyyy年MM月dd日}-{dtpEnd.Value:yyyy年MM月dd日}.xlsx に出力されました", "出力成功",
-                                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
