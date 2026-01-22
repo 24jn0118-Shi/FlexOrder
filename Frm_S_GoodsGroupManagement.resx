@@ -565,7 +565,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_S_GoodsGroupManagement</value>
+    <value>商品分類管理</value>
   </data>
   <data name="&gt;&gt;group_code.Name" xml:space="preserve">
     <value>group_code</value>

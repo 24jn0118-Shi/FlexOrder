@@ -261,20 +261,23 @@ namespace FlexOrder
 
                 dgvOrderList.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(255, 248, 240);
             }
-
-            txtKaikei.Text = "¥ " + CalculateTotal().ToString("N0");
-            btnConfirm.Enabled = true;
-            btnConfirm.NormalColor = Color.FromArgb(67, 160, 70);
+            txtKaikei.Text = "¥ " + currentOrder.TotalPrice.ToString("N0");
+            if(currentOrder.TotalPrice > 0) 
+            {
+                btnConfirm.Enabled = true;
+                btnConfirm.NormalColor = Color.FromArgb(67, 160, 70);
+            }
+            else 
+            {
+                btnConfirm.Enabled = false;
+                btnConfirm.NormalColor = Color.FromArgb(189, 189, 189);
+                btnConfirm.Invalidate();
+            }
             dgvOrderList.ClearSelection();
             dgvOrderList.CurrentCell = null;
             dgvOrderList.ResumeLayout();
             dgvOrderList.Update();
             btnConfirm.Invalidate();
-        }
-
-        private int CalculateTotal()
-        {
-            return currentOrder.orderdetaillist.Sum(d => d.Subtotal);
         }
 
         // ==========================================

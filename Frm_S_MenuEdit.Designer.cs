@@ -261,7 +261,7 @@
             this.Controls.Add(this.lblTitle);
             this.Name = "Frm_S_MenuEdit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "メニュー設定";
+            this.Text = "商品設定";
             this.Load += new System.EventHandler(this.Frm_S_MenuEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);

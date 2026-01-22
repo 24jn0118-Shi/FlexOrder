@@ -173,7 +173,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Frm_S_SalesStatistics";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Frm_S_SalesStatistics";
+            this.Text = "売上統計";
             this.Load += new System.EventHandler(this.Frm_S_SalesStatistics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);

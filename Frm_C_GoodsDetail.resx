@@ -415,7 +415,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_C_GoodsDetail</value>
+    <value>商品詳細</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_GoodsDetail</value>

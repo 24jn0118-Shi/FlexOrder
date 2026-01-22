@@ -226,7 +226,7 @@
     <value>250, 384</value>
   </data>
   <data name="lblOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 12</value>
+    <value>41, 12</value>
   </data>
   <data name="lblOut.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -259,7 +259,7 @@
     <value>250, 359</value>
   </data>
   <data name="lblIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 12</value>
+    <value>35, 12</value>
   </data>
   <data name="lblIn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -430,7 +430,7 @@
     <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_C_End</value>
+    <value>会計完了</value>
   </data>
   <data name="&gt;&gt;timer1.Name" xml:space="preserve">
     <value>timer1</value>

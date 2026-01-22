@@ -349,10 +349,10 @@
     <value>1134, 1047</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+    <value>Manual</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_C_Index</value>
+    <value>顧客側最初画面</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_C_Index</value>

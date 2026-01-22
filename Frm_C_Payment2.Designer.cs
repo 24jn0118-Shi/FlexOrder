@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_C_Payment2));
             this.lblEnter = new System.Windows.Forms.Label();
-            this.lblCvc = new System.Windows.Forms.Label();
-            this.lblMY = new System.Windows.Forms.Label();
-            this.lblCardNumber = new System.Windows.Forms.Label();
             this.txtCvc = new System.Windows.Forms.TextBox();
             this.txtExpYear = new System.Windows.Forms.TextBox();
             this.txtExpMonth = new System.Windows.Forms.TextBox();
@@ -40,8 +37,6 @@
             this.btnPay = new System.Windows.Forms.Button();
             this.cmbCardNumber = new System.Windows.Forms.ComboBox();
             this.btnRef = new System.Windows.Forms.Button();
-            this.lblWarning2 = new System.Windows.Forms.Label();
-            this.lblWarning1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblEnter
@@ -49,35 +44,23 @@
             resources.ApplyResources(this.lblEnter, "lblEnter");
             this.lblEnter.Name = "lblEnter";
             // 
-            // lblCvc
-            // 
-            resources.ApplyResources(this.lblCvc, "lblCvc");
-            this.lblCvc.Name = "lblCvc";
-            // 
-            // lblMY
-            // 
-            resources.ApplyResources(this.lblMY, "lblMY");
-            this.lblMY.Name = "lblMY";
-            // 
-            // lblCardNumber
-            // 
-            resources.ApplyResources(this.lblCardNumber, "lblCardNumber");
-            this.lblCardNumber.Name = "lblCardNumber";
-            // 
             // txtCvc
             // 
             resources.ApplyResources(this.txtCvc, "txtCvc");
             this.txtCvc.Name = "txtCvc";
+            this.txtCvc.ReadOnly = true;
             // 
             // txtExpYear
             // 
             resources.ApplyResources(this.txtExpYear, "txtExpYear");
             this.txtExpYear.Name = "txtExpYear";
+            this.txtExpYear.ReadOnly = true;
             // 
             // txtExpMonth
             // 
             resources.ApplyResources(this.txtExpMonth, "txtExpMonth");
             this.txtExpMonth.Name = "txtExpMonth";
+            this.txtExpMonth.ReadOnly = true;
             // 
             // lblSlash
             // 
@@ -104,16 +87,6 @@
             this.btnRef.UseVisualStyleBackColor = true;
             this.btnRef.Click += new System.EventHandler(this.btnRef_Click);
             // 
-            // lblWarning2
-            // 
-            resources.ApplyResources(this.lblWarning2, "lblWarning2");
-            this.lblWarning2.Name = "lblWarning2";
-            // 
-            // lblWarning1
-            // 
-            resources.ApplyResources(this.lblWarning1, "lblWarning1");
-            this.lblWarning1.Name = "lblWarning1";
-            // 
             // Frm_C_Payment2
             // 
             resources.ApplyResources(this, "$this");
@@ -125,11 +98,6 @@
             this.Controls.Add(this.txtExpMonth);
             this.Controls.Add(this.txtExpYear);
             this.Controls.Add(this.txtCvc);
-            this.Controls.Add(this.lblWarning1);
-            this.Controls.Add(this.lblWarning2);
-            this.Controls.Add(this.lblCardNumber);
-            this.Controls.Add(this.lblMY);
-            this.Controls.Add(this.lblCvc);
             this.Controls.Add(this.lblEnter);
             this.KeyPreview = true;
             this.Name = "Frm_C_Payment2";
@@ -143,9 +111,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblEnter;
-        private System.Windows.Forms.Label lblCvc;
-        private System.Windows.Forms.Label lblMY;
-        private System.Windows.Forms.Label lblCardNumber;
         private System.Windows.Forms.TextBox txtCvc;
         private System.Windows.Forms.TextBox txtExpYear;
         private System.Windows.Forms.TextBox txtExpMonth;
@@ -153,7 +118,5 @@
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.ComboBox cmbCardNumber;
         private System.Windows.Forms.Button btnRef;
-        private System.Windows.Forms.Label lblWarning2;
-        private System.Windows.Forms.Label lblWarning1;
     }
 }

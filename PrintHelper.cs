@@ -30,12 +30,13 @@ namespace FlexOrder
             }
             if (order.orderdetaillist.Count > 0)
             {
-                PrintDocument pd = new PrintDocument();
-                foreach (string printer in PrinterSettings.InstalledPrinters)
+                try
+                {
+                    PrintDocument pd = new PrintDocument();
+                    foreach (string printer in PrinterSettings.InstalledPrinters)
                 {
                     Console.WriteLine(printer);
                 }
-                try {
                     //pd.PrinterSettings.PrinterName = "Microsoft Print to PDF";
                     if (!pd.PrinterSettings.IsValid)
                     {

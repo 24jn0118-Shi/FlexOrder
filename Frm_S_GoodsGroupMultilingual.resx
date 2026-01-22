@@ -409,7 +409,7 @@
     <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Frm_S_GoodsGroupMultilingual</value>
+    <value>商品分類多言語情報</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Frm_S_GoodsGroupMultilingual</value>
