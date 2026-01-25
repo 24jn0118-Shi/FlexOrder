@@ -425,19 +425,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\testimage1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ice_cream.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pizza.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\noimage.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cash.png" />
+    <None Include="Resources\Cash.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CreditCard.png" />
