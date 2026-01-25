@@ -130,7 +130,7 @@
             resources.ApplyResources(this.btnCash, "btnCash");
             this.btnCash.ForeColor = System.Drawing.Color.White;
             this.btnCash.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.btnCash.Image = global::FlexOrder.Properties.Resources.cash;
+            this.btnCash.Image = global::FlexOrder.Properties.Resources.Cash;
             this.btnCash.Name = "btnCash";
             this.btnCash.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
             this.btnCash.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
