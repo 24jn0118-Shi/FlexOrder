@@ -213,7 +213,7 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @"SELECT  goods_name, SUM(od.order_quantity * od.goods_price) AS total_amount
+                string sql = @"SELECT  goods_name AS 料理名, SUM(od.order_quantity * od.goods_price) AS 合計金額
                                  FROM OrderDetail AS od INNER JOIN Goods AS g ON od.goods_id = g.goods_id 
                                  INNER JOIN LocalizationGoods AS lg ON od.goods_id = lg.goods_id 
                                  INNER JOIN LocalizationGoodsGroup AS lgg ON g.group_code = lgg.group_code
@@ -244,7 +244,7 @@ namespace FlexOrderLibrary
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = @" SELECT  FORMAT(o.order_date, @format) AS datetime, SUM(od.order_quantity * od.goods_price) AS total_amount
+                string sql = @" SELECT  FORMAT(o.order_date, @format) AS 日時, SUM(od.order_quantity * od.goods_price) AS 合計金額
 								FROM OrderDetail AS od INNER JOIN LocalizationGoods AS lg ON od.goods_id = lg.goods_id 
                                 INNER JOIN [Order] AS o ON od.order_id = o.order_id  WHERE goods_name = @goods_name AND
                                 order_date BETWEEN @from AND @to GROUP BY FORMAT(o.order_date, @format) ";

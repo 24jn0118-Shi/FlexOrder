@@ -109,7 +109,7 @@ namespace FlexOrder
 
                     foreach (DataRow row in table.Rows)
                     {
-                        series.Points.AddXY(row["goods_name"].ToString(), int.Parse(row["total_amount"].ToString()));
+                        series.Points.AddXY(row["料理名"].ToString(), int.Parse(row["合計金額"].ToString()));
                     }
                     //データ系列をChartコントロールに追加
                     chart1.Series.Add(series);
@@ -158,7 +158,7 @@ namespace FlexOrder
                     foreach (DataRow row in table.Rows)
                     {
                         
-                        series.Points.AddXY(DateTime.Parse(row["datetime"].ToString()), int.Parse(row["total_amount"].ToString()));
+                        series.Points.AddXY(DateTime.Parse(row["日時"].ToString()), int.Parse(row["合計金額"].ToString()));
                         
                     }
                     //データ系列をChartコントロールに追加
