@@ -39,7 +39,9 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lblEndOut2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRestart = new FlexOrder.RoundButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEnd1
@@ -87,6 +89,13 @@
             resources.ApplyResources(this.lblEndOut2, "lblEndOut2");
             this.lblEndOut2.Name = "lblEndOut2";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FlexOrder.Properties.Resources.Arigatou;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
             // btnRestart
             // 
             this.btnRestart.BackColor = System.Drawing.Color.Transparent;
@@ -97,10 +106,10 @@
             this.btnRestart.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.btnRestart, "btnRestart");
             this.btnRestart.ForeColor = System.Drawing.Color.White;
-            this.btnRestart.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.btnRestart.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.btnRestart.Name = "btnRestart";
-            this.btnRestart.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(70)))));
-            this.btnRestart.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(125)))), ((int)(((byte)(50)))));
+            this.btnRestart.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(57)))), ((int)(((byte)(53)))));
+            this.btnRestart.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.btnRestart.TabStop = false;
             this.btnRestart.UseVisualStyleBackColor = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
@@ -119,9 +128,11 @@
             this.Controls.Add(this.lblEnd1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl2);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Frm_C_End";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_C_End_FormClosing);
             this.Load += new System.EventHandler(this.Frm_C_End_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lblEndOut2;
         private RoundButton btnRestart;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -121,8 +121,12 @@
   <data name="lblEnd1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblEnd1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEnd1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 414</value>
+    <value>12, 336</value>
   </data>
   <data name="lblEnd1.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 29</value>
@@ -155,8 +159,11 @@
   <data name="lblEndIn2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
+  <data name="lblEndIn2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblEndIn2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 485</value>
+    <value>12, 407</value>
   </data>
   <data name="lblEndIn2.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 29</value>
@@ -188,12 +195,11 @@
   <data name="lblOrderType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblOrderType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblOrderType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 215</value>
+    <value>365, 38</value>
   </data>
   <data name="lblOrderType.Size" type="System.Drawing.Size, System.Drawing">
     <value>380, 100</value>
@@ -222,11 +228,14 @@
   <data name="lblOut.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 384</value>
+    <value>50, 266</value>
   </data>
   <data name="lblOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 12</value>
+    <value>35, 12</value>
   </data>
   <data name="lblOut.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -256,10 +265,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblIn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 359</value>
+    <value>50, 241</value>
   </data>
   <data name="lblIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 12</value>
+    <value>26, 12</value>
   </data>
   <data name="lblIn.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -292,10 +301,10 @@
     <value>NoControl</value>
   </data>
   <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 424</value>
+    <value>179, 114</value>
   </data>
   <data name="lbl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>481, 150</value>
+    <value>763, 150</value>
   </data>
   <data name="lbl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -325,10 +334,10 @@
     <value>NoControl</value>
   </data>
   <data name="lbl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>303, 635</value>
+    <value>173, 224</value>
   </data>
   <data name="lbl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>500, 150</value>
+    <value>769, 150</value>
   </data>
   <data name="lbl2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -358,7 +367,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblEndOut2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 545</value>
+    <value>12, 467</value>
   </data>
   <data name="lblEndOut2.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 29</value>
@@ -387,17 +396,47 @@
   <data name="&gt;&gt;lblEndOut2.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 350</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 447</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="btnRestart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="btnRestart.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
+  <data name="btnRestart.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnRestart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>781, 78</value>
+    <value>371, 803</value>
   </data>
   <data name="btnRestart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 135</value>
+    <value>356, 157</value>
   </data>
   <data name="btnRestart.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
