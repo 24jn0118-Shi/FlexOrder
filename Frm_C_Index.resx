@@ -265,7 +265,7 @@
     <value>btnTakeout</value>
   </data>
   <data name="&gt;&gt;btnTakeout.Type" xml:space="preserve">
-    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FlexOrder.RoundButton, FlexOrder顧客, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnTakeout.Parent" xml:space="preserve">
     <value>$this</value>
@@ -298,7 +298,7 @@
     <value>btnDinein</value>
   </data>
   <data name="&gt;&gt;btnDinein.Type" xml:space="preserve">
-    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FlexOrder.RoundButton, FlexOrder顧客, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDinein.Parent" xml:space="preserve">
     <value>$this</value>

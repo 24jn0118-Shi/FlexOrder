@@ -396,7 +396,7 @@
     <value>btnGoPay</value>
   </data>
   <data name="&gt;&gt;btnGoPay.Type" xml:space="preserve">
-    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FlexOrder.RoundButton, FlexOrder顧客, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnGoPay.Parent" xml:space="preserve">
     <value>$this</value>
@@ -429,7 +429,7 @@
     <value>btnBack</value>
   </data>
   <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
-    <value>FlexOrder.RoundButton, FlexOrder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FlexOrder.RoundButton, FlexOrder顧客, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
     <value>$this</value>
@@ -447,7 +447,7 @@
     <value>1134, 1047</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>Manual</value>
+    <value>CenterParent</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>カート</value>
