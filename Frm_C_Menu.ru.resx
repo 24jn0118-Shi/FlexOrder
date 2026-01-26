@@ -149,7 +149,7 @@
     <value>Рекомендуем</value>
   </data>
   <data name="btnConfirm.Text" xml:space="preserve">
-    <value>Подтвердить заказ</value>
+    <value>Далее</value>
   </data>
   <data name="lblTotal.Text" xml:space="preserve">
     <value>Общая сумма (с налогом):</value>

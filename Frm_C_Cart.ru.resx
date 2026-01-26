@@ -130,7 +130,7 @@
     <value>Цена</value>
   </data>
   <data name="btnGoPay.Text" xml:space="preserve">
-    <value>Перейти к оплате</value>
+    <value>К оплате</value>
   </data>
   <data name="lblTotalPrice.Text" xml:space="preserve">
     <value>Общая сумма (с налогом):</value>

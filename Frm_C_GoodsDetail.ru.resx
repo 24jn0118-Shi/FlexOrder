@@ -124,6 +124,6 @@
     <value>Назад</value>
   </data>
   <data name="btnAddtoCart.Text" xml:space="preserve">
-    <value>Добавить в корзину</value>
+    <value>В корзину</value>
   </data>
 </root>
