@@ -273,10 +273,20 @@ namespace FlexOrderLibrary
             {
                 string sql = @"UPDATE [Order] SET is_takeout = @is_takeout
                             WHERE order_id = @order_id";
+                if (target)
+                {
+                    sql = @"UPDATE [Order] SET is_takeout = @is_takeout, order_seat = @order_seat 
+                            WHERE order_id = @order_id";
+                }
 
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@order_id", order_id);
                 command.Parameters.AddWithValue("@is_takeout", target);
+
+                if (target) 
+                {
+                    command.Parameters.AddWithValue("order_seat", DBNull.Value);
+                }
 
                 connection.Open();
                 ret = command.ExecuteNonQuery();
