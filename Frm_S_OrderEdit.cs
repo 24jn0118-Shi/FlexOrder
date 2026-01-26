@@ -140,9 +140,11 @@ namespace FlexOrder
                 type = "no";
                 lblType.Text = "商品変更なし";
                 lblResult.Text = "0";
+                btnGoPay.Enabled = false;
             }
             else 
             {
+                btnGoPay.Enabled = true;
                 if (beforeTotal > afterTotal)
                 {
                     type = "refund";
@@ -248,6 +250,11 @@ namespace FlexOrder
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    else if (cnt == 0)
+                    {
+                        MessageBox.Show("注文を削除しました", "削除成功",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     else
                     {
                         MessageBox.Show("変更失敗", "変更失敗",
@@ -271,7 +278,11 @@ namespace FlexOrder
                         MessageBox.Show(cnt + "件の注文商品に変更しました", "変更成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else
+                    else if (cnt == 0) 
+                    {
+                        MessageBox.Show("注文を削除しました", "削除成功",
+                                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    } else
                     {
                         MessageBox.Show("変更失敗", "変更失敗",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
