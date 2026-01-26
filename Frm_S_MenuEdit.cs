@@ -59,6 +59,10 @@ namespace FlexOrder
                 {
                     errs += "価格は整数を入力してください\n";
                 }
+                else if (newprice < 0)
+                {
+                    errs += "価格は0以上で入力してください\n";
+                }
                 if (errs != "") 
                 {
                     MessageBox.Show(errs, "エラー",
@@ -110,6 +114,10 @@ namespace FlexOrder
                 {
                     errs += "価格は整数を入力してください\n";
                 }
+                else if (newprice < 0)
+                {
+                    errs += "価格は0以上で入力してください\n";
+                }
                 if (errs != "")
                 {
                     MessageBox.Show(errs, "エラー",
@@ -133,19 +141,19 @@ namespace FlexOrder
                         goods.goods_image_bytes = oldimageBytes;
                     }
                     string replace = replaceimg ? "あり" : "なし";
-                    if ((editgoods.group_code != cmbGroup.Text)||(editgoods.is_available != goods.is_available)||(editgoods.is_vegetarian != goods.is_vegetarian)||(editgoods.is_recommend != goods.is_recommend)||(editgoods.goods_price != goods.goods_price)||replaceimg) 
-                    { 
+                    if ((editgoods.group_code != cmbGroup.Text) || (editgoods.is_available != goods.is_available) || (editgoods.is_vegetarian != goods.is_vegetarian) || (editgoods.is_recommend != goods.is_recommend) || (editgoods.goods_price != goods.goods_price) || replaceimg)
+                    {
                         anychanged = true;
                     }
-                    if (anychanged) 
+                    if (anychanged)
                     {
                         DialogResult dret = MessageBox.Show("商品ID：" + txtId.Text + "\n" + "商品分類：" + cmbGroup.Text + " " + lblGroupName.Text + "\n" + "商品単価(¥)：" + newprice + "\n" + "おすすめ：" + cboxRecommend.Checked + "\n" + "ベジタリアン：" + cboxVege.Checked + "\n" + "商品在庫：" + cboxAvailable.Checked + "\n" + "商品画像：" + replace + "\n" + "\n以上の内容で登録してよろしいですか", "確認",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (dret == DialogResult.Yes)
                         {
 
-                            int cnt = goodsTable.Update(goods); 
-                            if (cnt == 1) 
+                            int cnt = goodsTable.Update(goods);
+                            if (cnt == 1)
                             {
                                 if (replaceimg)
                                 {
@@ -165,7 +173,7 @@ namespace FlexOrder
 
                         }
                     }
-                    else 
+                    else
                     {
                         Frm_S_MenuMultilingual frm_S_MenuMultilingual = new Frm_S_MenuMultilingual(type, goods.goods_id, this);
                         frm_S_MenuMultilingual.ShowDialog();
