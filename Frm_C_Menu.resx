@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>13</value>
   </data>
   <data name="lblTotal.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -181,7 +181,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblTotal.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>12</value>
   </data>
   <data name="txtKaikei.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 18pt</value>
@@ -208,7 +208,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtKaikei.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>11</value>
   </data>
   <data name="lblCart.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -241,7 +241,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblCart.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>10</value>
   </data>
   <data name="lblen.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,7 +271,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblen.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>9</value>
   </data>
   <data name="lblVeget.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
@@ -304,7 +304,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblVeget.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>8</value>
   </data>
   <data name="lblConfirm1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -316,7 +316,7 @@
     <value>12, 367</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -337,7 +337,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>7</value>
   </data>
   <data name="lblConfirm2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -349,7 +349,7 @@
     <value>12, 392</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -370,7 +370,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblConfirm2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>6</value>
   </data>
   <metadata name="goods_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -442,10 +442,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dgvOrderList.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="flowLayoutPanelCategory.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>5</value>
   </data>
   <data name="flowLayoutPanelCategory.Location" type="System.Drawing.Point, System.Drawing">
     <value>52, 64</value>
@@ -466,7 +463,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelCategory.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="flowLayoutPanelContent.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -490,7 +487,103 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanelContent.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnConfirm.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnConfirm.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 20.25pt</value>
+  </data>
+  <data name="btnConfirm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>846, 832</value>
+  </data>
+  <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 135</value>
+  </data>
+  <data name="btnConfirm.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>roundButton2</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.Name" xml:space="preserve">
+    <value>btnConfirm</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder店舗, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnConfirm.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnBack.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnBack.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 20.25pt</value>
+  </data>
+  <data name="btnBack.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
+    <value>52, 832</value>
+  </data>
+  <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 135</value>
+  </data>
+  <data name="btnBack.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="btnBack.Text" xml:space="preserve">
+    <value>roundButton1</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Name" xml:space="preserve">
+    <value>btnBack</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Type" xml:space="preserve">
+    <value>FlexOrder.RoundButton, FlexOrder店舗, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnBack.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBack.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ckbVeget.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ckbVeget.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 12pt</value>
+  </data>
+  <data name="ckbVeget.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ckbVeget.Location" type="System.Drawing.Point, System.Drawing">
+    <value>567, 832</value>
+  </data>
+  <data name="ckbVeget.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 42</value>
+  </data>
+  <data name="ckbVeget.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;ckbVeget.Name" xml:space="preserve">
+    <value>ckbVeget</value>
+  </data>
+  <data name="&gt;&gt;ckbVeget.Type" xml:space="preserve">
+    <value>FlexOrder.BigCheckBox, FlexOrder店舗, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ckbVeget.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ckbVeget.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
