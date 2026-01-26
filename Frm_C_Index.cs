@@ -34,8 +34,6 @@ namespace FlexOrder
         private void FrmCIndex_Load(object sender, EventArgs e)
         {
             ApplyResources(this, Thread.CurrentThread.CurrentUICulture.Name);
-            //ImagePro.CheckAndCacheAllImages(true);
-            ImagePro.CheckAndCacheAllImages(false);
         }
         private void ApplyResources(Control control, string cultureName)
         {

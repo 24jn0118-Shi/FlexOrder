@@ -20,7 +20,7 @@ namespace FlexOrder
             //ImagePro.CheckAndCacheAllImages(false);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_T_TempStart());
+            Application.Run(new Frm_C_Index());
         }
     }
 }
