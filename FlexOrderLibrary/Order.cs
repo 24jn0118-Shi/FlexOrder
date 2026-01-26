@@ -237,14 +237,9 @@ namespace FlexOrderLibrary
             TimeSpan span = to - from;
             string format;
 
-            if (span.Days < 4)
-            {
-                format = "MM/dd HH";
-            }
-            else
-            {
-                format = "yyyy/MM/dd";
-            }
+            
+            format = "yyyy/MM/dd";
+            
 
             string connectionString = Properties.Settings.Default.DBConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))

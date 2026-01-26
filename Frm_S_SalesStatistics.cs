@@ -157,7 +157,9 @@ namespace FlexOrder
 
                     foreach (DataRow row in table.Rows)
                     {
+                        
                         series.Points.AddXY(DateTime.Parse(row["datetime"].ToString()), int.Parse(row["total_amount"].ToString()));
+                        
                     }
                     //データ系列をChartコントロールに追加
                     chart1.Series.Add(series);
