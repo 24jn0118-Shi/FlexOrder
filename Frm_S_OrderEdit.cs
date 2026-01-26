@@ -252,6 +252,7 @@ namespace FlexOrder
                     }
                     else if (cnt == 0)
                     {
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "削除");
                         MessageBox.Show("注文を削除しました", "削除成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -280,6 +281,7 @@ namespace FlexOrder
                     }
                     else if (cnt == 0) 
                     {
+                        SecurityLogger.WriteSecurityLog(loginstaff.staff_id.ToString(), "注文", afterOrder.order_id.ToString(), "編集", "削除");
                         MessageBox.Show("注文を削除しました", "削除成功",
                                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     } else
