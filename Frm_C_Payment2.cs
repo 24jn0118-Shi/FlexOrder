@@ -17,7 +17,9 @@ namespace FlexOrder
         int total;
         public Frm_C_Payment2(string paytype, int total)
         {
+
             InitializeComponent();
+
             this.paytype = paytype;
             this.total = total;
         }
@@ -245,6 +247,14 @@ namespace FlexOrder
         {
             if (paytype != "card")
             {
+                if (paytype == "cash")
+                {
+                    this.Text = "Cash";
+                }
+                else if (paytype == "em")
+                {
+                    this.Text = "EMoney";
+                }
                 lblSlash.Visible = false;
                 cmbCardNumber.Visible = false;
                 txtExpMonth.Visible = false;
@@ -255,6 +265,7 @@ namespace FlexOrder
             }
             else
             {
+                this.Text = "CreditCard";
                 lblEnter.Visible = false;
                 const string READFILE = @"W:\\24JN01卒業制作\\GroupI\\DBReset\\クレジットカード決済\\testcards.txt";
                 if (!File.Exists(READFILE))
