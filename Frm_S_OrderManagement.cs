@@ -247,6 +247,8 @@ namespace FlexOrder
             txbSeat.ReadOnly = true;
             btnUpdateSeat.Enabled = false;
             btnUpdateTakeout.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
             Console.WriteLine(this.Text + ": Page Refreshed");
 
         }
@@ -403,6 +405,8 @@ namespace FlexOrder
             txbSeat.Text = selectedOrder.order_seat?.ToString() ?? "";
             selected_istakeout = selectedOrder.is_takeout;
             btnUpdateTakeout.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
             if (selected_istakeout)
             {
                 txbSeat.ReadOnly = true;
@@ -528,6 +532,8 @@ namespace FlexOrder
                 txbSeat.ReadOnly = true;
                 btnUpdateSeat.Enabled = false;
                 btnUpdateTakeout.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
                 this.SelectNextControl(txbSeat, true, true, true, true);
             }
         }
