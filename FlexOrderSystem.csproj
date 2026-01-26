@@ -126,18 +126,6 @@
     <Compile Include="Frm_C_GoodsDetail.Designer.cs">
       <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_C_End.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_C_End.Designer.cs">
-      <DependentUpon>Frm_C_End.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Frm_C_Index.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_C_Index.Designer.cs">
-      <DependentUpon>Frm_C_Index.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_C_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,12 +210,6 @@
     <Compile Include="Frm_S_StaffManagement.Designer.cs">
       <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_T_TempStart.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_T_TempStart.Designer.cs">
-      <DependentUpon>Frm_T_TempStart.cs</DependentUpon>
-    </Compile>
     <Compile Include="Frm_S_SalesStatistics.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,7 +223,6 @@
     <Compile Include="MealTicket.Designer.cs">
       <DependentUpon>MealTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="PayjpHelper.cs" />
     <Compile Include="PrintHelper.cs" />
     <Compile Include="ProductItem.cs">
       <SubType>UserControl</SubType>
@@ -270,21 +251,6 @@
     <EmbeddedResource Include="Frm_C_Cart.zh.resx">
       <DependentUpon>Frm_C_Cart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_End.en.resx">
-      <DependentUpon>Frm_C_End.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_End.ja.resx">
-      <DependentUpon>Frm_C_End.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_End.resx">
-      <DependentUpon>Frm_C_End.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_End.ru.resx">
-      <DependentUpon>Frm_C_End.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_End.zh.resx">
-      <DependentUpon>Frm_C_End.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_GoodsDetail.en.resx">
       <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,22 +265,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_GoodsDetail.zh.resx">
       <DependentUpon>Frm_C_GoodsDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_Index.en.resx">
-      <DependentUpon>Frm_C_Index.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_Index.ja.resx">
-      <DependentUpon>Frm_C_Index.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_Index.resx">
-      <DependentUpon>Frm_C_Index.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_Index.ru.resx">
-      <DependentUpon>Frm_C_Index.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_C_Index.zh.resx">
-      <DependentUpon>Frm_C_Index.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_C_Menu.en.resx">
       <DependentUpon>Frm_C_Menu.cs</DependentUpon>
@@ -390,9 +340,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_S_StaffManagement.resx">
       <DependentUpon>Frm_S_StaffManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_T_TempStart.resx">
-      <DependentUpon>Frm_T_TempStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MealTicket.resx">
       <DependentUpon>MealTicket.cs</DependentUpon>

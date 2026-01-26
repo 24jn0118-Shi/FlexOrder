@@ -60,7 +60,7 @@ namespace FlexOrder
         }
         private void ApplyResources(Control control, string cultureName)
         {
-            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(typeof(Frm_C_Index));
+            System.Resources.ResourceManager rm = new System.Resources.ResourceManager(typeof(Frm_C_Menu));
 
             foreach (System.ComponentModel.PropertyDescriptor pd in System.ComponentModel.TypeDescriptor.GetProperties(control))
             {

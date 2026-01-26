@@ -54,8 +54,6 @@ namespace FlexOrder
                 btnStaffManagement.Enabled = true;
                 btnSalesStatistics.Enabled = true;
             }
-            //ImagePro.CheckAndCacheAllImages(true);
-            ImagePro.CheckAndCacheAllImages(false);
         }
 
         private void UpdateName() 

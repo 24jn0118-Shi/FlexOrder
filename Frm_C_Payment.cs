@@ -77,8 +77,6 @@ namespace FlexOrder
 
                     if (ordertype == "in" || ordertype == "out")
                     {
-                        Frm_C_End formend = new Frm_C_End(ordertype);
-                        formend.ShowDialog();
                     }
                     else
                     {
