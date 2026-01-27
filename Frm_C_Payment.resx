@@ -126,7 +126,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>804, 761</value>
+    <value>787, 645</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 51</value>
@@ -157,7 +157,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>685, 713</value>
+    <value>668, 597</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>379, 40</value>
@@ -190,7 +190,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 832</value>
+    <value>28, 753</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 135</value>
@@ -216,6 +216,9 @@
   <data name="lblPgreet.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lblPgreet.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="lblPgreet.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
@@ -223,16 +226,19 @@
     <value>NoControl</value>
   </data>
   <data name="lblPgreet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>404, 97</value>
+    <value>3, 0</value>
   </data>
   <data name="lblPgreet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 35</value>
+    <value>987, 100</value>
   </data>
   <data name="lblPgreet.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="lblPgreet.Text" xml:space="preserve">
     <value>lblPgreet</value>
+  </data>
+  <data name="lblPgreet.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="&gt;&gt;lblPgreet.Name" xml:space="preserve">
     <value>lblPgreet</value>
@@ -241,10 +247,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblPgreet.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;lblPgreet.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -295,7 +301,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnEMoney.Location" type="System.Drawing.Point, System.Drawing">
-    <value>753, 273</value>
+    <value>721, 260</value>
   </data>
   <data name="btnEMoney.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 160</value>
@@ -313,7 +319,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnEMoney.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnCreditCard.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -325,7 +331,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCreditCard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>410, 273</value>
+    <value>378, 260</value>
   </data>
   <data name="btnCreditCard.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 160</value>
@@ -343,7 +349,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCreditCard.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnCash.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -355,7 +361,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnCash.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 276</value>
+    <value>44, 263</value>
   </data>
   <data name="btnCash.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 160</value>
@@ -373,7 +379,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnCash.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblCard.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -388,7 +394,7 @@
     <value>305, 0</value>
   </data>
   <data name="lblCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 96</value>
+    <value>368, 96</value>
   </data>
   <data name="lblCard.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -421,10 +427,10 @@
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
   <data name="lblEmoney.Location" type="System.Drawing.Point, System.Drawing">
-    <value>680, 0</value>
+    <value>679, 0</value>
   </data>
   <data name="lblEmoney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>303, 96</value>
+    <value>304, 96</value>
   </data>
   <data name="lblEmoney.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -451,7 +457,7 @@
     <value>3</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>67, 439</value>
+    <value>35, 426</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
@@ -472,10 +478,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblEmoney" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblCard" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,44.62025,Percent,55.37975,Absolute,308" /&gt;&lt;Rows Styles="Percent,50,Absolute,96" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblEmoney" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="lblCard" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,44.62025,Percent,55.37975,Absolute,309" /&gt;&lt;Rows Styles="Percent,50,Absolute,96" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="tableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 97</value>
+  </data>
+  <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>993, 100</value>
+  </data>
+  <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Name" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblPgreet" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -484,7 +520,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 1047</value>
+    <value>1052, 911</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

@@ -121,7 +121,7 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dataGridViewCellStyle2.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="dataGridViewCellStyle42.NullValue" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32AgAAAAAAADYAAAAoAAAADgAAABAAAAABABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACEgoTGw8bGw8bGw8bGw8bGw8bGw8bG
@@ -221,7 +221,7 @@
     <value>False</value>
   </data>
   <data name="dgvCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>95, 50</value>
+    <value>58, 21</value>
   </data>
   <data name="dgvCart.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
@@ -255,7 +255,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>670, 616</value>
+    <value>653, 573</value>
   </data>
   <data name="lblTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 31</value>
@@ -282,7 +282,7 @@
     <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="tboxTotalPrice.Location" type="System.Drawing.Point, System.Drawing">
-    <value>895, 651</value>
+    <value>858, 623</value>
   </data>
   <data name="tboxTotalPrice.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 38</value>
@@ -381,7 +381,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnGoPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>846, 832</value>
+    <value>769, 753</value>
   </data>
   <data name="btnGoPay.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 135</value>
@@ -414,7 +414,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 832</value>
+    <value>28, 753</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 135</value>
@@ -444,7 +444,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 1047</value>
+    <value>1052, 911</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

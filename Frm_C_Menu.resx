@@ -126,7 +126,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnRestart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
+    <value>12, 8</value>
   </data>
   <data name="btnRestart.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 30</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>739, 706</value>
+    <value>675, 656</value>
   </data>
   <data name="lblTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 31</value>
@@ -187,7 +187,7 @@
     <value>Microsoft YaHei UI, 18pt</value>
   </data>
   <data name="txtKaikei.Location" type="System.Drawing.Point, System.Drawing">
-    <value>931, 745</value>
+    <value>862, 696</value>
   </data>
   <data name="txtKaikei.Size" type="System.Drawing.Size, System.Drawing">
     <value>142, 38</value>
@@ -220,7 +220,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblCart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>731, 47</value>
+    <value>687, 27</value>
   </data>
   <data name="lblCart.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 21</value>
@@ -253,7 +253,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>782, 335</value>
+    <value>738, 315</value>
   </data>
   <data name="lblen.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 12</value>
@@ -280,7 +280,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>405, 902</value>
+    <value>345, 816</value>
   </data>
   <data name="lblVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>364, 37</value>
@@ -313,10 +313,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblConfirm1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 367</value>
+    <value>-32, 347</value>
   </data>
   <data name="lblConfirm1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -346,10 +346,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblConfirm2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 392</value>
+    <value>-32, 372</value>
   </data>
   <data name="lblConfirm2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 12</value>
+    <value>63, 12</value>
   </data>
   <data name="lblConfirm2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -424,7 +424,7 @@
     <value>False</value>
   </data>
   <data name="dgvOrderList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 83</value>
+    <value>664, 63</value>
   </data>
   <data name="dgvOrderList.Size" type="System.Drawing.Size, System.Drawing">
     <value>376, 580</value>
@@ -448,10 +448,10 @@
     <value>True</value>
   </data>
   <data name="flowLayoutPanelCategory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 64</value>
+    <value>16, 44</value>
   </data>
   <data name="flowLayoutPanelCategory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 673</value>
+    <value>176, 673</value>
   </data>
   <data name="flowLayoutPanelCategory.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -472,10 +472,10 @@
     <value>True</value>
   </data>
   <data name="flowLayoutPanelContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 64</value>
+    <value>198, 44</value>
   </data>
   <data name="flowLayoutPanelContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 673</value>
+    <value>460, 673</value>
   </data>
   <data name="flowLayoutPanelContent.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -502,7 +502,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnConfirm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>846, 832</value>
+    <value>769, 753</value>
   </data>
   <data name="btnConfirm.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 135</value>
@@ -535,7 +535,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnBack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 832</value>
+    <value>28, 753</value>
   </data>
   <data name="btnBack.Size" type="System.Drawing.Size, System.Drawing">
     <value>250, 135</value>
@@ -568,7 +568,7 @@
     <value>NoControl</value>
   </data>
   <data name="ckbVeget.Location" type="System.Drawing.Point, System.Drawing">
-    <value>567, 832</value>
+    <value>501, 764</value>
   </data>
   <data name="ckbVeget.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 42</value>
@@ -595,7 +595,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 1047</value>
+    <value>1052, 911</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
