@@ -315,6 +315,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FlexOrder顧客icon.ico" />
+    <None Include="Resources\welcome.png" />
+    <None Include="Resources\welcome1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

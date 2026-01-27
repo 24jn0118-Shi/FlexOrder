@@ -190,7 +190,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEndIn2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
+  </data>
+  <data name="lblOrderType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="lblOrderType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
@@ -199,10 +202,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblOrderType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>365, 38</value>
+    <value>3, 0</value>
   </data>
   <data name="lblOrderType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 100</value>
+    <value>736, 49</value>
   </data>
   <data name="lblOrderType.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -220,10 +223,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblOrderType.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;lblOrderType.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>1</value>
   </data>
   <data name="lblOut.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -256,7 +259,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblOut.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="lblIn.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,11 +292,14 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblIn.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="lbl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
   <data name="lbl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
   </data>
@@ -301,10 +307,10 @@
     <value>NoControl</value>
   </data>
   <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 114</value>
+    <value>3, 49</value>
   </data>
   <data name="lbl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>763, 150</value>
+    <value>736, 85</value>
   </data>
   <data name="lbl1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -322,10 +328,16 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl1.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;lbl1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>2</value>
+  </data>
+  <data name="lbl2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="lbl2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
@@ -334,10 +346,10 @@
     <value>NoControl</value>
   </data>
   <data name="lbl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 224</value>
+    <value>3, 134</value>
   </data>
   <data name="lbl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>769, 150</value>
+    <value>736, 86</value>
   </data>
   <data name="lbl2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -355,10 +367,10 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl2.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>tableLayoutPanel1</value>
   </data>
   <data name="&gt;&gt;lbl2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>0</value>
   </data>
   <data name="lblEndOut2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 20.25pt</value>
@@ -394,13 +406,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblEndOut2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 350</value>
+    <value>379, 262</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>301, 447</value>
@@ -421,7 +433,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="btnRestart.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -433,7 +445,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnRestart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 803</value>
+    <value>354, 715</value>
   </data>
   <data name="btnRestart.Size" type="System.Drawing.Size, System.Drawing">
     <value>356, 157</value>
@@ -454,7 +466,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnRestart.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 33</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>742, 220</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lbl2" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblOrderType" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lbl1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50" /&gt;&lt;Rows Styles="Percent,36.56717,Percent,63.43283,Absolute,85" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -463,7 +505,7 @@
     <value>6, 12</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1134, 1047</value>
+    <value>1052, 911</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

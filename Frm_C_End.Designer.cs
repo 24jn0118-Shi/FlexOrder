@@ -41,7 +41,9 @@
             this.lblEndOut2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRestart = new FlexOrder.RoundButton();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblEnd1
@@ -114,25 +116,33 @@
             this.btnRestart.UseVisualStyleBackColor = false;
             this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.lbl2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblOrderType, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl1, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
             // Frm_C_End
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnRestart);
             this.Controls.Add(this.lblEndOut2);
             this.Controls.Add(this.lblIn);
             this.Controls.Add(this.lblOut);
             this.Controls.Add(this.lblEndIn2);
-            this.Controls.Add(this.lblOrderType);
             this.Controls.Add(this.lblEnd1);
-            this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.lbl2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Frm_C_End";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_C_End_FormClosing);
             this.Load += new System.EventHandler(this.Frm_C_End_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +160,6 @@
         private System.Windows.Forms.Label lblEndOut2;
         private RoundButton btnRestart;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

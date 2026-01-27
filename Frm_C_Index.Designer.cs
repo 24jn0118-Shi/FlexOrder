@@ -33,9 +33,11 @@
             this.btnChinese = new System.Windows.Forms.Button();
             this.btnEnglish = new System.Windows.Forms.Button();
             this.btnJapanese = new System.Windows.Forms.Button();
-            this.btnTakeout = new FlexOrder.RoundButton();
-            this.btnDinein = new FlexOrder.RoundButton();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDinein = new FlexOrder.RoundButton();
+            this.btnTakeout = new FlexOrder.RoundButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRussian
@@ -66,21 +68,17 @@
             this.btnJapanese.UseVisualStyleBackColor = true;
             this.btnJapanese.Click += new System.EventHandler(this.btnJapanese_Click);
             // 
-            // btnTakeout
+            // lblWelcome
             // 
-            this.btnTakeout.BackColor = System.Drawing.Color.White;
-            this.btnTakeout.BorderColor = System.Drawing.Color.White;
-            this.btnTakeout.CornerRadius = 14;
-            this.btnTakeout.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btnTakeout, "btnTakeout");
-            this.btnTakeout.ForeColor = System.Drawing.Color.White;
-            this.btnTakeout.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.btnTakeout.Name = "btnTakeout";
-            this.btnTakeout.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.btnTakeout.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
-            this.btnTakeout.TabStop = false;
-            this.btnTakeout.UseVisualStyleBackColor = false;
-            this.btnTakeout.Click += new System.EventHandler(this.btnTakeout_Click);
+            resources.ApplyResources(this.lblWelcome, "lblWelcome");
+            this.lblWelcome.Name = "lblWelcome";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FlexOrder.Properties.Resources.welcome;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // btnDinein
             // 
@@ -99,10 +97,21 @@
             this.btnDinein.UseVisualStyleBackColor = false;
             this.btnDinein.Click += new System.EventHandler(this.btnDinein_Click);
             // 
-            // lblWelcome
+            // btnTakeout
             // 
-            resources.ApplyResources(this.lblWelcome, "lblWelcome");
-            this.lblWelcome.Name = "lblWelcome";
+            this.btnTakeout.BackColor = System.Drawing.Color.White;
+            this.btnTakeout.BorderColor = System.Drawing.Color.White;
+            this.btnTakeout.CornerRadius = 14;
+            this.btnTakeout.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btnTakeout, "btnTakeout");
+            this.btnTakeout.ForeColor = System.Drawing.Color.White;
+            this.btnTakeout.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnTakeout.Name = "btnTakeout";
+            this.btnTakeout.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnTakeout.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(71)))), ((int)(((byte)(161)))));
+            this.btnTakeout.TabStop = false;
+            this.btnTakeout.UseVisualStyleBackColor = false;
+            this.btnTakeout.Click += new System.EventHandler(this.btnTakeout_Click);
             // 
             // Frm_C_Index
             // 
@@ -115,10 +124,12 @@
             this.Controls.Add(this.btnEnglish);
             this.Controls.Add(this.btnChinese);
             this.Controls.Add(this.btnRussian);
+            this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
             this.Name = "Frm_C_Index";
             this.Load += new System.EventHandler(this.FrmCIndex_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Frm_C_Index_KeyPress);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -132,5 +143,6 @@
         private RoundButton btnTakeout;
         private RoundButton btnDinein;
         private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

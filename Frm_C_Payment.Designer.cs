@@ -40,7 +40,9 @@
             this.lblCard = new System.Windows.Forms.Label();
             this.lblEmoney = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotal
@@ -158,16 +160,22 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.lblPgreet, 0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
             // Frm_C_Payment
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.btnCash);
             this.Controls.Add(this.btnEMoney);
             this.Controls.Add(this.btnCreditCard);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.lblPgreet);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblTotal);
@@ -175,8 +183,9 @@
             this.Load += new System.EventHandler(this.Frm_C_Payment_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -192,5 +201,6 @@
         private System.Windows.Forms.Label lblCard;
         private System.Windows.Forms.Label lblEmoney;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
